@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="1" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="2" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -7687,7 +7687,7 @@ When charging a unit of the opposite side of a defence line, the charge is succe
       <rules/>
       <infoLinks/>
       <modifiers/>
-      <description>If your Warlord is a (Character), it can use a Warlord Trait. Immediately before either player starts to deploy their army, you can roll a D3 on the Warlord Trait table here to determine what Warlord Trait your Warlord has. Alternatively, choose the trait that most suits your Warlord&apos;s temperament or style of war.
+      <description>If your Warlord is a CHARACTER, it can use a Warlord Trait. Immediately before either player starts to deploy their army, you can roll a D3 on the Warlord Trait table here to determine what Warlord Trait your Warlord has. Alternatively, choose the trait that most suits your Warlord&apos;s temperament or style of war.
 
 1) Legendary Fighter: If this Warlord charges in the Charge phase, add 1 to their Attacks characteristic until the end of the ensuing Fight phase.
 2) Inspiring Leader: Friendly units within 6&quot; of this Warlord can add 1 to their Leadership characteristic.
