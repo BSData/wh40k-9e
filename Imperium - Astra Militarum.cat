@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="53e9d88f-7463-8c27-fe67-e1a0d1ed0287" name="Imperium - Astra Militarum" revision="12" battleScribeVersion="2.01" authorName="Alphalas" authorContact="Gitter: @Alphalas, twitter: @kingoverlord" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="53e9d88f-7463-8c27-fe67-e1a0d1ed0287" name="Imperium - Astra Militarum" revision="18" battleScribeVersion="2.01" authorName="Alphalas" authorContact="Gitter: @Alphalas, twitter: @kingoverlord" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -3670,7 +3670,7 @@
       </categoryLinks>
       <selectionEntries/>
       <selectionEntryGroups>
-        <selectionEntryGroup id="f628-7d16-260d-e31f" name="Bolt pistol" hidden="false" collective="false">
+        <selectionEntryGroup id="f628-7d16-260d-e31f" name="Bolt pistol" hidden="false" collective="false" defaultSelectionEntryId="4065-06c9-5c94-7dbf">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3947,23 +3947,22 @@
       <infoLinks/>
       <modifiers/>
       <constraints/>
-      <categoryLinks>
-        <categoryLink id="daea-3f4e-25c6-0ec8-848a6ff2-0def-4c72-8433-ff7da70e6bc7" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints/>
-        </categoryLink>
-      </categoryLinks>
+      <categoryLinks/>
       <selectionEntries/>
       <selectionEntryGroups>
-        <selectionEntryGroup id="3838-4743-dbd9-5e6f" name="Veterans" hidden="false" collective="true" defaultSelectionEntryId="bed8-7cc9-14f1-b59f">
+        <selectionEntryGroup id="3838-4743-dbd9-5e6f" name="Veterans" hidden="false" collective="false" defaultSelectionEntryId="bed8-7cc9-14f1-b59f">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers>
             <modifier type="decrement" field="maxSelections" value="1">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="daea-3f4e-25c6-0ec8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f8ec-59eb-d97b-8e09" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="minSelections" value="1">
               <repeats/>
               <conditions>
                 <condition field="selections" scope="daea-3f4e-25c6-0ec8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f8ec-59eb-d97b-8e09" type="equalTo"/>
@@ -4067,7 +4066,7 @@
               <categoryLinks/>
               <selectionEntries/>
               <selectionEntryGroups>
-                <selectionEntryGroup id="856e-64ac-7b7c-6e6f" name="Lasgun" hidden="false" collective="false">
+                <selectionEntryGroup id="856e-64ac-7b7c-6e6f" name="Lasgun" hidden="false" collective="false" defaultSelectionEntryId="a261-b897-e561-6173">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -4080,7 +4079,7 @@
                   <selectionEntries/>
                   <selectionEntryGroups/>
                   <entryLinks>
-                    <entryLink id="a261-b897-e561-6173" name="Lasgun" hidden="false" targetId="7236-b28a-2b6e-ded7" type="selectionEntry">
+                    <entryLink id="a261-b897-e561-6173" name="Lasgun" hidden="false" targetId="fd87-854b-d284-184a" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -4428,7 +4427,7 @@
         </categoryLink>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="4df4e8e7-7896-e104-ac60-74ec924f0360" name="Conscript" page="0" hidden="false" collective="false" type="model">
+        <selectionEntry id="4df4e8e7-7896-e104-ac60-74ec924f0360" name="Conscript" page="0" hidden="false" collective="true" type="model">
           <profiles>
             <profile id="faa3-8696-1193-928d" name="Conscript" book="Codex: Astra Militarum" page="36" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
               <profiles/>
@@ -4459,12 +4458,15 @@
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="56f6-4805-1ad2-d93b" name="New EntryLink" hidden="false" targetId="fd87-854b-d284-184a" type="selectionEntry">
+            <entryLink id="56f6-4805-1ad2-d93b" name="Laspistol" hidden="false" targetId="9c74-d181-d2ec-0ba6" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
-              <constraints/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2bbe-6461-9d61-7fdc" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="360b-85ab-6f16-6659" type="min"/>
+              </constraints>
               <categoryLinks/>
             </entryLink>
           </entryLinks>
@@ -4890,12 +4892,14 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="a1c5-1770-ff53-2af3" name="New EntryLink" hidden="false" targetId="29c3-5475-96d1-6a44" type="selectionEntryGroup">
+                <entryLink id="a1c5-1770-ff53-2af3" name="Astra Militarum Heavy Weapons" hidden="false" targetId="29c3-5475-96d1-6a44" type="selectionEntryGroup">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8207-6ff5-efcb-cd2b" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
                 <entryLink id="9899-68a8-bf91-9f6d" name="Lasgun" hidden="false" targetId="fd87-854b-d284-184a" type="selectionEntry">
@@ -5042,7 +5046,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" costTypeId="points" value="80.0"/>
+        <cost name="pts" costTypeId="points" value="70.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="4.0"/>
       </costs>
     </selectionEntry>
@@ -5322,7 +5326,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" costTypeId="points" value="85.0"/>
+        <cost name="pts" costTypeId="points" value="80.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="4.0"/>
       </costs>
     </selectionEntry>
@@ -5639,7 +5643,7 @@
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="acf7-5b70-2113-e293" name="Laspistol" hidden="false" targetId="9c74-d181-d2ec-0ba6" type="selectionEntry">
+            <entryLink id="acf7-5b70-2113-e293" name="Lasgun" hidden="false" targetId="7236-b28a-2b6e-ded7" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -5675,7 +5679,7 @@
           <categoryLinks/>
           <selectionEntries/>
           <selectionEntryGroups>
-            <selectionEntryGroup id="50a2-7269-29ad-2353" name="Special Weapon" hidden="false" collective="false" defaultSelectionEntryId="f18a-fda7-88d2-ca9b">
+            <selectionEntryGroup id="50a2-7269-29ad-2353" name="Special Weapon" hidden="false" collective="false">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -6518,28 +6522,37 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="34a1-7d7e-8f01-ddad" name="New EntryLink" hidden="false" targetId="9c74-d181-d2ec-0ba6" type="selectionEntry">
+                <entryLink id="34a1-7d7e-8f01-ddad" name="Laspistol" hidden="false" targetId="9c74-d181-d2ec-0ba6" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="69a2-8347-2f51-8ad5" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="32df-bd55-0bad-6f99" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="777b-262d-cf85-5e29" name="New EntryLink" hidden="false" targetId="c725-c607-962e-eac3" type="selectionEntry">
+                <entryLink id="777b-262d-cf85-5e29" name="Hunting Lance" hidden="false" targetId="c725-c607-962e-eac3" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9142-669b-87b5-2166" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc19-3191-5255-338c" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="ed10-d034-6701-0d55" name="New EntryLink" hidden="false" targetId="de76-80c5-81db-c463" type="selectionEntry">
+                <entryLink id="ed10-d034-6701-0d55" name="Chainsword" hidden="false" targetId="de76-80c5-81db-c463" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1695-d88e-aa7c-d9aa" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d116-b961-eb27-30a0" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
@@ -6576,30 +6589,138 @@
               </constraints>
               <categoryLinks/>
               <selectionEntries/>
-              <selectionEntryGroups/>
+              <selectionEntryGroups>
+                <selectionEntryGroup id="75f5-9e60-2f4d-cd89" name="Astra Militarum Special Weapons" hidden="false" collective="false">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ee2-d4a0-45fb-7b15" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                  <selectionEntries>
+                    <selectionEntry id="390a-4f4e-3b60-8bd8" name="Grenade Launcher" hidden="false" collective="false" type="upgrade">
+                      <profiles>
+                        <profile id="0c3b-772b-c7dc-8a85" name="Grenade Launcher (Frag)" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                          <characteristics>
+                            <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="24&quot;"/>
+                            <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Assault D6"/>
+                            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="3"/>
+                            <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
+                            <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+                            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value=""/>
+                          </characteristics>
+                        </profile>
+                        <profile id="5ae9-2c03-b15d-e939" name="Grenade Launcher (Krak)" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                          <characteristics>
+                            <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="24&quot;"/>
+                            <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Assault 1"/>
+                            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="6"/>
+                            <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
+                            <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
+                            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value=""/>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d24d-a72d-dcf4-b1f5" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="pts" costTypeId="points" value="5.0"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <selectionEntryGroups/>
+                  <entryLinks>
+                    <entryLink id="1c76-a43e-7328-4eb7" name="Plasma gun" hidden="false" targetId="8c14-22cc-93ce-b85a" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers>
+                        <modifier type="set" field="points" value="7">
+                          <repeats/>
+                          <conditions/>
+                          <conditionGroups/>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="496b-1188-c3d7-d250" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                    <entryLink id="22e2-9553-9bb5-1ffe" name="Meltagun" hidden="false" targetId="efc8-c51d-5b02-a3a2" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers>
+                        <modifier type="set" field="points" value="12">
+                          <repeats/>
+                          <conditions/>
+                          <conditionGroups/>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a991-3ccf-3a02-1d93" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                    <entryLink id="9794-4968-d936-5639" name="Flamer" hidden="false" targetId="fd22-6743-2d4c-dd62" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers>
+                        <modifier type="set" field="points" value="7">
+                          <repeats/>
+                          <conditions/>
+                          <conditionGroups/>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2a89-d628-93e9-66f9" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
               <entryLinks>
-                <entryLink id="53c3-efc0-ae46-4ef2" name="New EntryLink" hidden="false" targetId="9c74-d181-d2ec-0ba6" type="selectionEntry">
+                <entryLink id="53c3-efc0-ae46-4ef2" name="Laspistol" hidden="false" targetId="9c74-d181-d2ec-0ba6" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fad1-fedf-abb4-0a0f" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5a0d-445c-cd76-eb50" type="max"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="ca5b-f0d2-3089-0a2a" name="New EntryLink" hidden="false" targetId="de76-80c5-81db-c463" type="selectionEntry">
+                <entryLink id="ca5b-f0d2-3089-0a2a" name="Chainsword" hidden="false" targetId="de76-80c5-81db-c463" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
-                  <categoryLinks/>
-                </entryLink>
-                <entryLink id="b6a2-054e-6cca-8232" name="New EntryLink" hidden="false" targetId="a465-d3f9-68f9-2e55" type="selectionEntryGroup">
-                  <profiles/>
-                  <rules/>
-                  <infoLinks/>
-                  <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa9c-808d-9d99-2c32" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8f82-070f-adfc-98f5" type="max"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
@@ -7472,7 +7593,6 @@
       <infoLinks/>
       <modifiers/>
       <constraints>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="3de9-fd4f-a8ee-1148" type="min"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="9e97-cdfd-8d4a-203c" type="max"/>
       </constraints>
       <categoryLinks/>
@@ -7642,7 +7762,7 @@
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
-            <selectionEntryGroup id="b417-cecb-fee0-7496" name="Hull Weapon" hidden="false" collective="false">
+            <selectionEntryGroup id="b417-cecb-fee0-7496" name="Hull Weapon" hidden="false" collective="false" defaultSelectionEntryId="0b8e-69d1-9ab7-7581">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -7696,23 +7816,6 @@
                   <entryLinks/>
                   <costs>
                     <cost name="pts" costTypeId="points" value="17.0"/>
-                    <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-                  </costs>
-                </selectionEntry>
-                <selectionEntry id="1376-a15b-b83d-9a4d" name="Multi-melta" page="0" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
-                  <rules/>
-                  <infoLinks/>
-                  <modifiers/>
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="30ba-0437-8a64-0a3d" type="max"/>
-                  </constraints>
-                  <categoryLinks/>
-                  <selectionEntries/>
-                  <selectionEntryGroups/>
-                  <entryLinks/>
-                  <costs>
-                    <cost name="pts" costTypeId="points" value="20.0"/>
                     <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
                   </costs>
                 </selectionEntry>
@@ -7952,7 +8055,43 @@
             <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e49-aedb-66c4-2865" type="max"/>
           </constraints>
           <categoryLinks/>
-          <selectionEntries/>
+          <selectionEntries>
+            <selectionEntry id="ae5d-643d-b521-f4aa" name="2x Heavy Bolters" hidden="false" collective="false" type="upgrade">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fde9-0d94-1b64-1488" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks>
+                <entryLink id="e3d0-d982-3853-45cd" name="Heavy bolter" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers>
+                    <modifier type="set" field="points" value="8">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups/>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c0b6-04cd-f69e-356c" type="min"/>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ec7-b265-c12b-a3be" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                </entryLink>
+              </entryLinks>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
           <selectionEntryGroups>
             <selectionEntryGroup id="cf89-6138-23de-169b" name="Hull weapon" hidden="false" collective="false" defaultSelectionEntryId="a0a3-2c88-392b-ec22">
               <profiles/>
@@ -7996,8 +8135,16 @@
                   <profiles/>
                   <rules/>
                   <infoLinks/>
-                  <modifiers/>
-                  <constraints/>
+                  <modifiers>
+                    <modifier type="set" field="points" value="20">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups/>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1aed-4544-ddf9-54ae" type="max"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
@@ -8486,7 +8633,7 @@
       </categoryLinks>
       <selectionEntries/>
       <selectionEntryGroups>
-        <selectionEntryGroup id="31e6-6768-42d4-b783" name="Turret-mounted Weapon" hidden="false" collective="false">
+        <selectionEntryGroup id="31e6-6768-42d4-b783" name="Turret-mounted Weapon" hidden="false" collective="false" defaultSelectionEntryId="efea-beb3-f9ad-ae5d">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8611,7 +8758,7 @@
           <selectionEntryGroups/>
           <entryLinks/>
         </selectionEntryGroup>
-        <selectionEntryGroup id="2850-5680-ec58-8fbe" name="Hull-mounted Weapon" hidden="false" collective="false">
+        <selectionEntryGroup id="2850-5680-ec58-8fbe" name="Hull-mounted Weapon" hidden="false" collective="false" defaultSelectionEntryId="072e-5b1a-eaf9-7aad">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8625,7 +8772,14 @@
             <selectionEntry id="072e-5b1a-eaf9-7aad" name="Two Hot-shot Volley Guns" hidden="false" collective="false" type="upgrade">
               <profiles/>
               <rules/>
-              <infoLinks/>
+              <infoLinks>
+                <infoLink id="e357-9be1-cb9d-a726" name="Multi-laser" hidden="false" targetId="92be-1bfc-f355-f214" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
               <modifiers/>
               <constraints/>
               <categoryLinks/>
@@ -8633,14 +8787,21 @@
               <selectionEntryGroups/>
               <entryLinks/>
               <costs>
-                <cost name="pts" costTypeId="points" value="9.0"/>
+                <cost name="pts" costTypeId="points" value="18.0"/>
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="f628-5929-6bd8-8f5c" name="Two Autocannons" hidden="false" collective="false" type="upgrade">
               <profiles/>
               <rules/>
-              <infoLinks/>
+              <infoLinks>
+                <infoLink id="dae3-97e1-fec7-d0ad" name="Twin autocannon" hidden="false" targetId="3a89-dec9-f41d-7719" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
               <modifiers/>
               <constraints/>
               <categoryLinks/>
@@ -8648,7 +8809,7 @@
               <selectionEntryGroups/>
               <entryLinks/>
               <costs>
-                <cost name="pts" costTypeId="points" value="15.0"/>
+                <cost name="pts" costTypeId="points" value="30.0"/>
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -8719,9 +8880,7 @@
         </infoLink>
       </infoLinks>
       <modifiers/>
-      <constraints>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="bbf2-a0b3-88c8-3bd4" type="max"/>
-      </constraints>
+      <constraints/>
       <categoryLinks/>
       <selectionEntries/>
       <selectionEntryGroups/>
@@ -9807,14 +9966,15 @@
               <modifiers/>
               <description>At the start of the first battle round but before the first turn begins, you can move this unit up to 9&quot;.  It cannot end this move within 9&quot; of any enemy models.  If both players have units that can do this, the player who is taking the first turn moves their units first.</description>
             </rule>
-          </rules>
-          <infoLinks>
-            <infoLink id="22a2-50c0-29e3-8ba2" name="Explodes" hidden="false" targetId="3541-94a7-a138-358b" type="rule">
+            <rule id="e641-a0e0-30d0-32ff" name="Explodes!" hidden="false">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
-            </infoLink>
+              <description>If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any embarked models disembark. On a 6 it explodes, and each unit within 3&quot; suffers 1 mortal wound.</description>
+            </rule>
+          </rules>
+          <infoLinks>
             <infoLink id="7c1d-8e5d-5082-7e87" name="Smoke Launchers" hidden="false" targetId="c883-3078-1367-cc2c" type="profile">
               <profiles/>
               <rules/>
@@ -10016,12 +10176,15 @@
             </selectionEntryGroup>
           </selectionEntryGroups>
           <entryLinks>
-            <entryLink id="63cf-4a10-35a2-4f2c" name="New EntryLink" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+            <entryLink id="63cf-4a10-35a2-4f2c" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
-              <constraints/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="602b-dcde-2fc4-8d54" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fb52-592d-4366-500d" type="min"/>
+              </constraints>
               <categoryLinks/>
             </entryLink>
           </entryLinks>
@@ -10032,14 +10195,14 @@
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="be08-e5ae-6254-7343" name="Scions" hidden="false" collective="false">
+        <selectionEntryGroup id="be08-e5ae-6254-7343" name="Scions" hidden="false" collective="false" defaultSelectionEntryId="1e10-c229-fb63-bcfc">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <constraints>
-            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="be32-e750-3fab-a9e8" type="min"/>
-            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="3e62-57cb-4862-9741" type="max"/>
+            <constraint field="selections" scope="parent" value="5.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" id="be32-e750-3fab-a9e8" type="min"/>
+            <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" id="3e62-57cb-4862-9741" type="max"/>
           </constraints>
           <categoryLinks/>
           <selectionEntries>
@@ -10058,7 +10221,7 @@
                 <modifier type="set" field="7829-1a0f-993b-82f5" value="4">
                   <repeats/>
                   <conditions>
-                    <condition field="selections" scope="42c3-450f-7ff7-311e" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
+                    <condition field="selections" scope="42c3-450f-7ff7-311e" value="8.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
                   </conditions>
                   <conditionGroups/>
                 </modifier>
@@ -10069,7 +10232,7 @@
               <categoryLinks/>
               <selectionEntries/>
               <selectionEntryGroups>
-                <selectionEntryGroup id="eb57-099b-a6ad-1271" name="Special Weapon" hidden="false" collective="false" defaultSelectionEntryId="bf55-a257-a900-0087">
+                <selectionEntryGroup id="eb57-099b-a6ad-1271" name="Special Weapon" hidden="false" collective="false">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -10138,7 +10301,7 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="50c5-2cd0-19bc-a8b2" name="New EntryLink" hidden="false" targetId="5188-4b26-73ac-1160" type="selectionEntry">
+                <entryLink id="50c5-2cd0-19bc-a8b2" name="Hot-shot Lasgun" hidden="false" targetId="8503fbf4-c4d5-a440-ff24-a933853eef67" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -10166,7 +10329,7 @@
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="69a0-58d3-9cd3-0b00" name="Scion w/ Vox-caster" page="0" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="69a0-58d3-9cd3-0b00" name="Scion w/ Vox-caster" page="0" hidden="false" collective="false" type="model">
               <profiles/>
               <rules/>
               <infoLinks>
@@ -10179,13 +10342,13 @@
               </infoLinks>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="9230-daa7-37fe-e47e" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="9230-daa7-37fe-e47e" type="max"/>
               </constraints>
               <categoryLinks/>
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="6624-167c-83ec-89ac" name="New EntryLink" hidden="false" targetId="5563-fe60-717b-e5b6" type="selectionEntry">
+                <entryLink id="6624-167c-83ec-89ac" name="Vox-caster" hidden="false" targetId="5563-fe60-717b-e5b6" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -10196,7 +10359,7 @@
                   </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="b13b-c200-1956-1ee6" name="New EntryLink" hidden="false" targetId="be4e-87d9-3bb2-4ecd" type="selectionEntry">
+                <entryLink id="b13b-c200-1956-1ee6" name="Hot-shot Laspistol" hidden="false" targetId="be4e-87d9-3bb2-4ecd" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -10216,12 +10379,15 @@
           </selectionEntries>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="fe8e-a99b-a164-ebc6" name="New EntryLink" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+            <entryLink id="fe8e-a99b-a164-ebc6" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
-              <constraints/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2da0-f096-1d9a-ce8f" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b248-4063-4dd4-8296" type="min"/>
+              </constraints>
               <categoryLinks/>
             </entryLink>
           </entryLinks>
@@ -10257,7 +10423,7 @@
       </categoryLinks>
       <selectionEntries/>
       <selectionEntryGroups>
-        <selectionEntryGroup id="45fd-d4b5-ff6d-8a06" name="Scions" hidden="false" collective="false">
+        <selectionEntryGroup id="45fd-d4b5-ff6d-8a06" name="Scions" hidden="false" collective="false" defaultSelectionEntryId="dd39-b707-ff8c-e9b4">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -10299,20 +10465,30 @@
                   <selectionEntries/>
                   <selectionEntryGroups/>
                   <entryLinks>
-                    <entryLink id="ba57-2d81-4907-3223" name="New EntryLink" hidden="false" targetId="a465-d3f9-68f9-2e55" type="selectionEntryGroup">
+                    <entryLink id="ba57-2d81-4907-3223" name="Astra Militarum Special Weapons" hidden="false" targetId="a465-d3f9-68f9-2e55" type="selectionEntryGroup">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
                       <modifiers/>
-                      <constraints/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="630b-6143-d6a7-0d05" type="max"/>
+                      </constraints>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="ccb6-038d-eb38-9815" name="New EntryLink" hidden="false" targetId="5188-4b26-73ac-1160" type="selectionEntry">
+                    <entryLink id="ccb6-038d-eb38-9815" name="Hot-Shot Lasgun" hidden="false" targetId="5188-4b26-73ac-1160" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
-                      <modifiers/>
-                      <constraints/>
+                      <modifiers>
+                        <modifier type="set" field="points" value="1">
+                          <repeats/>
+                          <conditions/>
+                          <conditionGroups/>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aceb-60d0-e16a-1d91" type="max"/>
+                      </constraints>
                       <categoryLinks/>
                     </entryLink>
                     <entryLink id="6358-9e60-f40c-0873" name="Hot-shot Volley Gun" hidden="false" targetId="28a8-8a85-097c-6893" type="selectionEntry">
@@ -10320,7 +10496,9 @@
                       <rules/>
                       <infoLinks/>
                       <modifiers/>
-                      <constraints/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="67fb-9999-959c-a676" type="max"/>
+                      </constraints>
                       <categoryLinks/>
                     </entryLink>
                   </entryLinks>
@@ -10351,12 +10529,32 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="f00a-ef2e-e713-369d" name="New EntryLink" hidden="false" targetId="be4e-87d9-3bb2-4ecd" type="selectionEntry">
+                <entryLink id="f00a-ef2e-e713-369d" name="Hot-shot Laspistol" hidden="false" targetId="be4e-87d9-3bb2-4ecd" type="selectionEntry">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers>
+                    <modifier type="set" field="points" value="1">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups/>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7d08-ed98-e15e-b6b6" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="be0c-41f5-92cd-8aac" type="min"/>
+                  </constraints>
+                  <categoryLinks/>
+                </entryLink>
+                <entryLink id="1a2a-9580-adaa-bc2e" name="Vox-caster" hidden="false" targetId="5563-fe60-717b-e5b6" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9964-c092-43f4-415e" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0c18-ef0d-47ee-fd4e" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
@@ -10395,12 +10593,21 @@
                   </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="9d37-cc2d-1cf5-d4ca" name="New EntryLink" hidden="false" targetId="be4e-87d9-3bb2-4ecd" type="selectionEntry">
+                <entryLink id="9d37-cc2d-1cf5-d4ca" name="Hot-shot Laspistol" hidden="false" targetId="be4e-87d9-3bb2-4ecd" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
-                  <modifiers/>
-                  <constraints/>
+                  <modifiers>
+                    <modifier type="set" field="points" value="1">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups/>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="50a8-49ac-40bf-9c85" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="719e-a880-ddc7-d821" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
@@ -10447,12 +10654,21 @@
               </selectionEntries>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="27c8-c7e8-0513-4574" name="New EntryLink" hidden="false" targetId="5188-4b26-73ac-1160" type="selectionEntry">
+                <entryLink id="27c8-c7e8-0513-4574" name="Hot-Shot Lasgun" hidden="false" targetId="5188-4b26-73ac-1160" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
-                  <modifiers/>
-                  <constraints/>
+                  <modifiers>
+                    <modifier type="set" field="points" value="1">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups/>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d2cf-ae5e-a877-ff23" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="91f7-4d7f-4fad-bd05" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
@@ -10554,7 +10770,69 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
-      <selectionEntryGroups/>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="205e-dd43-86d5-e736" name="Hull Weapon" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1a5c-446a-119a-f4eb" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9144-2c8a-f687-276f" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries>
+            <selectionEntry id="eecf-95a8-49f4-5bde" name="Heavy Bolter" page="0" hidden="false" collective="false" type="upgrade">
+              <profiles/>
+              <rules/>
+              <infoLinks>
+                <infoLink id="a419-cfd6-b673-392d" hidden="false" targetId="e2b0-b9f1-6c38-584c" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="d440-86ad-8564-3278" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="8.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="0894-2bf1-058b-44f1" name="Heavy Flamer" hidden="false" collective="false" type="upgrade">
+              <profiles/>
+              <rules/>
+              <infoLinks>
+                <infoLink id="e2b7-26e6-1de0-5dc0" name="New InfoLink" hidden="false" targetId="2608-8425-4f4f-7f41" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="17.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups/>
+          <entryLinks/>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="e6f6-35b2-427f-f88e" name="Stat Damage (HS)" hidden="false" targetId="da25-46a9-4472-2e07" type="selectionEntry">
           <profiles/>
@@ -10577,15 +10855,7 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="5e6f-145c-f41c-f21a" name="New EntryLink" hidden="false" targetId="35c3-52e7-1ac4-04f2" type="selectionEntryGroup">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints/>
-          <categoryLinks/>
-        </entryLink>
-        <entryLink id="62f8-05ca-229f-ba32" name="New EntryLink" hidden="false" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup">
+        <entryLink id="62f8-05ca-229f-ba32" name="Pintle Mount" hidden="false" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -12539,7 +12809,261 @@
               <constraints/>
               <categoryLinks/>
               <selectionEntries/>
-              <selectionEntryGroups/>
+              <selectionEntryGroups>
+                <selectionEntryGroup id="6b4d-9418-2e20-c579" name="Hull Weapon" hidden="false" collective="false">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eea9-7204-3d69-68dd" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aac5-09f5-c6e1-772e" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                  <selectionEntries>
+                    <selectionEntry id="e590-456d-ef1a-12ee" name="Heavy Bolter" page="0" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="8d15-fe02-2e47-698a" hidden="false" targetId="e2b0-b9f1-6c38-584c" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b4a6-cc60-cedd-ba84" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="8.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry id="33f9-1987-5886-70bc" name="Lascannon" page="0" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="c2f8-6865-a992-a4da" hidden="false" targetId="f14a-07e5-5465-69cf" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b03f-f5a8-c16b-c1b5" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="20.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry id="de00-fa32-aac0-8735" name="Heavy Flamer" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="80d1-57c2-f538-9cc6" name="New InfoLink" hidden="false" targetId="2608-8425-4f4f-7f41" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints/>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="17.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <selectionEntryGroups/>
+                  <entryLinks/>
+                </selectionEntryGroup>
+                <selectionEntryGroup id="d8f0-aa0e-8226-5f5e" name="Pintle Mount" hidden="false" collective="false">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e7e5-6e56-5ecf-af82" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                  <selectionEntries>
+                    <selectionEntry id="cd9c-a2e6-26c3-96c7" name="Heavy Stubber" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="c821-3d88-2ade-89bd" name="New InfoLink" hidden="false" targetId="0031-0314-5b36-a220" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints/>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="4.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry id="c373-9d59-ead8-7744" name="Storm Bolter" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="6aaf-8865-7145-69b3" name="New InfoLink" hidden="false" targetId="505e-a5aa-edab-6d5b" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints/>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="pts" costTypeId="points" value="2.0"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <selectionEntryGroups/>
+                  <entryLinks/>
+                </selectionEntryGroup>
+                <selectionEntryGroup id="e42a-da07-c9a3-2492" name="Sponson Weapons" hidden="false" collective="false">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e69f-2a81-1efd-53ad" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                  <selectionEntries>
+                    <selectionEntry id="f10b-f4cb-74bb-c223" name="Heavy Bolters" page="0" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="e107-03ac-4c20-e1b4" hidden="false" targetId="e2b0-b9f1-6c38-584c" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="5f09-ccc5-ac5c-28cc" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="16.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry id="04cd-4db8-c2f3-7826" name="Heavy Flamers" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="5b0d-9752-db0e-9465" name="New InfoLink" hidden="false" targetId="2608-8425-4f4f-7f41" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints/>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="34.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry id="dffc-729a-7df9-943f" name="Multi-meltas" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="fb1e-1659-c266-fd71" name="New InfoLink" hidden="false" targetId="1768-d7b9-37ba-f3bf" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints/>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="40.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                    <selectionEntry id="cc18-3f66-cc85-b9e7" name="Plasma Cannons" hidden="false" collective="false" type="upgrade">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks>
+                        <infoLink id="0c50-d482-43e3-6750" name="New InfoLink" hidden="false" targetId="7983-8451-cdc3-ce7e" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                        <infoLink id="25d9-9ee9-9e47-1e53" name="New InfoLink" hidden="false" targetId="fbb2-f4cb-e47d-1d10" type="profile">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                        </infoLink>
+                      </infoLinks>
+                      <modifiers/>
+                      <constraints/>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="30.0"/>
+                        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <selectionEntryGroups/>
+                  <entryLinks/>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
               <entryLinks>
                 <entryLink id="75e6-e8ad-32e2-a50d" name="Hunter-killer missile" hidden="false" targetId="32bf-b117-4ecf-5165" type="selectionEntry">
                   <profiles/>
@@ -12750,8 +13274,17 @@
                   <profiles/>
                   <rules/>
                   <infoLinks/>
-                  <modifiers/>
-                  <constraints/>
+                  <modifiers>
+                    <modifier type="set" field="points" value="22">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups/>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ef40-c701-3710-feca" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8aac-8e47-137a-25a4" type="min"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
@@ -13084,7 +13617,7 @@
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
-            <selectionEntryGroup id="0b78-b58b-21d9-19f0" name="Hull Weapon" hidden="false" collective="false">
+            <selectionEntryGroup id="0b78-b58b-21d9-19f0" name="Hull Weapon" hidden="false" collective="false" defaultSelectionEntryId="91b6-f919-167e-6407">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -13826,11 +14359,17 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="4bda-c366-23f2-d0fc" name="New EntryLink" hidden="false" targetId="1f7e-32c4-61af-510f" type="selectionEntry">
+        <entryLink id="4bda-c366-23f2-d0fc" name="Demolisher cannon" hidden="false" targetId="1f7e-32c4-61af-510f" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="points" value="40">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f29-18eb-79a0-7db8" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e4b5-b28f-c6e1-ec3e" type="max"/>
@@ -14110,7 +14649,127 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
-      <selectionEntryGroups/>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="6cda-be49-f94c-6b6d" name="Hull Weapon" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="14c0-5813-9b4d-8505" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a484-caea-a764-a79c" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries>
+            <selectionEntry id="6c24-9311-9abd-51c1" name="Heavy Bolter" page="0" hidden="false" collective="false" type="upgrade">
+              <profiles/>
+              <rules/>
+              <infoLinks>
+                <infoLink id="03ae-e83b-1b07-39ad" hidden="false" targetId="e2b0-b9f1-6c38-584c" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="3301-cd1d-c40a-7e6a" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="8.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="4d50-d222-ab1c-dc9e" name="Heavy Flamer" hidden="false" collective="false" type="upgrade">
+              <profiles/>
+              <rules/>
+              <infoLinks>
+                <infoLink id="80aa-ffc5-6fd3-82a8" name="New InfoLink" hidden="false" targetId="2608-8425-4f4f-7f41" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="17.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups/>
+          <entryLinks/>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="9cf1-29f9-6777-f2a3" name="Pintle Mount" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4c6c-5232-3e18-ff50" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries>
+            <selectionEntry id="6e41-c28d-29d3-0f5d" name="Heavy Stubber" hidden="false" collective="false" type="upgrade">
+              <profiles/>
+              <rules/>
+              <infoLinks>
+                <infoLink id="77d6-a132-f42c-2892" name="New InfoLink" hidden="false" targetId="0031-0314-5b36-a220" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="4.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="681b-f11a-ef4a-cf1e" name="Storm Bolter" hidden="false" collective="false" type="upgrade">
+              <profiles/>
+              <rules/>
+              <infoLinks>
+                <infoLink id="d739-437d-c33e-0439" name="New InfoLink" hidden="false" targetId="505e-a5aa-edab-6d5b" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="2.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups/>
+          <entryLinks/>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="1ba1-a353-04c6-fdc6" name="Hunter-killer missile" hidden="false" targetId="32bf-b117-4ecf-5165" type="selectionEntry">
           <profiles/>
@@ -14120,6 +14779,14 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b53-2bdf-54f7-7228" type="max"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="6d75-d105-f2cb-2f62" name="Stat Damage (HS)" hidden="false" targetId="da25-46a9-4472-2e07" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -14211,7 +14878,7 @@
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="8264-71c6-5477-2f64" name="Hull Weapon" hidden="false" collective="false">
+        <selectionEntryGroup id="8264-71c6-5477-2f64" name="Hull Weapon" hidden="false" collective="false" defaultSelectionEntryId="68a1-83e0-322c-a183">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -14265,23 +14932,6 @@
               <entryLinks/>
               <costs>
                 <cost name="pts" costTypeId="points" value="17.0"/>
-                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="f492-081d-891d-ead5" name="Multi-melta" page="0" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="cdca-d1fc-b65c-a951" type="max"/>
-              </constraints>
-              <categoryLinks/>
-              <selectionEntries/>
-              <selectionEntryGroups/>
-              <entryLinks/>
-              <costs>
-                <cost name="pts" costTypeId="points" value="20.0"/>
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -14425,7 +15075,7 @@
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
-            <selectionEntryGroup id="5603-80af-c325-4082" name="Hull Weapon" hidden="false" collective="false">
+            <selectionEntryGroup id="5603-80af-c325-4082" name="Hull Weapon" hidden="false" collective="false" defaultSelectionEntryId="3303-1b47-da3f-b7f3">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -14952,11 +15602,17 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="4df9-d522-69fa-e2e1" name="New EntryLink" hidden="false" targetId="1f7e-32c4-61af-510f" type="selectionEntry">
+        <entryLink id="4df9-d522-69fa-e2e1" name="Demolisher cannon" hidden="false" targetId="1f7e-32c4-61af-510f" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="points" value="40">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b8d3-c21f-ef81-9660" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3874-e9e0-9d1c-d4c9" type="max"/>
@@ -15046,15 +15702,17 @@
               </characteristics>
             </profile>
           </profiles>
-          <rules/>
-          <infoLinks>
-            <infoLink id="4267-87e3-385b-c081" name="Smoke Launchers" hidden="false" targetId="c883-3078-1367-cc2c" type="profile">
+          <rules>
+            <rule id="25a3-20b2-b450-c2fc" name="Explodes!" hidden="false">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
-            </infoLink>
-            <infoLink id="6554-1239-e201-395f" name="Explodes" hidden="false" targetId="3541-94a7-a138-358b" type="rule">
+              <description>If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any embarked models disembark. On a 6 it explodes, and each unit within 3&quot; suffers 1 mortal wound.</description>
+            </rule>
+          </rules>
+          <infoLinks>
+            <infoLink id="4267-87e3-385b-c081" name="Smoke Launchers" hidden="false" targetId="c883-3078-1367-cc2c" type="profile">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -15219,7 +15877,7 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="f798-8c16-e640-929b" name="Laspistol and Chainsword" hidden="false" collective="true" type="upgrade">
+    <selectionEntry id="f798-8c16-e640-929b" name="Laspistol and Chainsword" hidden="false" collective="false" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks>
@@ -15372,11 +16030,17 @@
       </selectionEntries>
       <selectionEntryGroups/>
       <entryLinks>
-        <entryLink id="d22e-d425-c46b-4874" name="New EntryLink" hidden="false" targetId="ba62-f2c3-d7bb-4f5d" type="selectionEntry">
+        <entryLink id="d22e-d425-c46b-4874" name="Sniper rifle" hidden="false" targetId="ba62-f2c3-d7bb-4f5d" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="points" value="2">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e464-f3f8-0f5c-27d3" type="max"/>
           </constraints>
@@ -15509,11 +16173,17 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="40ae-6101-8b54-4a7a" name="New EntryLink" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+        <entryLink id="40ae-6101-8b54-4a7a" name="Heavy bolter" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="points" value="8">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="29ae-6214-81bd-629a" type="max"/>
           </constraints>
