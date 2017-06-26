@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="8" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="9" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -39,20 +39,8 @@
     <profileType id="ae70-4738-0161-bec0" name="Psychic Power">
       <characteristicTypes>
         <characteristicType id="5ffd-b800-c317-532a" name="Warp Charge"/>
-        <characteristicType id="f04c-a782-d794-ddad" name="Power Category"/>
         <characteristicType id="fd64-cbc4-94de-24cc" name="Range"/>
         <characteristicType id="ad96-dfa4-b4ed-656d" name="Details"/>
-      </characteristicTypes>
-    </profileType>
-    <profileType id="9c33-b0c8-74bd-e5a7" name="Psychic Power (Attack)">
-      <characteristicTypes>
-        <characteristicType id="c1b6-4261-dee4-923a" name="Warp Charge"/>
-        <characteristicType id="668e-d504-8244-7422" name="Power Category"/>
-        <characteristicType id="5bf6-378a-0cb7-b079" name="Range"/>
-        <characteristicType id="12da-9b3e-f37b-bc35" name="Strength"/>
-        <characteristicType id="10b5-aa5b-ccde-79cc" name="AP"/>
-        <characteristicType id="20e7-cbcb-1781-a732" name="Type"/>
-        <characteristicType id="a812-390d-dff6-dabd" name="Details"/>
       </characteristicTypes>
     </profileType>
     <profileType id="5f4f-ea74-0630-4afe" name="Wound Track">
@@ -10838,7 +10826,6 @@
       <modifiers/>
       <characteristics>
         <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="5"/>
-        <characteristic name="Power Category" characteristicTypeId="f04c-a782-d794-ddad"/>
         <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="18&quot;"/>
         <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Smite has a warp charge value of 5. If manifested, the closest visible enemy unit within 18&quot; of the psyker suffers D3 mortal wounds (pg 181). If the result of the Psychic test was more than 10 the target suffers D6 mortal wounds instead."/>
       </characteristics>
