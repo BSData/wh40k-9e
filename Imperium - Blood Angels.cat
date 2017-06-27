@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="eb0f-c144-a282-8bdc" name="Imperium - Blood Angels" book="Index: Imperium 1" revision="5" battleScribeVersion="2.01" authorName="Crowbar90" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="eb0f-c144-a282-8bdc" name="Imperium - Blood Angels" book="Index: Imperium 1" revision="6" battleScribeVersion="2.01" authorName="Crowbar90" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -2318,7 +2318,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="e8a0-b612-2700-aab6" name="New InfoLink" hidden="false" targetId="cf04-2c83-f5e1-9fb4" type="profile">
+        <infoLink id="e8a0-b612-2700-aab6" name="Rites of Battle" hidden="false" targetId="cf04-2c83-f5e1-9fb4" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3736,7 +3736,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="bb3c-1e8c-7d53-e878" name="New InfoLink" hidden="false" targetId="5224-6acc-8f03-8727" type="profile">
+        <infoLink id="bb3c-1e8c-7d53-e878" name="Astartes Banner" hidden="false" targetId="5224-6acc-8f03-8727" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6932,31 +6932,67 @@
     </selectionEntry>
     <selectionEntry id="3043-848f-e165-d00e" name="Sanguinary Discipline" hidden="false" collective="false" type="upgrade">
       <profiles>
-        <profile id="a25f-8f46-f4df-654d" name="Sanguinary 1 - Blood Boil" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+        <profile id="a25f-8f46-f4df-654d" name="Sanguinary 1 - Blood Boil" hidden="false" profileTypeId="ae70-4738-0161-bec0" profileTypeName="Psychic Power">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Blood boil has a warp charge value of 5. If manifested, select a visible enemy unit within 18&quot; of the psyker and roll three dice. The target suffers a mortal wound for each result that equals or exceeds its Toughness characteristic."/>
+            <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="5"/>
+            <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="18&quot;"/>
+            <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Select a visible enemy unit within 18&quot; of the psyker and roll three dice. The target suffers a mortal wound for each result that equals or exceeds its Toughness characteristic."/>
           </characteristics>
         </profile>
-        <profile id="8076-2623-1ff0-badc" name="Sanguinary 2 - Shield of Sanguinius" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+        <profile id="8076-2623-1ff0-badc" name="Sanguinary 2 - Shield of Sanguinius" hidden="false" profileTypeId="ae70-4738-0161-bec0" profileTypeName="Psychic Power">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="ad96-dfa4-b4ed-656d" value="Select a friendly &lt;b&gt;FLESH TEARERS&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has a 4+ invulnerable save.">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc53-ab33-e8f1-679b" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="ad96-dfa4-b4ed-656d" value="Select a friendly &lt;b&gt;BLOOD ANGELS&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has a 4+ invulnerable save.">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7d8-a545-2f41-e170" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Shield of Sanguinius has a warp charge value of 6. If manifested, select a friendly &lt;b&gt;BLOOD ANGELS&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has a 4+ invulnerable save."/>
+            <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="6"/>
+            <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="12&quot;"/>
+            <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Select a friendly &lt;b&gt;&amp;lt;CHAPTER&amp;gt;&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has a 4+ invulnerable save."/>
           </characteristics>
         </profile>
-        <profile id="970b-a55e-4672-3edc" name="Sanguinary 3 - Unleash Rage" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+        <profile id="970b-a55e-4672-3edc" name="Sanguinary 3 - Unleash Rage" hidden="false" profileTypeId="ae70-4738-0161-bec0" profileTypeName="Psychic Power">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="ad96-dfa4-b4ed-656d" value="Select a friendly &lt;b&gt;FLESH TEARERS&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has +1 Attack.">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc53-ab33-e8f1-679b" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="ad96-dfa4-b4ed-656d" value="Select a friendly &lt;b&gt;BLOOD ANGELS&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has +1 Attack.">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7d8-a545-2f41-e170" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Unleash Rage has a warp charge value of 6. If manifested, select a friendly &lt;b&gt;BLOOD ANGELS&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has +1 Attack."/>
+            <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="6"/>
+            <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="12&quot;"/>
+            <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Select a friendly &lt;b&gt;&amp;lt;CHAPTER&amp;gt;&lt;/b&gt; unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit has +1 Attack."/>
           </characteristics>
         </profile>
       </profiles>
@@ -6981,9 +7017,9 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="This model can attempt to manifest two psychic powers in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the Smite power and two psychic powers from the Sanguinary discipline."/>
-            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46"/>
+            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
+            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two psychic powers from the Sanguinary discipline"/>
             <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b"/>
           </characteristics>
         </profile>
@@ -7010,7 +7046,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="4f7e-c88f-5003-ce4a" name="New InfoLink" hidden="false" targetId="1994-f6f7-58af-6fca" type="profile">
+        <infoLink id="4f7e-c88f-5003-ce4a" name="Psychic Hood" hidden="false" targetId="1994-f6f7-58af-6fca" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7265,10 +7301,10 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="This model can attempt to manifest two psychic powers in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the Smite power and two psychic powers from the Sanguinary discipline."/>
-            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46"/>
-            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b"/>
+            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
+            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two psychic powers from the Sanguinary discipline"/>
+            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
       </profiles>
@@ -7292,7 +7328,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="d4ed-61fe-49ab-eae3" name="New InfoLink" hidden="false" targetId="4243-5016-c4d9-2b6b" type="profile">
+        <infoLink id="d4ed-61fe-49ab-eae3" name="Teleport Strike" hidden="false" targetId="4243-5016-c4d9-2b6b" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7511,10 +7547,10 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="This model can attempt to manifest two psychic powers in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the Smite power and two psychic powers from the Sanguinary discipline."/>
-            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46"/>
-            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b"/>
+            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
+            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two psychic powers from the Sanguinary discipline"/>
+            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
       </profiles>
@@ -8990,7 +9026,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="d59a-cde9-44b4-8c81" name="New InfoLink" hidden="false" targetId="1311-f5d2-41b3-df7a" type="profile">
+        <infoLink id="d59a-cde9-44b4-8c81" name="Sanguinary Novitiate" hidden="false" targetId="1311-f5d2-41b3-df7a" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -14071,10 +14107,10 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="This model can attempt to manifest two psychic powers in each friendly Psychic phase, and attempt to deny one psychic power in each enemy Psychic phase. It knows the Smite power and two psychic powers from the Sanguinary discipline."/>
-            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46"/>
-            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b"/>
+            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
+            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two psychic powers from the Sanguinary discipline"/>
+            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
         <profile id="2f17-f189-0537-cc10" name="Explodes" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -14305,10 +14341,10 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="This model can attempt to manifest two psychic powers in each friendly Psychic phase, and attempt to deny two psychic powers in each enemy Psychic phase. It knows the Smite power and three psychic powers from the Sanguinary discipline."/>
-            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46"/>
-            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b"/>
+            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
+            <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="2"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and three psychic powers from the Sanguinary discipline"/>
+            <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
         <profile id="b29b-d431-5d1e-0d7e" name="Lord of Death" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -14323,7 +14359,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="a3bc-0b6c-d618-5b86" name="New InfoLink" hidden="false" targetId="a569-ef87-383b-aa06" type="profile">
+        <infoLink id="a3bc-0b6c-d618-5b86" name="Chief Librarian Mephiston" hidden="false" targetId="a569-ef87-383b-aa06" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -15019,13 +15055,13 @@
             </modifier>
           </modifiers>
         </infoLink>
-        <infoLink id="d41b-995b-2e81-4148" name="New InfoLink" hidden="false" targetId="476b-ab90-c1b2-0c9d" type="profile">
+        <infoLink id="d41b-995b-2e81-4148" name="Narthecium" hidden="false" targetId="476b-ab90-c1b2-0c9d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="8106-a127-ce00-725b" name="New InfoLink" hidden="false" targetId="5985-07a2-a36f-caa3" type="profile">
+        <infoLink id="8106-a127-ce00-725b" name="Blood Chalice" hidden="false" targetId="5985-07a2-a36f-caa3" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -15621,13 +15657,42 @@
     </selectionEntry>
     <selectionEntry id="316a-4885-0888-7e6c" name="Sanguinary Guard Ancient" hidden="false" collective="false" type="model">
       <profiles>
-        <profile id="95fc-8858-dc67-ba23" name="Blood Angels Chapter Banner" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+        <profile id="95fc-8858-dc67-ba23" name="Chapter Banner" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="name" value="Blood Angels Chapter Banner">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7d8-a545-2f41-e170" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="name" value="Flesh Tearers Chapter Banner">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc53-ab33-e8f1-679b" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="Friendly &lt;b&gt;BLOOD ANGELS&lt;/b&gt; units within 6&quot; of a Blood Angels Chapter Banner do not need to take Morale tests and re-roll wounds roll of 1 in the Fight phase.">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7d8-a545-2f41-e170" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="Friendly &lt;b&gt;FLESH TEARERS&lt;/b&gt; units within 6&quot; of a Flesh Tearers Chapter Banner do not need to take Morale tests and re-roll wounds roll of 1 in the Fight phase.">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc53-ab33-e8f1-679b" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Friendly &lt;b&gt;&amp;lt;CHAPTER&amp;gt;&lt;/b&gt; units within 6&quot; of a Blood Angels Chapter Banner do not need to take Morale tests and re-roll wounds roll of 1 in the Fight phase."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Friendly &lt;b&gt;&amp;lt;CHAPTER&amp;gt;&lt;/b&gt; units within 6&quot; of a Chapter Banner do not need to take Morale tests and re-roll wounds roll of 1 in the Fight phase."/>
           </characteristics>
         </profile>
       </profiles>
