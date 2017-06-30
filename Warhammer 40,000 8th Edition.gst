@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="9" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="11" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -62,6 +62,18 @@
         <characteristicType id="13fc-b29b-31f2-ab9f" name="A"/>
         <characteristicType id="00ca-f8b8-876d-b705" name="Ld"/>
         <characteristicType id="c0df-df94-abd7-e8d3" name="Save"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="50ea-3b64-d9ae-0e3f" name="Stat Damage - BS">
+      <characteristicTypes>
+        <characteristicType id="ada9-1c1d-fa2a-3803" name="Remaining W"/>
+        <characteristicType id="b7a6-b64d-4339-eb87" name="BS"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="fd0b-e682-0b11-80a3" name="Stat Damage - Void Shield">
+      <characteristicTypes>
+        <characteristicType id="9ec2-b3fe-e846-c494" name="Remaining W"/>
+        <characteristicType id="a945-b3ab-8d35-4e94" name="Void Shield"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -1800,6 +1812,13 @@
           <modifiers/>
           <constraints/>
         </categoryLink>
+        <categoryLink id="90f5-7b12-fac7-28b8" name="New CategoryLink" hidden="false" targetId="8172-12c9-8092-0756" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </entryLink>
     <entryLink id="7c3e-a6e6-db7b-0c75" name="Fortress of Redemption" hidden="false" targetId="8300-7ced-aafd-2a27" type="selectionEntry">
@@ -1848,6 +1867,13 @@
           <modifiers/>
           <constraints/>
         </categoryLink>
+        <categoryLink id="d14f-6772-dac9-9cf1" name="New CategoryLink" hidden="false" targetId="8172-12c9-8092-0756" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </entryLink>
     <entryLink id="8b8d-e363-fe4f-6af3" name="Imperial Defence Line" hidden="false" targetId="0f73-97f2-b832-f6d0" type="selectionEntry">
@@ -1858,6 +1884,13 @@
       <constraints/>
       <categoryLinks>
         <categoryLink id="8b8d-e363-fe4f-6af3-d713cda3-5d0f-40d8-b621-69233263ec2a" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="1bb8-5b36-9eff-0d13" name="New CategoryLink" hidden="false" targetId="8172-12c9-8092-0756" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1912,6 +1945,13 @@
           <modifiers/>
           <constraints/>
         </categoryLink>
+        <categoryLink id="e2c0-267d-9059-79e2" name="New CategoryLink" hidden="false" targetId="8172-12c9-8092-0756" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </entryLink>
     <entryLink id="fa72-798c-d3d3-e55a" name="Void Shield Generator" hidden="false" targetId="bbd4-5f41-35d1-6c5f" type="selectionEntry">
@@ -1936,7 +1976,15 @@
       <infoLinks/>
       <modifiers/>
       <constraints/>
-      <categoryLinks/>
+      <categoryLinks>
+        <categoryLink id="c48d-e8d1-ecce-c4b9" name="New CategoryLink" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
     </entryLink>
     <entryLink id="5bea-6a85-7227-9afd" name="Primus Redoubt" hidden="false" targetId="b801-d1d1-7c34-facf" type="selectionEntry">
       <profiles/>
@@ -1944,7 +1992,15 @@
       <infoLinks/>
       <modifiers/>
       <constraints/>
-      <categoryLinks/>
+      <categoryLinks>
+        <categoryLink id="c2cd-8939-c65f-49b4" name="New CategoryLink" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
     </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
@@ -1952,25 +2008,19 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="4ae0-157d-0f63-5531" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="4ae0-157d-0f63-5531" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="edfb-3235-b9fe-8cf7" name="Automated Weapons (Gun Emplacement)" hidden="false" targetId="57f6-edd9-6170-5c91" type="profile">
+        <infoLink id="45f3-1792-1bdb-72fb" name="Defence Line" hidden="false" targetId="bf23-9a02-99b4-5709" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="45f3-1792-1bdb-72fb" name="New InfoLink" hidden="false" targetId="bf23-9a02-99b4-5709" type="profile">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-        </infoLink>
-        <infoLink id="238a-f756-6edf-3af8" name="New InfoLink" hidden="false" targetId="c60f-7b10-88fd-9eba" type="profile">
+        <infoLink id="238a-f756-6edf-3af8" name="Static Defence Network" hidden="false" targetId="c60f-7b10-88fd-9eba" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2053,7 +2103,14 @@
             </profile>
           </profiles>
           <rules/>
-          <infoLinks/>
+          <infoLinks>
+            <infoLink id="e1b5-aeea-1332-2ba6" name="Automated Weapons (Gun Emplacement)" hidden="false" targetId="57f6-edd9-6170-5c91" type="profile">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+            </infoLink>
+          </infoLinks>
           <modifiers/>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7531-de50-0a82-c81a" type="max"/>
@@ -2082,7 +2139,7 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="143e-c847-95e7-8941" name="New EntryLink" hidden="false" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
+                <entryLink id="143e-c847-95e7-8941" name="Icarus Lascannon" hidden="false" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -2090,7 +2147,7 @@
                   <constraints/>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="3f88-b691-eea1-9a21" name="New EntryLink" hidden="false" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
+                <entryLink id="3f88-b691-eea1-9a21" name="Quad-gun" hidden="false" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -2137,19 +2194,19 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="cbf3-33ac-73e9-50c7" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="cbf3-33ac-73e9-50c7" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="769e-c3f8-d4d9-8c25" name="New InfoLink" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile">
+        <infoLink id="769e-c3f8-d4d9-8c25" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="d1b0-0bbd-8997-301b" name="New InfoLink" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
+        <infoLink id="d1b0-0bbd-8997-301b" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2350,25 +2407,25 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="b11a-a139-6119-52ed" name="New InfoLink" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
+        <infoLink id="b11a-a139-6119-52ed" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0742-2d6a-ef9a-1b79" name="New InfoLink" hidden="false" targetId="429b-91d2-8356-7150" type="profile">
+        <infoLink id="0742-2d6a-ef9a-1b79" name="Magazine Explosion" hidden="false" targetId="429b-91d2-8356-7150" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="84d5-245f-1b88-9f78" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="84d5-245f-1b88-9f78" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="3561-f63b-9ff0-4d7b" name="New InfoLink" hidden="false" targetId="220a-170b-5fd7-36f2" type="profile">
+        <infoLink id="3561-f63b-9ff0-4d7b" name="Fire Points (10)" hidden="false" targetId="220a-170b-5fd7-36f2" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2436,7 +2493,7 @@
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="ad36-cc73-129c-b036" name="New EntryLink" hidden="false" targetId="3ee3-74ec-d970-9b43" type="selectionEntry">
+            <entryLink id="ad36-cc73-129c-b036" name="Punisher Gatling Cannon" hidden="false" targetId="3ee3-74ec-d970-9b43" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2446,7 +2503,7 @@
               </constraints>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="4757-3df7-2d72-9545" name="New EntryLink" hidden="false" targetId="1d7b-4f46-b77b-ead1" type="selectionEntry">
+            <entryLink id="4757-3df7-2d72-9545" name="Battle cannon" hidden="false" targetId="1d7b-4f46-b77b-ead1" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2456,7 +2513,7 @@
               </constraints>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="fb25-ec0f-c484-622b" name="New EntryLink" hidden="false" targetId="76b1-73c7-7aef-26d3" type="selectionEntry">
+            <entryLink id="fb25-ec0f-c484-622b" name="Quad Icarus Lascannon" hidden="false" targetId="76b1-73c7-7aef-26d3" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2477,7 +2534,7 @@
     </selectionEntry>
     <selectionEntry id="8300-7ced-aafd-2a27" name="Fortress of Redemption" book="" page="" hidden="false" collective="false" type="model">
       <profiles>
-        <profile id="a9bb-cfc7-e595-0252" name="Fortress of Redemption" book="Index: Imperium 1" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+        <profile id="a9bb-cfc7-e595-0252" name="Fortress of Redemption" book="Index: Imperium 1" page="126" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2494,40 +2551,34 @@
             <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
           </characteristics>
         </profile>
-        <profile id="6c91-1bed-eb98-ebba" name="Fortress of Redemption (1)" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+        <profile id="6c91-1bed-eb98-ebba" name="Fortress of Redemption (1)" hidden="false" profileTypeId="50ea-3b64-d9ae-0e3f" profileTypeName="Stat Damage - BS">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="21-30+"/>
-            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="5+"/>
-            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa"/>
-            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba"/>
+            <characteristic name="Remaining W" characteristicTypeId="ada9-1c1d-fa2a-3803" value="21-30+"/>
+            <characteristic name="BS" characteristicTypeId="b7a6-b64d-4339-eb87" value="5+"/>
           </characteristics>
         </profile>
-        <profile id="9863-71f1-397f-a7ce" name="Fortress of Redemption (2)" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+        <profile id="9863-71f1-397f-a7ce" name="Fortress of Redemption (2)" hidden="false" profileTypeId="50ea-3b64-d9ae-0e3f" profileTypeName="Stat Damage - BS">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="11-20"/>
-            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6+"/>
-            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa"/>
-            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba"/>
+            <characteristic name="Remaining W" characteristicTypeId="ada9-1c1d-fa2a-3803" value="11-20"/>
+            <characteristic name="BS" characteristicTypeId="b7a6-b64d-4339-eb87" value="6+"/>
           </characteristics>
         </profile>
-        <profile id="562b-8464-deb7-55ab" name="Fortress of Redemption (3)" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+        <profile id="562b-8464-deb7-55ab" name="Fortress of Redemption (3)" hidden="false" profileTypeId="50ea-3b64-d9ae-0e3f" profileTypeName="Stat Damage - BS">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="1-10"/>
-            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="7+"/>
-            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa"/>
-            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba"/>
+            <characteristic name="Remaining W" characteristicTypeId="ada9-1c1d-fa2a-3803" value="1-10"/>
+            <characteristic name="BS" characteristicTypeId="b7a6-b64d-4339-eb87" value="7+"/>
           </characteristics>
         </profile>
         <profile id="cf90-f8df-224e-6333" name="Fortress of Redemption" hidden="false" profileTypeId="b3a8-0452-7436-44d1" profileTypeName="Transport">
@@ -2632,7 +2683,7 @@
       </selectionEntries>
       <selectionEntryGroups/>
       <entryLinks>
-        <entryLink id="1450-a5d3-3532-acca" name="New EntryLink" hidden="false" targetId="2e50-f562-c0df-3e83" type="selectionEntry">
+        <entryLink id="1450-a5d3-3532-acca" name="Twin Icarus Lascannon" hidden="false" targetId="2e50-f562-c0df-3e83" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2643,7 +2694,7 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="fffa-4525-6695-92fe" name="New EntryLink" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+        <entryLink id="fffa-4525-6695-92fe" name="Heavy bolter" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2690,25 +2741,25 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="8307-c6dd-a354-b880" name="New InfoLink" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
+        <infoLink id="8307-c6dd-a354-b880" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="8598-082d-0393-627b" name="New InfoLink" hidden="false" targetId="220a-170b-5fd7-36f2" type="profile">
+        <infoLink id="8598-082d-0393-627b" name="Fire Points (10)" hidden="false" targetId="220a-170b-5fd7-36f2" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0d23-67e2-23ad-bf28" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="0d23-67e2-23ad-bf28" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="808f-e911-b586-909f" name="New InfoLink" hidden="false" targetId="429b-91d2-8356-7150" type="profile">
+        <infoLink id="808f-e911-b586-909f" name="Magazine Explosion" hidden="false" targetId="429b-91d2-8356-7150" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2768,7 +2819,7 @@
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="852a-14a5-5ed0-62f4" name="New EntryLink" hidden="false" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
+            <entryLink id="852a-14a5-5ed0-62f4" name="Icarus Lascannon" hidden="false" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2776,7 +2827,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="6552-c24e-97a5-afe9" name="New EntryLink" hidden="false" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
+            <entryLink id="6552-c24e-97a5-afe9" name="Quad-gun" hidden="false" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2788,11 +2839,17 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="e9d2-249f-cbc1-de00" name="New EntryLink" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+        <entryLink id="e9d2-249f-cbc1-de00" name="Heavy bolter" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="points" value="8">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d943-3c7b-91a2-5609" type="min"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c578-c926-4646-944f" type="max"/>
@@ -2836,7 +2893,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="91f3-2a84-82db-9301" name="New InfoLink" hidden="false" targetId="e433-6678-6be1-355c" type="profile">
+        <infoLink id="91f3-2a84-82db-9301" name="Fire Points (5)" hidden="false" targetId="e433-6678-6be1-355c" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2848,13 +2905,13 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0aea-5296-9f61-7e62" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="0aea-5296-9f61-7e62" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="a56d-bc73-e4ad-3efe" name="New InfoLink" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
+        <infoLink id="a56d-bc73-e4ad-3efe" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2921,7 +2978,7 @@
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="37d7-e794-47f7-5795" name="New EntryLink" hidden="false" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
+            <entryLink id="37d7-e794-47f7-5795" name="Icarus Lascannon" hidden="false" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2929,7 +2986,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="1fd3-bc12-ddc5-6c04" name="New EntryLink" hidden="false" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
+            <entryLink id="1fd3-bc12-ddc5-6c04" name="Quad-gun" hidden="false" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2969,7 +3026,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="92ac-b485-338f-accd" name="New InfoLink" hidden="false" targetId="c60f-7b10-88fd-9eba" type="profile">
+        <infoLink id="92ac-b485-338f-accd" name="Static Defence Network" hidden="false" targetId="c60f-7b10-88fd-9eba" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3127,19 +3184,19 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="43e7-2daa-522c-c250" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="43e7-2daa-522c-c250" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="90c0-f1f9-e26a-1ddf" name="New InfoLink" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
+        <infoLink id="90c0-f1f9-e26a-1ddf" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="fc09-fde6-e2bb-a8d2" name="New InfoLink" hidden="false" targetId="220a-170b-5fd7-36f2" type="profile">
+        <infoLink id="fc09-fde6-e2bb-a8d2" name="Fire Points (10)" hidden="false" targetId="220a-170b-5fd7-36f2" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3209,7 +3266,7 @@
     </selectionEntry>
     <selectionEntry id="5cdd-edbb-07c3-0ba5" name="Skyshield Landing Pad" book="Planetary Onslaught" page="101" hidden="false" collective="false" type="model">
       <profiles>
-        <profile id="9d4b-230d-876c-b3f4" name="Skyshield Landing Pad" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+        <profile id="9d4b-230d-876c-b3f4" name="Skyshield Landing Pad" book="Index: Imperium 2" page="137" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3238,7 +3295,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="a8fe-56de-deb2-5c71" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="a8fe-56de-deb2-5c71" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3296,16 +3353,33 @@
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model&apos;s weapons can only target the nearest visible enemy. Quad Icarus Lascannons can instead choose to target the nearest visible enemy that can FLY. In either case, if two units are equally close, you may choose which is targeted."/>
           </characteristics>
         </profile>
+        <profile id="4e2c-1874-14f7-56d8" name="Vengeance Weapon Battery" book="Index: Imperium 2" page="132" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="-"/>
+            <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="-"/>
+            <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="5+"/>
+            <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="-"/>
+            <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="8"/>
+            <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="10"/>
+            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="-"/>
+            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="-"/>
+            <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="9ff0-e1ea-d6b4-f945" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="9ff0-e1ea-d6b4-f945" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="02a2-99ca-97cb-5db5" name="New InfoLink" hidden="false" targetId="429b-91d2-8356-7150" type="profile">
+        <infoLink id="02a2-99ca-97cb-5db5" name="Magazine Explosion" hidden="false" targetId="429b-91d2-8356-7150" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3385,7 +3459,7 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="7038-c503-0bab-3e60" name="New EntryLink" hidden="false" targetId="3ee3-74ec-d970-9b43" type="selectionEntry">
+                <entryLink id="7038-c503-0bab-3e60" name="Punisher Gatling Cannon" hidden="false" targetId="3ee3-74ec-d970-9b43" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -3393,7 +3467,7 @@
                   <constraints/>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="2306-0500-d9b4-79f6" name="New EntryLink" hidden="false" targetId="1d7b-4f46-b77b-ead1" type="selectionEntry">
+                <entryLink id="2306-0500-d9b4-79f6" name="Battle cannon" hidden="false" targetId="1d7b-4f46-b77b-ead1" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -3401,7 +3475,7 @@
                   <constraints/>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="65bd-a8d8-bfef-d1ea" name="New EntryLink" hidden="false" targetId="76b1-73c7-7aef-26d3" type="selectionEntry">
+                <entryLink id="65bd-a8d8-bfef-d1ea" name="Quad Icarus Lascannon" hidden="false" targetId="76b1-73c7-7aef-26d3" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -3445,40 +3519,34 @@
             <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="4+"/>
           </characteristics>
         </profile>
-        <profile id="847a-a937-6567-541a" name="Void Shield Generator (1)" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+        <profile id="847a-a937-6567-541a" name="Void Shield Generator (1)" hidden="false" profileTypeId="fd0b-e682-0b11-80a3" profileTypeName="Stat Damage - Void Shield">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="10-18+"/>
-            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="4++"/>
-            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa"/>
-            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba"/>
+            <characteristic name="Remaining W" characteristicTypeId="9ec2-b3fe-e846-c494" value="10-18+"/>
+            <characteristic name="Void Shield" characteristicTypeId="a945-b3ab-8d35-4e94" value="4++"/>
           </characteristics>
         </profile>
-        <profile id="72d0-785a-ba18-9ed7" name="Void Shield Generator (2)" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+        <profile id="72d0-785a-ba18-9ed7" name="Void Shield Generator (2)" hidden="false" profileTypeId="fd0b-e682-0b11-80a3" profileTypeName="Stat Damage - Void Shield">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="5-9"/>
-            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="5++"/>
-            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa"/>
-            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba"/>
+            <characteristic name="Remaining W" characteristicTypeId="9ec2-b3fe-e846-c494" value="5-9"/>
+            <characteristic name="Void Shield" characteristicTypeId="a945-b3ab-8d35-4e94" value="5++"/>
           </characteristics>
         </profile>
-        <profile id="9c8d-ca1c-60ad-6889" name="Void Shield Generator (3)" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+        <profile id="9c8d-ca1c-60ad-6889" name="Void Shield Generator (3)" hidden="false" profileTypeId="fd0b-e682-0b11-80a3" profileTypeName="Stat Damage - Void Shield">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="1-4"/>
-            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6++"/>
-            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa"/>
-            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba"/>
+            <characteristic name="Remaining W" characteristicTypeId="9ec2-b3fe-e846-c494" value="1-4"/>
+            <characteristic name="Void Shield" characteristicTypeId="a945-b3ab-8d35-4e94" value="6++"/>
           </characteristics>
         </profile>
         <profile id="c818-46ac-f5b8-cd39" name="Projected Void Shields" book="" page="" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82">
@@ -3493,7 +3561,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="90e2-05af-373e-19b7" name="New InfoLink" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="90e2-05af-373e-19b7" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3538,39 +3606,6 @@
       <costs>
         <cost name="pts" costTypeId="points" value="190.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="9.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="474a-96df-3847-a5d8" name="Twisted Copse" book="Planetary Onslaught" page="100" hidden="false" collective="false" type="model">
-      <profiles>
-        <profile id="40c0-a746-d960-4a11" name="Twisted Copse" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Wargear Item">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Difficult Terrain"/>
-          </characteristics>
-        </profile>
-      </profiles>
-      <rules>
-        <rule id="b432-c82f-e99d-88ba" name="Dense Thicket" hidden="false">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <description>With the exception of vehicles and monstrous creatures, a model on the base of a Citadel Wood model receives a 5+ cover save, regardless of whether or not it is 25% obscured.</description>
-        </rule>
-      </rules>
-      <infoLinks/>
-      <modifiers/>
-      <constraints/>
-      <categoryLinks/>
-      <selectionEntries/>
-      <selectionEntryGroups/>
-      <entryLinks/>
-      <costs>
-        <cost name="pts" costTypeId="points" value="10.0"/>
-        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="fd22-6743-2d4c-dd62" name="Flamer" hidden="false" collective="false" type="upgrade">
@@ -3643,13 +3678,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="1f9f-f5f3-6d03-4b6c" name="Plasma gun" hidden="false" targetId="03e5-60f2-4726-5cdd" type="profile">
+        <infoLink id="1f9f-f5f3-6d03-4b6c" name="Plasma gun, Standard" hidden="false" targetId="03e5-60f2-4726-5cdd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="24b5-23de-bf9d-1f41" name="Plasma gun" hidden="false" targetId="acb5-7b58-0d17-a33a" type="profile">
+        <infoLink id="24b5-23de-bf9d-1f41" name="Plasma gun, Supercharge" hidden="false" targetId="acb5-7b58-0d17-a33a" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3671,13 +3706,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="38e5-b1e6-b737-f20c" name="Plasma pistol" hidden="false" targetId="ff12-161a-ca85-339f" type="profile">
+        <infoLink id="38e5-b1e6-b737-f20c" name="Plasma pistol, Standard" hidden="false" targetId="ff12-161a-ca85-339f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="1514-2a22-0f8a-615c" name="Plasma pistol" hidden="false" targetId="5779-2931-fe17-2b27" type="profile">
+        <infoLink id="1514-2a22-0f8a-615c" name="Plasma pistol, Supercharge" hidden="false" targetId="5779-2931-fe17-2b27" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3809,13 +3844,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="61a4-e2d3-522d-c838" name="New InfoLink" hidden="false" targetId="fdd8-1a5f-5722-d6ee" type="profile">
+        <infoLink id="61a4-e2d3-522d-c838" name="Frag grenade" hidden="false" targetId="fdd8-1a5f-5722-d6ee" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="b250-1f2e-4904-0eb4" name="New InfoLink" hidden="false" targetId="3bf6-b4f7-6b2f-bb7b" type="profile">
+        <infoLink id="b250-1f2e-4904-0eb4" name="Krak grenade" hidden="false" targetId="3bf6-b4f7-6b2f-bb7b" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3859,13 +3894,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="6858-d52c-3eb7-eba5" name="Missile launcher" hidden="false" targetId="603d-3e82-38f6-c5c3" type="profile">
+        <infoLink id="6858-d52c-3eb7-eba5" name="Missile launcher, Frag missile" hidden="false" targetId="603d-3e82-38f6-c5c3" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="5e42-5359-431e-68e1" name="Missile launcher" hidden="false" targetId="8161-3b0e-8048-0e83" type="profile">
+        <infoLink id="5e42-5359-431e-68e1" name="Missile launcher, Krak missile" hidden="false" targetId="8161-3b0e-8048-0e83" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3887,13 +3922,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="73e7-91e7-a433-8ea5" name="Combi-flamer" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
+        <infoLink id="73e7-91e7-a433-8ea5" name="Boltgun" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="7405-10db-da34-a45f" name="Combi-flamer" hidden="false" targetId="cdc3-3459-a28c-a9cf" type="profile">
+        <infoLink id="7405-10db-da34-a45f" name="Flamer" hidden="false" targetId="cdc3-3459-a28c-a9cf" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3915,19 +3950,19 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="4d1d-71c8-ca26-be0c" name="Combi-plasma" book="" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
+        <infoLink id="4d1d-71c8-ca26-be0c" name="Boltgun" book="" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="643c-5084-06fe-4146" name="Combi-plasma" hidden="false" targetId="03e5-60f2-4726-5cdd" type="profile">
+        <infoLink id="643c-5084-06fe-4146" name="Plasma gun, Standard" hidden="false" targetId="03e5-60f2-4726-5cdd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="fa33-f484-5ce8-add5" name="Combi-plasma" hidden="false" targetId="acb5-7b58-0d17-a33a" type="profile">
+        <infoLink id="fa33-f484-5ce8-add5" name="Plasma gun, Supercharge" hidden="false" targetId="acb5-7b58-0d17-a33a" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3949,13 +3984,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="ed40-44ba-772a-dbe8" name="Combi-melta" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
+        <infoLink id="ed40-44ba-772a-dbe8" name="Boltgun" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="bac3-c746-cec0-e45d" name="Combi-melta" hidden="false" targetId="ec4c-1132-ddaf-db8e" type="profile">
+        <infoLink id="bac3-c746-cec0-e45d" name="Meltagun" hidden="false" targetId="ec4c-1132-ddaf-db8e" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4043,7 +4078,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="9e71-d43e-6873-f182" name="New InfoLink" hidden="false" targetId="7584-238f-3174-4529" type="profile">
+        <infoLink id="9e71-d43e-6873-f182" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4073,7 +4108,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="4520-d92c-87d9-6f07" name="New InfoLink" hidden="false" targetId="fa99-0671-b31a-22d7" type="profile">
+        <infoLink id="4520-d92c-87d9-6f07" name="Autocannon" hidden="false" targetId="fa99-0671-b31a-22d7" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4095,7 +4130,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="f8c7-9649-7ee6-49a3" name="New InfoLink" hidden="false" targetId="fcde-3e6a-e240-1157" type="profile">
+        <infoLink id="f8c7-9649-7ee6-49a3" name="Autogun" hidden="false" targetId="fcde-3e6a-e240-1157" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4117,7 +4152,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="a383-6bcd-79e0-591a" name="New InfoLink" hidden="false" targetId="2481-001b-00f9-501b" type="profile">
+        <infoLink id="a383-6bcd-79e0-591a" name="Autopistol" hidden="false" targetId="2481-001b-00f9-501b" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4139,7 +4174,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="2dd4-28a0-308d-971c" name="New InfoLink" hidden="false" targetId="bc34-f1ec-56fa-2829" type="profile">
+        <infoLink id="2dd4-28a0-308d-971c" name="Battle Cannon" hidden="false" targetId="bc34-f1ec-56fa-2829" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4183,7 +4218,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="428f-112d-d5f4-10c4" name="New InfoLink" hidden="false" targetId="07cb-70d7-15c3-5117" type="profile">
+        <infoLink id="428f-112d-d5f4-10c4" name="Shotgun" hidden="false" targetId="07cb-70d7-15c3-5117" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4381,13 +4416,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="e7d6-7efe-25b6-e4e0" name="Astartes grenade launcher" hidden="false" targetId="3735-f76f-f06c-1d71" type="profile">
+        <infoLink id="e7d6-7efe-25b6-e4e0" name="Astartes grenade launcher, Frag grenade" hidden="false" targetId="3735-f76f-f06c-1d71" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0997-a5c0-e849-4e85" name="Astartes grenade launcher" hidden="false" targetId="ac6d-bf1b-73d0-e6af" type="profile">
+        <infoLink id="0997-a5c0-e849-4e85" name="Astartes grenade launcher, Krak grenade" hidden="false" targetId="ac6d-bf1b-73d0-e6af" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4453,13 +4488,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="9286-0d89-f4ec-8118" name="Boltstorm gauntlet" hidden="false" targetId="a795-7f46-c006-36f9" type="profile">
+        <infoLink id="9286-0d89-f4ec-8118" name="Boltstorm gauntlet (melee)" hidden="false" targetId="a795-7f46-c006-36f9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="71c7-d9fb-ec4c-00d7" name="Boltstorm gauntlet" hidden="false" targetId="eb60-1a3c-5699-dadb" type="profile">
+        <infoLink id="71c7-d9fb-ec4c-00d7" name="Boltstorm gauntlet (shooting)" hidden="false" targetId="eb60-1a3c-5699-dadb" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4547,13 +4582,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="595c-c1ad-7cd6-9c2b" name="Combi-grav" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
+        <infoLink id="595c-c1ad-7cd6-9c2b" name="Boltgun" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="2143-e026-6475-051d" name="Combi-grav" hidden="false" targetId="a3d2-b0d7-70bc-695e" type="profile">
+        <infoLink id="2143-e026-6475-051d" name="Grav-gun" hidden="false" targetId="a3d2-b0d7-70bc-695e" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4597,13 +4632,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="69c4-b680-fdfe-de34" name="Cyclone missile launcher" hidden="false" targetId="5207-ef08-27f7-166d" type="profile">
+        <infoLink id="69c4-b680-fdfe-de34" name="Cyclone missile launcher, Frag missile" hidden="false" targetId="5207-ef08-27f7-166d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="fdc1-d95c-d771-04db" name="Cyclone missile launcher" hidden="false" targetId="d9ac-d70c-de0b-1897" type="profile">
+        <infoLink id="fdc1-d95c-d771-04db" name="Cyclone missile launcher, Krak missile" hidden="false" targetId="d9ac-d70c-de0b-1897" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4669,13 +4704,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="b857-9747-8727-c542" name="Disintegration combi-gun" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
+        <infoLink id="b857-9747-8727-c542" name="Boltgun" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="88e4-f507-cc1e-d266" name="Disintegration combi-gun" hidden="false" targetId="c86e-fd57-5a10-6b61" type="profile">
+        <infoLink id="88e4-f507-cc1e-d266" name="Disintegration gun" hidden="false" targetId="c86e-fd57-5a10-6b61" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4829,13 +4864,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="240d-2761-dd9a-ff79" name="Heavy plasma cannon" hidden="false" targetId="9272-c0bc-9bd7-e6e0" type="profile">
+        <infoLink id="240d-2761-dd9a-ff79" name="Heavy plasma cannon, Standard" hidden="false" targetId="9272-c0bc-9bd7-e6e0" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0656-5ec5-5535-4b75" name="Heavy plasma cannon" hidden="false" targetId="691d-11e2-ebfb-d4ad" type="profile">
+        <infoLink id="0656-5ec5-5535-4b75" name="Heavy plasma cannon, Supercharge" hidden="false" targetId="691d-11e2-ebfb-d4ad" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5033,7 +5068,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="818e-2cc9-fa01-4dae" name="Melta bombs" hidden="false" targetId="df40-a3f4-91be-f0fe" type="profile">
+        <infoLink id="818e-2cc9-fa01-4dae" name="Melta bomb" hidden="false" targetId="df40-a3f4-91be-f0fe" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5077,13 +5112,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="a0c1-a7e9-e251-3e0a" name="Plasma blaster" hidden="false" targetId="3937-3d5e-da78-af96" type="profile">
+        <infoLink id="a0c1-a7e9-e251-3e0a" name="Plasma blaster, Standard" hidden="false" targetId="3937-3d5e-da78-af96" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="c52c-a7f9-cdf1-f9bc" name="Plasma blaster" hidden="false" targetId="ae8f-c03c-8929-bedc" type="profile">
+        <infoLink id="c52c-a7f9-cdf1-f9bc" name="Plasma blaster, Supercharge" hidden="false" targetId="ae8f-c03c-8929-bedc" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5105,13 +5140,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="2278-2fe0-53cd-bec4" name="Plasma cannon" hidden="false" targetId="7983-8451-cdc3-ce7e" type="profile">
+        <infoLink id="2278-2fe0-53cd-bec4" name="Plasma cannon, Standard" hidden="false" targetId="7983-8451-cdc3-ce7e" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="3533-33d5-765f-1a0b" name="Plasma cannon" hidden="false" targetId="fbb2-f4cb-e47d-1d10" type="profile">
+        <infoLink id="3533-33d5-765f-1a0b" name="Plasma cannon, Supercharge" hidden="false" targetId="fbb2-f4cb-e47d-1d10" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5133,13 +5168,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="b4e8-8bed-1585-a12e" name="Plasma cutter" hidden="false" targetId="614c-c09f-c4b4-504f" type="profile">
+        <infoLink id="b4e8-8bed-1585-a12e" name="Plasma cutter, Standard" hidden="false" targetId="614c-c09f-c4b4-504f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="2843-69c5-0ff9-71f5" name="Plasma cutter" hidden="false" targetId="7eea-38c1-0f2c-ce0f" type="profile">
+        <infoLink id="2843-69c5-0ff9-71f5" name="Plasma cutter, Supercharge" hidden="false" targetId="7eea-38c1-0f2c-ce0f" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5167,7 +5202,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="600d-51ac-4e72-98a3" name="Plasma incinerator" hidden="false" targetId="bd7b-6edf-e450-9b4a" type="profile">
+        <infoLink id="600d-51ac-4e72-98a3" name="Plasma incinerator, Supercharge" hidden="false" targetId="bd7b-6edf-e450-9b4a" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5475,13 +5510,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="3be8-90fb-c838-397d" name="Twin heavy plasma cannon" hidden="false" targetId="3f51-8cbe-78c2-0b36" type="profile">
+        <infoLink id="3be8-90fb-c838-397d" name="Twin heavy plasma cannon, Standard" hidden="false" targetId="3f51-8cbe-78c2-0b36" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="d490-9625-1289-448e" name="Twin heavy plasma cannon" hidden="false" targetId="f2db-d913-989b-2841" type="profile">
+        <infoLink id="d490-9625-1289-448e" name="Twin heavy plasma cannon, Supercharge" hidden="false" targetId="f2db-d913-989b-2841" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5547,13 +5582,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="3275-afdc-4d56-864f" name="Twin plasma gun" hidden="false" targetId="f7ba-88b9-c604-cd89" type="profile">
+        <infoLink id="3275-afdc-4d56-864f" name="Twin plasma gun, Standard" hidden="false" targetId="f7ba-88b9-c604-cd89" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="1a87-46dc-7286-778b" name="Twin plasma gun" hidden="false" targetId="840a-7f35-72ad-baef" type="profile">
+        <infoLink id="1a87-46dc-7286-778b" name="Twin plasma gun, Supercharge" hidden="false" targetId="840a-7f35-72ad-baef" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5575,13 +5610,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="335c-b198-9014-aec2" name="Typhoon missile launcher" hidden="false" targetId="b1e6-7453-eb78-87c1" type="profile">
+        <infoLink id="335c-b198-9014-aec2" name="Typhoon missile launcher, Frag missile" hidden="false" targetId="b1e6-7453-eb78-87c1" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="508e-280a-4c63-9bcd" name="Typhoon missile launcher" hidden="false" targetId="aea5-27f0-dcde-06c1" type="profile">
+        <infoLink id="508e-280a-4c63-9bcd" name="Typhoon missile launcher, Krak missile" hidden="false" targetId="aea5-27f0-dcde-06c1" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -5993,7 +6028,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="776d-01df-8821-4288" name="Camo cloak" hidden="false" targetId="b754-9672-4689-cefb" type="profile">
+        <infoLink id="776d-01df-8821-4288" name="Camo cloaks" hidden="false" targetId="b754-9672-4689-cefb" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6089,7 +6124,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="44bd-0f76-dc31-c734" name="New InfoLink" hidden="false" targetId="7584-238f-3174-4529" type="profile">
+        <infoLink id="44bd-0f76-dc31-c734" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6111,7 +6146,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="5768-a1a7-3cf6-ebfe" name="New InfoLink" hidden="false" targetId="cb26-27b4-9393-a768" type="profile">
+        <infoLink id="5768-a1a7-3cf6-ebfe" name="Icarus Lascannon" hidden="false" targetId="cb26-27b4-9393-a768" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6133,7 +6168,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="dac7-a356-1c84-5f48" name="New InfoLink" hidden="false" targetId="2ea1-2be3-90c0-8d4c" type="profile">
+        <infoLink id="dac7-a356-1c84-5f48" name="Twin Icarus Lascannon" hidden="false" targetId="2ea1-2be3-90c0-8d4c" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6155,7 +6190,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="adbb-1be8-bbc4-4470" name="New InfoLink" hidden="false" targetId="d503-4001-e4b8-c804" type="profile">
+        <infoLink id="adbb-1be8-bbc4-4470" name="Quad Icarus Lascannon" hidden="false" targetId="d503-4001-e4b8-c804" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6177,7 +6212,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="1b8e-6544-9049-edf1" name="New InfoLink" hidden="false" targetId="3922-981d-ccb7-c169" type="profile">
+        <infoLink id="1b8e-6544-9049-edf1" name="Quad-gun" hidden="false" targetId="3922-981d-ccb7-c169" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6199,7 +6234,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="6ca4-d4c5-a1d0-a55b" name="New InfoLink" hidden="false" targetId="9fac-07c9-3595-784e" type="profile">
+        <infoLink id="6ca4-d4c5-a1d0-a55b" name="Punisher Gatling Cannon" hidden="false" targetId="9fac-07c9-3595-784e" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6242,7 +6277,7 @@
       <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
-        <entryLink id="c8f5-623f-463f-b2ac" name="New EntryLink" hidden="false" targetId="2b03-8d64-3711-f300" type="selectionEntry">
+        <entryLink id="c8f5-623f-463f-b2ac" name="Storm bolter" hidden="false" targetId="2b03-8d64-3711-f300" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6284,7 +6319,7 @@
       <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
-        <entryLink id="7d67-9ea9-8556-f509" name="New EntryLink" hidden="false" targetId="18bc-b335-29c2-2ae2" type="selectionEntry">
+        <entryLink id="7d67-9ea9-8556-f509" name="Heavy flamer" hidden="false" targetId="18bc-b335-29c2-2ae2" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6305,7 +6340,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="72f4-48ff-fafb-c876" name="New InfoLink" hidden="false" targetId="5821-6c45-8572-7e0e" type="profile">
+        <infoLink id="72f4-48ff-fafb-c876" name="Smite" hidden="false" targetId="5821-6c45-8572-7e0e" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6327,7 +6362,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="2981-f489-cd31-a518" name="New InfoLink" hidden="false" targetId="1797-9367-d9a5-1014" type="profile">
+        <infoLink id="2981-f489-cd31-a518" name="Condemnor Boltgun" hidden="false" targetId="1797-9367-d9a5-1014" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6349,7 +6384,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="fc3d-f3cb-763e-d3d5" name="New InfoLink" hidden="false" targetId="6420-416a-af53-4b63" type="profile">
+        <infoLink id="fc3d-f3cb-763e-d3d5" name="Inferno pistol" hidden="false" targetId="6420-416a-af53-4b63" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6371,7 +6406,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="d2cc-c90f-d914-1d5d" name="New InfoLink" hidden="false" targetId="f520-ae1d-d755-7ab9" type="profile">
+        <infoLink id="d2cc-c90f-d914-1d5d" name="Hot-shot Lasgun" hidden="false" targetId="f520-ae1d-d755-7ab9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6393,7 +6428,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="fe0d-3007-11c4-58d4" name="New InfoLink" hidden="false" targetId="badf-b321-5a04-54d8" type="profile">
+        <infoLink id="fe0d-3007-11c4-58d4" name="Needle Pistol" hidden="false" targetId="badf-b321-5a04-54d8" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6415,7 +6450,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="a6e5-7ee3-8027-42b7" name="New InfoLink" hidden="false" targetId="e353-0508-4f8f-d305" type="profile">
+        <infoLink id="a6e5-7ee3-8027-42b7" name="Nemesis Daemon Hammer" hidden="false" targetId="e353-0508-4f8f-d305" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6437,7 +6472,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="1afc-16ed-8a41-930f" name="New InfoLink" hidden="false" targetId="9873-9487-e878-7e93" type="profile">
+        <infoLink id="1afc-16ed-8a41-930f" name="Psyk-Out Grenades" hidden="false" targetId="9873-9487-e878-7e93" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6462,7 +6497,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="abae-b666-5842-f9d9" name="New InfoLink" hidden="false" targetId="d8c3-5b45-35a3-273d" type="profile">
+        <infoLink id="abae-b666-5842-f9d9" name="Psycannon" hidden="false" targetId="d8c3-5b45-35a3-273d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6647,7 +6682,7 @@
       </selectionEntries>
       <selectionEntryGroups/>
       <entryLinks>
-        <entryLink id="a55e-c5ec-5df2-5d7e" name="New EntryLink" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+        <entryLink id="a55e-c5ec-5df2-5d7e" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7037,7 +7072,7 @@
                           <constraints/>
                           <categoryLinks/>
                         </entryLink>
-                        <entryLink id="79cb-a134-18a4-e4b7" name="New EntryLink" hidden="false" targetId="90de-7b01-e401-888b" type="selectionEntry">
+                        <entryLink id="79cb-a134-18a4-e4b7" name="Lightning Claw" hidden="false" targetId="90de-7b01-e401-888b" type="selectionEntry">
                           <profiles/>
                           <rules/>
                           <infoLinks/>
@@ -7045,7 +7080,7 @@
                           <constraints/>
                           <categoryLinks/>
                         </entryLink>
-                        <entryLink id="80ac-03b1-531c-e6b0" name="New EntryLink" hidden="false" targetId="3292-34e6-f679-d5b9" type="selectionEntry">
+                        <entryLink id="80ac-03b1-531c-e6b0" name="Power axe" hidden="false" targetId="3292-34e6-f679-d5b9" type="selectionEntry">
                           <profiles/>
                           <rules/>
                           <infoLinks/>
@@ -7053,7 +7088,7 @@
                           <constraints/>
                           <categoryLinks/>
                         </entryLink>
-                        <entryLink id="a001-967d-61b9-189a" name="New EntryLink" hidden="false" targetId="f122-3720-fa32-4215" type="selectionEntry">
+                        <entryLink id="a001-967d-61b9-189a" name="Power fist" hidden="false" targetId="f122-3720-fa32-4215" type="selectionEntry">
                           <profiles/>
                           <rules/>
                           <infoLinks/>
@@ -7061,7 +7096,7 @@
                           <constraints/>
                           <categoryLinks/>
                         </entryLink>
-                        <entryLink id="ecd8-211c-0301-a22c" name="New EntryLink" hidden="false" targetId="6ea7-1195-7144-438e" type="selectionEntry">
+                        <entryLink id="ecd8-211c-0301-a22c" name="Power maul" hidden="false" targetId="6ea7-1195-7144-438e" type="selectionEntry">
                           <profiles/>
                           <rules/>
                           <infoLinks/>
@@ -7069,7 +7104,7 @@
                           <constraints/>
                           <categoryLinks/>
                         </entryLink>
-                        <entryLink id="ea9f-7612-2ab6-6530" name="New EntryLink" hidden="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
+                        <entryLink id="ea9f-7612-2ab6-6530" name="Power sword" hidden="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
                           <profiles/>
                           <rules/>
                           <infoLinks/>
@@ -7283,13 +7318,14 @@
                   <categoryLinks/>
                   <selectionEntries/>
                   <selectionEntryGroups>
-                    <selectionEntryGroup id="f509-f2a4-0c17-e285" name="Pistol Options" hidden="false" collective="false">
+                    <selectionEntryGroup id="f509-f2a4-0c17-e285" name="Pistol Options" hidden="false" collective="false" defaultSelectionEntryId="104c-f206-9967-9f9e">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
                       <modifiers/>
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="edf5-ca65-1c87-c1d9" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2336-69b8-d796-2d4e" type="min"/>
                       </constraints>
                       <categoryLinks/>
                       <selectionEntries/>
@@ -7383,7 +7419,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="9bc7-673e-b74e-d6b3" name="New InfoLink" hidden="false" targetId="d174-eb55-aaa6-d032" type="profile">
+        <infoLink id="9bc7-673e-b74e-d6b3" name="Lasgun" hidden="false" targetId="d174-eb55-aaa6-d032" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7405,7 +7441,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="304c-655d-71ac-6b1a" name="New InfoLink" hidden="false" targetId="f2b7-768f-a270-de64" type="profile">
+        <infoLink id="304c-655d-71ac-6b1a" name="Laspistol" hidden="false" targetId="f2b7-768f-a270-de64" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7537,7 +7573,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="1fad-df38-d957-a2c5" name="New InfoLink" hidden="false" targetId="7584-238f-3174-4529" type="profile">
+        <infoLink id="1fad-df38-d957-a2c5" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7567,7 +7603,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="2897-f3f7-3ec2-e6fa" name="New InfoLink" hidden="false" targetId="7584-238f-3174-4529" type="profile">
+        <infoLink id="2897-f3f7-3ec2-e6fa" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7715,13 +7751,13 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="0a0a-2a74-6bd1-0f7c" name="Astartes grenade launcher" hidden="false" targetId="3735-f76f-f06c-1d71" type="profile">
+        <infoLink id="0a0a-2a74-6bd1-0f7c" name="Astartes grenade launcher, Frag grenade" hidden="false" targetId="3735-f76f-f06c-1d71" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="04f6-2f20-fb2d-1f27" name="Astartes grenade launcher" hidden="false" targetId="ac6d-bf1b-73d0-e6af" type="profile">
+        <infoLink id="04f6-2f20-fb2d-1f27" name="Astartes grenade launcher, Krak grenade" hidden="false" targetId="ac6d-bf1b-73d0-e6af" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7749,7 +7785,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="2cf6-aaa4-6d7b-0d25" name="Plasma incinerator" hidden="false" targetId="bd7b-6edf-e450-9b4a" type="profile">
+        <infoLink id="2cf6-aaa4-6d7b-0d25" name="Plasma incinerator, Supercharge" hidden="false" targetId="bd7b-6edf-e450-9b4a" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8415,6 +8451,72 @@
         <cost name="pts" costTypeId="points" value="300.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="5871-1e0b-9891-f119" name="Combi-bolter" hidden="false" collective="true" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="5acb-b534-a0b2-2578" name="Combi-bolter" hidden="false" targetId="0655-6c08-6402-46bf" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name="pts" costTypeId="points" value="2.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="d309-0c16-de50-af5d" name="Power fist" hidden="false" collective="true" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="acdd-839c-83c2-b11d" name="Power fist" hidden="false" targetId="3520-0bb4-90f2-084b" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name="pts" costTypeId="points" value="20.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="d9b3-4b4e-714e-b467" name="Chainfist" hidden="false" collective="true" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="0cac-5996-b46d-1abf" name="Chainfist" hidden="false" targetId="8194-4688-65b3-f996" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name="pts" costTypeId="points" value="22.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="891c-fbf0-e426-2c15" name="Fallen Champion Equipment" hidden="false" collective="false">
@@ -8471,7 +8573,7 @@
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="f9fa-05df-9ccf-b481" name="New EntryLink" hidden="false" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry">
+            <entryLink id="f9fa-05df-9ccf-b481" name="Boltgun" hidden="false" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -8479,7 +8581,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="3791-d2eb-a678-2faa" name="New EntryLink" hidden="false" targetId="eba0-9fc6-5334-a390" type="selectionEntry">
+            <entryLink id="3791-d2eb-a678-2faa" name="Combi-bolter" hidden="false" targetId="eba0-9fc6-5334-a390" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -8487,7 +8589,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="9d4f-fd71-5da6-2fcf" name="New EntryLink" hidden="false" targetId="c6a1-e0c4-c1b1-dce1" type="selectionEntry">
+            <entryLink id="9d4f-fd71-5da6-2fcf" name="Combi-flamer" hidden="false" targetId="c6a1-e0c4-c1b1-dce1" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -8495,7 +8597,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="f314-a564-ff19-749a" name="New EntryLink" hidden="false" targetId="c445-e211-f316-5d83" type="selectionEntry">
+            <entryLink id="f314-a564-ff19-749a" name="Combi-melta" hidden="false" targetId="c445-e211-f316-5d83" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -8503,7 +8605,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="c993-68f0-d87a-a8af" name="New EntryLink" hidden="false" targetId="fdce-cdf7-21a9-f9ac" type="selectionEntry">
+            <entryLink id="c993-68f0-d87a-a8af" name="Combi-plasma" hidden="false" targetId="fdce-cdf7-21a9-f9ac" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -8511,7 +8613,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="91a0-b965-8224-e3f1" name="New EntryLink" hidden="false" targetId="90de-7b01-e401-888b" type="selectionEntry">
+            <entryLink id="91a0-b965-8224-e3f1" name="Lightning Claw" hidden="false" targetId="90de-7b01-e401-888b" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -8519,7 +8621,7 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="21e0-aea2-e598-3728" name="New EntryLink" hidden="false" targetId="7603-6241-ab8b-4603" type="selectionEntry">
+            <entryLink id="21e0-aea2-e598-3728" name="Lightning Claw (Pair)" hidden="false" targetId="7603-6241-ab8b-4603" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -8531,7 +8633,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="9054-6326-e008-fc81" name="New EntryLink" hidden="false" targetId="0334-f487-8229-0c1a" type="selectionEntry">
+        <entryLink id="9054-6326-e008-fc81" name="Bolt pistol" hidden="false" targetId="0334-f487-8229-0c1a" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8539,7 +8641,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="856a-8cc4-9fc3-20a0" name="New EntryLink" hidden="false" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry">
+        <entryLink id="856a-8cc4-9fc3-20a0" name="Chainsword" hidden="false" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8547,7 +8649,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="bed1-a2c0-0154-890a" name="New EntryLink" hidden="false" targetId="83be-1ba9-c326-4760" type="selectionEntry">
+        <entryLink id="bed1-a2c0-0154-890a" name="Plasma pistol" hidden="false" targetId="83be-1ba9-c326-4760" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8555,7 +8657,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="7d42-3b7c-8489-a063" name="New EntryLink" hidden="false" targetId="3292-34e6-f679-d5b9" type="selectionEntry">
+        <entryLink id="7d42-3b7c-8489-a063" name="Power axe" hidden="false" targetId="3292-34e6-f679-d5b9" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8563,7 +8665,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="30f0-a567-31bc-2379" name="New EntryLink" hidden="false" targetId="f122-3720-fa32-4215" type="selectionEntry">
+        <entryLink id="30f0-a567-31bc-2379" name="Power fist" hidden="false" targetId="f122-3720-fa32-4215" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8571,7 +8673,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="c670-88bd-834a-4ec0" name="New EntryLink" hidden="false" targetId="6ea7-1195-7144-438e" type="selectionEntry">
+        <entryLink id="c670-88bd-834a-4ec0" name="Power maul" hidden="false" targetId="6ea7-1195-7144-438e" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8579,7 +8681,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="9e10-013c-b4b6-3cb4" name="New EntryLink" hidden="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
+        <entryLink id="9e10-013c-b4b6-3cb4" name="Power sword" hidden="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
