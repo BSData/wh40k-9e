@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="11" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="14" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -68,12 +68,6 @@
       <characteristicTypes>
         <characteristicType id="ada9-1c1d-fa2a-3803" name="Remaining W"/>
         <characteristicType id="b7a6-b64d-4339-eb87" name="BS"/>
-      </characteristicTypes>
-    </profileType>
-    <profileType id="fd0b-e682-0b11-80a3" name="Stat Damage - Void Shield">
-      <characteristicTypes>
-        <characteristicType id="9ec2-b3fe-e846-c494" name="Remaining W"/>
-        <characteristicType id="a945-b3ab-8d35-4e94" name="Void Shield"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -3292,6 +3286,15 @@
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the start of your turn, if there are no enemy models within 1&quot; of the Skyshield Landing Pad, a friendly model within 1&quot; of it can change the Skyshield Landing Pad configuration to one of the following:  - Shielded: All models (friend or foe) that are on top of the Skyshield Landing Pad in this configuration receive a 5+ invulnerable save against any attacks made in the Shooting phase (unless the firing model is also on top of the Skyshield Landing Pad). Note, however, that the Skyshield Landing Pad itself does not receive an invulnerable save in this manner.  - Unfurled: Any friendly unit with the Flyer Battlefield Role that spends its entire turn on top of a Skyshield Landing Pad in this configuration regains D3 lost wounds at the end of the turn as a result of the landing pad&apos;s auto-repair systems."/>
           </characteristics>
         </profile>
+        <profile id="e98f-a12b-8266-2b17" name="Wrecked Landing Pad" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If a Skyshield Landing Pad is destroyed, do not remove the model. Instead, all of its other abilities cease to apply, and it is treated as ruins for the rest of the battle."/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
@@ -3519,43 +3522,13 @@
             <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="4+"/>
           </characteristics>
         </profile>
-        <profile id="847a-a937-6567-541a" name="Void Shield Generator (1)" hidden="false" profileTypeId="fd0b-e682-0b11-80a3" profileTypeName="Stat Damage - Void Shield">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="9ec2-b3fe-e846-c494" value="10-18+"/>
-            <characteristic name="Void Shield" characteristicTypeId="a945-b3ab-8d35-4e94" value="4++"/>
-          </characteristics>
-        </profile>
-        <profile id="72d0-785a-ba18-9ed7" name="Void Shield Generator (2)" hidden="false" profileTypeId="fd0b-e682-0b11-80a3" profileTypeName="Stat Damage - Void Shield">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="9ec2-b3fe-e846-c494" value="5-9"/>
-            <characteristic name="Void Shield" characteristicTypeId="a945-b3ab-8d35-4e94" value="5++"/>
-          </characteristics>
-        </profile>
-        <profile id="9c8d-ca1c-60ad-6889" name="Void Shield Generator (3)" hidden="false" profileTypeId="fd0b-e682-0b11-80a3" profileTypeName="Stat Damage - Void Shield">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <characteristics>
-            <characteristic name="Remaining W" characteristicTypeId="9ec2-b3fe-e846-c494" value="1-4"/>
-            <characteristic name="Void Shield" characteristicTypeId="a945-b3ab-8d35-4e94" value="6++"/>
-          </characteristics>
-        </profile>
         <profile id="c818-46ac-f5b8-cd39" name="Projected Void Shields" book="" page="" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="All models wholly within 12&quot; of a Void Shield Generator receive an invulnerable save against any attacks made in the Shooting phase (unless the firer is also wholly within 12&quot; of the Void Shield Generator). The value of the invulnerable save is shown on the damage table."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="All units wholly within 6&quot; of a Void Shield Generator receive a 5+ invulnerable save against any attacks made in the Shooting phase (unless the firing model is also within 6&quot; of the Void Shield Generator)."/>
           </characteristics>
         </profile>
       </profiles>
@@ -8957,12 +8930,12 @@
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="6"/>
-        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Pistol"/>
-        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466"/>
-        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484"/>
-        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410"/>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="6&quot;"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Pistol 1"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="3"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
       </characteristics>
     </profile>
     <profile id="f520-ae1d-d755-7ab9" name="Hot-shot Lasgun" book="BRB" page="" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48">
@@ -8971,12 +8944,12 @@
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="18"/>
-        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Rapid Fire"/>
-        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466"/>
-        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484"/>
-        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410"/>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="18&quot;"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Rapid Fire 1"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="3"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
       </characteristics>
     </profile>
     <profile id="f2b7-768f-a270-de64" name="Laspistol" book="" page="" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48">
@@ -9312,7 +9285,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D6"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="You can re-roll failed wound rolls for this weapon if the target is a &lt;b&gt;VEHICLE&lt;/b&gt;."/>
       </characteristics>
     </profile>
     <profile id="ff12-161a-ca85-339f" name="Plasma pistol, Standard" book="" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48">
@@ -10551,7 +10524,7 @@
       <modifiers/>
       <characteristics>
         <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="8&quot;"/>
-        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Assault 2D6"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D6"/>
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="5"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
@@ -10721,7 +10694,7 @@
         <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="12&quot;"/>
         <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Assault D3"/>
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="4"/>
-        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="1"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
         <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
       </characteristics>
@@ -10902,7 +10875,7 @@
         <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="12&quot;"/>
         <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Assault D6"/>
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="4"/>
-        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="1"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
         <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
       </characteristics>
