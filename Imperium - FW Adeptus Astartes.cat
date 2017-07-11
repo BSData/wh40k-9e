@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="dab7-e076-dd5e-d8aa" name="Imperium - FW Adeptus Astartes" book="Imperial Armour Index: Forces of the Adeptus Astartes" revision="5" battleScribeVersion="2.01" authorName="Crowbar90" authorContact="" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="3" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="dab7-e076-dd5e-d8aa" name="Imperium - FW Adeptus Astartes" book="Imperial Armour Index: Forces of the Adeptus Astartes" revision="6" battleScribeVersion="2.01" authorName="Crowbar90" authorContact="" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="3" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -758,6 +758,27 @@
       <modifiers/>
       <constraints/>
     </categoryEntry>
+    <categoryEntry id="8d86-9490-0f7d-a5b5" name="Relic Elites" hidden="true">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
+    <categoryEntry id="6c4c-a416-b8cb-c380" name="Relic Heavy Support" hidden="true">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
+    <categoryEntry id="3216-79af-660b-7711" name="Relic Lord of War" hidden="true">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
   </categoryEntries>
   <forceEntries/>
   <selectionEntries/>
@@ -768,7 +789,22 @@
       <infoLinks/>
       <modifiers/>
       <constraints/>
-      <categoryLinks/>
+      <categoryLinks>
+        <categoryLink id="c2ed-1f41-8923-9d93" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="2e2f-a032-a51f-0232" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
     </entryLink>
     <entryLink id="4538-1e98-bba8-6328" name="Lias Issodon" hidden="false" targetId="5df3-0e30-0af4-6953" type="selectionEntry">
       <profiles/>
@@ -1360,9 +1396,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="b4be-8b5e-875d-e609" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="8c9e-fcf4-171e-7713" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="8c9e-fcf4-171e-7713" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8c9e-fcf4-171e-7713" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="124a-4955-3fc6-6ecf" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -1393,6 +1452,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="1351-4b34-72a4-fd14" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="243b-cda4-b625-6738" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2860,7 +2926,7 @@
     </selectionEntry>
     <selectionEntry id="150e-18cf-7c9e-4526" name="Magister Sevrin Loth" hidden="false" collective="false" type="model">
       <profiles>
-        <profile id="da7a-9ce8-89af-988a" name="Sevrin Loth" hidden="false" profileTypeId="bc97-dea9-9e88-bb7d" profileTypeName="Psyker">
+        <profile id="da7a-9ce8-89af-988a" name="Psyker" hidden="false" profileTypeId="bc97-dea9-9e88-bb7d" profileTypeName="Psyker">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2969,7 +3035,42 @@
         </categoryLink>
       </categoryLinks>
       <selectionEntries/>
-      <selectionEntryGroups/>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="f4b5-a683-6c94-c47f" name="Psychic powers" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="fcc3-1333-f536-0874" name="Smite" hidden="false" targetId="1fb4-7f3e-134d-48d5" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3488-b45b-a905-c48b" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="862d-fd7d-f6aa-e8e5" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="6bf9-defd-e45c-d681" name="Librarius discipline" hidden="false" targetId="ce1e-f5d9-0e18-a647" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e935-7b31-732b-8f38" type="min"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ff4f-7c62-f63b-21b7" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="196d-22c6-d646-8cfd" name="Frag grenade" hidden="false" targetId="5eff-0a2d-a8bc-f6da" type="selectionEntry">
           <profiles/>
@@ -4485,7 +4586,42 @@
         </categoryLink>
       </categoryLinks>
       <selectionEntries/>
-      <selectionEntryGroups/>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="8435-654b-4136-9582" name="Psychic powers" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="c913-1e23-f4a3-91fd" name="Smite" hidden="false" targetId="1fb4-7f3e-134d-48d5" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="21f9-5dda-ea19-7064" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85a8-f062-02b3-954b" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="900f-d1cf-05a2-56c6" name="Librarius discipline" hidden="false" targetId="ce1e-f5d9-0e18-a647" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bfb2-d5d6-ee5c-f666" type="min"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b4e-eaa1-12b8-fa66" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="4075-a66d-12b2-d24b" name="Frag grenade" hidden="false" targetId="5eff-0a2d-a8bc-f6da" type="selectionEntry">
           <profiles/>
@@ -5989,9 +6125,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="7d8a-b069-17a7-2864" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="c97c-5d64-1fe1-fa7f" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="c97c-5d64-1fe1-fa7f" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c97c-5d64-1fe1-fa7f" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="1fcb-751f-6842-006d" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -6043,6 +6202,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="394b-a2a1-50e0-1dd8" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="43d2-53fd-5090-a4d8" name="New CategoryLink" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -10864,9 +11030,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="7343-1d53-9581-7509" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="decrement" field="3e0e-83af-8100-6fb2" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="3e0e-83af-8100-6fb2" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3e0e-83af-8100-6fb2" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="aa3f-6316-df34-3c78" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -10904,6 +11093,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="62f9-878d-4eea-fd2b" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="4819-a179-4e1b-8724" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -11117,9 +11313,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="5603-98f3-adec-68a5" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="decrement" field="963c-17d7-c1cf-63a4" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="963c-17d7-c1cf-63a4" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="963c-17d7-c1cf-63a4" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="8dd6-b945-8ec5-763d" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -11157,6 +11376,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="7ea9-154b-aa8b-616e" name="New CategoryLink" hidden="false" targetId="b791-ca1e-e769-5d0b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="8ed3-a45a-fd91-8949" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -11370,9 +11596,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="6ead-cd63-ecbe-498c" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="decrement" field="89a8-fa04-2ebb-a863" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="89a8-fa04-2ebb-a863" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="89a8-fa04-2ebb-a863" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="3178-6dfc-4590-56b3" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -11410,6 +11659,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="8098-96de-b0cf-85bd" name="New CategoryLink" hidden="false" targetId="1cc3-35b1-0035-a4cd" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="27cb-b34c-e534-2cf9" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -11638,9 +11894,39 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="e6f6-2e55-b383-fa18" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="decrement" field="d8ff-7a39-2265-d026" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="d8ff-7a39-2265-d026" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="d8ff-7a39-2265-d026" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d8ff-7a39-2265-d026" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="9254-2c10-9165-e9f1" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -11692,6 +11978,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="686a-f8d7-0158-82b4" name="New CategoryLink" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="f5df-6a11-8b8c-8d24" name="New CategoryLink" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -11970,9 +12263,39 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="de18-4c95-e7d4-da8c" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="8957-1ba0-6979-6644" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="8957-1ba0-6979-6644" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="8957-1ba0-6979-6644" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8957-1ba0-6979-6644" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="81ac-0e21-9267-c1fa" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -12017,6 +12340,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="2c24-e05c-3e6c-639a" name="New CategoryLink" hidden="false" targetId="8e50-f332-daa9-0ab0" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="e813-477a-d91e-9027" name="New CategoryLink" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -12270,9 +12600,39 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="24d1-adfa-2507-62b9" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="beea-36cd-2a00-43c3" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="beea-36cd-2a00-43c3" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="beea-36cd-2a00-43c3" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="beea-36cd-2a00-43c3" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="4f50-83f9-9474-b038" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -12317,6 +12677,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="325c-ccef-9316-65a6" name="New CategoryLink" hidden="false" targetId="b966-cb25-d53b-4bd2" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="cbd9-cca2-e849-faff" name="New CategoryLink" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -12570,9 +12937,39 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="28ea-6514-f554-35cc" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="f516-0ac2-b2fa-820e" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="f516-0ac2-b2fa-820e" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="f516-0ac2-b2fa-820e" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f516-0ac2-b2fa-820e" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="0c33-1a29-3cec-0753" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -12617,6 +13014,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="c952-8f86-79a8-7519" name="New CategoryLink" hidden="false" targetId="4ea9-72e6-c2b0-2fae" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="3e05-43b3-d132-c55f" name="New CategoryLink" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -12917,9 +13321,39 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="5488-bcfc-6d44-600a" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="0ffe-c62e-b282-fd0b" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="0ffe-c62e-b282-fd0b" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="0ffe-c62e-b282-fd0b" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0ffe-c62e-b282-fd0b" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="1cf1-c764-8257-43f2" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -12964,6 +13398,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="5cfe-cbd4-1912-d7bd" name="New CategoryLink" hidden="false" targetId="370c-a449-6325-0fad" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="620d-8805-ce42-062c" name="New CategoryLink" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -13259,9 +13700,39 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="608a-1489-f9e9-cfd6" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="70a3-d22c-29a0-2460" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="70a3-d22c-29a0-2460" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="70a3-d22c-29a0-2460" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="70a3-d22c-29a0-2460" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="3696-15e4-f3f8-fd1c" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -13313,6 +13784,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="e2eb-57c0-7542-6c2e" name="New CategoryLink" hidden="false" targetId="393d-4c9a-7bf8-b4ff" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="ec01-9150-78ae-f469" name="New CategoryLink" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -13472,9 +13950,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="d6d3-cba7-70e8-c1dd" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="decrement" field="f47a-cb0d-ea8f-33b4" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="f47a-cb0d-ea8f-33b4" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f47a-cb0d-ea8f-33b4" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="629b-8a0a-fc7f-e92d" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -13519,6 +14020,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="7fd1-4901-f748-3403" name="New CategoryLink" hidden="false" targetId="d79c-fe9d-7aad-ac6d" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="5de2-0594-08b1-b2a2" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -13817,9 +14325,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="f467-8db4-5c7d-3ff5" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="0fe0-b8c1-c31f-95e7" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="0fe0-b8c1-c31f-95e7" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0fe0-b8c1-c31f-95e7" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="7032-d16c-b116-f7b5" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -13864,6 +14395,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="9122-51a8-7b51-9e8b" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="a7ec-bed6-beeb-2a2c" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -14084,9 +14622,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="44a8-d4d0-0d08-449e" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="decrement" field="8dd4-d0f0-28af-a234" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="8dd4-d0f0-28af-a234" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8dd4-d0f0-28af-a234" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="a234-cd06-c88b-80d0" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -14131,6 +14692,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="390f-d432-eb32-331e" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="7fd0-5e7d-580b-d5e6" name="New CategoryLink" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -14252,7 +14820,19 @@
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
-      <entryLinks/>
+      <entryLinks>
+        <entryLink id="c999-0b06-65ac-16d4" name="Heavy flamer" hidden="false" targetId="b535-5ae7-3a40-042a" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="257b-6ab0-1347-5260" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="da39-3eaf-8d77-64b0" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+      </entryLinks>
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="16.0"/>
         <cost name="pts" costTypeId="points" value="175.0"/>
@@ -14431,9 +15011,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="fae3-03a9-b61e-76d3" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="increment" field="8cba-c04e-2568-637f" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="decrement" field="8cba-c04e-2568-637f" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8cba-c04e-2568-637f" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="1ab5-cfde-1ef8-2859" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -14485,6 +15088,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="6592-2410-141c-8bd7" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="fbb4-ed44-6bd4-b9a4" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -17033,9 +17643,32 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="4f15-6177-60a1-ae61" name="Relic" hidden="false" targetId="e81b-dc9a-010d-40e8" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
-      <modifiers/>
-      <constraints/>
+      <modifiers>
+        <modifier type="decrement" field="c44c-f090-fcf9-af5f" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="c44c-f090-fcf9-af5f" value="1">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c44c-f090-fcf9-af5f" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="27ff-27a3-37fe-6d86" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false">
           <profiles/>
@@ -17080,6 +17713,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="6784-5f46-c1df-d3f2" name="New CategoryLink" hidden="false" targetId="39ec-b84e-11ab-f5b2" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="abbb-e142-7f9a-be79" name="New CategoryLink" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -18327,8 +18967,127 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="c7da-34b0-06e6-85e5" name="1. Veil of Time" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="d514-8ac9-f0cd-e0d9" name="Veil of Time" hidden="false" targetId="6277-ed08-b893-d62b" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs/>
+    </selectionEntry>
+    <selectionEntry id="d87e-7790-8fa8-4820" name="2. Might of Heroes" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="6540-6a6f-e31f-db05" name="Might of Heroes" hidden="false" targetId="a0a9-23cf-d798-6fc9" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs/>
+    </selectionEntry>
+    <selectionEntry id="7bea-2eaa-eb6e-328c" name="3. Null Zone" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="a1b4-43ac-2d4a-cb61" name="Null Zone" hidden="false" targetId="5439-378d-26b1-849f" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs/>
+    </selectionEntry>
+    <selectionEntry id="1fb4-7f3e-134d-48d5" name="Smite" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="04bc-4271-240c-bf2d" name="Smite" hidden="false" targetId="5821-6c45-8572-7e0e" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs/>
+    </selectionEntry>
   </sharedSelectionEntries>
-  <sharedSelectionEntryGroups/>
+  <sharedSelectionEntryGroups>
+    <selectionEntryGroup id="ce1e-f5d9-0e18-a647" name="Librarius discipline" hidden="false" collective="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks>
+        <entryLink id="8003-37bd-979e-cabb" name="1. Veil of Time" hidden="false" targetId="c7da-34b0-06e6-85e5" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1c72-5de1-e045-26b6" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="fd87-9781-0653-6948" name="2. Might of Heroes" hidden="false" targetId="d87e-7790-8fa8-4820" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="49f9-8712-376c-c70e" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="37da-2cec-4c18-3e30" name="3. Null Zone" hidden="false" targetId="7bea-2eaa-eb6e-328c" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5332-72bf-c379-1e8b" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+      </entryLinks>
+    </selectionEntryGroup>
+  </sharedSelectionEntryGroups>
   <sharedRules>
     <rule id="e81b-dc9a-010d-40e8" name="Relic" book="Imperial Armour Index: Forces of the Adeptus Astartes" page="4" hidden="false">
       <profiles/>
@@ -22068,6 +22827,39 @@
         <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="4"/>
         <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="9"/>
         <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
+      </characteristics>
+    </profile>
+    <profile id="6277-ed08-b893-d62b" name="Veil of Time" hidden="false" profileTypeId="ae70-4738-0161-bec0" profileTypeName="Psychic Power">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="6"/>
+        <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="18&quot;"/>
+        <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Veil of Time has a warp charge value of 6. If manifested, pick an ADEPTUS ASTARTES unit within 18&quot; of the psyker. Until the start of your next Psychic phase, you can re-roll charge rolls and Advance rolls for that unit and they always fight first in the Fight phase, even if they didn’t charge. If the enemy also has units that have charged, or that have a similar ability, then alternate choosing units to fight with, starting with the player whose turn is taking place."/>
+      </characteristics>
+    </profile>
+    <profile id="a0a9-23cf-d798-6fc9" name="Might of Heroes" hidden="false" profileTypeId="ae70-4738-0161-bec0" profileTypeName="Psychic Power">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="6"/>
+        <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="12&quot;"/>
+        <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Might of Heroes has a warp charge value of 6. If manifested, select an ADEPTUS ASTARTES model within 12&quot; of the psyker. Until the start of your next Psychic phase, add 1 to that model’s Strength, Toughness and Attacks characteristics."/>
+      </characteristics>
+    </profile>
+    <profile id="5439-378d-26b1-849f" name="Null Zone" hidden="false" profileTypeId="ae70-4738-0161-bec0" profileTypeName="Psychic Power">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="8"/>
+        <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="6&quot;"/>
+        <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Null Zone has a warp charge value of 8. If manifested, then until the start of your next Psychic phase, while they are within 6&quot; of the psyker, enemy models cannot take invulnerable saves and must halve the result of any Psychic tests (rounding up) that they take."/>
       </characteristics>
     </profile>
   </sharedProfiles>
