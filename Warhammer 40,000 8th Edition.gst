@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="15" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="17" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -6629,7 +6629,7 @@
               <characteristics>
                 <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="12&quot;"/>
                 <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Pistol 2"/>
-                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="38"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
                 <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
                 <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
                 <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
@@ -6683,7 +6683,7 @@
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll hit rolls of 1 for any Fallen unit when shooting (including when firing Overwatch) as long as the unit did not move in its last Movement phase. In addition, Fallen units can never lose more than 1 model as the result of any single failed Morale test; any additional casualties beyond the first are ignored."/>
           </characteristics>
         </profile>
-        <profile id="cea7-7fb7-7631-dc22" name="Fallen" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+        <profile id="aff4-03d5-a6af-1359" name="Fallen Champion" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6695,18 +6695,18 @@
             <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="4"/>
             <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="4"/>
             <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="1"/>
-            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="1"/>
-            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="7"/>
+            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="3"/>
+            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="9"/>
             <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
           </characteristics>
         </profile>
-        <profile id="569d-3ab7-c337-490b" name="Fallen Champion" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+        <profile id="71e9-6d32-3ed3-0d23" name="Fallen" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="6&quot;"/>
+            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="6"/>
             <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="3+"/>
             <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="3+"/>
             <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="4"/>
@@ -6778,12 +6778,50 @@
               <rules/>
               <infoLinks/>
               <modifiers/>
-              <constraints/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b023-a2de-4055-6ba5" type="max"/>
+              </constraints>
               <categoryLinks/>
               <selectionEntries/>
-              <selectionEntryGroups/>
+              <selectionEntryGroups>
+                <selectionEntryGroup id="ac8c-9cdf-1b4d-297f" name="Boltgun option" hidden="false" collective="false" defaultSelectionEntryId="905e-3a8d-b910-3fbe">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8e7e-75a5-f31f-88dc" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="29f3-b758-b598-0486" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                  <selectionEntries/>
+                  <selectionEntryGroups/>
+                  <entryLinks>
+                    <entryLink id="905e-3a8d-b910-3fbe" name="Boltgun" hidden="false" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fc63-d641-0f58-4e29" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                    <entryLink id="05b7-2e74-1233-0ab7" name="Chainsword" hidden="false" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b099-a0a6-85a1-8b86" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
               <entryLinks>
-                <entryLink id="992a-3f75-da59-3630" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                <entryLink id="992a-3f75-da59-3630" name="Frag &amp; Krak grenades" hidden="false" targetId="bb78-534a-7b77-edbc" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -6794,25 +6832,14 @@
                   </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="3429-a017-7f67-604e" name="Bolt pistol" hidden="false" targetId="37d3-7098-d596-9948" type="selectionEntry">
+                <entryLink id="e143-3104-41bd-33f6" name="Bolt pistol" hidden="false" targetId="0334-f487-8229-0c1a" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
                   <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e508-e590-0c88-a1c8" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fcdc-d069-76e9-761a" type="min"/>
-                  </constraints>
-                  <categoryLinks/>
-                </entryLink>
-                <entryLink id="41c7-8d5c-8734-8b0e" name="Boltgun" hidden="false" targetId="ca06-ac13-d02f-6f9a" type="selectionEntry">
-                  <profiles/>
-                  <rules/>
-                  <infoLinks/>
-                  <modifiers/>
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2d37-e291-5ec7-46c8" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d5e1-8fd0-0ce5-76d8" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ae3d-fb2e-9f6e-8320" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="820d-b15b-8a26-72d5" type="min"/>
                   </constraints>
                   <categoryLinks/>
                 </entryLink>
@@ -6835,7 +6862,7 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
-                <entryLink id="b80d-7f24-52f3-bb2e" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                <entryLink id="b80d-7f24-52f3-bb2e" name="Frag &amp; Krak grenades" hidden="false" targetId="bb78-534a-7b77-edbc" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -6862,11 +6889,41 @@
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="c9b3-e89a-ee3c-8b82" name="Fallen w/Heavy Weapon" hidden="false" collective="false" type="model">
+            <selectionEntry id="c9b3-e89a-ee3c-8b82" name="Fallen w/Heavy or Special Weapon" hidden="false" collective="false" type="model">
               <profiles/>
               <rules/>
               <infoLinks/>
-              <modifiers/>
+              <modifiers>
+                <modifier type="set" field="name" value="Fallen w/ Heavy Weapon">
+                  <repeats/>
+                  <conditions/>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="c9b3-e89a-ee3c-8b82" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ebe1-fc3a-86bc-c787" type="equalTo"/>
+                        <condition field="selections" scope="c9b3-e89a-ee3c-8b82" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="97c3-fe87-979e-36ac" type="equalTo"/>
+                        <condition field="selections" scope="c9b3-e89a-ee3c-8b82" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6b8c-f82f-fa4d-5031" type="equalTo"/>
+                        <condition field="selections" scope="c9b3-e89a-ee3c-8b82" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="41a0-677e-fb5d-b197" type="equalTo"/>
+                      </conditions>
+                      <conditionGroups/>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+                <modifier type="set" field="name" value="Fallen w/ Special Weapon">
+                  <repeats/>
+                  <conditions/>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="c9b3-e89a-ee3c-8b82" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="242c-da3e-f9d7-2424" type="equalTo"/>
+                        <condition field="selections" scope="c9b3-e89a-ee3c-8b82" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b2d5-8d53-3668-3c7a" type="equalTo"/>
+                        <condition field="selections" scope="c9b3-e89a-ee3c-8b82" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8efb-0db6-e2e1-f8a0" type="equalTo"/>
+                      </conditions>
+                      <conditionGroups/>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f7a4-bbc5-6e00-563f" type="max"/>
               </constraints>
@@ -6880,12 +6937,13 @@
                   <modifiers/>
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4df6-9bb4-ad9b-dacd" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e1d8-5d4f-322a-fc2f" type="min"/>
                   </constraints>
                   <categoryLinks/>
                   <selectionEntries/>
                   <selectionEntryGroups/>
                   <entryLinks>
-                    <entryLink id="f383-9fd1-a447-3138" name="Autocannon" hidden="false" targetId="5210-8cb2-b5a2-a04f" type="selectionEntry">
+                    <entryLink id="242c-da3e-f9d7-2424" name="Plasma gun" hidden="false" targetId="8c14-22cc-93ce-b85a" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -6893,7 +6951,7 @@
                       <constraints/>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="baf3-55b4-47cf-9afb" name="Heavy bolter" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+                    <entryLink id="ebe1-fc3a-86bc-c787" name="Autocannon" hidden="false" targetId="5210-8cb2-b5a2-a04f" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -6901,7 +6959,7 @@
                       <constraints/>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="b463-926b-4c78-6e64" name="Lascannon" hidden="false" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
+                    <entryLink id="b2d5-8d53-3668-3c7a" name="Flamer" hidden="false" targetId="fd22-6743-2d4c-dd62" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -6909,7 +6967,7 @@
                       <constraints/>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="933a-e7e7-6374-a5fb" name="Missile launcher" hidden="false" targetId="1469-1964-7a91-94d4" type="selectionEntry">
+                    <entryLink id="97c3-fe87-979e-36ac" name="Heavy bolter" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -6917,7 +6975,7 @@
                       <constraints/>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="e3f4-c992-5037-627e" name="Flamer" hidden="false" targetId="fd22-6743-2d4c-dd62" type="selectionEntry">
+                    <entryLink id="6b8c-f82f-fa4d-5031" name="Lascannon" hidden="false" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -6925,7 +6983,7 @@
                       <constraints/>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="b3f1-d7e8-54a5-1c54" name="Meltagun" hidden="false" targetId="efc8-c51d-5b02-a3a2" type="selectionEntry">
+                    <entryLink id="8efb-0db6-e2e1-f8a0" name="Meltagun" hidden="false" targetId="efc8-c51d-5b02-a3a2" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -6933,7 +6991,7 @@
                       <constraints/>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="08ea-2f63-d138-5991" name="Plasma gun" hidden="false" targetId="8c14-22cc-93ce-b85a" type="selectionEntry">
+                    <entryLink id="41a0-677e-fb5d-b197" name="Missile launcher" hidden="false" targetId="1469-1964-7a91-94d4" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -6945,7 +7003,7 @@
                 </selectionEntryGroup>
               </selectionEntryGroups>
               <entryLinks>
-                <entryLink id="46ea-c218-a5e1-3f82" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                <entryLink id="46ea-c218-a5e1-3f82" name="Frag &amp; Krak grenades" hidden="false" targetId="bb78-534a-7b77-edbc" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -6956,7 +7014,7 @@
                   </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="94c5-4296-c295-9c84" name="Bolt pistol" hidden="false" targetId="37d3-7098-d596-9948" type="selectionEntry">
+                <entryLink id="94c5-4296-c295-9c84" name="Bolt pistol" hidden="false" targetId="0334-f487-8229-0c1a" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
@@ -6975,7 +7033,7 @@
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
-            <selectionEntryGroup id="fe8a-b8ac-8cab-71c0" name="Fallen w/Special Weapons" hidden="false" collective="false">
+            <selectionEntryGroup id="fe8a-b8ac-8cab-71c0" name="Fallen w/ Weapon option (max 4)" hidden="false" collective="false">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -7001,6 +7059,7 @@
                       <modifiers/>
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="22a9-8e57-c904-c73d" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b33-bcca-4f2f-31f9" type="min"/>
                       </constraints>
                       <categoryLinks/>
                       <selectionEntries>
@@ -7089,7 +7148,7 @@
                     </selectionEntryGroup>
                   </selectionEntryGroups>
                   <entryLinks>
-                    <entryLink id="40aa-43f3-8030-6904" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                    <entryLink id="40aa-43f3-8030-6904" name="Frag &amp; Krak grenades" hidden="false" targetId="bb78-534a-7b77-edbc" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -7100,7 +7159,7 @@
                       </constraints>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="1a48-2485-1fb4-ea4e" name="Bolt pistol" hidden="false" targetId="37d3-7098-d596-9948" type="selectionEntry">
+                    <entryLink id="1a48-2485-1fb4-ea4e" name="Bolt pistol" hidden="false" targetId="0334-f487-8229-0c1a" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -7111,7 +7170,7 @@
                       </constraints>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="d849-8bc8-7aa6-b529" name="Boltgun" hidden="false" targetId="ca06-ac13-d02f-6f9a" type="selectionEntry">
+                    <entryLink id="d849-8bc8-7aa6-b529" name="Boltgun" hidden="false" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -7128,35 +7187,58 @@
                     <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
                   </costs>
                 </selectionEntry>
-                <selectionEntry id="8dd9-89ef-f81f-303d" name="Fallen w/Special Weapon" hidden="false" collective="false" type="model">
+                <selectionEntry id="8dd9-89ef-f81f-303d" name="Fallen w/Special or Combi Weapon" hidden="false" collective="false" type="model">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
-                  <modifiers/>
+                  <modifiers>
+                    <modifier type="set" field="name" value="Fallen w/ Special Weapon">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="8dd9-89ef-f81f-303d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cc80-cbf2-6187-ce3b" type="equalTo"/>
+                            <condition field="selections" scope="8dd9-89ef-f81f-303d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4492-0cc4-eae8-515c" type="equalTo"/>
+                            <condition field="selections" scope="8dd9-89ef-f81f-303d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1c63-faeb-85fb-502e" type="equalTo"/>
+                          </conditions>
+                          <conditionGroups/>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                    <modifier type="set" field="name" value="Fallen w/ Combi Weapon">
+                      <repeats/>
+                      <conditions/>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="8dd9-89ef-f81f-303d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9040-321e-7b62-988c" type="equalTo"/>
+                            <condition field="selections" scope="8dd9-89ef-f81f-303d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b758-41a1-5c86-384b" type="equalTo"/>
+                            <condition field="selections" scope="8dd9-89ef-f81f-303d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dfdc-431e-72c3-79b2" type="equalTo"/>
+                            <condition field="selections" scope="8dd9-89ef-f81f-303d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e11e-4e5d-d441-3d2f" type="equalTo"/>
+                          </conditions>
+                          <conditionGroups/>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
                   <constraints/>
                   <categoryLinks/>
                   <selectionEntries/>
                   <selectionEntryGroups>
-                    <selectionEntryGroup id="9e6a-75d3-8356-6c47" name="Boltgun Options" hidden="false" collective="false">
+                    <selectionEntryGroup id="9e6a-75d3-8356-6c47" name="Weapon Options" hidden="false" collective="false">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
                       <modifiers/>
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="55fa-f338-9b3a-54cb" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dfbe-0557-033c-3256" type="min"/>
                       </constraints>
                       <categoryLinks/>
                       <selectionEntries/>
                       <selectionEntryGroups/>
                       <entryLinks>
-                        <entryLink id="9db2-3451-1287-3832" name="Boltgun" hidden="false" targetId="ca06-ac13-d02f-6f9a" type="selectionEntry">
-                          <profiles/>
-                          <rules/>
-                          <infoLinks/>
-                          <modifiers/>
-                          <constraints/>
-                          <categoryLinks/>
-                        </entryLink>
                         <entryLink id="9040-321e-7b62-988c" name="Combi-bolter" hidden="false" targetId="eba0-9fc6-5334-a390" type="selectionEntry">
                           <profiles/>
                           <rules/>
@@ -7217,7 +7299,7 @@
                     </selectionEntryGroup>
                   </selectionEntryGroups>
                   <entryLinks>
-                    <entryLink id="2cfa-e9b4-7aed-371e" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                    <entryLink id="2cfa-e9b4-7aed-371e" name="Frag &amp; Krak grenades" hidden="false" targetId="bb78-534a-7b77-edbc" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -7228,7 +7310,7 @@
                       </constraints>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="2f0a-ab29-9e06-6c7d" name="Bolt pistol" hidden="false" targetId="37d3-7098-d596-9948" type="selectionEntry">
+                    <entryLink id="2f0a-ab29-9e06-6c7d" name="Bolt pistol" hidden="false" targetId="0334-f487-8229-0c1a" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -7255,7 +7337,7 @@
                   <selectionEntries/>
                   <selectionEntryGroups/>
                   <entryLinks>
-                    <entryLink id="9756-1926-bd1e-4d18" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                    <entryLink id="9756-1926-bd1e-4d18" name="Frag &amp; Krak grenades" hidden="false" targetId="bb78-534a-7b77-edbc" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -7266,13 +7348,14 @@
                       </constraints>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="8dd4-2ed2-29ff-68a3" name="Lightning Claw (Pair)" hidden="false" targetId="c4f6-2f81-153a-3060" type="selectionEntry">
+                    <entryLink id="8dd4-2ed2-29ff-68a3" name="Lightning Claw (Pair)" hidden="false" targetId="7603-6241-ab8b-4603" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
                       <modifiers/>
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7738-d3fe-7245-087f" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f9ee-3729-b2d6-ee05" type="min"/>
                       </constraints>
                       <categoryLinks/>
                     </entryLink>
@@ -7291,40 +7374,44 @@
                   <categoryLinks/>
                   <selectionEntries/>
                   <selectionEntryGroups>
-                    <selectionEntryGroup id="f509-f2a4-0c17-e285" name="Pistol Options" hidden="false" collective="false" defaultSelectionEntryId="104c-f206-9967-9f9e">
+                    <selectionEntryGroup id="929d-5045-86a6-5778" name="Boltgun option" hidden="false" collective="false" defaultSelectionEntryId="db81-d2cd-1a15-876d">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
                       <modifiers/>
                       <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="edf5-ca65-1c87-c1d9" type="max"/>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2336-69b8-d796-2d4e" type="min"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="861e-6839-8b82-d8cc" type="min"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dca7-2756-f10c-6875" type="max"/>
                       </constraints>
                       <categoryLinks/>
                       <selectionEntries/>
                       <selectionEntryGroups/>
                       <entryLinks>
-                        <entryLink id="15a0-a1b6-616a-655e" name="Bolt pistol" hidden="false" targetId="37d3-7098-d596-9948" type="selectionEntry">
+                        <entryLink id="db81-d2cd-1a15-876d" name="Boltgun" hidden="false" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry">
                           <profiles/>
                           <rules/>
                           <infoLinks/>
                           <modifiers/>
-                          <constraints/>
+                          <constraints>
+                            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e66-a71b-4f90-d324" type="max"/>
+                          </constraints>
                           <categoryLinks/>
                         </entryLink>
-                        <entryLink id="104c-f206-9967-9f9e" name="Plasma pistol" hidden="false" targetId="83be-1ba9-c326-4760" type="selectionEntry">
+                        <entryLink id="9ffb-223e-b885-6aaf" name="Chainsword" hidden="false" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry">
                           <profiles/>
                           <rules/>
                           <infoLinks/>
                           <modifiers/>
-                          <constraints/>
+                          <constraints>
+                            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7fc3-8d13-4d20-a736" type="max"/>
+                          </constraints>
                           <categoryLinks/>
                         </entryLink>
                       </entryLinks>
                     </selectionEntryGroup>
                   </selectionEntryGroups>
                   <entryLinks>
-                    <entryLink id="1266-d55d-c798-a237" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                    <entryLink id="1266-d55d-c798-a237" name="Frag &amp; Krak grenades" hidden="false" targetId="bb78-534a-7b77-edbc" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
@@ -7335,14 +7422,14 @@
                       </constraints>
                       <categoryLinks/>
                     </entryLink>
-                    <entryLink id="ec1a-7dda-7da0-fedb" name="Boltgun" hidden="false" targetId="ca06-ac13-d02f-6f9a" type="selectionEntry">
+                    <entryLink id="9da2-87cb-0db7-1232" name="Plasma pistol" hidden="false" targetId="83be-1ba9-c326-4760" type="selectionEntry">
                       <profiles/>
                       <rules/>
                       <infoLinks/>
                       <modifiers/>
                       <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9398-5467-afb8-5712" type="max"/>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1974-5a4e-9e3e-3045" type="min"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d0c9-d3d6-3552-599c" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b74-a43b-fadc-a5eb" type="min"/>
                       </constraints>
                       <categoryLinks/>
                     </entryLink>
@@ -8490,6 +8577,34 @@
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="bb78-534a-7b77-edbc" name="Frag &amp; Krak grenades" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="c071-4905-b8fc-7f26" name="Frag grenade" hidden="false" targetId="fdd8-1a5f-5722-d6ee" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="c848-9c6b-2c80-2b76" name="Krak grenade" hidden="false" targetId="3bf6-b4f7-6b2f-bb7b" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="891c-fbf0-e426-2c15" name="Fallen Champion Equipment" hidden="false" collective="false">
@@ -8498,7 +8613,7 @@
       <infoLinks/>
       <modifiers/>
       <constraints>
-        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9499-0db3-46ea-4008" type="max"/>
+        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9098-7264-df58-688a" type="max"/>
       </constraints>
       <categoryLinks/>
       <selectionEntries>
@@ -8522,7 +8637,9 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="414a-9116-8420-1c57" type="max"/>
+          </constraints>
           <categoryLinks/>
           <selectionEntries/>
           <selectionEntryGroups/>
@@ -8534,7 +8651,7 @@
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="7ea4-9252-2c12-e2bf" name="Max 1 of these" hidden="false" collective="false">
+        <selectionEntryGroup id="7ea4-9252-2c12-e2bf" name="Max 1 of these" hidden="false" collective="false" defaultSelectionEntryId="f9fa-05df-9ccf-b481">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8586,22 +8703,6 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="91a0-b965-8224-e3f1" name="Lightning Claw" hidden="false" targetId="90de-7b01-e401-888b" type="selectionEntry">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <constraints/>
-              <categoryLinks/>
-            </entryLink>
-            <entryLink id="21e0-aea2-e598-3728" name="Lightning Claw (Pair)" hidden="false" targetId="7603-6241-ab8b-4603" type="selectionEntry">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <constraints/>
-              <categoryLinks/>
-            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -8611,7 +8712,9 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="945f-82b2-0b83-0b3f" type="max"/>
+          </constraints>
           <categoryLinks/>
         </entryLink>
         <entryLink id="856a-8cc4-9fc3-20a0" name="Chainsword" hidden="false" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry">
@@ -8619,7 +8722,9 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="19f6-56b9-2b2c-bf3b" type="max"/>
+          </constraints>
           <categoryLinks/>
         </entryLink>
         <entryLink id="bed1-a2c0-0154-890a" name="Plasma pistol" hidden="false" targetId="83be-1ba9-c326-4760" type="selectionEntry">
@@ -8627,7 +8732,9 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="26b3-c00c-a676-4780" type="max"/>
+          </constraints>
           <categoryLinks/>
         </entryLink>
         <entryLink id="7d42-3b7c-8489-a063" name="Power axe" hidden="false" targetId="3292-34e6-f679-d5b9" type="selectionEntry">
@@ -8635,7 +8742,9 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5575-6cb6-05e2-bbf3" type="max"/>
+          </constraints>
           <categoryLinks/>
         </entryLink>
         <entryLink id="30f0-a567-31bc-2379" name="Power fist" hidden="false" targetId="f122-3720-fa32-4215" type="selectionEntry">
@@ -8643,7 +8752,9 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e883-e5b9-8fac-a668" type="max"/>
+          </constraints>
           <categoryLinks/>
         </entryLink>
         <entryLink id="c670-88bd-834a-4ec0" name="Power maul" hidden="false" targetId="6ea7-1195-7144-438e" type="selectionEntry">
@@ -8651,7 +8762,9 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2863-952c-7e3e-89d7" type="max"/>
+          </constraints>
           <categoryLinks/>
         </entryLink>
         <entryLink id="9e10-013c-b4b6-3cb4" name="Power sword" hidden="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
@@ -8659,7 +8772,19 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc6e-4084-1d4c-b36d" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="5531-c4ce-62d9-86e5" name="Lightning Claw" hidden="false" targetId="90de-7b01-e401-888b" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f95b-05b6-869b-820e" type="max"/>
+          </constraints>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
