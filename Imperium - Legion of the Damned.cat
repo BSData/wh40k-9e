@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="d360-802a-45b3-4f4a" name="Imperium - Legion of the Damned" book="Index: Imperium 1" revision="1" battleScribeVersion="2.01" authorName="Crowbar90" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="d360-802a-45b3-4f4a" name="Imperium - Legion of the Damned" book="Index: Imperium 1" revision="2" battleScribeVersion="2.01" authorName="Crowbar90" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -39,6 +39,14 @@
   <selectionEntries/>
   <entryLinks>
     <entryLink id="7073-b346-c594-b404" name="New EntryLink" hidden="false" targetId="61a6-2734-a069-1ba7" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+    </entryLink>
+    <entryLink id="fa52-c247-0f61-49b7" name="Allow under-strength units" hidden="false" targetId="9ca7-9ea6-4784-3a0f" type="selectionEntry">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -134,25 +142,52 @@
       <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
-        <entryLink id="0d07-848f-59e8-3bb0" name="New EntryLink" hidden="false" targetId="2cd3-941a-c64e-e3a3" type="selectionEntry">
+        <entryLink id="0d07-848f-59e8-3bb0" name="Legionnaire Sergeant" hidden="false" targetId="2cd3-941a-c64e-e3a3" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="047d-dca9-0997-c7e8" value="0.0">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="61a6-2734-a069-1ba7" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ca02-2cb4-37f0-f4a9" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="047d-dca9-0997-c7e8" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="78b0-1b49-9f15-f934" type="max"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="c6a5-bd8f-68b2-664e" name="New EntryLink" hidden="false" targetId="4195-07c6-905f-ee50" type="selectionEntryGroup">
+        <entryLink id="c6a5-bd8f-68b2-664e" name="Legionnaires" hidden="false" targetId="4195-07c6-905f-ee50" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="c91f-4c70-aea9-240a" value="0.0">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="61a6-2734-a069-1ba7" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ca02-2cb4-37f0-f4a9" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c91f-4c70-aea9-240a" type="min"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="05a5-12c2-38c3-5212" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="ca02-2cb4-37f0-f4a9" name="Under-strength" hidden="false" targetId="b0b3-5bbe-0542-4aa1" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <constraints>
-            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c91f-4c70-aea9-240a" type="min"/>
-            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="05a5-12c2-38c3-5212" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8953-c9db-4d1f-6d09" type="max"/>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" id="999e-880e-0a0f-4ddb" type="max"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -792,6 +827,54 @@
       <costs>
         <cost name="pts" costTypeId="points" value="13.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="9ca7-9ea6-4784-3a0f" name="Allow under-strength units" hidden="false" collective="false" type="unit">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="af8e-14a1-deac-a288" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="5628-c993-47b6-351a" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b0b3-5bbe-0542-4aa1" name="Under-strength" hidden="true" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9ca7-9ea6-4784-3a0f" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
