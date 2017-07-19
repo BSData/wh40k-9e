@@ -12831,63 +12831,36 @@
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="3e8a-ca3b-7746-d3d8" name="Marine w/ Special Weapon" hidden="false" collective="false" type="model">
+            <selectionEntry id="34ee-3726-87dd-5c39" name="Marine w/ Heavy or Special Weapon" hidden="false" collective="false" type="model">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers>
-                <modifier type="set" field="a9a2-11f9-a376-d30f" value="0.0">
+                <modifier type="increment" field="be18-d9ac-4df5-485e" value="1">
+                  <repeats/>
+                  <conditions>
+                    <condition field="selections" scope="7b61-1289-ed7e-24c1" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
+                  </conditions>
+                  <conditionGroups/>
+                </modifier>
+                <modifier type="decrement" field="be18-d9ac-4df5-485e" value="1">
                   <repeats/>
                   <conditions>
                     <condition field="selections" scope="7b61-1289-ed7e-24c1" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7fd9-f2cd-9698-9def" type="equalTo"/>
                   </conditions>
                   <conditionGroups/>
                 </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a9a2-11f9-a376-d30f" type="max"/>
-              </constraints>
-              <categoryLinks/>
-              <selectionEntries/>
-              <selectionEntryGroups/>
-              <entryLinks>
-                <entryLink id="e7d0-d137-da35-3857" name="Special Weapons" hidden="false" targetId="a44b-4b4d-46b5-d3a6" type="selectionEntryGroup">
-                  <profiles/>
-                  <rules/>
-                  <infoLinks/>
-                  <modifiers/>
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c800-a376-1716-8b47" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1191-fdb7-3978-9d76" type="min"/>
-                  </constraints>
-                  <categoryLinks/>
-                </entryLink>
-                <entryLink id="94b7-f282-21d9-0448" name="Bolt pistol" hidden="false" targetId="0334-f487-8229-0c1a" type="selectionEntry">
-                  <profiles/>
-                  <rules/>
-                  <infoLinks/>
-                  <modifiers/>
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aab9-bf52-7542-7c8f" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ecc-492d-cfa8-01fb" type="min"/>
-                  </constraints>
-                  <categoryLinks/>
-                </entryLink>
-              </entryLinks>
-              <costs>
-                <cost name="pts" costTypeId="points" value="13.0"/>
-                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="34ee-3726-87dd-5c39" name="Marine w/ Heavy or Special Weapon" hidden="false" collective="false" type="model">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers>
-                <modifier type="set" field="be18-d9ac-4df5-485e" value="0.0">
+                <modifier type="set" field="name" value="Marine w/ heavy weapon">
                   <repeats/>
                   <conditions>
-                    <condition field="selections" scope="7b61-1289-ed7e-24c1" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="lessThan"/>
+                    <condition field="selections" scope="34ee-3726-87dd-5c39" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5861-4fa9-dda8-a299" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups/>
+                </modifier>
+                <modifier type="set" field="name" value="Marine w/ special weapon">
+                  <repeats/>
+                  <conditions>
+                    <condition field="selections" scope="34ee-3726-87dd-5c39" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="03a3-2c6a-81f8-0b1b" type="equalTo"/>
                   </conditions>
                   <conditionGroups/>
                 </modifier>
@@ -13006,10 +12979,16 @@
               <modifiers>
                 <modifier type="set" field="c43d-8693-0ccf-dc98" value="0.0">
                   <repeats/>
-                  <conditions>
-                    <condition field="selections" scope="7b61-1289-ed7e-24c1" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e8a-ca3b-7746-d3d8" type="equalTo"/>
-                  </conditions>
-                  <conditionGroups/>
+                  <conditions/>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="7b61-1289-ed7e-24c1" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="34ee-3726-87dd-5c39" type="equalTo"/>
+                        <condition field="selections" scope="7b61-1289-ed7e-24c1" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="lessThan"/>
+                      </conditions>
+                      <conditionGroups/>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
