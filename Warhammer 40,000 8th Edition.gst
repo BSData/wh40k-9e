@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="17" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="19" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -2364,7 +2364,24 @@
           <entryLinks/>
         </selectionEntryGroup>
       </selectionEntryGroups>
-      <entryLinks/>
+      <entryLinks>
+        <entryLink id="a66e-a15d-3c96-15b1" name="Heavy bolter" hidden="false" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="points" value="8">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9669-776c-84f2-6150" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+      </entryLinks>
       <costs>
         <cost name="pts" costTypeId="points" value="330.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="20.0"/>
@@ -6522,7 +6539,7 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Cypher has a 4++ save. In addition, roll a D6 if Cypher is slain. On a roll of 2+, Cypher&apos;s model is still removed from play, but he is not considered to have been slain for the purposes of any mission victory conditions."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Cypher has a 4+ invulnerable save. In addition, roll a D6 if Cypher is slain. On a roll of 2+, Cypher&apos;s model is still removed from play, but he is not considered to have been slain for the purposes of any mission victory conditions."/>
           </characteristics>
         </profile>
         <profile id="b5b7-4c20-09b1-346a" name="Lord Cypher" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -6532,6 +6549,15 @@
           <modifiers/>
           <characteristics>
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll hit rolls of 1 made for friendly Fallen units within 6&quot; of Cypher"/>
+          </characteristics>
+        </profile>
+        <profile id="86fe-c023-4f7d-0825" name="No-one&apos;s Puppet" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Cypher cannot use the Daemonic Ritual ability, even though he has the CHAOS and CHARACTER keywords."/>
           </characteristics>
         </profile>
       </profiles>
