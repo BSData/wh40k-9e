@@ -784,6 +784,7 @@
           <entryLinks/>
           <costs>
             <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -1338,7 +1339,10 @@
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks/>
-          <costs/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups/>
@@ -1495,6 +1499,7 @@
           <entryLinks/>
           <costs>
             <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -7097,7 +7102,21 @@
         <modifier type="increment" field="e356-c769-5920-6e14" value="1">
           <repeats/>
           <conditions>
-            <condition field="selections" scope="a5ca-8661-74e0-89e3" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" type="atLeast"/>
+            <condition field="selections" scope="a5ca-8661-74e0-89e3" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" type="atLeast"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="e356-c769-5920-6e14" value="2">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="a5ca-8661-74e0-89e3" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="be79-b567-ab48-ebf5" type="atLeast"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="e356-c769-5920-6e14" value="2">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="a5ca-8661-74e0-89e3" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="be79-b567-ab48-ebf5" type="atLeast"/>
           </conditions>
           <conditionGroups/>
         </modifier>
@@ -7105,6 +7124,20 @@
           <repeats/>
           <conditions>
             <condition field="selections" scope="a5ca-8661-74e0-89e3" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="be79-b567-ab48-ebf5" type="atLeast"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="e356-c769-5920-6e14" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="a5ca-8661-74e0-89e3" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" type="atLeast"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="increment" field="e356-c769-5920-6e14" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="a5ca-8661-74e0-89e3" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" type="atLeast"/>
           </conditions>
           <conditionGroups/>
         </modifier>
@@ -7277,14 +7310,21 @@
           <selectionEntryGroups/>
           <entryLinks/>
         </selectionEntryGroup>
-        <selectionEntryGroup id="bcc2-17ef-c725-2416" name="Broadside Drones (0-2)" hidden="false" collective="false">
+        <selectionEntryGroup id="bcc2-17ef-c725-2416" name="Broadside Drones (0-2 per XV88)" hidden="false" collective="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="increment" field="ddf0-07f5-8b9c-8d65" value="2">
+              <repeats>
+                <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4007-b961-93f2-066b" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ddf0-07f5-8b9c-8d65" type="max"/>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e27-99bd-7f16-eda8" type="min"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ddf0-07f5-8b9c-8d65" type="max"/>
           </constraints>
           <categoryLinks/>
           <selectionEntries/>
@@ -7295,9 +7335,7 @@
               <rules/>
               <infoLinks/>
               <modifiers/>
-              <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d9b-5679-2d99-ed2e" type="max"/>
-              </constraints>
+              <constraints/>
               <categoryLinks/>
             </entryLink>
             <entryLink id="3cd4-fafc-fc0d-a12f" name="MV8 Missile Drone" hidden="false" targetId="be79-b567-ab48-ebf5" type="selectionEntry">
@@ -7305,16 +7343,30 @@
               <rules/>
               <infoLinks/>
               <modifiers>
-                <modifier type="set" field="f459-8377-2169-bcbb" value="0.0">
-                  <repeats/>
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="56f1-ffd3-7d79-a126" type="atLeast"/>
-                  </conditions>
+                <modifier type="increment" field="3eab-a64c-ebc4-0a42" value="2">
+                  <repeats>
+                    <repeat field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" repeats="1" roundUp="false"/>
+                  </repeats>
+                  <conditions/>
+                  <conditionGroups/>
+                </modifier>
+                <modifier type="decrement" field="3eab-a64c-ebc4-0a42" value="2">
+                  <repeats>
+                    <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" repeats="1" roundUp="false"/>
+                  </repeats>
+                  <conditions/>
+                  <conditionGroups/>
+                </modifier>
+                <modifier type="increment" field="3eab-a64c-ebc4-0a42" value="2">
+                  <repeats>
+                    <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4007-b961-93f2-066b" repeats="1" roundUp="false"/>
+                  </repeats>
+                  <conditions/>
                   <conditionGroups/>
                 </modifier>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f459-8377-2169-bcbb" type="max"/>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3eab-a64c-ebc4-0a42" type="max"/>
               </constraints>
               <categoryLinks/>
             </entryLink>
