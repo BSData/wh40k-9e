@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="20" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="21" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -68,6 +68,12 @@
       <characteristicTypes>
         <characteristicType id="ada9-1c1d-fa2a-3803" name="Remaining W"/>
         <characteristicType id="b7a6-b64d-4339-eb87" name="BS"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="b900-0afb-e411-2cbb" name="Keywords">
+      <characteristicTypes>
+        <characteristicType id="6b92-2d97-5144-62bc" name="Keywords (Faction)"/>
+        <characteristicType id="ce6c-4765-4bb8-bd49" name="Keywords (Basic)"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
