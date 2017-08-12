@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="19" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="21" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -68,6 +68,12 @@
       <characteristicTypes>
         <characteristicType id="ada9-1c1d-fa2a-3803" name="Remaining W"/>
         <characteristicType id="b7a6-b64d-4339-eb87" name="BS"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="b900-0afb-e411-2cbb" name="Keywords">
+      <characteristicTypes>
+        <characteristicType id="6b92-2d97-5144-62bc" name="Keywords (Faction)"/>
+        <characteristicType id="ce6c-4765-4bb8-bd49" name="Keywords (Basic)"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -8888,7 +8894,9 @@
       <description>If your Warlord is a CHARACTER, it can use a Warlord Trait. Immediately before either player starts to deploy their army, you can roll a D3 on the Warlord Trait table here to determine what Warlord Trait your Warlord has. Alternatively, choose the trait that most suits your Warlord&apos;s temperament or style of war.
 
 1) Legendary Fighter: If this Warlord charges in the Charge phase, add 1 to their Attacks characteristic until the end of the ensuing Fight phase.
+
 2) Inspiring Leader: Friendly units within 6&quot; of this Warlord can add 1 to their Leadership characteristic.
+
 3) Tenacious Survivor: Roll a dice each time this Warlord loses a wound.  On a 6, the Warlord shrugs off the damage and does not lose the wound.</description>
     </rule>
   </sharedRules>
