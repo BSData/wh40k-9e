@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="23" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="24" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -3930,6 +3930,12 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="2b40-4f22-78d2-a0c3" name="Combi-flamer" hidden="false" targetId="1ded-8f09-9b20-840c" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
       <modifiers/>
       <constraints/>
@@ -3964,6 +3970,12 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
+        <infoLink id="a25b-cb3d-6847-4e71" name="Combi-plasma" hidden="false" targetId="1570-6d28-2e04-624d" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
       </infoLinks>
       <modifiers/>
       <constraints/>
@@ -3987,6 +3999,12 @@
           <modifiers/>
         </infoLink>
         <infoLink id="bac3-c746-cec0-e45d" name="Meltagun" hidden="false" targetId="ec4c-1132-ddaf-db8e" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="7b75-576e-96f2-061c" name="Combi-melta" hidden="false" targetId="272a-ef5e-5309-a4ba" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4585,6 +4603,12 @@
           <modifiers/>
         </infoLink>
         <infoLink id="2143-e026-6475-051d" name="Grav-gun" hidden="false" targetId="a3d2-b0d7-70bc-695e" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="2304-9df7-899b-2606" name="Combi-grav" hidden="false" targetId="b6c9-e5ff-de89-55b7" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -11276,6 +11300,62 @@
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
         <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+      </characteristics>
+    </profile>
+    <profile id="1ded-8f09-9b20-840c" name="Combi-flamer" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="-"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="-"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="-"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="-"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="When attacking with this weapon, choose one or both of the Boltgun or Flamer profiles.  If you choose both, subtract 1 from all hit rolls for this weapon."/>
+      </characteristics>
+    </profile>
+    <profile id="1570-6d28-2e04-624d" name="Combi-plasma" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="-"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="-"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="-"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="-"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="When attacking with this weapon, choose one or both of the Boltgun or Plasma gun profiles.  If you choose both, subtract 1 from all hit rolls for this weapon."/>
+      </characteristics>
+    </profile>
+    <profile id="b6c9-e5ff-de89-55b7" name="Combi-grav" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="-"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="-"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="-"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="-"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="When attacking with this weapon, choose one or both of the Boltgun or Grav-gun profiles.  If you choose both, subtract 1 from all hit rolls for this weapon."/>
+      </characteristics>
+    </profile>
+    <profile id="272a-ef5e-5309-a4ba" name="Combi-melta" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="-"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="-"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="-"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="-"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="When attacking with this weapon, choose one or both of the Boltgun or Meltagun profiles.  If you choose both, subtract 1 from all hit rolls for this weapon."/>
       </characteristics>
     </profile>
   </sharedProfiles>
