@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Questor Imperialis" book="Index: Imperium 2" revision="2" battleScribeVersion="2.01" authorName="Crowbar90" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Questor Imperialis" book="Index: Imperium 2" revision="3" battleScribeVersion="2.01" authorName="Crowbar90" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
   <costTypes/>
-  <profileTypes/>
+  <profileTypes>
+    <profileType id="6535-c5b9-7431-63ec" name="Explosion">
+      <characteristicTypes>
+        <characteristicType id="3684-f9d8-8984-a2bc" name="Dice roll"/>
+        <characteristicType id="0cfb-ee72-50d6-0cfb" name="Distance"/>
+        <characteristicType id="a56d-fa6c-e1ee-bbe0" name="Mortal wounds"/>
+      </characteristicTypes>
+    </profileType>
+  </profileTypes>
   <categoryEntries>
     <categoryEntry id="0dcf-a7d7-3f80-b95e" name="Faction: Imperium" hidden="false">
       <profiles/>
@@ -461,6 +469,31 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
           </characteristics>
         </profile>
+        <profile id="e086-1abc-fdc6-7a10" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR MECHANICUS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="bce6-bc24-a327-fc1c" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5b8e-edbb-3261-b3e4" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="bce6-bc24-a327-fc1c" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="39cf-6a3d-eb18-3381" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, KNIGHT CRUSADER"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
@@ -476,7 +509,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="9e74-4583-ba06-9daa" name="New InfoLink" hidden="false" targetId="383d-e9e6-b605-f6a9" type="profile">
+        <infoLink id="9e74-4583-ba06-9daa" name="Explodes" hidden="false" targetId="383d-e9e6-b605-f6a9" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -556,7 +589,7 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="be91-76ac-9fe0-a3d1" name="New EntryLink" hidden="false" targetId="acd0-640d-3a46-780c" type="selectionEntryGroup">
+        <entryLink id="be91-76ac-9fe0-a3d1" name="Heavy Stubber/Meltagun" hidden="false" targetId="acd0-640d-3a46-780c" type="selectionEntryGroup">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -578,7 +611,7 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="6ce9-e48f-13a0-0338" name="New EntryLink" hidden="false" targetId="4524-229a-e82e-a647" type="selectionEntry">
+        <entryLink id="6ce9-e48f-13a0-0338" name="Titanic feet" hidden="false" targetId="4524-229a-e82e-a647" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -608,6 +641,17 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc2a-a04d-c3be-7cf0" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d13b-dcf5-c254-cfb0" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="1ad2-23e5-94da-18b8" name="Allegiance" hidden="false" targetId="088d-9d8c-e3ae-a1cd" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5285-82ca-963f-fac5" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b6e2-0f2b-acb1-f230" type="max"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -703,6 +747,31 @@
             <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6&quot;"/>
             <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="1061-14b6-0713-7b46" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="85f3-42d9-9d08-f487" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="39cf-6a3d-eb18-3381" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR MECHANICUS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="85f3-42d9-9d08-f487" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5b8e-edbb-3261-b3e4" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, KNIGHT ERRANT"/>
           </characteristics>
         </profile>
       </profiles>
@@ -844,6 +913,17 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
+        <entryLink id="96ea-552e-3adf-6f3d" name="Allegiance" hidden="false" targetId="088d-9d8c-e3ae-a1cd" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="68f5-00f1-3f69-166f" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="782b-a6ee-8077-9f57" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" costTypeId="points" value="320.0"/>
@@ -898,6 +978,31 @@
             <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6&quot;"/>
             <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="8d0a-d14b-5cb5-a406" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="602c-d7c6-68b2-0f26" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="39cf-6a3d-eb18-3381" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR MECHANICUS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="602c-d7c6-68b2-0f26" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5b8e-edbb-3261-b3e4" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, KNIGHT GALLANT"/>
           </characteristics>
         </profile>
       </profiles>
@@ -1017,7 +1122,7 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="ad42-8a5a-f3d5-2c2d" name="New EntryLink" hidden="false" targetId="c239-09b7-6bfc-4ab8" type="selectionEntry">
+        <entryLink id="ad42-8a5a-f3d5-2c2d" name="Reaper chainsword" hidden="false" targetId="c239-09b7-6bfc-4ab8" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1036,6 +1141,17 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="038b-aa85-8f84-366e" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6746-9aae-8cbb-2659" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="8630-1099-b693-7ab8" name="Allegiance" hidden="false" targetId="088d-9d8c-e3ae-a1cd" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b5ee-13b7-74d3-cbd9" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4b60-ea96-8e3f-6c92" type="max"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -1095,10 +1211,35 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
           </characteristics>
         </profile>
+        <profile id="8d38-e1a4-36e0-109a" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="89d4-63ea-2c6f-4b49" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="39cf-6a3d-eb18-3381" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR MECHANICUS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="89d4-63ea-2c6f-4b49" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5b8e-edbb-3261-b3e4" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, KNIGHT PALADIN"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="13d0-4cf2-c055-a4f5" name="New InfoLink" hidden="false" targetId="db40-2166-fcdb-cd1a" type="profile">
+        <infoLink id="13d0-4cf2-c055-a4f5" name="Knight Paladin" hidden="false" targetId="db40-2166-fcdb-cd1a" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1245,6 +1386,17 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
+        <entryLink id="25b2-3f73-4b02-cf33" name="Allegiance" hidden="false" targetId="088d-9d8c-e3ae-a1cd" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2ec2-a5e7-7eed-36f0" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7a07-d67b-8d20-ed9d" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" costTypeId="points" value="320.0"/>
@@ -1299,6 +1451,31 @@
             <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6&quot;"/>
             <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="14fb-68f8-801c-02c4" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR MECHANICUS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="d00a-1a85-1c0b-c4ac" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5b8e-edbb-3261-b3e4" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="d00a-1a85-1c0b-c4ac" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="39cf-6a3d-eb18-3381" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, KNIGHT WARDEN"/>
           </characteristics>
         </profile>
       </profiles>
@@ -1429,7 +1606,7 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="f2cb-3cbc-b2d3-0d00" name="New EntryLink" hidden="false" targetId="534b-82a7-2512-10e3" type="selectionEntry">
+        <entryLink id="f2cb-3cbc-b2d3-0d00" name="Avenger gatling cannon" hidden="false" targetId="534b-82a7-2512-10e3" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1448,6 +1625,17 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a38f-2415-1d80-7a44" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b37d-018f-67fc-088a" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="3674-72f3-5de3-7642" name="Allegiance" hidden="false" targetId="088d-9d8c-e3ae-a1cd" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="805c-715f-fa8c-c58c" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="32c3-1939-d3c8-ede9" type="max"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -1549,6 +1737,16 @@
             <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6&quot;"/>
             <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="4b50-d682-0c89-4b7d" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, CERASTUS KNIGHT-ATROPOS"/>
           </characteristics>
         </profile>
       </profiles>
@@ -2178,6 +2376,16 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
           </characteristics>
         </profile>
+        <profile id="88b3-f742-a1f6-8a59" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, ACASTUS KNIGHT PORPHYRION"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
@@ -2187,7 +2395,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0c62-c668-6585-20d2" name="Explodes (Unstable Reactor)" hidden="false" targetId="77eb-2a36-2c78-02d7" type="profile">
+        <infoLink id="0c62-c668-6585-20d2" name="Explodes (Unstable Reactor) (Acastus Knight Porphyrion)" hidden="false" targetId="fa1d-76c9-a3fb-7adf" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2417,6 +2625,16 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
           </characteristics>
         </profile>
+        <profile id="665c-5c1b-ebdc-b9ce" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, CERASTUS KNIGHT-ACHERON"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
@@ -2613,6 +2831,16 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
           </characteristics>
         </profile>
+        <profile id="a917-ed49-55bc-6487" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, CERASTUS KNIGHT-CASTIGATOR"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
@@ -2796,6 +3024,16 @@
             <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6&quot;"/>
             <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="fd6d-7a62-70d7-c7f2" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, CERASTUS KNIGHT-LANCER"/>
           </characteristics>
         </profile>
       </profiles>
@@ -2983,6 +3221,16 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
           </characteristics>
         </profile>
+        <profile id="3b02-6f16-5a1c-e7af" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, QUESTORIS KNIGHT MAGAERA"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
@@ -3126,6 +3374,7 @@
               </entryLinks>
               <costs>
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="1.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -3232,6 +3481,16 @@
             <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="6&quot;"/>
             <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="f260-3252-44e8-4618" name="Keywords" hidden="false" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Keywords (Faction)" characteristicTypeId="6b92-2d97-5144-62bc" value="IMPERIUM, QUESTOR IMPERIALIS, &lt;HOUSEHOLD&gt;"/>
+            <characteristic name="Keywords (Basic)" characteristicTypeId="ce6c-4765-4bb8-bd49" value="TITANIC, VEHICLE, QUESTORIS KNIGHT STYRIX"/>
           </characteristics>
         </profile>
       </profiles>
@@ -3377,6 +3636,7 @@
               </entryLinks>
               <costs>
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="1.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -3434,6 +3694,30 @@
         <cost name="pts" costTypeId="points" value="340.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="24.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="39cf-6a3d-eb18-3381" name="Questor Imperialis" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs/>
+    </selectionEntry>
+    <selectionEntry id="5b8e-edbb-3261-b3e4" name="Questor Mechanicus" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs/>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -3557,6 +3841,38 @@
         </entryLink>
       </entryLinks>
     </selectionEntryGroup>
+    <selectionEntryGroup id="088d-9d8c-e3ae-a1cd" name="Allegiance" hidden="false" collective="false" defaultSelectionEntryId="dbf0-bdff-ea9a-b1e3">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks>
+        <entryLink id="dbf0-bdff-ea9a-b1e3" name="Questor Imperialis" hidden="false" targetId="39cf-6a3d-eb18-3381" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b2df-5b7c-cf5d-1e8d" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="8971-7906-8c01-a5e9" name="Questor Mechanicus" hidden="false" targetId="5b8e-edbb-3261-b3e4" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e3eb-9bc7-3886-0e37" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+      </entryLinks>
+    </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules/>
   <sharedProfiles>
@@ -3641,7 +3957,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="7"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Add 1 to all hit rolls made for this weapon against targets that can &lt;b&gt;FLY&lt;/b&gt;. Subtract 1 from the hit rolls made for this weapon against all other targets."/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Add 1 to all hit rolls made for this weapon against targets that can FLY. Subtract 1 from the hit rolls made for this weapon against all other targets."/>
       </characteristics>
     </profile>
     <profile id="ee70-067f-9240-1d9a" name="Reaper chainsword" book="Index: Imperium 2" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -3669,7 +3985,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="x2"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="6"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="When attacking with this weapon, you must subtract 1 from the hit roll. If a &lt;b&gt;VEHICLE&lt;/b&gt; or &lt;b&gt;MONSTER&lt;/b&gt; is slain by this weapon, pick an enemy unit within 9&quot; of the bearer and roll a D6. On a 4+ that unit suffers D3 mortal wounds."/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="When attacking with this weapon, you must subtract 1 from the hit roll. If a VEHICLE or MONSTER is slain by this weapon, pick an enemy unit within 9&quot; of the bearer and roll a D6. On a 4+ that unit suffers D3 mortal wounds."/>
       </characteristics>
     </profile>
     <profile id="c356-bb44-78f4-f4dc" name="Titanic feet" book="Index: Imperium 2" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -3771,13 +4087,15 @@
         <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
       </characteristics>
     </profile>
-    <profile id="383d-e9e6-b605-f6a9" name="Explodes" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+    <profile id="383d-e9e6-b605-f6a9" name="Explodes" hidden="false" profileTypeId="6535-c5b9-7431-63ec" profileTypeName="Explosion">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield. On a 6 it explodes, and each unit within 2D6&quot; suffers D6 mortal wounds."/>
+        <characteristic name="Dice roll" characteristicTypeId="3684-f9d8-8984-a2bc" value="6+"/>
+        <characteristic name="Distance" characteristicTypeId="0cfb-ee72-50d6-0cfb" value="2D6&quot;"/>
+        <characteristic name="Mortal wounds" characteristicTypeId="a56d-fa6c-e1ee-bbe0" value="D6"/>
       </characteristics>
     </profile>
     <profile id="7d1d-e7ee-9a4e-2821" name="Ion Shield" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -3795,7 +4113,7 @@
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model can Fall Back in the Movement phase and still shoot and/or charge in the same turn. When this model Falls Back, it can move over enemy &lt;b&gt;INFANTRY&lt;/b&gt; models, thought it must end its move more than 1&quot; from any enemy units. In addition, this model can move and fire Heavy weapons without suffering the penalty to its hit rolls. Finally, this model only gains a bonus to its save for being in cover if at least half of the model is obscured from the firer."/>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model can Fall Back in the Movement phase and still shoot and/or charge in the same turn. When this model Falls Back, it can move over enemy INFANTRY models, thought it must end its move more than 1&quot; from any enemy units. In addition, this model can move and fire Heavy weapons without suffering the penalty to its hit rolls. Finally, this model only gains a bonus to its save for being in cover if at least half of the model is obscured from the firer."/>
       </characteristics>
     </profile>
     <profile id="b4f7-1007-957b-07ce" name="Cerastus Knight-Atropos" book="Imperial Armour - Index: Astra Militarum" page="97" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
@@ -3824,13 +4142,15 @@
         <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the beginning of each of your turns, roll a D6; on the result of 5+ the model heals one wound."/>
       </characteristics>
     </profile>
-    <profile id="77eb-2a36-2c78-02d7" name="Explodes (Unstable Reactor)" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+    <profile id="77eb-2a36-2c78-02d7" name="Explodes (Unstable Reactor)" hidden="false" profileTypeId="6535-c5b9-7431-63ec" profileTypeName="Explosion">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+ it explodes and each unit within 2D6&quot; suffers D6 mortal wounds."/>
+        <characteristic name="Dice roll" characteristicTypeId="3684-f9d8-8984-a2bc" value="6+"/>
+        <characteristic name="Distance" characteristicTypeId="0cfb-ee72-50d6-0cfb" value="2D6&quot;"/>
+        <characteristic name="Mortal wounds" characteristicTypeId="a56d-fa6c-e1ee-bbe0" value="D6"/>
       </characteristics>
     </profile>
     <profile id="eda1-ba88-7192-826e" name="Flank Speed" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -3880,7 +4200,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="12"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="6"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If an attack with this weapon slays an enemy &lt;b&gt;VEHICLE&lt;/b&gt; or &lt;b&gt;MONSTER&lt;/b&gt; unit in the Shooting phase, you may immediately make another attack against a separate target within range. This bonus attack does not generate further attacks."/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If an attack with this weapon slays an enemy VEHICLE or MONSTER unit in the Shooting phase, you may immediately make another attack against a separate target within range. This bonus attack does not generate further attacks."/>
       </characteristics>
     </profile>
     <profile id="713f-5e30-2611-61f2" name="Atropos lascutter (melee)" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -3894,7 +4214,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="14"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="6"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="You may re-roll failed hit rolls and wound rolls for this weapon against targets with the &lt;b&gt;MONSTER&lt;/b&gt;, &lt;b&gt;BUILDING&lt;/b&gt; or &lt;b&gt;VEHICLE&lt;/b&gt; keyword."/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="You may re-roll failed hit rolls and wound rolls for this weapon against targets with the MONSTER, BUILDING or VEHICLE keyword."/>
       </characteristics>
     </profile>
     <profile id="e983-fc05-bed3-805c" name="Graviton singularity cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -3964,7 +4284,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="3"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Add 1 to all hit rolls made for this weapon against targets that can &lt;b&gt;FLY&lt;/b&gt;. Subtract 1 from the hit rolls made for this weapon against all other targets."/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Add 1 to all hit rolls made for this weapon against targets that can FLY. Subtract 1 from the hit rolls made for this weapon against all other targets."/>
       </characteristics>
     </profile>
     <profile id="093e-5079-8ad8-372d" name="Lightning cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -4034,7 +4354,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="*"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="3"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon hits automatically, and it always wounds on a 3+ except against &lt;b&gt;TITANIC&lt;/b&gt; and &lt;b&gt;VEHICLE&lt;/b&gt; units, against which it always wounds on a 6+."/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon hits automatically, and it always wounds on a 3+ except against TITANIC and VEHICLE units, against which it always wounds on a 6+."/>
       </characteristics>
     </profile>
     <profile id="92a5-d997-84ae-5e2b" name="Volkite chieorovile" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -4104,7 +4424,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="+6"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="5"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If any result of a 6 is rolled on any wound roll with this weapon against a &lt;b&gt;MONSTER&lt;/b&gt; or &lt;b&gt;VEHICLE&lt;/b&gt;, then an additional D3 mortal wounds are also inflicted on the enemy unit."/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If any result of a 6 is rolled on any wound roll with this weapon against a MONSTER or VEHICLE, then an additional D3 mortal wounds are also inflicted on the enemy unit."/>
       </characteristics>
     </profile>
     <profile id="d8bd-fde5-02f4-3fea" name="Acastus Knight Porphyrion" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
@@ -4215,7 +4535,7 @@
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="The model has a 5+ invulnerable save increasing to a 4+ invulnerable save in the Fight phase of any turn. In addition, enemy units with the &lt;b&gt;TITANIC&lt;/b&gt; keyword within 1&quot; must subtract 1 from their hit rolls when directing their attacks against this model (to a maximum of 6+ to hit)."/>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="The model has a 5+ invulnerable save increasing to a 4+ invulnerable save in the Fight phase of any turn. In addition, enemy units with the TITANIC keyword within 1&quot; must subtract 1 from their hit rolls when directing their attacks against this model (to a maximum of 6+ to hit)."/>
       </characteristics>
     </profile>
     <profile id="3db7-ad30-051c-f1c6" name="Empyreal Preysight" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -4224,7 +4544,18 @@
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Units other than &lt;b&gt;VEHICLES&lt;/b&gt; cannot claim the bonus +1 to their save for being in cover against this model."/>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Units other than VEHICLES cannot claim the bonus +1 to their save for being in cover against this model."/>
+      </characteristics>
+    </profile>
+    <profile id="fa1d-76c9-a3fb-7adf" name="Explodes (Unstable Reactor) (Acastus Knight Porphyrion)" hidden="false" profileTypeId="6535-c5b9-7431-63ec" profileTypeName="Explosion">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Dice roll" characteristicTypeId="3684-f9d8-8984-a2bc" value="5+"/>
+        <characteristic name="Distance" characteristicTypeId="0cfb-ee72-50d6-0cfb" value="2D6&quot;"/>
+        <characteristic name="Mortal wounds" characteristicTypeId="a56d-fa6c-e1ee-bbe0" value="D6"/>
       </characteristics>
     </profile>
   </sharedProfiles>
