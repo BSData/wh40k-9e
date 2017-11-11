@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="25" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="26" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -11307,6 +11307,33 @@
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
         <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+      </characteristics>
+    </profile>
+    <profile id="589d-78cf-845c-2b65" name="Legendary Fighter" book="Warhammer 40,000" page="186" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this Warlord charges in the Charge phase, add 1 to their Attacks characteristic until the end of the ensuing Fight phase."/>
+      </characteristics>
+    </profile>
+    <profile id="add7-15e6-fb9e-25e4" name="Inspiring Leader" book="Warhammer 40,000" page="186" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Friendly units within 6&quot; of this Warlord can add 1 to their Leadership characteristic."/>
+      </characteristics>
+    </profile>
+    <profile id="7a19-046d-bf4e-bae3" name="Tenacious Survivor" book="Warhammer 40,000" page="186" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Roll a dice each time this Warlord loses a wound. On a 6, the Warlord shrugs off the damage and does not lose the wound."/>
       </characteristics>
     </profile>
   </sharedProfiles>
