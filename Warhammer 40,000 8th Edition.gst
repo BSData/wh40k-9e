@@ -1770,7 +1770,7 @@
       <modifiers/>
       <constraints/>
       <forceEntries>
-        <forceEntry id="0d0b-5cc6-99b6-bc41" name="Planetstrike Attacker +5 CP" book="Chapter Approved 2017" page="34" hidden="false">
+        <forceEntry id="0d0b-5cc6-99b6-bc41" name="Planetstrike Attacker" book="Chapter Approved 2017" page="34" hidden="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1806,7 +1806,6 @@
               <infoLinks/>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4561-0601-5c02-07db" type="min"/>
                 <constraint field="selections" scope="force" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2921-73f5-87b0-32b5" type="max"/>
               </constraints>
             </categoryLink>
@@ -1816,7 +1815,6 @@
               <infoLinks/>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="391f-f28f-bce4-92c3" type="min"/>
                 <constraint field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="957f-39f0-04fb-691b" type="max"/>
               </constraints>
             </categoryLink>
@@ -1827,7 +1825,6 @@
               <modifiers/>
               <constraints>
                 <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ab64-4903-9ea2-4b28" type="max"/>
-                <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="03a6-5778-6776-8f23" type="min"/>
               </constraints>
             </categoryLink>
             <categoryLink id="ea94-7129-b091-72ad" name="Heavy Support" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="false">
@@ -1963,7 +1960,7 @@
       <modifiers/>
       <constraints/>
       <forceEntries>
-        <forceEntry id="3003-5844-9b26-7bcd" name="Planetstrike Defender +5 CP" book="Chapter Approved 2017" page="34" hidden="false">
+        <forceEntry id="3003-5844-9b26-7bcd" name="Planetstrike Defender" book="Chapter Approved 2017" page="34" hidden="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2017,7 +2014,6 @@
               <infoLinks/>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7330-85be-d38d-aae0" type="min"/>
                 <constraint field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7cdd-4b0c-c5bc-5d04" type="max"/>
               </constraints>
             </categoryLink>
@@ -2037,7 +2033,6 @@
               <modifiers/>
               <constraints>
                 <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="58af-8a18-294a-af68" type="max"/>
-                <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc0c-0f66-ca63-de4b" type="min"/>
               </constraints>
             </categoryLink>
             <categoryLink id="d285-8216-b854-0a66" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false">
@@ -2054,7 +2049,6 @@
               <modifiers/>
               <constraints>
                 <constraint field="selections" scope="force" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e96b-fb00-4084-fae5" type="max"/>
-                <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5ea8-f153-e7c9-39f4" type="min"/>
               </constraints>
             </categoryLink>
           </categoryLinks>
@@ -2156,7 +2150,7 @@
       <modifiers/>
       <constraints/>
       <forceEntries>
-        <forceEntry id="d696-3705-3267-0de5" name="Stronghold Assault Attacker +5 CP" book="Chapter Approved 2017" page="46" hidden="false">
+        <forceEntry id="d696-3705-3267-0de5" name="Stronghold Assault Attacker" book="Chapter Approved 2017" page="46" hidden="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2171,7 +2165,6 @@
               <modifiers/>
               <constraints>
                 <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7345-7039-3268-e931" type="max"/>
-                <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2107-d311-2b26-fd76" type="min"/>
               </constraints>
             </categoryLink>
             <categoryLink id="af61-dfc0-f77a-a414" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false">
@@ -2181,7 +2174,6 @@
               <modifiers/>
               <constraints>
                 <constraint field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bae4-f2e9-9fc2-9538" type="max"/>
-                <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ed7a-b25c-5af8-9a04" type="min"/>
               </constraints>
             </categoryLink>
             <categoryLink id="59b4-ecd1-6664-28f8" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false">
@@ -2208,7 +2200,6 @@
               <infoLinks/>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ffbd-dace-6aaa-af0e" type="min"/>
                 <constraint field="selections" scope="force" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c56e-3c61-368f-d4e1" type="max"/>
               </constraints>
             </categoryLink>
@@ -2349,7 +2340,7 @@
       <modifiers/>
       <constraints/>
       <forceEntries>
-        <forceEntry id="bc16-705b-9115-9cdb" name="Stronghold Assault Defender +5 CP" book="Chapter Approved 2017" page="46" hidden="false">
+        <forceEntry id="bc16-705b-9115-9cdb" name="Stronghold Assault Defender" book="Chapter Approved 2017" page="46" hidden="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2364,7 +2355,6 @@
               <modifiers/>
               <constraints>
                 <constraint field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="eead-ef09-aa44-3421" type="max"/>
-                <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e21d-4730-08d0-7277" type="min"/>
               </constraints>
             </categoryLink>
             <categoryLink id="cc0d-8a3e-ef72-2138" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
@@ -2374,7 +2364,6 @@
               <modifiers/>
               <constraints>
                 <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b407-f80c-54cc-890c" type="max"/>
-                <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="460c-f404-28a0-3718" type="min"/>
               </constraints>
             </categoryLink>
             <categoryLink id="1ab6-c2aa-8b97-4ac3" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false">
@@ -2441,7 +2430,6 @@
               <infoLinks/>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ab6b-5a31-8acd-df8c" type="min"/>
                 <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9f14-8c70-1892-597d" type="max"/>
               </constraints>
             </categoryLink>
