@@ -1,7 +1,7 @@
 Warhammer 40,000 8th Edition
 ============================
 
-[![Join the chat at https://gitter.im/BSData/wh40k](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BSData/wh40k?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) <- talk to us!
+[![Join the chat at https://gitter.im/BSData/wh40k](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BSData/wh40k?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) <- Please talk to us here before you commit changes to the files!
 
 ## Important ##
 [Important]: #important
