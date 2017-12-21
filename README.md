@@ -4,7 +4,7 @@ Warhammer 40,000 8th Edition
 ## Important ##
 [Important]: #important
 
-__The Battlescribe data editor can cause problems when merging updates. Because of this, and also to avoid duplicated effort where multiple people are working on the same files, please join us on Gitter before you commit changes to the files.__
+__The Battlescribe data editor can cause problems when merging updates. Because of this, and also to avoid duplicated effort where multiple people are working on the same files, please join us on Gitter before you commit changes to the files.__  
 [![Join the chat at https://gitter.im/BSData/wh40k](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BSData/wh40k?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
 
 
@@ -42,14 +42,15 @@ __Previous editions__: _However we don't support older editions actively, the fi
  
   _Great, thank you! Now you have two options:_
 
-  1. [Report it on Appspot][] - it's anonymous and no account is needed - on downside, you will need to manually check the progress of your issue.
-  2. [Open Issue directly][] (green ```New Issue``` in upper-right)- you need GitHub account and then can track progress (get notifications on it!), comment (ie answer our questions) and help us better!
+  1. [Report it on Appspot][] - it's anonymous and no account is needed - one downside, you will need to manually check the progress of your issue.
+  2. [Open Issue directly][] (green ```New Issue``` in upper-right) - you need a GitHub account and then can track progress (get notifications on it!), comment (i.e. answer our questions) and help us better!
 
 * __I'd just like to contact you.__
 
-Then join us on Gitter! [![Join the chat at https://gitter.im/BSData/wh40k](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BSData/wh40k?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge).
+  Then join us on Gitter!  
+  [![Join the chat at https://gitter.im/BSData/wh40k](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BSData/wh40k?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
  
-  _Otherwise, the easiest way is through issues mentioned above. We are a community and that's the only place we all have access to. We don't have any group e-mail. So if you want to stay anonymous, contact us by_ reporting bug _on Appspot (point 1 above)._
+  _Otherwise, the easiest way is through issues mentioned above. We are a community and that's the only place we all have access to. We don't have any group e-mail. So if you want to stay anonymous, contact us by reporting bug on Appspot (point 1 above)._
 
 [Report it on Appspot]: http://battlescribedata.appspot.com/#/repo/wh40k
 [Open Issue directly]: https://github.com/BSData/wh40k/issues
