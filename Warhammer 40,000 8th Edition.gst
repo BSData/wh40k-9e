@@ -10631,12 +10631,12 @@
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="-"/>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
         <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
-        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466"/>
-        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484"/>
-        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="User"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
       </characteristics>
     </profile>
     <profile id="8194-4688-65b3-f996" name="Chainfist" book="" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48">
