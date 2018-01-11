@@ -2692,7 +2692,7 @@
       <profiles/>
       <rules/>
       <infoLinks>
-        <infoLink id="4ae0-157d-0f63-5531" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="4ae0-157d-0f63-5531" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2878,7 +2878,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="cbf3-33ac-73e9-50c7" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="cbf3-33ac-73e9-50c7" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3120,7 +3120,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="84d5-245f-1b88-9f78" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="84d5-245f-1b88-9f78" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3454,7 +3454,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0d23-67e2-23ad-bf28" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="0d23-67e2-23ad-bf28" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3606,7 +3606,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="0aea-5296-9f61-7e62" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="0aea-5296-9f61-7e62" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -3885,7 +3885,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="43e7-2daa-522c-c250" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="43e7-2daa-522c-c250" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4005,7 +4005,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="a8fe-56de-deb2-5c71" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="a8fe-56de-deb2-5c71" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4083,7 +4083,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="9ff0-e1ea-d6b4-f945" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="9ff0-e1ea-d6b4-f945" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -4241,7 +4241,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="90e2-05af-373e-19b7" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="90e2-05af-373e-19b7" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8660,7 +8660,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="cbce-e7ee-b6c4-d939" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="cbce-e7ee-b6c4-d939" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -8982,7 +8982,7 @@
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="4231-88a3-9766-c5ab" name="Immobile" hidden="false" targetId="c408-8555-a6df-257f" type="profile">
+        <infoLink id="4231-88a3-9766-c5ab" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -12666,6 +12666,15 @@
       <modifiers/>
       <characteristics>
         <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Roll a dice each time this Warlord loses a wound. On a 6, the Warlord shrugs off the damage and does not lose the wound."/>
+      </characteristics>
+    </profile>
+    <profile id="8830-2c9e-ad7e-e57d" name="Immobile (Fortification)" book="" page="" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model cannot move for any reason, nor can it fight in the Fight phase. Enemy models automatically hit this model in the Fight phase - do not make hit rolls. However, this model can still shoot if there are enemy models within 1&quot; of it, and friendly unit can still target enemy units that are within 1&quot; of this model."/>
       </characteristics>
     </profile>
   </sharedProfiles>
