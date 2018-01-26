@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="36" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="37" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -337,6 +337,15 @@
       <modifiers/>
       <constraints/>
     </categoryEntry>
+    <categoryEntry id="ae09-117e-a6fa-316b" name="Warlord" hidden="true">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a991-ad91-7d5f-92d1" type="max"/>
+      </constraints>
+    </categoryEntry>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment" hidden="false">
@@ -499,6 +508,13 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="806f-d1ee-da05-0983" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="9b48-cd5f-3949-adc6" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="564e-55d5-79bc-a4d7" name="Battalion Detachment +3CP" hidden="false">
@@ -660,6 +676,13 @@
           <constraints>
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="dd16-f9e4-6928-db00" type="max"/>
           </constraints>
+        </categoryLink>
+        <categoryLink id="70a3-5965-8dfd-0dff" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -826,6 +849,13 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b905-bc19-8b25-f26a" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="b505-6d2b-bb65-191e" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="41af-75ce-79d2-ddff" name="Vanguard Detachment +1CP" hidden="false">
@@ -987,6 +1017,13 @@
           <constraints>
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1449-c900-5e63-561c" type="max"/>
           </constraints>
+        </categoryLink>
+        <categoryLink id="c3f6-3055-bcd0-788b" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1150,6 +1187,13 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="68bd-f7ab-859e-fb22" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="0144-c043-6326-c755" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="3c85-9649-d2da-9bde" name="Outrider Detachment +1CP" hidden="false">
@@ -1312,6 +1356,13 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3de0-5460-f04b-09ba" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="5411-43af-9074-78ae" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="5baf-eed5-bb85-7325" name="Supreme Command Detachment +1CP" hidden="false">
@@ -1422,6 +1473,13 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="83e7-e60b-0ad5-1d24" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="2421-180e-769d-d51f" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="d513-cbf5-9bfc-7270" name="Super-Heavy Detachment +3CP" hidden="false">
@@ -1473,6 +1531,13 @@
             <constraint field="selections" scope="force" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e8fa-5d51-0e94-764b" type="max"/>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="67f2-9795-52db-5a70" type="min"/>
           </constraints>
+        </categoryLink>
+        <categoryLink id="9ca8-4fb9-709b-b9a6" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1526,6 +1591,13 @@
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc65-2978-7619-e375" type="min"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="33b2-565d-d44c-99a7" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="224b-1070-218f-fdf4" name="Super-Heavy Auxiliary Detachment" hidden="false">
@@ -1552,6 +1624,13 @@
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4384-497e-3b4a-d259" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b8f-4518-f394-33f4" type="min"/>
           </constraints>
+        </categoryLink>
+        <categoryLink id="b1a6-0fc5-d615-d4eb" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1604,6 +1683,13 @@
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="26f5-481b-d941-b4ca" type="min"/>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0214-a689-7537-aafa" type="max"/>
           </constraints>
+        </categoryLink>
+        <categoryLink id="663d-4540-136a-98c1" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1675,6 +1761,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="1d7c-3253-d90d-6e3a" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="09fb-b9a5-3cb5-b0d5" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1755,6 +1848,13 @@
           <constraints/>
         </categoryLink>
         <categoryLink id="7751-b628-068c-ae45" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="9a65-6b3b-5e44-03e8" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1924,6 +2024,13 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4240-b0fc-8a69-2871" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="7187-699d-2503-992c" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="810f-6b53-1e3b-fe9d" name="Planetstrike Defender +5 CP" book="Chapter Approved 2017" page="34" hidden="false">
@@ -2087,6 +2194,13 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ee38-3431-abb2-9e62" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="3c3b-27e3-c0b7-b3ee" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="c048-e584-e628-474e" name="Stronghold Assault Attacker +5 CP" book="Chapter Approved 2017" page="46" hidden="false">
@@ -2249,6 +2363,13 @@
           <constraints>
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a18-2f70-70ee-6230" type="max"/>
           </constraints>
+        </categoryLink>
+        <categoryLink id="eed4-ea5f-257c-0699" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -2428,6 +2549,13 @@
           <constraints>
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6ce3-81ab-8b21-3ef4" type="max"/>
           </constraints>
+        </categoryLink>
+        <categoryLink id="3e5e-b1fa-a208-60bd" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -6008,7 +6136,6 @@
       <selectionEntryGroups/>
       <entryLinks/>
       <costs>
-        <cost name="pts" costTypeId="points" value="30.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -9360,7 +9487,15 @@
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3d2b-09cf-4f18-7e67" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dca7-051f-f71b-0250" type="max"/>
       </constraints>
-      <categoryLinks/>
+      <categoryLinks>
+        <categoryLink id="e90e-9745-f8d7-d6d3" name="New CategoryLink" hidden="false" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
       <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks/>
