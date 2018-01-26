@@ -9487,7 +9487,15 @@
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3d2b-09cf-4f18-7e67" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dca7-051f-f71b-0250" type="max"/>
       </constraints>
-      <categoryLinks/>
+      <categoryLinks>
+        <categoryLink id="e90e-9745-f8d7-d6d3" name="New CategoryLink" hidden="false" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
       <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks/>
