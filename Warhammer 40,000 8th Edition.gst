@@ -6137,6 +6137,7 @@
       <entryLinks/>
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="ba62-f2c3-d7bb-4f5d" name="Sniper rifle" hidden="false" collective="false" type="upgrade">
@@ -9890,15 +9891,7 @@
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers>
-        <modifier type="set" field="hidden" value="false">
-          <repeats/>
-          <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="33f6-60da-7b70-5fee" type="equalTo"/>
-          </conditions>
-          <conditionGroups/>
-        </modifier>
-      </modifiers>
+      <modifiers/>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ddaf-3652-257e-33de" type="max"/>
       </constraints>
@@ -9922,7 +9915,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="c3cf-4cf7-145c-e210" name="BRB 3: Tenacious Survivor" hidden="false" targetId="9a24-3ad2-9f48-7049" type="selectionEntry">
+        <entryLink id="c3cf-4cf7-145c-e210" name="3. Tenacious Survivor" hidden="false" targetId="9a24-3ad2-9f48-7049" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
