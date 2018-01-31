@@ -427,14 +427,6 @@
       <constraints/>
       <categoryLinks/>
     </entryLink>
-    <entryLink id="246d-4492-6b23-0013" name="New EntryLink" hidden="false" targetId="4445-6367-dac4-307a" type="selectionEntry">
-      <profiles/>
-      <rules/>
-      <infoLinks/>
-      <modifiers/>
-      <constraints/>
-      <categoryLinks/>
-    </entryLink>
     <entryLink id="0c6a-c6e7-46c7-afa0" name="New EntryLink" hidden="false" targetId="9832-6438-ea96-d6d6" type="selectionEntry">
       <profiles/>
       <rules/>
@@ -475,7 +467,7 @@
       <constraints/>
       <categoryLinks/>
     </entryLink>
-    <entryLink id="d35b-e538-397f-6632" name="New EntryLink" hidden="false" targetId="67df-ff04-b483-f1c3" type="selectionEntry">
+    <entryLink id="d35b-e538-397f-6632" name="Defiler" hidden="false" targetId="67df-ff04-b483-f1c3" type="selectionEntry">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -1083,13 +1075,21 @@
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="8.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="c5a2-5d3b-99c9-7b99" name="Daemon Prince" page="0" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="c5a2-5d3b-99c9-7b99" name="Daemon Prince of Tzeentch" page="0" hidden="false" collective="false" type="upgrade">
       <profiles>
         <profile id="5746-8975-d4e5-72f6" name="Daemon Prince" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="0bdf-a96e-9e38-7779" value="12&quot;">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="c5a2-5d3b-99c9-7b99" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7de-60d1-a265-a420" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="8&quot;"/>
             <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="2+"/>
@@ -1108,9 +1108,9 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="1"/>
+            <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
             <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and one power from the Dark Hereticus discipline"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two powers from the Dark Hereticus discipline, Discipline of Change and/or Discipline of Tzeentch."/>
             <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
@@ -1130,6 +1130,12 @@
           <modifiers/>
         </infoLink>
         <infoLink id="9a6f-a8cd-bc26-84b3" name="Prince of Chaos" hidden="false" targetId="6c28-5b6b-0879-5f1d" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="933e-a026-4c96-2dd5" name="Ephemeral Daemon" hidden="false" targetId="6d5a-5f5e-dc4b-7444" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1210,7 +1216,33 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries/>
+      <selectionEntries>
+        <selectionEntry id="f7de-60d1-a265-a420" name="Wings" hidden="false" collective="false" type="upgrade">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="25e1-cd0f-f15d-1ab6" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="0b55-0bac-0af9-a2af" name="New CategoryLink" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+            </categoryLink>
+          </categoryLinks>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="1.0"/>
+            <cost name="pts" costTypeId="points" value="24.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="c8b6-53f1-329f-75e2" name="Hellforged sword options" hidden="false" collective="false" defaultSelectionEntryId="6768-4032-c530-3500">
           <profiles/>
@@ -1257,6 +1289,44 @@
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
+        <selectionEntryGroup id="cbd7-27ec-200c-478a" name="Psychic Powers" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7c33-e746-ece0-f770" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="e727-2098-ceb0-c068" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="4fde-9ea3-2966-af61" name="Discipline of Change" hidden="false" targetId="c436-bcc7-8498-be61" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="a548-c734-b2cf-279d" name="Tzeentch Discipline" hidden="false" targetId="7bb0-f8ee-4b51-4b43" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="c884-fb3b-a6b9-fb68" name="Malefic talon" hidden="false" targetId="ab5a-b591-31e2-e0d0" type="selectionEntry">
@@ -1288,17 +1358,6 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9f39-044a-c37d-0546" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7c0b-1ed6-35ed-ed49" type="min"/>
-          </constraints>
-          <categoryLinks/>
-        </entryLink>
-        <entryLink id="25f7-57aa-d10b-405e" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a03a-2350-1055-b5dd" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d7b4-d140-0ef9-aef8" type="min"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -2263,7 +2322,7 @@
           <characteristics>
             <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
             <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two powers from the Dark Hereticus discipline"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two powers from the Dark Hereticus discipline and/or Discipline of Change"/>
             <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
@@ -2271,6 +2330,12 @@
       <rules/>
       <infoLinks>
         <infoLink id="e3a5-1035-6513-5ead" name="Death to the False Emperor" hidden="false" targetId="27a8-c34a-7a70-904e" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="2a7d-5dda-f96e-7519" name="Favour of Tzeentch" hidden="false" targetId="5d58-ea78-c523-b0c7" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2420,19 +2485,45 @@
               <constraints/>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="7062-d5a5-2f67-71a3" name="New EntryLink" hidden="false" targetId="becb-9ac2-cb36-95f7" type="selectionEntryGroup">
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="9e02-8132-fb10-c9c3" name="Psychic Powers" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ec4a-ecc9-574c-6198" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="a4d6-7c81-be68-a645" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
-              <constraints/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9273-cd10-12f4-0f7b" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="5f66-eb9e-4d5f-42af" name="Discipline of Change" hidden="false" targetId="c436-bcc7-8498-be61" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="28b8-b51c-fa12-fdb5" type="max"/>
+              </constraints>
               <categoryLinks/>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="e23b-6d34-74a6-f585" name="New EntryLink" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+        <entryLink id="e23b-6d34-74a6-f585" name="Frag &amp; Krak grenades" hidden="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2451,17 +2542,6 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c605-35c9-a12d-d710" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d2d0-3b69-2b67-dd4b" type="min"/>
-          </constraints>
-          <categoryLinks/>
-        </entryLink>
-        <entryLink id="3800-e479-7ce6-0ebd" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ec56-060e-d5ac-0985" type="max"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="35f8-5e7e-4587-5470" type="min"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -2493,7 +2573,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" costTypeId="points" value="90.0"/>
+        <cost name="pts" costTypeId="points" value="95.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="6.0"/>
       </costs>
     </selectionEntry>
@@ -3530,7 +3610,7 @@
           <characteristics>
             <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
             <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two powers from the Dark Hereticus discipline"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two powers from the Dark Hereticus discipline and/or Discipline of Change."/>
             <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
@@ -3655,7 +3735,7 @@
               </constraints>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="c7ab-a41b-6a56-219b" name="Force sword" hidden="false" targetId="07e7-1f9b-4c1c-aad9" type="selectionEntry">
+            <entryLink id="c7ab-a41b-6a56-219b" name="Power sword" hidden="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -3663,6 +3743,81 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f1d2-17c2-b7eb-87a5" type="max"/>
               </constraints>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="dfd9-5e13-e661-f3ce" name="Pistol Option" hidden="false" collective="false" defaultSelectionEntryId="a78d-2117-b860-c600">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1522-5fef-5f6d-b780" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce28-585b-2fc1-f03f" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="a78d-2117-b860-c600" name="Inferno Bolt Pistol" hidden="false" targetId="be98-d80e-5822-dffe" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3eca-0d77-8281-b46d" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="0180-1496-a7b8-d42d" name="Plasma pistol" hidden="false" targetId="83be-1ba9-c326-4760" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6a08-5f07-04c9-c92e" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="5a61-6ebb-f081-045e" name="Warpflame Pistol" hidden="false" targetId="57f3-7a4e-b801-6be6" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9657-936d-5e38-6af4" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="fdbd-2d62-4d9b-bac1" name="Psychic Powers" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e7ba-e337-5ddd-e517" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="4cb5-98b8-6ddc-bcfe" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="c42c-eae2-fe69-732d" name="Discipline of Change" hidden="false" targetId="c436-bcc7-8498-be61" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
               <categoryLinks/>
             </entryLink>
           </entryLinks>
@@ -3680,17 +3835,6 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="6736-b46e-ddb2-ade8" name="New EntryLink" hidden="false" targetId="be98-d80e-5822-dffe" type="selectionEntry">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="74d3-ab97-1070-e74d" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7644-faf8-92d4-f9ca" type="max"/>
-          </constraints>
-          <categoryLinks/>
-        </entryLink>
         <entryLink id="272f-3424-16fe-0817" name="Smite" hidden="false" targetId="03fd-db47-5333-1e1f" type="selectionEntry">
           <profiles/>
           <rules/>
@@ -3699,17 +3843,6 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4848-889e-cf5f-a33f" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c45e-0518-10cc-564e" type="min"/>
-          </constraints>
-          <categoryLinks/>
-        </entryLink>
-        <entryLink id="d882-4bf8-4af2-9a7e" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0759-a01d-801c-644f" type="max"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="62ca-6708-e248-9285" type="min"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -3737,6 +3870,14 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d524-3bfc-5054-302e" type="max"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="cc57-7e44-14af-ff54" name="Blades on Disc of Tzeentch" hidden="false" targetId="5449-4067-6f1b-a596" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -6551,7 +6692,7 @@
     </selectionEntry>
     <selectionEntry id="3f62-11e4-522b-1fb6" name="Exalted Sorcerer on Disc of Tzeentch" hidden="false" collective="false" type="model">
       <profiles>
-        <profile id="7504-ff7a-672c-c858" name="Exalted Sorcerer on Disc of Tzeetnch" page="0" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+        <profile id="7504-ff7a-672c-c858" name="Exalted Sorcerer on Disc of Tzeentch" page="" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -6576,7 +6717,7 @@
           <characteristics>
             <characteristic name="Cast" characteristicTypeId="5afb-9914-904b-d3b3" value="2"/>
             <characteristic name="Deny" characteristicTypeId="b5ac-9c20-5d5a-6f9b" value="1"/>
-            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two powers from the Dark Hereticus discipline"/>
+            <characteristic name="Powers Known" characteristicTypeId="69d7-b45e-00a2-7e46" value="Smite and two powers from the Dark Hereticus discipline and/or Discipline of Change."/>
             <characteristic name="Other" characteristicTypeId="c2e2-f115-0003-5d7b" value=""/>
           </characteristics>
         </profile>
@@ -6690,73 +6831,117 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="c4cf-66bd-428e-4624" name="Blades on Disc of Tzeentch" hidden="false" collective="false" type="upgrade">
-          <profiles>
-            <profile id="0ce6-bff4-826f-9892" name="Blades on Disc of Tzeentch" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <characteristics>
-                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
-                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
-                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="4"/>
-                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
-                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
-                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="After this model makes its close combat attacks, you can attack with its mount. Make 1 additional attack, using this weapon profile."/>
-              </characteristics>
-            </profile>
-          </profiles>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="08ce-d187-77be-4f14" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="48ea-c6e8-d47b-5621" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="2.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups>
-        <selectionEntryGroup id="4bfb-d5f6-8e65-f245" name="Force Weapon option" hidden="false" collective="false" defaultSelectionEntryId="5c50-c6bb-c69b-e5e3">
+        <selectionEntryGroup id="9a85-1420-7cd8-6277" name="Force Weapon option" hidden="false" collective="false" defaultSelectionEntryId="b36e-1393-d43f-bfa0">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="17cf-102c-ba36-360b" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2243-6e06-5ba5-c125" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="02b6-c68a-c02a-72a1" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea4e-9211-c412-dfdd" type="max"/>
           </constraints>
           <categoryLinks/>
           <selectionEntries/>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="5c50-c6bb-c69b-e5e3" name="Force stave" hidden="false" targetId="6f9a-c4fe-3132-d011" type="selectionEntry">
+            <entryLink id="b36e-1393-d43f-bfa0" name="Force stave" hidden="false" targetId="6f9a-c4fe-3132-d011" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9a36-570f-b4e8-1d50" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3623-0fb6-a7c9-6d11" type="max"/>
               </constraints>
               <categoryLinks/>
             </entryLink>
-            <entryLink id="76a5-c7f3-df9e-11f5" name="Force sword" hidden="false" targetId="07e7-1f9b-4c1c-aad9" type="selectionEntry">
+            <entryLink id="d23e-d6a8-9083-153a" name="Power sword" hidden="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="129e-ced2-8806-5c1e" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2147-1b25-691a-5c83" type="max"/>
               </constraints>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="b2f4-a085-c439-3b14" name="Pistol Option" hidden="false" collective="false" defaultSelectionEntryId="1a0b-8db5-824a-688a">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3198-873d-abc7-fc0a" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a3f7-974a-fc3b-4a2d" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="1a0b-8db5-824a-688a" name="Inferno Bolt Pistol" hidden="false" targetId="be98-d80e-5822-dffe" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="39fd-64b7-79e7-25bb" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="dccb-af12-ba5c-12bc" name="Plasma pistol" hidden="false" targetId="83be-1ba9-c326-4760" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2e76-34db-a4d3-d95b" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="bef7-f51c-0ed7-cf8f" name="Warpflame Pistol" hidden="false" targetId="57f3-7a4e-b801-6be6" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3f3f-d1ed-b1d4-ac2e" type="max"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="9b1a-6eb9-c939-6acc" name="Psychic Powers" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0564-0050-333c-58a4" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="dad8-f650-aa45-16f7" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e7f6-dc10-2763-4122" type="max"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4369-9618-a66c-c1a0" type="min"/>
+              </constraints>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="274f-1f49-e3db-a9b1" name="Discipline of Change" hidden="false" targetId="c436-bcc7-8498-be61" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
               <categoryLinks/>
             </entryLink>
           </entryLinks>
@@ -6774,17 +6959,6 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="1b73-4f13-4235-6950" name="New EntryLink" hidden="false" targetId="be98-d80e-5822-dffe" type="selectionEntry">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9e69-883c-dee9-f692" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="61d1-3801-9ebd-1893" type="max"/>
-          </constraints>
-          <categoryLinks/>
-        </entryLink>
         <entryLink id="f24e-0802-f9ea-b704" name="Smite" hidden="false" targetId="03fd-db47-5333-1e1f" type="selectionEntry">
           <profiles/>
           <rules/>
@@ -6793,17 +6967,6 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3d4f-6d6e-0292-42fc" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="651a-83c0-0a88-c73e" type="min"/>
-          </constraints>
-          <categoryLinks/>
-        </entryLink>
-        <entryLink id="0af9-298b-7ee3-ce8e" name="Dark Hereticus Discipline" hidden="false" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a357-a618-9f58-353b" type="max"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4dd0-6588-c289-5df3" type="min"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -6833,10 +6996,18 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
+        <entryLink id="4f70-4d93-7027-8728" name="Blades on Disc of Tzeentch" hidden="false" targetId="5449-4067-6f1b-a596" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" costTypeId="points" value="146.0"/>
-        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="9.0"/>
+        <cost name="pts" costTypeId="points" value="132.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="8.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="aa64-5c8e-b2d5-86b0" name="Tzaangors" hidden="false" collective="false" type="unit">
@@ -7277,19 +7448,16 @@
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can add 1 to any Psychic tests or Deny the Witch tests you take for Ahriman."/>
           </characteristics>
         </profile>
-        <profile id="0cd7-41f7-4e39-9657" name="Lord of the Thousand Sons" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll invulnerable saving throws of 1 made for friendly THOUSAND SONS units within 6&quot; of this model."/>
-          </characteristics>
-        </profile>
       </profiles>
       <rules/>
       <infoLinks>
         <infoLink id="7a81-2211-d524-8a1f" name="Death to the False Emperor" hidden="false" targetId="27a8-c34a-7a70-904e" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="84b8-6e03-003c-7524" name="Lord of the Thousand Sons" hidden="false" targetId="92a0-3a44-c95b-ecdf" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -7512,7 +7680,7 @@
       </entryLinks>
       <costs>
         <cost name="pts" costTypeId="points" value="131.0"/>
-        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="8.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="7.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="ea3f-d47c-01f9-f553" name="Ahriman on Disc of Tzeentch" page="" hidden="false" collective="false" type="model">
@@ -7715,39 +7883,6 @@
             <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="30cf-89ac-f8d1-78ce" name="Blades on Disc of Tzeentch" hidden="false" collective="false" type="upgrade">
-          <profiles>
-            <profile id="2327-bfea-1ded-6cf0" name="Blades on Disc of Tzeentch" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <characteristics>
-                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
-                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
-                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="4"/>
-                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
-                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
-                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="After this model makes its close combat attacks, you can attack with its mount. Make 1 additional attack, using this weapon profile."/>
-              </characteristics>
-            </profile>
-          </profiles>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ae35-112f-660b-ea91" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bf45-1756-017d-491f" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="869a-8885-5014-16f0" name="Psychic Powers" hidden="false" collective="false">
@@ -7843,10 +7978,18 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
+        <entryLink id="eb55-9e72-760b-b18f" name="Blades on Disc of Tzeentch" hidden="false" targetId="5449-4067-6f1b-a596" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" costTypeId="points" value="166.0"/>
-        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="10.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="9.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="6991-43a5-55d4-323f" name="Chaos Land Raider" page="0" hidden="false" collective="false" type="model">
@@ -9191,6 +9334,67 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="57f3-7a4e-b801-6be6" name="Warpflame Pistol" hidden="false" collective="false" type="upgrade">
+      <profiles>
+        <profile id="78b7-bf1c-1e84-f09b" name="Warpflame Pistol" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="6&quot;"/>
+            <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Pistol D6"/>
+            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="3"/>
+            <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+            <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon automatically hits its target."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name="pts" costTypeId="points" value="7.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="5449-4067-6f1b-a596" name="Blades on Disc of Tzeentch" hidden="false" collective="false" type="upgrade">
+      <profiles>
+        <profile id="b73d-6d35-8f2a-ec26" name="Blades on Disc of Tzeentch" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+            <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="4"/>
+            <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
+            <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="After a model on this mount makes its close combat attacks, you can attack with its mount. Make 1 additional attack, using this weapon profile."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3574-2486-5996-703e" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e32-625b-5917-270f" type="min"/>
+      </constraints>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="a44b-4b4d-46b5-d3a6" name="Special Weapons" hidden="false" collective="false">
@@ -10065,13 +10269,13 @@ If your summoning roll included any doubles, your character then suffers a morta
         <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model has a 5+ invulnerable save."/>
       </characteristics>
     </profile>
-    <profile id="6c28-5b6b-0879-5f1d" name="Prince of Chaos" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+    <profile id="6c28-5b6b-0879-5f1d" name="Prince of Tzeentch" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll hit rolls of 1 made for friendly THOUSAND SONS units within 6&quot; of this model. This ability also affects friendly TZEENTCH DAEMON units within 6&quot;."/>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll hit rolls of 1 made for friendly THOUSAND SONS and TZEENTCH DAEMON units within 6&quot; of this model."/>
       </characteristics>
     </profile>
     <profile id="5d58-ea78-c523-b0c7" name="Favour of Tzeentch" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -10089,7 +10293,7 @@ If your summoning roll included any doubles, your character then suffers a morta
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll invulnerable saving throws of 1 made for friendly THOUSAND SONS INFANTRY units within 6&quot; of this model."/>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll hit rolls of 1 made for friendly THOUSAND SONS INFANTRY units within 6&quot; of this model."/>
       </characteristics>
     </profile>
     <profile id="4d38-d3e5-a04b-55dc" name="Brutal assault weapon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -10127,6 +10331,24 @@ If your summoning roll included any doubles, your character then suffers a morta
       <modifiers/>
       <characteristics>
         <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="During deployment, you can set up this model in a teleportarium chamber instead of placing it on the battlefield. At the end of any of your Movement phases the model can use a teleport strike to arrive on the battlefield - set it up anywhere on the battlefield that is more than 9&quot; away from any enemy models."/>
+      </characteristics>
+    </profile>
+    <profile id="6d5a-5f5e-dc4b-7444" name="Ephemeral Daemon" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This unit has a 4+ invulnerable save."/>
+      </characteristics>
+    </profile>
+    <profile id="7b33-2619-776d-3081" name="Lord of the Thousand Sons" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll invulnerable saving throws of 1 made for friendly THOUSAND SONS units within 6&quot; of this model."/>
       </characteristics>
     </profile>
   </sharedProfiles>
