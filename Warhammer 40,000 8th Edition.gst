@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="39" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="40" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -1866,7 +1866,14 @@
     <forceEntry id="8cae-c44c-ef1f-8f43" name="Planetstrike Attacker +5 CP" book="Chapter Approved 2017" page="34" hidden="false">
       <profiles/>
       <rules/>
-      <infoLinks/>
+      <infoLinks>
+        <infoLink id="11bc-2f4e-b0db-3981" name="Planetstrike Detachment" hidden="false" targetId="cc24-45b1-6aa4-55bb" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
       <modifiers/>
       <constraints/>
       <forceEntries>
@@ -2036,7 +2043,14 @@
     <forceEntry id="810f-6b53-1e3b-fe9d" name="Planetstrike Defender +5 CP" book="Chapter Approved 2017" page="34" hidden="false">
       <profiles/>
       <rules/>
-      <infoLinks/>
+      <infoLinks>
+        <infoLink id="4375-bf18-ffdd-657b" name="Planetstrike Detachment" hidden="false" targetId="cc24-45b1-6aa4-55bb" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
       <modifiers/>
       <constraints/>
       <forceEntries>
@@ -10442,6 +10456,13 @@
       <infoLinks/>
       <modifiers/>
       <description>When attacking with this weapon, choose one or both of the profiles. If you choose both, subtract 1 from all hit rolls for this weapon.</description>
+    </rule>
+    <rule id="cc24-45b1-6aa4-55bb" name="Planetstrike Detachment" book="Chapter Approved 2017" page="34" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <description>The 5 CPs from this detachment can only be spent on Planetstrike Stratagems.</description>
     </rule>
   </sharedRules>
   <sharedProfiles>
