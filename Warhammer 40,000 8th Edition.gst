@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="42" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="43" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -2535,7 +2535,14 @@
     <forceEntry id="c048-e584-e628-474e" name="Stronghold Assault Attacker +5 CP" book="Chapter Approved 2017" page="46" hidden="false">
       <profiles/>
       <rules/>
-      <infoLinks/>
+      <infoLinks>
+        <infoLink id="4540-d21a-a58f-7415" name="Stronghold Assault Detachment" hidden="false" targetId="91d7-8a00-1945-fab1" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
       <modifiers/>
       <constraints/>
       <forceEntries>
@@ -2726,7 +2733,14 @@
     <forceEntry id="e6cd-ac5b-db70-84ff" name="Stronghold Assault Defender +5 CP" book="Chapter Approved 2017" page="46" hidden="false">
       <profiles/>
       <rules/>
-      <infoLinks/>
+      <infoLinks>
+        <infoLink id="5f34-6b5d-80a0-d80d" name="Stronghold Assault Detachment" hidden="false" targetId="91d7-8a00-1945-fab1" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
       <modifiers/>
       <constraints/>
       <forceEntries>
@@ -10866,6 +10880,13 @@
       <infoLinks/>
       <modifiers/>
       <description>The 5 CPs from this detachment can only be spent on Planetstrike Stratagems.</description>
+    </rule>
+    <rule id="91d7-8a00-1945-fab1" name="Stronghold Assault Detachment" book="Chapter Approved 2017" page="46" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <description>The 5 CPs from this detachment can only be spent on Stronghold Assault Stratagems.</description>
     </rule>
   </sharedRules>
   <sharedProfiles>
