@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="43" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="44" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -648,7 +648,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="564e-55d5-79bc-a4d7" name="Battalion Detachment +3CP" hidden="false">
+    <forceEntry id="564e-55d5-79bc-a4d7" name="Battalion Detachment +5CP" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -838,7 +838,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="cccd-3d99-d4af-d668" name="Brigade Detachment +9CP" hidden="false">
+    <forceEntry id="cccd-3d99-d4af-d668" name="Brigade Detachment +12CP" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
