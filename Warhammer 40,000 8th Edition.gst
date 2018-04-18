@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="44" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="45" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -4531,10 +4531,19 @@
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If a Skyshield Landing Pad is destroyed, do not remove the model. Instead, all of its other abilities cease to apply, and it is treated as ruins for the rest of the battle."/>
           </characteristics>
         </profile>
+        <profile id="384e-ceef-3e13-fba3" name="Landing Pad" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Enemy models can move within 1&quot; of a Skyshield Landing Pad (and can move on top of it) as if it were a terrain feature. In addition, they do not need to Fall Back in order to move away from it if they start their turn within 1&quot; of it, and being within 1&quot; of a Skyshield Landing Pad in the Shooting phase does not prevent an enemy unit from shooting"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
-        <infoLink id="a8fe-56de-deb2-5c71" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
+        <infoLink id="a8fe-56de-deb2-5c71" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
