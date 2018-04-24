@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="46" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="47" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -74,6 +74,11 @@
       <characteristicTypes>
         <characteristicType id="6b92-2d97-5144-62bc" name="Keywords (Faction)"/>
         <characteristicType id="ce6c-4765-4bb8-bd49" name="Keywords (Basic)"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="002f-cc4a-c4e3-0261" name="Landing Pad Configuration">
+      <characteristicTypes>
+        <characteristicType id="f566-bacc-9414-7661" name="Effect"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -4519,7 +4524,7 @@
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the start of your turn, if there are no enemy models within 1&quot; of the Skyshield Landing Pad, a friendly model within 1&quot; of it can change the Skyshield Landing Pad configuration to one of the following:  - Shielded: All models (friend or foe) that are on top of the Skyshield Landing Pad in this configuration receive a 5+ invulnerable save against any attacks made in the Shooting phase (unless the firing model is also on top of the Skyshield Landing Pad). Note, however, that the Skyshield Landing Pad itself does not receive an invulnerable save in this manner.  - Unfurled: Any friendly unit with the Flyer Battlefield Role that spends its entire turn on top of a Skyshield Landing Pad in this configuration regains D3 lost wounds at the end of the turn as a result of the landing pad&apos;s auto-repair systems."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the start of your turn, if there are no enemy models within 1&quot; of the Skyshield Landing Pad, a friendly model within 1&quot; of it can change the Skyshield Landing Pad configuration to one of those in the table below."/>
           </characteristics>
         </profile>
         <profile id="e98f-a12b-8266-2b17" name="Wrecked Landing Pad" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -4538,6 +4543,24 @@
           <modifiers/>
           <characteristics>
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Enemy models can move within 1&quot; of a Skyshield Landing Pad (and can move on top of it) as if it were a terrain feature. In addition, they do not need to Fall Back in order to move away from it if they start their turn within 1&quot; of it, and being within 1&quot; of a Skyshield Landing Pad in the Shooting phase does not prevent an enemy unit from shooting"/>
+          </characteristics>
+        </profile>
+        <profile id="c01d-4736-944f-b007" name="Shielded" hidden="false" profileTypeId="002f-cc4a-c4e3-0261" profileTypeName="Landing Pad Configuration">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Effect" characteristicTypeId="f566-bacc-9414-7661" value="All models (friend or foe) that are on top of the Skyshield Landing Pad in this configuration receive a 5+ invulnerable save against any attacks made in the Shooting phase (unless the firing model is also on top of the Skyshield Landing Pad). Note, however, that the Skyshield Landing Pad itself does not receive an invulnerable save in this manner."/>
+          </characteristics>
+        </profile>
+        <profile id="c1ed-3585-4739-2266" name="Unfurled" hidden="false" profileTypeId="002f-cc4a-c4e3-0261" profileTypeName="Landing Pad Configuration">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Effect" characteristicTypeId="f566-bacc-9414-7661" value="Any friendly unit with the Flyer Battlefield Role that spends its entire turn on top of a Skyshield Landing Pad in this configuration regains D3 lost wounds at the end of the turn as a result of the landing pad&apos;s auto-repair systems."/>
           </characteristics>
         </profile>
       </profiles>
