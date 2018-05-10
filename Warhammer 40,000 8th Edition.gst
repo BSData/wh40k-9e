@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="47" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="48" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -9939,16 +9939,18 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="1bad-1970-8d5d-733f" name="1. Legendary Fighter" hidden="false" collective="false" type="upgrade">
-      <profiles/>
-      <rules>
-        <rule id="8501-bf9c-e77c-da0e" name="1. Legendary Fighter" hidden="false">
+      <profiles>
+        <profile id="32c0-34b1-f061-3d51" name="Legendary Fighter" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <description>If this warlord charges in the charge phase, add 1 to their attacks characteristic until the end of the ensuing fight phase.</description>
-        </rule>
-      </rules>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this warlord charges in the charge phase, add 1 to their attacks characteristic until the end of the ensuing fight phase."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
       <infoLinks/>
       <modifiers/>
       <constraints>
@@ -9964,16 +9966,18 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="bad4-7cc1-6b79-0e18" name="2. Inspiring Leader" hidden="false" collective="false" type="upgrade">
-      <profiles/>
-      <rules>
-        <rule id="d2b3-725c-193e-f2f3" name="2. Inspiring Leader" hidden="false">
+      <profiles>
+        <profile id="f457-a366-e21d-196f" name="Inspiring Leader" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <description>Friendly units within 6&quot; of this warlord can add 1 to their leadership characteristic.</description>
-        </rule>
-      </rules>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Friendly units within 6&quot; of this warlord can add 1 to their leadership characteristic."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
       <infoLinks/>
       <modifiers/>
       <constraints>
@@ -9989,16 +9993,18 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="9a24-3ad2-9f48-7049" name="3. Tenacious Survivor" hidden="false" collective="false" type="upgrade">
-      <profiles/>
-      <rules>
-        <rule id="2f4d-998d-c4ca-8167" name="3. Tenacious Survivor" hidden="false">
+      <profiles>
+        <profile id="9f18-91d8-df6e-5706" name="Tenacious Survivor" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <description>Roll a dice each time this warlord loses a wound. On a 6, the warlord shrugs off the damage and does not lose the wound.</description>
-        </rule>
-      </rules>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Roll a dice each time this warlord loses a wound. On a 6, the warlord shrugs off the damage and does not lose the wound."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
       <infoLinks/>
       <modifiers/>
       <constraints>
@@ -10403,7 +10409,7 @@
       <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
-        <entryLink id="bef9-3a50-5ff4-1ba0" name="BRB 1: Legendary Fighter" hidden="false" targetId="1bad-1970-8d5d-733f" type="selectionEntry">
+        <entryLink id="bef9-3a50-5ff4-1ba0" name="1. Legendary Fighter" hidden="false" targetId="1bad-1970-8d5d-733f" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -10411,7 +10417,7 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
-        <entryLink id="034f-ad37-f67b-95fe" name="BRB 2: Inspiring Leader" hidden="false" targetId="bad4-7cc1-6b79-0e18" type="selectionEntry">
+        <entryLink id="034f-ad37-f67b-95fe" name="2. Inspiring Leader" hidden="false" targetId="bad4-7cc1-6b79-0e18" type="selectionEntry">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -10473,16 +10479,18 @@
           <categoryLinks/>
           <selectionEntries>
             <selectionEntry id="ff3c-3922-d0a7-b62f" name="1. Master of Timing" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="5fbe-1d7c-7517-cf6e" name="1. Master of Timing" hidden="false">
+              <profiles>
+                <profile id="62dc-581b-0fc0-56f0" name="Master of Timing" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You can re-roll one failed Reserve roll each turn.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll one failed Reserve roll each turn."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10496,16 +10504,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="0e3f-2b7b-06e3-a454" name="2. Burner of Worlds" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="90e3-3b12-211c-81e1" name="2. Burner of Worlds" hidden="false">
+              <profiles>
+                <profile id="3f29-21a5-bcab-43c9" name="Burner of Worlds" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>When you make Firestorm attacks, add 1 to the total number you can make.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When you make Firestorm attacks, add 1 to the total number you can make."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10519,16 +10529,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="9905-0a35-c18f-50ea" name="3. Planetary Attacker" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="2122-2953-bddd-8286" name="3. Planetary Attacker" hidden="false">
+              <profiles>
+                <profile id="655e-42f4-a1a7-9309" name="Planetary Attacker" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You have one bonus Command Point – this can only be spent on a Planetstrike Stratagem.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You have one bonus Command Point – this can only be spent on a Planetstrike Stratagem."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10564,16 +10576,18 @@
           <categoryLinks/>
           <selectionEntries>
             <selectionEntry id="bc9d-ccff-4d20-771c" name="1. Lord of Ambush" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="c84c-d93d-5431-65b6" name="1. Lord of Ambush" hidden="false">
+              <profiles>
+                <profile id="d64a-821d-7c23-52ad" name="Lord of Ambush" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You can re-roll hit rolls of 1 for friendly units within 6&quot; of your Warlord if targeting an Attacking unit that arrived as reinforcements this turn.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll hit rolls of 1 for friendly units within 6&quot; of your Warlord if targeting an Attacking unit that arrived as reinforcements this turn."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10587,16 +10601,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="a33c-1bef-a01a-e980" name="2. Protector of Worlds" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="c05d-2df2-be3b-85e3" name="2. Protector of Worlds" hidden="false">
+              <profiles>
+                <profile id="1cca-8821-c432-fa4e" name=" Protector of Worlds" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You can re-roll failed Morale tests for friendly units whilst they are within 6&quot; of your Warlord.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll failed Morale tests for friendly units whilst they are within 6&quot; of your Warlord."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10610,16 +10626,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="1dec-4c83-2adc-50bc" name="3. Planetary Defender" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="1d3f-d7e0-bf97-19bb" name="3. Planetary Defender" hidden="false">
+              <profiles>
+                <profile id="da32-484a-df1d-babb" name="Planetary Defender" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You have one bonus Command Point – this can only be spent on a Planetstrike Stratagem.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You have one bonus Command Point – this can only be spent on a Planetstrike Stratagem."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10636,7 +10654,7 @@
           <selectionEntryGroups/>
           <entryLinks/>
         </selectionEntryGroup>
-        <selectionEntryGroup id="6d80-f955-1f1c-459e" name="Stronghold Assault Attacker" hidden="false" collective="false">
+        <selectionEntryGroup id="6d80-f955-1f1c-459e" name="Stronghold Assault Defender" hidden="false" collective="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -10655,16 +10673,18 @@
           <categoryLinks/>
           <selectionEntries>
             <selectionEntry id="3c3c-7e55-ffac-e301" name="1. Counterfire Master" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="13a9-f859-ac4f-9f10" name="1. Counterfire Master" hidden="false">
+              <profiles>
+                <profile id="3912-170b-9164-4c9e" name="Counterfire Master" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You can re-roll failed hit rolls for friendly units within 6&quot; of your Warlord (this includes any BUILDINGthey are embarked within, and any other units embarked within the same building).</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll failed hit rolls for friendly units within 6&quot; of your Warlord (this includes any BUILDING they are embarked within, and any other units embarked within the same building)."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10678,16 +10698,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="6310-0441-8085-fdcb" name="2. Fortress Commander" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="11c3-e035-b58e-e243" name="2. Fortress Commander" hidden="false">
+              <profiles>
+                <profile id="e826-7677-123a-f36c" name="Fortress Commander" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>If your Warlord is embarked within a BUILDING, roll a dice each time that building loses a wound; on a 6+, the building does not lose a wound.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If your Warlord is embarked within a BUILDING, roll a dice each time that building loses a wound; on a 6+, the building does not lose a wound."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10701,16 +10723,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="8bc6-4856-60a1-56b4" name="3. Stronghold Assault Defender" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="b02d-f900-4ff8-e349" name="3. Stronghold Assault Defender" hidden="false">
+              <profiles>
+                <profile id="68da-2b3c-0bc8-5b73" name="Stronghold Assault Defender" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You have one bonus Command Point – this can only be spent ona Stronghold Assault Stratagem.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You have one bonus Command Point – this can only be spent on a Stronghold Assault Stratagem."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10727,7 +10751,7 @@
           <selectionEntryGroups/>
           <entryLinks/>
         </selectionEntryGroup>
-        <selectionEntryGroup id="4857-0c03-64df-6378" name="Stonghold Assault Defender" hidden="false" collective="false">
+        <selectionEntryGroup id="4857-0c03-64df-6378" name="Stronghold Assault Attacker" hidden="false" collective="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -10746,16 +10770,18 @@
           <categoryLinks/>
           <selectionEntries>
             <selectionEntry id="0222-b234-6991-696a" name="1. Siege Breaker" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="1693-b1c3-ff08-a17b" name="1. Siege Breaker" hidden="false">
+              <profiles>
+                <profile id="f73b-8c7e-f69e-0fcb" name="Siege Breaker" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You can re-roll failed charge rolls for friendly units that are within 6&quot; of your Warlord when they declare a charge against a BUILDING.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll failed charge rolls for friendly units that are within 6&quot; of your Warlord when they declare a charge against a BUILDING."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10769,16 +10795,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="4680-d58f-ddf8-3382" name="2. Fortress Destroyer" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="3c7c-2581-a48f-f85b" name="2. Fortress Destroyer" hidden="false">
+              <profiles>
+                <profile id="f80f-3686-fb27-1123" name="Fortress Destroyer" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You can re-roll wound rolls of 1 for friendly units that are within 6&quot; of your Warlord when they target a BUILDING.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll wound rolls of 1 for friendly units that are within 6&quot; of your Warlord when they target a BUILDING."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
@@ -10792,16 +10820,18 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="d4be-616e-a6d7-9c22" name="3. Stronghold Assault Attacker" hidden="false" collective="false" type="upgrade">
-              <profiles/>
-              <rules>
-                <rule id="6bf3-c42e-2c4f-1968" name="3. Stronghold Assault Attacker" hidden="false">
+              <profiles>
+                <profile id="ee27-24ae-bb21-836e" name="Stronghold Assault Attacker" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <description>You have one bonus Command Point – this can only be spent on aStronghold Assault Stratagem.</description>
-                </rule>
-              </rules>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You have one bonus Command Point – this can only be spent on a Stronghold Assault Stratagem."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
               <infoLinks/>
               <modifiers/>
               <constraints/>
