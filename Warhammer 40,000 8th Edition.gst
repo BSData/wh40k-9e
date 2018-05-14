@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="48" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="49" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -460,6 +460,13 @@
       <constraints>
         <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="df0f-9432-c226-f249" type="max"/>
       </constraints>
+    </categoryEntry>
+    <categoryEntry id="dbb4-dfd1-04b9-5980" name="Faction: Aeldari" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
     </categoryEntry>
   </categoryEntries>
   <forceEntries>
@@ -10205,6 +10212,104 @@
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="52c2-f7a8-dc21-d14d" name="Webway Gate" hidden="false" collective="false" type="model">
+      <profiles>
+        <profile id="5a30-abaf-f4cf-2586" name="Webway Gate" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="-"/>
+            <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="-"/>
+            <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="-"/>
+            <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="-"/>
+            <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="8"/>
+            <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="14"/>
+            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="-"/>
+            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="-"/>
+            <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
+          </characteristics>
+        </profile>
+        <profile id="ba08-5714-b31c-5cf5" name="Shimmering Arrival" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When you set up this model during deployment, it can be set up anywhere on the battlefield that is more than 12&quot; from the enemy deployment zone and any enemy models, and more than 3&quot; from any other terrain features or the center of any objective markers."/>
+          </characteristics>
+        </profile>
+        <profile id="9f52-e8b6-268d-fa2d" name="Eldritch Aura" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model has a 5+ Invulnerable save"/>
+          </characteristics>
+        </profile>
+        <profile id="0fff-6dcb-d884-e8df" name="Webway Strike" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="After you set up this model, any AELDARI units you have not yet set up during deployment, other than fortifications, can be set up in a webway spar rather than being set up on the battlefield. One unit in a webway spar can emerge from each friendly Webway Gate at the end of each of your movement phases - Set them up wholly within 3&quot; of the webway gate and more than 9&quot; away from any enemy models. If all friendlyWebway Gates have been destroyed, any units that have not yet arrived from a webway spar are considered to be slain"/>
+          </characteristics>
+        </profile>
+        <profile id="1b16-1941-d120-15ee" name="Webway Gate" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When measuring distance to and from a Webway Gate, measure from the closest point of the model. If a Webway Gate is destroyed, remove both arch peices from the battlefield."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks>
+        <infoLink id="1a92-ac78-d207-27bd" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="e7e7-208c-04b2-5ea6" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="7ce7-1cff-5c04-d349" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="40f9-d058-6db4-cf64" name="New CategoryLink" hidden="false" targetId="dbb4-dfd1-04b9-5980" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name="pts" costTypeId="points" value="120.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="6.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
