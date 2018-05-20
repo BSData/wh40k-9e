@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="50" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="51" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -10431,7 +10431,7 @@
             <modifier type="set" field="hidden" value="true">
               <repeats/>
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="84e2-9fa9-ebe6-1d18" type="notInstanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="84e2-9fa9-ebe6-1d18" type="notInstanceOf"/>
               </conditions>
               <conditionGroups/>
             </modifier>
@@ -10465,7 +10465,7 @@
             <modifier type="set" field="hidden" value="true">
               <repeats/>
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5cf1-acf2-ca3b-c2e5" type="notInstanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5cf1-acf2-ca3b-c2e5" type="notInstanceOf"/>
               </conditions>
               <conditionGroups/>
             </modifier>
@@ -10850,10 +10850,17 @@
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8acf-e31f-f58b-2e9a" type="atLeast"/>
-                    <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8444-3d0b-9c8c-8375" type="atLeast"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="84e2-9fa9-ebe6-1d18" type="notInstanceOf"/>
                   </conditions>
-                  <conditionGroups/>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8444-3d0b-9c8c-8375" type="atLeast"/>
+                        <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8acf-e31f-f58b-2e9a" type="atLeast"/>
+                      </conditions>
+                      <conditionGroups/>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
