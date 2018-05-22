@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="51" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="52" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -362,104 +362,29 @@
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers>
-        <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-        <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
-      </constraints>
+      <modifiers/>
+      <constraints/>
     </categoryEntry>
     <categoryEntry id="655f-e142-dfa9-11a4" name="Relic HQ" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers>
-        <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-        <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
-      </constraints>
+      <modifiers/>
+      <constraints/>
     </categoryEntry>
     <categoryEntry id="6c4c-a416-b8cb-c380" name="Relic Heavy Support" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers>
-        <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-        <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
-      </constraints>
+      <modifiers/>
+      <constraints/>
     </categoryEntry>
     <categoryEntry id="3216-79af-660b-7711" name="Relic Lord of War" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers>
-        <modifier type="increment" field="df0f-9432-c226-f249" value="1">
-          <repeats/>
-          <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" type="equalTo"/>
-          </conditions>
-          <conditionGroups/>
-        </modifier>
-        <modifier type="increment" field="df0f-9432-c226-f249" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-        <modifier type="decrement" field="df0f-9432-c226-f249" value="1">
-          <repeats>
-            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="df0f-9432-c226-f249" type="max"/>
-      </constraints>
+      <modifiers/>
+      <constraints/>
     </categoryEntry>
     <categoryEntry id="dbb4-dfd1-04b9-5980" name="Faction: Aeldari" hidden="false">
       <profiles/>
@@ -641,22 +566,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="c5d5-0449-f57d-550d" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="c094-1b6f-b2e9-21ba" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -831,22 +807,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="8174-cdef-2342-bdd2" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="f6a9-c625-86c9-7614" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1024,22 +1051,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="d9cb-8644-0367-f245" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="bbb8-1fa2-3f91-6a77" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1214,22 +1292,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="8c66-ed10-ee5d-bf81" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="5bb0-6e99-04b4-f883" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1404,22 +1533,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="2a04-69a5-87bc-14fc" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="2653-3387-463f-c068" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1594,22 +1774,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="b5b0-80f4-016e-51f8" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="c59f-786c-5f4d-432f" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1732,22 +1963,49 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="c32f-1035-9b39-65de" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
-        </categoryLink>
-        <categoryLink id="bc79-8650-3af7-e40e" name="Relic Lord of War" hidden="false" targetId="3216-79af-660b-7711" primary="false">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -1812,8 +2070,25 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="c99e-bf0a-6e60-819c" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="c99e-bf0a-6e60-819c" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3216-79af-660b-7711" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c99e-bf0a-6e60-819c" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -2327,22 +2602,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="c884-2e22-b770-2ea4" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="fba2-4040-ac19-c9f9" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -2525,22 +2851,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="fee7-452a-1930-e058" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="0711-642a-731c-6618" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -2723,22 +3100,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="fc1e-73ca-8982-5ee9" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="ea6a-5689-5bbb-04fe" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
@@ -2937,22 +3365,73 @@
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="52e7-ca29-a7fd-9577" name="Relic Heavy Support" hidden="false" targetId="6c4c-a416-b8cb-c380" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="9dff-5b31-a31d-ddf2" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c4c-a416-b8cb-c380" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9dff-5b31-a31d-ddf2" type="max"/>
+          </constraints>
         </categoryLink>
         <categoryLink id="fe7d-0ab3-77ba-4216" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
-          <constraints/>
+          <modifiers>
+            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+          </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
