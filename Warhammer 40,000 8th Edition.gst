@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="53" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="54" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -387,6 +387,13 @@
       <constraints/>
     </categoryEntry>
     <categoryEntry id="dbb4-dfd1-04b9-5980" name="Faction: Aeldari" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
+    <categoryEntry id="22e6-c81e-efbd-70d4" name="Faction: SW" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -10886,21 +10893,28 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="1"/>
           </characteristics>
         </profile>
-        <profile id="d3b4-594c-eec8-7b66" name="Power Overload" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+        <profile id="d3b4-594c-eec8-7b66" name="Power Overload" hidden="true" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers>
-            <modifier type="set" field="hidden" value="true">
+            <modifier type="set" field="hidden" value="false">
               <repeats/>
               <conditions/>
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
                   <conditions>
-                    <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0c02-9fdb-d113-3674" type="lessThan"/>
-                    <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8444-3d0b-9c8c-8375" type="lessThan"/>
+                    <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8444-3d0b-9c8c-8375" type="equalTo"/>
                   </conditions>
-                  <conditionGroups/>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0c02-9fdb-d113-3674" type="equalTo"/>
+                        <condition field="selections" scope="5ea6-c789-f6b9-5c00" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8acf-e31f-f58b-2e9a" type="equalTo"/>
+                      </conditions>
+                      <conditionGroups/>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -10995,7 +11009,57 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8e14-8b36-6e72-8afc" type="min"/>
           </constraints>
           <categoryLinks/>
-          <selectionEntries/>
+          <selectionEntries>
+            <selectionEntry id="08ab-a8a3-a266-f002" name="Twin Helfrost Cannon" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="f726-8978-cbcd-2a42" name="Twin Helfrost Cannon (Dispersed Beam)" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="24&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D3"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="6"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If a model suffers any unsaved wounds from this weapon but is not slain, roll a D6, on a 6, the target suffers a mortal wound."/>
+                  </characteristics>
+                </profile>
+                <profile id="9b24-2450-ad3f-9499" name="Twin Helfrost Cannon (Focused Beam)" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="24&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D6"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If a model suffers any unsaved wounds from this weapon but is not slain, roll a D6, on a 6, the target suffers a mortal wound."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <repeats/>
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22e6-c81e-efbd-70d4" type="notInstanceOf"/>
+                  </conditions>
+                  <conditionGroups/>
+                </modifier>
+              </modifiers>
+              <constraints/>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs/>
+            </selectionEntry>
+          </selectionEntries>
           <selectionEntryGroups/>
           <entryLinks>
             <entryLink id="2439-d817-d7d3-a43c" name="Twin heavy bolter" hidden="false" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
