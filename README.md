@@ -1,11 +1,19 @@
 Warhammer 40,000 8th Edition
 ============================
 
+[![GitHub release](https://img.shields.io/github/release/BSData/wh40k.svg?style=flat-square)](https://github.com/BSData/wh40k/releases/latest)
+![Github commits (since latest release)](https://img.shields.io/github/commits-since/BSData/wh40k/latest.svg?style=flat-square)
+[![AppVeyor master branch](https://img.shields.io/appveyor/ci/BSData/wh40k/master.svg?style=flat-square)](https://ci.appveyor.com/project/BSData/wh40k)
+[![Gitter](https://img.shields.io/gitter/room/BSData/wh40k.svg?style=flat-square)](https://gitter.im/BSData/wh40k)
+
+![GitHub contributors](https://img.shields.io/github/contributors/BSData/wh40k.svg?style=flat-square)
+![GitHub commit activity the past year](https://img.shields.io/github/commit-activity/y/BSData/wh40k.svg?style=flat-square)
+![Issue Stats](https://img.shields.io/issuestats/i/github/BSData/wh40k.svg?style=flat-square)
+
 ## Important ##
 [Important]: #important
 
-__The Battlescribe data editor can cause problems when merging updates. Because of this, and also to avoid duplicated effort where multiple people are working on the same files, please join us on Gitter before you commit changes to the files.__  
-[![Join the chat at https://gitter.im/BSData/wh40k](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BSData/wh40k?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+__The Battlescribe data editor can cause problems when merging updates. Because of this, and also to avoid duplicated effort where multiple people are working on the same files, please join us on Gitter before you commit changes to the files.__
 
 
 __Previous editions__: _However we don't support older editions actively, the files are available from [7th Edition repo](https://github.com/BSData/wh40k-7th-edition) - also there you can find archived files for 7th and 6th edition for BattleScribe v1.15._

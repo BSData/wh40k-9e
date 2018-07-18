@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="5d84-5102-f22c-14d4" name="Chaos - Questor Traitoris" book="" revision="7" battleScribeVersion="2.01" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="5d84-5102-f22c-14d4" name="Chaos - Questor Traitoris" book="" revision="10" battleScribeVersion="2.01" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -14,7 +14,63 @@
       <constraints/>
     </categoryEntry>
   </categoryEntries>
-  <forceEntries/>
+  <forceEntries>
+    <forceEntry id="c858-1e59-55a8-1a2a" name="Questor Traitoris Super-Heavy Detachment" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="name" value="Questor Traitoris Super-Heavy Detachment +6CP">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="greaterThan"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="set" field="name" value="Questor Traitoris Super-Heavy Detachment +3CP">
+          <repeats/>
+          <conditions/>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="greaterThan"/>
+                <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="lessThan"/>
+              </conditions>
+              <conditionGroups/>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints/>
+      <forceEntries/>
+      <categoryLinks>
+        <categoryLink id="7391-77e3-6b05-a3f6" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="86f9-c802-aa13-40ad" type="min"/>
+            <constraint field="selections" scope="force" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="41b6-bb10-5668-e5ec" type="max"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink id="bc25-6958-4314-4fd1" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="be4d-f1f2-7be9-96dc" name="Warlord" hidden="false" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+    </forceEntry>
+  </forceEntries>
   <selectionEntries/>
   <entryLinks>
     <entryLink id="cddc-4795-c524-307d" name="Renegade Knight" hidden="false" targetId="be75-0c89-4566-f22a" type="selectionEntry">
@@ -81,9 +137,25 @@
       <constraints/>
       <categoryLinks/>
     </entryLink>
+    <entryLink id="719f-248d-2146-2282" name="Renegade Knight Dominus" hidden="false" targetId="2d4b-5f29-08c1-277e" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+    </entryLink>
+    <entryLink id="1225-cb7f-0b4c-fa5b" name="Renegade Armigers" hidden="false" targetId="b675-742d-5675-6311" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
-    <selectionEntry id="be75-0c89-4566-f22a" name="Renegade Knight" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="be75-0c89-4566-f22a" name="Renegade Knight" hidden="false" collective="false" type="model">
       <profiles>
         <profile id="28fd-7571-81ad-03df" name="Renegade Knight" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
           <profiles/>
@@ -150,13 +222,13 @@
             <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
           </characteristics>
         </profile>
-        <profile id="3778-defb-1d90-5f8b" name="Knight Titan" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+        <profile id="f400-1143-4bd8-bb69" name="Engine of Destruction" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="A Renegade Knight can Fall Back in the Movement phase and still shoot and/or charge during its turn. It can even move over enemy INFANTRY UNITS, thought at the end of its turn it must be more than 1&quot; from all enemy units. In addition, a Renegage Knight can move and fire Heavy weapons without suffering the penalty to its hit rolls. Finally, a Renegade Knight only gains a bonus to its save in cover if at least half the model is obscured from the firer."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model has a reaper chainsword and a thunderstrike gauntlet, its Attacks characteristic is changed to 5 and its Weapon Skill is improved by 1 (e.g. WS 3+ becomes WS 2+)."/>
           </characteristics>
         </profile>
       </profiles>
@@ -168,7 +240,13 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="eb2f-e43b-5663-fd58" name="Explodes" hidden="false" targetId="dbe5-515f-931f-99ae" type="profile">
+        <infoLink id="eb2f-e43b-5663-fd58" name="Explodes (Knight)" hidden="false" targetId="dbe5-515f-931f-99ae" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="ae0e-5297-6e08-2200" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -214,33 +292,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="d4a9-890c-3d3e-9ac5" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles/>
-          <rules/>
-          <infoLinks>
-            <infoLink id="96fb-eb9c-4590-eee4" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-            </infoLink>
-          </infoLinks>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b4bd-3f0b-2682-f959" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aaa2-3901-fea9-290f" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups>
         <selectionEntryGroup id="36b3-9e5d-5509-bac4" name="Heavy stubber or meltagun" hidden="false" collective="false" defaultSelectionEntryId="6fa5-e017-c96d-b420">
           <profiles/>
@@ -349,10 +401,50 @@
           <constraints/>
           <categoryLinks/>
         </entryLink>
+        <entryLink id="717b-5869-bc75-517a" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="c24a-29b0-7fd9-e316" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="8b1c-156c-1417-82c7" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="f332-b96b-9d04-7b38" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="74c8-f689-9cb6-44d3" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
       </entryLinks>
       <costs>
-        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="23.0"/>
-        <cost name="pts" costTypeId="points" value="320.0"/>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="25.0"/>
+        <cost name="pts" costTypeId="points" value="285.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="a37d-3bc1-1d6b-1706" name="Reaper chainsword" hidden="false" collective="false" type="upgrade">
@@ -365,7 +457,7 @@
           <characteristics>
             <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
             <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
-            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="+4"/>
+            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="+6"/>
             <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
             <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="6"/>
             <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
@@ -398,7 +490,7 @@
             <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="x2"/>
             <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
             <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="6"/>
-            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Subtract 1 from hit rolls for attacks made with this weapon. If you slay a vehicle or Monster with a thunderstrike gauntlet, select an enemy unit within 9&quot; and roll a D6: on a 4+ that unit suffers D3 mortal wounds as the dead body or debris is thrown at it."/>
+            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Subtract 1 from hit rolls for attacks made with this weapon. If you slay a VEHICLE or MONSTER with a thunderstrike gauntlet, select an enemy unit within 9&quot; and roll a D6: on a 4+ that unit suffers D3 mortal wounds as the dead body or debris is thrown at it."/>
           </characteristics>
         </profile>
       </profiles>
@@ -1039,7 +1131,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="a304-723e-813c-f44c" name="Infernal Knight Titan" hidden="false" targetId="90be-819c-d4e7-d65a" type="profile">
+        <infoLink id="a304-723e-813c-f44c" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1103,33 +1195,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="19ac-0f7d-e377-4275" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles/>
-          <rules/>
-          <infoLinks>
-            <infoLink id="21f6-e3ed-1b83-7cc7" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-            </infoLink>
-          </infoLinks>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="32ad-7a91-2157-cac9" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5037-97b4-647a-5996" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
         <entryLink id="f2be-55c2-b365-6a30" name="Acheron flame cannon" hidden="false" targetId="2bdf-19d0-4cf9-4ee1" type="selectionEntry">
@@ -1152,6 +1218,46 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="49da-8169-96eb-b7cb" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="68e6-d1d0-1ed4-5e73" type="min"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="9ab3-b0b0-72ad-b98c" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="cf4e-1543-5520-2894" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="54ca-7294-f16f-8cb6" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="ffb5-9136-8450-5f9b" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="8bef-4ee4-f322-2e8f" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -1236,7 +1342,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="7684-4b7b-6ac4-7185" name="Infernal Knight Titan" hidden="false" targetId="90be-819c-d4e7-d65a" type="profile">
+        <infoLink id="7684-4b7b-6ac4-7185" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1300,41 +1406,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="05af-35df-81f5-0175" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles>
-            <profile id="ef99-4973-f8ab-e87e" name="Titanic feet" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <characteristics>
-                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
-                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
-                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="User"/>
-                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
-                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
-                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Make 3 hit rolls for each attack made with this weapon, instead of 1."/>
-              </characteristics>
-            </profile>
-          </profiles>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="582f-373b-b781-2af3" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4643-41e5-c040-e7bd" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
         <entryLink id="e87f-309c-4eec-1a38" name="Cerastus shock lance" hidden="false" targetId="15ec-607f-8a15-9453" type="selectionEntry">
@@ -1357,6 +1429,46 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bf60-80f1-769a-d398" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2e42-904b-848e-9ed0" type="min"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="96d4-059f-c663-f04a" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="3b32-9820-4e79-da0f" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="4ebc-578f-5edf-a1b5" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="a755-5711-860d-609a" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="a512-36b4-576f-0484" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -1441,7 +1553,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="2a58-89a4-419c-0135" name="Infernal Knight Titan" hidden="false" targetId="90be-819c-d4e7-d65a" type="profile">
+        <infoLink id="2a58-89a4-419c-0135" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1505,33 +1617,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="3ffd-3a10-344e-6592" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles/>
-          <rules/>
-          <infoLinks>
-            <infoLink id="97ad-124f-746f-ec44" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-            </infoLink>
-          </infoLinks>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d150-0f1f-d5e8-c3b3" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2b68-03d9-e07e-59d9" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
         <entryLink id="df2a-3f9d-a7d0-7a56" name="Castigator bolt cannon" hidden="false" targetId="0868-897b-b283-300f" type="selectionEntry">
@@ -1554,6 +1640,46 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="165e-6f7a-e529-fcad" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9e2e-eb90-80d6-a49e" type="min"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="b5dd-e29b-16fd-c2e6" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="2ac1-51da-a85c-704d" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="ae70-7962-4ce1-5205" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="ab85-5f19-62cb-2adf" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="c073-80c9-2c7e-f74d" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -1656,7 +1782,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="4439-aa00-f055-8be8" name="Infernal Knight Titan" hidden="false" targetId="90be-819c-d4e7-d65a" type="profile">
+        <infoLink id="4439-aa00-f055-8be8" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1720,33 +1846,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="4db1-5312-fd4c-2d26" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles/>
-          <rules/>
-          <infoLinks>
-            <infoLink id="300c-d452-17ff-9b81" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-            </infoLink>
-          </infoLinks>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="647d-2ab1-f47d-4ae7" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d3b-53c5-25d0-33bb" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks>
         <entryLink id="8ca0-c68d-3ab4-d233" name="Atropos lascutter" hidden="false" targetId="de4c-2e69-bae5-256f" type="selectionEntry">
@@ -1769,6 +1869,46 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7a89-e53e-6450-31f3" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bcd2-f910-68bd-a724" type="min"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="3f36-732c-a1a1-7f77" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="85d6-edc8-a025-568c" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="382c-fa04-08f9-9fe4" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="7f5d-91b6-893b-dffa" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="2a7a-c562-94e7-a964" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -1862,7 +2002,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="1e8e-d016-3e8b-d625" name="Infernal Knight Titan" hidden="false" targetId="90be-819c-d4e7-d65a" type="profile">
+        <infoLink id="1e8e-d016-3e8b-d625" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -1920,33 +2060,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="baac-ec1c-a1f7-4bd7" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles/>
-          <rules/>
-          <infoLinks>
-            <infoLink id="c82c-e01d-1e8f-d75e" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-            </infoLink>
-          </infoLinks>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2e19-5096-3386-fa0d" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cd35-414b-20c6-e390" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups>
         <selectionEntryGroup id="8526-2e62-c2a3-cc7f" name="Reaper chainsword or hekaton siege claw" book="" hidden="false" collective="false" defaultSelectionEntryId="3474-754a-9cea-e7b1">
           <profiles/>
@@ -2001,6 +2115,46 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="472f-e085-fd3a-e643" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7402-1b1a-c16b-365a" type="min"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="a304-4bc3-09d4-f403" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="de02-4878-a232-87f5" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="91e5-a926-9854-e576" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="1f94-7fb2-ad52-0585" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="6e3a-ece7-2c81-dc27" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -2097,7 +2251,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="abc7-c091-f98f-0f9f" name="Infernal Knight Titan" hidden="false" targetId="90be-819c-d4e7-d65a" type="profile">
+        <infoLink id="abc7-c091-f98f-0f9f" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2155,33 +2309,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="f4af-d8c4-93dc-04a3" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles/>
-          <rules/>
-          <infoLinks>
-            <infoLink id="4b85-60f5-5949-4a06" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-            </infoLink>
-          </infoLinks>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="26c7-1b34-8db6-9614" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a75e-4f8a-042a-dc8f" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups>
         <selectionEntryGroup id="f231-c616-9540-bfbe" name="Ironstorm missile pod options" book="" hidden="false" collective="false" defaultSelectionEntryId="3fba-80e9-388e-e886">
           <profiles/>
@@ -2256,6 +2384,46 @@
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4ea2-20f2-417b-6fff" type="max"/>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7e7c-5d57-4c92-c711" type="min"/>
           </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="c4a6-cc23-532f-84be" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="1c7c-98fc-dfb9-f307" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="1fd9-08d3-62c0-19f5" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="2caa-b990-86ef-c63f" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="515c-c46c-41d7-c755" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
           <categoryLinks/>
         </entryLink>
       </entryLinks>
@@ -2349,7 +2517,7 @@
           <infoLinks/>
           <modifiers/>
         </infoLink>
-        <infoLink id="95d3-d727-c8eb-24ff" name="Infernal Knight Titan" hidden="false" targetId="90be-819c-d4e7-d65a" type="profile">
+        <infoLink id="95d3-d727-c8eb-24ff" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -2407,33 +2575,7 @@
           <constraints/>
         </categoryLink>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="11e2-e2ca-0761-38fd" name="Titanic feet" hidden="false" collective="false" type="upgrade">
-          <profiles/>
-          <rules/>
-          <infoLinks>
-            <infoLink id="d768-8836-7dc1-555e" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-            </infoLink>
-          </infoLinks>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c1f1-c85d-b106-4d5b" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1460-2671-a19a-4292" type="min"/>
-          </constraints>
-          <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups/>
-          <entryLinks/>
-          <costs>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+      <selectionEntries/>
       <selectionEntryGroups>
         <selectionEntryGroup id="69cb-2d6b-ea6b-5394" name="Reaper chainsword or hekaton siege claw" book="" hidden="false" collective="false">
           <profiles/>
@@ -2490,10 +2632,883 @@
           </constraints>
           <categoryLinks/>
         </entryLink>
+        <entryLink id="02d5-bbde-8e2a-512a" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="2f7a-5228-5c9a-e3fd" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="50bd-3656-a4a3-9b05" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="c8ea-1840-b518-703d" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="9537-7fc2-0b4c-babc" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="24.0"/>
         <cost name="pts" costTypeId="points" value="340.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="2d4b-5f29-08c1-277e" name="Renegade Knight Dominus" hidden="false" collective="false" type="model">
+      <profiles>
+        <profile id="27c2-a36c-2f23-b295" name="Renegade Knight Dominus" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="*"/>
+            <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="*"/>
+            <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="*"/>
+            <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="8"/>
+            <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="8"/>
+            <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="28"/>
+            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="4"/>
+            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="9"/>
+            <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
+          </characteristics>
+        </profile>
+        <profile id="18f1-64bf-7978-9449" name="Renegade Knight Dominus" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="-"/>
+            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="M"/>
+            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="WS"/>
+            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="BS"/>
+          </characteristics>
+        </profile>
+        <profile id="31ad-c4b0-a34e-eb65" name="Dominus1" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="15-28+"/>
+            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="10&quot;"/>
+            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="4+"/>
+            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="3+"/>
+          </characteristics>
+        </profile>
+        <profile id="44ea-b5b9-32c9-72ce" name="Dominus2" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="8-14"/>
+            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="7&quot;"/>
+            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
+            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="4+"/>
+          </characteristics>
+        </profile>
+        <profile id="5858-3206-c3d8-2455" name="Dominus3" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="1-7"/>
+            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="4&quot;"/>
+            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="6+"/>
+            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="8972-a0ce-5110-ab50" name="Dual Plasma Core Explosion" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is reduced to 0 wounds, roll 2D6 before removing it from the battlefield. If you roll a 6 on either dice, it explodes, and each unit within 2D6&quot; suffers D6 mortal wounds; if you roll a 6 on both dice, each unit within 3D6&quot; suffers D6 mortal wounds instead."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks>
+        <infoLink id="e44d-81b0-7ba3-665e" name="Super Heavy Walker" hidden="false" targetId="53d0-ab53-d94e-5dcd" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="00af-bda2-2226-ea25" name="Ion shield" hidden="false" targetId="977d-25bc-3918-a164" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="419f-4e48-4555-a9a2" name="New CategoryLink" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="bcc7-a965-6c87-f47c" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="daa5-e5fb-34b7-b60f" name="New CategoryLink" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="2e08-56fb-6c70-7ea2" name="New CategoryLink" hidden="false" targetId="2663-fe63-14ce-fd31" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="d119-b5a2-ffcd-5e41" name="New CategoryLink" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="9f0f-daf7-c8c7-3287" name="Twin Meltagun" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="2b23-f972-419b-3983" name="Twin Meltagun" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="12&quot;"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Assault 2"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D6"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eea6-953f-ba1b-2a4b" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1c18-e17d-0b4f-2eef" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="fef7-b95f-5d7b-c12f" name="Main weapons" hidden="false" collective="false" defaultSelectionEntryId="4f78-c914-1e52-9ef4">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8af7-01f7-79f1-24fa" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9146-e328-5270-faf2" type="min"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries>
+            <selectionEntry id="4f78-c914-1e52-9ef4" name="Plasma decimator and Volcano lance" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="2f36-abea-fa32-54b7" name="Plasma decimator - Standard" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="48&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D6&quot;"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="7"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+                  </characteristics>
+                </profile>
+                <profile id="c66e-2fe1-f828-7e53" name="Plasma decimator - Supercharge" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="48&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D6&quot;"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="For each hit roll of 1, the bearer suffers 1 mortal wound after all of this weapon’s shots have been resolved."/>
+                  </characteristics>
+                </profile>
+                <profile id="dcee-0482-a852-7825" name="Volcano lance" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="80&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy D6"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="14"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-5"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="3D3"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="You can re-roll failed wound rolls when targeting TITANIC units with this weapon."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="10.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="8df4-dfee-1501-24f9" name="Conflagration cannon and Thundercoil harpoon" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="3322-054e-727c-d57f" name="Conflagration cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="18&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 3D6"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="7"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon automatically hits its target."/>
+                  </characteristics>
+                </profile>
+                <profile id="a3d1-8dd3-31af-4abc" name="Thundercoil harpoon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="12&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 1"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="16"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-6"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="10"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="You can reroll failed hit rolls when targeting VEHICLE or MONSTER units with this weapon. In addition, if this weapon inflicts any damage, the target unit suffers an additional D3 mortal wounds."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups/>
+          <entryLinks/>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="13ba-5117-2433-51a2" name="Carapace Weapons" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5a1f-1537-98b0-fda4" type="max"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5cd6-801e-225d-4d47" type="min"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries>
+            <selectionEntry id="c96d-0771-e567-94a4" name="Twin siegebreaker cannons" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="77df-8c8c-ff9a-7e30" name="Twin siegebreaker cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="48&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D3"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="7"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers>
+                <modifier type="set" field="1f88-2963-a094-e8dd" value="1">
+                  <repeats/>
+                  <conditions/>
+                  <conditionGroups/>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a65d-2ae0-5307-8836" type="max"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f88-2963-a094-e8dd" type="min"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="35.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="d362-3935-0e2b-92fe" name="Two Shieldbreaker missiles" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="1762-84ca-e3e0-2d1b" name="Shieldbreaker missile" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="48&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 1"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="10"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D6"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Each shieldbreaker missile can only be fired once per battle, and a model can only fire one each turn. Invulnerable saving throws cannot be made against wounds caused by this weapon."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6b9b-010b-a133-5285" type="min"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ad1a-790d-bdd0-e398" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="24.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups/>
+          <entryLinks/>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="ac87-3e2c-f8aa-9c68" name="Titanic feet" hidden="false" targetId="b873-b5d1-e25a-0b35" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="efee-11c6-84cc-7e6b" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="8d35-ef31-80af-0d20" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="a4f0-80ce-a127-d857" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="6fbe-440b-091b-45b0" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="30.0"/>
+        <cost name="pts" costTypeId="points" value="500.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b873-b5d1-e25a-0b35" name="Titanic feet" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="5db1-e10f-06ce-642a" name="Titanic feet" hidden="false" targetId="8249-9086-022b-10ab" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3dd0-ae8f-652a-d2c8" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d390-fc11-b530-454b" type="min"/>
+      </constraints>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b675-742d-5675-6311" name="Renegade Armigers" hidden="false" collective="false" type="unit">
+      <profiles>
+        <profile id="5efe-d2d0-5ab7-8f2f" name="Vehicle Squadron" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="The first time this unit is set up, all of its models must be placed within 6&quot; of each other. From that point onwards, each operates independently and is treated as a separate unit."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="7c2b-3ec2-3310-a5e3" name="New CategoryLink" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="bada-9a35-8b7b-4abe" name="New CategoryLink" hidden="false" targetId="2663-fe63-14ce-fd31" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="b8f8-da1b-a10c-7544" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="a60a-8e06-adfc-f4c3" name="New CategoryLink" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="d9d0-fffd-27a8-58a6" name="Renegade Armiger" hidden="false" collective="false" type="model">
+          <profiles>
+            <profile id="b2f4-05f9-fb5d-19f0" name="Renegade Armiger" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="*"/>
+                <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="*"/>
+                <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="*"/>
+                <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="6"/>
+                <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="7"/>
+                <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="12"/>
+                <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="4"/>
+                <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="8"/>
+                <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="3+"/>
+              </characteristics>
+            </profile>
+            <profile id="5c29-c2c3-4e40-7bb9" name="Armiger" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="-"/>
+                <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="M"/>
+                <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="WS"/>
+                <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="BS"/>
+              </characteristics>
+            </profile>
+            <profile id="94cf-c886-e503-7944" name="Armiger1" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="7-12+"/>
+                <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="14&quot;"/>
+                <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="3+"/>
+                <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="3+"/>
+              </characteristics>
+            </profile>
+            <profile id="800d-2737-5920-5629" name="Armiger2" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="4-6"/>
+                <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="10&quot;"/>
+                <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="4+"/>
+                <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="4+"/>
+              </characteristics>
+            </profile>
+            <profile id="cd19-89e9-4624-c279" name="Armiger3" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="1-3"/>
+                <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="7&quot;"/>
+                <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="5+"/>
+                <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="5+"/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks>
+            <infoLink id="facf-21f3-58a6-7259" name="Explodes" hidden="false" targetId="9446-1148-da70-4028" type="profile">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+            </infoLink>
+            <infoLink id="7740-bd4d-44c2-987b" name="Ion shield" hidden="false" targetId="977d-25bc-3918-a164" type="profile">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+            </infoLink>
+          </infoLinks>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d50a-b9fd-1393-f8e0" type="min"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7bba-44df-4c54-0682" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="b31c-ef41-cc1a-7b07" name="Main weapons" hidden="false" collective="false" defaultSelectionEntryId="072f-83a6-fc5a-af07">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="75db-f6cc-1cb6-1c61" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d711-e976-b73c-7051" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries>
+                <selectionEntry id="072f-83a6-fc5a-af07" name="Two armiger autocannons" hidden="false" collective="false" type="upgrade">
+                  <profiles>
+                    <profile id="9e99-aade-9917-ad6a" name="Armiger autocannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="60&quot;"/>
+                        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D3"/>
+                        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="7"/>
+                        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
+                        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="3"/>
+                        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Ignore the penalty to hit rolls for moving and firing this Heavy weapon."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints/>
+                  <categoryLinks/>
+                  <selectionEntries/>
+                  <selectionEntryGroups/>
+                  <entryLinks/>
+                  <costs>
+                    <cost name="pts" costTypeId="points" value="10.0"/>
+                    <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="b388-5fbe-061b-129f" name="Thermal spear and Reaper chain-cleaver" hidden="false" collective="false" type="upgrade">
+                  <profiles>
+                    <profile id="cef4-286a-1e3b-a509" name="Thermal spear" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="30&quot;"/>
+                        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Assault D3"/>
+                        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
+                        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-4"/>
+                        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D6"/>
+                        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result."/>
+                      </characteristics>
+                    </profile>
+                    <profile id="38f9-d63e-e945-ef5f" name="Reaper chain-cleaver - Strike" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+                        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+                        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="x2"/>
+                        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
+                        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="3"/>
+                        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+                      </characteristics>
+                    </profile>
+                    <profile id="5d29-9d4b-7277-c7db" name="Reaper chain-cleaver - Sweep" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+                        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+                        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="User"/>
+                        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+                        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+                        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Make 2 hit rolls for each attack made with this weapon, instead of 1."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints/>
+                  <categoryLinks/>
+                  <selectionEntries/>
+                  <selectionEntryGroups/>
+                  <entryLinks/>
+                  <costs>
+                    <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="pts" costTypeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups/>
+              <entryLinks/>
+            </selectionEntryGroup>
+            <selectionEntryGroup id="f5f3-0fbd-a671-b07d" name="Heavy stubber or meltagun" hidden="false" collective="false" defaultSelectionEntryId="5203-faef-df28-373c">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eeb8-d814-63a1-7cca" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="149f-aa1f-970a-bd59" type="min"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks>
+                <entryLink id="5203-faef-df28-373c" name="Heavy stubber" hidden="false" targetId="cfa3-5fcd-af10-5520" type="selectionEntry">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints/>
+                  <categoryLinks/>
+                </entryLink>
+                <entryLink id="d7af-e716-44c1-03ff" name="Meltagun" hidden="false" targetId="efc8-c51d-5b02-a3a2" type="selectionEntry">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints/>
+                  <categoryLinks/>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <entryLinks>
+            <entryLink id="33e7-7045-c62a-1805" name="Character" hidden="false" targetId="75b0-25e5-2828-0125" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="86b2-53f9-01b1-3bc8" name="Relics" hidden="false" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="54a1-0ef4-403a-1acb" name="Warlord" hidden="false" targetId="c50f-9cc4-a751-6707" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="7625-d14d-5411-8722" name="Warlord Traits" hidden="false" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="9.0"/>
+            <cost name="pts" costTypeId="points" value="160.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="75b0-25e5-2828-0125" name="Character" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c858-1e59-55a8-1a2a" type="notInstanceOf"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e443-6545-e4bd-a998" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7ed0-0061-544b-5167" type="max"/>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ea87-09df-2fad-8542" type="min"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="960b-e431-35a8-0f9b" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="c50f-9cc4-a751-6707" name="Warlord" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef18-746a-369f-43a4" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="98a4-b1b7-44b6-e23e" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="eff5-def6-2886-b3ce" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="72ac-3865-0531-21b1" name="New CategoryLink" hidden="false" targetId="ae09-117e-a6fa-316b" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -2613,33 +3628,50 @@
       <categoryLinks/>
       <selectionEntries>
         <selectionEntry id="3ca3-0f99-25ed-6ed4" name="Avenger gatling cannon and heavy flamer" hidden="false" collective="false" type="upgrade">
-          <profiles>
-            <profile id="64a8-aeb7-ce54-92a6" name="Avenger gatling cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <characteristics>
-                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="36&quot;"/>
-                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 12"/>
-                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="6"/>
-                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
-                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
-                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
-              </characteristics>
-            </profile>
-          </profiles>
+          <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b22d-961b-5e40-b8c4" type="max"/>
-          </constraints>
+          <constraints/>
           <categoryLinks/>
-          <selectionEntries/>
+          <selectionEntries>
+            <selectionEntry id="69dd-fcf9-fcda-2fc0" name="Avenger gatling cannon" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="5638-fdb4-32e3-dc02" name="Avenger gatling cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="36&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 12"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="6"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="27d7-f323-5a6f-3cbf" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f0f5-c3e1-2255-d462" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="75.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="0ca0-2ef1-d817-352b" name="New EntryLink" hidden="false" targetId="18bc-b335-29c2-2ae2" type="selectionEntry">
+            <entryLink id="0ca0-2ef1-d817-352b" name="Heavy flamer" hidden="false" targetId="18bc-b335-29c2-2ae2" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2653,35 +3685,54 @@
           </entryLinks>
           <costs>
             <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="95.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="9633-a6da-36df-de8e" name="Rapid-fire battle cannon and heavy stubber" hidden="false" collective="false" type="upgrade">
-          <profiles>
-            <profile id="dda7-63be-bbc0-4701" name="Rapid-fire battle cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <characteristics>
-                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="72&quot;"/>
-                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D6"/>
-                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
-                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
-                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
-                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
-              </characteristics>
-            </profile>
-          </profiles>
+          <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
           <constraints/>
           <categoryLinks/>
-          <selectionEntries/>
+          <selectionEntries>
+            <selectionEntry id="6b9c-fb2f-aed7-a776" name="Rapid-fire battle cannon" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="641c-f4be-2f04-17de" name="Rapid-fire battle cannon" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="72&quot;"/>
+                    <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D6"/>
+                    <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
+                    <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+                    <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ec7d-8ebf-0d6a-d899" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="2ec0-e287-1661-15f3" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs>
+                <cost name="pts" costTypeId="points" value="100.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="7175-261d-9b66-5bc1" name="New EntryLink" hidden="false" targetId="cfa3-5fcd-af10-5520" type="selectionEntry">
+            <entryLink id="7175-261d-9b66-5bc1" name="Heavy stubber" hidden="false" targetId="cfa3-5fcd-af10-5520" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -2695,7 +3746,7 @@
           </entryLinks>
           <costs>
             <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" costTypeId="points" value="100.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="4871-302d-a180-53f4" name="Thermal cannon" hidden="false" collective="false" type="upgrade">
@@ -2732,6 +3783,135 @@
       <selectionEntryGroups/>
       <entryLinks/>
     </selectionEntryGroup>
+    <selectionEntryGroup id="076d-e9d1-ae0c-e60d" name="Warlord Traits" hidden="false" collective="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4cd8-19b8-8332-7f55" type="max"/>
+      </constraints>
+      <categoryLinks/>
+      <selectionEntries>
+        <selectionEntry id="87b4-222b-e5ef-5f47" name="Infernal Quest" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="f1af-d365-57ec-b238" name="Infernal Quest" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this Warlord is within range of an objective marker (as specified within the mission), it controls that objective marker even if there are more enemy models within range of the same objective marker. If an enemy unit within range of the same objective marker has a similar ability, then the objective marker is controlled by the player who has the most models within range as normal – in this case, however, this Warlord counts as 10 models."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="162a-f06a-b38f-da8f" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups/>
+      <entryLinks>
+        <entryLink id="8f68-0d00-4d4c-6482" name="Warlord Traits (BRB)" hidden="false" targetId="d442-1f03-d9da-e77f" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="f308-efa4-c776-8f2f" name="Warlord Traits (CA)" hidden="false" targetId="f673-3d9b-bb1b-377f" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+      </entryLinks>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="b64a-6b3c-e424-afb3" name="Relics" hidden="true" collective="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <repeats/>
+          <conditions/>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef18-746a-369f-43a4" type="equalTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c50f-9cc4-a751-6707" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b6db-a210-ecc1-b1c0" type="max"/>
+      </constraints>
+      <categoryLinks/>
+      <selectionEntries>
+        <selectionEntry id="ab88-a1e7-1244-ef34" name="The Traitor&apos;s Mark" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="445a-2004-4e77-c64e" name="The Traitor&apos;s Mark" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Enemy units must subtract 1 from their Leadership characteristic whilst they are within 12&quot; of the bearer. Whilst they are within 6&quot; of the bearer, subtract 2 from their Leadership characteristic instead."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="bae0-9006-843c-8391" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups/>
+      <entryLinks/>
+    </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules/>
   <sharedProfiles>
@@ -2753,22 +3933,13 @@
         <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the beginning of each of your turns, roll a D6; on the result of a 5+ the model heals one wound."/>
       </characteristics>
     </profile>
-    <profile id="90be-819c-d4e7-d65a" name="Infernal Knight Titan" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
-      <profiles/>
-      <rules/>
-      <infoLinks/>
-      <modifiers/>
-      <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model can Fall Back in the Movement phase and still shoot and/or charge during its turn. When this model Falls Back, it can even move over enemy INFANTRY models, though at the end of its move it must be more than 1&quot; from all enemy units. This model can shoot if there are enemy models within 1&quot; of it, as long as all of the enemy models have the INFANTRY keyword. In this case, it can shoot the enemy unit that is within 1&quot; of it or any other visible enemy unit that is within range and more than 1&quot; away from any friendly models. In addition, the model can move and fire Heavy weapons without suffering the penalty to its hit rolls. Finally, it only gains a bonus to its save in cover if at least half of the model is obscured from the bearer."/>
-      </characteristics>
-    </profile>
     <profile id="977d-25bc-3918-a164" name="Ion shield" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="The model has a 5+ invulnerable save against shooting attacks."/>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="The model has a 5+ invulnerable save against ranged weapons."/>
       </characteristics>
     </profile>
     <profile id="6b5e-cf62-c355-ce4f" name="Ion Gauntlet Shield" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -2789,11 +3960,17 @@
         <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model has a 4+ invulnerable save against shooting attacks, and a 5+ invulnerable save against melee attacks."/>
       </characteristics>
     </profile>
-    <profile id="dbe5-515f-931f-99ae" name="Explodes" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+    <profile id="dbe5-515f-931f-99ae" name="Explodes (Knight)" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers/>
+      <modifiers>
+        <modifier type="set" field="name" value="Explodes">
+          <repeats/>
+          <conditions/>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
       <characteristics>
         <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is reduced to 0 wounds, roll a D6 before removing the model from the battlefield; on a 6+ it explodes and each unit within 2D6&quot; suffers D6 mortal wounds."/>
       </characteristics>
@@ -2819,6 +3996,15 @@
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
         <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Make 3 hit rolls for each attack made with this weapon, instead of 1."/>
+      </characteristics>
+    </profile>
+    <profile id="53d0-ab53-d94e-5dcd" name="Super-heavy Walker" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model can Fall Back in the Movement phase and still shoot and/or charge in the same turn. When this model Falls Back, it can move over enemy INFANTRY and SWARM models, though it must end its move more than 1&quot; away from any enemy units. In addition, this model can move and fire Heavy weapons without suffering the penalty to its hit rolls. Finally, if this model only gains a bonus to its save for being in cover if at least half of the model is obscured from the firer."/>
       </characteristics>
     </profile>
   </sharedProfiles>
