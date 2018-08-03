@@ -3,12 +3,14 @@ Warhammer 40,000 8th Edition
 
 [![GitHub release](https://img.shields.io/github/release/BSData/wh40k.svg?style=flat-square)](https://github.com/BSData/wh40k/releases/latest)
 ![Github commits (since latest release)](https://img.shields.io/github/commits-since/BSData/wh40k/latest.svg?style=flat-square)
-[![AppVeyor master branch](https://img.shields.io/appveyor/ci/BSData/wh40k/master.svg?style=flat-square)](https://ci.appveyor.com/project/BSData/wh40k)
-[![Gitter](https://img.shields.io/gitter/room/BSData/wh40k.svg?style=flat-square)](https://gitter.im/BSData/wh40k)
+[![AppVeyor master branch](https://img.shields.io/appveyor/ci/BSData/wh40k/master.svg?style=flat-square&logo=appveyor)](https://ci.appveyor.com/project/BSData/wh40k)
 
-![GitHub contributors](https://img.shields.io/github/contributors/BSData/wh40k.svg?style=flat-square)
+[![Chat on Gitter](https://img.shields.io/gitter/room/BSData/wh40k.svg?style=flat-square&logo=gitter-white)](https://gitter.im/BSData/wh40k)
+[![GitHub contributors](https://img.shields.io/github/contributors/BSData/wh40k.svg?style=flat-square)](https://github.com/BSData/wh40k/graphs/contributors)
 ![GitHub commit activity the past year](https://img.shields.io/github/commit-activity/y/BSData/wh40k.svg?style=flat-square)
-![Issue Stats](https://img.shields.io/issuestats/i/github/BSData/wh40k.svg?style=flat-square)
+
+
+[![Open Bug issues](https://img.shields.io/github/issues/bsdata/wh40k/Type%3A%20bug.svg?style=for-the-badge)](https://github.com/BSData/wh40k/issues?q=is%3Aissue+is%3Aopen+label%3A%22Type%3A+bug%22)
 
 ## Important ##
 [Important]: #important
