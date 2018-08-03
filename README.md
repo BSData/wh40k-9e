@@ -74,4 +74,4 @@ __Previous editions__: _However we don't support older editions actively, the fi
 
 [BattleScribe homepage]: http://www.battlescribe.net/
 [BattleScribe Data on Appspot]: http://battlescribedata.appspot.com/#/repos
-[Getting Started wiki]: https://github.com/BSData/bsdata/wiki/Home#getting-started
+[Getting Started wiki]: https://github.com/BSData/catalogue-development/wiki/Getting-Started
