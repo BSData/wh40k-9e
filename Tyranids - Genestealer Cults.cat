@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="83b2-e602-931a-fea1" name="Tyranids - Genestealer Cults" book="Index: Xenos 2" revision="19" battleScribeVersion="2.01" authorName="GenWilhelm" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="83b2-e602-931a-fea1" name="Tyranids - Genestealer Cults" book="Index: Xenos 2" revision="20" battleScribeVersion="2.01" authorName="GenWilhelm" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules>
     <rule id="69ce-aa80-5a30-5d8b" name="Brood Brothers" book="Index: Xenos 2" page="112" hidden="false">
@@ -43,6 +43,13 @@
       <constraints/>
     </categoryEntry>
     <categoryEntry id="df7c-355d-38a6-261f" name="Genestealer" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
+    <categoryEntry id="5d42-1428-2561-ae8f" name="Aberrant" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -213,17 +220,57 @@
         </categoryLink>
       </categoryLinks>
     </entryLink>
-  </entryLinks>
-  <sharedSelectionEntries>
-    <selectionEntry id="c5a6-cb16-4d17-fb8a" name="Aberrants" hidden="false" collective="false" type="unit">
-      <profiles>
-        <profile id="fbd0-d481-c1c6-f3e1" name="Bestial Vigour" book="Index: Xenos 2" page="118" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+    <entryLink id="79e1-75b2-6256-044b" name="Abominant" hidden="false" targetId="8dc3-df9e-5176-b4a8" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="05ee-aa64-9b4a-584f" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true">
           <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="ab25-65c2-642e-8f86" name="Use Index Rules" hidden="false" targetId="4484-5a90-2435-7041" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="03c1-aa54-383a-039e" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+    </entryLink>
+  </entryLinks>
+  <sharedSelectionEntries>
+    <selectionEntry id="c5a6-cb16-4d17-fb8a" name="Aberrants" hidden="false" collective="false" type="unit">
+      <profiles>
+        <profile id="fbd0-d481-c1c6-f3e1" name="Bestial Vigour (Index)" book="Index: Xenos 2" page="118" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When inflicting damage up an Aberrant, reduce the damage of the attack by 1 to a minimum of 1."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When inflicting damage upon an Aberrant, reduce the damage of the attack by 1 to a minimum of 1."/>
           </characteristics>
         </profile>
         <profile id="a3f6-5ec6-92a5-4e4a" name="Aberrants" hidden="true" profileTypeId="b900-0afb-e411-2cbb" profileTypeName="Keywords">
@@ -250,6 +297,20 @@
           <rules/>
           <infoLinks/>
           <modifiers/>
+        </infoLink>
+        <infoLink id="969e-ce83-7c2a-d0dd" name="Bestial Vigour" hidden="false" targetId="34b7-c526-c2d4-2857" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
         </infoLink>
       </infoLinks>
       <modifiers>
@@ -291,90 +352,309 @@
           <modifiers/>
           <constraints/>
         </categoryLink>
-      </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="3ff5-2f16-9f40-01e8" name="Aberrant" hidden="false" collective="false" type="model">
-          <profiles>
-            <profile id="ff55-878e-5112-f29f" name="Aberrant" book="Index: Xenos 2" page="118" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
-              <profiles/>
-              <rules/>
-              <infoLinks/>
-              <modifiers/>
-              <characteristics>
-                <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="6&quot;"/>
-                <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="3+"/>
-                <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="6+"/>
-                <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="5"/>
-                <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="4"/>
-                <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="2"/>
-                <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="2"/>
-                <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="7"/>
-                <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="5+"/>
-              </characteristics>
-            </profile>
-          </profiles>
+        <categoryLink id="3ac3-6ec2-3af9-6c7f" name="Aberrant" hidden="false" targetId="5d42-1428-2561-ae8f" primary="false">
+          <profiles/>
           <rules/>
           <infoLinks/>
           <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries/>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="ae86-8f35-a7bf-0979" name="Aberrants" hidden="false" collective="false" defaultSelectionEntryId="3ff5-2f16-9f40-01e8">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="d0dd-3fca-dc98-6423" value="8">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="87b1-b113-7f71-2935" value="4">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4aad-80b9-09ae-c146" type="min"/>
-            <constraint field="selections" scope="parent" value="8.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3da2-fef5-56c8-ea48" type="max"/>
+            <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d0dd-3fca-dc98-6423" type="max"/>
+            <constraint field="selections" scope="parent" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="87b1-b113-7f71-2935" type="min"/>
           </constraints>
           <categoryLinks/>
-          <selectionEntries/>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="6655-91ce-5e7b-84d3" name="Weapon" hidden="false" collective="false" defaultSelectionEntryId="b7ea-f2bc-d661-ac93">
+          <selectionEntries>
+            <selectionEntry id="3ff5-2f16-9f40-01e8" name="Aberrant (Pick)" hidden="false" collective="false" type="model">
               <profiles/>
               <rules/>
-              <infoLinks/>
+              <infoLinks>
+                <infoLink id="44e3-0340-4fb8-d710" name="Aberrant" hidden="false" targetId="daa2-3ccb-d2b1-7358" type="profile">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                </infoLink>
+              </infoLinks>
               <modifiers/>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="78e0-4cc4-c2d0-36cc" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6818-1018-9bf6-a83d" type="max"/>
+                <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="17c7-556f-6bc6-bd10" type="max"/>
               </constraints>
               <categoryLinks/>
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks>
+                <entryLink id="d5b4-4350-dcf0-e2ea" name="Rending Claw" hidden="false" targetId="7210-2eea-c54a-c7d5" type="selectionEntry">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a52b-c54a-b36c-27f6" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dccc-494d-b9af-5ee6" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                </entryLink>
                 <entryLink id="b7ea-f2bc-d661-ac93" name="Power Pick" hidden="false" targetId="9ef9-9e00-e935-43d9" type="selectionEntry">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="137a-e850-7808-83a5" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2a4f-c4e1-6134-3a0f" type="max"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
-                <entryLink id="7eff-03fe-cd75-03a8" name="Power Hammer" hidden="false" targetId="9e0e-452e-877f-31b7" type="selectionEntry">
+              </entryLinks>
+              <costs>
+                <cost name="pts" costTypeId="points" value="17.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="0955-7c86-9f9f-ea59" name="Aberrant (Hammer)" hidden="false" collective="false" type="model">
+              <profiles/>
+              <rules/>
+              <infoLinks>
+                <infoLink id="6e03-a292-92cf-2ce8" name="Aberrant" hidden="false" targetId="daa2-3ccb-d2b1-7358" type="profile">
                   <profiles/>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
-                  <constraints/>
+                </infoLink>
+              </infoLinks>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="245d-5dc4-32b6-2d5b" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks>
+                <entryLink id="6490-bbbc-d399-c374" name="Rending Claw" hidden="false" targetId="7210-2eea-c54a-c7d5" type="selectionEntry">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="344f-4f95-1ca3-2d83" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="77ff-b7a1-e4f8-26e9" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                </entryLink>
+                <entryLink id="3e77-e467-cb7f-4e79" name="Power Hammer" hidden="false" targetId="9e0e-452e-877f-31b7" type="selectionEntry">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa19-25f7-8952-6b3f" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="951f-377b-3441-720d" type="max"/>
+                  </constraints>
                   <categoryLinks/>
                 </entryLink>
               </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="d5b4-4350-dcf0-e2ea" name="Rending Claw" hidden="false" targetId="7210-2eea-c54a-c7d5" type="selectionEntry">
+              <costs>
+                <cost name="pts" costTypeId="points" value="17.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="30f2-8e31-9b4e-3059" name="Hypermorphs" hidden="false" collective="false">
               <profiles/>
               <rules/>
               <infoLinks/>
-              <modifiers/>
+              <modifiers>
+                <modifier type="increment" field="bdec-5c0c-d41b-d771" value="1">
+                  <repeats>
+                    <repeat field="selections" scope="c5a6-cb16-4d17-fb8a" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                  <conditions/>
+                  <conditionGroups/>
+                </modifier>
+                <modifier type="set" field="hidden" value="true">
+                  <repeats/>
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+                  </conditions>
+                  <conditionGroups/>
+                </modifier>
+              </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a52b-c54a-b36c-27f6" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dccc-494d-b9af-5ee6" type="max"/>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bdec-5c0c-d41b-d771" type="max"/>
               </constraints>
               <categoryLinks/>
-            </entryLink>
-          </entryLinks>
-          <costs>
-            <cost name="pts" costTypeId="points" value="17.0"/>
-            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
-      <selectionEntryGroups/>
+              <selectionEntries>
+                <selectionEntry id="303c-c760-4dcc-7fae" name="Aberrant Hypermorph (Hammer)" hidden="false" collective="false" type="model">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks>
+                    <infoLink id="8a87-01fa-f6e7-7221" name="Aberrant Hypermorph" hidden="false" targetId="286d-f14d-4b4e-f5b7" type="profile">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                    </infoLink>
+                  </infoLinks>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d952-9ffa-f717-cdf2" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                  <selectionEntries/>
+                  <selectionEntryGroups/>
+                  <entryLinks>
+                    <entryLink id="2bf1-c72f-31fc-eb85" name="Rending Claw" hidden="false" targetId="7210-2eea-c54a-c7d5" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4a60-c3db-406c-a2c0" type="min"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e79e-eaec-ed58-6fe5" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                    <entryLink id="5614-7c3e-d4f9-1f1a" name="Power Hammer" hidden="false" targetId="9e0e-452e-877f-31b7" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0f4f-bbd3-0aa9-58c0" type="min"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="86e6-d451-928c-3e0a" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                    <entryLink id="2611-d376-a04a-0e9a" name="Hypermorph Tail" hidden="false" targetId="38d0-40eb-f917-b72a" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7285-98bc-07ed-8a04" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1ded-7e6d-5571-20c5" type="min"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                  </entryLinks>
+                  <costs>
+                    <cost name="pts" costTypeId="points" value="17.0"/>
+                    <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="ed50-40e2-0f8f-bab3" name="Aberrant Hypermorph (Improvised)" hidden="false" collective="false" type="model">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks>
+                    <infoLink id="c270-33a1-cba5-2573" name="Aberrant Hypermorph" hidden="false" targetId="286d-f14d-4b4e-f5b7" type="profile">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                    </infoLink>
+                  </infoLinks>
+                  <modifiers/>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e85b-1e22-905e-af43" type="max"/>
+                  </constraints>
+                  <categoryLinks/>
+                  <selectionEntries>
+                    <selectionEntry id="cfe7-eebb-1eb4-703e" name="Heavy Improvised Weapon" hidden="false" collective="true" type="upgrade">
+                      <profiles>
+                        <profile id="0e43-8baf-52e4-5de6" name="Heavy Improvised Weapon" book="Tooth and Claw" page="23" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+                          <profiles/>
+                          <rules/>
+                          <infoLinks/>
+                          <modifiers/>
+                          <characteristics>
+                            <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+                            <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+                            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="x2"/>
+                            <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
+                            <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
+                            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Make 2 hit rolls for each attack made with this weapon, instead of 1. When attacking with this weapon, you must subtract 1 from the hit roll."/>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b8d7-a058-046b-8a24" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2c0d-edaa-6e04-1673" type="min"/>
+                      </constraints>
+                      <categoryLinks/>
+                      <selectionEntries/>
+                      <selectionEntryGroups/>
+                      <entryLinks/>
+                      <costs>
+                        <cost name="pts" costTypeId="points" value="10.0"/>
+                      </costs>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <selectionEntryGroups/>
+                  <entryLinks>
+                    <entryLink id="8b38-6ef3-312e-36e7" name="Rending Claw" hidden="false" targetId="7210-2eea-c54a-c7d5" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d930-847f-79af-ac73" type="min"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bcda-f1a7-bad9-493d" type="max"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                    <entryLink id="1384-e7b0-f45e-0bff" name="Hypermorph Tail" hidden="false" targetId="38d0-40eb-f917-b72a" type="selectionEntry">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="216c-418e-f4e9-1d7e" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="911e-3a58-b2fe-a8ed" type="min"/>
+                      </constraints>
+                      <categoryLinks/>
+                    </entryLink>
+                  </entryLinks>
+                  <costs>
+                    <cost name="pts" costTypeId="points" value="17.0"/>
+                    <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <selectionEntryGroups/>
+              <entryLinks/>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <entryLinks/>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks/>
       <costs>
         <cost name="pts" costTypeId="points" value="0.0"/>
@@ -3875,7 +4155,7 @@
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="9e0e-452e-877f-31b7" name="Power Hammer" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="9e0e-452e-877f-31b7" name="Power Hammer" hidden="false" collective="true" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks>
@@ -3897,15 +4177,46 @@
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="9ef9-9e00-e935-43d9" name="Power Pick" hidden="false" collective="false" type="upgrade">
-      <profiles/>
+    <selectionEntry id="9ef9-9e00-e935-43d9" name="Power Pick" hidden="false" collective="true" type="upgrade">
+      <profiles>
+        <profile id="65bb-2230-8e01-900f" name="Power Pick (Index)" book="Index: Xenos 2" page="144" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+            <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+            <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="User"/>
+            <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+            <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
+            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+          </characteristics>
+        </profile>
+      </profiles>
       <rules/>
       <infoLinks>
         <infoLink id="ccf0-5651-8fb4-87da" name="Power Pick" hidden="false" targetId="1d9b-91af-1fc1-4471" type="profile">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <repeats/>
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+              </conditions>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
         </infoLink>
       </infoLinks>
       <modifiers/>
@@ -6165,6 +6476,286 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="8dc3-df9e-5176-b4a8" name="Abominant" hidden="false" collective="false" type="upgrade">
+      <profiles>
+        <profile id="ceec-0ce1-b18a-b89e" name="Abominant" book="Tooth and Claw" page="21" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="6&quot;"/>
+            <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="3+"/>
+            <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="6+"/>
+            <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="6"/>
+            <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="5"/>
+            <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="5"/>
+            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="3"/>
+            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="8"/>
+            <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="7752-6533-18d2-805f" name="Regenerative Flesh" book="Tooth and Claw" page="21" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the start of each of your turns, this model regains D3 lost wounds."/>
+          </characteristics>
+        </profile>
+        <profile id="dbcf-b8ea-a891-54c7" name="Mindwyrm Familiar" book="Tooth and Claw" page="21" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Subtract 1 from Psychic tests taken for PSYKERS that are within 12&quot; of any enemy Abominants. TYRANID PSYKERS are not affected."/>
+          </characteristics>
+        </profile>
+        <profile id="7469-1e2b-0635-c60a" name="The Chosen One" book="Tooth and Claw" page="21" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each unmodified hit roll of 6 made in the Fight phase for friendly ABERRANT units within 6&quot; of this model scores 2 hits instead of 1."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks>
+        <infoLink id="c52d-460f-dada-beba" name="Cult Ambush" hidden="false" targetId="e624-3023-b8b4-18fa" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="23e6-0910-8459-3c3b" name="Bestial Vigour" hidden="false" targetId="34b7-c526-c2d4-2857" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="page" value="21">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+          </modifiers>
+        </infoLink>
+        <infoLink id="fc7c-202e-8417-567d" name="Unquestioning Loyalty" hidden="false" targetId="83cc-a64d-d8bd-7a4a" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="8b59-c944-5e65-02e8" name="Aberrant" hidden="false" targetId="5d42-1428-2561-ae8f" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="459b-e650-751e-0217" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="5663-f7ea-1115-f085" name="Faction: Genestealer Cults" hidden="false" targetId="bf74-61c4-1502-ad4d" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="1093-ebea-3d71-9099" name="Faction: Tyranids" hidden="false" targetId="a367-fb78-5192-96eb" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="a823-c7b8-9254-af28" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="9a35-4502-3cdc-ef7d" name="Power Sledgehammer" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="b8b4-fc5c-4713-b17e" name="Power Sledgehammer" book="Tooth and Claw" page="21" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="x2"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D6"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Damage rolls of 1 or 2 made with this weapon count as 3 instead."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6565-fb35-6489-f27e" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c9f1-543b-00e2-2be2" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="d7b4-b108-5775-c538" name="Familiar Claws" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="6fff-e63f-4c20-3a44" name="Familiar Claws" book="Tooth and Claw" page="21" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="4"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="After a model guided by a Mindwyrm Familiar makes its close combat attacks, you can attack with the Mindwyrm Familiar. Make 2 additional attacks, using this weapon profile."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1406-4670-51f3-ec38" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8bbf-3bb6-c917-32d8" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups/>
+      <entryLinks>
+        <entryLink id="764a-0b37-92f8-1e18" name="Rending Claw" hidden="false" targetId="7210-2eea-c54a-c7d5" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="737a-023d-d610-01be" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6c3a-3583-337c-b974" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="66b1-24e7-1a39-aee1" name="Relics" hidden="false" targetId="ccd1-3759-0432-5c59" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="ace5-183c-aa3b-11c8" name="Warlord" hidden="false" targetId="afad-6465-5489-7fb9" type="selectionEntry">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f936-a4af-9ed2-236f" type="max"/>
+          </constraints>
+          <categoryLinks/>
+        </entryLink>
+        <entryLink id="74e4-46aa-3856-c832" name="Warlord Traits" hidden="false" targetId="3c5c-af51-2d54-8cbf" type="selectionEntryGroup">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="4.0"/>
+        <cost name="pts" costTypeId="points" value="80.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4484-5a90-2435-7041" name="Use Index Rules" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules>
+        <rule id="3d74-f7bc-0759-bac7" name="Index Rules" hidden="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <description>This roster is not using the most recently published rules from Tooth and Claw.</description>
+        </rule>
+      </rules>
+      <infoLinks/>
+      <modifiers/>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b06d-beba-7f57-c919" type="max"/>
+      </constraints>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="38d0-40eb-f917-b72a" name="Hypermorph Tail" hidden="false" collective="true" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks>
+        <infoLink id="18a9-33e1-faeb-bf5c" name="Hypermorph Tail" hidden="false" targetId="d2dd-347b-303c-d2eb" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name="pts" costTypeId="points" value="2.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="87b1-40a9-6106-ca5e" name="Special Weapons" hidden="false" collective="false">
@@ -7096,7 +7687,7 @@
         <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="When attacking with this weapon, you must subtract 1 from the hit roll."/>
       </characteristics>
     </profile>
-    <profile id="1d9b-91af-1fc1-4471" name="Power Pick" book="Index: Xenos 2" page="144" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+    <profile id="1d9b-91af-1fc1-4471" name="Power Pick" book="Tooth and Claw" page="23" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -7107,7 +7698,7 @@
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="User"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
         <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
-        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="-"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="For each attack a model makes with a power pick, it can also make one attack with its rending claw."/>
       </characteristics>
     </profile>
     <profile id="ac22-464b-0093-c26d" name="Purestrain Talons" book="Index: Xenos 2" page="144" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
@@ -7260,6 +7851,78 @@
         <characteristic name="Warp Charge" characteristicTypeId="5ffd-b800-c317-532a" value="7"/>
         <characteristic name="Range" characteristicTypeId="fd64-cbc4-94de-24cc" value="18&quot;"/>
         <characteristic name="Details" characteristicTypeId="ad96-dfa4-b4ed-656d" value="Select a friendly GENESTEALER CULTS INFANTRY unit within 18&quot; of the psyker. Add 1 to the Strength and Attacks characteristics of all models in that unit until the start of your next Psychic phase."/>
+      </characteristics>
+    </profile>
+    <profile id="34b7-c526-c2d4-2857" name="Bestial Vigour" book="Tooth and Claw" page="23" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When inflicting damage upon this model, reduce the damage of the attack by 1 to a minimum of 1. In addition, roll a D6 each time this model loses a wound; on a 5+ the model does not lose that wound."/>
+      </characteristics>
+    </profile>
+    <profile id="d2dd-347b-303c-d2eb" name="Hypermorph Tail" book="Tooth and Claw" page="23" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+        <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+        <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="User"/>
+        <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
+        <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+        <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Each time the bearer fights, it can make one additional attack with this weapon."/>
+      </characteristics>
+    </profile>
+    <profile id="daa2-3ccb-d2b1-7358" name="Aberrant" book="Tooth and Claw" page="23" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="book" value="Index: Xenos 2">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="set" field="page" value="118">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4484-5a90-2435-7041" type="atLeast"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <characteristics>
+        <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="6&quot;"/>
+        <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="3+"/>
+        <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="6+"/>
+        <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="5"/>
+        <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="4"/>
+        <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="2"/>
+        <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="2"/>
+        <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="7"/>
+        <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="5+"/>
+      </characteristics>
+    </profile>
+    <profile id="286d-f14d-4b4e-f5b7" name="Aberrant Hypermorph" book="Tooth and Claw" page="23" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <characteristics>
+        <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="6&quot;"/>
+        <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="3+"/>
+        <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="6+"/>
+        <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="5"/>
+        <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="4"/>
+        <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="2"/>
+        <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="3"/>
+        <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="7"/>
+        <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="5+"/>
       </characteristics>
     </profile>
   </sharedProfiles>
