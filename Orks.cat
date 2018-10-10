@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="11b5-77b9-31bf-7b74" name="Orks" book="Index: Xenos 2" revision="19" battleScribeVersion="2.01" authorName="tag8833" authorContact="Github" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="11b5-77b9-31bf-7b74" name="Orks" book="Index: Xenos 2" revision="20" battleScribeVersion="2.01" authorName="tag8833" authorContact="Github" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -2530,13 +2530,59 @@
     </selectionEntry>
     <selectionEntry id="886c-c494-3fbb-e1ec" name="Kustom Force Field" hidden="false" collective="false" type="upgrade">
       <profiles>
-        <profile id="9271-866b-6baf-a9d4" name="Kustom Force Field" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Wargear Item">
+        <profile id="9271-866b-6baf-a9d4" name="Kustom Force Field (Big Mek)" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Wargear Item">
           <profiles/>
           <rules/>
           <infoLinks/>
-          <modifiers/>
+          <modifiers>
+            <modifier type="set" field="name" value="Kustom Force Field">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <repeats/>
+              <conditions/>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c8fd-783f-3230-493e" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1c6f-0311-3eba-3180" type="instanceOf"/>
+                  </conditions>
+                  <conditionGroups/>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is equipped with a kustom force field, friendly ORK units that are entirely within 9&quot; have a 5+ invul save against ranged weapons.  If the Big Mek is embarked, the vehicle transporting it has a 5+ invul against ranged weapons instead."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is equipped with a kustom force field, friendly ORK units that are entirely within 9&quot; have a 5+ invulnerable save against ranged weapons.  If the Big Mek is embarked, the vehicle transporting it has a 5+ invulnerable save against ranged weapons instead."/>
+          </characteristics>
+        </profile>
+        <profile id="4dc2-965d-25c8-8625" name="Kustom Force Field (Vehicle)" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Wargear Item">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers>
+            <modifier type="set" field="name" value="Kustom Force Field">
+              <repeats/>
+              <conditions/>
+              <conditionGroups/>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <repeats/>
+              <conditions/>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="instanceOf"/>
+                  </conditions>
+                  <conditionGroups/>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is equipped with a kustom force field, friendly ORK units that are entirely within 9&quot; have a 5+ invulnerable save against ranged weapons."/>
           </characteristics>
         </profile>
       </profiles>
@@ -9832,7 +9878,7 @@
           </selectionEntries>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="60c0-d84a-544a-5a45" name="New EntryLink" hidden="false" targetId="886c-c494-3fbb-e1ec" type="selectionEntry">
+            <entryLink id="059a-1401-80ec-01d9" name="Kustom Force Field" hidden="false" targetId="886c-c494-3fbb-e1ec" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -13404,6 +13450,18 @@
             <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Units within 6&quot; of a friendly Stompa can re-roll failed Morale tests."/>
           </characteristics>
         </profile>
+        <profile id="f0b1-f98a-3cc5-b48f" name="Wound Track" hidden="false" profileTypeId="5f4f-ea74-0630-4afe" profileTypeName="Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Remaining W" characteristicTypeId="8e45-c866-b2d4-c9ab" value="-"/>
+            <characteristic name="Characteristic 1" characteristicTypeId="bf41-c860-50bc-2a7e" value="M"/>
+            <characteristic name="Characteristic 2" characteristicTypeId="dc18-e51f-309b-8efa" value="WS"/>
+            <characteristic name="Characteristic 3" characteristicTypeId="df06-8eca-150f-90ba" value="S"/>
+          </characteristics>
+        </profile>
       </profiles>
       <rules/>
       <infoLinks>
@@ -14738,6 +14796,33 @@
             <cost name="pts" costTypeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
+        <selectionEntry id="bff3-52f8-476d-99b5" name="Kustom Force Field" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="c934-925c-2dc5-7a0d" name="Kustom Force Field" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Wargear Item">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is equipped with a kustom force field, friendly ORK units that are entirely within 9&quot; have a 5+ invulnerable save against ranged weapons.  If the unit is embarked, the vehicle transporting it has a 5+ invulnerable save against ranged weapons instead."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ed06-917c-a072-3cf5" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name="pts" costTypeId="points" value="20.0"/>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+          </costs>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups/>
       <entryLinks>
@@ -14774,16 +14859,6 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4328-9c2a-2974-188d" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="20a8-31b7-f011-f33a" type="max"/>
-          </constraints>
-          <categoryLinks/>
-        </entryLink>
-        <entryLink id="d870-295a-8704-7fe1" name="Kustom Force Field" hidden="false" targetId="886c-c494-3fbb-e1ec" type="selectionEntry">
-          <profiles/>
-          <rules/>
-          <infoLinks/>
-          <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="06a9-8ce3-cd0d-cead" type="max"/>
           </constraints>
           <categoryLinks/>
         </entryLink>
@@ -15921,14 +15996,12 @@
           </selectionEntries>
           <selectionEntryGroups/>
           <entryLinks>
-            <entryLink id="834b-6325-f98b-54e7" name="Kustom Force Field" hidden="false" targetId="886c-c494-3fbb-e1ec" type="selectionEntry">
+            <entryLink id="608a-34d9-ddc8-5be2" name="Kustom Force Field" hidden="false" targetId="886c-c494-3fbb-e1ec" type="selectionEntry">
               <profiles/>
               <rules/>
               <infoLinks/>
               <modifiers/>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85ff-2cb4-1025-bada" type="max"/>
-              </constraints>
+              <constraints/>
               <categoryLinks/>
             </entryLink>
           </entryLinks>
@@ -19018,9 +19091,7 @@
             <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
             <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
             <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
-            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon can only be fired once per battle. This 
-weapon can target units that are not visible to the firer. 
-You can re-roll failed hit rolls made for this weapon."/>
+            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon can only be fired once per battle. This  weapon can target units that are not visible to the firer.  You can re-roll failed hit rolls made for this weapon."/>
           </characteristics>
         </profile>
         <profile id="28fe-5585-246b-12cf" name="Outriders" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
@@ -19029,9 +19100,7 @@ You can re-roll failed hit rolls made for this weapon."/>
           <infoLinks/>
           <modifiers/>
           <characteristics>
-            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="During deployment, you can set up this model on the army’s flank instead of placing it on the 
-battlefield. At the end of any of your Movement phases, this model can race in to encircle the foe – set it up so that 
-it is touching a battlefield edge and is more than 9&quot; away from any enemy models."/>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="During deployment, you can set up this model on the army’s flank instead of placing it on the  battlefield. At the end of any of your Movement phases, this model can race in to encircle the foe – set it up so that  it is touching a battlefield edge and is more than 9&quot; away from any enemy models."/>
           </characteristics>
         </profile>
       </profiles>
@@ -19088,6 +19157,7 @@ it is touching a battlefield edge and is more than 9&quot; away from any enemy m
       <entryLinks/>
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="4.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="e3c1-9af9-b021-7b95" name="Attack Fighta (Open/Narrative)" hidden="true" collective="false" type="model">
@@ -19252,7 +19322,10 @@ it is touching a battlefield edge and is more than 9&quot; away from any enemy m
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks/>
-              <costs/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="72c6-bd67-f00d-5055" name="Small Bomms" hidden="false" collective="false" type="upgrade">
               <profiles>
@@ -19262,12 +19335,7 @@ it is touching a battlefield edge and is more than 9&quot; away from any enemy m
                   <infoLinks/>
                   <modifiers/>
                   <characteristics>
-                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value=" A model equipped with small bomms 
-can drop a bomm each turn as it flies over enemy units in 
-its Movement phase. After the model has moved, select 
-an enemy unit that it moved over and roll a D6 for each 
-model in that unit, up to a maximum of 5 dice. For each 
-roll of 6, the enemy unit suffers 1 mortal wound."/>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value=" A model equipped with small bomms  can drop a bomm each turn as it flies over enemy units in  its Movement phase. After the model has moved, select  an enemy unit that it moved over and roll a D6 for each  model in that unit, up to a maximum of 5 dice. For each  roll of 6, the enemy unit suffers 1 mortal wound."/>
                   </characteristics>
                 </profile>
               </profiles>
@@ -19279,7 +19347,10 @@ roll of 6, the enemy unit suffers 1 mortal wound."/>
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks/>
-              <costs/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups/>
@@ -19301,6 +19372,7 @@ roll of 6, the enemy unit suffers 1 mortal wound."/>
       </entryLinks>
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="6.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="ce2e-a0ad-29b2-3eab" name="Fighta-Bommer (Open/Narrative)" hidden="true" collective="false" type="model">
@@ -19465,7 +19537,10 @@ roll of 6, the enemy unit suffers 1 mortal wound."/>
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks/>
-              <costs/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="257f-1615-d6d3-b9db" name="Small Bomms" hidden="false" collective="false" type="upgrade">
               <profiles>
@@ -19475,12 +19550,7 @@ roll of 6, the enemy unit suffers 1 mortal wound."/>
                   <infoLinks/>
                   <modifiers/>
                   <characteristics>
-                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value=" A model equipped with small bomms 
-can drop a bomm each turn as it flies over enemy units in 
-its Movement phase. After the model has moved, select 
-an enemy unit that it moved over and roll a D6 for each 
-model in that unit, up to a maximum of 5 dice. For each 
-roll of 6, the enemy unit suffers 1 mortal wound."/>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value=" A model equipped with small bomms  can drop a bomm each turn as it flies over enemy units in  its Movement phase. After the model has moved, select  an enemy unit that it moved over and roll a D6 for each  model in that unit, up to a maximum of 5 dice. For each  roll of 6, the enemy unit suffers 1 mortal wound."/>
                   </characteristics>
                 </profile>
               </profiles>
@@ -19492,7 +19562,10 @@ roll of 6, the enemy unit suffers 1 mortal wound."/>
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks/>
-              <costs/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="de28-5344-933d-8f30" name="Grot-Guided Bomms" hidden="false" collective="false" type="upgrade">
               <profiles>
@@ -19507,9 +19580,7 @@ roll of 6, the enemy unit suffers 1 mortal wound."/>
                     <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
                     <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
                     <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
-                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon can only be fired once per battle. This 
-weapon can target units that are not visible to the firer. 
-You can re-roll failed hit rolls made for this weapon."/>
+                    <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This weapon can only be fired once per battle. This  weapon can target units that are not visible to the firer.  You can re-roll failed hit rolls made for this weapon."/>
                   </characteristics>
                 </profile>
               </profiles>
@@ -19521,7 +19592,10 @@ You can re-roll failed hit rolls made for this weapon."/>
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks/>
-              <costs/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups/>
@@ -19543,6 +19617,7 @@ You can re-roll failed hit rolls made for this weapon."/>
       </entryLinks>
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="7.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
