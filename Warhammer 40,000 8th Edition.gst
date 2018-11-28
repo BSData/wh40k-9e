@@ -6522,7 +6522,7 @@
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="f68e-9984-71fe-6bca" name="Frag grenade" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="f68e-9984-71fe-6bca" name="Frag grenades" hidden="false" collective="false" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks>
@@ -6726,7 +6726,7 @@
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="0f23-cd69-d106-371e" name="Krak grenade" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="0f23-cd69-d106-371e" name="Krak grenades" hidden="false" collective="false" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks>
@@ -12824,7 +12824,7 @@
       <infoLinks/>
       <modifiers/>
       <characteristics>
-        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="12"/>
+        <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="12&quot;"/>
         <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Pistol 1"/>
         <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="3"/>
         <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
