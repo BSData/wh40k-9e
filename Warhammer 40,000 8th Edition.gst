@@ -7826,7 +7826,7 @@
         </infoLink>
       </infoLinks>
       <modifiers>
-        <modifier type="set" field="points" value="15">
+        <modifier type="set" field="points" value="10">
           <repeats/>
           <conditions>
             <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
@@ -9511,7 +9511,7 @@
         </infoLink>
       </infoLinks>
       <modifiers>
-        <modifier type="set" field="points" value="15">
+        <modifier type="set" field="points" value="10">
           <repeats/>
           <conditions>
             <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
