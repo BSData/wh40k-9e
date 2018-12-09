@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="11b5-77b9-31bf-7b74" name="Orks" book="Codex: Orks" revision="35" battleScribeVersion="2.01" authorName="tag8833" authorContact="Github" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="11b5-77b9-31bf-7b74" name="Orks" book="Codex: Orks" revision="36" battleScribeVersion="2.01" authorName="tag8833" authorContact="Github" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profiles/>
   <rules>
     <rule id="fac1-6afc-e5c9-35c2" name="Dis Is Ours! Zog Off!" book="" hidden="false">
@@ -601,6 +601,27 @@
       <modifiers/>
       <constraints/>
     </categoryEntry>
+    <categoryEntry id="1023-15ed-a791-2675" name="Battle Fortress" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
+    <categoryEntry id="cd20-713d-c394-a372" name="Dethrolla" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
+    <categoryEntry id="8d96-51c2-f268-42be" name="Kill Krusha" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
   </categoryEntries>
   <forceEntries/>
   <selectionEntries/>
@@ -709,7 +730,7 @@
       <constraints/>
       <categoryLinks/>
     </entryLink>
-    <entryLink id="f936-cfae-68df-76bd" name="New EntryLink" hidden="false" targetId="8ced-c9f4-249d-0fc3" type="selectionEntry">
+    <entryLink id="f936-cfae-68df-76bd" name="Kaptin Badrukk" hidden="false" targetId="8ced-c9f4-249d-0fc3" type="selectionEntry">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -1112,7 +1133,7 @@
       <constraints/>
       <categoryLinks/>
     </entryLink>
-    <entryLink id="f570-e61d-1ed0-e9c3" name="Attack Fighta" hidden="false" targetId="e3c1-9af9-b021-7b95" type="selectionEntry">
+    <entryLink id="f570-e61d-1ed0-e9c3" name="Attack Fighta (Open/Narrative)" hidden="false" targetId="e3c1-9af9-b021-7b95" type="selectionEntry">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -1242,6 +1263,22 @@
       <categoryLinks/>
     </entryLink>
     <entryLink id="ab25-8733-3d16-0aac" name="Extra Gubbins (1/3 CP)" hidden="false" targetId="5d56-647b-a086-2ded" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+    </entryLink>
+    <entryLink id="d0e8-e76c-8595-d172" name="Dethrolla Battle Fortress" hidden="false" targetId="6758-d594-1ac7-ddb2" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+    </entryLink>
+    <entryLink id="d6e1-7b39-3560-7a4e" name="Kill Krusha" hidden="false" targetId="103b-3e49-086b-dd50" type="selectionEntry">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -2424,16 +2461,14 @@
               <infoLinks/>
               <modifiers/>
               <characteristics>
-                <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This unit knows 2 powers, can cast and deny 2."/>
+                <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Use this Strategem before the battle begins.  Select a WEIRDBOY model knows 1 additional psychic power from the Power of the Waaagh! discipline and can attempt to manifest 1 additional psychich power in each of your Psychic phases."/>
               </characteristics>
             </profile>
           </profiles>
           <rules/>
           <infoLinks/>
           <modifiers/>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4674-a61c-075e-9087" type="max"/>
-          </constraints>
+          <constraints/>
           <categoryLinks/>
           <selectionEntries/>
           <selectionEntryGroups/>
@@ -2451,11 +2486,11 @@
           <rules/>
           <infoLinks/>
           <modifiers>
-            <modifier type="set" field="67e7-ee25-0d0b-ccc8" value="2">
-              <repeats/>
-              <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="da96-304a-7719-5147" type="equalTo"/>
-              </conditions>
+            <modifier type="increment" field="67e7-ee25-0d0b-ccc8" value="1">
+              <repeats>
+                <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="da96-304a-7719-5147" repeats="1" roundUp="false"/>
+              </repeats>
+              <conditions/>
               <conditionGroups/>
             </modifier>
           </modifiers>
@@ -4142,7 +4177,7 @@
             <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="User"/>
             <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
             <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
-            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Each the bearer fights, make an additional attack with this weapon.  It always wounds on a 4+ unless it is targetting a VAHECLE or TITANIC model."/>
+            <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Each the bearer fights, make an additional attack with this weapon.  It always wounds on a 4+ unless it is targetting a VEHICLE or TITANIC model."/>
           </characteristics>
         </profile>
       </profiles>
@@ -24062,7 +24097,7 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="7f12-8f4c-8f99-0a16" name="Butal but Kunnin" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="7f12-8f4c-8f99-0a16" name="Brutal but Kunnin" hidden="false" collective="false" type="upgrade">
       <profiles>
         <profile id="3704-7e9b-0311-41f7" name="Brutal but Kunnin" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
           <profiles/>
@@ -24428,6 +24463,705 @@
       <costs>
         <cost name="pts" costTypeId="points" value="15.0"/>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="6758-d594-1ac7-ddb2" name="Dethrolla Battle Fortress (Open/Narrative)" hidden="true" collective="false" type="unit">
+      <profiles>
+        <profile id="53d3-9b0a-e103-fb17" name="Dethrolla Battle Fortress" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="*"/>
+            <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="*"/>
+            <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="*"/>
+            <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="8"/>
+            <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="8"/>
+            <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="24"/>
+            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="8"/>
+            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="7"/>
+            <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="4+"/>
+          </characteristics>
+        </profile>
+        <profile id="4fb9-a1b5-b8a6-1f96" name="Dethrolla Battle Fortress" hidden="false" profileTypeId="b3a8-0452-7436-44d1" profileTypeName="Transport">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Capacity" characteristicTypeId="15aa-1916-a38b-d223" value="20 FLASHGITZ or (CLAN) INFANTRY models.  Each MEGA ARMOUR or JUMP PACK model takes the space of 2.  "/>
+          </characteristics>
+        </profile>
+        <profile id="0580-05c4-fc5b-a398" name="Deffrolla1" hidden="false" profileTypeId="dc42-c17d-54f3-df0a" profileTypeName="Kill Tank Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Wounds" characteristicTypeId="50c7-d15c-aa1b-eaf0" value="14-24+"/>
+            <characteristic name="Move" characteristicTypeId="2910-7d1f-bf86-b8fc" value="12&quot;"/>
+            <characteristic name="WS" characteristicTypeId="8365-1f6b-ed73-f208" value="3+"/>
+            <characteristic name="BS" characteristicTypeId="7700-05f4-4b88-ca85" value="4+"/>
+          </characteristics>
+        </profile>
+        <profile id="81a2-11f1-4345-5ff6" name="Deffrolla3" hidden="false" profileTypeId="dc42-c17d-54f3-df0a" profileTypeName="Kill Tank Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Wounds" characteristicTypeId="50c7-d15c-aa1b-eaf0" value="1-5"/>
+            <characteristic name="Move" characteristicTypeId="2910-7d1f-bf86-b8fc" value="8&quot;"/>
+            <characteristic name="WS" characteristicTypeId="8365-1f6b-ed73-f208" value="5+"/>
+            <characteristic name="BS" characteristicTypeId="7700-05f4-4b88-ca85" value="6+"/>
+          </characteristics>
+        </profile>
+        <profile id="2937-2517-180a-2baf" name="Deffrolla2" hidden="false" profileTypeId="dc42-c17d-54f3-df0a" profileTypeName="Kill Tank Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Wounds" characteristicTypeId="50c7-d15c-aa1b-eaf0" value="6-13"/>
+            <characteristic name="Move" characteristicTypeId="2910-7d1f-bf86-b8fc" value="10&quot;"/>
+            <characteristic name="WS" characteristicTypeId="8365-1f6b-ed73-f208" value="4+"/>
+            <characteristic name="BS" characteristicTypeId="7700-05f4-4b88-ca85" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="8450-9c7e-aeb7-3620" name="Firing Points" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Firing Points: Models embarked on this vehicle can shoot in their Shooting phase. They measure range and draw line of sight from any point on the vehicle. When they do so, any restrictions or modifiers that apply to this model also apply to its passengers; for example, the passengers cannot shoot if this model has Fallen Back in the same turn, cannot shoot (except with Pistols) if this model is within 1&quot; of an enemy unit, and so on."/>
+          </characteristics>
+        </profile>
+        <profile id="d0fc-aee2-c395-4850" name="Grot Riggers" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Grot Riggers: At the end of the turn, roll a D6. On a 6, this model regains one lost wound."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks>
+        <infoLink id="1025-e81a-5346-a1de" name="Mobile Fortress" hidden="false" targetId="4984-fddb-b1ad-d7a3" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="de56-525c-6b3f-47a7" name="Explodes (6+/6&quot;/D6)" hidden="false" targetId="8159-a610-444f-d93c" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="ce21-a56f-0eef-65d3" name="Dakka Dakka Dakka" hidden="false" targetId="52cc-983f-0b7b-683a" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <repeats/>
+          <conditions/>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cfc5-43e4-b02e-d1f9" type="equalTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c702-d73b-dccf-5617" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="4621-da09-e8fb-1b62" name="New CategoryLink" hidden="false" targetId="2ab6-8d0f-494d-38e2" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="451b-bf3a-c163-6e11" name="New CategoryLink" hidden="false" targetId="1c58-037f-7b58-1223" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="1ab0-bb62-8793-c7b1" name="New CategoryLink" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="82c4-0ab4-53a8-43a5" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="6888-4fe6-51de-d0e6" name="Battle Fortress" hidden="false" targetId="1023-15ed-a791-2675" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="e8b0-b16b-40cd-5748" name="Dethrolla" hidden="false" targetId="cd20-713d-c394-a372" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="a63b-69a2-0179-25c0" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="c9da-f5d7-5c01-8973" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="5d99-e524-231b-d8f6" name="Dethrolla" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="e029-3bc0-2134-56dd" name="Dethrolla" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="Melee"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Melee"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="+2"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D3"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Add 3 to hit rolls for attacks made for this weapon"/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="df33-50da-0a91-5f03" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4138-0ec5-07f6-0500" type="min"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="e4c4-f374-5bc7-6c0d" name="Big Shootas (0-5)" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="69eb-b0a2-edd7-dbf6" type="min"/>
+            <constraint field="selections" scope="parent" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7117-76e0-9a26-00a5" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="fd70-7122-f10d-47ba" name="Big Shoota" hidden="false" targetId="6008-4737-d8e6-e63b" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="a02c-13cb-46bb-dd8a" name="Kannon" hidden="false" collective="false" defaultSelectionEntryId="9e6c-44a9-52c9-9857">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="992e-625d-aa56-8553" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3bc4-d42c-a479-d31a" type="min"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="9e6c-44a9-52c9-9857" name="Kannon" hidden="false" targetId="b3d8-73ff-d4fc-c2ac" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="d14a-7374-8cbe-3979" name="Zzap gun" hidden="false" targetId="b390-deb9-6d7e-d632" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="a297-1f58-9f61-db28" name="Lobba" hidden="false" targetId="b25a-5184-36ce-d147" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="6dbc-dbd5-a8c7-d3bf" name="Zzap Guns" hidden="false" collective="false" defaultSelectionEntryId="8cc4-24d0-2632-5055">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="13a7-f030-a624-ca0e" type="max"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8dbf-12f9-0b9f-54fd" type="min"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="4efb-bda2-8082-3a2c" name="Kannon" hidden="false" targetId="b3d8-73ff-d4fc-c2ac" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="8cc4-24d0-2632-5055" name="Zzap gun" hidden="false" targetId="b390-deb9-6d7e-d632" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="3e32-2a6d-a5ea-eec1" name="Lobba" hidden="false" targetId="b25a-5184-36ce-d147" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="ebb0-1cc5-835a-e929" name="More Guns" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4109-051f-a1ec-74eb" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="f37b-ebe4-f4bc-5189" name="Twin Big Shoota" hidden="false" targetId="a4f1-6ccb-1c50-405b" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="4e97-2d68-3646-3020" name="Skorcha" hidden="false" targetId="e05b-21b5-8727-ea9d" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="8512-b789-9e27-1b83" name="Rokkit Launcha" hidden="false" targetId="a8c1-7fb9-7f7b-84c5" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="16.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="103b-3e49-086b-dd50" name="Kill Krusha (Open/Narrative)" hidden="true" collective="false" type="unit">
+      <profiles>
+        <profile id="24d8-6643-0583-61cd" name="Kill Krusha" hidden="false" profileTypeId="800f-21d0-4387-c943" profileTypeName="Unit">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="M" characteristicTypeId="0bdf-a96e-9e38-7779" value="*"/>
+            <characteristic name="WS" characteristicTypeId="e7f0-1278-0250-df0c" value="*"/>
+            <characteristic name="BS" characteristicTypeId="381b-eb28-74c3-df5f" value="*"/>
+            <characteristic name="S" characteristicTypeId="2218-aa3c-265f-2939" value="8"/>
+            <characteristic name="T" characteristicTypeId="9c9f-9774-a358-3a39" value="8"/>
+            <characteristic name="W" characteristicTypeId="f330-5e6e-4110-0978" value="24"/>
+            <characteristic name="A" characteristicTypeId="13fc-b29b-31f2-ab9f" value="8"/>
+            <characteristic name="Ld" characteristicTypeId="00ca-f8b8-876d-b705" value="7"/>
+            <characteristic name="Save" characteristicTypeId="c0df-df94-abd7-e8d3" value="4+"/>
+          </characteristics>
+        </profile>
+        <profile id="22c3-0b94-96fb-e998" name="Kill Krusha" hidden="false" profileTypeId="b3a8-0452-7436-44d1" profileTypeName="Transport">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Capacity" characteristicTypeId="15aa-1916-a38b-d223" value="12 FLASHGITZ or (CLAN) INFANTRY models.  Each MEGA ARMOUR or JUMP PACK model takes the space of 2.  "/>
+          </characteristics>
+        </profile>
+        <profile id="ba18-0c4e-af6f-2396" name="Krusha1" hidden="false" profileTypeId="dc42-c17d-54f3-df0a" profileTypeName="Kill Tank Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Wounds" characteristicTypeId="50c7-d15c-aa1b-eaf0" value="14-24+"/>
+            <characteristic name="Move" characteristicTypeId="2910-7d1f-bf86-b8fc" value="12&quot;"/>
+            <characteristic name="WS" characteristicTypeId="8365-1f6b-ed73-f208" value="3+"/>
+            <characteristic name="BS" characteristicTypeId="7700-05f4-4b88-ca85" value="4+"/>
+          </characteristics>
+        </profile>
+        <profile id="207e-00d5-0cfe-f57d" name="Krusha3" hidden="false" profileTypeId="dc42-c17d-54f3-df0a" profileTypeName="Kill Tank Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Wounds" characteristicTypeId="50c7-d15c-aa1b-eaf0" value="1-5"/>
+            <characteristic name="Move" characteristicTypeId="2910-7d1f-bf86-b8fc" value="8&quot;"/>
+            <characteristic name="WS" characteristicTypeId="8365-1f6b-ed73-f208" value="5+"/>
+            <characteristic name="BS" characteristicTypeId="7700-05f4-4b88-ca85" value="6+"/>
+          </characteristics>
+        </profile>
+        <profile id="a282-523f-0bb3-ec69" name="Krusha2" hidden="false" profileTypeId="dc42-c17d-54f3-df0a" profileTypeName="Kill Tank Wound Track">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Wounds" characteristicTypeId="50c7-d15c-aa1b-eaf0" value="6-13"/>
+            <characteristic name="Move" characteristicTypeId="2910-7d1f-bf86-b8fc" value="10&quot;"/>
+            <characteristic name="WS" characteristicTypeId="8365-1f6b-ed73-f208" value="4+"/>
+            <characteristic name="BS" characteristicTypeId="7700-05f4-4b88-ca85" value="5+"/>
+          </characteristics>
+        </profile>
+        <profile id="7beb-110f-079e-6623" name="Hang On!" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Models embarked on this vehicle can shoot in their Shooting phase, but only hit on a 6+. They measure range and draw line of sight from any point on the vehicle. When they do so, any restrictions or modifiers that apply to this model also apply to its passengers; for example, the passengers cannot shoot if this model has Fallen Back in the same turn, cannot
+shoot (except with Pistols) if this model is within 1&quot; of an enemy unit, and so on."/>
+          </characteristics>
+        </profile>
+        <profile id="5b28-c000-4126-3bd6" name="Grot Riggers" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <characteristics>
+            <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Grot Riggers: At the end of the turn, roll a D6. On a 6, this model regains one lost wound."/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules/>
+      <infoLinks>
+        <infoLink id="3680-ea3c-74b7-a7d7" name="Mobile Fortress" hidden="false" targetId="4984-fddb-b1ad-d7a3" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="bccf-e4c8-4774-4068" name="Explodes (6+/6&quot;/D6)" hidden="false" targetId="8159-a610-444f-d93c" type="profile">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+        <infoLink id="86e3-adee-1641-6126" name="Dakka Dakka Dakka" hidden="false" targetId="52cc-983f-0b7b-683a" type="rule">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+        </infoLink>
+      </infoLinks>
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <repeats/>
+          <conditions/>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cfc5-43e4-b02e-d1f9" type="equalTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c702-d73b-dccf-5617" type="equalTo"/>
+              </conditions>
+              <conditionGroups/>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="4cb0-c617-b853-304b" name="New CategoryLink" hidden="false" targetId="2ab6-8d0f-494d-38e2" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="42a7-c8f1-13ff-8c6f" name="New CategoryLink" hidden="false" targetId="1c58-037f-7b58-1223" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="99bc-cf68-80d4-d75f" name="New CategoryLink" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="104e-6fff-766c-82c5" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="5d0f-eca1-bf3d-6cda" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="8d6b-3429-ba3c-11e2" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+        <categoryLink id="db40-0e52-fd00-6bc5" name="Kill Krusha" hidden="false" targetId="8d96-51c2-f268-42be" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="c8eb-b0e7-9979-8d5d" name="Krusha Kannon" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="57c0-7374-b177-bb78" name="Krusha Kannon - Boom Shell" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="60&quot;"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 2D6"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="8"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-2"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="2"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value=""/>
+              </characteristics>
+            </profile>
+            <profile id="eb57-e0d8-0970-9d49" name="Krusha Kannon - Tankhamma shell" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="60&quot;"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 1"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="10"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-3"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="D6"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Roll two dice when inflicting damage with this weapon and discard the lowest result."/>
+              </characteristics>
+            </profile>
+            <profile id="2419-f304-c768-04c1" name="Krusha Kannon - Scrap Kanister" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="18&quot;"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 3D6"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="5"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="-1"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="This Weapon automatically hits its target."/>
+              </characteristics>
+            </profile>
+            <profile id="7ba3-f791-8d33-e1d6" name="Krusha Kannon - Blast Burna" hidden="false" profileTypeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" profileTypeName="Weapon">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Range" characteristicTypeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="48&quot;"/>
+                <characteristic name="Type" characteristicTypeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2" value="Heavy 3D6"/>
+                <characteristic name="S" characteristicTypeId="59b1-319e-ec13-d466" value="4"/>
+                <characteristic name="AP" characteristicTypeId="75aa-a838-b675-6484" value="0"/>
+                <characteristic name="D" characteristicTypeId="ae8a-3137-d65b-4ca7" value="1"/>
+                <characteristic name="Abilities" characteristicTypeId="837d-5e63-aeb7-1410" value="Units do not receive the benefit of cover to their saving
+throws for attacks made with this weapon."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="61e3-ac6b-e934-67db" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1cea-c57e-004b-b2e2" type="min"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="8189-347c-c84a-9481" name="Reinforced Ram" hidden="false" collective="false" type="upgrade">
+          <profiles>
+            <profile id="21ff-09eb-287b-f5ad" name="Reinforced Ram" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <characteristics>
+                <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Increase this model’s Strength characteristic by 2 until the end of a turn in which it makes a successful charge. In addition, each time this model finishes a charge move, select one enemy unit
+within 1&quot; and roll a D6; on a 2+ that unit suffers D3 mortal wounds."/>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b737-dd8a-e4a3-48df" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1773-7248-c75e-aaa5" type="min"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" costTypeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="6f43-4274-050f-f79b" name="More Guns" hidden="false" collective="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2c5c-b315-afb9-0759" type="max"/>
+          </constraints>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks>
+            <entryLink id="afa1-2210-ea1c-a343" name="Twin Big Shoota" hidden="false" targetId="a4f1-6ccb-1c50-405b" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="2aa9-d635-d6ee-acb5" name="Skorcha" hidden="false" targetId="e05b-21b5-8727-ea9d" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="6c82-81f3-f242-382a" name="Rokkit Launcha" hidden="false" targetId="a8c1-7fb9-7f7b-84c5" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="678f-c926-76dc-a64d" name="Big Shoota" hidden="false" targetId="6008-4737-d8e6-e63b" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+            <entryLink id="576c-bf67-e071-332f" name="Rack of Rokkits" hidden="false" targetId="17f9-fccd-55db-b80a" type="selectionEntry">
+              <profiles/>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints/>
+              <categoryLinks/>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="16.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -25091,9 +25825,9 @@
       </constraints>
       <categoryLinks/>
       <selectionEntries>
-        <selectionEntry id="72d8-4997-0e7d-0eff" name="The Lucky Stick" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="72d8-4997-0e7d-0eff" name="Da Lucky Stikk" hidden="false" collective="false" type="upgrade">
           <profiles>
-            <profile id="b47a-3dce-c913-5658" name="Goffs - The Lucky Stick" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+            <profile id="b47a-3dce-c913-5658" name="Goffs - Da Lucky Stikk" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
               <profiles/>
               <rules/>
               <infoLinks/>
