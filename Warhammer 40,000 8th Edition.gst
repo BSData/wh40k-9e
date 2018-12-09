@@ -9976,7 +9976,7 @@
       <entryLinks/>
       <costs>
         <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="5.0"/>
-        <cost name="pts" costTypeId="points" value="400.0"/>
+        <cost name="pts" costTypeId="points" value="800.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="b801-d1d1-7c34-facf" name="Primus Redoubt" hidden="false" collective="false" type="model">
