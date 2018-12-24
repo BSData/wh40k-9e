@@ -11982,7 +11982,10 @@
       <selectionEntries/>
       <selectionEntryGroups/>
       <entryLinks/>
-      <costs/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -12850,7 +12853,17 @@
               <categoryLinks/>
               <selectionEntries>
                 <selectionEntry id="8e02-a592-aed6-b533" name="11: Inspirational Fighter" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="8fd8-f579-1b69-ed00" name="11: Inspirational Fighter" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Re-roll hit rolls of 1 in the Fight phase for friendly &lt;Sub-faction&gt; units within 6&quot; of this model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12867,7 +12880,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="fbd4-985a-2c1c-4e3a" name="12: Beast Hunter" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="2cfd-c772-8ded-a00b" name="12: Beast Hunter" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll failed wound rolls for attacks made by this model in the Fight phase if the target is a MONSTER unit."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12884,7 +12907,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="727b-aa18-77de-256e" name="13: Heroic" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="ef93-d404-8371-48a4" name="13: Heroic" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model can perform a Heroic Intervention if, after the enemy has completed all of their charge moves, it is within 6&quot; of any enemy units, and can move up to 6&quot; when doing so."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12901,7 +12934,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="e281-11b6-0dec-aed3" name="14: Duelist" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="4a64-cba7-3757-7487" name="14: Duelist" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to this model’s Strength and Attacks characteristics while it is within 1&quot; of any enemy Character units."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12918,7 +12961,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="e627-d127-4462-f867" name="15: Zealot" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="a80d-c26c-f77c-82b8" name="15: Zealot" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll failed hit rolls for this model in the Fight phase if it made a charge move, performed a Heroic Intervention, or was charged this turn."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12935,7 +12988,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="bae0-c327-ff17-dacb" name="16: Deadly Charge" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="b2ef-4f86-c2cb-c4f2" name="16: Deadly Charge" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to the Attacks characteristic of this model in the Fight phase if it made a charge move this turn. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12952,7 +13015,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="787e-e430-3742-7a48" name="21: Targeting Augury" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="97cf-dacf-4f4e-8b26" name="21: Targeting Augury" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Enemy units do not gain the benefit of cover to their saving throws against attacks made by friendly &lt;Sub-faction&gt; units within 6&quot; of this model when the attack is made."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12969,7 +13042,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="1555-250b-e5e2-0c7f" name="22: Directed Fire" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="630c-9566-13eb-da57" name="22: Directed Fire" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Re-roll hit rolls of 1 in the Shooting phase for friendly &lt;Sub-faction&gt; units within 6&quot; of this model. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -12986,7 +13069,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="dc9c-473d-7a0e-d853" name="23: Deadly Marksman" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="a650-fc6c-fd84-e191" name="23: Deadly Marksman" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to the Damage characteristic of ranged weapons used by this model. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13003,7 +13096,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="bd02-74a3-03b0-9c69" name="24: Sundering Shots" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="0184-00c1-f033-65cd" name="24: Sundering Shots" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each wound roll of 6+ made for this model’s ranged attacks inflicts 1 mortal wound on the target in addition to any normal damage."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13020,7 +13123,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="c70c-1e57-307b-e10e" name="25: Keen Eye" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="443c-d65e-b495-aaff" name="25: Keen Eye" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model can target enemy CHARACTER units in the Shooting phase even if they are not the closest enemy model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13037,7 +13150,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="ff90-2f86-77ab-92db" name="26: Defensive Fighter" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="96c5-a669-528a-1d64" name="26: Defensive Fighter" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When this model fires Overwatch, it successfully hits on rolls of 5 or 6, instead of only 6."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13054,7 +13177,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="d8fd-22fb-8d0a-591f" name="31: Grudge" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="49f0-a183-7e98-a4b1" name="31: Grudge" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll any hit, wound and damage rolls made for this model’s attacks that target the enemy Warlord."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13071,7 +13204,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="18f5-d11c-42ba-3c28" name="32: Resilient" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="8cb8-49d4-ca19-0b34" name="32: Resilient" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each time this model loses a wound, roll a dice; on a 5+ it does not lose that wound."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13088,7 +13231,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="158b-0812-f8b4-bc4b" name="33: Camoflage" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="b55a-deb9-dfcc-dfd4" name="33: Camoflage" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 2 instead of 1 to saving throws made for this model when it is receiving the benefit of cover."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13105,7 +13258,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="7e54-6d92-f926-030f" name="34: Stealth Assault" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="0a78-1439-ab87-4ac5" name="34: Stealth Assault" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Enemy units cannot fire Overwatch at this model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13122,7 +13285,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="7da7-7a26-eb63-a5bc" name="35: Indomitable" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="eede-37c4-cc49-3cec" name="35: Indomitable" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="All damage suffered by this model is halved (rounding up). "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13139,7 +13312,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="64b2-1c6b-2b20-86d0" name="36: Impervious" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="09a4-6f7c-d011-706c" name="36: Impervious" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model regains 1 lost wound at the start of your turn. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13156,7 +13339,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="c45b-14f1-8fd6-ecf4" name="41: Infiltrator" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="eada-5268-3152-d12e" name="41: Infiltrator" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="During deployment, you can set up this model in ambush, instead of placing it on the battlefield. At the end of any of your Movement phases it can reveal its location – set it up anywhere on the battlefield that is more than 9&quot; from any enemy models."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13173,7 +13366,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="9b8a-668e-8b0b-d694" name="42: Stealthy" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="d50b-f421-da38-fd5a" name="42: Stealthy" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Subtract 1 from hit rolls for attacks made with ranged weapons that target this model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13190,7 +13393,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="2227-626a-f581-81f2" name="43: Hard to Kill" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="b3f5-feaf-9334-bb2a" name="43: Hard to Kill" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Wound rolls of 1, 2 or 3 made for attacks that target this model always fail, even if the attack has a Strength characteristic higher than this model’s Toughness characteristic."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13207,7 +13420,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="0d8d-de0e-6585-8488" name="44: Strategic Feint" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="faf9-46bb-7bee-126c" name="44: Strategic Feint" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the start of the first battle round but before the first turn begins, you can pick a friendly &lt;Sub-faction&gt; unit within 6&quot; of this model and set it up again, anywhere wholly within your deployment zone. If your opponent has any units with similar abilities, roll off; starting with the winner of the roll-off, take it in turns to resolve these abilities."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13224,7 +13447,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="3da3-6e11-cc98-4c52" name="45: Swift Strike" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="a855-aa59-c8b1-6f75" name="45: Swift Strike" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can always choose this model to fight first in the Fight phase even if it did not charge. If the enemy has units that have charged, or that have a similar ability, alternate choosing units to fight with, starting with the player whose turn is taking place."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13241,7 +13474,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="fb1a-ce7f-7432-a23b" name="46: Foresight" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="1f69-1696-0676-0b09" name="46: Foresight" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Once per battle, if this model is on the battlefield, you can re-roll one hit roll, wound roll, damage roll or saving throw."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13258,7 +13501,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="1e63-4438-5922-90d0" name="51: Inspirational Leader" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="fa5f-6cdc-2d50-3139" name="51: Inspirational Leader" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Friendly &lt;Sub-faction&gt;units can use this model’s Leadership instead of their own while they are within 6&quot; of it."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13275,7 +13528,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="0d39-dd84-b6e9-b5bc" name="52: Rallying Cry" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="84d4-2c9e-a06c-c893" name="52: Rallying Cry" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll failed Morale tests for friendly &lt;Sub-faction&gt;units while they are within 6&quot; of this model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13292,7 +13555,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="d135-4517-30e1-7993" name="53: Icon of Retribution" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="d3a7-5098-bc2a-3dd9" name="53: Icon of Retribution" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Roll a dice each time a friendly &lt;Sub-faction&gt;model within 6&quot; of this model is slain in the Fight phase. On a 6, the unit that made the attack that slew the model suffers 1 mortal wound after it has finished making its attacks."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13309,7 +13582,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="1644-e71b-1241-6066" name="54: Impetuous" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="946d-9ea6-daa5-3e34" name="54: Impetuous" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll failed charge rolls for this model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13326,7 +13609,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="82e5-94dc-402d-c0f2" name="55: Terrifying" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="cf24-b6fd-64fb-2e10" name="55: Terrifying" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Subtract 1 from the Leadership characteristic of enemy units while they are within 3&quot; of this model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13343,7 +13636,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="178f-9657-9ea6-c7af" name="56: Savage Riposte" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="28fd-c8a4-00d9-3c19" name="56: Savage Riposte" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each time you roll an unmodified saving throw of 6 for this model in the Fight phase, the enemy unit that made the attack suffers 1 mortal wound after it has resolved all of its attacks."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13360,7 +13663,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="7d1c-3aef-4200-0995" name="61: Air Strike" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="5de9-d6de-958d-3236" name="61: Air Strike" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Once per battle, in your Shooting phase, you can pick an enemy unit, other than a Characterunit, that is visible to this model and roll a D6. On a 1-4 nothing happens. On a 5+ the target unit suffers D3 mortal wounds."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13377,7 +13690,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="edc6-d887-076d-cf8b" name="62: Swift Advance" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="e1b2-a287-6f47-905c" name="62: Swift Advance" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="When this model Advances, add 6&quot; to its Move characteristic for that Movement phase instead of rolling a D6"/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13394,7 +13717,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="9f0e-b42d-4fdf-2225" name="63: Reactive Tactics" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="0fd6-5d34-61d6-1a91" name="63: Reactive Tactics" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model, and friendly&lt;Sub-faction&gt;units within 6&quot; of them, can charge even if they Fell Back that turn."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13411,7 +13744,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="d7d1-4e07-1598-dd20" name="64: Strike and Fade" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="4c8a-66ad-6ac9-532b" name="64: Strike and Fade" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="After this model has fought in the Fight phase, it can immediately pile in D3+3&quot; in any direction, not just towards the closest enemy model."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13428,7 +13771,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="a201-d4ca-6e56-4de9" name="65: Final Strike" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="a818-29f1-ed4e-8fe8" name="65: Final Strike" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is slain, you can select an enemy unit within 3&quot; of it and roll a D6; on a 2+ that unit suffers D3 mortal wounds. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13445,7 +13798,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="e66e-492b-863e-27db" name="66: Direct Fire" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="4a42-4231-7509-9afa" name="66: Direct Fire" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each time you make a wound roll of 6+ in the Shooting phase for a friendly &lt;Sub-faction&gt;unit within 6&quot; of this model, the AP characteristic of that attack is improved by 1 (e.g. AP -1 becomes AP -2)."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13474,7 +13837,17 @@
               <categoryLinks/>
               <selectionEntries>
                 <selectionEntry id="9fe7-52d1-37b0-760f" name="02: Auto-loader" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="7d61-3f69-1234-5baa" name="02: Auto-loader" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s ranged weapons. Increase the number of shots this weapon makes by 1 (e.g. a Pistol 1 weapon becomes a Pistol 2 weapon). "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13491,7 +13864,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="46e4-b70d-2e05-221a" name="03: Penetrator Rounds" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="85ee-c700-2b30-ad37" name="03: Penetrator Rounds" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s ranged weapons. Improve that weapon’s AP characteristic by 1 (e.g. AP -1 becomes AP -2)."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13508,7 +13891,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="2807-7a2a-8f82-e02f" name="04: High Calibre" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="97fa-de67-99e0-29fd" name="04: High Calibre" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s ranged weapons. Add 1 to that weapon’s Strength characteristic."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13525,7 +13918,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="2cd2-860a-691e-9a04" name="05: Improved Sights" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="65fb-9911-be6a-53d6" name="05: Improved Sights" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s ranged weapons. Add 6&quot; to that weapon’s Range characteristic. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13542,7 +13945,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="fdec-6130-c07f-340c" name="06: Inferno Round" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="d1b4-cfe9-6852-26f5" name="06: Inferno Round" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s ranged weapons. Add the following ability to that weapon: ‘Units do not receive the benefit of cover to their saving throws against attacks made with this weapon.’"/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13559,7 +13972,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="f759-18ed-8403-472b" name="07: Artificer Weapon" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="74dd-199a-f33e-c54f" name="07: Artificer Weapon" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s weapons. Add 1 to that weapon’s Damage characteristic."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13576,7 +13999,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="f341-b493-710a-4058" name="08: Finely Balanced" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="37ad-2ef0-0868-af26" name="08: Finely Balanced" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s melee weapons. Add the following ability to that weapon: ‘Each time the bearer fights, it can make 1 additional attack with this weapon.’"/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13593,7 +14026,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="119c-bce3-49b2-42b9" name="09: Shredder" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="1ce8-bd94-7cf0-e20f" name="09: Shredder" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s melee weapons. Add the following ability to that weapon: ‘You can re-roll failed wound rolls for attacks made with this weapon.’"/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13610,7 +14053,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="2815-b0cf-9cd9-cda3" name="10: Brutal" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="96c3-0639-a1a2-86e0" name="10: Brutal" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s melee weapons. Improve that weapon’s Strength characteristic by 1 (e.g. User becomes +1, +1 becomes +2)."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13627,7 +14080,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="1ff7-04bf-8369-9459" name="11: Razor-edged" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="ae27-0269-204d-ceb0" name="11: Razor-edged" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s melee weapons. Improve that weapon’s AP characteristic by 1 (e.g. AP -1 becomes AP -2)."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13644,7 +14107,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="6f8b-aeb4-3dc6-15f6" name="12: Heirloom" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="c8c0-671c-6174-969c" name="12: Heirloom" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Pick one of this model’s melee weapons. Add the following ability to that weapon: ‘Each unmodified hit roll of 6 made for attacks with this weapon scores 2 hits instead of 1’."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13681,7 +14154,17 @@
               <categoryLinks/>
               <selectionEntries>
                 <selectionEntry id="077f-c4ee-46da-262e" name="1: Psychic Might" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="93ca-1b49-0a5c-c32b" name="1: Psychic Might" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to the number of psychic powers this character can attempt to manifest in your Psychic phase. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13698,7 +14181,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="ec80-9cf3-d328-7b33" name="2: Adamantium Will" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="797e-b18b-5171-c011" name="2: Adamantium Will" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to the number of psychic powers this character can attempt to deny in your opponent’s Psychic phase."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13715,7 +14208,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="eab9-a014-74ae-86fa" name="3: Master of Lore" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="68b1-73d2-33ee-8089" name="3: Master of Lore" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to the number of psychic powers this model knows from one of the psychic disciplines available to them."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13744,7 +14247,17 @@
               <categoryLinks/>
               <selectionEntries>
                 <selectionEntry id="4209-8365-fee9-a06b" name="02: Old War Wound" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="9f66-befe-4666-5240" name="02: Old War Wound" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Select a result from this table, or roll 2D6 to randomly select a result (re-roll if you get this result again). Subtract or worsen this model’s characteristic by the amount described in the result you picked instead of adding or improving it (e.g. if the Ferocious Combatant result was selected, an Attacks characteristic of 3 would become 2, while if the Dead-eyed result was selected, a BS of 3+ would become 4+)"/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13761,7 +14274,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="f878-b02b-beef-13a2" name="03: Courageous" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="4573-56a8-9be7-681e" name="03: Courageous" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to this model’s Leadership characteristic."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13778,7 +14301,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="f55a-b8d0-7451-6549" name="04: Ferocious Combatant" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="5eea-41a6-c5ef-2098" name="04: Ferocious Combatant" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to this model’s Attacks characteristic."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13795,7 +14328,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="6553-36b0-0ec4-05ee" name="05: Mighty" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="e8a0-c6f1-bce1-1922" name="05: Mighty" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to this model’s Strength characteristic. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13812,7 +14355,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="7d14-cd91-8d61-75df" name="06: Dead-eyed" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="a848-ed5a-e35c-dc1b" name="06: Dead-eyed" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Improve this model’s Ballistic Skill characteristic by 1 (e.g. BS 3+ will become BS 2+), to a maximum of 2+."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13829,7 +14382,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="c082-cf1d-b27f-2cfb" name="07: Fleet" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="404b-1264-bf6c-14e1" name="07: Fleet" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 2&quot; to this model’s Move characteristic. "/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13846,7 +14409,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="eafb-948f-2fa7-4bc6" name="08: Blademaster" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="ccdc-ad4a-1079-8b4d" name="08: Blademaster" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Improve this model’s Weapon Skill characteristic by 1 (e.g. WS 3+ will become WS 2+), to a maximum of 2+."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13863,7 +14436,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="3172-c06e-7741-08b8" name="09: Enhanced Physiology" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="3e88-8098-ccb3-7401" name="09: Enhanced Physiology" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to this model’s Toughness characteristic."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13880,7 +14463,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="c868-458a-4d31-5076" name="10: Toughened Armor" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="bc54-473a-845d-58a1" name="10: Toughened Armor" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Improve this model’s Save characteristic by 1 (e.g. Sv 5+ will become Sv 4+), to a maximum of 2+."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13897,7 +14490,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="a969-9a39-5fd6-aa66" name="11: Divine Protection" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="273f-17c8-2998-61cc" name="11: Divine Protection" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Improve this model’s invulnerable save by 1 (e.g. an invulnerable save of 5+ will become an invulnerable save of 4+), to a maximum of 3+. If this model does not have an invulnerable save, it instead gains a 6+ invulnerable save."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -13914,7 +14517,17 @@
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="e392-2dd6-a365-9430" name="12: Heroic Constitution" hidden="false" collective="false" type="upgrade">
-                  <profiles/>
+                  <profiles>
+                    <profile id="d87e-223c-47a9-bf97" name="12: Heroic Constitution" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                      <profiles/>
+                      <rules/>
+                      <infoLinks/>
+                      <modifiers/>
+                      <characteristics>
+                        <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to this model’s Wounds characteristic."/>
+                      </characteristics>
+                    </profile>
+                  </profiles>
                   <rules/>
                   <infoLinks/>
                   <modifiers/>
@@ -14030,7 +14643,17 @@
           <categoryLinks/>
           <selectionEntries>
             <selectionEntry id="a7c8-a382-a675-e86f" name="R1: Sharpshooters" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="76d6-f1bb-7eaf-bd6c" name="R1: Sharpshooters" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Re-roll hit rolls of 1 for this unit in the Shooting phase. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14047,7 +14670,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="ff2f-fb51-8e9b-a7cf" name="R1: Agile" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="6748-2c2f-3f15-4d1b" name="R1: Agile" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll Advance and Charge rolls for this unit. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14064,7 +14697,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="5f32-8719-6e59-af27" name="R1: Deadeye Shots" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="591c-3344-f7bf-7f91" name="R1: Deadeye Shots" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each time you roll an unmodified wound roll of 6 for an attack with one of this unit’s ranged weapons, increase the Damage characteristic of that attack by 1. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14081,7 +14724,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="ba16-41ea-78fe-e7aa" name="R1: Grizzled" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="91f1-f358-86de-96ad" name="R1: Grizzled" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This unit ignores penalties to their Leadership characteristic. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14098,7 +14751,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="450f-549c-5563-1bbc" name="R2: Combat Specialists" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="61ff-1cf2-0c84-6a15" name="R2: Combat Specialists" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Re-roll hit rolls of 1 for this unit in the Fight phase."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14115,7 +14778,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="b3ab-c12f-20ed-d682" name="R2: Assassins" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="8f76-d66e-c390-2ea5" name="R2: Assassins" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to wound rolls for attacks made by models in this unit that target an enemy CHARACTER unit."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14132,7 +14805,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="090b-0e7f-9a6d-96f4" name="R3: Trophy Takers" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="4425-d2f7-088b-4818" name="R3: Trophy Takers" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Subtract 1 from the Leadership characteristic of enemy units while they are within 6&quot; of this unit. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14149,7 +14832,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="91c9-83c7-00ed-7c80" name="R4: Disciplined" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="90a0-9f4c-d49d-d4f5" name="R4: Disciplined" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This unit can shoot or charge during a turn in which it Fell Back."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14166,7 +14859,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="f695-24ed-477e-584d" name="R5: Brutal" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="cf6f-8830-33e8-0d6d" name="R5: Brutal" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to the Strength and Attacks characteristic of models in this unit during any turn in which they made a successful charge move."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14181,6 +14884,54 @@
                 <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
+            </selectionEntry>
+            <selectionEntry id="b0c1-2c21-a0b7-092e" name="R2: Lucky" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="b664-22df-25c1-4664" name="R2: Lucky" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Roll a D6 each time a model from this unit loses a wound; on a 6 the model does not lose that wound."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0530-27d4-ed45-f702" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs/>
+            </selectionEntry>
+            <selectionEntry id="21db-768e-a0c2-00fd" name="R3: Breachers" hidden="false" collective="false" type="upgrade">
+              <profiles>
+                <profile id="be38-1685-9783-10d4" name="R3: Breachers" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to wound rolls for attacks made by models in this unit if the target of those attacks is receiving the benefit of cover."/>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <rules/>
+              <infoLinks/>
+              <modifiers/>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a2b7-0a28-0d57-126a" type="max"/>
+              </constraints>
+              <categoryLinks/>
+              <selectionEntries/>
+              <selectionEntryGroups/>
+              <entryLinks/>
+              <costs/>
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups/>
@@ -14339,7 +15090,17 @@
           <categoryLinks/>
           <selectionEntries>
             <selectionEntry id="92f3-7f25-7fd0-d475" name="R1: Unstoppable Beast" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="2ccf-262a-bcce-6c64" name="R1: Unstoppable Beast" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="After this model completes a charge move, roll a D6 for each enemy unit within 1&quot; of it. On a 4+ that unit suffers 1 mortal wound. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14356,7 +15117,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="3d18-cd24-8a6d-9d1a" name="R1: Monstrous Regeneration" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="4d47-86df-2de3-831b" name="R1: Monstrous Regeneration" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="This model regains 1 lost wound at the start of each of your turns. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14373,7 +15144,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="6629-2115-9d1e-ab35" name="R2: Terrifying" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="8495-07fa-e001-b2cd" name="R2: Terrifying" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Subtract 1 from the Leadership characteristic of enemy units while they are within 6&quot; of this model. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14390,7 +15171,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="5b0e-0b0c-29e0-c925" name="R2: Lashing Limbs" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="05ff-d770-fe4f-990e" name="R2: Lashing Limbs" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each time you roll an unmodified saving throw of 6 for this model in the Fight phase, the enemy unit that made that attack suffers 1 mortal wound after it has resolved all of its attacks. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14407,7 +15198,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="b002-691a-9aac-8bd5" name="R3: Inhuman Resilience" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="e19d-5f65-b2a3-8cf8" name="R3: Inhuman Resilience" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Roll a D6 each time a model in this unit loses a wound; on a 5+ the model does not lose that wound"/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14424,7 +15225,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="a479-3d3c-bf90-3166" name="R3: Sweeping Blows" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="ef8a-c766-1084-0416" name="R3: Sweeping Blows" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Each unmodified hit roll of 6 made for this model’s attacks in the Fight phase score 2 hits instead of 1. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14441,7 +15252,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="e2d8-b51b-bf19-ac2b" name="R4: Volatile Death Throes " hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="fe4c-12e6-6f1b-b1b4" name="R4: Volatile Death Throes " hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model is destroyed, its controlling player can choose for it to automatically trigger death throes (see Codex: Tyranids) – no dice roll is required."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14458,7 +15279,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="997d-c097-a175-782f" name="R4: Juggernaut" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="6269-9ff1-822a-c610" name="R4: Juggernaut" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll charge rolls for this model. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14475,7 +15306,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="9ddd-3956-f001-fbd6" name="R5: Just Making it Angry" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="44e4-101d-e364-2de4" name="R5: Just Making it Angry" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model has a damage table, double the number of wounds it has remaining for the purposes of determining what its Strength and Attacks characteristics are."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14492,7 +15333,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="186d-bff1-e6a8-52b5" name="R5: Eager" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="8a74-576a-8469-143a" name="R5: Eager" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="At the start of the first battle round but before the first turn begins, you can move this model up to 5&quot;. It cannot end this move within 9&quot; of any enemy models. If both players have units that can do this, the player who is taking the first turn moves their units first. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14566,7 +15417,17 @@
           <categoryLinks/>
           <selectionEntries>
             <selectionEntry id="8902-f696-9cd2-3257" name="R1: Famed Commander" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="6783-bbb6-e012-32ab" name="R1: Famed Commander" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Roll a D6 each time a model in this unit loses a wound; on a 6 the model does not lose that wound."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14583,7 +15444,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="738a-7c13-7eba-e433" name="R1: Skilled Driver" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="4af9-ed89-7d89-93c6" name="R1: Skilled Driver" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll Advance rolls for this unit. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14600,7 +15471,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="e4cf-08bb-b889-3409" name="R2: Experimental Ammunition" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="49eb-d748-c449-7525" name="R2: Experimental Ammunition" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Select one of the ranged weapons used by one or more models in this unit. Add 1 to the Damage characteristic of that weapon for attacks made by that unit."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14617,7 +15498,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="326e-cf2d-8025-5f60" name="R2: Advanced Targeting" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="6514-25a9-ae1e-781d" name="R2: Advanced Targeting" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 6&quot; to the maximum range of this unit’s Heavy and Rapid Fire weapons that have an unmodified maximum range of 24&quot; or longer. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14634,7 +15525,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="d8b2-f9bc-cc27-0f2d" name="R3: Ablative Armor" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="ef9b-9554-c5f0-78ed" name="R3: Ablative Armor" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Attacks against this unit that have an AP characteristic of -1 are treated as having an AP characteristic of 0 instead."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14651,7 +15552,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="60dc-f09a-33ac-c917" name="R3: Storied Vehicle" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="2356-d59e-e2b3-6667" name="R3: Storied Vehicle" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="You can re-roll one hit roll or wound roll for this unit in each of your Shooting phases. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14668,7 +15579,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="8aa6-6086-c5ff-ff8e" name="R4: Blessed Drive" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="2faa-8fc5-6f09-b65c" name="R4: Blessed Drive" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model has a damage table, double the number of wounds it has remaining for the purposes of determining what its Move characteristic is."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14685,7 +15606,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="10e0-8cf4-611b-7839" name="R4: Last Resort" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="4f72-8a3c-25d7-94f9" name="R4: Last Resort" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If a model in this unit is destroyed, the controlling player can choose for it to automatically explode – no dice roll is required."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14702,7 +15633,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="d339-d671-cc51-7c61" name="R5: Prominent Trophy" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="2a67-bed9-43ec-968b" name="R5: Prominent Trophy" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="Add 1 to the Leadership characteristic of friendly units while they are within 6&quot; of this unit. Subtract 1 from the Leadership characteristic of enemy units while they are within 6&quot; of this unit. "/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
@@ -14719,7 +15660,17 @@
               </costs>
             </selectionEntry>
             <selectionEntry id="c271-fdbc-e7be-9838" name="R5: Blessed Weapons" hidden="false" collective="false" type="upgrade">
-              <profiles/>
+              <profiles>
+                <profile id="1c8f-af4c-400c-8e80" name="R5: Blessed Weapons" hidden="false" profileTypeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" profileTypeName="Abilities">
+                  <profiles/>
+                  <rules/>
+                  <infoLinks/>
+                  <modifiers/>
+                  <characteristics>
+                    <characteristic name="Description" characteristicTypeId="21befb24-fc85-4f52-a745-64b2e48f8228" value="If this model has a damage table, double the number of wounds it has remaining for the purposes of determining what its Ballistic Skill characteristic is."/>
+                  </characteristics>
+                </profile>
+              </profiles>
               <rules/>
               <infoLinks/>
               <modifiers/>
