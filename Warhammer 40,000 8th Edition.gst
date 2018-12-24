@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="69" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="70" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -11972,6 +11972,18 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="8228-46c7-01af-14b0" name="Battle Honors Cost Points? (UNOFFICIAL! 18pts per PL)" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries/>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs/>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="891c-fbf0-e426-2c15" name="Fallen Champion Equipment" hidden="false" collective="false">
@@ -14197,7 +14209,7 @@
               <selectionEntryGroups/>
               <entryLinks/>
               <costs>
-                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -14214,7 +14226,7 @@
               <selectionEntryGroups/>
               <entryLinks/>
               <costs>
-                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="2.0"/>
                 <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -14231,7 +14243,7 @@
               <selectionEntryGroups/>
               <entryLinks/>
               <costs>
-                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="4.0"/>
                 <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -14248,7 +14260,7 @@
               <selectionEntryGroups/>
               <entryLinks/>
               <costs>
-                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="3.0"/>
                 <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -14265,7 +14277,7 @@
               <selectionEntryGroups/>
               <entryLinks/>
               <costs>
-                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="5.0"/>
                 <cost name="pts" costTypeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
