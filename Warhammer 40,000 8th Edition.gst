@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="70" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="71" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -11915,7 +11915,7 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="43c4-8968-c599-ad5f" name="Is A Custom Character" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="43c4-8968-c599-ad5f" name="Is a Custom Character" hidden="false" collective="false" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -11941,7 +11941,7 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="4763-757f-499f-d998" name="Unit has battle honors?" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="4763-757f-499f-d998" name="Has Battle Honors" hidden="false" collective="false" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -14553,30 +14553,17 @@
       </selectionEntryGroups>
       <entryLinks/>
     </selectionEntryGroup>
-    <selectionEntryGroup id="5518-d0f5-a880-d71c" name="Battle Honors" hidden="true" collective="false">
+    <selectionEntryGroup id="5518-d0f5-a880-d71c" name="Battle Honors" hidden="false" collective="false">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers>
-        <modifier type="set" field="hidden" value="false">
+        <modifier type="set" field="hidden" value="true">
           <repeats/>
-          <conditions/>
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4763-757f-499f-d998" type="equalTo"/>
-              </conditions>
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c702-d73b-dccf-5617" type="equalTo"/>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cfc5-43e4-b02e-d1f9" type="equalTo"/>
-                  </conditions>
-                  <conditionGroups/>
-                </conditionGroup>
-              </conditionGroups>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4763-757f-499f-d998" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
         </modifier>
       </modifiers>
       <constraints/>
@@ -14907,7 +14894,10 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks/>
-              <costs/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="21db-768e-a0c2-00fd" name="R3: Breachers" hidden="false" collective="false" type="upgrade">
               <profiles>
@@ -14931,7 +14921,10 @@
               <selectionEntries/>
               <selectionEntryGroups/>
               <entryLinks/>
-              <costs/>
+              <costs>
+                <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" costTypeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups/>
