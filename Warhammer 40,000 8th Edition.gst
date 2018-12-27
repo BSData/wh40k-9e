@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="71" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="72" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -11941,7 +11941,7 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="4763-757f-499f-d998" name="Has Battle Honors" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="4763-757f-499f-d998" name="Has Battle Honours" hidden="false" collective="false" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -14553,7 +14553,7 @@
       </selectionEntryGroups>
       <entryLinks/>
     </selectionEntryGroup>
-    <selectionEntryGroup id="5518-d0f5-a880-d71c" name="Battle Honors" hidden="false" collective="false">
+    <selectionEntryGroup id="5518-d0f5-a880-d71c" name="Battle Honours" hidden="false" collective="false">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -14570,7 +14570,7 @@
       <categoryLinks/>
       <selectionEntries/>
       <selectionEntryGroups>
-        <selectionEntryGroup id="c933-23ec-6776-590f" name="Warrior Honors" hidden="false" collective="false">
+        <selectionEntryGroup id="c933-23ec-6776-590f" name="Warrior Honours" hidden="false" collective="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -14930,7 +14930,7 @@
           <selectionEntryGroups/>
           <entryLinks/>
         </selectionEntryGroup>
-        <selectionEntryGroup id="a93c-91a5-77b7-685a" name="Honor Rank" hidden="false" collective="false">
+        <selectionEntryGroup id="a93c-91a5-77b7-685a" name="Honour Rank" hidden="false" collective="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -15029,7 +15029,7 @@
           <selectionEntryGroups/>
           <entryLinks/>
         </selectionEntryGroup>
-        <selectionEntryGroup id="2692-574e-f6c5-84d8" name="Monster Honors" hidden="false" collective="false">
+        <selectionEntryGroup id="2692-574e-f6c5-84d8" name="Monster Honours" hidden="false" collective="false">
           <profiles/>
           <rules/>
           <infoLinks/>
@@ -15356,7 +15356,7 @@
           <selectionEntryGroups/>
           <entryLinks/>
         </selectionEntryGroup>
-        <selectionEntryGroup id="26a2-f74e-9288-a141" name="Vehicle Honors" hidden="false" collective="false">
+        <selectionEntryGroup id="26a2-f74e-9288-a141" name="Vehicle Honours" hidden="false" collective="false">
           <profiles/>
           <rules/>
           <infoLinks/>
