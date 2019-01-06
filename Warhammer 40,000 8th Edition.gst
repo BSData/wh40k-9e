@@ -3746,17 +3746,8 @@
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers>
-        <modifier type="set" field="f930-da6d-af4a-1340" value="0.0">
-          <repeats/>
-          <conditions/>
-          <conditionGroups/>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ca5-41bf-0164-21d6" type="max"/>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f930-da6d-af4a-1340" type="min"/>
-      </constraints>
+      <modifiers/>
+      <constraints/>
       <categoryLinks>
         <categoryLink id="b5f1-b0a6-bb4a-be2d" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true">
           <profiles/>
