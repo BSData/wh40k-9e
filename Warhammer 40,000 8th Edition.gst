@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="76" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="77" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -3696,9 +3696,7 @@
       <rules/>
       <infoLinks/>
       <modifiers/>
-      <constraints>
-        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1b2c-9837-9985-9b08" type="min"/>
-      </constraints>
+      <constraints/>
       <categoryLinks>
         <categoryLink id="ab48-6dc1-4800-80b6" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true">
           <profiles/>
@@ -3730,10 +3728,7 @@
       <rules/>
       <infoLinks/>
       <modifiers/>
-      <constraints>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="097f-30c9-354b-97ce" type="max"/>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5bb8-70f0-f45b-3460" type="min"/>
-      </constraints>
+      <constraints/>
       <categoryLinks>
         <categoryLink id="22be-7889-5bf9-b0b5" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true">
           <profiles/>
@@ -3744,7 +3739,7 @@
         </categoryLink>
       </categoryLinks>
     </entryLink>
-    <entryLink id="44e3-c224-ba82-1b55" name="Base CP" hidden="false" targetId="f29d-8a5d-18b6-a071" type="selectionEntry">
+    <entryLink id="44e3-c224-ba82-1b55" name="Battle-forged CP" hidden="false" targetId="f29d-8a5d-18b6-a071" type="selectionEntry">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -12330,6 +12325,13 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="894d-f4f2-3ca3-7aa1" value="0.0">
+          <repeats/>
+          <conditions>
+            <condition field="forces" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="instanceOf"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fac4-ef44-fe8d-5104" type="max"/>
@@ -12345,14 +12347,29 @@
         <cost name="pts" costTypeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="f29d-8a5d-18b6-a071" name="Base CP" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="f29d-8a5d-18b6-a071" name="Battle-forged CP" hidden="false" collective="false" type="upgrade">
       <profiles/>
       <rules/>
       <infoLinks/>
-      <modifiers/>
+      <modifiers>
+        <modifier type="set" field="2da0-b95d-c86c-74ee" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+        <modifier type="set" field="ba25-d308-d6f1-5649" value="1">
+          <repeats/>
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
       <constraints>
-        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ba25-d308-d6f1-5649" type="max"/>
-        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2da0-b95d-c86c-74ee" type="min"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ba25-d308-d6f1-5649" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2da0-b95d-c86c-74ee" type="min"/>
       </constraints>
       <categoryLinks/>
       <selectionEntries/>
