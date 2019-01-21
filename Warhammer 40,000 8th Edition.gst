@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="77" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="78" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -13160,7 +13160,7 @@
           </constraints>
           <categoryLinks/>
           <selectionEntries>
-            <selectionEntry id="b19a-7b98-7d85-45ff" name="Hero (4)" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="b19a-7b98-7d85-45ff" name="1) Hero (4)" hidden="false" collective="false" type="upgrade">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -13178,7 +13178,7 @@
                 <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="404b-9d1f-2057-dab8" name="Mighty Hero (6)" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="404b-9d1f-2057-dab8" name="2) Mighty Hero (6)" hidden="false" collective="false" type="upgrade">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -13196,7 +13196,7 @@
                 <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="c68f-1e38-072b-f200" name="Legendary Hero (8)" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="c68f-1e38-072b-f200" name="3) Legendary Hero (8)" hidden="false" collective="false" type="upgrade">
               <profiles/>
               <rules/>
               <infoLinks/>
@@ -16288,6 +16288,21 @@
       <infoLinks/>
       <modifiers/>
       <description>The 5 CPs from this detachment can only be spent on Stronghold Assault Stratagems.</description>
+    </rule>
+    <rule id="5a7e-f984-487c-d767" name="Bolter Discipline" book="White Dwarf Feb 2019" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <repeats/>
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e860-827e-24e0-0bd8" type="equalTo"/>
+          </conditions>
+          <conditionGroups/>
+        </modifier>
+      </modifiers>
+      <description>All ADEPTUS ASTARTES and HERETIC ASTARTES models gain this ability. Instead of following the normal rules for Rapid Fire weapons, Rapid Fire bolt weapons used by models with this ability make double the number of attacks if any of the following conditions apply: 1) The firing model&apos;s target is within half the weapon&apos;s maximum range. 2) The firing model remained stationary during its previous movement phase. 3) The firing model is a TERMINATOR, BIKER, CENTURION, or VEHICLE. For the purposes of this ability a Rapid Fire Bolt weapon is any weapon with the Rapid Fire type whose name includes the word &apos;bolt&apos; (e.g. boltgun, bolt rifle, storm bolter, combi-bolter, hurricane bolter, inferno boltgun, etc.) This also applies when firing the boltgun profile of a combi-weapon (including the bolt weapon profile of Relics such as Blood Song and the Lion&apos;s Wrath) and when firing relics that replace a Rapid Fire bolt weapon, so long as the relic is also a rapid-fire weapon (e.g. Primarch&apos;s Wrath, Fury of Deimos, etc) The gauntlets of ultramar and the Talon of Horus are also considered Rapid Fire Bolt weapons, as is the guardian spear used by Deathwatch Watch Masters.</description>
     </rule>
   </sharedRules>
   <sharedProfiles>
