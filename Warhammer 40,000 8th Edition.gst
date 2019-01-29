@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="79" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="80" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -12367,13 +12367,6 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="894d-f4f2-3ca3-7aa1" value="0.0">
-          <repeats/>
-          <conditions>
-            <condition field="forces" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="instanceOf"/>
-          </conditions>
-          <conditionGroups/>
-        </modifier>
         <modifier type="set" field="2d3b-b544-ad49-fb75" value="6">
           <repeats/>
           <conditions/>
@@ -12390,7 +12383,6 @@
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fac4-ef44-fe8d-5104" type="max"/>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="894d-f4f2-3ca3-7aa1" type="min"/>
       </constraints>
       <categoryLinks/>
       <selectionEntries/>
@@ -12407,13 +12399,6 @@
       <rules/>
       <infoLinks/>
       <modifiers>
-        <modifier type="set" field="2da0-b95d-c86c-74ee" value="1">
-          <repeats/>
-          <conditions>
-            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="equalTo"/>
-          </conditions>
-          <conditionGroups/>
-        </modifier>
         <modifier type="set" field="ba25-d308-d6f1-5649" value="1">
           <repeats/>
           <conditions>
