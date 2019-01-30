@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="80" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="81" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -9138,13 +9138,7 @@
                           <profiles/>
                           <rules/>
                           <infoLinks/>
-                          <modifiers>
-                            <modifier type="set" field="points" value="12">
-                              <repeats/>
-                              <conditions/>
-                              <conditionGroups/>
-                            </modifier>
-                          </modifiers>
+                          <modifiers/>
                           <constraints/>
                           <categoryLinks/>
                         </entryLink>
@@ -12409,7 +12403,6 @@
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ba25-d308-d6f1-5649" type="max"/>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2da0-b95d-c86c-74ee" type="min"/>
       </constraints>
       <categoryLinks/>
       <selectionEntries/>
