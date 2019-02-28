@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="84" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="85" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -432,6 +432,13 @@
       <constraints/>
     </categoryEntry>
     <categoryEntry id="f0b3-c388-f734-4ba4" name="Bonewyrm Infestation" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+    </categoryEntry>
+    <categoryEntry id="7320-eafd-02c1-94da" name="Reinforcement Points" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -3515,6 +3522,23 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
+    <forceEntry id="bffe-7939-c2e6-8f83" name="Reinforcements" book="" hidden="false">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <forceEntries/>
+      <categoryLinks>
+        <categoryLink id="f441-862d-4164-4496" name="Reinforcement Points" hidden="false" targetId="7320-eafd-02c1-94da" primary="false">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
+    </forceEntry>
   </forceEntries>
   <selectionEntries/>
   <entryLinks>
@@ -3833,6 +3857,22 @@
       <modifiers/>
       <constraints/>
       <categoryLinks/>
+    </entryLink>
+    <entryLink id="074a-5af4-0bed-a6a7" name="Reinforcements" hidden="false" targetId="af7a-d57e-4972-12d3" type="selectionEntry">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers/>
+      <constraints/>
+      <categoryLinks>
+        <categoryLink id="d9f9-95c9-081c-f754" name="New CategoryLink" hidden="false" targetId="7320-eafd-02c1-94da" primary="true">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+        </categoryLink>
+      </categoryLinks>
     </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
@@ -12709,6 +12749,101 @@
           <costs>
             <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="1.0"/>
             <cost name="pts" costTypeId="points" value="12.0"/>
+            <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups/>
+      <entryLinks/>
+      <costs>
+        <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" costTypeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="af7a-d57e-4972-12d3" name="Reinforcements" hidden="false" collective="false" type="upgrade">
+      <profiles/>
+      <rules/>
+      <infoLinks/>
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <repeats/>
+          <conditions/>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cfc5-43e4-b02e-d1f9" type="atLeast"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c702-d73b-dccf-5617" type="atLeast"/>
+              </conditions>
+              <conditionGroups/>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints/>
+      <categoryLinks/>
+      <selectionEntries>
+        <selectionEntry id="8ba2-4dc6-4e38-ae4a" name="Reinforcement Points" hidden="false" collective="false" type="upgrade">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name="pts" costTypeId="points" value="1.0"/>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="75bb-91eb-911c-ee0f" name="Reinforcement Points" hidden="false" collective="false" type="upgrade">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name="pts" costTypeId="points" value="10.0"/>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="445f-83dc-f9b3-4ede" name="Reinforcement Points" hidden="false" collective="false" type="upgrade">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name="pts" costTypeId="points" value="100.0"/>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="c9c9-bae5-83c7-e232" name="Reinforcement Points" hidden="false" collective="false" type="upgrade">
+          <profiles/>
+          <rules/>
+          <infoLinks/>
+          <modifiers/>
+          <constraints/>
+          <categoryLinks/>
+          <selectionEntries/>
+          <selectionEntryGroups/>
+          <entryLinks/>
+          <costs>
+            <cost name="pts" costTypeId="points" value="1000.0"/>
+            <cost name=" PL" costTypeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" costTypeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
