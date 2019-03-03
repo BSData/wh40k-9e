@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="90" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="91" battleScribeVersion="2.01" authorName="BSData Organisation" authorContact="@BSData" authorUrl="http://battlescribedata.appspot.com/#/repo/wh40k" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <profiles/>
   <rules/>
   <infoLinks/>
@@ -301,21 +301,21 @@
       <modifiers/>
       <constraints/>
     </categoryEntry>
-    <categoryEntry id="84e2-9fa9-ebe6-1d18" name="Imperium" hidden="false">
+    <categoryEntry id="84e2-9fa9-ebe6-1d18" name="Faction: Imperium" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers/>
       <constraints/>
     </categoryEntry>
-    <categoryEntry id="c7b7-edbc-bc14-6238" name="Adeptus Astartes" hidden="false">
+    <categoryEntry id="c7b7-edbc-bc14-6238" name="Faction: Adeptus Astartes" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers/>
       <constraints/>
     </categoryEntry>
-    <categoryEntry id="3263-4233-4344-6228" name="Astra Militarum" hidden="false">
+    <categoryEntry id="3263-4233-4344-6228" name="Faction: Astra Militarum" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -329,14 +329,14 @@
       <modifiers/>
       <constraints/>
     </categoryEntry>
-    <categoryEntry id="e12c-dd25-cbab-a30d" name="Fallen" hidden="false">
+    <categoryEntry id="e12c-dd25-cbab-a30d" name="Faction: Fallen" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
       <modifiers/>
       <constraints/>
     </categoryEntry>
-    <categoryEntry id="5cf1-acf2-ca3b-c2e5" name="Chaos" hidden="false">
+    <categoryEntry id="5cf1-acf2-ca3b-c2e5" name="Faction: Chaos" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
@@ -445,7 +445,7 @@
       <modifiers/>
       <constraints/>
     </categoryEntry>
-    <categoryEntry id="4c9f-f934-ed79-84fe" name="Brood Brothers" hidden="false">
+    <categoryEntry id="4c9f-f934-ed79-84fe" name="Faction: Brood Brothers" hidden="false">
       <profiles/>
       <rules/>
       <infoLinks/>
