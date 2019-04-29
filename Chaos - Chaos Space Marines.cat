@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="95" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="96" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="cb54-c035-pubN78931" name=" "/>
     <publication id="cb54-c035-pubN85174" name="Escalation"/>
@@ -3789,7 +3789,7 @@ If your summoning roll included any doubles, your character then suffers a morta
       <profiles>
         <profile id="b471-6570-1bdf-8885" name="Fleshmetal Guns" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this unit is chosen to shoot in the Shooting Phase or fires Overwatch, roll three D3, one after the other to determine the characteristics of the unit&apos;s fleshmetal guns for that Shooting phase or Overwatch attack. The first roll is added to 6 to determine the Strength, the second roll is the AP, and the third roll is the Damage. For example, if the rolls were a 1, followed by a 3, followed by a 2, then the unit&apos;s attacks would have a Strength of 7, an AP of -3 and a Damage of 2.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this unit is chosen to attack with fleshmetal guns, roll three D3, one after the other, to determine the characteristics of the unit’s fleshmetal guns when resolving those attacks. The first roll is added to 6 to determine the Strength, the second roll is the AP, and the third roll is the Damage. For example, if the rolls were a 1, followed by a 3, followed by a 2, then the unit&apos;s attacks would have a Strength of 7, an AP of -3 and a Damage of 2.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -3878,7 +3878,7 @@ If your summoning roll included any doubles, your character then suffers a morta
             </selectionEntry>
           </selectionEntries>
           <costs>
-            <cost name="pts" typeId="points" value="65.0"/>
+            <cost name="pts" typeId="points" value="115.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
@@ -8239,7 +8239,7 @@ If your summoning roll included any doubles, your character then suffers a morta
       <profiles>
         <profile id="f5d1-03f7-5c9b-1527" name="Music of the Apocalypse" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is slain, it is driven to make one last attack before succumbing to its injuries. Do not remove the slain model yet, after the attacking unit has finished making all its attacks, the slain model can make a shooting attack with one of its ranged weapons, or throw a grenade, even if the model&apos;s unit is within 1&quot; of the enemy. The slain model is then removed as a casualty as normal.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is slain, it is driven to make one last attack before succumbing to its injuries. Do not remove the slain model yet - after the attacking unit has finished making all its attacks, the slain model can shoot with one of its ranged weapons as if it were your Shooting phase. The slain model is then removed as a casualty as normal.</characteristic>
           </characteristics>
         </profile>
         <profile id="f5f3-601e-e449-a5e6" name="Noise Marine" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -9631,7 +9631,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <characteristics>
             <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
             <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">6&quot;</characteristic>
-            <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">If manifested, select an enemy unit that is within 6&quot; of the psyker and visible to him and roll a D6. If the result is greater than the enemy&apos;s Toughness, it suffers D3+3 mortal wounds. If a CHARACTER is slain by this power, you can add a Chaos Spawn to your army and set it up within 1&quot; of the character before it is removed.</characteristic>
+            <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">If manifested, select an enemy unit that is within 6&quot; of the psyker and visible to him and roll a D6. If the result is greater than the enemy&apos;s Toughness, it suffers D3+3 mortal wounds. If a Character is slain by this power, you can add a Chaos Spawn to your army within 6&quot; of the character and more than 1&quot; from any enemy models before they are removed as a casualty.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -9824,9 +9824,14 @@ If your summoning roll included any doubles, your character then suffers a morta
     <selectionEntry id="7b70-3124-ac94-5695" name="The Black Mace" hidden="false" collective="false" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6ea7-1195-7144-438e" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6ea7-1195-7144-438e" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0be0-4281-bd93-4357" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <profiles>
@@ -9842,7 +9847,7 @@ If your summoning roll included any doubles, your character then suffers a morta
         </profile>
         <profile id="0080-5a20-99be-c987" name="The Black Mace" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models with a power maul only. The Black Mace replaces the bearer&apos;s power maul.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models with a power maul or accursed crozius only. The Black Mace replaces the bearer&apos;s power maul or accursed crozius.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -9900,9 +9905,14 @@ If your summoning roll included any doubles, your character then suffers a morta
     <selectionEntry id="b0d1-5c18-4a03-c50c" name="The Cursed Crozius" hidden="false" collective="false" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6ea7-1195-7144-438e" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6ea7-1195-7144-438e" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0be0-4281-bd93-4357" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <profiles>
@@ -9918,7 +9928,7 @@ If your summoning roll included any doubles, your character then suffers a morta
         </profile>
         <profile id="d1c8-a7b5-79d6-8627" name="The Cursed Crozius" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models with a power maul only. The Cursed Crozius replaces the bearer&apos;s power maul.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models with a power maul or accursed crozius only. The Cursed Crozius replaces the bearer&apos;s power maul or accursed crozius.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -14140,7 +14150,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <profiles>
             <profile id="04b5-616b-e468-c069" name="Siege Lords" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all Daemon Prince, INFANTRY, BIKERS and HELBRUTE units in an IRON WARRIORS Detachment gain the following ability: Enemy units attacked by units with this trait do not gain any bonus to their saving throws for being in cover. In addition, you can re-roll failed wound rolls for units with this trait when they target a BUILDING.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in an IRON WARRIORS Detachment gain the following ability: Enemy units attacked by units with this trait do not gain any bonus to their saving throws for being in cover. In addition, you can re-roll failed wound rolls for units with this trait when they target a BUILDING.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -14157,7 +14167,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <profiles>
             <profile id="f09d-25b8-50c4-a0f4" name="Dark Raiders" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all Daemon Prince, INFANTRY, BIKERS and HELBRUTE units in a Renegade Chapters Detachment gain the following ability: Units with this trait can Advance and charge in the same turn.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in a Renegade Chapters Detachment gain the following ability: Units with this trait can Advance and charge in the same turn.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -14174,7 +14184,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <profiles>
             <profile id="50f0-29e9-409c-b9fe" name="Butcher&apos;s Nails" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all Daemon Prince, INFANTRY, BIKERS and HELBRUTE units in a WORLD EATERS Detachment gain the following ability: When a unit with this trait makes a successful charge, you can make one additional attack with each of its models in the subsequent Fight phase.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in a WORLD EATERS Detachment gain the following ability: When a unit with this trait makes a successful charge, you can make one additional attack with each of its models in the subsequent Fight phase.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -14191,7 +14201,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <profiles>
             <profile id="c584-aea0-603f-098e" name="Terror Tactics" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all Daemon Prince, INFANTRY, BIKERS and HELBRUTE units in a NIGHT LORDS Detachment gain the following ability: Models in enemy units must subtract 1 from their Leadership characteristic for each unit with this trait which is within 6&quot; of theirs (to a maximum of -3).</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in a NIGHT LORDS Detachment gain the following ability: Models in enemy units must subtract 1 from their Leadership characteristic for each unit with this trait which is within 6&quot; of theirs (to a maximum of -3).</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -14208,7 +14218,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <profiles>
             <profile id="0f4b-de79-90bd-aedf" name="Flawless Perfection" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all Daemon Prince, INFANTRY, BIKERS and HELBRUTE units in an EMPERORS CHILDREN Detachment gain the following ability: Units with this trait always fight first in the Fight phase, even if they didn&apos;t charge. If the enemy has units that have charged, or that have a similar ability, then alternate choosing units to fight, starting with the player whose turn is taking place.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in an EMPERORS CHILDREN Detachment gain the following ability: Units with this trait always fight first in the Fight phase, even if they didn&apos;t charge. If the enemy has units that have charged, or that have a similar ability, then alternate choosing units to fight, starting with the player whose turn is taking place.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -14225,7 +14235,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <profiles>
             <profile id="87d5-65ea-9be6-2a3f" name="Hidden In Plain Sight" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all Daemon Prince, INFANTRY, BIKERS and HELBRUTE units in an ALPHA LEGION Detachment gain the following ability: Your opponent must subtract 1 from hit rolls that target units with this trait if they are more than 12&quot; away.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in an ALPHA LEGION Detachment gain the following ability: Your opponent must subtract 1 from hit rolls that target units with this trait if they are more than 12&quot; away.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -14242,7 +14252,7 @@ If your summoning roll included any doubles, your character then suffers a morta
           <profiles>
             <profile id="aaf3-2aa8-88f4-1280" name="Profane Zeal" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all Daemon Prince, INFANTRY, BIKERS and HELBRUTE units in a WORD BEARERS Detachment gain the following ability: You can re-roll failed morale tests for units with this trait.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in a WORD BEARERS Detachment gain the following ability: You can re-roll failed morale tests for units with this trait.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -17085,7 +17095,7 @@ If your summoning roll included any doubles, your character then suffers a morta
     </profile>
     <profile id="bd20-8455-68a4-48f4" name="The Voice of Lorgar" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Increases the range of any aura abilities on your Warlord’s datasheet (e.g. Lord of Chaos, Demagogue) by 3&quot;.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Increases the range of your Warlord’s aura abilities (e.g. Lord of Chaos, Demagogue) by 3&quot;. Increase the range of any Prayers to the Dark Gods chanted by your Warlord by 3&quot;.</characteristic>
       </characteristics>
     </profile>
     <profile id="7303-bb9b-7aab-6c73" name="Gift of the Hellforge" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
