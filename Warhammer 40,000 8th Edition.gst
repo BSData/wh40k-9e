@@ -5640,7 +5640,7 @@
         <categoryLink id="e597-e135-2c00-3232" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="85.0"/>
       </costs>
