@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="97" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="98" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000: Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -15,6 +15,8 @@
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
     <publication id="28ec-711c-pubN118139" name="Index: Xenos 2"/>
     <publication id="28ec-711c-pubN118636" name="Warhammer 40,000"/>
+    <publication id="82b3-73d0-72b2-3180" name="Big FAQ Spring 2019"/>
+    <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0"/>
@@ -160,6 +162,7 @@
     <categoryEntry id="d9b9-e9ab-155a-8109" name="Helbrute" hidden="false"/>
     <categoryEntry id="1481-ffc3-f85a-eb36" name="Faction: Questor Traitoris" hidden="false"/>
     <categoryEntry id="b096-59fd-a5eb-5739" name="Chaos Space Marines" hidden="false"/>
+    <categoryEntry id="d569-3d56-cd24-6a31" name="Aircraft" publicationId="82b3-73d0-72b2-3180" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment" hidden="false">
