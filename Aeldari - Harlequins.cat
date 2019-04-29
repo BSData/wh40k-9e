@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="7d24-b92f-c5d5-3bf0" name="Aeldari - Harlequins" revision="25" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="7d24-b92f-c5d5-3bf0" name="Aeldari - Harlequins" revision="26" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="7d24-b92f-pubN65537" name="Codex: Harlequins"/>
     <publication id="7d24-b92f-pubN72737" name="Chapter Approved 2017"/>
@@ -40,6 +40,24 @@
     </entryLink>
     <entryLink id="3fd6-864b-fa22-8108" name="Enigmas of the Black Library (1 Relic)" hidden="false" collective="false" targetId="0742-4cb7-bf4e-16cc" type="selectionEntry"/>
     <entryLink id="e87f-ef46-dfe6-9316" name="Enigmas of the Black Library (2 Relics)" hidden="false" collective="false" targetId="dc1c-c3ca-66fa-fd12" type="selectionEntry"/>
+    <entryLink id="9dd3-efd5-882f-592e" name="Artefacts of Death" hidden="false" collective="false" targetId="a1c9-09d6-2587-9553" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
+    <entryLink id="33bc-66f4-56ba-b37b" name="Exalted of Ynnead" hidden="false" collective="false" targetId="746d-c99b-ba49-17bb" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="0ecc-ffa4-aa9f-a698" name="Fusion Pistol" publicationId="7d24-b92f-pubN65537" hidden="false" collective="false" type="upgrade">
@@ -500,6 +518,13 @@
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="49d5-0898-b5c6-9175" name="Great Harlequin" publicationId="7d24-b92f-pubN65537" hidden="false" collective="false" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="65d0-a887-30f1-2fe0" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="81db-06b6-a025-afb9" type="max"/>
@@ -551,15 +576,53 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="36a7-11a1-1066-4037" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="8a07-fee0-a684-b0d4" name="Warlord Trait" hidden="true" collective="false" targetId="305c-7184-81fb-2bd3" type="selectionEntryGroup"/>
+        <entryLink id="8a07-fee0-a684-b0d4" name="Warlord Trait" hidden="false" collective="false" targetId="305c-7184-81fb-2bd3" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a5ce-b16b-56cd-e78a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="14eb-dbd5-dfbd-367a" name="Relics" hidden="false" collective="false" targetId="16e7-958e-0d9b-8280" type="selectionEntryGroup"/>
-        <entryLink id="0505-bda3-44f5-8b05" name="Harlequin Warlord" hidden="false" collective="false" targetId="a5ce-b16b-56cd-e78a" type="selectionEntry">
+        <entryLink id="0505-bda3-44f5-8b05" name="Warlord" hidden="false" collective="false" targetId="a5ce-b16b-56cd-e78a" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="09ed-8db7-42a5-5685" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="cf9f-5caf-154d-df2b" name="Is A Custom Character" hidden="false" collective="false" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="b69e-2012-877a-0c54" name="Custom Character Selections" hidden="false" collective="false" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
+        <entryLink id="6b70-7c87-6f43-529d" name="Ynnari Warlord" hidden="false" collective="false" targetId="75e4-e07c-3a6d-46c5" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="10c3-b0af-a6ae-a1e3" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="5237-d9ab-ee79-7a3a" name="Ynnari Relics" hidden="false" collective="false" targetId="7586-ebc2-08da-c014" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="79c2-ca80-1f37-de30" name="Warlord Trait (Ynnari)" hidden="false" collective="false" targetId="bd5b-50f5-f7d9-0af1" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -568,6 +631,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="57e1-479c-6d5c-00b3" name="Solitaire" publicationId="7d24-b92f-pubN65537" page="60" hidden="false" collective="false" type="unit">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1021-466b-d5b4-991c" type="max"/>
       </constraints>
@@ -603,7 +673,6 @@
       </profiles>
       <infoLinks>
         <infoLink id="cd04-63e2-61a5-3913" name="Flip Belt" hidden="false" targetId="74fb-ab0a-0ef5-ce0d" type="profile"/>
-        <infoLink id="396d-924a-c2d5-56b2" name="Strength from Death" hidden="false" targetId="e1ca-b33f-a52f-c11c" type="rule"/>
         <infoLink id="2c94-9e75-fc6b-c51d" name="Rising Crescendo" hidden="false" targetId="60da-8dc8-7bf4-2efd" type="profile"/>
       </infoLinks>
       <categoryLinks>
@@ -713,7 +782,15 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ec9c-ec46-718d-ad5f" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="7853-bb69-1097-0068" name="Warlord Trait" hidden="true" collective="false" targetId="305c-7184-81fb-2bd3" type="selectionEntryGroup"/>
+        <entryLink id="7853-bb69-1097-0068" name="Warlord Trait" hidden="true" collective="false" targetId="305c-7184-81fb-2bd3" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a5ce-b16b-56cd-e78a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="7367-98b5-0281-747f" name="Relics" hidden="false" collective="false" targetId="16e7-958e-0d9b-8280" type="selectionEntryGroup"/>
         <entryLink id="7c24-bb1e-e935-b494" name="Warlord" hidden="false" collective="false" targetId="a5ce-b16b-56cd-e78a" type="selectionEntry">
           <constraints>
@@ -722,6 +799,48 @@
         </entryLink>
         <entryLink id="2a37-8f21-d486-bded" name="Is A Custom Character" hidden="false" collective="false" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="02cd-b6ec-fbf7-a466" name="Custom Character Selections" hidden="false" collective="false" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
+        <entryLink id="fcb7-bca6-094d-8ffa" name="Ynnari Warlord" hidden="false" collective="false" targetId="75e4-e07c-3a6d-46c5" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5927-0b30-e2db-6df0" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="c6bb-ea89-545b-6f12" name="Ynnari Relics" hidden="false" collective="false" targetId="7586-ebc2-08da-c014" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="1a46-eaa9-e171-b39e" name="Warlord Trait (Ynnari)" hidden="false" collective="false" targetId="bd5b-50f5-f7d9-0af1" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="6df4-c583-8750-6acf" name="Revenant Discipline" hidden="false" collective="false" targetId="7f93-a621-fdeb-0426" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c58d-a22a-8686-e3f8" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -820,6 +939,7 @@
         <infoLink id="7678-44d7-1e4e-824b" name="Open-topped" hidden="false" targetId="cf69-4ca7-8cba-2f16" type="profile"/>
         <infoLink id="8da7-f96f-4c0c-9511" name="New InfoLink" hidden="false" targetId="046c-9565-b216-87c7" type="profile"/>
         <infoLink id="8969-864f-f08f-e753" name="New InfoLink" hidden="false" targetId="1fde-5ed2-74f7-f766" type="profile"/>
+        <infoLink id="0a77-0be4-d2ce-d936" name="Strength from Death" hidden="false" targetId="e1ca-b33f-a52f-c11c" type="rule"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="2258-72fc-4391-04df" name="New CategoryLink" hidden="false" targetId="fb5a-2f35-6253-b891" primary="false"/>
@@ -868,6 +988,7 @@
         <infoLink id="dde4-9199-b077-4982" name="Explodes" hidden="false" targetId="8210-8f73-bf99-5b97" type="profile"/>
         <infoLink id="906c-e2d1-e42a-b701" name="New InfoLink" hidden="false" targetId="046c-9565-b216-87c7" type="profile"/>
         <infoLink id="ee3b-0a87-40d1-9831" name="New InfoLink" hidden="false" targetId="1fde-5ed2-74f7-f766" type="profile"/>
+        <infoLink id="63b0-9865-544e-8603" name="Strength from Death" hidden="false" targetId="e1ca-b33f-a52f-c11c" type="rule"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="3352-6210-4e74-6dc3" name="New CategoryLink" hidden="false" targetId="fb5a-2f35-6253-b891" primary="false"/>
@@ -1580,6 +1701,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="0742-4cb7-bf4e-16cc" name="Enigmas of the Black Library (1 Relic)" hidden="false" collective="false" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <categoryLinks>
         <categoryLink id="8215-208c-848c-4825" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
@@ -1590,6 +1718,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="dc1c-c3ca-66fa-fd12" name="Enigmas of the Black Library (2 Relics)" hidden="false" collective="false" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <categoryLinks>
         <categoryLink id="b256-9d4d-a74d-155e" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
@@ -1759,6 +1894,13 @@
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="7961-453c-a38d-186c" name="Phantasmancy" publicationId="7d24-b92f-pubN76527" page="68" hidden="false" collective="false">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4d0e-dbb3-2e2c-cc1d" type="max"/>
       </constraints>
@@ -1881,9 +2023,9 @@
     </selectionEntryGroup>
     <selectionEntryGroup id="305c-7184-81fb-2bd3" name="Warlord Trait" hidden="false" collective="false">
       <modifiers>
-        <modifier type="set" field="hidden" value="false">
+        <modifier type="set" field="hidden" value="true">
           <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="33f6-60da-7b70-5fee" type="equalTo"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -1987,6 +2129,13 @@
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="16e7-958e-0d9b-8280" name="Relics" publicationId="7d24-b92f-pubN72737" page="93" hidden="false" collective="false">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1de1-3493-f517-79d8" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0602-ad5f-d5bb-e1be" type="max"/>
       </constraints>
@@ -2142,17 +2291,9 @@
           </conditions>
         </modifier>
       </modifiers>
-      <description>This ability is common to all YNNARI INFANTRY and YNNARI BIKER units and the Yncarne.  Each time a unit is completely destroyed within 7&quot; of one or more units with this ability, except in the Morale phase, pick one of those units to make a Soulburst action. That unit can immediately do one of the following, even if it has already done so in this turn (if the unit was destroyed as the result of a unit’s action – e.g. making a shooting attack or fighting – the Soulburst action is resolved after the unit has completely resolved its current action, e.g. after it has completed all of its shooting attacks or after it has finished fighting, including making any consolidation moves):
+      <description>This ability is common to all YNNARI units.
 
--The unit can move as if it were your Movement phase.  It can Advance or Fall Back as part of this move.
--The unit can, if it is a PSYKER, immediately attempt to manifest a single psychic power as if it were the Psychic phase.
--The unit can shoot as if it were your Shooting phase, even if it Advanced or Fell Back this turn.
--The unit can charge as if it were the Charge phase, even if it Advanced or Fell Back this turn(enemy units can fire Overwatch as normal).  A unit cannot do this if is within 1&quot; of an enemy unit.
--The Unit can fight as if it were the Fight Phase.
-
-Note that this means that a unit may be able to shoot or fight twice in the same turn.
-
-A unit can only make a Soulburst action once per turn.</description>
+As soon as any unit is destroyed, All units from your army benefit from Soulburst actions until the end of the turn. Whilst a unit is benefitting from Soulburst Actions, it always fights first in the Fight phase, even if it didn&apos;t charge. If a model that is benefitting from soulburst actions made a charge move this turn, or already has an ability that allows it to always fight first in the Fight phase, then whilst it is benfitting from soulburst actions you also add 1 to hit rolls for attacks made with melee weapons by that model. If the enemy also has units that made a charge move or that have abilities that allow them to always fight first in the fight phase, the alternate units, starting with the player whose turn is taking place.</description>
     </rule>
   </sharedRules>
   <sharedProfiles>
