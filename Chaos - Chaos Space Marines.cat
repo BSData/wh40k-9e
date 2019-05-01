@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="96" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="97" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="cb54-c035-pubN78931" name=" "/>
     <publication id="cb54-c035-pubN85174" name="Escalation"/>
@@ -298,7 +298,6 @@
     </entryLink>
     <entryLink id="90e9-a050-5bb2-5325" name="Dark Apostle" hidden="false" collective="false" targetId="d630-2b65-3996-c1a3" type="selectionEntry"/>
     <entryLink id="6e4d-426c-9064-c9aa" name="New EntryLink" hidden="false" collective="false" targetId="c5a2-5d3b-99c9-7b99" type="selectionEntry"/>
-    <entryLink id="246d-4492-6b23-0013" name="New EntryLink" hidden="false" collective="false" targetId="4445-6367-dac4-307a" type="selectionEntry"/>
     <entryLink id="0c6a-c6e7-46c7-afa0" name="Sorcerer" hidden="false" collective="false" targetId="9832-6438-ea96-d6d6" type="selectionEntry">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
@@ -1780,12 +1779,24 @@ If your summoning roll included any doubles, your character then suffers a morta
       </costs>
     </selectionEntry>
     <selectionEntry id="c5a2-5d3b-99c9-7b99" name="Daemon Prince" page="0" hidden="false" collective="false" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="name" value="Daemon Prince with Wings">
+          <conditions>
+            <condition field="selections" scope="c5a2-5d3b-99c9-7b99" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3e53-75ac-343b-fdd4" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="5746-8975-d4e5-72f6" name="Daemon Prince" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <modifiers>
             <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1">
               <conditions>
                 <condition field="selections" scope="c5a2-5d3b-99c9-7b99" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c8e6-5697-36e4-215f" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="0bdf-a96e-9e38-7779" value="12&quot;">
+              <conditions>
+                <condition field="selections" scope="c5a2-5d3b-99c9-7b99" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3e53-75ac-343b-fdd4" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1815,6 +1826,20 @@ If your summoning roll included any doubles, your character then suffers a morta
         <categoryLink id="eeb1-f348-26d8-0c07" name="New CategoryLink" hidden="false" targetId="ca10-a5dd-f54f-0ed5" primary="false"/>
         <categoryLink id="175e-5afd-96f2-25d2" name="New CategoryLink" hidden="false" targetId="b2b6-8e4a-9c74-cc37" primary="false"/>
       </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="3e53-75ac-343b-fdd4" name="Wings" hidden="false" collective="false" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="59dd-cc6a-f202-60ee" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="cfe2-9f95-0cde-57a8" name="Fly" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="24.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="c8b6-53f1-329f-75e2" name="Hellforged sword options" hidden="false" collective="false" defaultSelectionEntryId="6768-4032-c530-3500">
           <constraints>
@@ -5452,105 +5477,6 @@ If your summoning roll included any doubles, your character then suffers a morta
       <costs>
         <cost name="pts" typeId="points" value="93.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="4445-6367-dac4-307a" name="Daemon Prince with Wings" page="0" hidden="false" collective="false" type="model">
-      <profiles>
-        <profile id="2859-893d-e892-2691" name="Daemon Prince with Wings" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-          <modifiers>
-            <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1">
-              <conditions>
-                <condition field="selections" scope="4445-6367-dac4-307a" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c8e6-5697-36e4-215f" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
-            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">6</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">8</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">4</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
-            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
-      <infoLinks>
-        <infoLink id="4e39-3732-b1e1-220c" name="Death to the False Emperor" hidden="false" targetId="37a4-1d84-4ef0-c4f6" type="profile"/>
-        <infoLink id="53f2-1999-22d7-52e2" name="Daemonic" hidden="false" targetId="94f5-82c3-bb66-ac0c" type="profile"/>
-      </infoLinks>
-      <categoryLinks>
-        <categoryLink id="8adc-7261-7062-025f" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
-        <categoryLink id="d589-d93b-1730-1039" name="New CategoryLink" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
-        <categoryLink id="2b70-33fb-39a5-7a84" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="4a25-dbdd-431d-ac49" name="New CategoryLink" hidden="false" targetId="0bc5-6451-5612-4a25" primary="false"/>
-        <categoryLink id="ef96-d479-75ea-3cec" name="New CategoryLink" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
-        <categoryLink id="9b6e-be30-c7b7-3a2c" name="New CategoryLink" hidden="false" targetId="ca10-a5dd-f54f-0ed5" primary="false"/>
-        <categoryLink id="2683-2825-4d3f-4850" name="New CategoryLink" hidden="false" targetId="3b77-decb-d468-6bcc" primary="false"/>
-        <categoryLink id="d0f9-1c0c-f46e-d2e5" name="New CategoryLink" hidden="false" targetId="b2b6-8e4a-9c74-cc37" primary="false"/>
-      </categoryLinks>
-      <selectionEntryGroups>
-        <selectionEntryGroup id="1a2f-4ecf-6fa5-ec81" name="Hellforged sword options" hidden="false" collective="false" defaultSelectionEntryId="5074-77a0-7715-d75a">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ef3-dffd-35c1-6e73" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d314-f149-fe31-7e80" type="min"/>
-          </constraints>
-          <entryLinks>
-            <entryLink id="e1d1-26cd-c484-1bad" name="New EntryLink" hidden="false" collective="false" targetId="ab5a-b591-31e2-e0d0" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="10"/>
-              </modifiers>
-            </entryLink>
-            <entryLink id="5074-77a0-7715-d75a" name="New EntryLink" hidden="false" collective="false" targetId="7d05-2c25-26b8-d4da" type="selectionEntry"/>
-            <entryLink id="9572-d25e-1828-2458" name="New EntryLink" hidden="false" collective="false" targetId="73f0-ec59-a8ea-4ce9" type="selectionEntry"/>
-          </entryLinks>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
-      <entryLinks>
-        <entryLink id="3e1c-89cb-63ac-6197" name="New EntryLink" hidden="false" collective="false" targetId="7aa9-b4b1-f87b-6ef6" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4c0f-c684-3ac2-25aa" type="max"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="0b74-d5fb-db29-131d" name="Malefic talon" hidden="false" collective="false" targetId="ab5a-b591-31e2-e0d0" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="6e3a-a538-633d-0b21" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="d997-cad4-ef06-3660" type="max"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="5d36-9d4e-27a0-b5e1" name="Daemonic Allegiance" hidden="false" collective="false" targetId="8712-4477-e498-6f1f" type="selectionEntryGroup"/>
-        <entryLink id="f45e-41ba-954f-90d0" name="Artefacts of Chaos" hidden="false" collective="false" targetId="5876-fcc5-8283-1aca" type="selectionEntryGroup"/>
-        <entryLink id="6114-255a-cfb4-53be" name="Warlord" hidden="false" collective="false" targetId="398a-c8da-c8bd-da58" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="556d-5079-7b76-8831" type="max"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="1bf7-536f-863a-a4fd" name="Warlord Traits" hidden="false" collective="false" targetId="b34c-6c4b-d22c-25b5" type="selectionEntryGroup"/>
-        <entryLink id="fa9b-aa8c-9dce-900a" name="Is a Custom Character" hidden="false" collective="false" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
-        <entryLink id="024c-b7cc-667c-b78a" name="Custom Character Selections" hidden="false" collective="false" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
-        <entryLink id="da16-fefb-3e08-4c52" name="Warlord Traits (Specialist)" hidden="false" collective="false" targetId="b18e-298b-df58-c375" type="selectionEntryGroup">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0cb3-da2d-a0ac-d421" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="fb07-65d5-6416-a126" name="Artefacts of Chaos (Reaver)" hidden="false" collective="false" targetId="c524-957d-6e90-c45b" type="selectionEntryGroup"/>
-        <entryLink id="abbe-a3d2-385d-69d8" name="Reaver Lord Artefact" hidden="false" collective="false" targetId="eed7-3e77-45e0-fa17" type="selectionEntry"/>
-      </entryLinks>
-      <costs>
-        <cost name="pts" typeId="points" value="170.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="9.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -13270,7 +13196,6 @@ If your summoning roll included any doubles, your character then suffers a morta
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bd2b-6514-0230-c074" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bd2b-6514-0230-c074" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3a1e-b816-8a75-a1f0" type="equalTo"/>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6114-255a-cfb4-53be" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
