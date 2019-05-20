@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="99" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="100" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000: Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -1634,6 +1634,15 @@
     <forceEntry id="bffe-7939-c2e6-8f83" name="Reinforcements" hidden="false">
       <categoryLinks>
         <categoryLink id="f441-862d-4164-4496" name="Reinforcement Points" hidden="false" targetId="7320-eafd-02c1-94da" primary="false"/>
+        <categoryLink id="b1d5-50d6-6742-8377" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+        <categoryLink id="5aab-fcd9-f431-a112" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
+        <categoryLink id="40f1-eadd-f55e-7be9" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
+        <categoryLink id="2d7b-0099-a47e-c62c" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false"/>
+        <categoryLink id="9c1f-f31c-f8ba-48b4" name="Fast Attack" hidden="false" targetId="c274d0b0-5866-44bc-9810-91c136ae7438" primary="false"/>
+        <categoryLink id="f0ff-1f62-8d73-3c71" name="Heavy Support" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="false"/>
+        <categoryLink id="73bb-f183-0427-db60" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false"/>
+        <categoryLink id="0283-c857-f6d8-f26f" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
+        <categoryLink id="8b22-7e29-d1a4-9845" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false"/>
       </categoryLinks>
     </forceEntry>
   </forceEntries>
@@ -1882,7 +1891,7 @@
                     <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
                   </characteristics>
                 </profile>
-                <profile id="14b1-1529-10dd-db95" name="Magazine Explosion (Macro-cannon)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+                <profile id="14b1-1529-10dd-db95" name="Magazine Explosion (Macro-cannon)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
                     <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any embarked models disembark. On a 6 its magazine explodes, and each unit within 2D6&quot; suffers D6 mortal wounds.</characteristic>
                   </characteristics>
@@ -1906,7 +1915,7 @@
                     <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon may target units that are not visible to the bearer, even when firing in accordance with the Automated Weapons ability. Each time you hit the target with this weapon it suffers D6 mortal wounds. If a model is wounded but but not slain by this attack, roll another dice; on a 6, the model suffers a further D6 mortal wounds.</characteristic>
                   </characteristics>
                 </profile>
-                <profile id="43f6-b40f-134b-8b48" name="Containment Failure" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+                <profile id="43f6-b40f-134b-8b48" name="Containment Failure" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
                     <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, before removing it from the battlefield and before any embarked models disembark, its vortex missiles explode. Each unit within 2D6&quot; suffers D6 mortal wounds. If a model is wounded but not slain by in this manner roll another dice; on a 6, the model is sucked up into the swirling vortex and slain.</characteristic>
                   </characteristics>
@@ -2056,7 +2065,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d2a7-8818-aa73-5a3a" type="max"/>
           </constraints>
           <profiles>
-            <profile id="0739-fefd-af02-d118" name="Krakstorm Missile" publicationId="28ec-711c-pubN78977" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+            <profile id="0739-fefd-af02-d118" name="Krakstorm Missile" publicationId="28ec-711c-pubN78977" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18-96&quot;</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
@@ -2066,7 +2075,7 @@
                 <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
               </characteristics>
             </profile>
-            <profile id="7068-6a6c-21c8-aebc" name="Fragstorm Missile" publicationId="28ec-711c-pubN78977" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+            <profile id="7068-6a6c-21c8-aebc" name="Fragstorm Missile" publicationId="28ec-711c-pubN78977" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18-96&quot;</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
@@ -2219,12 +2228,12 @@
     </selectionEntry>
     <selectionEntry id="0f73-97f2-b832-f6d0" name="Imperial Defence Line" page="" hidden="false" collective="false" type="unit">
       <profiles>
-        <profile id="43b0-eb2b-f2df-d3fc" name="Wall of Martyrs" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+        <profile id="43b0-eb2b-f2df-d3fc" name="Wall of Martyrs" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">All sections must be set up so that they are in end-to-end contact with at least one other WALL OF MARTYRS model.</characteristic>
           </characteristics>
         </profile>
-        <profile id="808f-d24a-ba7c-7d24" name="Stalwart Defence" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+        <profile id="808f-d24a-ba7c-7d24" name="Stalwart Defence" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">IMPERIUM INFANTRY unit add 1 to their Leadership characteristic whilst they are within an Imperial Defence Line.</characteristic>
           </characteristics>
@@ -2308,7 +2317,7 @@
             <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">Any number of INFANTRY CHARACTERS and one other INFANTRY unit, up to a maximum of 20 models.</characteristic>
           </characteristics>
         </profile>
-        <profile id="e232-2e1e-1955-a5c0" name="Plasma Explosion" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+        <profile id="e232-2e1e-1955-a5c0" name="Plasma Explosion" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any embarked models disembark. On a 4+ its plasma core explodes, and each unit within D6&quot; suffers D6 mortal wounds.</characteristic>
           </characteristics>
@@ -2368,7 +2377,7 @@
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
-        <profile id="abe7-f841-acc8-c3f4" name="Landing Pad Configuration" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+        <profile id="abe7-f841-acc8-c3f4" name="Landing Pad Configuration" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your turn, if there are no enemy models within 1&quot; of the Skyshield Landing Pad, a friendly model within 1&quot; of it can change the Skyshield Landing Pad configuration to one of those in the table below.</characteristic>
           </characteristics>
@@ -2418,7 +2427,7 @@
         </modifier>
       </modifiers>
       <profiles>
-        <profile id="4ca0-bdc4-9090-1647" name="Fully Automated Weapons" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+        <profile id="4ca0-bdc4-9090-1647" name="Fully Automated Weapons" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model&apos;s weapons can only target the nearest visible enemy. Quad Icarus Lascannons can instead choose to target the nearest visible enemy that can FLY. In either case, if two units are equally close, you may choose which is targeted.</characteristic>
           </characteristics>
@@ -2495,7 +2504,7 @@
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
-        <profile id="c818-46ac-f5b8-cd39" name="Projected Void Shields" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+        <profile id="c818-46ac-f5b8-cd39" name="Projected Void Shields" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">All units wholly within 6&quot; of a Void Shield Generator receive a 5+ invulnerable save against any attacks made in the Shooting phase (unless the firing model is also within 6&quot; of the Void Shield Generator).</characteristic>
           </characteristics>
@@ -7871,7 +7880,7 @@
     </rule>
   </sharedRules>
   <sharedProfiles>
-    <profile id="fcde-3e6a-e240-1157" name="Autogun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="fcde-3e6a-e240-1157" name="Autogun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -7881,7 +7890,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="2481-001b-00f9-501b" name="Autopistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="2481-001b-00f9-501b" name="Autopistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -7891,7 +7900,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="fa99-0671-b31a-22d7" name="Autocannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="fa99-0671-b31a-22d7" name="Autocannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
@@ -7911,7 +7920,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="bc34-f1ec-56fa-2829" name="Battle Cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="bc34-f1ec-56fa-2829" name="Battle Cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
@@ -7921,7 +7930,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="e6d5-677a-d8ed-f6a5" name="Bolt pistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="e6d5-677a-d8ed-f6a5" name="Bolt pistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -7931,7 +7940,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="e2b0-b9f1-6c38-584c" name="Heavy bolter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="e2b0-b9f1-6c38-584c" name="Heavy bolter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 3</characteristic>
@@ -7951,7 +7960,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="cdc3-3459-a28c-a9cf" name="Flamer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="cdc3-3459-a28c-a9cf" name="Flamer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
@@ -7961,7 +7970,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target.</characteristic>
       </characteristics>
     </profile>
-    <profile id="ec4c-1132-ddaf-db8e" name="Meltagun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="ec4c-1132-ddaf-db8e" name="Meltagun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
@@ -7971,7 +7980,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
       </characteristics>
     </profile>
-    <profile id="03e5-60f2-4726-5cdd" name="Plasma gun, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="03e5-60f2-4726-5cdd" name="Plasma gun, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -7981,7 +7990,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="7b30-68a4-3745-c6fa" name="Grav-pistol" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="7b30-68a4-3745-c6fa" name="Grav-pistol" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -7991,7 +8000,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.</characteristic>
       </characteristics>
     </profile>
-    <profile id="c76b-4051-dbf4-d5b8" name="Grav-cannon and grav-amp" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="c76b-4051-dbf4-d5b8" name="Grav-cannon and grav-amp" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
@@ -8001,7 +8010,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.</characteristic>
       </characteristics>
     </profile>
-    <profile id="4609-79eb-7505-68a5" name="Hot-shot Laspistol" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="4609-79eb-7505-68a5" name="Hot-shot Laspistol" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -8011,7 +8020,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="f520-ae1d-d755-7ab9" name="Hot-shot Lasgun" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="f520-ae1d-d755-7ab9" name="Hot-shot Lasgun" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -8021,7 +8030,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="f2b7-768f-a270-de64" name="Laspistol" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="f2b7-768f-a270-de64" name="Laspistol" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -8031,7 +8040,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="d174-eb55-aaa6-d032" name="Lasgun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="d174-eb55-aaa6-d032" name="Lasgun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -8041,7 +8050,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="585f-2120-0288-93b5" name="Inferno Cannon" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="585f-2120-0288-93b5" name="Inferno Cannon" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12 + Template</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1, Torrent</characteristic>
@@ -8051,7 +8060,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="2608-8425-4f4f-7f41" name="Heavy flamer" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="2608-8425-4f4f-7f41" name="Heavy flamer" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
@@ -8061,7 +8070,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target</characteristic>
       </characteristics>
     </profile>
-    <profile id="92be-1bfc-f355-f214" name="Multi-laser" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="92be-1bfc-f355-f214" name="Multi-laser" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 3</characteristic>
@@ -8071,7 +8080,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="cb26-27b4-9393-a768" name="Icarus Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="cb26-27b4-9393-a768" name="Icarus Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
@@ -8081,7 +8090,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls made for this weapon against targets that can FLY. Subtract 1 from hit rolls made for this Weapon against all other targets.</characteristic>
       </characteristics>
     </profile>
-    <profile id="8161-3b0e-8048-0e83" name="Missile launcher, Krak missile" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="8161-3b0e-8048-0e83" name="Missile launcher, Krak missile" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
@@ -8091,7 +8100,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="603d-3e82-38f6-c5c3" name="Missile launcher, Frag missile" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="603d-3e82-38f6-c5c3" name="Missile launcher, Frag missile" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
@@ -8101,7 +8110,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="1768-d7b9-37ba-f3bf" name="Multi-melta" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="1768-d7b9-37ba-f3bf" name="Multi-melta" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
@@ -8111,7 +8120,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
       </characteristics>
     </profile>
-    <profile id="fdd8-1a5f-5722-d6ee" name="Frag grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="fdd8-1a5f-5722-d6ee" name="Frag grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade D6</characteristic>
@@ -8121,7 +8130,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="e294-a5c7-e01e-0a82" name="Close Combat Weapon" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="e294-a5c7-e01e-0a82" name="Close Combat Weapon" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">-</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8131,7 +8140,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="8194-4688-65b3-f996" name="Chainfist" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="8194-4688-65b3-f996" name="Chainfist" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8141,7 +8150,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="07cb-70d7-15c3-5117" name="Shotgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="07cb-70d7-15c3-5117" name="Shotgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 2</characteristic>
@@ -8151,7 +8160,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range, add 1 to this weapon&apos;s Strength.</characteristic>
       </characteristics>
     </profile>
-    <profile id="0031-0314-5b36-a220" name="Heavy stubber" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="0031-0314-5b36-a220" name="Heavy stubber" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 3</characteristic>
@@ -8161,7 +8170,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="3b26-3098-155f-0e58" name="Dreadnought combat weapon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="3b26-3098-155f-0e58" name="Dreadnought combat weapon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8171,7 +8180,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="7584-238f-3174-4529" name="Lightning claw" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="7584-238f-3174-4529" name="Lightning claw" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8181,7 +8190,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll failed wound rolls for this weapon. If a model is armed with two lightning claws, each time it fights it can make 1 additional attack with them.</characteristic>
       </characteristics>
     </profile>
-    <profile id="3520-0bb4-90f2-084b" name="Power fist" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="3520-0bb4-90f2-084b" name="Power fist" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8191,7 +8200,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="4635-64e7-2344-ea7c" name="Power axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="4635-64e7-2344-ea7c" name="Power axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8201,7 +8210,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="ca27-e5ee-f6eb-652d" name="Power maul" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="ca27-e5ee-f6eb-652d" name="Power maul" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8211,7 +8220,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="47df-8e01-d0cf-58e8" name="Power sword" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="47df-8e01-d0cf-58e8" name="Power sword" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8221,7 +8230,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="de62-5c9a-e27d-3fa3" name="Power lance" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="de62-5c9a-e27d-3fa3" name="Power lance" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8231,7 +8240,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="87b3-3f6b-ada0-da8d" name="Thunder hammer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="87b3-3f6b-ada0-da8d" name="Thunder hammer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8241,7 +8250,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="3bf6-b4f7-6b2f-bb7b" name="Krak grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="3bf6-b4f7-6b2f-bb7b" name="Krak grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade 1</characteristic>
@@ -8251,7 +8260,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="df40-a3f4-91be-f0fe" name="Melta bomb" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="df40-a3f4-91be-f0fe" name="Melta bomb" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">4&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade 1</characteristic>
@@ -8261,7 +8270,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll failed wound rolls for this weapon if the target is a VEHICLE.</characteristic>
       </characteristics>
     </profile>
-    <profile id="ff12-161a-ca85-339f" name="Plasma pistol, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="ff12-161a-ca85-339f" name="Plasma pistol, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -8271,7 +8280,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="7983-8451-cdc3-ce7e" name="Plasma cannon, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="7983-8451-cdc3-ce7e" name="Plasma cannon, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D3</characteristic>
@@ -8281,7 +8290,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="f14a-07e5-5465-69cf" name="Lascannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="f14a-07e5-5465-69cf" name="Lascannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
@@ -8291,27 +8300,27 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="fbed-42ff-591d-13f3" name="Dozer Blade" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="fbed-42ff-591d-13f3" name="Dozer Blade" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Can re-roll dangerous terrain tests. Treat the vehicles front armour as +1 higher when ramming.</characteristic>
       </characteristics>
     </profile>
-    <profile id="cdda-8935-b495-3a35" name="Extra Armour" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="cdda-8935-b495-3a35" name="Extra Armour" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Vehicles treat crew stunned as crew shaken instead</characteristic>
       </characteristics>
     </profile>
-    <profile id="4b04-2a83-8ae7-d134" name="Searchlight" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="4b04-2a83-8ae7-d134" name="Searchlight" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Night fighting only. It can illuminate a target it has fired at. Illuminates itself in the process (illuminated units lose Night Fighting benefits)</characteristic>
       </characteristics>
     </profile>
-    <profile id="c883-3078-1367-cc2c" name="Smoke Launchers" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="c883-3078-1367-cc2c" name="Smoke Launchers" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per game, instead of shooting any weapons in the Shooting phase, the vehicle can use its Smoke Launchers; until your next Shooting phase your opponent must subtract 1 from all hit rolls for ranged weapons that target this vehicle.</characteristic>
       </characteristics>
     </profile>
-    <profile id="20dc-1fbb-dc65-7f04" name="Assault cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="20dc-1fbb-dc65-7f04" name="Assault cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 6</characteristic>
@@ -8321,7 +8330,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="3922-981d-ccb7-c169" name="Quad-gun" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="3922-981d-ccb7-c169" name="Quad-gun" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 8</characteristic>
@@ -8331,7 +8340,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls made for this weapon against targets that can FLY. Subtract 1 from hit rolls made for this Weapon against all other targets.</characteristic>
       </characteristics>
     </profile>
-    <profile id="3d4b-95ea-f860-dd22" name="Boltgun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="3d4b-95ea-f860-dd22" name="Boltgun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -8341,7 +8350,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="a3d2-b0d7-70bc-695e" name="Grav-gun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="a3d2-b0d7-70bc-695e" name="Grav-gun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -8351,7 +8360,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.</characteristic>
       </characteristics>
     </profile>
-    <profile id="505e-a5aa-edab-6d5b" name="Storm bolter" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="505e-a5aa-edab-6d5b" name="Storm bolter" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
@@ -8361,7 +8370,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="49ae-4451-9bc0-5238" name="Flamestorm cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="49ae-4451-9bc0-5238" name="Flamestorm cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
@@ -8371,7 +8380,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e92d-1654-a3f9-f981" name="Space Marine Shotgun" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="e92d-1654-a3f9-f981" name="Space Marine Shotgun" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 2</characteristic>
@@ -8381,7 +8390,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="45a4-5982-7f8b-fb33" name="Sniper rifle" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="45a4-5982-7f8b-fb33" name="Sniper rifle" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
@@ -8391,7 +8400,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon may target a CHARACTER even if it is not the closest enemy unit. If you roll a wound roll of 6+ for this weapon, it inflicts a mortal wound in addition to its normal damage.</characteristic>
       </characteristics>
     </profile>
-    <profile id="4750-7eb0-ff1e-6257" name="Vulcan Mega-bolter" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="4750-7eb0-ff1e-6257" name="Vulcan Mega-bolter" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">60</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 15</characteristic>
@@ -8401,7 +8410,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="0964-678c-96c7-28af" name="Dragon&apos;s Breath Flamer" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="0964-678c-96c7-28af" name="Dragon&apos;s Breath Flamer" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Template</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
@@ -8411,7 +8420,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="b309-2758-151b-e2f2" name="Heat Ray (Dispersed Beam)" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="b309-2758-151b-e2f2" name="Heat Ray (Dispersed Beam)" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Template</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
@@ -8421,7 +8430,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="ee62-0088-3ce1-8453" name="Flakk Missile" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="ee62-0088-3ce1-8453" name="Flakk Missile" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1, Skyfire</characteristic>
@@ -8431,7 +8440,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="bb9f-390b-3b92-197c" name="Eviscerator" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="bb9f-390b-3b92-197c" name="Eviscerator" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8441,7 +8450,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e209-5038-fc25-4927" name="Heavy Chainsword" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="e209-5038-fc25-4927" name="Heavy Chainsword" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">-</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee, Two-handed</characteristic>
@@ -8451,7 +8460,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="c019-5c9a-c1f4-4b4f" name="Force axe" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="c019-5c9a-c1f4-4b4f" name="Force axe" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8461,7 +8470,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="ed69-f85e-5982-9ab8" name="Force stave" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="ed69-f85e-5982-9ab8" name="Force stave" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8471,7 +8480,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="29c5-cff6-7f7c-96d6" name="Force sword" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="29c5-cff6-7f7c-96d6" name="Force sword" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -8481,7 +8490,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="3a00-c9d9-111e-037f" name="Witchblade" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="3a00-c9d9-111e-037f" name="Witchblade" publicationId="28ec-711c-pubN110734" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">-</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee, Armourbane, Fleshbane</characteristic>
@@ -8491,7 +8500,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="4b12-0de1-af1e-6ad3" name="Plasma grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="4b12-0de1-af1e-6ad3" name="Plasma grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot; / -</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1, Blast / -</characteristic>
@@ -8501,7 +8510,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="4a90-2615-6958-53cd" name="Defensive Grenade" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="4a90-2615-6958-53cd" name="Defensive Grenade" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1, Blast, Blind</characteristic>
@@ -8511,47 +8520,47 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="d4b6-7a3a-aee5-d293" name="Ammo Store" publicationId="28ec-711c-pubN77330" page="110" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="d4b6-7a3a-aee5-d293" name="Ammo Store" publicationId="28ec-711c-pubN77330" page="110" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A unit occupying this building re-rolls To Hit rolls of a 1 when firing out of the building&apos;s fire points. Note this does not apply to a model manually firing an emplaced weapon.</characteristic>
       </characteristics>
     </profile>
-    <profile id="58a2-c92e-57cc-d44c" name="Ammunition Dump" publicationId="28ec-711c-pubN77330" page="110" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="58a2-c92e-57cc-d44c" name="Ammunition Dump" publicationId="28ec-711c-pubN77330" page="110" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model in cover behind an ammunition dump has a 5+ cover save. Any model within 2&quot; of an ammunition dump re-rolls failed To Hit rolls of 1 in the Shooting phase.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e144-1293-ec28-d3a9" name="Void Shield" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="e144-1293-ec28-d3a9" name="Void Shield" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each hit scored against the model will instead hit a void shield (whilst they remain). Close combat attacks come from inside the shield and therefore are not stopped. Void shields have an Armour Value of 12. A glancing or penetrating hit (or any hit from a Destroyer weapon) scored against a void shield causes it to collapse. After all the void shields have collapsed, further hits strike the model instead. At the end of each of the controlling player&apos;s turns, roll one dice for each collapsed void  shield: each roll of 5+ instantly restores one collapsed shield.  If a weapon uses a template or blast marker and it hits one or more units protected by a Void Shield Zone, ignore the number of hits it would normally cause to the units &amp; instead roll to pen the void shield once using the weapons normal rules &amp; profile for each template or blast marker that hits.</characteristic>
       </characteristics>
     </profile>
-    <profile id="31ba-2b94-6600-22f3" name="Magos Machine Spirit" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="31ba-2b94-6600-22f3" name="Magos Machine Spirit" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This building&apos;s automated fire is resolved using BS3.</characteristic>
       </characteristics>
     </profile>
-    <profile id="4986-b80f-dc78-d02f" name="Escape Hatch" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="4986-b80f-dc78-d02f" name="Escape Hatch" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this building is first occupied, the owning player can place an escape hatch marker anywhere within 12&quot; of the building that is not impassable terrain or within another building. The escape hatch marker is an additional Access Point for the building, but models using it cannot use the Repel the Enemy special rule.</characteristic>
       </characteristics>
     </profile>
-    <profile id="2a6f-53c2-d2ea-092f" name="Booby Traps" publicationId="28ec-711c-pubN77330" page="110" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="2a6f-53c2-d2ea-092f" name="Booby Traps" publicationId="28ec-711c-pubN77330" page="110" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The first unit to occupy this building (friend or foe) immediately suffers 2D6 S4 AP5 hits with the Ignores Cover special rule.</characteristic>
       </characteristics>
     </profile>
-    <profile id="68d8-f686-c260-76db" name="Barricades" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="68d8-f686-c260-76db" name="Barricades" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model in cover behind a barricade or wall has a 4+ cover save. Models that are in base contact with a barricade or wall are treated as being in base contact with any enemy models who are directly opposite them and in base contact with the other side of that barricade or wall. Units charging an enemy that is behind a barricade or wall count as charging through difficult terrain.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e158-7adf-1565-ef08" name="Tanglewire" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="e158-7adf-1565-ef08" name="Tanglewire" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Dangerous Terrain. A model in cover behind tanglewire has a 6+ cover save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="4a45-65e5-2d8c-8792" name="Tank Traps" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="4a45-65e5-2d8c-8792" name="Tank Traps" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Impassable Terrain to non-Skimmer vehicles, Dangerous Terrain to Bikes, and open ground for all other units. A model in cover behind tank traps hasa 4+ cover save.</characteristic>
       </characteristics>
@@ -8569,17 +8578,17 @@
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
       </characteristics>
     </profile>
-    <profile id="705c-91aa-6591-507b" name="Gun Emplacement (Details)" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="705c-91aa-6591-507b" name="Gun Emplacement (Details)" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model in cover behind a gun emplacement has a 4+ cover save. One non-vehicle model in base contact with a gun emplacement can fire it instead of firing its own weapons. A model that fires a gun emplacement has the Relentless special rule for that shooting attack. A gun emplacement can be shot at and attacked in close combat. It is hit automatically in close combat.</characteristic>
       </characteristics>
     </profile>
-    <profile id="70aa-366f-15ac-da4d" name="Comms Relay" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="70aa-366f-15ac-da4d" name="Comms Relay" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Any player with an unengaged model within 2&quot; of a comms relay can re-roll Reserves rolls. A model in cover behind a comms relay has a 5+ cover save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="39bf-dff4-053a-7360" name="Macro Shell" publicationId="28ec-711c-pubN77330" page="111" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="39bf-dff4-053a-7360" name="Macro Shell" publicationId="28ec-711c-pubN77330" page="111" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Primary Weapon 2, Large Blast</characteristic>
@@ -8589,7 +8598,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="0293-567f-c305-724a" name="Quake Shell" publicationId="28ec-711c-pubN77330" page="111" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="0293-567f-c305-724a" name="Quake Shell" publicationId="28ec-711c-pubN77330" page="111" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">180</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Primary Weapon 1, Apocalyptic Mega-blast, Sonic Boom</characteristic>
@@ -8599,7 +8608,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="57e2-2b5e-5b21-32e8" name="Vortex Missile Battery" publicationId="28ec-711c-pubN77330" page="111" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="57e2-2b5e-5b21-32e8" name="Vortex Missile Battery" publicationId="28ec-711c-pubN77330" page="111" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Infinite</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Ordnance 1, Large Blast, Vortex</characteristic>
@@ -8609,7 +8618,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="d503-4001-e4b8-c804" name="Quad Icarus Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="d503-4001-e4b8-c804" name="Quad Icarus Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
@@ -8619,22 +8628,22 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls made for this weapon against targets that can FLY. Subtract 1 from hit rolls made for this Weapon against all other targets.</characteristic>
       </characteristics>
     </profile>
-    <profile id="7571-d9f2-17b0-c3e0" name="Imperial Statuary" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="7571-d9f2-17b0-c3e0" name="Imperial Statuary" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model from the Armies of the Imperium that is within 2&quot; of Imperial Statuary terrain has the Fearless special rule. A model in cover behind Imperial Statuary has a 3+ cover save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="7d5c-1af6-942c-8ca2" name="Wreckage and Rubble" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="7d5c-1af6-942c-8ca2" name="Wreckage and Rubble" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Area Terrain. A model in cover behind wreckage or rubble has a 4+ cover save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="f0ec-023c-4865-fe5a" name="Psychic Hood" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Wargear Item">
+    <profile id="f0ec-023c-4865-fe5a" name="Psychic Hood" publicationId="28ec-711c-pubN110734" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a unit (or model) is targeted by an enemy psychic power and is within 12&quot; of a friendly model with a psychic hood, the wearer of the hood can attempt to Deny the Witch in their stead, as if he were in the target unit.  If the Deny the Witch attempt is failed, the psychic power is resolved as normal, but effects only the initial target, not the wearer of the hood.  If a model with a psychic hood is embarked in a vehicle or building, he can only use the hood to nullify powers targeting the vehicle or building he is embarked within.</characteristic>
       </characteristics>
     </profile>
-    <profile id="98ac-5132-9ebd-c355" name="Orbital Strike" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="98ac-5132-9ebd-c355" name="Orbital Strike" publicationId="28ec-711c-pubN110734" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Infinite</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Ordnance 1, Barrage, Large Blast, Orbital</characteristic>
@@ -8644,7 +8653,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="e2a9-e8fc-3a6b-2eec" name="Hunter-killer missile" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="e2a9-e8fc-3a6b-2eec" name="Hunter-killer missile" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
@@ -8654,7 +8663,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">A model can only fire each of its hunter killer missiles once per battle.</characteristic>
       </characteristics>
     </profile>
-    <profile id="acb5-7b58-0d17-a33a" name="Plasma gun, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="acb5-7b58-0d17-a33a" name="Plasma gun, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -8664,7 +8673,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain after all of this weapon&apos;s shots have been resolved.</characteristic>
       </characteristics>
     </profile>
-    <profile id="5779-2931-fe17-2b27" name="Plasma pistol, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="5779-2931-fe17-2b27" name="Plasma pistol, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -8684,7 +8693,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="fbb2-f4cb-e47d-1d10" name="Plasma cannon, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="fbb2-f4cb-e47d-1d10" name="Plasma cannon, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D3</characteristic>
@@ -8994,7 +9003,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain.</characteristic>
       </characteristics>
     </profile>
-    <profile id="474e-aeec-1b23-c181" name="Plasma incinerator, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="474e-aeec-1b23-c181" name="Plasma incinerator, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -9004,7 +9013,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="bd7b-6edf-e450-9b4a" name="Plasma incinerator, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="bd7b-6edf-e450-9b4a" name="Plasma incinerator, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -9084,7 +9093,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon can target units that are not visible to the firing model.</characteristic>
       </characteristics>
     </profile>
-    <profile id="acb8-7501-1f1b-b483" name="Twin assault cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="acb8-7501-1f1b-b483" name="Twin assault cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 12</characteristic>
@@ -9094,7 +9103,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="3a89-dec9-f41d-7719" name="Twin autocannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="3a89-dec9-f41d-7719" name="Twin autocannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
@@ -9104,7 +9113,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="6471-9a1a-0f1d-acb1" name="Twin boltgun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="6471-9a1a-0f1d-acb1" name="Twin boltgun" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
@@ -9114,7 +9123,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="1a79-9730-f078-07b6" name="Twin heavy flamer" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="1a79-9730-f078-07b6" name="Twin heavy flamer" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
@@ -9144,7 +9153,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">For each hit roll of 1, the bearer suffers 1 mortal wound after all of this weapon&apos;s shots have been resolved.</characteristic>
       </characteristics>
     </profile>
-    <profile id="1662-54b9-46da-fefc" name="Twin lascannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="1662-54b9-46da-fefc" name="Twin lascannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
@@ -9154,7 +9163,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="c3c9-08d7-bfae-4ff7" name="Twin multi-melta" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="c3c9-08d7-bfae-4ff7" name="Twin multi-melta" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
@@ -9164,7 +9173,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
       </characteristics>
     </profile>
-    <profile id="f7ba-88b9-c604-cd89" name="Twin plasma gun, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="f7ba-88b9-c604-cd89" name="Twin plasma gun, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
@@ -9174,7 +9183,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="840a-7f35-72ad-baef" name="Twin plasma gun, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="840a-7f35-72ad-baef" name="Twin plasma gun, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
@@ -9344,17 +9353,17 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="b754-9672-4689-cefb" name="Camo cloaks" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Wargear Item">
+    <profile id="b754-9672-4689-cefb" name="Camo cloaks" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If every model in a unit has a camo cloak you can add 2 to saving throws made for models in the unit when they receive the benefits of cover, instead of 1.</characteristic>
       </characteristics>
     </profile>
-    <profile id="d0a0-002c-8278-a70e" name="Combat shield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Wargear Item">
+    <profile id="d0a0-002c-8278-a70e" name="Combat shield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with a combat shield has a 5+ invulnerable save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="541d-ade9-7496-9c62" name="Storm shield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Wargear Item">
+    <profile id="541d-ade9-7496-9c62" name="Storm shield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with a storm shield has a 3+ invulnerable save.</characteristic>
       </characteristics>
@@ -9369,7 +9378,7 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="2ea1-2be3-90c0-8d4c" name="Twin Icarus Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="2ea1-2be3-90c0-8d4c" name="Twin Icarus Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
@@ -9386,7 +9395,7 @@
         <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Smite has a warp charge value of 5. If manifested, the closest visible enemy unit within 18&quot; of the psyker suffers D3 mortal wounds (pg 181). If the result of the Psychic test was more than 10 the target suffers D6 mortal wounds instead.</characteristic>
       </characteristics>
     </profile>
-    <profile id="1797-9367-d9a5-1014" name="Condemnor Boltgun" publicationId="28ec-711c-pubN77581" page="157" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="">
+    <profile id="1797-9367-d9a5-1014" name="Condemnor Boltgun" publicationId="28ec-711c-pubN77581" page="157" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -9456,52 +9465,52 @@
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
       </characteristics>
     </profile>
-    <profile id="c408-8555-a6df-257f" name="Immobile" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="c408-8555-a6df-257f" name="Immobile" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After this model has been set up on the battlefield it cannot move for any reason, and no units can embark upon it.</characteristic>
       </characteristics>
     </profile>
-    <profile id="a179-f592-3224-72c9" name="Automated Weapons" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="a179-f592-3224-72c9" name="Automated Weapons" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Unless a friendly unit is embarked inside this model, each of its weapons can only target the nearest visible enemy. If two units are equally close, you may choose which is targeted.</characteristic>
       </characteristics>
     </profile>
-    <profile id="429b-91d2-8356-7150" name="Magazine Explosion" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="429b-91d2-8356-7150" name="Magazine Explosion" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any embarked models disembark. On a 6 its magazine explodes, and each unit within 2D6&quot; suffers D3 mortal wounds.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e433-6678-6be1-355c" name="Fire Points (5)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="e433-6678-6be1-355c" name="Fire Points (5)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">5 models embarked in this model can shoot in their Shooting phase, measuring and drawing line of sight from any point on this model. They can do this even if enemy models are within 1&quot; of this model.</characteristic>
       </characteristics>
     </profile>
-    <profile id="220a-170b-5fd7-36f2" name="Fire Points (10)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="220a-170b-5fd7-36f2" name="Fire Points (10)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">10 models embarked in this model can shoot in their Shooting phase, measuring and drawing line of sight from any point on this model. They can do this even if enemy models are within 1&quot; of this model.</characteristic>
       </characteristics>
     </profile>
-    <profile id="298d-b8cf-d3ed-04d8" name="Fire Points (15)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="298d-b8cf-d3ed-04d8" name="Fire Points (15)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">15 models embarked in this model can shoot in their Shooting phase, measuring and drawing line of sight from any point on this model. They can do this even if enemy models are within 1&quot; of this model.</characteristic>
       </characteristics>
     </profile>
-    <profile id="57f6-edd9-6170-5c91" name="Automated Weapons (Gun Emplacement)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="57f6-edd9-6170-5c91" name="Automated Weapons (Gun Emplacement)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Unless a friendly INFANTRY model is within 1&quot; of a gun emplacement, it can only target the nearest visible enemy. If two units are equally close, you may choose which is targeted.</characteristic>
       </characteristics>
     </profile>
-    <profile id="bf23-9a02-99b4-5709" name="Defence Line" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="bf23-9a02-99b4-5709" name="Defence Line" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">INFANTRY units within 1&quot; of a defence line, and behind it from the point of view of the firing unit, receive the benefit of cover.  When charging a unit of the opposite side of a defence line, the charge is successful if the charging unit can move within 2&quot; of that unit. When resolving fights between units on two opposite sides of a defence line, unit can be chosen to fight and make their attacks if the enemy is within 2&quot; instead of the normal 1&quot;.</characteristic>
       </characteristics>
     </profile>
-    <profile id="c60f-7b10-88fd-9eba" name="Static Defence Network" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="c60f-7b10-88fd-9eba" name="Static Defence Network" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After it is set up, a defence line (excluding its gun emplacement, if any) is treated as a terrain feature. It cannot move for any reason, it is not treated as a friendly or enemy model, and cannot be targeted or affected by any attacks or abilities.</characteristic>
       </characteristics>
     </profile>
-    <profile id="9446-1148-da70-4028" name="Explodes" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="9446-1148-da70-4028" name="Explodes" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any embarked models disembark. On a 6 it explodes, and each unit within 6&quot; suffers D3 mortal wounds.</characteristic>
       </characteristics>
@@ -9531,7 +9540,7 @@
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Roll a dice each time this Warlord loses a wound. On a 6, the Warlord shrugs off the damage and does not lose the wound.</characteristic>
       </characteristics>
     </profile>
-    <profile id="8830-2c9e-ad7e-e57d" name="Immobile (Fortification)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="">
+    <profile id="8830-2c9e-ad7e-e57d" name="Immobile (Fortification)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model cannot move for any reason, nor can it fight in the Fight phase. Enemy models automatically hit this model in the Fight phase - do not make hit rolls. However, this model can still shoot if there are enemy models within 1&quot; of it, and friendly unit can still target enemy units that are within 1&quot; of this model.</characteristic>
       </characteristics>
