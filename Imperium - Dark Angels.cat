@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Dark Angels" revision="99" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Dark Angels" revision="100" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="b8fe-8d38-pubN65537" name="Codex: Dark Angels"/>
     <publication id="b8fe-8d38-pubN144396" name="Chapter Approved"/>
@@ -2098,7 +2098,7 @@
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="8161-6a20-23ac-dd38" type="max"/>
                   </constraints>
                 </entryLink>
-                <entryLink id="4ea0-1e21-7103-a09e" name="New EntryLink" hidden="false" collective="false" targetId="ce40-8190-5033-a0c1" type="selectionEntryGroup">
+                <entryLink id="4ea0-1e21-7103-a09e" name="Melee Weapons" hidden="false" collective="false" targetId="ce40-8190-5033-a0c1" type="selectionEntryGroup">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="true" id="236a-87ca-a59d-31a3" type="max"/>
                   </constraints>
@@ -13284,8 +13284,48 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9997-f4c3-15df-1f2d" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="e5b2-00fd-a684-41bf" name="Storm Bolter" hidden="false" collective="false" targetId="de4c-f840-88c9-bdd6" type="selectionEntryGroup"/>
-        <entryLink id="6525-548a-4c18-7337" name="Combi-plasma" hidden="false" collective="false" targetId="ca8f-e50c-569f-93ca" type="selectionEntryGroup"/>
+        <entryLink id="e5b2-00fd-a684-41bf" name="Storm Bolter" hidden="true" collective="false" targetId="de4c-f840-88c9-bdd6" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="6525-548a-4c18-7337" name="Combi-plasma" hidden="true" collective="false" targetId="ca8f-e50c-569f-93ca" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="5d62-f37d-b020-dd4c" name="Combi-plasma" hidden="true" collective="false" targetId="fdce-cdf7-21a9-f9ac" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3216-b6f8-dc85-e0aa" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="8fce-f5da-07e0-df37" name="Storm bolter" hidden="true" collective="false" targetId="2b03-8d64-3711-f300" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d48-adaf-2ce7-b67a" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="ce40-8190-5033-a0c1" name="Melee Weapons" hidden="false" collective="false">
@@ -13315,11 +13355,51 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="78a0-937e-c290-8f02" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="4dc4-b93e-a16f-f0f2" name="Power Sword" hidden="false" collective="false" targetId="ddc8-819a-c20c-04f5" type="selectionEntryGroup"/>
-        <entryLink id="8872-ad05-e40f-6931" name="Power maul" hidden="false" collective="false" targetId="91f6-e086-058e-733c" type="selectionEntryGroup"/>
+        <entryLink id="4dc4-b93e-a16f-f0f2" name="Power Sword" hidden="true" collective="false" targetId="ddc8-819a-c20c-04f5" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="8872-ad05-e40f-6931" name="Power maul" hidden="true" collective="false" targetId="91f6-e086-058e-733c" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="0fda-95d1-0f46-9059" name="Power lance" hidden="false" collective="false" targetId="ba8d-691a-6178-1a60" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bda3-edde-6749-4cac" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="5ab0-e0b0-4c68-631d" name="Power maul" hidden="true" collective="false" targetId="6ea7-1195-7144-438e" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ded4-6547-0f02-4e9c" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="6cd3-5dcc-ba43-8df0" name="Power sword" hidden="true" collective="false" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8c2b-059c-cc3b-7a83" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>
