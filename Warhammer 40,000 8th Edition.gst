@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="100" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
-    <publication id="28ec-711c-pubN72690" name="Warhammer 40,000: Rulebook"/>
+    <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
-    <publication id="28ec-711c-pubN77330" name="Planetary Onslaught"/>
+    <publication id="28ec-711c-pubN77330" name="Index: Imperium 2"/>
     <publication id="28ec-711c-pubN77581" name="Index: Imperium 2"/>
     <publication id="28ec-711c-pubN78977" name="Index: Imperium 1"/>
-    <publication id="28ec-711c-pubN81893" name="Index: Imperium"/>
+    <publication id="28ec-711c-pubN81893" name="Index: Imperium 2"/>
     <publication id="28ec-711c-pubN91434" name="Imperial Armour - Index: Astra Militarum"/>
     <publication id="28ec-711c-pubN97206" name="warhammer_40000_termite_assault_drill_en-2.pdf"/>
-    <publication id="28ec-711c-pubN98266" name="Vigilus Defiant"/>
+    <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant"/>
     <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
-    <publication id="28ec-711c-pubN110734" name="BRB"/>
+    <publication id="28ec-711c-pubN110734" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
     <publication id="28ec-711c-pubN118139" name="Index: Xenos 2"/>
-    <publication id="28ec-711c-pubN118636" name="Warhammer 40,000"/>
-    <publication id="82b3-73d0-72b2-3180" name="Big FAQ Spring 2019"/>
+    <publication id="28ec-711c-pubN118636" name="Warhammer 40,000 Rulebook"/>
+    <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
     <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018"/>
   </publications>
   <costTypes>
