@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="50" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="51" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="11b5-77b9-pubN65537" name="Codex: Orks"/>
     <publication id="11b5-77b9-pubN69765" name="Xenos 2"/>
@@ -2427,6 +2427,13 @@
       </modifiers>
       <profiles>
         <profile id="a63f-1e9d-1e36-b55e" name="Surprisingly Dangerous in Large Numbers" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="96ec-51fe-cd61-b2c1" value="20.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="768a-467a-24bf-f0fd" type="lessThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the hit rolls for models in this unit while this unit includes 20 or more models.</characteristic>
           </characteristics>
@@ -2445,12 +2452,12 @@
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="2f60-e906-92f6-e66a" name="Mob" hidden="false" collective="false" defaultSelectionEntryId="768a-467a-24bf-f0fd">
-          <constraints>
-            <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d5d8-7c68-f930-ef63" type="min"/>
-            <constraint field="selections" scope="parent" value="30.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c599-cd3e-4586-e678" type="max"/>
-          </constraints>
           <selectionEntries>
             <selectionEntry id="768a-467a-24bf-f0fd" name="Gretchin" hidden="false" collective="false" type="model">
+              <constraints>
+                <constraint field="selections" scope="parent" value="30.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e0ae-72c4-f641-85b4" type="max"/>
+                <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="758b-d200-9a9b-fc25" type="min"/>
+              </constraints>
               <profiles>
                 <profile id="1457-a86d-b235-a266" name="Gretchin" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
                   <characteristics>
