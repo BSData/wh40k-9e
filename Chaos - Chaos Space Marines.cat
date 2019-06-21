@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="102" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="103" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="cb54-c035-pubN85174" name="Escalation"/>
     <publication id="cb54-c035-pubN125652" name="Codex: Heretic Astartes - Chaos Space Marines"/>
@@ -12657,7 +12657,20 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any weapon with th
         <entryLink id="a33f-a691-fe80-f4e3" name="Warlord Traits" hidden="false" collective="false" targetId="b34c-6c4b-d22c-25b5" type="selectionEntryGroup"/>
         <entryLink id="db38-ea30-dbe6-e2de" name="Custom Character Selections" hidden="false" collective="false" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="c5ed-1d84-d190-4c2f" name="Artefacts of Chaos" hidden="false" collective="false" targetId="5876-fcc5-8283-1aca" type="selectionEntryGroup"/>
-        <entryLink id="6564-5734-77bd-4127" name="Warlord Traits (Specialist)" hidden="false" collective="false" targetId="b18e-298b-df58-c375" type="selectionEntryGroup"/>
+        <entryLink id="6564-5734-77bd-4127" name="Warlord Traits (Specialist)" hidden="false" collective="false" targetId="b18e-298b-df58-c375" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0cb3-da2d-a0ac-d421" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="1c03-85c5-22f6-f45c" name="Mark of Chaos" hidden="false" collective="false" targetId="45e8-d3d1-105b-90a3" type="selectionEntryGroup">
           <categoryLinks>
             <categoryLink id="e705-ae0c-714b-6e7b" name="Faction: Chaos" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
@@ -13363,6 +13376,8 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any weapon with th
       </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="3d4c-b99e-dbdb-faae" name="Relics of the Long War (2 Relics)" hidden="false" collective="false" type="upgrade">
@@ -13381,6 +13396,8 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any weapon with th
       </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-3.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -14651,26 +14668,12 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any weapon with th
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
-                <conditionGroup type="or">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a675-3934-815b-7d5e" type="equalTo"/>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="99d7-f254-4967-afe4" type="equalTo"/>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c623-e693-f04a-841a" type="equalTo"/>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d252-6d80-3f9a-1352" type="equalTo"/>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b63b-82db-05ab-5b24" type="equalTo"/>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f1dd-d8b2-1fd2-7fd6" type="equalTo"/>
-                      </conditions>
-                    </conditionGroup>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="398a-c8da-c8bd-da58" type="equalTo"/>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b83-3a3f-078a-8a13" type="equalTo"/>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a59c-245b-0fff-5543" type="equalTo"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="398a-c8da-c8bd-da58" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b83-3a3f-078a-8a13" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a59c-245b-0fff-5543" type="equalTo"/>
+                  </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
