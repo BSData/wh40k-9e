@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="53e9d88f-7463-8c27-fe67-e1a0d1ed0287" name="Imperium - Astra Militarum" revision="215" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="53e9d88f-7463-8c27-fe67-e1a0d1ed0287" name="Imperium - Astra Militarum" revision="216" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="53e9d88f--pubN88319" name="Codex: Astra Militarum"/>
     <publication id="53e9d88f--pubN101602" name="Codex: Imperial Guard"/>
@@ -8893,7 +8893,20 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c6de-c462-b8ed-f7fd" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="a6f8-9e3c-56f1-2b22" name="New EntryLink" hidden="false" collective="false" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup"/>
+        <entryLink id="a6f8-9e3c-56f1-2b22" name="Baneblade Sponsons" hidden="false" collective="false" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="b972-7a3a-62db-eb4f" value="2.0">
+              <conditions>
+                <condition field="selections" scope="3ac6-8d6e-850e-6aee" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a908-4664-11cd-f8b2" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="b972-7a3a-62db-eb4f" value="4.0">
+              <conditions>
+                <condition field="selections" scope="3ac6-8d6e-850e-6aee" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a908-4664-11cd-f8b2" type="atLeast"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="49af-922a-2fa6-dc86" name="Pintle Mount" hidden="false" collective="false" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
         <entryLink id="bf26-3580-fc48-8c5b" name="Unit has battle honors?" hidden="false" collective="false" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="b4ed-7c73-cd56-cf1d" name="Battle Honors" hidden="false" collective="false" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
@@ -19091,6 +19104,22 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink id="d36a-1ea4-4647-a178" name="Warlord" hidden="false" collective="false" targetId="33f6-60da-7b70-5fee" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2df6-7d28-9901-666c" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="c9eb-ae26-a51e-04a1" name="Warlord Traits" hidden="false" collective="false" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="33f6-60da-7b70-5fee" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="pts" typeId="points" value="36.0"/>
@@ -19298,12 +19327,13 @@
     </selectionEntryGroup>
     <selectionEntryGroup id="be51-49ae-9966-cfc5" name="Baneblade Sponsons" hidden="false" collective="false">
       <constraints>
-        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f693-fac8-25eb-cb65" type="max"/>
+        <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f693-fac8-25eb-cb65" type="max"/>
+        <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b972-7a3a-62db-eb4f" type="min"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="5915-dee0-5a61-66f8" name="2 Lascannon &amp; Twin Heavy Bolter Sponsons" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="5915-dee0-5a61-66f8" name="Lascannon &amp; Twin Heavy Bolter Sponson" hidden="false" collective="false" type="upgrade">
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85b9-d3fb-09e5-4ab8" type="max"/>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85b9-d3fb-09e5-4ab8" type="max"/>
           </constraints>
           <entryLinks>
             <entryLink id="ee5f-74b0-fc23-d2b7" name="Lascannon" hidden="false" collective="false" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
@@ -19311,8 +19341,8 @@
                 <modifier type="set" field="points" value="20"/>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b7cd-c1cc-4073-0725" type="min"/>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b594-597f-f4de-db7d" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b7cd-c1cc-4073-0725" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b594-597f-f4de-db7d" type="max"/>
               </constraints>
             </entryLink>
             <entryLink id="9ce0-390d-5845-70fc" name="Twin heavy bolter" hidden="false" collective="false" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
@@ -19320,8 +19350,8 @@
                 <modifier type="set" field="points" value="14"/>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0588-7825-93a9-8f52" type="min"/>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aa98-ae5a-349b-69aa" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0588-7825-93a9-8f52" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aa98-ae5a-349b-69aa" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -19331,9 +19361,9 @@
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="c351-8eac-e60e-f8c5" name="2 Lascannon &amp; Twin Heavy Flamer Sponsons" hidden="false" collective="false" type="upgrade">
+        <selectionEntry id="c351-8eac-e60e-f8c5" name="Lascannon &amp; Twin Heavy Flamer Sponson" hidden="false" collective="false" type="upgrade">
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6a4e-f36d-b21f-8b60" type="max"/>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6a4e-f36d-b21f-8b60" type="max"/>
           </constraints>
           <entryLinks>
             <entryLink id="2e9a-f40a-fe1f-9ee7" name="Lascannon" hidden="false" collective="false" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
@@ -19341,8 +19371,8 @@
                 <modifier type="set" field="points" value="20"/>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea15-a134-989c-8ded" type="min"/>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="909b-5ec0-0fbd-425d" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea15-a134-989c-8ded" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="909b-5ec0-0fbd-425d" type="max"/>
               </constraints>
             </entryLink>
             <entryLink id="04df-335a-9078-6ca4" name="Twin heavy flamer" hidden="false" collective="false" targetId="8d70-a6af-cbad-f08c" type="selectionEntry">
@@ -19350,8 +19380,8 @@
                 <modifier type="set" field="points" value="28"/>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ffa7-8cdb-0659-cc0f" type="min"/>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d4bf-9598-bf0b-b9c4" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ffa7-8cdb-0659-cc0f" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d4bf-9598-bf0b-b9c4" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -20592,7 +20622,7 @@
         <entryLink id="4eee-eb57-7d99-6d8d" name="Emperor&apos;s Wrath Artillery Company" hidden="false" collective="false" targetId="b6f6-eaa2-01d9-d145" type="selectionEntry"/>
         <entryLink id="eaa1-bfe6-d160-b43c" name="Emperor&apos;s Fist Tank Company" hidden="false" collective="false" targetId="34d6-8b14-6c47-dcd4" type="selectionEntry"/>
         <entryLink id="9408-3ffd-0986-0dd7" name="Emperor&apos;s Conclave Infantry Company" hidden="false" collective="false" targetId="b84e-5bea-add7-5b04" type="selectionEntry"/>
-        <entryLink id="74b9-e91b-959d-44d6" name="Emperor&apos;s Blade Assault Company, -1CP" hidden="false" collective="false" targetId="236f-fa07-98c3-dd95" type="selectionEntry"/>
+        <entryLink id="74b9-e91b-959d-44d6" name="Emperor&apos;s Blade Assault Company" hidden="false" collective="false" targetId="236f-fa07-98c3-dd95" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="a636-ec69-8616-b2b4" name="Vigilus Field Commander WLT" hidden="false" collective="false">
