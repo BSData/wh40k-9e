@@ -160,6 +160,7 @@
     <categoryEntry id="b096-59fd-a5eb-5739" name="Chaos Space Marines" hidden="false"/>
     <categoryEntry id="d569-3d56-cd24-6a31" name="Aircraft" publicationId="82b3-73d0-72b2-3180" hidden="false"/>
     <categoryEntry id="4ad1-1315-97ea-dd25" name="Faction: Officio Assassinorum" hidden="false"/>
+    <categoryEntry id="492c-9ae1-0205-c13f" name="Faction: Chaos Knights" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment" hidden="false">
@@ -973,8 +974,15 @@
             <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="greaterThan"/>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="492c-9ae1-0205-c13f" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -983,8 +991,15 @@
             <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="lessThan"/>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="492c-9ae1-0205-c13f" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
