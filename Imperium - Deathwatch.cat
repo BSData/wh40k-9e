@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="203b-f8dd-2a64-2676" name="Imperium - Deathwatch" revision="71" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="203b-f8dd-2a64-2676" name="Imperium - Deathwatch" revision="72" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="203b-f8dd-pubN65537" name="Codex: Deathwatch"/>
     <publication id="203b-f8dd-pubN98915" name="Chapter Approved 2017"/>
@@ -29,7 +29,8 @@
     <categoryEntry id="8c4f-c48d-c2a7-4228" name="Inceptor Squad" hidden="false"/>
     <categoryEntry id="0a45-a68a-1263-c551" name="Redemptor Dreadnought" hidden="false"/>
     <categoryEntry id="73e1-4931-1a94-f870" name="Reiver Squad" hidden="false"/>
-    <categoryEntry id="b8a4-cae5-a7cf-af97" name="Repulsor" hidden="false"/>
+    <categoryEntry id="c704-6107-8e00-2e06" name="Repulsor" hidden="false"/>
+    <categoryEntry id="e45d-7039-02ab-dc2b" name="Repulsor Executioner" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="b2fd-fb86-a618-6bab" name="Chaplain" hidden="false" collective="false" targetId="d017-aac3-f78b-b0af" type="selectionEntry"/>
@@ -149,6 +150,15 @@
     <entryLink id="1daf-078b-53cf-af15" name="Thunderhawk Transporter" hidden="false" collective="false" targetId="0caa-04e2-7796-7750" type="selectionEntry"/>
     <entryLink id="9294-7cf5-3611-8729" name="Whirlwind Hyperios" hidden="false" collective="false" targetId="7a7c-01f5-bf0d-ae16" type="selectionEntry"/>
     <entryLink id="b05b-fb52-da0b-8d65" name="Xiphon Interceptor" hidden="false" collective="false" targetId="1327-c39f-b3aa-63c5" type="selectionEntry"/>
+    <entryLink id="602a-9042-a9d7-b3db" name="Repulsor Executioner" hidden="false" collective="false" targetId="2f97-79d3-2655-137a" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cfc5-43e4-b02e-d1f9" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
   </entryLinks>
   <infoLinks>
     <infoLink id="7f54-7d3e-a947-8430" name="Kraken Bolts" hidden="false" targetId="2371-87ae-e67e-ab08" type="rule"/>
@@ -4904,7 +4914,6 @@ For the purposes of setting up on or moving through Battlefield Terrain, this un
         <categoryLink id="7387-0472-ddcf-aa22" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="05f3-dbcf-dfcf-6d48" name="New CategoryLink" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
         <categoryLink id="377c-c68a-4fc6-68c9" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
-        <categoryLink id="aa03-c3e7-03a3-fb6f" name="New CategoryLink" hidden="false" targetId="b8a4-cae5-a7cf-af97" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="4d8a-ac86-9223-b48b" name="Weapon Option 1" hidden="false" collective="false" defaultSelectionEntryId="7bec-080a-f3c4-e365">
@@ -6825,6 +6834,187 @@ For the purposes of setting up on or moving through Battlefield Terrain, this un
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="pts" typeId="points" value="75.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="2f97-79d3-2655-137a" name="Repulsor Executioner" hidden="false" collective="false" type="unit">
+      <profiles>
+        <profile id="edf3-86e2-e357-cde6" name="Repulsor Executioner" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">8</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">16</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="24b2-a904-00d4-1cf1" name="Repulsor Executioner 1" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">9-16+</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">10&quot;</characteristic>
+            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">3+</characteristic>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">6</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="f23c-e886-13d2-7c02" name="Repulsor Executioner 2" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">5-8</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">5&quot;</characteristic>
+            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">4+</characteristic>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">D6</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="7b13-c491-9b89-b447" name="Repulsor Executioner 3" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-4</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">3&quot;</characteristic>
+            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">5+</characteristic>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">1</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="5eb4-f431-1181-021d" name="Hover Tank" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Distances and ranges are always measured to and from this model&apos;s hull even though it has a base.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="25b6-6fbd-6b27-cd9b" name="Repulsor Field" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Your opponent must subtract 2 from any charge rolls made for units that declare a charge against a Repulor.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="ec0e-5fab-ce79-1aa0" name="Transport" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+          <characteristics>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 6 CHAPTER PRIMARIS INFANTRY models. Each MK X GRAVIS model takes up the space of 2 other models. It cannot transport JUMP PACK models.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="bc07-0f9f-e730-163c" name="Aquilon Optics" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model remains stationary or moves under half speed in its Movement phase (i.e. it moves a distance in inches less than half of its current Move characterisitc), it can shoot its heavy laser destroyer or macro plasma incinerator twice in the following Shooting phase (this weapon must target the same unit both times).</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="79b1-cdf5-67cf-8ce5" name="Power of the Machine Spirit" hidden="false" targetId="9e55-78af-ff73-24d6" type="profile"/>
+        <infoLink id="9543-1617-6e12-a51f" name="Explodes D6" hidden="false" targetId="32d5-7060-96dd-30a0" type="rule"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="9087-8247-2c36-f36b" name="New CategoryLink" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
+        <categoryLink id="b50a-1e8e-a35f-86c2" name="Faction: Adeptus Astartes" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
+        <categoryLink id="35a8-4e62-24d1-43c4" name="Faction: Deathwatch" hidden="false" targetId="c82e-cd8d-e26d-a2c1" primary="false"/>
+        <categoryLink id="8626-f5a9-08a0-6ac4" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="6030-8076-6a20-bdb8" name="Repulsor" hidden="false" targetId="c704-6107-8e00-2e06" primary="false"/>
+        <categoryLink id="1bf6-a2f3-1e78-5ca5" name="Repulsor Executioner" hidden="false" targetId="e45d-7039-02ab-dc2b" primary="false"/>
+        <categoryLink id="fb50-19fb-f8cc-4679" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+        <categoryLink id="ced9-9eda-e83a-f9ed" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+        <categoryLink id="50b1-15a3-4f37-9a5b" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true"/>
+      </categoryLinks>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="8da0-cb6d-51b2-9530" name="Weapon Option 1" hidden="false" collective="false">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7f1c-fde6-3e85-6e82" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3fc4-115d-8156-065f" type="max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="c697-1255-1c30-0afd" name="Macro Plasma Incinerator" hidden="false" collective="false" targetId="5230-16cd-9cac-89ef" type="selectionEntry"/>
+            <entryLink id="16da-7e83-9940-893e" name="Heavy Laser Destroyer" hidden="false" collective="false" targetId="32a5-d31c-7872-7925" type="selectionEntry"/>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="716d-c3d9-46bf-a36a" name="Icarus Rocket Pod" hidden="false" collective="false" targetId="f0fc-293c-4f57-4ca7" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="27f8-4a85-3dbd-55f1" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="4939-2e2c-2b98-74d1" name="Has Battle Honours" hidden="false" collective="false" targetId="4763-757f-499f-d998" type="selectionEntry"/>
+        <entryLink id="b14f-f74d-b620-a6bc" name="Battle Honours" hidden="false" collective="false" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="8ba6-7322-24e5-fcce" name="Auto Launchers" hidden="false" collective="false" targetId="026f-e0e4-e659-656f" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dd40-eff1-1eed-5962" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3702-b288-e7f9-15c5" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="9727-1123-c31c-e0a2" name="Twin Icarus Ironhail Heavy Stubber" hidden="false" collective="false" targetId="0c86-b4ab-b796-d06f" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c905-b524-665b-3cb7" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2159-a191-acb4-24aa" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="5551-9cb4-a4f5-6445" name="Fragstorm Grenade Launchers" hidden="false" collective="false" targetId="7857-e612-9389-79a4" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ca13-f1c0-7556-24ba" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2bb2-703d-4912-dfb0" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="5363-7444-1f8a-875e" name="Storm bolter" hidden="false" collective="false" targetId="2b03-8d64-3711-f300" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a021-4913-1f1d-bfcb" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6047-a06e-49dd-c9d9" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="e901-3a63-ab53-734b" name="Twin heavy bolter" hidden="false" collective="false" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7f86-5ac7-5d24-6ac7" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7227-ca2b-e8dd-9ad9" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="3b0e-eff8-6f79-3f08" name="Heavy Onlsaught Gatling Cannon" hidden="false" collective="false" targetId="9f1b-e239-80b9-71c0" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="75a1-f7e2-b802-c8d1" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e8c0-e7f3-75be-1b67" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="254a-5a48-2063-53a2" name="Ironhail Heavy Stubber" hidden="false" collective="false" targetId="5420-1ee8-5e2f-b5a0" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d80f-187a-05bf-20ab" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="15.0"/>
+        <cost name="pts" typeId="points" value="185.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="32a5-d31c-7872-7925" name="Heavy Laser Destroyer" hidden="false" collective="false" type="upgrade">
+      <profiles>
+        <profile id="ddd3-675b-5b39-42f3" name="Heavy Laser Destroyer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">10</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Damage rolls of 1 or 2 made for an attack with this weapon count as 3 instead.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="40.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0c86-b4ab-b796-d06f" name="Twin Icarus Ironhail Heavy Stubber" hidden="false" collective="false" type="upgrade">
+      <profiles>
+        <profile id="2e2b-9e03-8a6c-1892" name="Twin Icarus Ironhail Heavy Stubber" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 6</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls made for this weapon against targets that can FLY. Subtract 1 from hit rolls made for this weapon against all other targets.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="9.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
