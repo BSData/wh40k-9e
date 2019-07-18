@@ -1,0 +1,52 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  batch: true
+  branches:
+    include: ['*']
+  tags:
+    include: ['*']
+  paths:
+    include:
+    - '*.cat'
+    - '*.gst'
+    - '*.yml'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET'
+  inputs:
+    version: 2.2.x
+
+- script: dotnet tool install --global wham --version 0.6.8-beta-ge10d0437a4
+  displayName: Install wham
+ 
+- pwsh: wham publish -v detailed -f snapshot -o $env:BUILD_ARTIFACTSTAGINGDIRECTORY/snapshot
+  displayName: Build 'snapshot.bsr'
+
+- task: PublishPipelineArtifact@1
+  displayName: Publish 'snapshot.bsr' artifact
+  inputs:
+    artifact: snapshot
+    targetPath: $(Build.ArtifactStagingDirectory)/snapshot
+
+- pwsh: |
+    $tag = git tag --points-at HEAD | select -last 1
+    $reponame = $env:BUILD_REPOSITORY_NAME -split '/' | select -last 1
+    $urlbase = "https://github.com/$env:BUILD_REPOSITORY_NAME/releases/download/$tag/$reponame"
+    wham publish -a bsr bsi -f $reponame --url "$urlbase.bsi" --url-only-index --additional-urls "$urlbase.bsr" -o $env:BUILD_ARTIFACTSTAGINGDIRECTORY/gh-release
+  displayName: Build 'gh-release' artifact
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
+
+- task: PublishPipelineArtifact@1
+  displayName: Publish 'gh-release' artifact
+  inputs:
+    artifact: snapshot
+    targetPath: $(Build.ArtifactStagingDirectory)/gh-release
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
