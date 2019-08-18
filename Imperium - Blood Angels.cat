@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="eb0f-c144-a282-8bdc" name="Imperium - Blood Angels" revision="80" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="eb0f-c144-a282-8bdc" name="Imperium - Blood Angels" revision="91" battleScribeVersion="2.02" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="eb0f-c144-pubN65537" name="Codex: Blood Angels"/>
     <publication id="eb0f-c144-pubN68947" name="Index: Imperium 1"/>
@@ -12339,14 +12339,22 @@
             </selectionEntry>
           </selectionEntries>
           <selectionEntryGroups>
-            <selectionEntryGroup id="e3c3-b39c-e4d8-1cac" name="Weapon" hidden="false" collective="false">
+            <selectionEntryGroup id="e3c3-b39c-e4d8-1cac" name="Weapon" hidden="false" collective="false" defaultSelectionEntryId="28eb-3c92-c0ee-02b2">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3f43-1685-e0ad-f5ae" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fc48-73a6-0e52-991a" type="min"/>
               </constraints>
               <entryLinks>
-                <entryLink id="28eb-3c92-c0ee-02b2" name="Bolt sniper rifle" hidden="false" collective="false" targetId="fb34-6986-3c66-76a1" type="selectionEntry"/>
-                <entryLink id="ba21-e582-bdac-62a3" name="Las Fusil" hidden="false" collective="false" targetId="b889-2583-bc39-f543" type="selectionEntry"/>
+                <entryLink id="28eb-3c92-c0ee-02b2" name="Bolt sniper rifle" hidden="false" collective="false" targetId="fb34-6986-3c66-76a1" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d0a7-282e-a685-9972" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="ba21-e582-bdac-62a3" name="Las Fusil" hidden="false" collective="true" targetId="b889-2583-bc39-f543" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0738-84ff-a006-476a" type="max"/>
+                  </constraints>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -12429,6 +12437,11 @@
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
               <entryLinks>
@@ -12663,17 +12676,25 @@
         </selectionEntry>
         <selectionEntry id="3893-b083-a81e-52ba" name="Infilltrator" hidden="false" collective="false" type="model">
           <modifiers>
-            <modifier type="decrement" field="f981-c286-7847-7a5d" value="1.0">
-              <conditions>
-                <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cf51-922b-493d-34fb" type="equalTo"/>
-                <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0cf1-0305-59a5-e400" type="equalTo"/>
-              </conditions>
-            </modifier>
             <modifier type="decrement" field="033b-0a3d-d44e-a7f9" value="1.0">
-              <conditions>
-                <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cf51-922b-493d-34fb" type="equalTo"/>
-                <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0cf1-0305-59a5-e400" type="equalTo"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0cf1-0305-59a5-e400" type="equalTo"/>
+                    <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cf51-922b-493d-34fb" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="decrement" field="f981-c286-7847-7a5d" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cf51-922b-493d-34fb" type="equalTo"/>
+                    <condition field="selections" scope="66fe-5358-b5ed-1397" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0cf1-0305-59a5-e400" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -12727,7 +12748,7 @@
             <cost name="pts" typeId="points" value="22.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="0cf1-0305-59a5-e400" name="Infiltrator Comms Array" hidden="false" collective="false" type="model">
+        <selectionEntry id="0cf1-0305-59a5-e400" name="Infiltrator w/ Comms Array" hidden="false" collective="false" type="model">
           <modifiers>
             <modifier type="decrement" field="fc85-5d25-ddbe-d422" value="1.0">
               <conditions>
@@ -12786,6 +12807,8 @@
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="22.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -12973,7 +12996,7 @@
             <infoLink id="c742-0da3-3cc4-f2f4" name="Tactical Precision" hidden="false" targetId="a8e2-0267-b144-14fc" type="profile"/>
           </infoLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup id="a4dc-4a13-9b8c-31e7" name="Weapon Options" hidden="false" collective="false">
+            <selectionEntryGroup id="a4dc-4a13-9b8c-31e7" name="Weapon Options" hidden="false" collective="false" defaultSelectionEntryId="050d-8be9-0c25-ea53">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9ecd-204c-0803-2357" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3cfd-391a-0d00-bb77" type="min"/>
@@ -13042,6 +13065,11 @@
                           </characteristics>
                         </profile>
                       </profiles>
+                      <costs>
+                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                        <cost name="pts" typeId="points" value="0.0"/>
+                      </costs>
                     </selectionEntry>
                   </selectionEntries>
                   <entryLinks>
@@ -13052,6 +13080,11 @@
                       </constraints>
                     </entryLink>
                   </entryLinks>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="c0f0-95f5-4cfb-2974" name="Reiver" hidden="false" collective="false" type="upgrade">
                   <constraints>
@@ -13080,6 +13113,11 @@
                       </constraints>
                     </entryLink>
                   </entryLinks>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -13110,6 +13148,8 @@
       </selectionEntries>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="8dc5-2f9d-96d0-3db6" name="Suppressor Squad" hidden="false" collective="false" type="unit">
@@ -13575,6 +13615,7 @@
         <categoryLink id="73ca-f3c7-853b-babb" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
         <categoryLink id="0262-ea65-d739-b4df" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="6c2a-538a-dc10-3218" name="Impulsor" hidden="false" targetId="9b8a-b228-0dff-7a99" primary="false"/>
+        <categoryLink id="cd49-3a6c-dcb3-1384" name="New CategoryLink" hidden="false" targetId="1b66-3f5f-6705-079a" primary="true"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="4182-c238-20ba-92e3" name="Storm Bolters" hidden="false" collective="false" defaultSelectionEntryId="ae14-3754-c926-8cf9">
@@ -13622,6 +13663,11 @@
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="b0f7-c69e-b50a-f908" name="Bellicatus Missile Array" hidden="false" collective="false" type="upgrade">
               <constraints>
@@ -13661,6 +13707,8 @@
               </profiles>
               <costs>
                 <cost name="pts" typeId="points" value="17.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="339b-41e8-caaa-8deb" name="Orbital Comms Array" hidden="false" collective="false" type="upgrade">
@@ -13676,6 +13724,8 @@
               </profiles>
               <costs>
                 <cost name="pts" typeId="points" value="18.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="ea7e-06be-baa7-1807" name="Shield Dome" hidden="false" collective="false" type="upgrade">
@@ -13691,6 +13741,8 @@
               </profiles>
               <costs>
                 <cost name="pts" typeId="points" value="18.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -13706,7 +13758,7 @@
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="pts" typeId="points" value="75.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="9313-9b96-05a3-f870" name="Incursor Squad" hidden="false" collective="false" type="upgrade">
@@ -13767,7 +13819,7 @@
             </profile>
           </profiles>
           <selectionEntries>
-            <selectionEntry id="3ee3-0f62-7a70-be24" name="Occulus bolt carbine" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="3ee3-0f62-7a70-be24" name="Occulus bolt carbine" hidden="false" collective="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="35c3-cf2d-96a5-cc46" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0bee-ccf4-de4e-9638" type="max"/>
@@ -13790,7 +13842,7 @@
                 <cost name="pts" typeId="points" value="4.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="e7e2-fc57-db7c-f427" name="Paired Combat Blades" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="e7e2-fc57-db7c-f427" name="Paired Combat Blades" hidden="false" collective="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="48bc-fa8b-ea4c-72e8" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d98-4c3f-ecad-3f39" type="min"/>
@@ -13807,11 +13859,26 @@
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
-            <entryLink id="6990-de04-0e0f-48e9" name="Bolt pistol" hidden="false" collective="false" targetId="0334-f487-8229-0c1a" type="selectionEntry"/>
-            <entryLink id="7f26-ca6c-ca81-9166" name="Frag &amp; Krak grenades" hidden="false" collective="false" targetId="cddf-945e-1335-e681" type="selectionEntry"/>
+            <entryLink id="6990-de04-0e0f-48e9" name="Bolt pistol" hidden="false" collective="true" targetId="0334-f487-8229-0c1a" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1682-460f-9b4b-3d2a" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1420-b750-1633-c17d" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="7f26-ca6c-ca81-9166" name="Frag &amp; Krak grenades" hidden="false" collective="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e961-589b-165e-98a7" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a197-cd70-4df7-fb06" type="min"/>
+              </constraints>
+            </entryLink>
             <entryLink id="8ae4-9710-a7fb-5935" name="Smoke Grenades" hidden="false" collective="false" targetId="6c7f-548e-623b-7442" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b7e7-fbf2-674d-4334" type="max"/>
@@ -13821,6 +13888,8 @@
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="19.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="6bf0-17bd-9b98-d6d1" name="Incursor" hidden="false" collective="false" type="model">
@@ -13856,7 +13925,7 @@
             </profile>
           </profiles>
           <selectionEntries>
-            <selectionEntry id="9479-3750-0dc9-e612" name="Occulus bolt carbine" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="9479-3750-0dc9-e612" name="Occulus bolt carbine" hidden="false" collective="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc7e-35f9-a992-aea9" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e4e0-c6cc-ef65-fd10" type="max"/>
@@ -13879,7 +13948,7 @@
                 <cost name="pts" typeId="points" value="4.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="84ba-4048-d4d2-4fa1" name="Paired Combat Blades" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="84ba-4048-d4d2-4fa1" name="Paired Combat Blades" hidden="false" collective="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="07a3-dcf8-bd1f-6ab2" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f14e-4ca9-962b-16be" type="min"/>
@@ -13896,12 +13965,27 @@
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
-            <entryLink id="8139-fbaf-fd35-6205" name="Bolt pistol" hidden="false" collective="false" targetId="0334-f487-8229-0c1a" type="selectionEntry"/>
-            <entryLink id="2586-40ea-0af1-a5dd" name="Frag &amp; Krak grenades" hidden="false" collective="false" targetId="cddf-945e-1335-e681" type="selectionEntry"/>
-            <entryLink id="22a3-22db-9e6f-27e8" name="Smoke Grenades" hidden="false" collective="false" targetId="6c7f-548e-623b-7442" type="selectionEntry">
+            <entryLink id="8139-fbaf-fd35-6205" name="Bolt pistol" hidden="false" collective="false" targetId="37d3-7098-d596-9948" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f719-e59c-ef7a-9792" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a9c4-1ba4-f063-261d" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="2586-40ea-0af1-a5dd" name="Frag &amp; Krak grenades" hidden="false" collective="false" targetId="cddf-945e-1335-e681" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d0ee-9648-f56a-7a8b" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="866d-2991-1d6b-b212" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="22a3-22db-9e6f-27e8" name="Smoke Grenades" hidden="false" collective="true" targetId="6c7f-548e-623b-7442" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="249b-4c5d-dd29-1da1" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8be2-ae63-69a4-b63f" type="min"/>
@@ -13910,6 +13994,8 @@
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="19.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="9809-6e10-dcd1-1cb1" name="Incursor w/ Haywire Mine" hidden="false" collective="false" type="upgrade">
@@ -13932,7 +14018,7 @@
             </profile>
           </profiles>
           <selectionEntries>
-            <selectionEntry id="6adf-50d2-0ae2-2609" name="Occulus bolt carbine" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="6adf-50d2-0ae2-2609" name="Occulus bolt carbine" hidden="false" collective="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7e7a-8af2-b35c-04b1" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3348-2fab-09e7-f1ba" type="max"/>
@@ -13955,7 +14041,7 @@
                 <cost name="pts" typeId="points" value="4.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="f304-6f6a-92f1-cabb" name="Paired Combat Blades" hidden="false" collective="false" type="upgrade">
+            <selectionEntry id="f304-6f6a-92f1-cabb" name="Paired Combat Blades" hidden="false" collective="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1483-8749-5930-90c2" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="689a-3675-c3ff-ef43" type="min"/>
@@ -13972,6 +14058,11 @@
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="da03-2dc2-233b-25b6" name="Haywire Mine" hidden="false" collective="false" type="model">
               <constraints>
@@ -13988,12 +14079,24 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
               </profiles>
               <costs>
                 <cost name="pts" typeId="points" value="10.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
-            <entryLink id="386f-5f4b-6c21-1a21" name="Bolt pistol" hidden="false" collective="false" targetId="0334-f487-8229-0c1a" type="selectionEntry"/>
-            <entryLink id="79c1-2f16-aeb8-36ee" name="Frag &amp; Krak grenades" hidden="false" collective="false" targetId="cddf-945e-1335-e681" type="selectionEntry"/>
+            <entryLink id="386f-5f4b-6c21-1a21" name="Bolt pistol" hidden="false" collective="true" targetId="0334-f487-8229-0c1a" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7704-08f1-73fe-b1d6" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7100-eb5d-0877-f5ff" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="79c1-2f16-aeb8-36ee" name="Frag &amp; Krak grenades" hidden="false" collective="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="498d-3c7b-1625-7d17" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="705b-f15b-8cc8-04a8" type="max"/>
+              </constraints>
+            </entryLink>
             <entryLink id="8d3e-ca98-e4df-b6b0" name="Smoke Grenades" hidden="false" collective="false" targetId="6c7f-548e-623b-7442" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d4d7-65f3-6948-9ea8" type="max"/>
@@ -14003,6 +14106,8 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="19.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -14090,6 +14195,11 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -14115,6 +14225,11 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="66a1-28f3-b667-24e5" name="Incendium cannon" hidden="false" collective="false" type="upgrade">
               <constraints>
@@ -14134,6 +14249,8 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
               </profiles>
               <costs>
                 <cost name="pts" typeId="points" value="15.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -14165,7 +14282,7 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
         <cost name="pts" typeId="points" value="90.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="6c7f-548e-623b-7442" name="Smoke Grenades" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="6c7f-548e-623b-7442" name="Smoke Grenades" hidden="false" collective="true" type="upgrade">
       <profiles>
         <profile id="53b4-9ae6-55ec-7e62" name="Smoke Grenades" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -14173,8 +14290,13 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
-    <selectionEntry id="b889-2583-bc39-f543" name="Las Fusil" hidden="false" collective="false" type="upgrade">
+    <selectionEntry id="b889-2583-bc39-f543" name="Las Fusil" hidden="false" collective="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="447c-aba3-9063-6c93" type="max"/>
       </constraints>
@@ -14190,6 +14312,11 @@ The Primed Haywire Mine is represented by the Primed Haywire Mine model, but doe
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
