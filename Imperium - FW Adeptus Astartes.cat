@@ -9271,7 +9271,7 @@
     <selectionEntry id="9859-bf56-c735-4099" name="Salamanders" hidden="false" collective="false" type="upgrade">
       <rules>
         <rule id="3784-3393-c6f2-35ce" name="Master Artisans" hidden="false">
-          <description>You can re-roll a single failed hit roll and a single failed wound roll made for a SALAMANDERS unit with this tactic each time it shoots or fights.</description>
+          <description>When a unit with this tactic fires Overwatch or is chosen to shoot or fight with, you can re-roll a single hit roll and you can re-roll a single wound roll. When resolving an attack made with a weapon that has an Armour Penetration characteristic of -1 against a unit with this tactic, that weapon is treated as having an Armour Penetration characteristic of 0.</description>
         </rule>
       </rules>
       <costs>
@@ -9654,10 +9654,21 @@
     <selectionEntryGroup id="f000-b6a8-62f1-ebcc" name="Warlord Traits" hidden="false" collective="false">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
-            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="846d-3c14-21fc-369f" type="instanceOf"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="846d-3c14-21fc-369f" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="846d-3c14-21fc-369f" type="notInstanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
