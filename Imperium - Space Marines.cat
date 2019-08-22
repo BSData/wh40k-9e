@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="111" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="112" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -150,7 +150,7 @@
     </entryLink>
     <entryLink id="1917-f2b6-a3ee-5027" name="New EntryLink" hidden="false" collective="false" import="true" targetId="92b3-c77a-eff7-4d9b" type="selectionEntry">
       <categoryLinks>
-        <categoryLink id="e5d7-6bcc-6db9-d27a" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+        <categoryLink id="031c-6f55-ea20-7845" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink id="d3a6-5bbb-5531-8172" name="New EntryLink" hidden="false" collective="false" import="true" targetId="5854-3db8-6043-ce0b" type="selectionEntry">
@@ -1005,6 +1005,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="96fa-e1a6-1c50-166b" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="cfc3-d470-c2e6-e51d" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -1077,6 +1078,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="2c40-8bb8-acbf-e611" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="74d2-44da-7c9d-e55e" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -1156,6 +1158,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="58f4-af2f-3851-723b" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="bfeb-9119-52fa-1893" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -1164,6 +1167,23 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="a0b8-6a5c-ea09-44f9" name="Captain" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="add" field="category" value="7dbf-fe75-1337-8efe">
+          <conditions>
+            <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="remove" field="category" value="8352-7f67-7e2b-3b4f">
+          <conditions>
+            <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="name" value="Chapter Master">
+          <conditions>
+            <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="c060-35a8-5b21-e965" name="Captain" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <modifiers>
@@ -1185,16 +1205,35 @@
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
+        <profile id="968c-cd28-ae98-dda1" name="Chapter Master" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You can re-roll hit rolls for attacks made by models in friendly &lt;CHAPTER&gt; units whilst their unit is within 6&quot; of this model.’ </characteristic>
+          </characteristics>
+        </profile>
       </profiles>
       <infoLinks>
         <infoLink id="b977-9858-9a44-cbdf" name="New InfoLink" hidden="false" targetId="4ea8-94d3-ba39-042f" type="rule"/>
         <infoLink id="1974-ced4-be88-3117" name="Iron Halo" hidden="false" targetId="242c-3bac-1ff3-48b0" type="profile"/>
-        <infoLink id="6434-0692-ffa1-e0e9" name="New InfoLink" hidden="false" targetId="922c-75db-5ca4-3750" type="profile"/>
+        <infoLink id="6434-0692-ffa1-e0e9" name="New InfoLink" hidden="false" targetId="922c-75db-5ca4-3750" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="2a6e-0a4b-f8e7-e7ee" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
         <categoryLink id="acfa-07d8-7bbe-c284" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="ab69-a2a7-215a-51e6" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="0a2b-f9eb-ce6b-7f1e" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="a9f3-f834-4bdf-16d0" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="7100-6d5d-2096-b512" name="New CategoryLink" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
@@ -1307,6 +1346,8 @@
           </modifiers>
         </entryLink>
         <entryLink id="ff65-e699-54b9-9718" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="e05a-91b4-d2db-6fb1" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
+        <entryLink id="0cb6-e348-ead9-500b" name="Stratagem: Chapter Master" hidden="false" collective="false" import="true" targetId="bd73-ea51-1f7f-a39a" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -1356,7 +1397,6 @@
       <categoryLinks>
         <categoryLink id="f65c-264d-e005-d551" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
         <categoryLink id="ef47-a071-749c-b0e9" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="f612-7a45-bae5-d89f" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="193f-ce0b-df75-8d44" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="9c98-414a-b446-7487" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="6078-48f1-fdcb-4ba5" name="New CategoryLink" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
@@ -1451,6 +1491,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="e822-e55e-6c04-0a3d" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="13ea-f69a-b1da-2155" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -1487,7 +1528,6 @@
       <categoryLinks>
         <categoryLink id="98ab-9beb-90c2-592b" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
         <categoryLink id="7ddc-6c55-af97-b9b3" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="0a97-f909-146a-d1e3" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="a7ee-9dc5-d8e1-37fe" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="b8b9-1bbb-5758-0d86" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="bd10-1bf9-7eef-e879" name="New CategoryLink" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
@@ -1569,6 +1609,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="7e79-498f-abcb-518e" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="d586-28cb-ac02-657f" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -1600,7 +1641,6 @@
       <categoryLinks>
         <categoryLink id="8099-8418-c490-9b19" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
         <categoryLink id="864b-7bdd-0cfb-1f8a" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="8d8e-90e7-7d6b-885d" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="5087-2a7f-058e-42e6" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="6808-4b07-c602-bd5e" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="15c5-01b5-b829-2f50" name="New CategoryLink" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
@@ -1633,6 +1673,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="3f52-609d-af82-d8ce" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="c033-4e4e-9fbe-93a8" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -1665,7 +1706,6 @@
       <categoryLinks>
         <categoryLink id="ae51-0acb-6f83-d3f1" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
         <categoryLink id="b458-6259-b268-e655" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="7202-a40a-16de-1274" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="ec3a-d03d-1069-67f9" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="7a7c-c76d-8664-ecea" name="New CategoryLink" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
         <categoryLink id="146a-7d7a-d486-b1f4" name="New CategoryLink" hidden="false" targetId="1c6f-0311-3eba-3180" primary="false"/>
@@ -1772,6 +1812,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="e2f2-8442-7302-1174" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="11a2-e313-11eb-06db" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -1917,6 +1958,7 @@
           </constraints>
         </entryLink>
         <entryLink id="35da-71ff-6fea-163d" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="9535-68b5-bcb8-9c99" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -2049,6 +2091,7 @@
           </constraints>
         </entryLink>
         <entryLink id="e087-6a26-d0f4-996a" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="f1cc-3c9b-22b2-8758" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -2189,6 +2232,7 @@
           </constraints>
         </entryLink>
         <entryLink id="f143-672a-3b65-2f35" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="a238-4502-7c7b-2e01" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="8.0"/>
@@ -2375,6 +2419,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="ab8b-e25e-9b3e-43bb" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="43b3-3423-461d-1609" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -2517,6 +2562,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="f113-0439-b004-2554" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="2aca-9201-8a2e-9ffd" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -2697,6 +2743,7 @@
         </entryLink>
         <entryLink id="bb22-7d94-b72d-c39f" name="Litanies of Battle" hidden="false" collective="false" import="true" targetId="edab-e2c4-01f5-63cc" type="selectionEntryGroup"/>
         <entryLink id="a9d5-f1d2-9ae2-80b5" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="94c6-0a88-b89d-cf68" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -2925,6 +2972,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="5c76-1780-3fe1-1b3e" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="4534-6d7a-6bea-acf9" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -2998,6 +3046,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="8b5d-1f76-9fa4-bfc7" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="fde8-86ee-e6e1-4908" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -3079,6 +3128,7 @@
               </modifiers>
             </entryLink>
             <entryLink id="9350-8419-900e-44e2" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+            <entryLink id="331e-8553-2481-021f" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="65.0"/>
@@ -3171,6 +3221,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="dbe2-8e7e-84fd-05e6" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="ef15-daa3-75ea-8b20" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -3263,6 +3314,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="85fe-ab17-8653-467f" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="2a96-c51f-8a8a-9bc8" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -3519,6 +3571,9 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink id="a8a7-a9f5-a9ff-e340" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -3674,6 +3729,9 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink id="f7cc-7702-fd4c-9b01" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -4476,7 +4534,6 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e215-4e1c-ca32-3381" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="0f51-f160-daad-0d55" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -4561,6 +4618,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="9775-ad2f-066b-a037" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="6bfe-cddc-d1a2-57e9" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -4708,6 +4766,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="df5d-688a-2ba0-26c0" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="c220-a4c0-229e-b52a" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -12537,6 +12596,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </modifiers>
         </entryLink>
         <entryLink id="869e-e107-0a1e-a1bb" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="e0e8-0699-4058-c4a7" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="78.0"/>
@@ -12649,6 +12709,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </constraints>
         </entryLink>
         <entryLink id="b13a-35d6-4a3d-c3c8" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="9a81-e9ec-0010-e487" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="90.0"/>
@@ -13003,6 +13064,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
         </entryLink>
         <entryLink id="1ed6-ec01-1950-f126" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
         <entryLink id="da4d-9f7d-ea16-c72c" name="Litanies of Battle" hidden="false" collective="false" import="true" targetId="edab-e2c4-01f5-63cc" type="selectionEntryGroup"/>
+        <entryLink id="0b6d-57ee-04cc-773f" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -13080,6 +13142,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </modifiers>
         </entryLink>
         <entryLink id="8e13-5776-5231-f46b" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="e909-1d19-b975-d1f7" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -13220,6 +13283,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                   </modifiers>
                 </entryLink>
                 <entryLink id="a4ac-d349-5f46-bd13" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+                <entryLink id="3824-b860-8323-f8ae" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
               </entryLinks>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -14209,6 +14273,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </modifiers>
         </entryLink>
         <entryLink id="fe75-a11e-eff8-6ba9" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="514d-4458-a7f3-b61a" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="78.0"/>
@@ -15279,6 +15344,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </modifiers>
         </entryLink>
         <entryLink id="af86-7fa1-7bdc-f093" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="ef1c-8fdc-1371-3fbd" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -15405,6 +15471,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </constraints>
         </entryLink>
         <entryLink id="a032-6827-ea7a-4170" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="105f-2f84-605d-7aff" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -15737,6 +15804,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </modifiers>
         </entryLink>
         <entryLink id="8a53-9ec1-8d09-00da" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="2ad5-18ac-ea85-65e6" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -16547,6 +16615,7 @@ You can only use this Stratagem once per battle.</characteristic>
         </entryLink>
         <entryLink id="873e-5e3a-e979-d9de" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="4f55-3af3-89ff-791e" type="selectionEntryGroup"/>
         <entryLink id="d31d-469a-30f3-28c6" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="4480-8dda-b66c-fd9e" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="87.0"/>
@@ -17777,6 +17846,43 @@ wounds.</characteristic>
         <cost name="pts" typeId="points" value="32.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="1f37-5001-285a-f8bc" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ef59-b971-acfe-2119" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="7323-a1db-cf9b-f443" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="5e6f-ff67-9261-61f8" value="0.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1f8a-198f-bbb1-e4e1" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5e6f-ff67-9261-61f8" type="max"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry id="bd73-ea51-1f7f-a39a" name="Stratagem: Chapter Master" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3e65-ef35-0705-07d9" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5011-463d-c7e6-452a" type="max"/>
+      </constraints>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -19146,6 +19252,11 @@ wounds.</characteristic>
               </conditions>
             </conditionGroup>
           </conditionGroups>
+        </modifier>
+        <modifier type="set" field="28d5-94d9-3dbd-17e7" value="2.0">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1f37-5001-285a-f8bc" type="atLeast"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
