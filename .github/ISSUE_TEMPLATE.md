@@ -1,6 +1,6 @@
 **File/Catalogue:** 
 
-**BattleScribe version:** 2.02.
+**BattleScribe version:** 2.03.
 
 **Platform:** Windows/iOS/Android/Mac/Linux
 
