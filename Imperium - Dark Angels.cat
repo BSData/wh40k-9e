@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Dark Angels" revision="107" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Dark Angels" revision="108" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="b8fe-8d38-pubN65537" name="Codex: Dark Angels"/>
   </publications>
@@ -82,6 +82,7 @@
     <categoryEntry id="dcdc-0852-a133-666c" name="Lieutnant" hidden="false"/>
     <categoryEntry id="092f-e8c6-6aea-4445" name="Elimination Squad" hidden="false"/>
     <categoryEntry id="b10d-87e4-fe53-dbbf" name="Devastator Squad" hidden="false"/>
+    <categoryEntry id="4aa3-a88c-47fa-2e9e" name="Priest" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="2df1-fcd7-f668-606a" name="Primaris Ancient" hidden="false" collective="false" import="true" targetId="58f2-f816-58f2-0b94" type="selectionEntry"/>
@@ -273,8 +274,10 @@
   <infoLinks>
     <infoLink id="8977-9ead-e618-4d17" name="Defenders of Humanity" hidden="false" targetId="a73d-0094-3e4e-e4ed" type="rule"/>
     <infoLink id="3437-748d-fc54-4671" name="Grim Resolve" hidden="false" targetId="451a-c379-c037-7a51" type="rule"/>
-    <infoLink id="9e6e-bfa6-2d3c-33ad" name="Bolter Discipline" hidden="false" targetId="5a7e-f984-487c-d767" type="rule"/>
     <infoLink id="1111-0620-2739-a2ad" name="Shock Assault" hidden="false" targetId="f9ce-5a8b-7abd-2395" type="rule"/>
+    <infoLink id="6934-b582-7019-5723" name="Bolter Discipline" hidden="false" targetId="5a7e-f984-487c-d767" type="rule"/>
+    <infoLink id="c5d3-afe1-f36a-6ed9" name="And They Shall Know No Fear" hidden="false" targetId="4ea8-94d3-ba39-042f" type="rule"/>
+    <infoLink id="a68c-0b86-7e65-a73f" name="Combat Doctrines" hidden="false" targetId="9ee9-a3a2-9d63-b93f" type="rule"/>
   </infoLinks>
   <sharedSelectionEntries>
     <selectionEntry id="58f2-f816-58f2-0b94" name="Primaris Ancient" publicationId="b8fe-8d38-pubN65537" page="93" hidden="false" collective="false" import="true" type="unit">
@@ -1411,9 +1414,10 @@
       </profiles>
       <infoLinks>
         <infoLink id="ffaa-fa04-903b-6b53" name="New InfoLink" hidden="false" targetId="4ea8-94d3-ba39-042f" type="rule"/>
-        <infoLink id="a7f6-8b81-efe5-8ae0" name="New InfoLink" hidden="false" targetId="9287-78a9-f594-c601" type="profile"/>
         <infoLink id="86f4-0c78-3f40-f586" name="New InfoLink" hidden="false" targetId="3f26-e8cb-ea53-e656" type="profile"/>
         <infoLink id="328f-7002-1849-cadd" name="New InfoLink" hidden="false" targetId="b355-bd49-c5a5-805f" type="profile"/>
+        <infoLink id="c28e-971f-c5ac-0374" name="Priest" hidden="false" targetId="6785-d56b-d098-cbd9" type="profile"/>
+        <infoLink id="e444-dab3-7673-0f70" name="Litanies" hidden="false" targetId="ae29-9d94-c021-e6d3" type="infoGroup"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="487b-c429-724a-4d2f" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
@@ -1424,6 +1428,7 @@
         <categoryLink id="4dd3-f862-2e04-28fd" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
         <categoryLink id="e240-0189-250e-baec" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="ebdd-1b16-7a3a-0989" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+        <categoryLink id="9baf-4083-6b60-d1a5" name="Priest" hidden="false" targetId="4aa3-a88c-47fa-2e9e" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="874f-8c68-7b46-d40a" name="Armament" hidden="false" collective="false" import="true" defaultSelectionEntryId="de09-eb1c-27d5-bee1">
@@ -3702,7 +3707,9 @@
         </profile>
         <profile id="5f5e-5746-1d9a-f5a9" name="Drop Pod Assault" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, you can set up this model, along with any units embarked within  it, in orbit instead of deploying it on the battlefield. At the end of any of your movement phases this unit can perform a drop pod assault - set it up on the battlefield anywhere that is more than 9&quot; away from enemy models. Any models inside must immediately disembark, but they must be set up more than 9&quot; from any enemy models. Any model that cannot be set up because there is not enough room is slain.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, you can set up this model, along with any units embarked within  it, in orbit instead of deploying it on the battlefield. At the end of any of your movement phases this unit can perform a drop pod assault - set it up on the battlefield anywhere that is more than 9&quot; away from enemy models. Any models inside must immediately disembark, but they must be set up more than 9&quot; from any enemy models. Any model that cannot be set up because there is not enough room is slain.
+
+Matched Play: This model and any units embarked aboard it are exempt from the Tactical Reserves matched play rule, except that if it and any units embarked aboard it have not arrived on the battlefield by the end of the third battle round, they count as having been destroyed.</characteristic>
           </characteristics>
         </profile>
         <profile id="7fb3-9163-1e23-5c98" name="Immobile" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -9224,7 +9231,7 @@
       <profiles>
         <profile id="9139-4df3-9622-c5e2" name="Terror Troops" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst  any Reiver units from your army are within 3&quot; of any enemy units, subtract 1 from the Leadership characteristic of each of those enemy units for each Reiver unit from your army that is within 3&quot; of that enemy unit (to a maximum of -3).’</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst  any Reiver units from your army are within 3&quot; of any enemy units, subtract 1 from the Leadership characteristic of each of those enemy units for each Reiver unit from your army that is within 3&quot; of that enemy unit (to a maximum of -3).</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -12716,6 +12723,11 @@
                 </entryLink>
                 <entryLink id="a1e3-3267-87c6-e5f7" name="Paired Combat Blades" hidden="false" collective="false" import="true" targetId="cde5-6d4d-a834-061b" type="selectionEntry"/>
               </entryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="e887-a093-1f5d-7691" name="Heavy Bolt Pistol &amp; Smoke Grenades" hidden="false" collective="false" import="true" type="upgrade">
               <entryLinks>
@@ -12733,6 +12745,11 @@
                 </entryLink>
                 <entryLink id="b46a-3b8d-e2b1-593e" name="Smoke Grenades" hidden="false" collective="false" import="true" targetId="5ad4-7b94-7946-2613" type="selectionEntry"/>
               </entryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -15182,6 +15199,7 @@ wounds.</characteristic>
     <rule id="451a-c379-c037-7a51" name="Grim Resolve" hidden="false">
       <description>You can re-roll all hit rolls of 1 for this unit whenever it shoots (including when firing Overwatch) so long as it did not move in its prior Movement phase. In addition, this unit can never lose more than one model as the result of any single failed morale test.</description>
     </rule>
+    <rule id="9ee9-a3a2-9d63-b93f" name="Combat Doctrines" hidden="false"/>
   </sharedRules>
   <sharedProfiles>
     <profile id="242c-3bac-1ff3-48b0" name="Iron Halo" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -15617,7 +15635,30 @@ wounds.</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, an unmodified hit roll of 6 scores 1 additional hit.</characteristic>
       </characteristics>
     </profile>
+    <profile id="5a7e-49c4-3678-da5a" name="And They Shall Know No Fear" hidden="false" typeId="0891-2df5-19c2-de63" typeName="Explosion">
+      <characteristics>
+        <characteristic name="Dice roll" typeId="9e34-51af-99cf-45fa"/>
+        <characteristic name="Distance" typeId="4dfd-0acf-1a52-f75b"/>
+        <characteristic name="Mortal wounds" typeId="e715-f99d-6feb-6ceb"/>
+      </characteristics>
+    </profile>
+    <profile id="6785-d56b-d098-cbd9" name="Priest" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start  of the battle round, this model can recite one litany it knows  that has not already been recited by a friendly model that  battle round. Roll one D6; on a 3+ the recited litany is  inspiring and takes effect until the end of that battle round.</characteristic>
+      </characteristics>
+    </profile>
   </sharedProfiles>
+  <sharedInfoGroups>
+    <infoGroup id="ae29-9d94-c021-e6d3" name="Litanies" hidden="false">
+      <profiles>
+        <profile id="f07c-d7f8-de83-17f5" name="Litany of Hate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this litany is inspiring, you can re-roll  hit rolls for attacks made with melee weapons by models in friendly DARK ANGELS units whilst their unit is within 6&quot; of  this model.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </infoGroup>
+  </sharedInfoGroups>
   <catalogueLinks>
     <catalogueLink id="a18c-2ee5-7f5e-a157" name="Imperium - FW Adeptus Astartes" targetId="dab7-e076-dd5e-d8aa" type="catalogue" importRootEntries="true"/>
   </catalogueLinks>
