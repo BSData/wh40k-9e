@@ -4884,7 +4884,6 @@
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6796-3929-933e-becf" type="equalTo"/>
                     <condition field="selections" scope="e89e-4431-97de-4b38" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="318d-3021-2155-ab53" type="greaterThan"/>
                   </conditions>
                 </conditionGroup>
@@ -5019,6 +5018,9 @@
                   </entryLinks>
                 </selectionEntryGroup>
                 <selectionEntryGroup id="56ac-602b-2963-18a8" name="Hand Flamer or Melee Only" hidden="false" collective="false" import="true">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a370-3df4-e985-2e72" type="max"/>
+                  </constraints>
                   <selectionEntries>
                     <selectionEntry id="c3d4-ce9b-69ec-7cd8" name="Melee weapon replaces rifle" hidden="false" collective="false" import="true" type="upgrade">
                       <modifiers>
@@ -5039,7 +5041,11 @@
                     </selectionEntry>
                   </selectionEntries>
                   <entryLinks>
-                    <entryLink id="3f86-5b1a-f6df-0b0a" name="Hand Flamer" hidden="false" collective="false" import="true" targetId="d646-cf8b-0d01-69ff" type="selectionEntry"/>
+                    <entryLink id="3f86-5b1a-f6df-0b0a" name="Hand Flamer" hidden="false" collective="false" import="true" targetId="d646-cf8b-0d01-69ff" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bf21-eacc-0e3a-fcc8" type="max"/>
+                      </constraints>
+                    </entryLink>
                   </entryLinks>
                 </selectionEntryGroup>
               </selectionEntryGroups>
@@ -5081,7 +5087,7 @@
                 </modifier>
                 <modifier type="decrement" field="points" value="1.0">
                   <repeats>
-                    <repeat field="selections" scope="e89e-4431-97de-4b38" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="56ac-602b-2963-18a8" repeats="1" roundUp="false"/>
+                    <repeat field="selections" scope="e89e-4431-97de-4b38" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="56ac-602b-2963-18a8" repeats="1" roundUp="false"/>
                   </repeats>
                 </modifier>
               </modifiers>
@@ -9260,7 +9266,7 @@ Matched Play: This model and any units embarked aboard it are exempt from the Ta
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">4</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
@@ -9342,6 +9348,11 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b80d-fb82-38a3-bd3a" type="min"/>
               </constraints>
             </entryLink>
+            <entryLink id="13cc-38b7-4085-4989" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" targetId="1f37-5001-285a-f8bc" type="selectionEntry"/>
+            <entryLink id="fce2-086e-6015-1866" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+            <entryLink id="4838-6b33-ab6e-a276" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+            <entryLink id="4c98-6f5f-f43d-ef8b" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="e292-25b3-6cd4-f0ab" type="selectionEntryGroup"/>
+            <entryLink id="83e0-795f-6128-4acf" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="4f55-3af3-89ff-791e" type="selectionEntryGroup"/>
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="26.0"/>
