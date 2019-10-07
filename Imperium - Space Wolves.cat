@@ -120,6 +120,7 @@
     <categoryEntry id="1b53-08d9-7c68-b30e" name="Infiltrator Squad" hidden="false"/>
     <categoryEntry id="6720-939f-b4ed-7718" name="Suppressor Squad" hidden="false"/>
     <categoryEntry id="d78a-9066-6f29-3930" name="Invictor Tactical Warsuit" hidden="false"/>
+    <categoryEntry id="6f37-636e-dbf9-022a" name="Reiver" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="bccc-fd65-07f8-77af" name="Ragnar Blackmane" hidden="false" collective="false" import="true" targetId="c730-c6a1-40ae-1bf0" type="selectionEntry"/>
@@ -12865,6 +12866,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="d391-6395-0b97-8587" name="Wolf Guard Battle Leader in Phobos Armour" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="6f37-636e-dbf9-022a">
+          <conditions>
+            <condition field="selections" scope="d391-6395-0b97-8587" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="67bb-6154-415c-64a6" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="476f-53ff-e553-f612" name="Wolf Guard Battle Leader in Phobos Armour" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -12879,14 +12887,9 @@
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="2d5e-d307-bd04-56b8" name="Tactical Precision" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="69fe-ce3d-be72-7936" name="Company Heroes" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Re-roll wound rolls of 1 made for friendly &lt;CHAPTER&gt; units within 6&quot; of this model.</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="360a-fe29-805c-e22e" name="Knife Fighter" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each unmodified hit roll of 6 made for attacks with this model&apos;s close combat weapon scores 2 hits instead of 1.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, every model in this unit must be set up at the same time, though they do not need to be set up in unit coherency. From that point onwards, each model is treated as a separate unit.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -12905,56 +12908,107 @@
         <categoryLink id="5f07-960e-5817-7e8d" name="Space Wolves" hidden="false" targetId="f093-e031-3131-7b82" primary="false"/>
         <categoryLink id="fceb-f114-8c47-85a5" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="0dd0-5420-a590-54ff" name="Master-crafted occulus bolt rifle" hidden="false" collective="false" import="true" type="upgrade">
+      <selectionEntryGroups>
+        <selectionEntryGroup id="d30c-3827-ab0c-b434" name="Weapon options" hidden="false" collective="false" import="true" defaultSelectionEntryId="4088-ea89-5761-8873">
           <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="988d-ca6b-1c2a-d565" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e38b-e72b-93c2-85e1" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9274-c886-5ae3-ec91" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5d67-65f5-ef02-8984" type="min"/>
           </constraints>
-          <profiles>
-            <profile id="cf00-8f8c-1588-f079" name="Master-crafted occulus bolt rifle" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-              <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Units do not receive the benefit of cover to their saving throws against attacks made with this weapon.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="4.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="1348-bdb5-3dd4-a3d8" name="Grav-chute" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e98-1751-cf1c-f123" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f13b-822e-ef60-ad07" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="90d1-b42d-a379-b882" name="Grav-chute" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, you can set up this model in low altitude instead of placing it on the battlefield. At the end of any of your Movement phases this model can descend - set it up anywhere on the battlefield that is more than 9&quot; away from any enemy models.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name="pts" typeId="points" value="2.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+          <selectionEntries>
+            <selectionEntry id="4088-ea89-5761-8873" name="Rifle and paired blades" hidden="false" collective="false" import="true" type="upgrade">
+              <selectionEntries>
+                <selectionEntry id="4159-7619-b051-991c" name="Master-crafted occulus bolt rifle" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8e8d-8f68-0620-928a" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="28dc-cd84-496e-0858" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="ea78-be82-f677-0e04" name="Master-crafted occulus bolt rifle" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                      <characteristics>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
+                        <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+                        <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Units do not receive the benefit of cover to their saving throws against attacks made with this weapon.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="4.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="598a-0e88-fad0-252e" name="Grav-chute" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f34b-a802-ab5f-7c86" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7b30-fe8c-c2c0-949e" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="1352-1290-ba6f-cc94" name="Grav-chute" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, you can set up this model in low altitude instead of setting it up on the battlefield. if you do, at the end of one of your Movement phases you can set up this model anywhere on the battlefield that is more than 9&quot; away from any enemy models.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name="pts" typeId="points" value="2.0"/>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="3584-3f25-1e04-cdf1" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="0334-f487-8229-0c1a" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9094-1e33-62cf-922c" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce46-e287-dc74-baf0" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="4298-4a03-7c31-4270" name="Paired combat blades" hidden="false" collective="false" import="true" targetId="6683-a537-8c7d-eee9" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2d95-964a-adf1-11f2" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dba3-42ee-7a8e-a6cf" type="min"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry id="67bb-6154-415c-64a6" name="Heavy pistol and combat knife" hidden="false" collective="false" import="true" type="upgrade">
+              <selectionEntries>
+                <selectionEntry id="851e-5aeb-6918-5bbb" name="Smoke grenades" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1ed9-342e-449e-149b" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2bda-2204-2fcc-b22b" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="f777-18f4-e244-d4ea" name="Smoke grenades" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, instead of shooting in your Shooting phase, it can use its smoke grenades. Until the start of your next Shooting phase, when resolving an attack made with a ranged weapon against this model, subtract 1 from the hit roll.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="983d-854b-0c87-cd05" name="Heavy Bolt Pistol" hidden="false" collective="false" import="true" targetId="0190-fc85-9a4a-8179" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b67b-0b6d-d9d0-7077" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="44d9-f0be-4a34-baaa" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="dbbe-68c2-15cc-64e3" name="Combat knife" hidden="false" collective="false" import="true" targetId="bc0b-c19f-0b71-081e" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ba4c-0d33-86a2-47a3" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2087-0e00-d82b-aac6" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="f4ba-8be8-a1e8-a827" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="0334-f487-8229-0c1a" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="71ff-2612-e6cb-ae26" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6a0d-4b95-3ea8-e963" type="max"/>
-          </constraints>
-        </entryLink>
         <entryLink id="d847-a0c4-660e-1d57" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0eaa-8e12-7579-e935" type="min"/>
