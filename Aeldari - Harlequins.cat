@@ -1902,9 +1902,6 @@
       <infoLinks>
         <infoLink id="a95c-ac20-79b5-4b42" name="Hungering Blade" hidden="false" targetId="2cec-eb16-6120-2e36" type="profile"/>
       </infoLinks>
-      <entryLinks>
-        <entryLink id="8e92-702e-8110-8e8d" name="Ynnari Relic" hidden="false" collective="false" import="true" targetId="4fe9-79c4-b3c9-9318" type="selectionEntry"/>
-      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -1925,9 +1922,6 @@
       <infoLinks>
         <infoLink id="4759-40a5-e086-dd31" name="Song of Ynnead" hidden="false" targetId="ff90-6b1b-6dbb-2f56" type="profile"/>
       </infoLinks>
-      <entryLinks>
-        <entryLink id="048a-d97e-9440-1c6f" name="Ynnari Relic" hidden="false" collective="false" import="true" targetId="4fe9-79c4-b3c9-9318" type="selectionEntry"/>
-      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -2344,8 +2338,21 @@
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="4eab-df08-9faa-926c" name="Relics of Ynnead" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="increment" field="8a22-20ca-28ad-5069" value="1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="8a22-20ca-28ad-5069" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a1c9-09d6-2587-9553" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9a38-f51a-595a-b5d9" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8a22-20ca-28ad-5069" type="max"/>
       </constraints>
       <entryLinks>
         <entryLink id="6254-b3ce-5a2c-972b" name="Corag Hai&apos;s Locket" hidden="false" collective="false" import="true" targetId="7f29-5de0-1c4c-234d" type="selectionEntry"/>
