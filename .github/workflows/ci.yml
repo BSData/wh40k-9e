@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+      types:
+        - opened
+        - synchronize
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    env:
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install wham
+      run: dotnet tool install wham --version 0.7.0-beta.1  --tool-path ../tools
+    - name: Publish snapshot.bsr
+      run: ../tools/wham publish -f snapshot -o artifacts/snapshot --verbosity detailed
+    - name: Upload snapshot.bsr as workflow artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: snapshot
+        path: artifacts/snapshot
