@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="109" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="110" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -1748,7 +1748,6 @@
         <categoryLink id="d9f9-95c9-081c-f754" name="New CategoryLink" hidden="false" targetId="7320-eafd-02c1-94da" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="bceb-2fd8-bd33-6304" name="Operative Requisition Sanctioned" hidden="false" collective="false" import="true" targetId="0b7d-bfe1-b63e-ecb6" type="selectionEntry"/>
     <entryLink id="d692-f83a-aa11-a25a" name="Primus Redoubt" hidden="false" collective="false" import="true" targetId="b801-d1d1-7c34-facf" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="340b-ca49-5722-d355" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
@@ -5582,38 +5581,15 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="0b7d-bfe1-b63e-ecb6" name="Operative Requisition Sanctioned" hidden="true" collective="false" import="true" type="upgrade">
+    <selectionEntry id="0b7d-bfe1-b63e-ecb6" name="Operative Requisition Sanctioned" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="hidden" value="false">
+        <modifier type="set" field="hidden" value="true">
           <conditionGroups>
-            <conditionGroup type="and">
+            <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" childId="4c9f-f934-ed79-84fe" type="equalTo"/>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" childId="4ad1-1315-97ea-dd25" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" childId="4c9f-f934-ed79-84fe" type="notEqualTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" childId="4ad1-1315-97ea-dd25" type="notEqualTo"/>
               </conditions>
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0fb8-6813-9c29-a03d" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7472-4b9e-c2fe-e071" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b619-ccba-8c99-4699" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="203b-f8dd-2a64-2676" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="104e-06dd-4514-8e80" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="53e9d88f-7463-8c27-fe67-e1a0d1ed0287" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0cc2-3545-6762-a3f7" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d124-b283-2ff7-beae" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="62ed-66a0-988c-e34e" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="91ff-e116-e0a5-e883" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ebe8-544e-1fe8-fcde" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="846d-3c14-21fc-369f" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
