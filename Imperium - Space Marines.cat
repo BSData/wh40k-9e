@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="119" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="120" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -1304,6 +1304,9 @@
         <categoryLink id="74a6-9f8a-7c42-d41f" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="90bc-9c06-c153-11cc" name="Adrax Agatone" publicationId="846d-3c14-pubN65537" hidden="false" collective="false" import="true" targetId="1c5a-2bf6-5609-86b2" type="selectionEntry"/>
+    <entryLink id="70b1-88f6-bd24-605f" name="Tor Garadon" hidden="false" collective="false" import="true" targetId="007e-c391-6dc1-5727" type="selectionEntry"/>
+    <entryLink id="81a0-8f4c-0e3c-3325" name="Stratagem: Trust of Prometheus" hidden="false" collective="false" import="true" targetId="f422-7c39-2864-f15f" type="selectionEntry"/>
   </entryLinks>
   <infoLinks>
     <infoLink id="69aa-c5f2-5b03-a0f4" name="Bolter Discipline" hidden="false" targetId="5a7e-f984-487c-d767" type="rule"/>
@@ -13373,7 +13376,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="8.0"/>
-        <cost name="pts" typeId="points" value="135.0"/>
+        <cost name="pts" typeId="points" value="130.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -15562,6 +15565,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="307f-0e75-0ebd-1df2" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6180-75c5-dced-be4d" type="max"/>
       </constraints>
       <profiles>
         <profile id="b53e-4c79-3102-9114" name="The Fist of Vengeance" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -15592,7 +15596,6 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0334-f487-8229-0c1a" type="equalTo"/>
               </conditions>
             </conditionGroup>
@@ -16218,6 +16221,18 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
         <profile id="2d70-0fd7-add6-1572" name="Tactical Precision" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Re-roll wound rolls of 1 made for friendly &lt;CHAPTER&gt; units within 6&quot; of this model.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="8c77-9652-ed4f-870a" name="Terror Troops" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cee1-d093-2a34-4656" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Enemy units must subtract 1 from their Leadership characteristic if they are within 3&quot; of any Phobos Lieutenants</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -19205,6 +19220,271 @@ You can only use this Stratagem once per battle.</characteristic>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="1c5a-2bf6-5609-86b2" name="Adrax Agatone" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9859-bf56-c735-4099" type="equalTo"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9e43-6e51-2a4a-56cc" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <profiles>
+        <profile id="2d53-e1fb-1bdc-e1c3" name="Adrax Agatone" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">6</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">5</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="aeab-657b-753a-b826" name="Unto the Anvil" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to wound rolls for attacks made with melee weapons by models in friendly SALAMANDERS units whilst their unit is within 6&quot; of this model and if that unit made a charge move, was charged or performed a Heroic Intervention this turn.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="0af9-71be-57b6-0aec" name="Arridian Drakehide Cloak" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack against this model, reduce the Damage characteristic of the weapon used by 1, to a minimum of 1, for that attack.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="7374-1be1-1cba-3087" name="Drakkis" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon hits automatically</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="7012-504e-5c3b-1af8" name="Malleus Noctum" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, subtract 1 from the hit roll</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="86df-7d21-1746-9bf5" name="Rites of Battle" hidden="false" targetId="922c-75db-5ca4-3750" type="profile"/>
+        <infoLink id="4b63-eb91-c96e-bb67" name="Iron Halo" hidden="false" targetId="242c-3bac-1ff3-48b0" type="profile"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="dd71-7270-0a85-9b54" name="Captain" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
+        <categoryLink id="bcd8-a472-c6ec-bc9d" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
+        <categoryLink id="3cd5-3acb-76cd-85b3" name="Faction: Adeptus Astartes" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
+        <categoryLink id="4c5d-f469-549a-e003" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="1a24-d05f-ba6c-988d" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+        <categoryLink id="bdc4-e1cf-8e6d-11be" name="Primaris" hidden="false" targetId="53b7-cff3-c3b4-d36a" primary="false"/>
+        <categoryLink id="8abb-3f5c-9b6a-0ac4" name="Salamanders" hidden="false" targetId="8a0e-466b-406e-0f8b" primary="false"/>
+        <categoryLink id="6418-eef5-48fa-29b6" name="Salamanders" hidden="false" targetId="16cb-31a4-fae3-a5b2" primary="false"/>
+        <categoryLink id="3518-cdaf-e101-30e7" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink id="3db3-1cee-3377-99fe" name="New EntryLink" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="11f3-4279-0900-dd08" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b4c-2179-e04f-40bb" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
+        <cost name="pts" typeId="points" value="140.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="007e-c391-6dc1-5727" name="Tor Garadon" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9e43-6e51-2a4a-56cc" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <profiles>
+        <profile id="a223-cc8c-c875-b0d8" name="Tor Garadon" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">7</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">5</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="0652-9b8f-220d-fed3" name="Signum Array" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Shooting phase, you can select one friendly IMPERIAL FISTS unit that is within 3&quot; of this model. Models in the selected unit have a Ballistic Skill characteristic of 2+ until the end of that phase.
+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="4984-0379-cca5-05ab" name="Siege Captain" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made by this model against a VEHICLE or BUILDING unit, add 1 to the Damage characteristic of the weapon being used for that attack. </characteristic>
+          </characteristics>
+        </profile>
+        <profile id="ccfb-c0b8-95f3-5f21" name="Hand of Defiance" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">X3</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack with this weapon, subtract 1 from the hit roll</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="caed-611a-394a-6b7c" name="Iron Halo" hidden="false" targetId="242c-3bac-1ff3-48b0" type="profile"/>
+        <infoLink id="b88b-b128-6d58-dec4" name="Rites of Battle" hidden="false" targetId="922c-75db-5ca4-3750" type="profile"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="fc9f-2b5e-9182-d1e6" name="Captain" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
+        <categoryLink id="2597-3a9c-ae3f-27be" name="Faction: Adeptus Astartes" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
+        <categoryLink id="2bab-9d54-a409-eba0" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="5cf2-4a47-67a5-d2e3" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+        <categoryLink id="9cd9-89f4-f575-c9f1" name="Imperial Fists" hidden="false" targetId="6b7c-3d51-f050-7398" primary="false"/>
+        <categoryLink id="466e-1dd2-5988-6a71" name="Mk X Gravis" hidden="false" targetId="82df-13db-9e7b-15a3" primary="false"/>
+        <categoryLink id="92f4-640b-84a5-68c1" name="Primaris" hidden="false" targetId="53b7-cff3-c3b4-d36a" primary="false"/>
+        <categoryLink id="fe98-39b1-dda7-37d1" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink id="601b-ed71-0ae1-ca19" name="Grav-gun" hidden="false" collective="false" import="true" targetId="b6ce-39c2-2200-2cc3" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d8fa-5a10-8b73-6a72" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6632-6de6-fe8b-892a" type="min"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="140.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="f422-7c39-2864-f15f" name="Stratagem: Trust of Prometheus" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6f55-8ec3-2276-d80a" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="6259-2ab3-405f-0f2a" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="076f-9b2d-0467-787e" name="Stratagem: Master Artisans" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bdea-780b-b8b4-a689" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="9841-faed-28ea-8706" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b469-e757-7437-4027" name="Stratagem: Champion of Blades" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c9ac-71fc-ed71-d040" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="4150-4d96-ad62-0f45" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0106-f83e-0241-76a6" name="Stratagem: Gift of the Phalanx" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8a49-569c-4497-ea04" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="7355-03a4-0375-8110" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="f11e-6eca-c706-dff0" name="Sgt Equipment" hidden="false" collective="false" import="true">
@@ -19570,30 +19850,6 @@ You can only use this Stratagem once per battle.</characteristic>
         <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0350-6271-81cb-c21c" type="max"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="74f7-eabd-40c9-6467" name="The Salamander&apos;s Mantle (SM2018)" hidden="false" collective="false" import="true" type="upgrade">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9859-bf56-c735-4099" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="cbca-d3ef-9668-2c93" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="ba6c-18ce-c682-1b83" name="The Salamander&apos;s Mantle" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The wearer of the Salamander&apos;s Mantle increases their Toughness characteristic by 1. (Not included in profile)</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
         <selectionEntry id="e4d3-d9da-e8df-4b04" name="The Crusader&apos;s Helm (SM2018)" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
@@ -19891,31 +20147,6 @@ You can only use this Stratagem once per battle.</characteristic>
             </modifier>
           </modifiers>
           <selectionEntries>
-            <selectionEntry id="e534-63e6-9555-8019" name="The Eye of Hypnoth" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2320-a425-3dc7-7296" type="equalTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="81fa-5a41-631f-8e56" type="max"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2353-fd2f-62c0-1226" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="263b-a771-a641-4419" name="The Eye of Hypnoth" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Re-roll wound rolls of 1 for shooting attacks made by friendly SIEGEBREAKER COHORT units within 6&quot; of the bearer.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
             <selectionEntry id="a19b-357b-2c47-5670" name="The Holy Orb" hidden="false" collective="false" import="true" type="upgrade">
               <modifiers>
                 <modifier type="set" field="hidden" value="true">
@@ -20766,10 +20997,286 @@ You can only use this Stratagem once per battle.</characteristic>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup id="d5cd-f3de-b6d9-c1d7" name="Relics of Nocturne" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="d1d3-79ca-3e45-420e" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="atLeast"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f422-7c39-2864-f15f" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="0438-72fb-0463-3fda" value="0.0">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f422-7c39-2864-f15f" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d1d3-79ca-3e45-420e" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0438-72fb-0463-3fda" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="8666-e4b9-88c0-6541" name="The Salamander&apos;s Mantle" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9d27-220a-62ed-7f89" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="267a-85f5-7768-bef7" name="The Salamander&apos;s Mantle" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made against a model with this Relic, subtract 1 from the wound roll.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="2684-08dd-14fe-b3f7" name="Vulkan&apos;s Sigil" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0341-10b6-89ef-2dd2" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="6ffe-19fa-a7e0-134b" name="Vulkan&apos;s Sigil" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Attacks characteristic of a model with this Relic. In addition, once per battle, at the start of the Fight phase, a model with this Relic can hold aloft Vulkan’s Sigil. Until the end of that phase, add 1 to the Attacks characteristic of models in friendly SALAMANDERSunits whilst their unit is within 6&quot; of that model (note that the Attacks characteristic of the model with this Relic is therefore increased by 2 until the end of the phase).</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="6c5c-b026-0915-f702" name="Drake-Smiter" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0e57-eaf5-763f-9c45" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3e28-f720-c889-6ff1" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="9836-7475-16a3-609b" name="Drake-Smiter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, subtract 1 from the hit roll, and on an unmodified wound roll of 6 add 3 to the Damage characteristic of this weapon for that attack.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="663b-7137-7cad-cf53" name="Wrath of Prometheus" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="20ba-f46f-3d44-93ca" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="7547-7859-f023-d311" name="Wrath of Prometheus" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="36e1-759b-59b4-bc3f" name="Tome of Vel&apos;cona" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e691-aad7-d21c-1023" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="67c0-9cd4-c8a2-4786" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="3d69-487a-0438-3653" name="Tome of Vel&apos;cona" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">LIBRARIAN model only. A model with this Relic knows one psychic power from the Promethean discipline (pg 62) in addition to any other powers it knows. When a Psychic test is taken for a model with this Relic that is attempting to manifest a psychic power from the Promethean discipline, you can add 1 to the total. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="47d2-38cc-8b30-cf36" name="Nocturne&apos;s Vengeance" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c6a1-e0c4-c1b1-dce1" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f80e-480a-b106-a550" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="4518-b709-2b71-fffb" name="Nocturne&apos;s Vengeance - Boltgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"></characteristic>
+                  </characteristics>
+                </profile>
+                <profile id="1d34-54eb-aedc-8a78" name="Nocturne&apos;s Vengeance - Flamer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made using the master-crafted flamer profile of this weapon, do not make a hit roll: it automatically scores a hit.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="9943-1251-795d-aed0" name="Helm of Draklos" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7a68-26c4-b858-9568" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="9600-9523-8ecc-940c" name="Helm of Draklos" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">PRIMARIS model only. Add 1 to the Wounds characteristic of a model with this Relic. Subtract 1 from the Leadership characteristic of models in enemy units whilst their unit is within 6&quot; of a model with this Relic.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="3093-e227-bd76-0bf7" name="Relics of the Fists" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="a4db-520f-e948-24e7" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="atLeast"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b469-e757-7437-4027" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="8318-2384-6a2d-303f" value="0.0">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b469-e757-7437-4027" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8318-2384-6a2d-303f" type="max"/>
+            <constraint field="selections" scope="roster" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a4db-520f-e948-24e7" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="8a1f-2620-a576-f09a" name="The Eye of Hypnoth" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2906-5417-2199-0558" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="696b-62e5-e5b1-00b1" name="The Eye of Hypnoth" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a ranged weapon by a model in anIMPERIAL FISTS unit that is within 6&quot; of a friendly model with this Relic, re-roll a wound roll of 1.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="c36e-556f-25c7-bcc7" name="The Banner of Staganda" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2d28-8fed-1b2d-1999" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="643c-34b0-f50a-baef" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="3346-632d-b9aa-d976" name="The Banner of Staganda" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">ANCIENT model only. When resolving an attack made with a melee weapon by a model in an IMPERIAL FISTS unit that is within 6&quot; of a friendly model with this Relic, add 1 to the hit roll. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="a27d-7a99-91c4-aa8a" name="The Bones of Osrak" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e691-aad7-d21c-1023" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e56f-53b3-2d4d-1873" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="28a0-c29f-7822-5e36" name="The Bones of Osrak" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">LIBRARIAN only. When a Psychic test is taken for a model with this Relic that is attempting to manifest a psychic power from the Geokinesis discipline (pg 62), you can re-roll the result.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+          <entryLinks>
+            <entryLink id="8880-35bc-a0cc-8ca9" name="The Spartean" hidden="false" collective="false" import="true" targetId="77a5-732b-6cb4-6552" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e451-c25d-952d-a02e" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="98dc-80fb-713f-0f8b" name="The Fist of Vengeance" hidden="false" collective="false" import="true" targetId="9415-194a-0212-a282" type="selectionEntry"/>
-        <entryLink id="10fa-fe82-ca88-1473" name="The Spartean" hidden="false" collective="false" import="true" targetId="77a5-732b-6cb4-6552" type="selectionEntry"/>
         <entryLink id="86d3-8689-4726-06a6" name="Duty&apos;s Burden" hidden="false" collective="false" import="true" targetId="2e82-e727-1da5-b06a" type="selectionEntry"/>
         <entryLink id="d2f5-4ef1-6651-8e7b" name="Special-Issue Wargear" hidden="false" collective="false" import="true" targetId="81fa-73cf-0cea-37a0" type="selectionEntryGroup"/>
       </entryLinks>
@@ -20933,23 +21440,6 @@ You can only use this Stratagem once per battle.</characteristic>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="269a-4138-c0fe-f813" type="max"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="0461-43d1-2eb3-566c" name="Anvil of Strength" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9859-bf56-c735-4099" type="equalTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <infoLinks>
-                <infoLink id="7c61-fb5a-4a6e-2f34" name="Anvil of Strength" hidden="false" targetId="05cc-be62-d02a-ff67" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
             <selectionEntry id="3ff7-467d-012f-336e" name="Tenacious Opponent" hidden="false" collective="false" import="true" type="upgrade">
               <modifiers>
                 <modifier type="set" field="hidden" value="true">
@@ -20960,23 +21450,6 @@ You can only use this Stratagem once per battle.</characteristic>
               </modifiers>
               <infoLinks>
                 <infoLink id="ca27-30a9-530e-e34f" name="Tenacious Opponent" hidden="false" targetId="759c-7ee7-95ae-6ac2" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="4b4a-f0b0-e237-c463" name="Architect of War" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <infoLinks>
-                <infoLink id="08ef-1120-8019-16df" name="Architect of War" hidden="false" targetId="045c-abf3-7e15-5198" type="profile"/>
               </infoLinks>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -21744,6 +22217,184 @@ You can only use this Stratagem once per battle.</characteristic>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup id="51d8-dd3f-00be-dada" name="Warlord Traits (Salamanders)" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <selectionEntries>
+            <selectionEntry id="3c9b-9d11-c389-c9d0" name="Anvil of Strength" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="012f-ee7c-9551-35dc" type="max"/>
+              </constraints>
+              <infoLinks>
+                <infoLink id="62d6-2933-151e-dd96" name="Anvil of Strength" hidden="false" targetId="05cc-be62-d02a-ff67" type="profile"/>
+              </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="edca-d707-f92e-051e" name="Miraculous Constitution" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aee2-f442-38e0-9009" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="1bb5-1bbc-4550-6191" name="Miraculous Constitution" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this Warlord would lose a wound, roll one D6; on a 6, that wound is not lost.In addition, at the start of your Movement phase, this Warlord regains 1 lost wound.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="d598-d457-7ede-b661" name="Never Give Up" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b43-2027-e391-d277" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="a435-a775-40a8-6730" name="Never Give Up" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of the battle round, you can select one friendly SALAMANDERSunit within 6&quot; of this Warlord. Until the end of that battle round, that unit has the Defenders of Humanity ability (see Codex: Space Marines).</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="2fa4-7031-79c6-2fff" name="Forge Master" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="21c3-0a22-cacf-f395" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="0bdd-b219-13d9-ad2c" name="Forge Master" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 2 to the Toughness characteristic of this warlord</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="01ed-e22e-42a0-44ba" name="Patient and Determined" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f752-5679-bc07-09b9" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="b4b6-0d4c-db0a-d035" name="Patient and Determined" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per Shooting phase and/or once per Fight phase, when resolving an attack made by this Warlord, do not make a hit roll: it automatically scores a hit. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="86de-7863-8492-660c" name="Lord of Fire" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fc29-1c0a-d853-848d" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="f269-9ecf-6fe4-6019" name="Lord of Fire" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">There are no secrets of flame and fire unknown to this Salamander, and he uses them in battle like no other.You can re-roll the dice to determine the number of attacks made with flame weapons (see Codex: Space Marines) by friendly SALAMANDERS models whilst their unit is within 6&quot; of this Warlord.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="7ea2-be45-aa85-b871" name="Warlord Traits (Imperial Fists)" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <selectionEntries>
+            <selectionEntry id="a681-29a3-74d8-9d57" name="Architect of War" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d8fe-cbaf-2a7d-a64c" type="max"/>
+              </constraints>
+              <infoLinks>
+                <infoLink id="956b-5580-7be3-2441" name="Architect of War" hidden="false" targetId="045c-abf3-7e15-5198" type="profile"/>
+              </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="a206-313f-be04-e149" name="Siege Master" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1d43-e8e0-0592-3b94" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="855f-b01a-6789-e2af" name="Siege Master" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made by this Warlord against a BUILDING or VEHICLE unit, add 1 to the wound roll.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="3907-72d9-c549-863f" name="Indomitable" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d898-1dc3-1815-9ee4" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="8efb-abcd-5667-1055" name="Indomitable" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made against this Warlord, an unmodified wound roll of 1-3 always fail, irrespective of any abilities that the weapon or the model making that attack may have. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="3941-f73e-9bd0-c8d7" name="Fleetmaster" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="579f-8e12-d0c8-fbf6" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="66fd-880d-866c-41e8" name="Fleetmaster" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, at the end of your Fight phase, if this Warlord remained stationary and did not make any attacks this turn it can call down an orbital strike. If it does, select one point on the battlefield and roll one D6 for each unit within D6&quot; of that point, subtracting 1 from the result if the unit being rolled for is a CHARACTER. On a 4+ the unit being rolled for suffers D3 mortal wounds. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="1c5c-7ea2-af77-99f8" name="Stubborn Heroism" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="93b9-b9d4-996d-3314" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="c98b-07ae-8908-1cf3" name="Stubborn Heroism" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord cannot Fall Back. When resolving an attack against this Warlord, halve any damage inflicted (rounding up).</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="ff16-c9d4-4b01-efdd" name="Hand of Dorn" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d7f3-8d0d-4763-15e5" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="647a-4309-fa99-b557" name="Hand of Dorn" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Before the battle, if your army is Battle-forged, roll one D3; you gain a number of Command Points equal to the result. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="7b7e-278d-917c-fb27" name="Warlord Traits (BRB)" hidden="false" collective="false" import="true" targetId="d442-1f03-d9da-e77f" type="selectionEntryGroup">
@@ -22083,26 +22734,8 @@ You can only use this Stratagem once per battle.</characteristic>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d91f-bc26-6073-d34d" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c0d1-ee6f-73bb-6393" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2311-84ce-ab63-707a" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="076f-9b2d-0467-787e" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0106-f83e-0241-76a6" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -22665,6 +23298,193 @@ You can only use this Stratagem once per battle.</characteristic>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup id="a548-a72e-a9ea-6f1d" name="Special Issue - Imperial Fists" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="17bb-3363-ae9a-b4aa" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="71e4-97ed-1ca3-e6be" name="Fist of Terra" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="34c3-cdc6-8ae4-aa01" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="864d-afc8-02b2-5ebf" name="Fist of Terra" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"></characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="399d-7fd6-e8b4-c108" name="Gatebreaker Bolts" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b327-b9fa-f8f6-8e92" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="861d-ad16-40ed-2cdb" name="Gatebreaker Bolts" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When you give a model this Relic, select one bolt weapon (see Codex: Space Marines) that model is equipped with. When the bearer shoots with that weapon, you can choose for it to fire a gatebreaker bolt. If you do, you can only make one attack with that weapon, but if that attack hits, make D3 wound rolls instead of one (each successful wound roll results in a wound that must be allocated). When resolving that attack, the weapon has an Armour Penetration characteristic of -5 and a Damage characteristic of 1 for that attack. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="efb4-7cad-7904-39a4" name="Auric Aquila" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9240-8ce1-44fd-0096" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="7a97-2890-b769-f295" name="Auric Aquila" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with this Relic has a 4+ invulnerable save. When a model with this Relic would lose a wound as a result of a mortal wound in the Psychic phase, roll one D6; on a 5+ that wound is not lost.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="f36d-0699-1963-d4c4" name="Warden&apos;s Cuirass" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="41e9-f826-29f4-984c" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="4a20-83e7-41dd-3f62" name="Warden&apos;s Cuirass" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Wounds characteristic of a model with this Relic.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="be8d-1034-6b63-c3f0" name="Special Issue - Salamanders" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="14c7-1878-f9a5-a0e1" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="5de2-11c2-8cd0-1597" name="Obsidian Aquila" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d43-2b48-9e2f-2032" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="5c16-240d-d266-fa89" name="Obsidian Aquila" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a friendly &lt;CHAPTER&gt;model within 6&quot; of a model with this Relic would lose a wound, roll one D6; on a 6+ that wound is not lost. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="5e2d-280b-3463-a88b" name="Promethean Plate" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e596-7300-8e6b-720d" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="8509-95e6-3483-8a37" name="Promethean Plate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made against a model with this Relic, an unmodified wound roll of 1, 2 or 3 always fails, irrespective of any abilities that the weapon or the model making that attack may have.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="2a78-db80-251b-8f74" name="Dragonrage Bolts" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ab28-3f16-8438-132d" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="172b-d9eb-b1b6-4669" name="Dragonrage Bolts" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When you give a model this Relic, select one bolt weapon (see Codex: Space Marines) that model is equipped with. When the bearer shoots with that weapon, you can choose for it to fire a dragonrage bolt. If you do, you can only make one attack with that weapon, but if that attack hits, make D6 wound rolls instead of one (each successful wound roll results in a wound that must be allocated). When resolving that attack, the target does not receive the benefit of cover to its saving throw, and that weapon has a Damage characteristic of 1 and an Armour Penetration characteristic of -1 for that attack.
+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="f0f4-ea65-ecaf-8e44" name="Drakeblade" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc9e-551d-9afb-78d5" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7d93-d63c-bfba-c879" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc0b-c19f-0b71-081e" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d3c0-0759-f387-630f" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0c49-ff40-bf62-d4a9" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="9291-0a51-f48c-d1af" name="Drakeblade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, on an unmodified wound roll of 6 the target suffers 1 mortal wound in addition to any normal damage. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
     <selectionEntryGroup id="9420-230e-7273-5694" name="Indomitus Discipline" hidden="false" collective="false" import="true">
@@ -23181,6 +24001,13 @@ You can only use this Stratagem once per battle.</characteristic>
       </constraints>
       <entryLinks>
         <entryLink id="7cff-1547-0788-181c" name="Librarius Discipline" hidden="false" collective="false" import="true" targetId="edd9-59c0-8f74-3b36" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b58-36bd-930c-e8be" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="46e5-48c2-0504-5fc7" type="max"/>
           </constraints>
@@ -23278,7 +24105,219 @@ You can only use this Stratagem once per battle.</characteristic>
             <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="59f7-77cc-a2df-ef11" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="db10-f2ff-312b-4983" name="Geokinesis Discipline" hidden="false" collective="false" import="true" targetId="4867-6449-af62-d88f" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="aab5-ebc8-1311-caa1" value="0.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7cff-1547-0788-181c" type="atLeast"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="de72-c9b9-8b14-c319" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aab5-ebc8-1311-caa1" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="2367-de52-1f9a-ea77" name="Promethean Discipline" hidden="false" collective="false" import="true" targetId="d167-6498-583b-d8d2" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="8925-5d59-5216-a5f8" value="0.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7cff-1547-0788-181c" type="atLeast"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="de72-c9b9-8b14-c319" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8925-5d59-5216-a5f8" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="d167-6498-583b-d8d2" name="Promethean Discipline" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4d79-eec3-1ff9-f279" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <selectionEntries>
+        <selectionEntry id="abb5-0fb1-c358-5f76" name="1) Flaming Blast" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="244b-2bce-c53a-ec4b" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="540d-6129-2dc8-cd4c" name="1) Flaming Blast" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Flaming Blasthas a warp charge value of 6. If manifested, select one point on the battlefield within 24&quot; of and visible to this psyker. Roll one D6 for each enemy unit within 3&quot; of that point; on a 4+ that unit suffers 1 mortal wound.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="d810-d9c9-cdc7-6cad" name="2) Fire Shield" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="21fd-e09f-21ad-7a08" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="8c3a-8180-b148-df8e" name="2) Fire Shield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Fire Shieldhas a warp charge value of 6. If manifested, select one friendly SALAMANDERSunit within 18&quot; of this psyker. Until the start of your next Psychic phase, when resolving an attack made with a ranged weapon against that unit, subtract 1 from the hit roll. In addition, when a charge roll is made for a charge that unit is a target of, subtract 1 from the result.
+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="3b75-66be-b35d-c405" name="3) Burning Hands" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b635-3f5e-ee81-c610" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="b342-61af-6e2c-e416" name="3) Burning Hands" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Burning Handshas a warp charge value of 6. If manifested, then until the start of your next Psychic phase, when resolving an attack made with a close combat weapon (the profile for which can be found in the Warhammer 40,000 core rules) by this psyker, if a hit is scoredthe target suffers 1 mortal wound and the attack sequence ends.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="f959-694b-0830-d40a" name="4) Drakeskin" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5bfd-4adf-f6ac-9b6c" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="cc19-5deb-abe8-9bdb" name="4) Drakeskin" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Drakeskin has a warp charge value of 6. If manifested, select one friendly SALAMANDERSunit within 12&quot; of this psyker. Until the start of your next Psychic phase, add 1 to the Toughness characteristic of models in that unit.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="a27e-5ce9-c0b2-39fa" name="5) Fury of Nocturne" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e52c-e386-1ef0-fb83" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="863c-e537-169b-38c4" name="5) Fury of Nocturne" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Fury of Nocturnehas a warp charge value of 6. If manifested, select one enemy unit within 18&quot; of and visible to this psyker. Roll 2D6; if the result is greater than the highest Toughness characteristic of models in that unit, that unit suffers D3 mortal wounds.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="3baf-7dbf-a148-ce50" name="6) Draconic Aspect" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ada9-4222-fa95-eeca" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="d26d-05de-4875-45a0" name="6) Draconic Aspect" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Draconic Aspecthas a warp charge value of 6. If manifested, then until the start of your next Psychic phase, subtract 2 from the Leadership characteristic of models in enemy units whilst their unit is within 12&quot; of this psyker.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="4867-6449-af62-d88f" name="Geokinesis Discipline" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f878-fe21-2fb2-08e5" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4036-fd70-849b-7e5d" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <selectionEntries>
+        <selectionEntry id="5a82-f06e-73ab-6a5d" name="1) Tectonic Purge" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8fee-a9a8-68a0-eed2" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="0e4b-f768-7e97-7e76" name="1) Tectonic Purge" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Tectonic Purgehas a warp charge value of 6. If manifested, then until the start of your next Psychic phase, when a charge roll is made for an enemy unit within 12&quot; of this psyker, subtract 2 from the result. </characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="038a-a55b-c51c-bdad" name="2) Wrack and Ruin" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc2d-9f3f-af99-40aa" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="e4c1-19b0-8784-b3a6" name="2) Wrack and Ruin" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Wrack and Ruinhas a warp charge value of 6. If manifested, select one BUILDINGunit within 18&quot; of and visible to this psyker, or select one enemy unit that is wholly within or on a terrain feature and is within 18&quot; of and visible to this psyker. Roll nine D6, adding 1 to the result if the unit you selected was a BUILDING; for each roll of 5+ that unit suffers 1 mortal wound.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="94d0-a5f7-75bc-57b7" name="3) Iron Inferno" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5ba5-6dfc-ca7f-bfa9" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="45c0-276a-5802-3a37" name="3) Iron Inferno" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Iron Infernohas a warp charge value of 6. If manifested, select one point on the battlefield within 18&quot; of and visible to this psyker. Roll one D6 for each enemy unit within 6&quot; of that point; on a 4+ that unit suffers 1 mortal wound.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="263e-4827-e11f-350b" name="4) Fortify" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4da7-c915-2a04-85b9" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="3879-f8a6-243c-385d" name="4) Fortify" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Fortify has a warp charge value of 4. If manifested, select one friendly IMPERIAL FISTS INFANTRYor IMPERIAL FISTS BIKER model within 12&quot; of the psyker; that model regains up to D3 lost wounds.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="b971-3727-15b5-1dc6" name="5) Aspect of Stone" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="54db-d1c4-5c60-6046" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="a7cc-c7d4-7a8d-1d2c" name="5) Aspect of Stone" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Aspect of Stonehas a warp charge value of 5. If manifested, then until the start of your next Psychic phase, add 2 to this psyker’s Strength and Toughness characteristics. 
+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="55da-04ac-1671-17f3" name="6) Chasm" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="58fb-d4e0-c7f2-4f6b" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="4a10-0a28-a9cd-667a" name="6) Chasm" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Chasm has a warp charge value of 6. If manifested, select one enemy unit that cannot FLYand is within 18&quot; of and visible to this psyker. Roll 2D6: if the result is less than the lowest Move characteristic in that unit it suffers 1 mortal wound; if the result equals the lowest Move characteristic in that unit it suffers D3 mortal wounds; if the result is greater than the lowest Move characteristic in that unit it suffers 3 mortal wounds. </characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
@@ -23983,12 +25022,13 @@ You can only use this Stratagem once per battle.</characteristic>
     </profile>
     <profile id="759c-7ee7-95ae-6ac2" name="Tenacious Opponent" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If there are at least 10 enemy models within 6&quot; of your warlord when he fights in the fight phase, add D3 Attacks until the end of the phase.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When you choose this Warlord to fight with, if there are at least five enemy models within 6&quot; of them, add D3 to this Warlord’s Attacks characteristic until the end of the phase. </characteristic>
       </characteristics>
     </profile>
     <profile id="045c-abf3-7e15-5198" name="Architect of War" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a weapon that has an Armour Penetration characteristic of -1 against a friendly IMPERIAL FISTS unit that is within 6&quot; of this Warlord and receiving the benefit of cover, add 2 to the saving throw instead of 1.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack against a friendly IMPERIAL FISTS unit within 6&quot; of this Warlord with a weapon that has an Armour Penetration characteristic of -1, if that unit is receiving the benefit of cover, add an additional 1 to the saving throw. This does not apply to invulnerable saving throws.
+</characteristic>
       </characteristics>
     </profile>
     <profile id="da2d-565c-a02f-0887" name="Deadly Hunter" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -24016,12 +25056,12 @@ You can only use this Stratagem once per battle.</characteristic>
     </profile>
     <profile id="3421-2042-b0e7-91ed" name="Refuse to Die" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The first time this Warlord is destroyed, roll one D6 at the end of the phase. On a 4+ return this Warlord to play with D3 wounds remaining, placing them as close as possible to their previous position and more than 1&quot; away from any enemy models</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The first time this Warlord is destroyed, roll one D6 at the end of the phase. On a 4+ return this Warlord to play with D3 wounds remaining, placing them as close as possible to their previous position and more than 1&quot; away from any enemy models.</characteristic>
       </characteristics>
     </profile>
     <profile id="6240-85a6-478e-9727" name="Stoic Defender" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">All friendly CRIMSON FISTS INFANTRY, BIKER and DREADNOUGHT units have the Defenders of Humanity ability whilst they are within 6&quot; of this Warlord. If a Crimson Fists unit already has this ability, then each model in that unit counts as two models for the purposes of determining who controls objective markers, whilst they are within 6&quot; of this Warlord.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly CRIMSON FISTS units have the Defenders of Humanity ability (see Codex: Space Marines) whilst they are within 6&quot; of this Warlord. If such a unit already has that ability, each model in that unit counts as two models for the purposes of that ability.</characteristic>
       </characteristics>
     </profile>
     <profile id="d150-acf5-f48a-5bce" name="Camo cloak" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
