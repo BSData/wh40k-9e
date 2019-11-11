@@ -15565,6 +15565,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="307f-0e75-0ebd-1df2" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6180-75c5-dced-be4d" type="max"/>
       </constraints>
       <profiles>
         <profile id="b53e-4c79-3102-9114" name="The Fist of Vengeance" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -16220,6 +16221,18 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
         <profile id="2d70-0fd7-add6-1572" name="Tactical Precision" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Re-roll wound rolls of 1 made for friendly &lt;CHAPTER&gt; units within 6&quot; of this model.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="8c77-9652-ed4f-870a" name="Terror Troops" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cee1-d093-2a34-4656" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Enemy units must subtract 1 from their Leadership characteristic if they are within 3&quot; of any Phobos Lieutenants</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -23988,6 +24001,13 @@ You can only use this Stratagem once per battle.</characteristic>
       </constraints>
       <entryLinks>
         <entryLink id="7cff-1547-0788-181c" name="Librarius Discipline" hidden="false" collective="false" import="true" targetId="edd9-59c0-8f74-3b36" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b58-36bd-930c-e8be" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="46e5-48c2-0504-5fc7" type="max"/>
           </constraints>
