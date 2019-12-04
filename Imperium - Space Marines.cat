@@ -13173,6 +13173,13 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
           </conditions>
         </modifier>
       </modifiers>
+      <profiles>
+        <profile id="e549-de4e-be24-7e83" name="Paired Combatants" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While this unit contains at least as many Initiates as Neophytes, when resolving an attack  made with a melee weapon by a Neophyte in this unit, re-roll hit roll of 1. </characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
       <infoLinks>
         <infoLink id="c3b4-037f-ca4a-1f88" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
         <infoLink id="e1c4-18cc-abcc-b0de" name="Initiate" hidden="false" targetId="95a0-e2cb-1ad9-df9f" type="profile"/>
@@ -13187,11 +13194,11 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       <selectionEntryGroups>
         <selectionEntryGroup id="2070-61e6-fbcd-bdaa" name="Initiates" hidden="false" collective="false" import="true" defaultSelectionEntryId="3b69-1f92-ee25-dc54">
           <constraints>
-            <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5a2f-18e7-43d6-cb73" type="max"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5a2f-18e7-43d6-cb73" type="max"/>
             <constraint field="selections" scope="parent" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ce7-d6c1-0c29-e3b0" type="min"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="3b69-1f92-ee25-dc54" name="Initiate" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="3b69-1f92-ee25-dc54" name="Initiate" hidden="false" collective="false" import="true" type="model">
               <entryLinks>
                 <entryLink id="f530-c793-0ba8-6c6c" name="Boltgun" hidden="false" collective="false" import="true" targetId="ca06-ac13-d02f-6f9a" type="selectionEntry">
                   <constraints>
@@ -13218,9 +13225,10 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="ed1c-c27c-b6ec-9121" name="Sword Brother" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="ed1c-c27c-b6ec-9121" name="Sword Brother" hidden="false" collective="false" import="true" type="model">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1ae2-5b83-5cf1-12ca" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0869-4632-df02-6f95" type="min"/>
               </constraints>
               <infoLinks>
                 <infoLink id="f872-f81c-ce78-c104" name="Sword Brother" hidden="false" targetId="acef-29ce-37c1-f52d" type="profile"/>
@@ -13245,7 +13253,19 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="9c2c-5271-d283-eff1" name="Initiate w/Special Weapon" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="9c2c-5271-d283-eff1" name="Initiate w/Special Weapon" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="set" field="7163-d297-dc9a-7730" value="0.0">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9c2c-5271-d283-eff1" type="equalTo"/>
+                        <condition field="selections" scope="34f7-244e-b627-2fa1" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0fbd-3b4a-2131-1a5a" type="lessThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7163-d297-dc9a-7730" type="max"/>
               </constraints>
@@ -13275,7 +13295,19 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="0fbd-3b4a-2131-1a5a" name="Initiate w/Heavy Weapon" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="0fbd-3b4a-2131-1a5a" name="Initiate w/Heavy Weapon" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="set" field="920a-9b28-10f3-ca68" value="0.0">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9c2c-5271-d283-eff1" type="equalTo"/>
+                        <condition field="selections" scope="34f7-244e-b627-2fa1" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="lessThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="920a-9b28-10f3-ca68" type="max"/>
               </constraints>
@@ -13334,7 +13366,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="a9dc-6a55-6e4d-2048" name="Initiate w/Chainsword" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="a9dc-6a55-6e4d-2048" name="Initiate w/Chainsword" hidden="false" collective="false" import="true" type="model">
               <entryLinks>
                 <entryLink id="e9de-5665-6e95-099b" name="Chainsword" hidden="false" collective="false" import="true" targetId="4334-d2da-32f5-dc53" type="selectionEntry">
                   <constraints>
@@ -13368,7 +13400,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
             <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2867-5878-22ab-f69a" type="max"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="1505-908d-097f-cc71" name="Neophyte w/Shotgun" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="1505-908d-097f-cc71" name="Neophyte w/Shotgun" hidden="false" collective="false" import="true" type="model">
               <infoLinks>
                 <infoLink id="9bc3-7901-9d1f-59d7" name="Neophyte" hidden="false" targetId="aae5-5941-e6d5-2466" type="profile"/>
               </infoLinks>
@@ -13398,7 +13430,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="7c93-53f7-b433-db7f" name="Neophyte w/Boltgun" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="7c93-53f7-b433-db7f" name="Neophyte w/Boltgun" hidden="false" collective="false" import="true" type="model">
               <infoLinks>
                 <infoLink id="b107-79f5-7206-7963" name="Neophyte" hidden="false" targetId="aae5-5941-e6d5-2466" type="profile"/>
               </infoLinks>
@@ -13428,7 +13460,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="f2b8-9670-9aea-cc6f" name="Neophyte w/Combat Knife" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="f2b8-9670-9aea-cc6f" name="Neophyte w/Combat Knife" hidden="false" collective="false" import="true" type="model">
               <infoLinks>
                 <infoLink id="3e77-b5a6-f3d6-7a0d" name="Neophyte" hidden="false" targetId="aae5-5941-e6d5-2466" type="profile"/>
               </infoLinks>
@@ -20098,6 +20130,11 @@ You can only use this Stratagem once per battle.</characteristic>
       <infoLinks>
         <infoLink id="5d4d-f27a-0d9e-3869" name="Artificer Crozius" hidden="false" targetId="705d-9450-34ad-d127" type="profile"/>
       </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -20465,32 +20502,6 @@ You can only use this Stratagem once per battle.</characteristic>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="76a3-1824-1310-2e34" type="max"/>
         <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0350-6271-81cb-c21c" type="max"/>
       </constraints>
-      <selectionEntries>
-        <selectionEntry id="e4d3-d9da-e8df-4b04" name="The Crusader&apos;s Helm (SM2018)" hidden="false" collective="false" import="true" type="upgrade">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0f6a-448b-7d89-e525" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f0db-cd81-4827-443d" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="d160-232d-e890-ec7d" name="The Crusader&apos;s Helm" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The wearer of the Crusader’s Helm increases the range of its aura abilities by 3&quot; (to a maximum of 12&quot;).</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="ab23-6c79-0e95-98dd" name="Codex Relics" hidden="false" collective="false" import="true">
           <selectionEntries>
@@ -21950,6 +21961,70 @@ You can only use this Stratagem once per battle.</characteristic>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
+        <selectionEntryGroup id="9cfa-0f6b-3112-436c" name="Crusade Relics" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0f6a-448b-7d89-e525" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a3f4-25d7-05fb-a9f8" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c1c6-ea91-54df-eec5" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="609b-fbaa-4cec-5a24" name="The Crusader&apos;s Helm" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3b36-124d-198f-0aa1" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="8acb-e48e-de88-eb61" name="The Crusader&apos;s Helm" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The wearer of the Crusader’s Helm increases the range of its aura abilities by 3&quot; (to a maximum of 12&quot;). In addition, at the start of your Movement Phase, select one BLACK TEMPLARS unit that has a Combat Doctrine ability within 6&quot; of this model. Until the start of your next Movement Phase, the Assault Doctrine becomes active for that unit, replacing the currently active Combat Doctrine</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="3061-6cf8-964e-77a0" name="Witchseeker Bolts" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1120-0016-c553-4735" type="max"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry id="73ce-9849-b037-a2d0" name="The Aurillian Shroud" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9773-1638-606f-3f8d" type="max"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry id="5c16-252a-e2c7-fde3" name="Ancient Breviary" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c3f5-f3b2-bdbb-4742" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5263-b6cb-59cb-ac4a" type="max"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry id="eb97-7de4-5ba1-6d7c" name="Skull of Cacodominus" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="eafa-35e5-f577-7f06" type="max"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry id="6b3e-02cc-6aa0-fa1c" name="Sword of Judgement" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0fe6-fc1e-2e9f-c3f5" type="max"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="98dc-80fb-713f-0f8b" name="The Fist of Vengeance" hidden="false" collective="false" import="true" targetId="9415-194a-0212-a282" type="selectionEntry"/>
@@ -23141,6 +23216,11 @@ You can only use this Stratagem once per battle.</characteristic>
               <infoLinks>
                 <infoLink id="087d-fcba-f2ec-f951" name="Epitome of Piety" hidden="false" targetId="3478-7323-108c-d302" type="profile"/>
               </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="8c04-e663-331c-c9ed" name="Paragon of Fury" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -23149,6 +23229,11 @@ You can only use this Stratagem once per battle.</characteristic>
               <infoLinks>
                 <infoLink id="bad7-b38c-e25e-8fa9" name="Paragon of Fury" hidden="false" targetId="9c8d-93a7-3707-6cf2" type="profile"/>
               </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="9aff-b399-5112-f2c5" name="Master of Arms" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -23157,6 +23242,11 @@ You can only use this Stratagem once per battle.</characteristic>
               <infoLinks>
                 <infoLink id="5d2c-9440-4bdb-b721" name="Master of Arms" hidden="false" targetId="e442-7c68-b44f-20c2" type="profile"/>
               </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="b6d7-dd56-ad9c-aa6f" name="Inspirational Fighter" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -23165,6 +23255,11 @@ You can only use this Stratagem once per battle.</characteristic>
               <infoLinks>
                 <infoLink id="62cc-1334-2248-aafa" name="Inspirational Fighter" hidden="false" targetId="0650-00a3-56e2-c9b7" type="profile"/>
               </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="2297-265a-aa08-a1ab" name="Frontline Commander" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -23173,6 +23268,11 @@ You can only use this Stratagem once per battle.</characteristic>
               <infoLinks>
                 <infoLink id="072a-a52b-08e9-7aa9" name="Frontline Commander" hidden="false" targetId="38d9-e002-1023-b6dc" type="profile"/>
               </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -23564,31 +23664,61 @@ You can only use this Stratagem once per battle.</characteristic>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3765-1995-a1bd-265f" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="dc7c-c6dd-7203-e4c7" name="2. Psalm of the Remorseless Persecution" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="408e-9af6-167e-581b" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="bba5-b7a4-29b3-65c3" name="3. Vow of Retribution" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="accc-f512-a510-0218" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="ba88-8572-0867-9dc2" name="4. Fires of Devotion" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aed5-5b88-30dc-c41e" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="11af-28d7-d32b-fc26" name="5. Fervent Acclamation" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="899f-15e3-480f-702e" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="b906-072d-2a16-a439" name="6. Oath of Glory" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1396-2366-b238-1c71" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
