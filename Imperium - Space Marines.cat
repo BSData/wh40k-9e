@@ -1334,6 +1334,14 @@
     <entryLink id="e1ed-9713-2233-fe94" name="Stratagem: Master Artisans" hidden="false" collective="false" import="true" targetId="076f-9b2d-0467-787e" type="selectionEntry"/>
     <entryLink id="5864-ec85-83f9-08bb" name="Stratagem: Gift of the Phalanx" hidden="false" collective="false" import="true" targetId="0106-f83e-0241-76a6" type="selectionEntry"/>
     <entryLink id="c905-1a21-e78f-da93" name="Stratagem: Champion of Blades" hidden="false" collective="false" import="true" targetId="b469-e757-7437-4027" type="selectionEntry"/>
+    <entryLink id="d414-434c-a3fb-a5a3" name="Strategem: Crusader Relics" hidden="false" collective="false" import="true" targetId="0611-c994-ccfe-9cc6" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="8ad3-22e9-7b74-571f" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </entryLink>
   </entryLinks>
   <infoLinks>
     <infoLink id="69aa-c5f2-5b03-a0f4" name="Bolter Discipline" hidden="false" targetId="5a7e-f984-487c-d767" type="rule"/>
@@ -3327,6 +3335,11 @@
             <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e277-184d-4e8a-6177" type="equalTo"/>
           </conditions>
         </modifier>
+        <modifier type="add" field="category" value="92b8-bb7d-eff0-5772">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e0a6-ed26-3732-6cde" type="equalTo"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <profiles>
         <profile id="56f0-bb3f-91ce-85ea" name="Chaplain" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -3361,6 +3374,7 @@
         <categoryLink id="0faa-2929-c625-2a76" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="f4d4-9229-cb07-476f" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="b518-f32b-4eb8-dd88" name="New CategoryLink" hidden="false" targetId="c3f5-f3b2-bdbb-4742" primary="false"/>
+        <categoryLink id="467d-9456-3113-6d11" name="Priest" hidden="false" targetId="b0b9-4578-dfef-18fd" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="b70d-424f-726a-5307" name="Weapon" hidden="false" collective="false" import="true">
@@ -3434,6 +3448,7 @@
           </modifiers>
         </entryLink>
         <entryLink id="bb22-7d94-b72d-c39f" name="Litanies of Battle" hidden="false" collective="false" import="true" targetId="edab-e2c4-01f5-63cc" type="selectionEntryGroup"/>
+        <entryLink id="af80-1522-23d7-f2dc" name="Strategem: Master of Sanctity" hidden="false" collective="false" import="true" targetId="e0a6-ed26-3732-6cde" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -13246,6 +13261,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8bb9-bf09-80a3-3789" type="min"/>
                   </constraints>
                 </entryLink>
+                <entryLink id="d11c-04e5-1d97-d9d4" name="Special-Issue Wargear" hidden="false" collective="false" import="true" targetId="81fa-73cf-0cea-37a0" type="selectionEntryGroup"/>
               </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="13.0"/>
@@ -17870,30 +17886,9 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       </costs>
     </selectionEntry>
     <selectionEntry id="29c0-3526-09e2-09ea" name="Stratagem: Chief Librarian" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c7d6-760f-9ae8-1038" type="equalTo"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9e43-6e51-2a4a-56cc" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ce82-873f-2ce7-d1ba" type="max"/>
       </constraints>
-      <profiles>
-        <profile id="6f50-ab86-5ef1-b32a" name="Chief Librarian" publicationId="eaff-9d37-65fa-35a2" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle. Select one BLOOD RAVEN LIBRARIAN model from your army. That model gains the CHIEF LIBRARIAN keyword and the following ability:
-&apos;Chief Librarian: This model knows one additional psychic power from their chosen discipline and can attempt to deny one additional psychic power in your opponent&apos;s Psychic phase.&apos;
-You can only use this Stratagem once per battle.</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
       <categoryLinks>
         <categoryLink id="7baf-b4d7-fb39-4a03" name="Chief Librarian" hidden="false" targetId="4215-316f-c94d-89fb" primary="false"/>
       </categoryLinks>
@@ -20136,6 +20131,90 @@ You can only use this Stratagem once per battle.</characteristic>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="c87c-7eac-1ddf-d620" name="Sword of Judgement" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc9e-551d-9afb-78d5" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7d93-d63c-bfba-c879" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="223b-6e41-7923-c785" type="max"/>
+      </constraints>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0611-c994-ccfe-9cc6" name="Strategem: Crusader Relics" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0f6a-448b-7d89-e525" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ec3e-b443-4d43-fc8f" type="max"/>
+        <constraint field="selections" scope="roster" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ff2-22c6-8d93-591e" type="max"/>
+      </constraints>
+    </selectionEntry>
+    <selectionEntry id="b51d-f416-0be9-9aae" name="Witchseeker Bolts" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="52c5-c3f8-df1a-56e6" type="max"/>
+      </constraints>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="aa91-5482-2e82-173a" name="Skull of Cacodominus" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fa08-d5e8-c196-d3c7" type="max"/>
+      </constraints>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="e0a6-ed26-3732-6cde" name="Strategem: Master of Sanctity" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="51a9-e2ec-56f6-a52b" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="937a-cdfb-0aac-3df0" type="max"/>
+      </constraints>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="3084-8fed-8fe6-f200" name="Strategem: Chief Apothecary" hidden="false" collective="false" import="true" type="upgrade">
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="07db-61ce-b741-93a8" name="Strategem: Master of the Forge" hidden="false" collective="false" import="true" type="upgrade">
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="c791-b2fc-df48-1834" name="Strategem: Chapter Ancient" hidden="false" collective="false" import="true" type="upgrade">
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="29bc-7957-a56d-1aeb" name="Strategem: Chapter Champion" hidden="false" collective="false" import="true" type="upgrade">
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="f11e-6eca-c706-dff0" name="Sgt Equipment" hidden="false" collective="false" import="true">
@@ -20495,6 +20574,7 @@ You can only use this Stratagem once per battle.</characteristic>
             <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c0d1-ee6f-73bb-6393" repeats="1" roundUp="false"/>
             <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0106-f83e-0241-76a6" repeats="1" roundUp="false"/>
             <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="076f-9b2d-0467-787e" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0611-c994-ccfe-9cc6" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
       </modifiers>
@@ -21991,15 +22071,15 @@ You can only use this Stratagem once per battle.</characteristic>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="3061-6cf8-964e-77a0" name="Witchseeker Bolts" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1120-0016-c553-4735" type="max"/>
-              </constraints>
-            </selectionEntry>
             <selectionEntry id="73ce-9849-b037-a2d0" name="The Aurillian Shroud" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9773-1638-606f-3f8d" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="5c16-252a-e2c7-fde3" name="Ancient Breviary" hidden="false" collective="false" import="true" type="upgrade">
               <modifiers>
@@ -22012,18 +22092,30 @@ You can only use this Stratagem once per battle.</characteristic>
               <constraints>
                 <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5263-b6cb-59cb-ac4a" type="max"/>
               </constraints>
-            </selectionEntry>
-            <selectionEntry id="eb97-7de4-5ba1-6d7c" name="Skull of Cacodominus" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="eafa-35e5-f577-7f06" type="max"/>
-              </constraints>
-            </selectionEntry>
-            <selectionEntry id="6b3e-02cc-6aa0-fa1c" name="Sword of Judgement" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0fe6-fc1e-2e9f-c3f5" type="max"/>
-              </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
+          <entryLinks>
+            <entryLink id="eacf-e808-3ff7-2a2a" name="Sword of Judgement" hidden="false" collective="false" import="true" targetId="c87c-7eac-1ddf-d620" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce5d-65bb-4f67-2148" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="d770-b61a-0552-9558" name="Witchseeker Bolts" hidden="false" collective="false" import="true" targetId="b51d-f416-0be9-9aae" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3188-ada9-f2f6-a219" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="8e26-8e0c-6a8b-fba7" name="Skull of Cacodominus" hidden="false" collective="false" import="true" targetId="aa91-5482-2e82-173a" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="252b-c9e1-6847-aeff" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
@@ -23276,6 +23368,32 @@ You can only use this Stratagem once per battle.</characteristic>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup id="36a7-2a32-2b40-53c4" name="Warlord Traits (Master of Sanctity)" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e0a6-ed26-3732-6cde" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <selectionEntries>
+            <selectionEntry id="ba56-ea68-0642-f3e3" name="Wise Orator" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="65cc-3dc0-ef55-e475" type="max"/>
+              </constraints>
+            </selectionEntry>
+            <selectionEntry id="ebaa-7d17-9092-0028" name="Bellowing Firebrand" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="992c-b13d-d3f3-e39c" type="max"/>
+              </constraints>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="9e1d-08ee-218d-3095" name="Warlord Traits (Chief Apothecary)" hidden="false" collective="false" import="true"/>
+        <selectionEntryGroup id="849e-f77d-9603-c4e2" name="Warlord Traits (Chief Librarian)" hidden="false" collective="false" import="true"/>
+        <selectionEntryGroup id="d423-bde1-9dc1-6d67" name="Warlord Traits (Master of the Forge)" hidden="false" collective="false" import="true"/>
+        <selectionEntryGroup id="cc54-b433-2052-613e" name="Warlord Traits (Chapter Ancient)" hidden="false" collective="false" import="true"/>
+        <selectionEntryGroup id="90bd-2245-e546-7c80" name="Warlord Traits (Chapter Champion)" hidden="false" collective="false" import="true"/>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="7b7e-278d-917c-fb27" name="Warlord Traits (BRB)" hidden="false" collective="false" import="true" targetId="d442-1f03-d9da-e77f" type="selectionEntryGroup">
@@ -23434,8 +23552,8 @@ You can only use this Stratagem once per battle.</characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="81e2-2d01-89cc-c0f0" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="34f9-ec3b-4628-4775" type="instanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="92b8-bb7d-eff0-5772" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e0a6-ed26-3732-6cde" type="equalTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -23741,6 +23859,7 @@ You can only use this Stratagem once per battle.</characteristic>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2311-84ce-ab63-707a" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="076f-9b2d-0467-787e" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0106-f83e-0241-76a6" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0611-c994-ccfe-9cc6" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -23982,6 +24101,13 @@ You can only use this Stratagem once per battle.</characteristic>
           </selectionEntries>
         </selectionEntryGroup>
         <selectionEntryGroup id="c7b3-05a2-e487-9f39" name="Special Issue - Any" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ed1c-c27c-b6ec-9121" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6017-5c64-7ea8-2fda" type="max"/>
           </constraints>
@@ -24315,6 +24441,11 @@ You can only use this Stratagem once per battle.</characteristic>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ed1c-c27c-b6ec-9121" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="17bb-3363-ae9a-b4aa" type="max"/>
@@ -24529,6 +24660,40 @@ You can only use this Stratagem once per battle.</characteristic>
               </costs>
             </selectionEntry>
           </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="60ff-09be-ddcf-6ea1" name="Crusader Relics" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0611-c994-ccfe-9cc6" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="80d8-df1b-ac4c-e03f" type="max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="f71b-6571-5544-1366" name="Sword of Judgement" hidden="false" collective="false" import="true" targetId="c87c-7eac-1ddf-d620" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0d6a-a1ad-0b0c-0320" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="9001-c8bf-7704-0260" name="Witchseeker Bolts" hidden="false" collective="false" import="true" targetId="b51d-f416-0be9-9aae" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9683-5d10-e1bc-2d82" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="c86b-899e-de11-4866" name="Skull of Cacodominus" hidden="false" collective="false" import="true" targetId="aa91-5482-2e82-173a" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="78e9-4cd6-dfe7-20a1" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
