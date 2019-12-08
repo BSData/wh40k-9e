@@ -3584,7 +3584,7 @@
     </selectionEntry>
     <selectionEntry id="0e57-eaf5-763f-9c45" name="Thunder hammer" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="points" value="21">
+        <modifier type="set" field="points" value="40.0">
           <conditions>
             <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
           </conditions>
@@ -3949,7 +3949,7 @@
     </selectionEntry>
     <selectionEntry id="a4da-e81d-f108-fbc2" name="Thunder hammer" hidden="false" collective="true" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="points" value="21">
+        <modifier type="set" field="points" value="40.0">
           <conditions>
             <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
           </conditions>
