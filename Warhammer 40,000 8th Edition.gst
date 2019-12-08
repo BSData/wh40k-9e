@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="111" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="112" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -2726,7 +2726,7 @@
     </selectionEntry>
     <selectionEntry id="90de-7b01-e401-888b" name="Lightning Claw" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="points" value="6">
+        <modifier type="set" field="points" value="5.0">
           <conditions>
             <condition field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="90de-7b01-e401-888b" type="equalTo"/>
           </conditions>
@@ -2736,7 +2736,7 @@
         <infoLink id="9e71-d43e-6873-f182" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="8.0"/>
+        <cost name="pts" typeId="points" value="6.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -3651,7 +3651,7 @@
         <infoLink id="44bd-0f76-dc31-c734" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="12.0"/>
+        <cost name="pts" typeId="points" value="10.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -3922,7 +3922,7 @@
     </selectionEntry>
     <selectionEntry id="b514-74d2-1c95-4f8f" name="Lightning Claw" hidden="false" collective="true" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="points" value="6">
+        <modifier type="set" field="points" value="5.0">
           <conditions>
             <condition field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="90de-7b01-e401-888b" type="equalTo"/>
           </conditions>
@@ -3932,7 +3932,7 @@
         <infoLink id="1fad-df38-d957-a2c5" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="8.0"/>
+        <cost name="pts" typeId="points" value="6.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -3942,7 +3942,7 @@
         <infoLink id="2897-f3f7-3ec2-e6fa" name="Lightning claw" hidden="false" targetId="7584-238f-3174-4529" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="12.0"/>
+        <cost name="pts" typeId="points" value="10.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
