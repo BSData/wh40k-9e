@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e0a4-2172-4397-e39a" name="Aeldari - Drukhari" revision="60" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e0a4-2172-4397-e39a" name="Aeldari - Drukhari" revision="61" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="e0a4-2172-pubN65537" name="Codex: Drukhari"/>
     <publication id="e0a4-2172-pubN101270" name="Imperial Armour - Index: Xenos"/>
@@ -524,6 +524,13 @@
   </infoLinks>
   <sharedSelectionEntries>
     <selectionEntry id="3ea9-f42c-d816-b91a" name="Archon" publicationId="e0a4-2172-pubN65537" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="append" field="name" value="[Legends]">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0938-43eb-d3d2-180c" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <modifierGroups>
         <modifierGroup>
           <conditions>
@@ -619,11 +626,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="0938-43eb-d3d2-180c" name="Phantasm Grenade Launcher" hidden="false" collective="false" import="true" targetId="4448-243b-2379-2c73" type="selectionEntry">
-          <modifiers>
-            <modifier type="append" field="name" value="[Legends]"/>
-          </modifiers>
-        </entryLink>
+        <entryLink id="0938-43eb-d3d2-180c" name="Phantasm Grenade Launcher" hidden="false" collective="false" import="true" targetId="4448-243b-2379-2c73" type="selectionEntry"/>
         <entryLink id="050f-a8e8-8f93-54fa" name="Artefacts of Cruelty" hidden="false" collective="false" import="true" targetId="e852-3a50-d3ca-9934" type="selectionEntryGroup"/>
         <entryLink id="d139-7e67-3ea5-3dd1" name="Warlord (Archon)" hidden="false" collective="false" import="true" targetId="cc15-a76d-b1be-7604" type="selectionEntry">
           <constraints>
@@ -676,28 +679,14 @@
         <categoryLink id="5349-d558-8135-16cf" name="New CategoryLink" hidden="false" targetId="8fca-4ed9-4326-8a23" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
-        <selectionEntryGroup id="e4e3-33bf-d875-bfc3" name="Melee Weapon " hidden="false" collective="false" import="true" defaultSelectionEntryId="cfab-9953-88f6-d838">
+        <selectionEntryGroup id="e4e3-33bf-d875-bfc3" name="Melee Weapon " hidden="false" collective="false" import="true">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="7d6c-cfc8-c584-9fa5" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="12b6-a32a-9896-e37a" type="max"/>
           </constraints>
-          <selectionEntries>
-            <selectionEntry id="cfab-9953-88f6-d838" name="Haemonculus tools" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1ef6-0649-6f2b-ecc2" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="deb3-8748-d69b-9d96" name="Haemonculus tools" hidden="false" targetId="88da-6173-adb2-9e7a" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
           <entryLinks>
             <entryLink id="6c4e-d772-2c4e-fc9c" name="Weapons of Torture" hidden="false" collective="false" import="true" targetId="8df7-75dd-f85d-05c4" type="selectionEntryGroup"/>
+            <entryLink id="a351-b8e6-f8a9-85c1" name="Haemonculus tools" publicationId="e0a4-2172-pubN65537" hidden="false" collective="false" import="true" targetId="76ba-9d92-1454-87db" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
         <selectionEntryGroup id="4a38-45c4-abb3-07d9" name="Ranged Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="e359-c966-16f2-746f">
@@ -2270,37 +2259,14 @@
                 </profile>
               </profiles>
               <selectionEntryGroups>
-                <selectionEntryGroup id="72f8-f029-c803-d3d9" name="Melee Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="5b5b-3f90-b253-f784">
-                  <selectionEntries>
-                    <selectionEntry id="5b5b-3f90-b253-f784" name="Haemonculus tools" hidden="false" collective="false" import="true" type="upgrade">
-                      <modifiers>
-                        <modifier type="set" field="c90b-e6ca-5024-bf50" value="0.0">
-                          <conditions>
-                            <condition field="selections" scope="6728-e97b-022d-1d7e" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bb31-23e5-693c-72df" type="atLeast"/>
-                          </conditions>
-                        </modifier>
-                        <modifier type="set" field="7418-1f3a-acda-3f23" value="0.0">
-                          <conditions>
-                            <condition field="selections" scope="6728-e97b-022d-1d7e" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bb31-23e5-693c-72df" type="atLeast"/>
-                          </conditions>
-                        </modifier>
-                      </modifiers>
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c90b-e6ca-5024-bf50" type="min"/>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7418-1f3a-acda-3f23" type="max"/>
-                      </constraints>
-                      <infoLinks>
-                        <infoLink id="6fad-b770-7278-66ba" name="New InfoLink" hidden="false" targetId="88da-6173-adb2-9e7a" type="profile"/>
-                      </infoLinks>
-                      <costs>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="pts" typeId="points" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
-                  </selectionEntries>
+                <selectionEntryGroup id="72f8-f029-c803-d3d9" name="Melee Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="c5ba-5700-b156-a700">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="46b2-54f7-0ec5-d577" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1a64-6782-9b9c-b15e" type="max"/>
+                  </constraints>
                   <entryLinks>
                     <entryLink id="bb31-23e5-693c-72df" name="Weapons of Torture" hidden="false" collective="false" import="true" targetId="8df7-75dd-f85d-05c4" type="selectionEntryGroup"/>
+                    <entryLink id="c5ba-5700-b156-a700" name="Haemonculus tools" publicationId="e0a4-2172-pubN65537" hidden="false" collective="false" import="true" targetId="76ba-9d92-1454-87db" type="selectionEntry"/>
                   </entryLinks>
                 </selectionEntryGroup>
                 <selectionEntryGroup id="4c45-17e5-6fa5-8336" name="Ranged Weapon" hidden="false" collective="false" import="true">
@@ -2332,22 +2298,6 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5c3c-6c18-6db9-8aa2" type="max"/>
               </constraints>
-              <selectionEntries>
-                <selectionEntry id="dc17-004a-5589-6f31" name="Haemonculus Tools" hidden="false" collective="false" import="true" type="upgrade">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="9cb7-f087-17f2-2831" type="min"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ff07-fdea-b99d-2ea0" type="max"/>
-                  </constraints>
-                  <infoLinks>
-                    <infoLink id="03cc-7fb8-309e-9048" name="New InfoLink" hidden="false" targetId="88da-6173-adb2-9e7a" type="profile"/>
-                  </infoLinks>
-                  <costs>
-                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                    <cost name="pts" typeId="points" value="0.0"/>
-                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                  </costs>
-                </selectionEntry>
-              </selectionEntries>
               <selectionEntryGroups>
                 <selectionEntryGroup id="4cfe-fb81-96f8-5157" name="Special weapon" hidden="false" collective="false" import="true">
                   <constraints>
@@ -2360,6 +2310,13 @@
                   </entryLinks>
                 </selectionEntryGroup>
               </selectionEntryGroups>
+              <entryLinks>
+                <entryLink id="c287-91fc-3605-4308" name="Haemonculus tools" hidden="false" collective="false" import="true" targetId="76ba-9d92-1454-87db" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e53-40b6-bbc6-aaa0" type="min"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="9.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -3070,6 +3027,18 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="8a61-8b56-4ce5-893f" name="Beastmaster" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="append" field="name" value="[Legends]">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eea2-7add-82eb-3afe" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8820-c11a-8fa2-6170" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <modifierGroups>
         <modifierGroup>
           <conditions>
@@ -3140,7 +3109,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="72c8-e5d1-b147-04ef" type="max"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="8820-c11a-8fa2-6170" name="Beastmaster&apos;s scourge [Legends]" publicationId="d36f-0c87-284a-7055" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="8820-c11a-8fa2-6170" name="Beastmaster&apos;s scourge" publicationId="d36f-0c87-284a-7055" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3fcb-b79b-9c79-6183" type="max"/>
               </constraints>
@@ -3165,11 +3134,7 @@
           </selectionEntries>
           <entryLinks>
             <entryLink id="e2da-a85f-1f8e-e75f" name="Agoniser" hidden="false" collective="false" import="true" targetId="277e-79e0-b605-ca05" type="selectionEntry"/>
-            <entryLink id="eea2-7add-82eb-3afe" name="Power sword" hidden="false" collective="false" import="true" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
-              <modifiers>
-                <modifier type="append" field="name" value="[Legends]"/>
-              </modifiers>
-            </entryLink>
+            <entryLink id="eea2-7add-82eb-3afe" name="Power sword" hidden="false" collective="false" import="true" targetId="bc9e-551d-9afb-78d5" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -5248,20 +5213,6 @@
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="ee70-b782-f97a-8954" name="Haemonculus tools" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="3653-2fab-5795-6a47" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="d960-fb3b-cfa7-ac4e" type="max"/>
-          </constraints>
-          <infoLinks>
-            <infoLink id="b428-c0ff-ae42-2211" name="Haemonculus tools" hidden="false" targetId="88da-6173-adb2-9e7a" type="profile"/>
-          </infoLinks>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
         <selectionEntry id="0e4e-563a-f417-4a66" name="Alliance of Agony" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
@@ -5289,6 +5240,11 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0bae-908e-cffd-c0ee" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d60b-75f4-5726-606a" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="07ce-726c-051e-f2d4" name="Haemonculus tools" hidden="false" collective="false" import="true" targetId="76ba-9d92-1454-87db" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d00e-9a03-dc5d-1cce" type="min"/>
           </constraints>
         </entryLink>
       </entryLinks>
@@ -8098,6 +8054,19 @@
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="76ba-9d92-1454-87db" name="Haemonculus tools" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fcf7-2465-4d18-d25c" type="max"/>
+      </constraints>
+      <infoLinks>
+        <infoLink id="bdf5-811e-42ea-ed81" name="New InfoLink" hidden="false" targetId="88da-6173-adb2-9e7a" type="profile"/>
+      </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
