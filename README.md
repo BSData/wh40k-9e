@@ -4,7 +4,6 @@ Warhammer 40,000 8th Edition
 [![GitHub release](https://img.shields.io/github/release/BSData/wh40k.svg?style=flat-square)](https://github.com/BSData/wh40k/releases/latest)
 ![Github commits (since latest release)](https://img.shields.io/github/commits-since/BSData/wh40k/latest.svg?style=flat-square)
 [![Open Bug issues](https://img.shields.io/github/issues/bsdata/wh40k/Type%3A%20bug.svg?style=flat-square&label=bugs)](https://github.com/BSData/wh40k/issues?q=is%3Aissue+is%3Aopen+label%3A%22Type%3A+bug%22)
-[![Azure DevOps builds (branch)](https://img.shields.io/azure-devops/build/bsdata-devs/70736e70-cd5f-4af7-9ea5-541b66c3e4cb/1/master.svg?label=build%3A%20master&logo=azure-pipelines&style=flat-square)](https://dev.azure.com/bsdata-devs/data-repos/_build?definitionId=1)
 [![GitHub contributors](https://img.shields.io/github/contributors/BSData/wh40k.svg?style=flat-square)](https://github.com/BSData/wh40k/graphs/contributors)
 ![GitHub commit activity the past year](https://img.shields.io/github/commit-activity/y/BSData/wh40k.svg?style=flat-square)
 
