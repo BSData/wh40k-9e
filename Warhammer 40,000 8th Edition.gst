@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="112" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="113" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -1940,7 +1940,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="a66e-a15d-3c96-15b1" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+        <entryLink id="a66e-a15d-3c96-15b1" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="8"/>
           </modifiers>
@@ -2107,7 +2107,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bb71-e225-fac2-2f10" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="fffa-4525-6695-92fe" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+        <entryLink id="fffa-4525-6695-92fe" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9c87-3102-a6de-4c2a" type="max"/>
           </constraints>
@@ -2164,7 +2164,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="e9d2-249f-cbc1-de00" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+        <entryLink id="e9d2-249f-cbc1-de00" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="8"/>
           </modifiers>
@@ -2296,7 +2296,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="points" value="80.0"/>
+        <cost name="pts" typeId="points" value="85.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -4357,7 +4357,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="32ef-5dde-0a92-aef5" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+        <entryLink id="32ef-5dde-0a92-aef5" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="8"/>
           </modifiers>
@@ -5621,6 +5621,16 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="85.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="05be-50b6-5107-9878" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="48cb-7499-9f11-1912" name="Heavy bolter" hidden="false" targetId="e2b0-b9f1-6c38-584c" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="8.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
