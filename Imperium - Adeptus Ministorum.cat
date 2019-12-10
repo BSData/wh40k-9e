@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="73" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="74" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="d124-b283-pubN67455" name="Index: Imperium 2"/>
     <publication id="d124-b283-pubN72234" name="Codex: Adepta Sororitas"/>
@@ -1070,7 +1070,7 @@
         <categoryLink id="1665-05e2-acdd-7c44" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true"/>
       </categoryLinks>
       <selectionEntryGroups>
-        <selectionEntryGroup id="fc18-ac65-c71f-08f9" name="Missile Launcher" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="fc18-ac65-c71f-08f9" name="Missile Launcher" hidden="false" collective="false" import="true" defaultSelectionEntryId="8ca4-4d66-c676-b6c7">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1358-7a5c-d9e3-23e5" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7776-38e7-c6d0-d2cc" type="min"/>
@@ -2752,8 +2752,31 @@
         <categoryLink id="80c2-f1ee-ce6f-3291" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="cb10-024f-3ff9-76a4" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="037e-f1bf-ed4f-71df" name="Venerated Saint" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="280d-c634-7f0e-1da1" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc26-15c6-c010-e34c" type="max"/>
+          </constraints>
+          <costs>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="1258-96a0-0efb-3655" name="Litany of Deeds" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="1258-96a0-0efb-3655" name="Litany of Deeds" hidden="false" collective="false" import="true" defaultSelectionEntryId="233e-aad8-9bc1-c8b9">
+          <modifiers>
+            <modifier type="set" field="9c96-2c5e-ab6b-d208" value="2.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="037e-f1bf-ed4f-71df" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="68c8-80ad-d7dd-478c" value="2.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="037e-f1bf-ed4f-71df" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="68c8-80ad-d7dd-478c" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9c96-2c5e-ab6b-d208" type="max"/>
@@ -4046,7 +4069,7 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="1295-b868-9b4c-8641" name="Relics of the Ecclesiarchy (Ministorum Priest)" hidden="false" collective="false" import="true" targetId="f686-a4ca-0886-079d" type="selectionEntryGroup"/>
-        <entryLink id="feec-fbc7-39f6-5b43" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry">
+        <entryLink id="feec-fbc7-39f6-5b43" name="Warlord" hidden="false" collective="false" import="true" targetId="cc31-44af-22df-f291" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="de12-db72-752b-add1" type="max"/>
           </constraints>
