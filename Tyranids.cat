@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="7150-5917-ae80-68c5" name="Tyranids" revision="58" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@GenWilhelm" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="7150-5917-ae80-68c5" name="Tyranids" revision="59" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@GenWilhelm" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="7150-5917-pubN65537" name="Codex: Tyranids"/>
     <publication id="7150-5917-pubN80009" name="Index: Xenos 2"/>
@@ -357,6 +357,7 @@
         <entryLink id="2330-8b6f-f898-6270" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="ad70-02a6-8ca8-9246" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="959c-16e2-64f3-c223" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="718e-0057-6475-3030" name="Power: Smite" hidden="false" collective="false" import="true" targetId="de0e-92ba-1682-b5a0" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="115.0"/>
@@ -695,16 +696,6 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c19a-bb5c-5585-9e7a" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="2f4a-7ff4-4984-0d7d" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b12-c6f8-cc48-fa94" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="41d8-d284-9581-da0e" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5cff-0546-6f0a-248e" type="max"/>
-              </constraints>
-            </entryLink>
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="5.0"/>
@@ -717,6 +708,30 @@
         <entryLink id="d00f-8deb-6d88-d190" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="a631-a7fb-27eb-90a0" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="913d-c9a2-0a36-532f" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="a880-73d4-07be-19db" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="9837-af87-3cfd-a48c" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="21fc-05c5-6fd6-2d0a" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9928-32cf-b53b-97b0" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="73f4-5534-64ef-ae90" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="0ad6-5e03-5112-d194" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="21fc-05c5-6fd6-2d0a" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2d62-5033-f6ee-3d2f" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -807,43 +822,11 @@
               </characteristics>
             </profile>
           </profiles>
-          <selectionEntries>
-            <selectionEntry id="c818-f236-f5fd-6ac3" name="Rending Claws" hidden="false" collective="true" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="df27-9fc2-b4b3-a632" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="875f-2db5-46bb-21c7" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="4400-dde3-d1db-5752" name="Rending Claws" hidden="false" targetId="0693-a634-e549-a0f7" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name="pts" typeId="points" value="2.0"/>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
           <entryLinks>
-            <entryLink id="5416-b052-f3c7-6502" name="Scything Talons" hidden="false" collective="false" import="true" targetId="e552-a95b-c018-994d" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="593d-594c-e42d-02f5" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8169-8c75-51bf-6f4c" type="atLeast"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
+            <entryLink id="0d3c-f071-7354-6e85" name="Rending Claws" hidden="false" collective="false" import="true" targetId="ff3e-68ce-4f21-4c0b" type="selectionEntry">
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ecb-f102-0a4a-cec9" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="4034-9bf9-07f3-e9d3" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="38c2-b46f-7f8a-7c8c" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="2c65-43ea-a83c-2eeb" name="Extended Carapaces" hidden="false" collective="false" import="true" targetId="29c0-c68e-5bdc-9b99" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa97-fb15-81ef-3e7c" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ecc6-4fe1-336d-16e8" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1a80-961b-4154-6064" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -889,25 +872,45 @@
       <entryLinks>
         <entryLink id="8169-8c75-51bf-6f4c" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry">
           <modifiers>
-            <modifier type="increment" field="801a-2524-69b2-3f91" value="1">
+            <modifier type="increment" field="220a-40c0-6a94-685e" value="1.0">
               <repeats>
                 <repeat field="selections" scope="593d-594c-e42d-02f5" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c4f3-a07b-eb36-3bf0" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="593d-594c-e42d-02f5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5416-b052-f3c7-6502" type="atLeast"/>
-              </conditions>
-            </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="801a-2524-69b2-3f91" type="max"/>
+            <constraint field="selections" scope="parent" value="20.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0262-0d13-9ecc-6e65" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="220a-40c0-6a94-685e" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="ec28-dba2-9c2c-cbff" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="565e-6b8c-7251-929c" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="6ce0-abbe-6104-c0dd" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="be2f-e109-f1b8-843b" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="db1b-cc4b-51bc-536a" name="Extended Carapaces" hidden="false" collective="false" import="true" targetId="29c0-c68e-5bdc-9b99" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="593d-594c-e42d-02f5" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9f89-2434-f2d0-3332" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="3cbb-7fc3-1f27-1633" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="0ad6-5e03-5112-d194" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="4.0">
+              <repeats>
+                <repeat field="selections" scope="593d-594c-e42d-02f5" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2f68-61c9-b365-228b" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -1244,62 +1247,110 @@
         <categoryLink id="073c-9911-b705-136d" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
         <categoryLink id="4d78-35db-29c2-342d" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="aa6c-e3fd-b776-5770" name="Hive Guard" hidden="false" collective="false" import="true" type="model">
+      <selectionEntryGroups>
+        <selectionEntryGroup id="f422-5419-29b5-282f" name="Hive Guard" hidden="false" collective="false" import="true" defaultSelectionEntryId="50b2-5777-c716-8ed2">
           <constraints>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ce7-b972-1c8d-2512" type="min"/>
-            <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f65e-f163-987b-d7ec" type="max"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3efc-4698-c498-b44b" type="min"/>
+            <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d8bd-cfc1-868c-31f9" type="max"/>
           </constraints>
-          <profiles>
-            <profile id="a462-ba15-3394-27e6" name="Hive Guard" publicationId="7150-5917-pubN65537" page="92" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-              <characteristics>
-                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
-                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
-                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
-                <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="8aae-13be-a4de-8322" name="Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="90ce-96af-025a-6b54">
+          <selectionEntries>
+            <selectionEntry id="50b2-5777-c716-8ed2" name="Hive Guard (Impaler)" hidden="false" collective="false" import="true" type="model">
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f489-1f9c-6465-c949" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c7d0-c234-dff0-cb72" type="max"/>
+                <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="730b-d5be-1e43-7540" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="d30c-68e9-f910-4b0a" name="Hive Guard" publicationId="7150-5917-pubN65537" page="92" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
               <entryLinks>
-                <entryLink id="90ce-96af-025a-6b54" name="Impaler Cannon" hidden="false" collective="false" import="true" targetId="7783-52f4-1bff-cd54" type="selectionEntry"/>
-                <entryLink id="f6bc-f585-f66d-02ef" name="Shockcannon" hidden="false" collective="false" import="true" targetId="a692-c72a-54f1-5134" type="selectionEntry"/>
+                <entryLink id="677d-d117-6ab2-8ba0" name="Impaler Cannon" hidden="false" collective="false" import="true" targetId="7783-52f4-1bff-cd54" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3036-b54a-000c-dc83" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="81c7-7b67-d953-c5fa" type="max"/>
+                  </constraints>
+                </entryLink>
               </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="f5ec-7c38-1bb7-b975" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
+              <costs>
+                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="ca1d-50af-82a9-c0d3" name="Hive Guard (Shock)" hidden="false" collective="false" import="true" type="model">
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="410c-6bd3-cd35-a5ab" type="max"/>
+                <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ad5e-7fe6-67dd-7a2f" type="max"/>
               </constraints>
-            </entryLink>
-            <entryLink id="dd0b-c31e-f6eb-60d3" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b188-537d-e3e5-0dab" type="max"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="18.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+              <profiles>
+                <profile id="cf24-e0d8-c28f-d8a5" name="Hive Guard" publicationId="7150-5917-pubN65537" page="92" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="0f42-67b5-aa1f-b37d" name="Shockcannon" hidden="false" collective="false" import="true" targetId="a692-c72a-54f1-5134" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="695c-3322-0a94-2b79" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="46db-e871-c3df-c665" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="aea7-d163-afb4-5ffa" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="cc67-1a88-04f2-2c38" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="c37e-50b9-9d8e-ea67" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="c0de-1c1b-a875-4a1a" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="9837-af87-3cfd-a48c" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="c941-0aa1-f972-429c" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0c7e-394a-67c4-34f0" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="6a0c-1ec4-8786-fc6c" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="0ad6-5e03-5112-d194" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="c941-0aa1-f972-429c" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e1bc-e302-f22d-8e31" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -1551,6 +1602,7 @@
         <entryLink id="c13d-ee5b-e8dc-9b82" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="b337-93cb-5caf-88f8" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="e7d5-51b5-70b5-a6e3" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="e881-5ccc-775e-93d5" name="Power: Smite" hidden="false" collective="false" import="true" targetId="de0e-92ba-1682-b5a0" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="143.0"/>
@@ -1626,16 +1678,6 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="704c-ac2f-3ae4-fe5b" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="28e5-74ea-4617-edcb" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d593-b379-dd82-9e3e" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="86da-9fd2-6d4c-734d" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2778-25fc-7f61-a985" type="max"/>
-              </constraints>
-            </entryLink>
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="5.0"/>
@@ -1648,6 +1690,30 @@
         <entryLink id="932a-df96-2727-c143" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="d831-14c9-a2fb-4539" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="ce91-9248-f02c-5d26" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="efb0-a8d2-55c7-4983" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="9837-af87-3cfd-a48c" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="0843-c3c5-0340-2a53" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a68c-c040-6e03-d9a0" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="081e-3020-1820-692d" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="0ad6-5e03-5112-d194" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="0843-c3c5-0340-2a53" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ca3a-c179-914e-2a97" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -1817,6 +1883,7 @@
         <entryLink id="8fd8-3b0e-cbf2-d9ff" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="1d8b-0fdd-8097-f51b" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="1a11-85cf-b600-28b4" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="f4fe-7b2d-cbb1-b759" name="Power: Smite" hidden="false" collective="false" import="true" targetId="de0e-92ba-1682-b5a0" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="150.0"/>
@@ -2241,11 +2308,6 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5159-bd0b-0488-80f4" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="4842-2c75-021c-1e27" name="Spinemaws" hidden="false" collective="false" import="true" targetId="8017-6992-ddd7-5882" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e81f-1ef8-6848-d2fb" type="max"/>
-              </constraints>
-            </entryLink>
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="11.0"/>
@@ -2254,6 +2316,20 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink id="96fb-3559-c3fb-d873" name="Spinemaws" hidden="false" collective="false" import="true" targetId="8017-6992-ddd7-5882" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="04a7-33a3-6396-b371" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1baf-851d-040a-8dea" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -2319,11 +2395,6 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="761e-041e-4888-58c7" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="e308-bedd-aff9-aac9" name="Spinemaws" hidden="false" collective="false" import="true" targetId="8017-6992-ddd7-5882" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2631-a3eb-8ba1-da28" type="max"/>
-              </constraints>
-            </entryLink>
           </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="13.0"/>
@@ -2335,6 +2406,18 @@
       <entryLinks>
         <entryLink id="0355-60a0-2603-8d0c" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="a70c-e384-af8c-68d4" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="0bbc-5df3-c0d1-9c07" name="Spinemaws" hidden="false" collective="false" import="true" targetId="8017-6992-ddd7-5882" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="d7ba-bc0a-efeb-36f3" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9e81-5e32-a383-47fd" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
@@ -2779,12 +2862,11 @@
       <entryLinks>
         <entryLink id="5aad-ab67-9561-aaac" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="9837-af87-3cfd-a48c" type="selectionEntry">
           <modifiers>
-            <modifier type="increment" field="points" value="1">
+            <modifier type="increment" field="points" value="1.0">
               <repeats>
                 <repeat field="selections" scope="2e2b-aedb-e20b-9c8b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
-            <modifier type="decrement" field="points" value="1"/>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ef1f-5ba0-acc8-00ed" type="max"/>
@@ -2938,6 +3020,7 @@
         <entryLink id="c6bf-5770-29bc-dceb" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="19f0-d0fd-4a19-4f45" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="b64f-fd33-2b75-ab37" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="bdc7-136a-efaa-8796" name="Power: Smite" hidden="false" collective="false" import="true" targetId="de0e-92ba-1682-b5a0" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="162.0"/>
@@ -3290,273 +3373,206 @@
         <categoryLink id="0330-4eab-11d9-d48c" name="New CategoryLink" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
         <categoryLink id="00b6-03cd-dc27-5eca" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="3864-3330-0ae1-68cf" name="Tyranid Shrike" hidden="false" collective="false" import="true" type="model">
-          <modifiers>
-            <modifier type="decrement" field="9eff-5a7a-a34f-93f3" value="1">
-              <repeats>
-                <repeat field="selections" scope="0435-abe8-4398-eff8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2a3b-f3ff-ef3e-22ab" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="decrement" field="1f7c-dfb8-1622-f175" value="1">
-              <repeats>
-                <repeat field="selections" scope="0435-abe8-4398-eff8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2a3b-f3ff-ef3e-22ab" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="c018-53e3-3b98-32ca" name="Shrikes" hidden="false" collective="false" import="true" defaultSelectionEntryId="414a-75d2-9914-e02d">
           <constraints>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9eff-5a7a-a34f-93f3" type="min"/>
-            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f7c-dfb8-1622-f175" type="max"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1bd7-2f47-0d77-55a5" type="min"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a010-876c-5cc7-df62" type="max"/>
           </constraints>
-          <profiles>
-            <profile id="a875-7718-7f44-bee9" name="Tyranid Shrike" publicationId="7150-5917-pubN80009" page="99" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-              <characteristics>
-                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
-                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
-                <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="94c4-cc64-924b-b47e" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="4455-f872-02e8-be86">
-              <modifiers>
-                <modifier type="set" field="0ac0-3177-6c99-67a9" value="2">
-                  <conditionGroups>
-                    <conditionGroup type="and">
+          <selectionEntries>
+            <selectionEntry id="414a-75d2-9914-e02d" name="Tyranid Shrike" hidden="false" collective="false" import="true" type="model">
+              <profiles>
+                <profile id="1b8a-1fca-b4eb-b958" name="Tyranid Shrike" publicationId="7150-5917-pubN80009" page="99" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntryGroups>
+                <selectionEntryGroup id="4e94-5cd1-211e-9add" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="0b65-46a6-7cbd-2172">
+                  <modifiers>
+                    <modifier type="set" field="bf5f-7b0b-9ebb-3fcf" value="2.0">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="414a-75d2-9914-e02d" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef4a-9988-5e89-cb68" type="equalTo"/>
+                            <condition field="selections" scope="414a-75d2-9914-e02d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2b06-87d5-7b1e-8d82" type="atLeast"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8cb5-ec79-8f65-b11e" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bf5f-7b0b-9ebb-3fcf" type="max"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink id="0b65-46a6-7cbd-2172" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eeff-2144-b237-1172" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="df49-32f8-5a2e-cff9" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="48c5-bd51-0a77-ce67" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="e012-011c-9f58-5829" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e43c-ad30-d11b-7967" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="14fb-1bd4-2752-92c2" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="52bc-666c-31b5-2210" type="max"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+                <selectionEntryGroup id="ef4a-9988-5e89-cb68" name="Ranged Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="0ef0-c1fc-5643-c384">
+                  <modifiers>
+                    <modifier type="set" field="d22f-4780-caa0-ceda" value="0.0">
                       <conditions>
-                        <condition field="selections" scope="3864-3330-0ae1-68cf" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="28cf-9d68-2af4-aaa7" type="equalTo"/>
-                        <condition field="selections" scope="3864-3330-0ae1-68cf" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2b06-87d5-7b1e-8d82" type="atLeast"/>
+                        <condition field="selections" scope="414a-75d2-9914-e02d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2b06-87d5-7b1e-8d82" type="atLeast"/>
+                        <condition field="selections" scope="414a-75d2-9914-e02d" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e94-5cd1-211e-9add" type="atLeast"/>
                       </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d22f-4780-caa0-ceda" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8da7-6283-bb1f-7d1a" type="max"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink id="0ef0-c1fc-5643-c384" name="Devourer" hidden="false" collective="false" import="true" targetId="e730-b801-5c8e-9dfe" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9080-6f6a-a9b9-dda9" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="1d20-cd91-23dc-a2b1" name="Deathspitter" hidden="false" collective="false" import="true" targetId="7af8-70de-cfec-20d3" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="29c3-b798-a4f7-b75a" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="57d5-bd5e-0718-54a4" name="Spinefists" hidden="false" collective="false" import="true" targetId="42fd-353d-bc2a-ef69" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ca4-e45f-01fe-ef5c" type="max"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="2ae9-67dc-2155-e45e" name="Tyranid Shrike (Bio-cannon)" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="c1eb-a87e-5ae9-5384" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="0435-abe8-4398-eff8" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
                 </modifier>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e73f-2f00-9c7a-eb82" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ac0-3177-6c99-67a9" type="max"/>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c1eb-a87e-5ae9-5384" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="90fc-fe68-f7e7-203c" name="Tyranid Shrike" publicationId="7150-5917-pubN80009" page="99" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntryGroups>
+                <selectionEntryGroup id="9889-ae1c-6741-63e5" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="aa9a-ace9-b544-b807">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7481-f4e5-a52c-4d73" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7974-dd38-1a17-5e67" type="max"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink id="aa9a-ace9-b544-b807" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry"/>
+                    <entryLink id="9e4a-af53-2fcc-130a" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry"/>
+                    <entryLink id="662b-ad2f-b4cc-2166" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry"/>
+                    <entryLink id="e199-a6be-6a11-59d1" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry"/>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
               <entryLinks>
-                <entryLink id="4455-f872-02e8-be86" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry">
+                <entryLink id="ba25-0736-eaaf-5f7c" name="Basic Bio-cannons" hidden="false" collective="false" import="true" targetId="b799-1f85-a8cc-cef0" type="selectionEntryGroup">
                   <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6110-a769-a3ca-9478" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="61d8-5187-b4c2-0baa" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b33-70ec-8dfc-9794" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="7646-1bbc-62dd-e653" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4c92-96a4-719b-d468" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="de8d-e594-5b79-5c19" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c9f2-3e40-c130-3e74" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea0b-7d7b-61e0-7ac4" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a502-9249-d784-f9fe" type="min"/>
                   </constraints>
                 </entryLink>
               </entryLinks>
-            </selectionEntryGroup>
-            <selectionEntryGroup id="28cf-9d68-2af4-aaa7" name="Ranged Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="eb85-0708-e03a-68cf">
-              <modifiers>
-                <modifier type="set" field="3b2d-2b37-4c9b-f79a" value="0.0">
-                  <conditions>
-                    <condition field="selections" scope="3864-3330-0ae1-68cf" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4455-f872-02e8-be86" type="atLeast"/>
-                    <condition field="selections" scope="3864-3330-0ae1-68cf" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="94c4-cc64-924b-b47e" type="atLeast"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3b2d-2b37-4c9b-f79a" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c824-e289-6d72-c2cc" type="max"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="eb85-0708-e03a-68cf" name="Devourer" hidden="false" collective="false" import="true" targetId="e730-b801-5c8e-9dfe" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4672-95e0-70cd-9ce8" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="eb47-108a-61db-7ee6" name="Deathspitter" hidden="false" collective="false" import="true" targetId="7af8-70de-cfec-20d3" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f921-f3a4-ebd8-7b1e" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="8ddd-6e43-863b-fbd3" name="Spinefists" hidden="false" collective="false" import="true" targetId="42fd-353d-bc2a-ef69" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3dcd-d2e6-41ba-6665" type="max"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="eb34-dc96-dea2-b5fa" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="2f51-4faa-f7c5-220c" value="1">
-                  <conditions>
-                    <condition field="selections" scope="0435-abe8-4398-eff8" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8191-100c-b4d2-9879" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="58ac-2f41-0033-b102" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2f51-4faa-f7c5-220c" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="90a5-d431-ced2-ac06" name="Flesh Hooks" hidden="false" collective="false" import="true" targetId="64fd-9b59-e4c3-a28a" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="5929-f78a-8f87-4d09" value="1">
-                  <conditions>
-                    <condition field="selections" scope="0435-abe8-4398-eff8" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="64fd-9b59-e4c3-a28a" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bd90-db54-dc5c-03c1" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5929-f78a-8f87-4d09" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="383c-5de8-8411-be87" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="3c70-d2a5-f669-1bef" value="1">
-                  <conditions>
-                    <condition field="selections" scope="0435-abe8-4398-eff8" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b9ad-3827-329a-0e6e" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5b2a-0c7c-a20c-7130" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3c70-d2a5-f669-1bef" type="min"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="21.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="2a3b-f3ff-ef3e-22ab" name="Tyranid Shrike (Bio-cannon)" hidden="false" collective="false" import="true" type="model">
-          <modifiers>
-            <modifier type="increment" field="a724-3a16-855d-3d0c" value="1">
-              <repeats>
-                <repeat field="selections" scope="0435-abe8-4398-eff8" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a724-3a16-855d-3d0c" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="0a27-1577-e26d-87c6" name="Tyranid Shrike" publicationId="7150-5917-pubN80009" page="99" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-              <characteristics>
-                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
-                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
-                <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="98cc-e06b-1242-f2db" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="988b-5687-6034-a485">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c704-15cb-7865-1881" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ebd-5034-a32b-d22e" type="max"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="988b-5687-6034-a485" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0032-6b31-a658-bb77" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="943b-f983-8a15-1ac6" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4905-a8f9-26fd-f9d9" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="e063-1000-1fa3-b262" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c4e4-5505-9a3d-0e64" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="3bc0-9779-55dc-10f5" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8953-e6c2-44ba-89b0" type="max"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="6944-ed2a-15f7-1340" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="3e00-110f-e4f2-816e" value="1">
-                  <conditions>
-                    <condition field="selections" scope="0435-abe8-4398-eff8" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8191-100c-b4d2-9879" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="da0d-6f6f-9ebd-3dc5" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3e00-110f-e4f2-816e" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="816d-f9e3-1e54-ef6c" name="Flesh Hooks" hidden="false" collective="false" import="true" targetId="64fd-9b59-e4c3-a28a" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="4086-43eb-0891-0055" value="1">
-                  <conditions>
-                    <condition field="selections" scope="0435-abe8-4398-eff8" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="64fd-9b59-e4c3-a28a" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2046-eaca-49b4-07b0" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4086-43eb-0891-0055" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="7c37-03a3-e7cf-12d2" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="f7aa-1629-539c-28ab" value="1">
-                  <conditions>
-                    <condition field="selections" scope="0435-abe8-4398-eff8" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b9ad-3827-329a-0e6e" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2ff1-6c75-1ad4-dd41" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f7aa-1629-539c-28ab" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="4871-5434-cef5-126b" name="Basic Bio-cannons" hidden="false" collective="false" import="true" targetId="b799-1f85-a8cc-cef0" type="selectionEntryGroup">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c504-fe7a-b259-48f8" type="max"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a282-7716-5036-18c3" type="min"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="21.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="4958-7d67-2a02-bcd5" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="f5f2-d8dc-8bcd-1c47" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="7ed3-a217-934c-04dd" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="a3d3-60d2-10f3-ef35" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="9837-af87-3cfd-a48c" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="0435-abe8-4398-eff8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0238-f9a7-aa5f-7226" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="13a8-d7fc-c454-c57e" name="Flesh Hooks" hidden="false" collective="false" import="true" targetId="e8ab-6677-781d-991b" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="0435-abe8-4398-eff8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="302d-448a-f047-cc8e" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="7a56-ca65-556d-048f" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="0ad6-5e03-5112-d194" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="4.0">
+              <repeats>
+                <repeat field="selections" scope="0435-abe8-4398-eff8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="945d-a01b-71a9-9533" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -3596,267 +3612,200 @@
         <categoryLink id="c0c1-b46a-a7c9-1000" name="New CategoryLink" hidden="false" targetId="7b29-b270-99fe-4de7" primary="false"/>
         <categoryLink id="b98f-6b72-d954-0901" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="6903-a410-21cb-0dc5" name="Tyranid Warrior" hidden="false" collective="false" import="true" type="model">
-          <modifiers>
-            <modifier type="decrement" field="d81e-3884-2f0f-e63d" value="1">
-              <repeats>
-                <repeat field="selections" scope="8ffc-a0f3-766e-8ae4" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f379-a3a8-94bb-d0de" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="decrement" field="a960-62a2-2ea6-331b" value="1">
-              <repeats>
-                <repeat field="selections" scope="8ffc-a0f3-766e-8ae4" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f379-a3a8-94bb-d0de" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="1e68-4375-e69a-e86d" name="Warriors" hidden="false" collective="false" import="true" defaultSelectionEntryId="b383-061c-44d7-bc43">
           <constraints>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d81e-3884-2f0f-e63d" type="min"/>
-            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a960-62a2-2ea6-331b" type="max"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="87b4-7d63-ccfe-a0a6" type="min"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5a4e-2a2b-7263-49f1" type="max"/>
           </constraints>
-          <profiles>
-            <profile id="a133-288f-67e8-1626" name="Tyranid Warrior" publicationId="7150-5917-pubN65537" page="89" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-              <characteristics>
-                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
-                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
-                <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="4b88-a961-4069-2d16" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="eba5-2dfa-3674-f6d5">
+          <selectionEntries>
+            <selectionEntry id="b383-061c-44d7-bc43" name="Tyranid Warrior" hidden="false" collective="false" import="true" type="model">
+              <profiles>
+                <profile id="b0f3-ea03-f689-0935" name="Tyranid Warrior" publicationId="7150-5917-pubN65537" page="89" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntryGroups>
+                <selectionEntryGroup id="b0b3-0fe5-52b9-dadc" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="8958-02c7-7967-1637">
+                  <modifiers>
+                    <modifier type="set" field="fe0f-8265-5980-f574" value="2.0">
+                      <conditions>
+                        <condition field="selections" scope="b383-061c-44d7-bc43" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b995-e259-4844-3c6a" type="equalTo"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="db89-8a3c-bf4e-ffdf" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fe0f-8265-5980-f574" type="max"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink id="8958-02c7-7967-1637" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b8be-bf11-4f15-8dd8" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="cdb4-4c24-1b08-dc6b" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2583-62cd-cea5-c231" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="8455-380a-2f3f-f516" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="46f7-4bc5-a249-3d29" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="8da1-afe9-c2b9-2440" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bfec-1db4-a9e3-880f" type="max"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+                <selectionEntryGroup id="b995-e259-4844-3c6a" name="Ranged Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="fbac-ffca-30e0-b5fd">
+                  <modifiers>
+                    <modifier type="set" field="4a3b-eec7-4ffa-ce92" value="0.0">
+                      <conditions>
+                        <condition field="selections" scope="b383-061c-44d7-bc43" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b0b3-0fe5-52b9-dadc" type="atLeast"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4a3b-eec7-4ffa-ce92" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9549-1cff-8a83-1154" type="max"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink id="fbac-ffca-30e0-b5fd" name="Devourer" hidden="false" collective="false" import="true" targetId="e730-b801-5c8e-9dfe" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="144f-8c95-27ad-0e94" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="6bc8-6262-336d-840f" name="Deathspitter" hidden="false" collective="false" import="true" targetId="7af8-70de-cfec-20d3" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3c59-e0f7-235e-0e2c" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="8ead-3868-1614-73da" name="Spinefists" hidden="false" collective="false" import="true" targetId="42fd-353d-bc2a-ef69" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ef8-df89-d1c1-91b3" type="max"/>
+                      </constraints>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+              <costs>
+                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="c243-c7c0-5e29-c13e" name="Tyranid Warrior (Bio-cannon)" hidden="false" collective="false" import="true" type="model">
               <modifiers>
-                <modifier type="set" field="21e4-332d-c064-8510" value="2">
-                  <conditions>
-                    <condition field="selections" scope="6903-a410-21cb-0dc5" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="af93-85c4-aae2-59d4" type="equalTo"/>
-                  </conditions>
+                <modifier type="increment" field="ea4c-4239-be9d-8ec6" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="8ffc-a0f3-766e-8ae4" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
                 </modifier>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5962-5025-44b1-0c7a" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="21e4-332d-c064-8510" type="max"/>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea4c-4239-be9d-8ec6" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="1c6c-f631-aa88-a5f2" name="Tyranid Warrior" publicationId="7150-5917-pubN65537" page="89" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <selectionEntryGroups>
+                <selectionEntryGroup id="ff08-de04-3a19-95c6" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="6fd5-2cf9-3982-055d">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8205-e114-a60e-3d2d" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="471b-efbf-e42a-382b" type="max"/>
+                  </constraints>
+                  <entryLinks>
+                    <entryLink id="6fd5-2cf9-3982-055d" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry"/>
+                    <entryLink id="a7c4-597b-27e1-8189" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry"/>
+                    <entryLink id="25f3-dded-f332-4e40" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry"/>
+                    <entryLink id="da8e-13a6-c34d-d835" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry"/>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
               <entryLinks>
-                <entryLink id="eba5-2dfa-3674-f6d5" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry">
+                <entryLink id="609b-9da8-a9b8-5fb1" name="Basic Bio-cannons" hidden="false" collective="false" import="true" targetId="b799-1f85-a8cc-cef0" type="selectionEntryGroup">
                   <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="568f-6cf6-542d-cbec" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="cc91-03a3-44f4-e7b7" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7551-402d-9538-1163" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="391e-a2cc-d685-c906" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7059-0df9-72de-e20a" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="d83c-e389-2102-1b20" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3f17-3c27-87ea-fe6f" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ada2-5ef3-bfc3-e444" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3d56-f518-583b-c7aa" type="min"/>
                   </constraints>
                 </entryLink>
               </entryLinks>
-            </selectionEntryGroup>
-            <selectionEntryGroup id="af93-85c4-aae2-59d4" name="Ranged Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="770e-8303-c64b-6490">
-              <modifiers>
-                <modifier type="set" field="5b6b-db63-354d-cf87" value="0.0">
-                  <conditions>
-                    <condition field="selections" scope="6903-a410-21cb-0dc5" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4b88-a961-4069-2d16" type="atLeast"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5b6b-db63-354d-cf87" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5aab-8920-743d-b083" type="max"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="770e-8303-c64b-6490" name="Devourer" hidden="false" collective="false" import="true" targetId="e730-b801-5c8e-9dfe" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="66c0-9b2c-f9ac-f7c6" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="eb5c-9d43-41fa-be93" name="Deathspitter" hidden="false" collective="false" import="true" targetId="7af8-70de-cfec-20d3" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e6b-f50d-e01d-c8ba" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="9d0f-ef5a-d231-9a57" name="Spinefists" hidden="false" collective="false" import="true" targetId="42fd-353d-bc2a-ef69" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="596f-3ffc-7051-0b23" type="max"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="e755-3caa-e7ec-4829" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="d5f0-1c8f-5347-975a" value="1">
-                  <conditions>
-                    <condition field="selections" scope="8ffc-a0f3-766e-8ae4" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8191-100c-b4d2-9879" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f72f-71bc-8503-a47e" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d5f0-1c8f-5347-975a" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="ac60-c502-4c1d-f7a1" name="Flesh Hooks" hidden="false" collective="false" import="true" targetId="64fd-9b59-e4c3-a28a" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="6367-d6d9-0fd8-04c4" value="1">
-                  <conditions>
-                    <condition field="selections" scope="8ffc-a0f3-766e-8ae4" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="64fd-9b59-e4c3-a28a" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5792-bfe5-7583-62d6" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6367-d6d9-0fd8-04c4" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="855b-4f34-e7d5-ed49" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="e689-118e-2955-3c46" value="1">
-                  <conditions>
-                    <condition field="selections" scope="8ffc-a0f3-766e-8ae4" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b9ad-3827-329a-0e6e" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5c66-84d3-8108-6792" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e689-118e-2955-3c46" type="min"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="18.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="f379-a3a8-94bb-d0de" name="Tyranid Warrior (Bio-cannon)" hidden="false" collective="false" import="true" type="model">
-          <modifiers>
-            <modifier type="increment" field="7466-0028-41fd-35b9" value="1">
-              <repeats>
-                <repeat field="selections" scope="8ffc-a0f3-766e-8ae4" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7466-0028-41fd-35b9" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="ab22-c349-f716-1d8f" name="Tyranid Warrior" publicationId="7150-5917-pubN65537" page="89" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-              <characteristics>
-                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
-                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
-                <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="b70b-aa58-2746-1ee7" name="Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="9342-87c1-cf41-858f">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0686-aba2-6b2c-ddd0" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="80ec-c557-3df3-db56" type="max"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="9342-87c1-cf41-858f" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="57fc-7491-0220-e58a" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="0031-aa24-cb01-8771" name="Boneswords" hidden="false" collective="false" import="true" targetId="506e-1334-6b64-53db" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="848f-3b5e-4a05-52de" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="c5b7-0102-8f17-fdb2" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="41ef-1224-c688-c71a" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="566c-10bb-43a9-e623" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="056d-9168-7604-9be6" type="max"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="bec1-ba20-549f-2868" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="acc1-7e96-d69e-7ea1" value="1">
-                  <conditions>
-                    <condition field="selections" scope="8ffc-a0f3-766e-8ae4" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8191-100c-b4d2-9879" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5e81-86cd-77e3-9ec7" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="acc1-7e96-d69e-7ea1" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="6733-e44d-6a90-5fd2" name="Flesh Hooks" hidden="false" collective="false" import="true" targetId="64fd-9b59-e4c3-a28a" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="9041-f45f-a565-5869" value="1">
-                  <conditions>
-                    <condition field="selections" scope="8ffc-a0f3-766e-8ae4" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="64fd-9b59-e4c3-a28a" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c3b3-2ce3-9f00-ab1c" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9041-f45f-a565-5869" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="866f-a28a-ddc0-4802" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="f06f-a2bc-ef85-5a53" value="1">
-                  <conditions>
-                    <condition field="selections" scope="8ffc-a0f3-766e-8ae4" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b9ad-3827-329a-0e6e" type="notEqualTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5aad-d519-10e9-7753" type="max"/>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f06f-a2bc-ef85-5a53" type="min"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="22e1-680a-1435-399c" name="Basic Bio-cannons" hidden="false" collective="false" import="true" targetId="b799-1f85-a8cc-cef0" type="selectionEntryGroup">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4570-1a60-e5b5-ff87" type="max"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="67c3-d3da-38a1-16ed" type="min"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="18.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+              <costs>
+                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="03be-db92-3cc5-ce18" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="2766-3aa3-4768-9744" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="cf73-3d7f-5506-442a" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="9da2-589d-bc4f-fbff" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="9837-af87-3cfd-a48c" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="8ffc-a0f3-766e-8ae4" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="386a-bf57-056d-2cc6" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="391e-2072-8850-ad8a" name="Flesh Hooks" hidden="false" collective="false" import="true" targetId="e8ab-6677-781d-991b" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="8ffc-a0f3-766e-8ae4" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5328-2f9a-94a4-02a8" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="2f02-57c1-b262-2e3a" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="0ad6-5e03-5112-d194" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="4.0">
+              <repeats>
+                <repeat field="selections" scope="8ffc-a0f3-766e-8ae4" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e6b-dfa6-1100-5c9d" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -4112,69 +4061,152 @@
         <categoryLink id="b1b0-e7a7-4fb3-c35c" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="0b80-2f29-e744-4a51" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="22e8-edf3-fcd9-2fe2" name="Tyrant Guard" hidden="false" collective="false" import="true" type="model">
+      <selectionEntryGroups>
+        <selectionEntryGroup id="9cba-b4b5-c603-ea1f" name="Tyrant Guard" hidden="false" collective="false" import="true" defaultSelectionEntryId="4850-118b-9213-d304">
           <constraints>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="da84-1242-2450-bf94" type="min"/>
-            <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="000f-3eae-1cc0-9cb5" type="max"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f3a3-df70-063e-0188" type="min"/>
+            <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5600-9d13-ad18-e5e2" type="max"/>
           </constraints>
-          <profiles>
-            <profile id="fd78-cef0-b9fc-db61" name="Tyrant Guard" publicationId="7150-5917-pubN65537" page="92" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-              <characteristics>
-                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
-                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
-                <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="514e-61ce-c7ef-3d05" name="Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="0fbf-a33f-ed2b-44a0">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="898b-a5ac-9339-2810" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="42c4-d0e2-72a5-eab5" type="max"/>
-              </constraints>
+          <selectionEntries>
+            <selectionEntry id="4850-118b-9213-d304" name="Tyrant Guard (Scything)" hidden="false" collective="false" import="true" type="model">
+              <profiles>
+                <profile id="bf45-07b2-e2e5-9824" name="Tyrant Guard" publicationId="7150-5917-pubN65537" page="92" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
               <entryLinks>
-                <entryLink id="0fbf-a33f-ed2b-44a0" name="Scything Talons" hidden="false" collective="false" import="true" targetId="2b06-87d5-7b1e-8d82" type="selectionEntry"/>
-                <entryLink id="c333-85ab-1914-bab0" name="Crushing Claws" hidden="false" collective="false" import="true" targetId="c801-8e20-f9ff-bba0" type="selectionEntry"/>
-                <entryLink id="abf5-3734-bc26-a3cb" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="591b-c551-1088-230b" type="selectionEntry"/>
+                <entryLink id="1764-75e4-6ea8-3fb4" name="Rending Claws" hidden="false" collective="false" import="true" targetId="ff3e-68ce-4f21-4c0b" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d0ba-2816-f5cc-9e24" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f034-9bdd-6a64-5151" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="bbe6-4df1-57a5-948b" name="Scything Talons" hidden="false" collective="false" import="true" targetId="e552-a95b-c018-994d" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="772b-3fd9-88c2-ff9a" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cd7a-f45b-d146-217f" type="max"/>
+                  </constraints>
+                </entryLink>
               </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="02b9-0572-e293-9068" name="Rending Claws" hidden="false" collective="false" import="true" targetId="a50e-4043-d535-0f3a" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2530-93d0-b9eb-f550" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2888-ef28-c110-38d7" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="cf2f-05ab-aafe-6828" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="b9ad-3827-329a-0e6e" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4e54-0c6e-7022-a232" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="44ce-c2e3-51af-6854" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="8191-100c-b4d2-9879" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a966-d016-c1f2-6181" type="max"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="35.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
+              <costs>
+                <cost name="pts" typeId="points" value="35.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="1d85-1f86-2b23-3717" name="Tyrant Guard (Crushing)" hidden="false" collective="false" import="true" type="model">
+              <profiles>
+                <profile id="5d38-6e06-97e2-2f9c" name="Tyrant Guard" publicationId="7150-5917-pubN65537" page="92" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="a685-af0b-5bdf-6bbb" name="Rending Claws" hidden="false" collective="false" import="true" targetId="ff3e-68ce-4f21-4c0b" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="05d4-a7e2-1748-9805" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e506-0774-c76d-a446" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="a8ff-c85c-d378-eef3" name="Crushing Claws" hidden="false" collective="false" import="true" targetId="0ad5-6368-2820-2488" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4037-3114-f625-9bae" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0729-161b-b2d5-e0ce" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="35.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="89c9-b6c1-0176-3e57" name="Tyrant Guard (Lash/Sword)" hidden="false" collective="false" import="true" type="model">
+              <profiles>
+                <profile id="940b-a342-2754-5099" name="Tyrant Guard" publicationId="7150-5917-pubN65537" page="92" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="e205-0f39-1f49-28d1" name="Rending Claws" hidden="false" collective="false" import="true" targetId="ff3e-68ce-4f21-4c0b" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f87-d73b-5a3e-5a05" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa94-3930-1d76-bf3f" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="e905-c5ca-f77d-2542" name="Lash Whip and Bonesword" hidden="false" collective="false" import="true" targetId="a5a2-3288-a231-e989" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2323-b388-124e-a45f" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d891-5a7c-fa83-7a39" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="35.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="aef4-437d-5baf-3aee" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="0a12-4007-846f-c7ed" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="42c6-1896-f548-06ee" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="edb8-a050-e3ad-569d" name="Adrenal Glands" hidden="false" collective="false" import="true" targetId="9837-af87-3cfd-a48c" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="66df-c9ba-5ea8-e524" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2fec-1baa-b1d4-ec87" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="9aec-c0c5-421b-5b2d" name="Toxin Sacs" hidden="false" collective="false" import="true" targetId="0ad6-5e03-5112-d194" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="points" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="66df-c9ba-5ea8-e524" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3fa9-4c85-5664-f3a8" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -4347,6 +4379,7 @@
         <entryLink id="6d00-b802-0b69-1966" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="1902-e5b2-3e59-3d6d" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="71ab-1527-f605-db17" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="bc88-f673-168b-b73a" name="Power: Smite" hidden="false" collective="false" import="true" targetId="de0e-92ba-1682-b5a0" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -4743,6 +4776,7 @@
           </constraints>
         </entryLink>
         <entryLink id="83ca-ee7a-ff6f-233c" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="1c28-1a1d-bac6-9ab0" name="Power: Smite" hidden="false" collective="false" import="true" targetId="de0e-92ba-1682-b5a0" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="250.0"/>
@@ -5090,7 +5124,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="7783-52f4-1bff-cd54" name="Impaler Cannon" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="7783-52f4-1bff-cd54" name="Impaler Cannon" hidden="false" collective="true" import="true" type="upgrade">
       <infoLinks>
         <infoLink id="d521-5a5a-452d-260f" name="Impaler Cannon" hidden="false" targetId="aaae-59c6-e8cb-4b68" type="profile"/>
       </infoLinks>
@@ -5121,7 +5155,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="a692-c72a-54f1-5134" name="Shockcannon" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="a692-c72a-54f1-5134" name="Shockcannon" hidden="false" collective="true" import="true" type="upgrade">
       <infoLinks>
         <infoLink id="d99a-0b2b-0080-5825" name="Shockcannon" hidden="false" targetId="e49c-0e9c-6302-b569" type="profile"/>
       </infoLinks>
@@ -5148,14 +5182,14 @@
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cebe-cea0-677f-2f76" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6903-a410-21cb-0dc5" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b383-061c-44d7-bc43" type="instanceOf"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
         </modifier>
         <modifier type="set" field="points" value="3">
           <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3864-3330-0ae1-68cf" type="instanceOf"/>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="414a-75d2-9914-e02d" type="instanceOf"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -5168,14 +5202,14 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="8017-6992-ddd7-5882" name="Spinemaws" hidden="false" collective="true" import="true" type="upgrade">
+    <selectionEntry id="8017-6992-ddd7-5882" name="Spinemaws" hidden="false" collective="false" import="true" type="upgrade">
       <infoLinks>
         <infoLink id="2264-88af-bd6b-c36c" name="Spinemaws" hidden="false" targetId="8d15-5815-db35-48e8" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="2.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="f2f0-5874-f1e1-1dd5" name="Spore Mine Launcher" hidden="false" collective="true" import="true" type="upgrade">
@@ -5609,31 +5643,23 @@
         <infoLink id="e764-8ec0-26ed-bb35" name="Adrenal Glands" hidden="false" targetId="2a37-1b16-c528-b30f" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="1.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="0ad6-5e03-5112-d194" name="Toxin Sacs" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="points" value="1">
+        <modifier type="set" field="points" value="1.0">
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="92ec-64fb-e5a7-65c1" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="aa6c-e3fd-b776-5770" type="instanceOf"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f535-4e40-2b57-2bf7" type="instanceOf"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0507-f341-5267-7cc5" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22e8-edf3-fcd9-2fe2" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0837-d880-49c7-01cf" type="instanceOf"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="set" field="points" value="2">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="07f0-7c6c-e476-a37f" type="instanceOf"/>
-          </conditions>
         </modifier>
         <modifier type="set" field="points" value="8">
           <conditionGroups>
@@ -5645,7 +5671,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="points" value="4">
+        <modifier type="set" field="points" value="4.0">
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -5653,8 +5679,6 @@
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d254-4969-7e67-32a9" type="instanceOf"/>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0435-abe8-4398-eff8" type="instanceOf"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="add7-3535-a4cd-9ba5" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c4f3-a07b-eb36-3bf0" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8ffc-a0f3-766e-8ae4" type="instanceOf"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -5711,11 +5735,8 @@
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="92ec-64fb-e5a7-65c1" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="aa6c-e3fd-b776-5770" type="instanceOf"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f535-4e40-2b57-2bf7" type="instanceOf"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0507-f341-5267-7cc5" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22e8-edf3-fcd9-2fe2" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0837-d880-49c7-01cf" type="instanceOf"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -7767,6 +7788,7 @@
         <entryLink id="ff8a-d002-8da6-104c" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="7adb-3451-1e28-2884" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="e5eb-a26f-58a7-f0bf" name="Adaptive Physiology" hidden="false" collective="false" import="true" targetId="ed23-c139-601b-d1f2" type="selectionEntry"/>
+        <entryLink id="e81b-41b3-e7ab-165b" name="Power: Smite" hidden="false" collective="false" import="true" targetId="de0e-92ba-1682-b5a0" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="90.0"/>
@@ -7774,7 +7796,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="29c0-c68e-5bdc-9b99" name="Extended Carapace" hidden="false" collective="true" import="true" type="upgrade">
+    <selectionEntry id="29c0-c68e-5bdc-9b99" name="Extended Carapace" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
         <profile id="8a4c-6f38-aa5f-3617" name="Extended Carapaces" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -7784,8 +7806,8 @@
       </profiles>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="2.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="6f2a-1546-df78-9521" name="Thornbacks" hidden="false" collective="false" import="true" type="unit">
@@ -8240,6 +8262,49 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="de0e-92ba-1682-b5a0" name="Power: Smite" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4cab-512e-1bb6-bdf3" type="max"/>
+      </constraints>
+      <infoLinks>
+        <infoLink id="2568-1bda-b998-e972" name="Smite" hidden="false" targetId="cf73-84d9-ae54-8760" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="ff3e-68ce-4f21-4c0b" name="Rending Claws" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="be92-ef04-27f7-105a" name="Rending Claws" hidden="false" targetId="0693-a634-e549-a0f7" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="2.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0ad5-6368-2820-2488" name="Crushing Claws" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="9540-0624-1e20-0fea" name="Crushing Claws" hidden="false" targetId="058b-c3f2-5a4c-1e52" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="12.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="a5a2-3288-a231-e989" name="Lash Whip and Bonesword" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="ec2c-a5ce-7706-ba84" name="Lash Whip and Bonesword" hidden="false" targetId="09d5-7601-82df-77c8" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="2.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
