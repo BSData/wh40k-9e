@@ -1753,6 +1753,15 @@
         <categoryLink id="340b-ca49-5722-d355" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="40ff-41d1-62dc-33d8" name="Chaos Bastion" hidden="false" collective="false" import="true" targetId="f8c9-c03b-f8af-009f" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="4773-6b6e-c891-4ad5" name="New CategoryLink" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
+        <categoryLink id="73dc-6667-e73f-13a1" name="Faction: Chaos" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
+        <categoryLink id="4931-5460-f866-167c" name="Building" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+        <categoryLink id="a6bc-a440-9162-d711" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+        <categoryLink id="2397-d691-b661-5b27" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defense Line" publicationId="28ec-711c-pubN77581" page="79" hidden="false" collective="false" import="true" type="unit">
