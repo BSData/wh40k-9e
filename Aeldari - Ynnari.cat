@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="44" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="45" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="2f0e-dd91-pubN65537" name="Index: Xenos 1"/>
     <publication id="6a4d-2a41-5e6b-c57a" name="White Dwarf May 2019"/>
@@ -133,6 +133,15 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0365-6f3a-f47c-4a8b" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="3180-c2f3-1d21-1418" name="Favoured of Ynnead" hidden="true" collective="false" import="true" targetId="e382-0294-a92d-3a16" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="75e4-e07c-3a6d-46c5" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -243,11 +252,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a242-4dc5-3e06-3742" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="21dc-c2c6-b0c7-6aa5" name="Warden of Souls" hidden="false" collective="false" import="true" targetId="b252-9455-6755-4fbd" type="selectionEntry">
+        <entryLink id="21dc-c2c6-b0c7-6aa5" name="Warden of Souls" hidden="true" collective="false" import="true" targetId="b252-9455-6755-4fbd" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="hidden" value="true">
+            <modifier type="set" field="hidden" value="false">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e964-74cb-3bc5-a850" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="75e4-e07c-3a6d-46c5" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -358,11 +367,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="739a-7104-5199-9de0" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="bbce-bda1-ee40-a519" name="Master of Death" hidden="false" collective="false" import="true" targetId="6c00-96aa-9088-d9b8" type="selectionEntry">
+        <entryLink id="bbce-bda1-ee40-a519" name="Master of Death" hidden="true" collective="false" import="true" targetId="6c00-96aa-9088-d9b8" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="hidden" value="true">
+            <modifier type="set" field="hidden" value="false">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e964-74cb-3bc5-a850" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="75e4-e07c-3a6d-46c5" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -389,9 +398,17 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="b252-9455-6755-4fbd" name="Warden of Souls" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="6511-954d-89c4-9317" value="1.0">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c0ea-f722-6a2e-6d65" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e85a-3018-f1e4-6dd0" type="max"/>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e3c8-9c62-28ff-94d1" type="max"/>
+        <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6511-954d-89c4-9317" type="min"/>
       </constraints>
       <profiles>
         <profile id="5a1c-0bbd-8072-9a33" name="Warden of Souls" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -478,7 +495,7 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="746d-c99b-ba49-17bb" name="Exalted of Ynnead" publicationId="6a4d-2a41-5e6b-c57a" page="5" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="746d-c99b-ba49-17bb" name="Stratagem: Exalted of Ynnead" publicationId="6a4d-2a41-5e6b-c57a" page="5" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b840-e4c9-08e2-f599" type="max"/>
       </constraints>
@@ -753,11 +770,16 @@
         <entryLink id="8a42-5a6d-db76-fb80" name="Warlord Traits (Ynnari)" hidden="false" collective="false" import="true" targetId="2fc3-8ba7-0594-29f6" type="selectionEntryGroup"/>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="2fc3-8ba7-0594-29f6" name="Warlord Traits (Ynnari)" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="2fc3-8ba7-0594-29f6" name="Warlord Traits (Ynnari)" hidden="true" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="bea3-cb2c-1bfe-4618" value="2">
+        <modifier type="increment" field="bea3-cb2c-1bfe-4618" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="746d-c99b-ba49-17bb" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" field="hidden" value="false">
           <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="746d-c99b-ba49-17bb" type="atLeast"/>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="75e4-e07c-3a6d-46c5" type="equalTo"/>
           </conditions>
         </modifier>
       </modifiers>
