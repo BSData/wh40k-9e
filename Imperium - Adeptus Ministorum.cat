@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="87" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="94" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="d124-b283-pubN67455" name="Index: Imperium 2"/>
     <publication id="d124-b283-pubN72234" name="Codex: Adepta Sororitas"/>
@@ -475,19 +475,27 @@
               <selectionEntryGroups>
                 <selectionEntryGroup id="d038-82b4-d845-3790" name="Weapon: " hidden="false" collective="false" import="true">
                   <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="12aa-6a0b-b070-1ff4" type="min"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0d2e-82e5-2910-b165" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="12aa-6a0b-b070-1ff4" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" id="0d2e-82e5-2910-b165" type="max"/>
                   </constraints>
                   <entryLinks>
                     <entryLink id="7cc6-16c0-936d-193e" name="New EntryLink" hidden="false" collective="false" import="true" targetId="2b80-16a0-9b4a-4327" type="selectionEntryGroup">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5e3d-b773-a517-d978" type="max"/>
-                      </constraints>
+                      <modifiers>
+                        <modifier type="set" field="3e04-4239-f73c-50cb" value="0.0">
+                          <conditions>
+                            <condition field="selections" scope="3dff-b761-7f4d-71e0" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="956c-332b-05a1-5b2f" type="greaterThan"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
                     </entryLink>
                     <entryLink id="956c-332b-05a1-5b2f" name="New EntryLink" hidden="false" collective="false" import="true" targetId="e6da-027a-c0cf-91ec" type="selectionEntryGroup">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6020-358b-e43b-eda6" type="max"/>
-                      </constraints>
+                      <modifiers>
+                        <modifier type="set" field="432c-a150-fea5-e2ae" value="0.0">
+                          <conditions>
+                            <condition field="selections" scope="3dff-b761-7f4d-71e0" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7cc6-16c0-936d-193e" type="greaterThan"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
                     </entryLink>
                   </entryLinks>
                 </selectionEntryGroup>
@@ -2612,7 +2620,7 @@
                       </infoLinks>
                       <costs>
                         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="pts" typeId="points" value="6.0"/>
+                        <cost name="pts" typeId="points" value="2.0"/>
                         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                       </costs>
                     </selectionEntry>
@@ -3405,7 +3413,6 @@
       <selectionEntries>
         <selectionEntry id="7685-ed9c-4b9b-8273" name="Celestian Superior" hidden="false" collective="false" import="true" type="model">
           <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1d23-af4c-3b6e-c694" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="29f1-f465-3d33-898d" type="max"/>
           </constraints>
           <profiles>
@@ -3484,9 +3491,21 @@
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="0a90-e762-a0c5-f664" name="Celestian" hidden="false" collective="false" import="true" defaultSelectionEntryId="cb84-c31b-8f8f-7187">
+          <modifiers>
+            <modifier type="set" field="5aeb-b48d-df46-60f2" value="4.0">
+              <conditions>
+                <condition field="selections" scope="6b33-66b4-194b-97e7" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="7685-ed9c-4b9b-8273" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="0ee9-51fb-ecf6-526e" value="9.0">
+              <conditions>
+                <condition field="selections" scope="6b33-66b4-194b-97e7" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="7685-ed9c-4b9b-8273" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5aeb-b48d-df46-60f2" type="min"/>
-            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ee9-51fb-ecf6-526e" type="max"/>
+            <constraint field="selections" scope="parent" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5aeb-b48d-df46-60f2" type="min"/>
+            <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ee9-51fb-ecf6-526e" type="max"/>
           </constraints>
           <selectionEntries>
             <selectionEntry id="c609-eef8-ad0f-4c55" name="Celestian w/ Special Weapon" hidden="false" collective="false" import="true" type="model">
@@ -3532,18 +3551,26 @@
                 <selectionEntryGroup id="66ba-3c1b-746b-3b43" name="Weapon: " hidden="false" collective="false" import="true">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="94d3-a49b-d73d-1440" type="min"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ac5e-93b6-f269-650b" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" id="ac5e-93b6-f269-650b" type="max"/>
                   </constraints>
                   <entryLinks>
                     <entryLink id="cd23-a793-4ad7-48af" name="New EntryLink" hidden="false" collective="false" import="true" targetId="2b80-16a0-9b4a-4327" type="selectionEntryGroup">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0db0-ad66-3e18-6af1" type="max"/>
-                      </constraints>
+                      <modifiers>
+                        <modifier type="set" field="3e04-4239-f73c-50cb" value="0.0">
+                          <conditions>
+                            <condition field="selections" scope="df6b-cd61-d748-28cd" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="76ac-a296-832f-4fb7" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
                     </entryLink>
                     <entryLink id="76ac-a296-832f-4fb7" name="New EntryLink" hidden="false" collective="false" import="true" targetId="e6da-027a-c0cf-91ec" type="selectionEntryGroup">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7bd3-d583-429b-b198" type="max"/>
-                      </constraints>
+                      <modifiers>
+                        <modifier type="set" field="432c-a150-fea5-e2ae" value="0.0">
+                          <conditions>
+                            <condition field="selections" scope="df6b-cd61-d748-28cd" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cd23-a793-4ad7-48af" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
                     </entryLink>
                   </entryLinks>
                 </selectionEntryGroup>
@@ -4289,7 +4316,7 @@
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="608e-c5f7-9160-cb29" name="Chainsword" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="608e-c5f7-9160-cb29" name="Chainsword" hidden="false" collective="false" import="true" defaultSelectionEntryId="4c2c-ea21-ca83-52b4">
           <modifiers>
             <modifier type="append" field="name" value="[Legends]">
               <conditions>
@@ -4399,7 +4426,7 @@
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
-        <selectionEntryGroup id="334b-efad-c7f4-7dbb" name="Laspistol" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="334b-efad-c7f4-7dbb" name="Laspistol" hidden="false" collective="false" import="true" defaultSelectionEntryId="446b-2794-a082-8e1e">
           <modifiers>
             <modifier type="append" field="name" value="[Legends]">
               <conditions>
@@ -5889,7 +5916,7 @@ INFANTRY units that are entirely on or within an Adeptus Ministorum Structure re
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="4e8a-f723-76eb-14dc" name="Arch-Confessor Kyrinov" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="4e8a-f723-76eb-14dc" name="Arch-Confessor Kyrinov [Legends]" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
         <profile id="0b93-53c5-efeb-3c8e" name="Arch-Confessor Kyrinov" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -6110,7 +6137,7 @@ INFANTRY units that are entirely on or within an Adeptus Ministorum Structure re
     </selectionEntryGroup>
     <selectionEntryGroup id="2b80-16a0-9b4a-4327" name="Heavy Weapons" hidden="false" collective="false" import="true">
       <constraints>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3e04-4239-f73c-50cb" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3e04-4239-f73c-50cb" type="max"/>
       </constraints>
       <entryLinks>
         <entryLink id="c131-81af-4c98-8905" name="New EntryLink" hidden="false" collective="false" import="true" targetId="ca26-2d2b-9776-4ca1" type="selectionEntry">
