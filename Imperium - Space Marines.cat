@@ -4979,8 +4979,8 @@
               <selectionEntryGroups>
                 <selectionEntryGroup id="3106-b543-8c9a-45fe" name="Weapon Options" hidden="false" collective="false" import="true" defaultSelectionEntryId="4df6-b864-a8ee-528e">
                   <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4aff-13bb-4bce-9b1c" type="min"/>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dec7-623e-f759-47ca" type="max"/>
+                    <constraint field="selections" scope="ba33-2753-5f1d-12b8" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4aff-13bb-4bce-9b1c" type="min"/>
+                    <constraint field="selections" scope="ba33-2753-5f1d-12b8" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dec7-623e-f759-47ca" type="max"/>
                   </constraints>
                   <entryLinks>
                     <entryLink id="e326-6b73-7cc4-3597" name="Astartes shotgun" hidden="false" collective="false" import="true" targetId="ce59-8ed4-4497-8a53" type="selectionEntry">
@@ -16265,9 +16265,10 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0334-f487-8229-0c1a" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1d61-94e5-b2d1-13ac" type="equalTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -17303,7 +17304,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
             <cost name="pts" typeId="points" value="32.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="56d8-d8a8-cb8b-f4d3" name="Infilltrator" hidden="false" collective="false" import="true" type="model">
+        <selectionEntry id="56d8-d8a8-cb8b-f4d3" name="Infiltrator" hidden="false" collective="false" import="true" type="model">
           <modifiers>
             <modifier type="set" field="7695-d23e-1b0e-35ef" value="8.0">
               <conditions>
@@ -22894,6 +22895,13 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
               <constraints>
                 <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9773-1638-606f-3f8d" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="a9ff-b596-8f65-af02" name="The Aurillian Shroud" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle at the start of the battle round, a model with this relic can unveil the Aurillian Shroud. Until the end of the battle round friendly BLACK TEMPLARS units have a 4+ invulnerable save whilst thier unit is within 3&quot; of a model with this relic.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -22911,6 +22919,13 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
               <constraints>
                 <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5263-b6cb-59cb-ac4a" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="8313-6afd-996a-852a" name="Ancient Breviary" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">CHAPLAIN model only. When a roll is made to determine if a Litany recited by a model with this relic is inspiring, you can roll 2D6 and discard one of the results. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -22923,16 +22938,42 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
               <constraints>
                 <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce5d-65bb-4f67-2148" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="7cfd-f828-954c-2a8f" name="Sword of Judgement" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"></characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
             </entryLink>
             <entryLink id="d770-b61a-0552-9558" name="Witchseeker Bolts" hidden="false" collective="false" import="true" targetId="b51d-f416-0be9-9aae" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3188-ada9-f2f6-a219" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="b496-be57-7a3d-9818" name="Witchseeker Bolts" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Select one bolt weapon this model is equipped with. When the bearer shoots with that weapon, you can choose to fire a Witchseeker round. If you do, you can only make 1 attack with that weapon, but that attack can target an enemy PSYKER CHARACTER unit even if it is not the closest enemy unit. When resolving an attack made by with a witchseeker round against a PSYKER unit, if a hit is scored the target suffers D3 mortal wounds in addition to any other damage. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
             </entryLink>
             <entryLink id="8e26-8e0c-6a8b-fba7" name="Skull of Cacodominus" hidden="false" collective="false" import="true" targetId="aa91-5482-2e82-173a" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="252b-c9e1-6847-aeff" type="max"/>
               </constraints>
+              <profiles>
+                <profile id="da24-787f-99fb-e747" name="Skull of Cacodominus" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle after a psychic power has been manifested by an enemy PSKER model within 12&quot; inches of a model with this relic, one one D6. One a 2+ that model suffers D3 mortal wounds after that psyhic power has been resolved. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
