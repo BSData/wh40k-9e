@@ -7,7 +7,7 @@ Warhammer 40,000 8th Edition
 [![GitHub contributors](https://img.shields.io/github/contributors/BSData/wh40k.svg?style=flat-square)](https://github.com/BSData/wh40k/graphs/contributors)
 ![GitHub commit activity the past year](https://img.shields.io/github/commit-activity/y/BSData/wh40k.svg?style=flat-square)
 
-[![Chat on Discord](https://img.shields.io/discord/558412685981777922.svg?logo=discord&style=popout-square)](https://discord.gg/KqPVhds)
+[![Chat on Discord](https://img.shields.io/discord/558412685981777922?style=popout-square)](https://discord.gg/KqPVhds)
 
 
 ## Important ##
@@ -57,7 +57,7 @@ __Previous editions__: _However we don't support older editions actively, the fi
 
   Then join us on Discord!
   
-  [![Chat on Discord](https://img.shields.io/discord/558412685981777922.svg?logo=discord&style=popout-square)](https://discord.gg/KqPVhds)
+  [![Chat on Discord](https://img.shields.io/discord/558412685981777922?style=popout-square)](https://discord.gg/KqPVhds)
  
   _Otherwise, the easiest way is through issues mentioned above. We are a community and that's the only place we all have access to. We don't have any group e-mail. So if you want to stay anonymous, contact us by reporting bug on Appspot (point 1 above)._
 
