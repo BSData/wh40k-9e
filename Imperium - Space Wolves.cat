@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="24b6-2b46-0063-2867" name="Imperium - Space Wolves" revision="100" battleScribeVersion="2.03" authorName="CrusherJoe" authorContact="@CrusherJoe" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="24b6-2b46-0063-2867" name="Imperium - Space Wolves" revision="106" battleScribeVersion="2.03" authorName="CrusherJoe" authorContact="@CrusherJoe" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="24b6-2b46-pubN65537" name="Codex: Space Wolves"/>
     <publication id="24b6-2b46-pubN166488" name="Chapter Approved 2017"/>
@@ -1321,7 +1321,7 @@
         </entryLink>
         <entryLink id="6c8d-8826-6c6b-5963" name="Jump Pack" hidden="false" collective="false" import="true" targetId="30a0-3051-6b4d-442f" type="selectionEntry">
           <modifiers>
-            <modifier type="increment" field="points" value="24"/>
+            <modifier type="increment" field="points" value="28.0"/>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1d58-d9fe-51f6-0516" type="max"/>
@@ -1929,7 +1929,7 @@
         </entryLink>
         <entryLink id="1a0d-cb53-ffdd-c987" name="Jump Pack" hidden="false" collective="false" import="true" targetId="30a0-3051-6b4d-442f" type="selectionEntry">
           <modifiers>
-            <modifier type="increment" field="points" value="18.0"/>
+            <modifier type="set" field="points" value="18.0"/>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="61ea-005f-9f74-64c4" type="max"/>
@@ -2575,6 +2575,17 @@
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="fa30-3b1e-4f00-893e" name="Replace Bolt Pistol" hidden="false" collective="false" import="true" defaultSelectionEntryId="fa33-0cab-d5a7-b875">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a46d-c4c0-c14b-3b0b" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="set" field="97ad-4d4f-2d98-068e" value="0.0"/>
+                <modifier type="set" field="f450-614b-3494-0158" value="0.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" id="f450-614b-3494-0158" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="97ad-4d4f-2d98-068e" type="max"/>
@@ -3311,6 +3322,10 @@
           </constraints>
           <selectionEntries>
             <selectionEntry id="e0aa-536b-2fc6-c2d0" name="Blood Claw" hidden="false" collective="false" import="true" type="model">
+              <constraints>
+                <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="fa77-90fe-2605-b745" type="min"/>
+                <constraint field="selections" scope="parent" value="14.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9e2d-b166-714b-0edc" type="max"/>
+              </constraints>
               <infoLinks>
                 <infoLink id="1cff-47e6-a6d9-bfba" name="New InfoLink" hidden="false" targetId="3929-077e-c130-e6c7" type="profile"/>
               </infoLinks>
@@ -3435,8 +3450,20 @@
               <modifiers>
                 <modifier type="set" field="d62b-1527-7361-f5ec" value="2">
                   <conditions>
-                    <condition field="selections" scope="parent" value="15.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="704b-5c8c-4726-f30b" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="14.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e0aa-536b-2fc6-c2d0" type="equalTo"/>
                   </conditions>
+                </modifier>
+                <modifier type="set" field="d62b-1527-7361-f5ec" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="13.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e0aa-536b-2fc6-c2d0" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8048-5715-6a3a-8c98" type="atLeast"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -3472,10 +3499,12 @@
               </costs>
             </selectionEntry>
           </selectionEntries>
+          <entryLinks>
+            <entryLink id="1f51-a31f-67a0-e591" name="Wolf Guard Pack Leader" hidden="false" collective="false" import="true" targetId="e01c-9852-c7d9-21fc" type="selectionEntryGroup"/>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="61fe-8c8e-739a-3369" name="Wolf Guard Pack Leader" hidden="false" collective="false" import="true" targetId="e01c-9852-c7d9-21fc" type="selectionEntryGroup"/>
         <entryLink id="ea88-8037-6ba6-9690" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="3bef-6c43-8890-38a6" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
       </entryLinks>
@@ -3505,12 +3534,12 @@
           <modifiers>
             <modifier type="set" field="30c2-dd1f-6011-f5f4" value="0.0">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3271-0d41-552b-2b6e" type="atLeast"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4d28-0ebb-3015-a8f1" type="atLeast"/>
               </conditions>
             </modifier>
             <modifier type="set" field="9a26-7811-1767-f3fe" value="0.0">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3271-0d41-552b-2b6e" type="atLeast"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4d28-0ebb-3015-a8f1" type="atLeast"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -3548,12 +3577,12 @@
           <modifiers>
             <modifier type="set" field="c25a-3039-7e56-02be" value="0.0">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3271-0d41-552b-2b6e" type="atLeast"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4d28-0ebb-3015-a8f1" type="atLeast"/>
               </conditions>
             </modifier>
             <modifier type="set" field="d098-4236-6786-93fe" value="0.0">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3271-0d41-552b-2b6e" type="atLeast"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4d28-0ebb-3015-a8f1" type="atLeast"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -5117,6 +5146,9 @@
           </constraints>
         </entryLink>
         <entryLink id="b3fc-d741-501f-ccca" name="New EntryLink" hidden="false" collective="false" import="true" targetId="6f0c-0f8c-1a73-4052" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="18.0"/>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce53-d17c-b1c9-e3e5" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a966-725b-246f-0f79" type="max"/>
@@ -5546,7 +5578,6 @@
         <categoryLink id="42c1-51cf-8698-dc19" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="587f-ce07-c80c-031e" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="6ccc-cef2-83aa-93bd" name="New CategoryLink" hidden="false" targetId="f093-e031-3131-7b82" primary="false"/>
-        <categoryLink id="71b9-5d21-2107-535a" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
         <categoryLink id="19d0-87b4-dadf-19f4" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
         <categoryLink id="d992-9b5a-48c6-ba4a" name="New CategoryLink" hidden="false" targetId="a8ba-c0ba-c493-418f" primary="false"/>
         <categoryLink id="0d33-3862-3fce-37b0" name="New CategoryLink" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
@@ -13474,7 +13505,12 @@
           <modifiers>
             <modifier type="set" field="075f-6490-9cf3-9f3a" value="8.0">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="476a-aea5-71fe-805c" type="equalTo"/>
+                <condition field="selections" scope="9372-f06c-dc8c-7706" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="476a-aea5-71fe-805c" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="2b3e-db51-2eb6-0e89" value="3.0">
+              <conditions>
+                <condition field="selections" scope="9372-f06c-dc8c-7706" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="476a-aea5-71fe-805c" type="atLeast"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -13523,7 +13559,7 @@
             <cost name="pts" typeId="points" value="22.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="605b-23ca-731a-9eb8" name=" Infiltrator comms array" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="605b-23ca-731a-9eb8" name="Infiltrator comms array" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="set" field="044d-8a23-fdb7-fe02" value="0.0">
               <conditions>
@@ -14854,7 +14890,11 @@ wounds.</characteristic>
       </constraints>
       <entryLinks>
         <entryLink id="a260-2238-18fc-5b2c" name="New EntryLink" hidden="false" collective="false" import="true" targetId="1469-1964-7a91-94d4" type="selectionEntry"/>
-        <entryLink id="7b02-1fca-5212-5dc3" name="New EntryLink" hidden="false" collective="false" import="true" targetId="afe0-3771-1982-92b4" type="selectionEntry"/>
+        <entryLink id="7b02-1fca-5212-5dc3" name="New EntryLink" hidden="false" collective="false" import="true" targetId="afe0-3771-1982-92b4" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="20.0"/>
+          </modifiers>
+        </entryLink>
         <entryLink id="a5bc-7db7-7d4c-015b" name="New EntryLink" hidden="false" collective="false" import="true" targetId="3371-814b-4320-12b6" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="22.0"/>
@@ -14872,7 +14912,11 @@ wounds.</characteristic>
     <selectionEntryGroup id="345e-609b-29f8-73af" name="Dreadnought Heavy Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="0885-7fb5-0d0a-4882">
       <entryLinks>
         <entryLink id="c972-76ce-6c31-135b" name="Twin heavy flamer" hidden="false" collective="false" import="true" targetId="8d70-a6af-cbad-f08c" type="selectionEntry"/>
-        <entryLink id="d7a7-77c2-0efc-ef65" name="Twin autocannon" hidden="false" collective="false" import="true" targetId="afe0-3771-1982-92b4" type="selectionEntry"/>
+        <entryLink id="d7a7-77c2-0efc-ef65" name="Twin autocannon" hidden="false" collective="false" import="true" targetId="afe0-3771-1982-92b4" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="20.0"/>
+          </modifiers>
+        </entryLink>
         <entryLink id="5bec-35c7-7f07-0ea4" name="" hidden="false" collective="false" import="true" targetId="ee18-b1cd-6b60-464d" type="selectionEntry"/>
         <entryLink id="0885-7fb5-0d0a-4882" name="Assault cannon" hidden="false" collective="false" import="true" targetId="51b0-3d46-5af4-683e" type="selectionEntry"/>
         <entryLink id="c612-6517-7055-326d" name="" hidden="false" collective="false" import="true" targetId="221a-6109-61df-015e" type="selectionEntry"/>
