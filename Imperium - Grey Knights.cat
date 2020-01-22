@@ -2535,12 +2535,23 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0964-f14a-6940-b68e" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="983b-f0f8-5003-66f2" name="New EntryLink" hidden="false" collective="false" import="true" targetId="8b6c-c5c4-89ac-574e" type="selectionEntryGroup"/>
         <entryLink id="1c6b-3803-264a-d8ee" name="Grey Knight Relics" hidden="false" collective="false" import="true" targetId="c779-4f85-7bfa-aad3" type="selectionEntryGroup"/>
         <entryLink id="5fbf-0c81-ec41-a41f" name="Warlord" hidden="false" collective="false" import="true" targetId="2516-dd30-d80e-f79a" type="selectionEntry"/>
         <entryLink id="2745-78f1-d1e7-f4fb" name="Grey Knight Warlord Trait" hidden="false" collective="false" import="true" targetId="87f6-76b7-a0d2-6b2c" type="selectionEntryGroup"/>
         <entryLink id="02e4-5e70-7d10-8047" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="97a4-5ff5-dd9e-f91b" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
+        <entryLink id="4b45-5a20-3390-a1e5" name="Grey Knight Psychic Powers" hidden="false" collective="false" import="true" targetId="7518-ba99-0fa6-4f6b" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="increment" field="2128-6ba9-4858-5753" value="1.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="923f-ee30-3c6c-42e2" type="atLeast"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2128-6ba9-4858-5753" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -6140,7 +6151,7 @@
         </selectionEntry>
         <selectionEntry id="1318-dc4e-5eb8-1422" name="Nemesis Force Halberd" hidden="false" collective="false" import="true" type="upgrade">
           <entryLinks>
-            <entryLink id="1ace-6604-f6a7-e335" name="New EntryLink" hidden="false" collective="false" import="true" targetId="bbe1-df34-13d0-7ed1" type="selectionEntry">
+            <entryLink id="1ace-6604-f6a7-e335" name="Nemesis Force Halberd" hidden="false" collective="false" import="true" targetId="bbe1-df34-13d0-7ed1" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="724e-bbd1-a88f-b07b" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0922-9783-c2ff-dbcb" type="max"/>
@@ -6170,7 +6181,7 @@
         </selectionEntry>
         <selectionEntry id="fa60-c456-1d3f-4065" name="Nemesis Force Sword" hidden="false" collective="false" import="true" type="upgrade">
           <entryLinks>
-            <entryLink id="2e71-4c1e-e4f1-00c7" name="New EntryLink" hidden="false" collective="false" import="true" targetId="9b71-6e0f-e71f-eacc" type="selectionEntry">
+            <entryLink id="2e71-4c1e-e4f1-00c7" name="Nemesis Force Sword" hidden="false" collective="false" import="true" targetId="9b71-6e0f-e71f-eacc" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e7a-fd24-353e-bdd0" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6cd4-49cd-fdcc-695a" type="max"/>
@@ -7023,10 +7034,11 @@
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6ad2-bcea-a5bd-6da8" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0abf-b3fb-43c9-08d2" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fded-edb8-1d1e-99a5" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2b03-8d64-3711-f300" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="157e-75cd-ac3d-ebf8" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -7045,19 +7057,12 @@
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="49d8-cabb-10de-2c95" name="Destroyer of Crys&apos;yllx" publicationId="0cc2-3545-pubN112001" hidden="true" collective="false" import="true" type="upgrade">
+        <selectionEntry id="49d8-cabb-10de-2c95" name="Destroyer of Crys&apos;yllx" publicationId="0cc2-3545-pubN112001" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
-            <modifier type="set" field="hidden" value="false">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f4b7-6f8e-448d-9c3b" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae77-bbb6-8a07-c24b" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6ad2-bcea-a5bd-6da8" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1345-340b-cee3-c05e" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8fba-9c8d-73bd-fe8e" type="equalTo"/>
+              </conditions>
             </modifier>
           </modifiers>
           <constraints>
@@ -7073,19 +7078,12 @@
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="0d9e-a687-c64e-9dc5" name="Soul Glaive" publicationId="0cc2-3545-pubN112001" hidden="true" collective="false" import="true" type="upgrade">
+        <selectionEntry id="0d9e-a687-c64e-9dc5" name="Soul Glaive" publicationId="0cc2-3545-pubN112001" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
-            <modifier type="set" field="hidden" value="false">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f4b7-6f8e-448d-9c3b" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae77-bbb6-8a07-c24b" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6ad2-bcea-a5bd-6da8" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1345-340b-cee3-c05e" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bbe1-df34-13d0-7ed1" type="equalTo"/>
+              </conditions>
             </modifier>
           </modifiers>
           <constraints>
@@ -7135,6 +7133,9 @@
                   <conditions>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0abf-b3fb-43c9-08d2" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e15c-3096-8468-aa26" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9790-e0f9-5343-81bc" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0db5-e1aa-6692-1f98" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9b71-6e0f-e71f-eacc" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -7177,13 +7178,21 @@
                 <conditionGroup type="or">
                   <conditions>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e15c-3096-8468-aa26" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c97e-2928-fc16-ddc3" type="atLeast"/>
                   </conditions>
                   <conditionGroups>
                     <conditionGroup type="and">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0abf-b3fb-43c9-08d2" type="instanceOf"/>
-                        <condition field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c97e-2928-fc16-ddc3" type="atLeast"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9beb-5ba2-8317-4b82" type="equalTo"/>
                       </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0db5-e1aa-6692-1f98" type="instanceOf"/>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9790-e0f9-5343-81bc" type="instanceOf"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </conditionGroup>
                   </conditionGroups>
                 </conditionGroup>
@@ -7210,6 +7219,9 @@
                   <conditions>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0abf-b3fb-43c9-08d2" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e15c-3096-8468-aa26" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0db5-e1aa-6692-1f98" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9790-e0f9-5343-81bc" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9dc6-e559-0099-005a" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
