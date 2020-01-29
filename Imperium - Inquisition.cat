@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Inquisition" revision="37" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Inquisition" revision="38" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="e373-3c0a-pubN65537" name="Index: Imperium 2"/>
   </publications>
@@ -570,23 +570,6 @@
             <categoryLink id="26a8-15df-d2b9-35b2" name="New CategoryLink" hidden="false" targetId="e691-aad7-d21c-1023" primary="false"/>
           </categoryLinks>
           <entryLinks>
-            <entryLink id="db11-cd2a-b0b9-cfe2" name="Telethesia Discipline" hidden="false" collective="false" import="true" targetId="abc3-fa40-1bf3-dc28" type="selectionEntryGroup">
-              <modifiers>
-                <modifier type="increment" field="7250-7412-d81e-bde7" value="1.0">
-                  <conditions>
-                    <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eab9-a014-74ae-86fa" type="equalTo"/>
-                  </conditions>
-                </modifier>
-                <modifier type="increment" field="7250-7412-d81e-bde7" value="1.0">
-                  <conditions>
-                    <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7250-7412-d81e-bde7" type="max"/>
-              </constraints>
-            </entryLink>
             <entryLink id="26d0-f590-28e3-b697" name="New EntryLink" hidden="false" collective="false" import="true" targetId="03fd-db47-5333-1e1f" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aecc-79b4-3640-58c4" type="min"/>
@@ -650,6 +633,28 @@
         <entryLink id="3d53-ec82-e7a7-855e" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="60d8-7744-7475-cd30" name="Stratagem: Inquisitorial Mandate" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
         <entryLink id="db35-a7ad-3c19-bf15" name="Relics of the Inquisition" hidden="false" collective="false" import="true" targetId="6d56-cc13-9294-4021" type="selectionEntryGroup"/>
+        <entryLink id="1150-6c94-b8df-54ac" name="Telethesia Discipline" hidden="false" collective="false" import="true" targetId="abc3-fa40-1bf3-dc28" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="increment" field="0ed5-4c65-cdf4-4782" value="1.0">
+              <conditions>
+                <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eab9-a014-74ae-86fa" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="0ed5-4c65-cdf4-4782" value="1.0">
+              <conditions>
+                <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="0b13-8c12-cbea-300f" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee86-5bfb-fa38-59fd" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ed5-4c65-cdf4-4782" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="55.0"/>
@@ -2220,9 +2225,14 @@
         <selectionEntry id="5891-ccb0-a0a0-3a9d" name="Hereticus - Ascertainment" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9d23-57b8-72c2-d750" type="notInstanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9d23-57b8-72c2-d750" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="91fe-899f-0118-18f2" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -2246,9 +2256,14 @@
         <selectionEntry id="c6b9-bf28-f66f-1556" name="Xenos - Psychic Veil" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7a7-9d79-d2f8-4a17" type="notInstanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7a7-9d79-d2f8-4a17" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0124-3c91-013a-9da4" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -2272,9 +2287,14 @@
         <selectionEntry id="ee22-538e-500b-528b" name="Malleus - Power Through Knowledge" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6370-55c4-5013-14f8" type="notInstanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="34c2-315c-1992-dd57" type="equalTo"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6370-55c4-5013-14f8" type="notInstanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
