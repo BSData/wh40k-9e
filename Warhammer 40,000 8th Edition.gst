@@ -183,8 +183,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="9e6f-3e68-ab66-9f48" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="041f-3067-ce7b-06aa" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="b804-eab0-fa1a-b573" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="b201-7a22-83be-fcd2" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -305,8 +305,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="fc4c-e6c8-3a50-af1d" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="a3a4-d443-2ded-f82f" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0e1f-72c2-388e-0869" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="dc98-c3a9-900b-5345" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -427,8 +427,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="cc37-3585-fefc-1935" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="5d10-4858-a639-b7ba" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="4683-00c9-930d-6336" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="b656-705b-2154-356b" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -552,8 +552,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="720e-5977-c571-bf29" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="c065-cb87-2653-4d52" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="4683-00c9-930d-6336" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="a158-6003-3ee2-5924" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -674,8 +674,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="beb4-b8f9-8ee5-d1e8" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="816e-043a-6b2c-fe91" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="6c3b-d81d-e237-32fa" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="a13f-7b3a-ceac-64f4" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -796,8 +796,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="8fb8-60d9-8dc8-27fb" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="730a-f4ac-604e-b77b" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="1870-00e5-1915-3ab8" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="b196-6b9f-fb28-4ca9" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -915,8 +915,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="a45f-e37b-224f-813a" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="e7ac-d434-4bd3-2dd6" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="6fed-d770-852f-a123" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="8a3d-3602-7ef5-9ab1" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1031,8 +1031,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="9470-1b9e-1fc2-5554" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="bbe8-0573-760e-a28f" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="964d-8f7c-1171-8b98" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="c0a7-80ba-6d10-0724" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false">
           <constraints>
@@ -1070,8 +1070,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="e09e-267a-4f71-9e08" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="425c-179c-46b3-5ee8" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false">
           <constraints>
@@ -1084,8 +1084,8 @@
     </forceEntry>
     <forceEntry id="224b-1070-218f-fdf4" name="Super-Heavy Auxiliary Detachment" hidden="false">
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="d42a-fc02-778b-3118" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="dcbb-53c2-a989-ae08" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="a4f9-671f-1bad-73f1" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="fd86-521c-89cd-53b4" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false">
           <constraints>
@@ -1106,8 +1106,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="41e1-846b-92e3-4764" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="cafb-dc6b-1907-0ae3" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="4cf2-55de-1de3-bdfd" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="4fb0-8ba2-1ea6-973e" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false">
           <constraints>
@@ -1135,8 +1135,8 @@
         </rule>
       </rules>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="3df9-2058-91f4-29ca" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="7e18-f7dd-c869-dcb9" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="fd67-6351-2009-87d7" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="765e-ebad-7cd0-d952" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="4251-29e5-bb48-d668" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1155,8 +1155,8 @@
     </forceEntry>
     <forceEntry id="44da-9aaf-181b-5ece" name="Unbound Army (Faction)" hidden="false">
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="66d6-b14b-e932-9748" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="3144-7363-0a07-001a" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="00d9-069d-5354-97e7" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="5a8c-53a4-c961-7905" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="8a81-4291-964c-1f95" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1189,8 +1189,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="0d77-282a-1620-dc33" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="0961-1fc6-b141-fcd7" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="958b-ff62-a5a2-f12c" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="4b40-d755-270f-aa80" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1315,8 +1315,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="2f66-04f2-8a87-65db" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="49ef-68b2-d9e2-8ab3" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0b64-fa2c-fe0a-f9de" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="7d81-8310-6094-cf8d" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1441,8 +1441,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="c3b4-ccb5-2bb6-8467" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="2042-68c1-c180-19d0" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0a94-a878-e103-6083" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="cd87-e443-1d40-5ccc" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1568,8 +1568,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="04b8-4ded-1c36-fa57" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="02cb-ac0d-fd65-407b" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="722b-09e4-f228-16be" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="7f5c-0518-2449-ad67" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1682,8 +1682,8 @@
     </forceEntry>
     <forceEntry id="bffe-7939-c2e6-8f83" name="Reinforcements" hidden="false">
       <categoryLinks>
-		<categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-		<categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+        <categoryLink id="74b5-2f6a-b25b-85b0" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="a689-25bf-9943-c23d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="f441-862d-4164-4496" name="Reinforcement Points" hidden="false" targetId="7320-eafd-02c1-94da" primary="false"/>
         <categoryLink id="b1d5-50d6-6742-8377" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="5aab-fcd9-f431-a112" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
