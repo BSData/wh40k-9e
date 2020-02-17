@@ -48,12 +48,24 @@
     <categoryEntry id="bf09-6007-1a8f-792b" name="Faction: Dal&apos;yth" hidden="false"/>
     <categoryEntry id="257e-82d7-82b7-4434" name="Commander" hidden="false">
       <modifiers>
-        <modifier type="set" field="c263-a484-c08f-4136" value="1">
+        <modifier type="set" field="c263-a484-c08f-4136" value="1.0">
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="58c5-1d35-3869-613f" type="greaterThan"/>
                 <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2b21-8566-e761-2d44" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1742-90e4-26f1-d1d2" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="c263-a484-c08f-4136" value="2.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="58c5-1d35-3869-613f" type="greaterThan"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2b21-8566-e761-2d44" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1742-90e4-26f1-d1d2" type="greaterThan"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -191,6 +203,54 @@
       </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-3.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4f2e-e0ba-eacd-b233" name="Veteran Cadre (3 models)" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="1a11-f384-8dbf-3030" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f72a-6995-ee91-fdee" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1742-90e4-26f1-d1d2" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1a11-f384-8dbf-3030" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="ad30-9a41-0f43-acdd" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="f72a-6995-ee91-fdee" name="Veteran Cadre (4+ models)" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="e81e-7b72-cb7f-8bf3" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4f2e-e0ba-eacd-b233" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1742-90e4-26f1-d1d2" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e81e-7b72-cb7f-8bf3" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="ff25-abf8-3cc3-cd23" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
       </costs>
     </selectionEntry>
   </selectionEntries>
@@ -2835,6 +2895,30 @@
         <entryLink id="aea9-1a93-9f14-d874" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="0801-c2f6-c884-25bb" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="98eb-3e3a-6a5d-58ad" name="SigSystems &amp; ProtoWeaponSystems" hidden="false" collective="false" import="true" targetId="f1bd-4b49-0962-c197" type="selectionEntryGroup"/>
+        <entryLink id="1709-28d8-e668-987d" name="Veteran Cadre" hidden="true" collective="false" import="true" targetId="3682-4e10-903c-281f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4f2e-e0ba-eacd-b233" type="greaterThan"/>
+                        <condition field="selections" scope="d0ff-623f-dc07-41c8" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4373-5cb3-b8b4-f4a9" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f72a-6995-ee91-fdee" type="greaterThan"/>
+                        <condition field="selections" scope="d0ff-623f-dc07-41c8" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4373-5cb3-b8b4-f4a9" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -2937,6 +3021,30 @@
         <entryLink id="fcf9-3bfd-6fc0-cb23" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="ce84-96da-8723-cf31" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="736e-de38-d3ce-d0e3" name="SigSystems &amp; ProtoWeaponSystems" hidden="false" collective="false" import="true" targetId="f1bd-4b49-0962-c197" type="selectionEntryGroup"/>
+        <entryLink id="b2c4-cdec-2e2c-8935" name="Veteran Cadre" hidden="true" collective="false" import="true" targetId="3682-4e10-903c-281f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4f2e-e0ba-eacd-b233" type="greaterThan"/>
+                        <condition field="selections" scope="2a57-2755-54cd-8930" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3bbf-990b-1652-2e03" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f72a-6995-ee91-fdee" type="greaterThan"/>
+                        <condition field="selections" scope="2a57-2755-54cd-8930" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3bbf-990b-1652-2e03" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -3316,6 +3424,11 @@
                 <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2fd0-e84a-313d-7dbc" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2fd0-e84a-313d-7dbc" type="equalTo"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e964-4b53-2618-e794" type="max"/>
@@ -3328,6 +3441,11 @@
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
@@ -8092,6 +8210,9 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
           </characteristics>
         </profile>
       </profiles>
+      <infoLinks>
+        <infoLink id="8777-caa2-33ec-3e03" name="Aggressive Footing" hidden="false" targetId="06a9-8595-ef27-5941" type="profile"/>
+      </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -8857,6 +8978,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
@@ -8976,6 +9102,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
@@ -9098,6 +9229,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
@@ -9170,6 +9306,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="2b53-e698-10f5-2f40" name="Smart missile system" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -9188,6 +9329,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="8a3f-0396-0a7a-79d6" name="Velocity tracker" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -9201,6 +9347,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
@@ -9312,6 +9463,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="74ee-33ab-d644-e148" name="Fusion blaster" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -9330,6 +9486,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="b08c-0085-7f99-5843" name="Ion accelerator" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -9358,6 +9519,11 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="a1f6-85d4-dcc2-56a5" name="Target lock" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -9451,6 +9617,8 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
       </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="2fd0-e84a-313d-7dbc" name="Pack Alpha" publicationId="4593-a2f0-546a-d6f2" page="39" hidden="false" collective="false" import="true" type="upgrade">
@@ -9466,7 +9634,22 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
       </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="3682-4e10-903c-281f" name="Veteran Cadre" publicationId="4593-a2f0-546a-d6f2" page="51" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="932e-49df-0151-46dd" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bca9-7e36-a668-0a50" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="be2d-a8ef-80ee-e8f2" name="Veteran Cadre" publicationId="4593-a2f0-546a-d6f2" page="51" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle. Select one XV8 CRISIS BATTLESUITS or XV8 CRISIS BODYGUARDS unit from your army that contains 3 models for 1 Command Point or one XV8 CRISIS BATTLESUITS or XV8 CRISIS BODYGUARDS unit from your army that contains 4 or more models for 2 Command Points. Models in that unit have a Weapon Skill characteristic of 4+ and a Ballistic Skill characteristic of 3+. You can only use this Stratagem once per battle.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -13225,6 +13408,12 @@ Both Drones can detach at the start of any of your Movement phases by disembarki
         <characteristic name="Remaining W" typeId="ed8c-f5e4-cf07-e535">8-16+</characteristic>
         <characteristic name="M" typeId="97f0-50dd-1e0b-c9a6">20&quot;-75&quot;</characteristic>
         <characteristic name="BS" typeId="3dc7-a786-df8d-c670">2+</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="06a9-8595-ef27-5941" name="Aggressive Footing" publicationId="4593-a2f0-546a-d6f2" page="50" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">[All FARSIGHT ENCLAVES units in Codex: T&apos;au Empire gain the Aggressive Footing ability:]
+When resolving an attack made with a ranged weapon by a model in this unit against an enemy unit within 12&quot;, treat that enemy unit as having one more markerlight counter than it actually has.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
