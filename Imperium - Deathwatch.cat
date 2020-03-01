@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="203b-f8dd-2a64-2676" name="Imperium - Deathwatch" revision="84" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="203b-f8dd-2a64-2676" name="Imperium - Deathwatch" revision="85" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="203b-f8dd-pubN65537" name="Codex: Deathwatch"/>
     <publication id="203b-f8dd-pubN98915" name="Chapter Approved 2017"/>
@@ -2030,6 +2030,10 @@
     <selectionEntry id="2c57-923c-9e52-6af9" name="Cyclone Missile Launcher and Storm Bolter" hidden="false" collective="false" import="true" type="upgrade">
       <entryLinks>
         <entryLink id="7d9a-122c-fdf3-db3f" name="Storm Bolter" hidden="false" collective="false" import="true" targetId="2792-8890-b1a4-87af" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="3d91-35c4-2884-d379" value="0"/>
+            <modifier type="set" field="f549-fca3-1976-6fc7" value="0"/>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f549-fca3-1976-6fc7" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3d91-35c4-2884-d379" type="max"/>
@@ -4512,11 +4516,7 @@ For the purposes of setting up on or moving through Battlefield Terrain, this un
                   </constraints>
                   <entryLinks>
                     <entryLink id="3b98-c34f-aa58-7f8d" name="Auto Bolt Rifle" hidden="false" collective="false" import="true" targetId="fc62-c44a-81d2-9e7b" type="selectionEntry"/>
-                    <entryLink id="b317-af6d-ea49-d468" name="Bolt rifle" hidden="false" collective="false" import="true" targetId="fbf3-4fc8-f474-e3db" type="selectionEntry">
-                      <modifiers>
-                        <modifier type="set" field="points" value="1"/>
-                      </modifiers>
-                    </entryLink>
+                    <entryLink id="b317-af6d-ea49-d468" name="Bolt rifle" hidden="false" collective="false" import="true" targetId="fbf3-4fc8-f474-e3db" type="selectionEntry"/>
                     <entryLink id="5d87-2217-7afb-31ef" name="Stalker Bolt Rifle" hidden="false" collective="false" import="true" targetId="f1db-c752-001e-eed8" type="selectionEntry"/>
                     <entryLink id="6129-f907-0df0-5a96" name="Chainsword" hidden="false" collective="false" import="true" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry">
                       <constraints>
@@ -6185,13 +6185,13 @@ For the purposes of setting up on or moving through Battlefield Terrain, this un
             <selectionEntry id="6186-906f-5cdc-d1aa" name="Two Assault Bolters" hidden="false" collective="false" import="true" type="upgrade">
               <entryLinks>
                 <entryLink id="be63-9aa8-9e88-385c" name="Assault bolter" hidden="false" collective="false" import="true" targetId="e3a8-4aab-77ee-956a" type="selectionEntry">
-                  <modifiers>
-                    <modifier type="set" field="points" value="10.0"/>
-                  </modifiers>
                   <constraints>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0f18-21dc-ebea-7060" type="max"/>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f0f6-3219-c897-1c60" type="min"/>
                   </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="10.0"/>
+                  </costs>
                 </entryLink>
               </entryLinks>
               <costs>
@@ -7997,23 +7997,7 @@ For the purposes of setting up on or moving through Battlefield Terrain, this un
             <modifier type="append" field="name" value="(Index)"/>
           </modifiers>
         </entryLink>
-        <entryLink id="845a-0dd8-feb8-8eb1" name="Thunder Hammer and Storm Shield" hidden="false" collective="false" import="true" targetId="95a1-9d6a-cf97-eff2" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c702-d73b-dccf-5617" type="equalTo"/>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="39de-0f62-f0ba-ac08" type="equalTo"/>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e860-827e-24e0-0bd8" type="equalTo"/>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="60fc-4edd-2f25-894c" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="append" field="name" value=" (HRfix)"/>
-          </modifiers>
-        </entryLink>
+        <entryLink id="845a-0dd8-feb8-8eb1" name="Thunder Hammer and Storm Shield" hidden="false" collective="false" import="true" targetId="95a1-9d6a-cf97-eff2" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="531b-74ae-ce9f-59ff" name="Sgt List" hidden="false" collective="false" import="true">
