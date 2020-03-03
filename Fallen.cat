@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="d541-6e16-d152-db06" name="Fallen" revision="8" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="94" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="d541-6e16-d152-db06" name="Fallen" revision="9" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="94" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <categoryEntries>
     <categoryEntry id="cd82-15ee-cad6-4909" name="Fallen Angels" hidden="false"/>
   </categoryEntries>
+  <selectionEntries>
+    <selectionEntry id="c821-2625-b5eb-5ae4" name="Gifts of Chaos (1 Relic)" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="9cd6-e123-2e46-7b0a" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1026-b9a8-7310-7c21" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9cd6-e123-2e46-7b0a" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="f6bb-0f04-28cb-d42d" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="1026-b9a8-7310-7c21" name="Gifts of Chaos (2 Relics)" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="a3fb-35bf-9cc9-6eb4" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c821-2625-b5eb-5ae4" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a3fb-35bf-9cc9-6eb4" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="2776-609b-2d66-3399" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-3.0"/>
+      </costs>
+    </selectionEntry>
+  </selectionEntries>
   <entryLinks>
     <entryLink id="1cd4-ef48-c06a-96da" name="Cypher" hidden="false" collective="false" import="true" targetId="90fa-7e44-02fc-0db0" type="selectionEntry">
       <modifiers>
@@ -868,7 +906,7 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any weapon with th
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fc3d-9691-8553-e33a" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="893e-7989-4ab7-2301" name="New EntryLink" hidden="false" collective="false" import="true" targetId="4a0e-0f13-63c2-9aae" type="selectionEntry">
+            <entryLink id="893e-7989-4ab7-2301" name="Force axe" hidden="false" collective="false" import="true" targetId="4a0e-0f13-63c2-9aae" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b8df-0abf-e136-bf09" type="max"/>
               </constraints>
@@ -914,11 +952,7 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any weapon with th
           </constraints>
         </entryLink>
         <entryLink id="59d2-d45f-a2bd-3d50" name="Artefacts of Chaos" hidden="false" collective="false" import="true" targetId="db42-fef2-6351-be64" type="selectionEntryGroup"/>
-        <entryLink id="3fe4-e0c3-542d-be92" name="Warlord" hidden="false" collective="false" import="true" targetId="c1db-1126-92e2-e807" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e7c0-8463-99a2-0806" type="max"/>
-          </constraints>
-        </entryLink>
+        <entryLink id="3fe4-e0c3-542d-be92" name="Warlord" hidden="false" collective="false" import="true" targetId="c1db-1126-92e2-e807" type="selectionEntry"/>
         <entryLink id="2075-6e5f-0dee-0b68" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="8962-8f3a-3b49-7528" type="selectionEntryGroup"/>
         <entryLink id="4c07-4693-08f5-e8ce" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="8f36-976d-cc0c-f267" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
@@ -1323,18 +1357,83 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any weapon with th
     <selectionEntryGroup id="db42-fef2-6351-be64" name="Artefacts of Chaos" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c821-2625-b5eb-5ae4" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1026-b9a8-7310-7c21" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="4bb1-357e-0bdf-26e1" value="1.0">
           <conditions>
-            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c1db-1126-92e2-e807" type="equalTo"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="4bb1-357e-0bdf-26e1" value="1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c821-2625-b5eb-5ae4" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="4bb1-357e-0bdf-26e1" value="2.0">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1026-b9a8-7310-7c21" type="equalTo"/>
           </conditions>
         </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dadc-814c-8db4-b722" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4bb1-357e-0bdf-26e1" type="max"/>
       </constraints>
+      <selectionEntries>
+        <selectionEntry id="3f77-4d46-685c-b85c" name="Ul&apos;o&apos;cca, The Black Axe" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4a0e-0f13-63c2-9aae" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ae7c-0b9f-917e-3bdf" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="8bb4-9cee-824b-3ce7" name="Ul&apos;o&apos;cca, The Black Axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, an unmodified wound roll of 4+ inflicts 1 mortal wound on the target in addition to any other damage.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <rules>
+            <rule id="5898-072b-6a27-2692" name="Daemon Weapon" hidden="false">
+              <description>In the Fight phase, when this model is chosen to fight with for the first time that phase, roll one D6. On a 1, the model suffers 1 mortal wound and cannot use this weapon further that phase. On a 2+ the model can fight with the weapon as normal.</description>
+            </rule>
+          </rules>
+        </selectionEntry>
+      </selectionEntries>
       <entryLinks>
-        <entryLink id="ec7b-2633-b684-4dec" name="Caliban Steel Blade" hidden="false" collective="false" import="true" targetId="11ab-470e-d46c-340c" type="selectionEntry"/>
-        <entryLink id="30bf-8c2c-d39d-b30d" name="The Black Mace" hidden="false" collective="false" import="true" targetId="93d0-7e4b-6d5c-64b2" type="selectionEntry"/>
-        <entryLink id="e7a1-9014-9550-b013" name="The Murder Sword" hidden="false" collective="false" import="true" targetId="bce2-bf42-efc2-27d0" type="selectionEntry"/>
+        <entryLink id="ec7b-2633-b684-4dec" name="Caliban Steel Blade" hidden="false" collective="false" import="true" targetId="11ab-470e-d46c-340c" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0cf5-63bd-c8c9-83a1" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="30bf-8c2c-d39d-b30d" name="The Black Mace" hidden="false" collective="false" import="true" targetId="93d0-7e4b-6d5c-64b2" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="689f-e311-611e-e4ef" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="e7a1-9014-9550-b013" name="The Murder Sword" hidden="false" collective="false" import="true" targetId="bce2-bf42-efc2-27d0" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="1a2f-78f4-a5c8-3bae" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="6a10-ee77-8b15-f6fe" name="Pistols" hidden="false" collective="false" import="true">
