@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="126" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="127" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -236,7 +236,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="806f-d1ee-da05-0983" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="9b48-cd5f-3949-adc6" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="a8d7-367a-2dfd-6b79" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -360,7 +359,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="dd16-f9e4-6928-db00" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="70a3-5965-8dfd-0dff" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="f91f-9faa-2dff-6fbb" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -487,7 +485,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b905-bc19-8b25-f26a" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="b505-6d2b-bb65-191e" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="386d-9c19-e897-b48e" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -611,7 +608,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1449-c900-5e63-561c" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="c3f6-3055-bcd0-788b" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="6eb8-3c2f-13e7-17e1" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -735,7 +731,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="68bd-f7ab-859e-fb22" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="0144-c043-6326-c755" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="dff9-8621-e2dd-b4e3" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -859,7 +854,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3de0-5460-f04b-09ba" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="5411-43af-9074-78ae" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="43a0-ffe6-d029-9152" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -961,7 +955,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="83e7-e60b-0ad5-1d24" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="2421-180e-769d-d51f" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="2e59-df4f-9429-ef1a" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1055,7 +1048,6 @@
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="67f2-9795-52db-5a70" type="min"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="9ca8-4fb9-709b-b9a6" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="5ae3-7417-3751-8480" name="Relic Lord of War" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <modifiers>
             <modifier type="increment" field="c99e-bf0a-6e60-819c" value="1">
@@ -1096,7 +1088,6 @@
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc65-2978-7619-e375" type="min"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="33b2-565d-d44c-99a7" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="224b-1070-218f-fdf4" name="Super-Heavy Auxiliary Detachment" hidden="false">
@@ -1110,7 +1101,6 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b8f-4518-f394-33f4" type="min"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="b1a6-0fc5-d615-d4eb" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="dcee-07fa-ec14-7dec" name="Fortification Network" hidden="false">
@@ -1134,7 +1124,6 @@
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0214-a689-7537-aafa" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="663d-4540-136a-98c1" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="8a87-f0e3-f2f2-ad1a" name="Auxiliary Support Detachment -1CP" hidden="false">
@@ -1166,7 +1155,6 @@
         <categoryLink id="9153-b8bd-1f8a-9f1f" name="Heavy Support" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="false"/>
         <categoryLink id="0960-9271-26d6-1831" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false"/>
         <categoryLink id="1d7c-3253-d90d-6e3a" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
-        <categoryLink id="09fb-b9a5-3cb5-b0d5" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="ba03-97bb-c51d-9a47" name="Relic" hidden="false" targetId="e10e-b44e-7eda-41d8" primary="false">
           <constraints>
             <constraint field="selections" scope="8a87-f0e3-f2f2-ad1a" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1781-5ba7-241c-c0b3" type="max"/>
@@ -1188,7 +1176,6 @@
         <categoryLink id="d5f2-dac9-5cf7-ddac" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
         <categoryLink id="b474-2366-f02e-6f49" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false"/>
         <categoryLink id="7751-b628-068c-ae45" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false"/>
-        <categoryLink id="9a65-6b3b-5e44-03e8" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="8cae-c44c-ef1f-8f43" name="Planetstrike Attacker +5 CP" publicationId="28ec-711c-pubN73170" page="34" hidden="false">
@@ -1265,7 +1252,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4240-b0fc-8a69-2871" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="7187-699d-2503-992c" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="f717-1d3f-dd97-4126" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1393,7 +1379,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ee38-3431-abb2-9e62" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="3c3b-27e3-c0b7-b3ee" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="4191-d1fc-fa74-f144" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1521,7 +1506,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a18-2f70-70ee-6230" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="eed4-ea5f-257c-0699" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="e346-2f51-2beb-4df1" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1655,7 +1639,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6ce3-81ab-8b21-3ef4" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="3e5e-b1fa-a208-60bd" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="414e-4ecb-b1e8-75c3" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
