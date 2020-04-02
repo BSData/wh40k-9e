@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="73" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="74" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="73" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="11b5-77b9-pubN65537" name="Codex: Orks"/>
     <publication id="11b5-77b9-pubN143628" name="Chapter Approved 2018"/>
     <publication id="03b4-8286-592c-c370" name="Imperial Armour - Index: Xenos"/>
     <publication id="be22-4c1d-1c01-d7ef" name="Imperial Armour - Index: Xenos (Errata)"/>
+    <publication id="7af8-4270-d84b-79ff" name="Psychic Awakening: Saga of the Beast"/>
   </publications>
   <profileTypes>
     <profileType id="67c2-86d6-5956-58cb" name="Transport Wound Track">
@@ -139,6 +140,7 @@
     <categoryEntry id="3616-e65a-1b40-7654" name="Kart" hidden="false"/>
     <categoryEntry id="78e6-5cfc-20d3-d002" name="Wagon" hidden="false"/>
     <categoryEntry id="11f0-717c-c5ed-6ef2" name="Da Red Gobbo" hidden="false"/>
+    <categoryEntry id="1964-1c67-3af1-8278" name="Makari" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="140b-7829-a8c0-3d3b" name="Warboss" hidden="false" collective="false" import="true" targetId="5da7-8cb2-c66c-5c45" type="selectionEntry"/>
@@ -193,7 +195,7 @@
       <modifiers>
         <modifier type="set" field="d039-e5ba-4bab-bf16" value="-1.0">
           <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0a26-a35d-81bb-13ac" type="equalTo"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0a26-a35d-81bb-13ac" type="atLeast"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -289,6 +291,8 @@
     <entryLink id="723e-3f2c-afb1-c075" name="Specialist Detachment" hidden="false" collective="false" import="true" targetId="fc96-1331-c935-0c46" type="selectionEntry"/>
     <entryLink id="ca78-e4f2-952c-eb48" name="Big Mek W/ Kustom Force Field" hidden="false" collective="false" import="true" targetId="ce6c-aef1-67fb-3af4" type="selectionEntry"/>
     <entryLink id="6409-cec0-e0bf-81e9" name="Da Red Gobbo [Legends]" hidden="false" collective="false" import="true" targetId="e485-5416-cd99-cb07" type="selectionEntry"/>
+    <entryLink id="e47c-3b46-72b4-19c3" name="Makari" hidden="false" collective="false" import="true" targetId="8c8a-dd06-c0df-3fb3" type="selectionEntry"/>
+    <entryLink id="f72e-d15c-77f3-8509" name="Kustom Job" hidden="false" collective="false" import="true" targetId="b856-70d6-9bd1-251b" type="selectionEntry"/>
   </entryLinks>
   <rules>
     <rule id="fac1-6afc-e5c9-35c2" name="Dis Is Ours! Zog Off!" hidden="false">
@@ -299,6 +303,18 @@
     <selectionEntry id="5da7-8cb2-c66c-5c45" name="Warboss" publicationId="11b5-77b9-pubN65537" page="85" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="4efb-2096-02a1-2471" name="Warboss" publicationId="11b5-77b9-pubN65537" page="85" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4092-2eb4-6372-5b4c" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="c0df-df94-abd7-e8d3" value="4+/4++"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -374,6 +390,7 @@
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="faea-24d5-c2a5-cc83" name="Da Biggest Boss" hidden="false" collective="false" import="true" targetId="4092-2eb4-6372-5b4c" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="65.0"/>
@@ -572,6 +589,18 @@
     <selectionEntry id="6a49-f7e4-4c4b-3548" name="Warboss in Mega Armour [Legends]" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="c7a3-9368-b6b2-56d1" name="Warboss in Mega Armour" publicationId="28ec-711c-pubN118139" page="12" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4092-2eb4-6372-5b4c" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="c0df-df94-abd7-e8d3" value="2+/4++"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">4&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -638,6 +667,7 @@
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="4c94-c2b7-ed1b-5b5f" name="Da Biggest Boss" hidden="false" collective="false" import="true" targetId="4092-2eb4-6372-5b4c" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="107.0"/>
@@ -648,6 +678,18 @@
     <selectionEntry id="aa39-9f9d-0e78-2f8a" name="Warboss on Warbike" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="6a5c-967d-cd1d-83ce" name="Warboss on Warbike" publicationId="28ec-711c-pubN118139" page="13" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4092-2eb4-6372-5b4c" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="c0df-df94-abd7-e8d3" value="4+/4++"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">14&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -704,6 +746,7 @@
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="66a8-f113-7f50-d916" name="Da Biggest Boss" hidden="false" collective="false" import="true" targetId="4092-2eb4-6372-5b4c" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="95.0"/>
@@ -859,6 +902,18 @@
     <selectionEntry id="48c5-847b-42a3-54a9" name="Big Mek [Legends]" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="046a-a4d4-724b-3141" name="Big Mek" publicationId="28ec-711c-pubN118139" page="14" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="48c5-847b-42a3-54a9" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="877b-8e8b-9af1-c91e" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="e7f0-1278-0250-df0c" value="2+"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -942,6 +997,7 @@
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="0901-2760-8b6a-4bb2" name="Da Kleverest Boss" hidden="false" collective="false" import="true" targetId="877b-8e8b-9af1-c91e" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="55.0"/>
@@ -1081,6 +1137,18 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
     <selectionEntry id="f517-6aa6-7d19-13c2" name="Big Mek in Mega Armour" publicationId="11b5-77b9-pubN65537" page="87" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="0161-7a1d-d101-2bd6" name="Big Mek in Mega Armour" publicationId="11b5-77b9-pubN65537" page="87" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="f517-6aa6-7d19-13c2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="877b-8e8b-9af1-c91e" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="e7f0-1278-0250-df0c" value="2+"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">4&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -1168,6 +1236,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="f43b-3b81-1e0c-5fdc" name="Da Kleverest Boss" hidden="false" collective="false" import="true" targetId="877b-8e8b-9af1-c91e" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="77.0"/>
@@ -1197,6 +1266,18 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
     <selectionEntry id="1387-57d0-6d81-dbcb" name="Big Mek on Warbike [Legends]" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="9a66-28d9-c157-edc5" name="Big Mek on Bike" publicationId="28ec-711c-pubN118139" page="16" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="1387-57d0-6d81-dbcb" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="877b-8e8b-9af1-c91e" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="e7f0-1278-0250-df0c" value="2+"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">14&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -1284,6 +1365,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="4e1e-5031-6c9a-ecdd" name="Da Kleverest Boss" hidden="false" collective="false" import="true" targetId="877b-8e8b-9af1-c91e" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="81.0"/>
@@ -1682,7 +1764,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="06ff-697d-8aa1-2dd0" name="Ghazghkull Thraka" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="06ff-697d-8aa1-2dd0" name="Ghazghkull Thraka" publicationId="7af8-4270-d84b-79ff" page="70" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
@@ -1701,30 +1783,64 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       <profiles>
         <profile id="349e-8a45-502d-7fdb" name="Ghazghkul Thraka" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">6</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">8</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">5</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">*</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">12</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+/4++</characteristic>
           </characteristics>
         </profile>
         <profile id="f5eb-58eb-f0a1-6cee" name="Great Waagh!" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly ORK INFANTRY units within 6&quot; of this model at the start of the Charge phase can charge even if they Advanced this turn.  Furthermore, friendly ORK INFANTRY models add 1 to their Attacks characteristic if they charged this turn and Ghaz is within 6&quot; of their unit when they are chosen to fight.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly ORK INFANTRY units within 6&quot; of this model can be chosen to charge with even if they Advanced this turn. In addition, add 1 to the Attacks characteristic of models in friendly ORK INFANTRY units whilst their unit is within 6&quot; of this model, if their unit made a charge move this turn.</characteristic>
           </characteristics>
         </profile>
         <profile id="9d50-5568-fdbd-ea17" name="The Boss is Watchin&apos;" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If a friendly ORK unit fails a Morale test within 6&quot; of Ghaz, he can restore order with a brutal display of violence.  If they do, the unit suffers D3 mortal wounds, but the Morale test is then considered to have been passed.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a friendly ORK unit within 6&quot; of this model fails a Morale test, this model can restore order in a brutal display of violence. If it does, that unit suffers D3 mortal wounds and that Morale test is treated as having been passed.</characteristic>
           </characteristics>
         </profile>
         <profile id="bf8c-2628-fb11-0dd4" name="Prophet of Gork and Mork" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Ghazghkull Thraka has a 4+ invulnerable save.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 4+ invulnerable save. In addition, this model can only lose a maximum of 4 wounds in each phase.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="198f-c867-a3fb-4c7f" name="Goffs is da Best" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Re-roll hit rolls of 1 for attacks made with melee weapons by models in friendly GOFF ORK units whilst their unit is within 6&quot; of this model.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="cbf9-e775-c983-035b" name="Grand Warboss" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model can be included in an ORK Detachment without preventing other units from that Detachment from gaining a Clan Kultur. Note, however, that this model does not benefit from any Clan Kultur unless the Clan Kultur selected for that Detachment is the Goffs Clan Kultur.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="7a7e-270e-95c1-e6aa" name="Ghazghkull Thraka1" publicationId="5b08-09e5-a80a-fd67" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+          <characteristics>
+            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">7-12+</characteristic>
+            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">7&quot;</characteristic>
+            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">7</characteristic>
+            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">5</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="8f1d-4b10-828a-b59a" name="Ghazghkull Thraka2" publicationId="5b08-09e5-a80a-fd67" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+          <characteristics>
+            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">3-6</characteristic>
+            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">6&quot;</characteristic>
+            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">6</characteristic>
+            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">6</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="bca9-f87a-0451-6b8c" name="Ghazghkull Thraka3" publicationId="5b08-09e5-a80a-fd67" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+          <characteristics>
+            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">1-2</characteristic>
+            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">5&quot;</characteristic>
+            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">5</characteristic>
+            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">7</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1744,28 +1860,51 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       </infoLinks>
       <categoryLinks>
         <categoryLink id="d730-3bd3-57e9-9f7d" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="1640-5ba9-2455-da75" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="0917-242f-de62-b4fd" name="New CategoryLink" hidden="false" targetId="0337-1e5e-8071-a198" primary="false"/>
         <categoryLink id="7519-3763-ca95-fe7f" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
         <categoryLink id="916c-fa88-83d4-6ff1" name="New CategoryLink" hidden="false" targetId="1c58-037f-7b58-1223" primary="false"/>
         <categoryLink id="89e2-8ff4-c26a-8dfb" name="New CategoryLink" hidden="false" targetId="0f75-56ae-9b7c-afd9" primary="false"/>
         <categoryLink id="b624-e2dc-2ae2-ee0b" name="New CategoryLink" hidden="false" targetId="19e5-b299-9323-b1c4" primary="false"/>
         <categoryLink id="e03d-65f0-eea8-9406" name="Faction: Goff" hidden="false" targetId="ec81-3194-7f8e-d2d1" primary="false"/>
+        <categoryLink id="284a-fd36-c73b-0cdb" name="Monster" hidden="false" targetId="3b77-decb-d468-6bcc" primary="false"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="202e-2015-bacf-3c1a" name="Kustom Klaw" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="202e-2015-bacf-3c1a" name="Gork&apos;s Klaw" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="43f3-f259-f17d-f9ad" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4ea0-2528-ff5f-a225" type="max"/>
           </constraints>
           <profiles>
-            <profile id="46ac-6b16-0ca4-6c73" name="Kustom Klaw" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+            <profile id="46ac-6b16-0ca4-6c73" name="Gork&apos;s Klaw" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">4</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="48c0-edce-69e8-4b96" name="Mork&apos;s Roar" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="371b-3a5b-329f-4963" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ff06-a30b-0f72-8bcc" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="e5b0-4aa9-8bc9-9c0f" name="Mork&apos;s Roar" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 12</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
                 <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
               </characteristics>
             </profile>
@@ -1780,19 +1919,10 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       <entryLinks>
         <entryLink id="084c-33c6-25f9-d85d" name="Stikkbombs" hidden="false" collective="false" import="true" targetId="6df7-0ee7-7e6d-b182" type="selectionEntry"/>
         <entryLink id="5d74-022e-9217-72bc" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry"/>
-        <entryLink id="b939-507b-32d1-48c1" name="Twin Big Shoota" hidden="false" collective="false" import="true" targetId="a4f1-6ccb-1c50-405b" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="0.0"/>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2bfc-43e1-b882-1e7a" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa3e-f1f5-2786-5ca8" type="min"/>
-          </constraints>
-        </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="235.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="12.0"/>
+        <cost name="pts" typeId="points" value="285.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="14.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -3010,6 +3140,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       <entryLinks>
         <entryLink id="095d-1a2a-124f-18b5" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="ec52-7c70-ba67-4f28" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="658e-94b7-581a-b801" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -3118,7 +3249,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
             </selectionEntry>
             <selectionEntry id="09d8-2a77-2b7c-5dbe" name="Spanner" hidden="false" collective="false" import="true" type="model">
               <modifiers>
-                <modifier type="increment" field="652f-a9e3-0185-f12b" value="1">
+                <modifier type="increment" field="652f-a9e3-0185-f12b" value="1.0">
                   <repeats>
                     <repeat field="selections" scope="parent" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
                   </repeats>
@@ -3192,6 +3323,20 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       <entryLinks>
         <entryLink id="9bc1-5ee5-5254-7c1a" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="1ce6-b0ab-4395-3b7f" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="02aa-f1d9-4322-8adb" name="Klever Spanner" hidden="false" collective="false" import="true" targetId="8eb6-bbf2-3ac8-44c7" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="89e8-324c-d9dd-b2e8" value="0">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="09d8-2a77-2b7c-5dbe" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="2d3b-b544-ad49-fb75" value="-2.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -3754,6 +3899,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       <entryLinks>
         <entryLink id="1196-c06f-962d-f304" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="5f2a-a8a3-4b2f-f831" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="bee7-70fa-3610-2f76" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="59.0"/>
@@ -4041,6 +4187,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="a1e2-3908-f836-6703" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -4726,6 +4875,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       <entryLinks>
         <entryLink id="6f69-45b3-1972-b9dc" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="4afc-8625-64a2-cd04" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="e941-f75f-dd53-e19d" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -4813,6 +4963,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="29e4-a893-a21c-eb2f" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -4974,6 +5127,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="8530-7a20-ba41-8a18" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -5061,6 +5217,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="a624-e925-279e-3144" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -5502,6 +5661,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         <entryLink id="40c2-9483-2e0e-d31c" name="Deff Rolla" hidden="false" collective="false" import="true" targetId="a29c-7f2f-9a36-79bb" type="selectionEntry"/>
         <entryLink id="bf86-417e-d5b6-7ab0" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="d5d3-ca32-cc96-700e" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="a0eb-643f-f375-3945" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="120.0"/>
@@ -5663,6 +5823,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="7fb4-5fe9-694e-f543" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -5847,6 +6010,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="85a7-a42c-3aa3-58df" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -5954,6 +6120,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         </entryLink>
         <entryLink id="1ec5-6558-4787-7b0a" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="fa9c-32e1-ce56-7e8c" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="5f62-993d-eef0-56a2" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="15.0"/>
@@ -6124,6 +6291,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         </entryLink>
         <entryLink id="74e6-647e-7b7f-05e7" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="5d9a-b1c5-b67f-3a29" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="f81b-466a-e847-5f64" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="15.0"/>
@@ -6283,6 +6451,20 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       <entryLinks>
         <entryLink id="bfeb-ca5a-f976-c7ca" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="4eb3-24c8-f437-ed2c" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="77af-dc96-e3dc-a1ef" name="Klever Spanner" hidden="false" collective="false" import="true" targetId="8eb6-bbf2-3ac8-44c7" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="89e8-324c-d9dd-b2e8" value="0">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8c7e-8d44-855e-bebd" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="2d3b-b544-ad49-fb75" value="-2.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -6730,6 +6912,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </modifiers>
         </entryLink>
         <entryLink id="d18f-5c73-4a81-0a61" name="Stompa Mob Character" hidden="false" collective="false" import="true" targetId="a2e0-0ff7-462d-bb22" type="selectionEntry"/>
+        <entryLink id="7852-7666-1adf-42d9" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="46.0"/>
@@ -7140,6 +7323,18 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
       </constraints>
       <profiles>
         <profile id="c356-5b69-c817-f3af" name="Zhadsnark Da Ripper" publicationId="03b4-8286-592c-c370" page="24" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4092-2eb4-6372-5b4c" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="c0df-df94-abd7-e8d3" value="4+/4++"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">15&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -7242,6 +7437,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         </entryLink>
         <entryLink id="e039-c7b1-bb6f-2d68" name="Stikkbombs" hidden="false" collective="false" import="true" targetId="6df7-0ee7-7e6d-b182" type="selectionEntry"/>
         <entryLink id="bb4f-6a3c-3da9-acda" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry"/>
+        <entryLink id="fee7-1e30-5179-318b" name="Da Biggest Boss" hidden="false" collective="false" import="true" targetId="4092-2eb4-6372-5b4c" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -9959,6 +10155,18 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
     <selectionEntry id="63ac-bded-f230-452a" name="Big Mek W/ Shokk Attack Gun" publicationId="11b5-77b9-pubN65537" page="86" hidden="false" collective="false" import="true" type="unit">
       <profiles>
         <profile id="5e0d-fb01-cfb7-1369" name="Big Mek" publicationId="11b5-77b9-pubN65537" page="86" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="63ac-bded-f230-452a" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="877b-8e8b-9af1-c91e" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="e7f0-1278-0250-df0c" value="2+"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -10031,6 +10239,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="ed78-2038-06a4-75e2" name="Da Kleverest Boss" hidden="false" collective="false" import="true" targetId="877b-8e8b-9af1-c91e" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="55.0"/>
@@ -10205,6 +10414,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="3b6c-b17f-8859-df55" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="120.0"/>
@@ -10330,6 +10540,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="f097-0f0b-f33c-a6df" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -10574,6 +10787,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="257a-6bb3-dfa1-7762" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -10709,6 +10925,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="263b-4a17-d0f2-7b7a" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -10823,6 +11042,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         </entryLink>
         <entryLink id="ddf9-6f54-761f-0910" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="72ed-19de-48f0-e362" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="dc6b-87cc-3882-8ace" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="140.0"/>
@@ -10919,6 +11139,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         <entryLink id="175c-4585-295f-25a2" name="Battlewagon Equipment" hidden="false" collective="false" import="true" targetId="51e5-322a-ca81-946b" type="selectionEntryGroup"/>
         <entryLink id="08bc-6bbd-f4aa-2a21" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="2c43-b793-6fba-217b" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="aeed-3190-b5ce-19c3" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="140.0"/>
@@ -11055,6 +11276,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="999e-467a-3943-2ae6" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -11209,6 +11433,9 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="7c87-a97c-cc0a-b6c3" name="Kustom Jobs" hidden="false" collective="false" import="true" targetId="37eb-ec76-4e8a-6913" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -11283,7 +11510,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="fee6-89eb-b8fc-9982" name="Clan Kultur" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="fee6-89eb-b8fc-9982" name="Clan Kultur / Specialist Mobs" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4201-2a13-9734-79c0" type="max"/>
       </constraints>
@@ -11291,7 +11518,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         <categoryLink id="a2fd-b971-c5ee-26ff" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
       <selectionEntryGroups>
-        <selectionEntryGroup id="f30f-40ff-c530-7b48" name="Clan Kultur" hidden="false" collective="false" import="true" defaultSelectionEntryId="84e7-10dc-db59-a1b2">
+        <selectionEntryGroup id="f30f-40ff-c530-7b48" name="Clan Kultur / Specialist Mobs" hidden="false" collective="false" import="true" defaultSelectionEntryId="84e7-10dc-db59-a1b2">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eea0-75d0-c282-6080" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5806-d973-1991-aa62" type="max"/>
@@ -11408,6 +11635,84 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
                 <cost name="pts" typeId="points" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
+            </selectionEntry>
+            <selectionEntry id="e984-af47-a8fe-cd20" name="Boomboyz" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="d432-d427-0ced-a77e" name="Boomboyz" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Blow It UP!  Improve the Strength and Armour Penetration characteristics of rokkit and stikkbomb weapons (these are weapons that have the name ‘rokkit’ or ‘stikkbomb’ in their profile e.g. rokkit launcha, stikkbomb chukka), as well as tankbusta bombs, wing missiles, kannons, killkannons, deffkannons, da boomer and lobbas
+equipped on models in a unit with this Subkultur by 1 (e.g. AP -2 becomes AP -3). Note that for combiweapons, this bonus only applies to attacks made with the rokkit launcha profile. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="5e96-9cef-81e3-d2db" name="Feral Orks" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="6bd0-8cae-c67a-46f0" name="Feral Orks" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Wildboyz: WARBOSS, WEIRDBOY, NOBZ and BOYZ only (excluding BIKER and MEGA ARMOUR). Models in a unit with this Subkultur can pile in up to 6&quot;. When making an Advance roll for a unit with this Subkultur, roll two additional dice and discard two of the results.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="7c5b-4684-ab30-38ea" name="Flyboyz" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="7ce1-989f-bc3c-a63c" name="Flyboyz" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Crucial Velocity: FLY models only. When resolving an attack made with a ranged weapon against a unit with this Subkultur by a model that is more than 1&quot; away, that unit is treated as having the benefit of cover to its saving throw. When resolving an attack made with a melee weapon against a unit with this Subkultur in a turn in which it was more than 1&quot; away from any enemy units at the start of the preceding Charge phase, subtract 1 from the hit roll</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="0683-9e71-b6f3-bab5" name="Grot Mobs" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="2098-2548-55ce-02a8" name="Grot Mobs" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Cheeky Zoggers: GRETCHIN models only. Models in a unit with this Subkultur gain a 6+ invulnerable save. When resolving an attack by a VEHICLE model in a unit with this Subkultur, re-roll a hit roll </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="bc37-dcfc-c5b1-30a3" name="Huntas" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="abeb-0bb8-0ac1-1672" name="Huntas" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Sneaky Devils: INFANTRY models only (excluding GRETCHIN). Whilst a model in a unit with this Subkultur is on or within a terrain feature, it gains a 5+ invulnerable save. When resolving an attack made with a melee
+weapon by a model in a unit with this Subkultur, while that model or any model in the target unit is on or within a terrain feature, improve the weapon’s Armour Penetration characteristic by 1 for that attack (e.g. AP -2 becomes AP -3).</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="c0d8-0899-1f40-967c" name="Pyromaniacs" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="645f-53e9-9448-71c8" name="Pyromaniacs" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Arsonists: You can re-roll any and all of the dice when determining the number of shots made for burnas, skorchas, burna bottles, burna exhausts, killa jets and skorcha missiles equipped on models in a unit with this Subkultur. When resolving an attack made with the melee profile of a burna equipped on a model with this Subkultur, you can re-roll the wound roll. When resolving the burna bombs ability for a unit with this Subkultur, add 1 to each roll.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="3264-d590-1df2-7af4" name="Tin &apos;Eads" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="f123-40c9-cb58-68be" name="Tin &apos;Eads" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Krush &apos;n&apos; Krump!: KILLA KANS, DEFFDREADS, MEGA ARMOUR, MORKANAUTS, GORKANAUTS and STOMPAS only. When resolving an attack made with a melee weapon by a model in a unit with this Subkultur, add 1 to the
+hit roll. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="d6cb-1b2e-a0d5-2d1d" name="Madboyz" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="cb81-4dcc-1a25-4fe3" name="Madboyz" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Frantic: INFANTRY and BIKER units only (excluding GRETCHIN). At the start of each battle round, roll one D3 and consult the table below to establish what effect applies to units with this Subkultur until the end of the battle round. This roll cannot be re-rolled. 
+1. Moroniks : When resolving an attack that targets a unit with this Subkultur, add 1 to the saving throw (invulnerable saving throws are unaffected).
+2. Nuttaz : Units with this Subkultur automatically pass Morale tests.
+3. Frenzies: Add 1 to the Strength characteristic of models in a unit with this Subkultur</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -13227,9 +13532,21 @@ Command Point.</characteristic>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="ce6c-aef1-67fb-3af4" name="Big Mek W/ Kustom Force Field" publicationId="11b5-77b9-pubN65537" page="86" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="ce6c-aef1-67fb-3af4" name="Big Mek W/ Kustom Force Field" publicationId="7af8-4270-d84b-79ff" page="71" hidden="false" collective="false" import="true" type="unit">
       <profiles>
-        <profile id="5d96-8b8f-1c15-a521" name="Big Mek" publicationId="11b5-77b9-pubN65537" page="86" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="5d96-8b8f-1c15-a521" name="Big Mek with Kustom Force Field" publicationId="7af8-4270-d84b-79ff" page="71" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="ce6c-aef1-67fb-3af4" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="877b-8e8b-9af1-c91e" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="increment" field="f330-5e6e-4110-0978" value="1"/>
+                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
+                <modifier type="set" field="e7f0-1278-0250-df0c" value="2+"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -13257,24 +13574,6 @@ Command Point.</characteristic>
         <categoryLink id="bdbe-0cb3-b178-c31c" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
         <categoryLink id="6cf3-82ed-8878-86f5" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
-      <selectionEntryGroups>
-        <selectionEntryGroup id="8989-fc0c-fbc5-83ef" name="Index Wargear" hidden="false" collective="false" import="true">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8892-7493-9fba-f215" type="max"/>
-          </constraints>
-          <entryLinks>
-            <entryLink id="ff3b-6366-7c56-35a9" name="New EntryLink" hidden="false" collective="false" import="true" targetId="c4df-c43d-08a6-18ab" type="selectionEntry"/>
-            <entryLink id="74e7-8bc0-0063-1faf" name="Big Choppa" hidden="false" collective="false" import="true" targetId="0470-1b47-489b-14c9" type="selectionEntry"/>
-            <entryLink id="d180-c61f-0aa9-02ae" name="New EntryLink" hidden="false" collective="false" import="true" targetId="3511-0070-0667-abf2" type="selectionEntry"/>
-            <entryLink id="27b4-7f84-8999-7c5a" name="New EntryLink" hidden="false" collective="false" import="true" targetId="b6c7-06c8-b7fb-05a7" type="selectionEntry"/>
-            <entryLink id="54d5-4ba8-6157-132d" name="New EntryLink" hidden="false" collective="false" import="true" targetId="6d70-25a8-b496-2457" type="selectionEntry"/>
-            <entryLink id="1244-9cb8-7d47-fad8" name="New EntryLink" hidden="false" collective="false" import="true" targetId="bbc2-56ce-67ec-5422" type="selectionEntry"/>
-            <entryLink id="236b-5008-ec2d-fc9b" name="New EntryLink" hidden="false" collective="false" import="true" targetId="fe00-451f-6735-6fd9" type="selectionEntry"/>
-            <entryLink id="cf70-c728-0655-f6d3" name="New EntryLink" hidden="false" collective="false" import="true" targetId="a8c1-7fb9-7f7b-84c5" type="selectionEntry"/>
-            <entryLink id="9b0b-2e85-2a8e-124e" name="New EntryLink" hidden="false" collective="false" import="true" targetId="f15a-fc8e-65b1-e4b8" type="selectionEntry"/>
-          </entryLinks>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
       <entryLinks>
         <entryLink id="8de5-09af-0346-6959" name="Stikkbombs" hidden="false" collective="false" import="true" targetId="6df7-0ee7-7e6d-b182" type="selectionEntry"/>
         <entryLink id="4b7b-40e1-4ee5-bdd3" name="Grot Oiler" hidden="false" collective="false" import="true" targetId="9459-87f3-a9a1-6840" type="selectionEntry">
@@ -13291,7 +13590,6 @@ Command Point.</characteristic>
           </constraints>
         </entryLink>
         <entryLink id="56f1-6a78-1881-aef9" name="Relic Gubbinz" hidden="false" collective="false" import="true" targetId="04b0-dab2-123b-df51" type="selectionEntryGroup"/>
-        <entryLink id="13a5-b1d5-58cd-802f" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="0123-d7c6-740f-226d" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="e575-b124-d371-c491" name="Stratagem: Field Commander" hidden="false" collective="false" import="true" targetId="d043-3847-e963-fb5d" type="selectionEntry">
           <modifiers>
@@ -13302,19 +13600,32 @@ Command Point.</characteristic>
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="fe48-16a9-0bbf-0a9a" name="Slugga" hidden="false" collective="false" import="true" targetId="d13b-ad69-e6a2-d485" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cce8-694e-f96b-15c5" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4914-9142-2eaa-16bd" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="31a4-722e-fb13-af01" name="Choppa" hidden="false" collective="false" import="true" targetId="c4df-c43d-08a6-18ab" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f5f7-4c3b-a20b-8bb8" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0f2b-d84e-8310-3acb" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="1a37-030c-9743-9d8e" name="Da Kleverest Boss" hidden="false" collective="false" import="true" targetId="877b-8e8b-9af1-c91e" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="55.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="d228-77ce-3423-0b2e" name="Big Shoota" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="d228-77ce-3423-0b2e" name="Big Shoota (FW)" hidden="false" collective="false" import="true" type="upgrade">
       <infoLinks>
         <infoLink id="fe48-98da-3491-573d" name="Big Shoota" hidden="false" targetId="674c-6501-898c-16d6" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="5.0"/>
+        <cost name="pts" typeId="points" value="6.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -13411,6 +13722,8 @@ Command Point.</characteristic>
       </selectionEntries>
       <entryLinks>
         <entryLink id="22ed-7950-bf46-259f" name="Stikkbombs" hidden="false" collective="false" import="true" targetId="6df7-0ee7-7e6d-b182" type="selectionEntry"/>
+        <entryLink id="7d11-b5cb-504b-f939" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry"/>
+        <entryLink id="68f6-a238-397e-2dfa" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="c2ce-6759-e009-8c11" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
@@ -13446,6 +13759,278 @@ Command Point.</characteristic>
         <cost name="pts" typeId="points" value="12.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="ac13-493c-a54a-a2fd" name="Ghazghkull Thraka (Codex)" publicationId="11b5-77b9-pubN65537" page="84" hidden="true" collective="false" import="true" type="unit">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5602-29aa-24d5-612d" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ac42-1428-c2ed-cb47" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="6663-fb08-6655-a481" name="Ghazghkul Thraka" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">6</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">8</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">5</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+/4++</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="15d9-5a5c-74c5-e2ef" name="Great Waagh!" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly ORK INFANTRY units within 6&quot; of this model at the start of the Charge phase can charge even if they Advanced this turn.  Furthermore, friendly ORK INFANTRY models add 1 to their Attacks characteristic if they charged this turn and Ghaz is within 6&quot; of their unit when they are chosen to fight.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="c03f-9337-3c92-f6a3" name="The Boss is Watchin&apos;" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If a friendly ORK unit fails a Morale test within 6&quot; of Ghaz, he can restore order with a brutal display of violence.  If they do, the unit suffers D3 mortal wounds, but the Morale test is then considered to have been passed.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="4e72-05f0-cd44-2b92" name="Prophet of Gork and Mork" publicationId="11b5-77b9-pubN65537" page="84" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Ghazghkull Thraka has a 4+ invulnerable save.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="16a7-7c46-582b-6177" name="New InfoLink" hidden="false" targetId="de72-9941-3d27-44e9" type="rule"/>
+        <infoLink id="5903-437b-e510-48de" name="Mob Rule" hidden="false" targetId="ad32-a248-a392-3d4a" type="rule"/>
+        <infoLink id="0d06-eef5-ec5a-e517" name="Dakka Dakka Dakka" hidden="false" targetId="52cc-983f-0b7b-683a" type="rule"/>
+        <infoLink id="82aa-4d10-77f7-1bc6" name="Proper Killy" hidden="false" targetId="5acd-6c6c-9f1a-bdc4" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ac13-493c-a54a-a2fd" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="33f6-60da-7b70-5fee" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="1c6b-bab0-26a7-5614" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
+        <categoryLink id="420d-4494-769f-1444" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+        <categoryLink id="7ccc-0860-bca2-f5f1" name="New CategoryLink" hidden="false" targetId="0337-1e5e-8071-a198" primary="false"/>
+        <categoryLink id="f745-0003-102d-368e" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+        <categoryLink id="c3db-da0a-ac4d-4266" name="New CategoryLink" hidden="false" targetId="1c58-037f-7b58-1223" primary="false"/>
+        <categoryLink id="ddef-15a5-0380-9366" name="New CategoryLink" hidden="false" targetId="0f75-56ae-9b7c-afd9" primary="false"/>
+        <categoryLink id="c339-3ac5-43db-e9c1" name="New CategoryLink" hidden="false" targetId="19e5-b299-9323-b1c4" primary="false"/>
+        <categoryLink id="5555-7b6d-c38a-9a39" name="Faction: Goff" hidden="false" targetId="ec81-3194-7f8e-d2d1" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="e5ee-2bf5-c591-adb0" name="Kustom Klaw" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7cbd-79e9-fed2-fb24" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8b8f-5dd6-04d4-012a" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="044d-88a4-6652-c61d" name="Kustom Klaw" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="a56c-aab8-29c6-5962" name="Stikkbombs" hidden="false" collective="false" import="true" targetId="6df7-0ee7-7e6d-b182" type="selectionEntry"/>
+        <entryLink id="fd24-e6c2-2409-13d8" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry"/>
+        <entryLink id="28a6-1d86-60ee-7cec" name="Twin Big Shoota" hidden="false" collective="false" import="true" targetId="a4f1-6ccb-1c50-405b" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6589-6841-4e18-cc24" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="be1e-0568-9cd2-977a" type="min"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="235.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="12.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="8c8a-dd06-c0df-3fb3" name="Makari" publicationId="7af8-4270-d84b-79ff" page="70" hidden="false" collective="false" import="true" type="unit">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4235-bfde-e4c0-8cf2" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="8ab7-63bc-bf7a-57c3" name="Makari" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">4</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">6+/2++</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="78de-9f04-f324-6d66" name="Ghazghkull’s Waaagh! Banner" publicationId="7af8-4270-d84b-79ff" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a model in a friendly GOFF ORK unit within 6&quot; of this model would lose a wound, and this model is within 3&quot; of a friendly GHAZGHKULL THRAKA unit, roll one D6; on a 6+ that wound is not lost.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="5ac2-6550-df2b-f4e8" name="Suspiciously Lucky" publicationId="7af8-4270-d84b-79ff" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 2+ invulnerable save.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="3ccd-0453-f899-6ba1" name="Accidental Figurehead" publicationId="7af8-4270-d84b-79ff" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly GOFF GRETCHIN units can use this model’s Leadership instead of their own whilst they are within 12&quot; of this model.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="eb47-3882-a19f-ade4" name="Keep Up!" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Movement phase, if this model is within 3&quot; of a friendly GHAZGHKULL THRAKA unit, add 2&quot; to this model’s Move characteristic until the end of that phase.
+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink id="8fe0-5dde-88f0-e379" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
+        <categoryLink id="6d1c-04e8-2d06-e55a" name="Faction: Goff" hidden="false" targetId="ec81-3194-7f8e-d2d1" primary="false"/>
+        <categoryLink id="6c8c-bd6a-9e13-6045" name="Faction: Ork" hidden="false" targetId="1c58-037f-7b58-1223" primary="false"/>
+        <categoryLink id="090c-2827-c57e-e684" name="Gretchin" hidden="false" targetId="0b2c-1505-90c2-24ed" primary="false"/>
+        <categoryLink id="6c48-bcdc-ac8c-27a8" name="Makari" hidden="false" targetId="1964-1c67-3af1-8278" primary="false"/>
+        <categoryLink id="14b9-c6b2-eefc-9de7" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+        <categoryLink id="263d-4834-9308-580b" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="b0d6-9be7-fa68-9439" name="Makari&apos;s Stabba" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="763f-8834-8daa-8e3f" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="36ed-d559-bd2e-5c4a" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="14f3-1c51-7b56-c522" name="Makari&apos;s Stabba" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, a wound roll of 6+ inflicts D3 mortal wounds on the target and the attack sequence ends.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="4f27-9fdf-71e1-1603" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry"/>
+        <entryLink id="7ed1-2234-fb92-a5fc" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="c2ce-6759-e009-8c11" type="selectionEntryGroup"/>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
+        <cost name="pts" typeId="points" value="65.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4092-2eb4-6372-5b4c" name="Da Biggest Boss" publicationId="7af8-4270-d84b-79ff" page="72" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="7b56-41d9-9c40-c61c" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="06ff-697d-8aa1-2dd0" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c834-9f1b-34ca-ce8b" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7b56-41d9-9c40-c61c" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="25a4-8ba4-01c1-80b8" name="Da Biggest Boss" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle. Select one WARBOSS model in your army. Add 1 to that model’s Wounds and Attacks characteristics and it gains a 4+ invulnerable save. You can only use this Stratagem once per battle, and only if your army does not include GHAZGHKULL THRAKA.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="877b-8e8b-9af1-c91e" name="Da Kleverest Boss" publicationId="7af8-4270-d84b-79ff" page="72" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="59a9-5582-17ae-9c47" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="36e2-087e-77dd-441b" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="f44a-3a8c-ad0e-5021" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="59a9-5582-17ae-9c47" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="1e6d-3a83-7a85-c4d1" name="Da Kleverest Boss" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle. Select one BIG MEK model in your army. Add 1 to that model’s Wounds and Attacks characteristics and change its Weapon Skill to 2+. You can only use this Stratagem once per battle, and only if your army does not include MEK BOSS BUZZGOB.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="8eb6-bbf2-3ac8-44c7" name="Klever Spanner" publicationId="7af8-4270-d84b-79ff" page="72" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="89e8-324c-d9dd-b2e8" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="4a0b-5d01-ac73-ad63" name="Klever Spanner" publicationId="7af8-4270-d84b-79ff" page="72" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle. Select one LOOTAS or BURNA BOYZ unit from your army that contains 9 or less models for 1CP, or one LOOTAS or BURNA BOYZ unit from your army that contains 10 or more models for 2CP. Whilst that unit contains one or more Spanners, you can roll one additional dice and discard one when determining the number of shots for burnas or deffguns equipped on models in that unit. Each unit can only be selected for this Stratagem once per battle.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b856-70d6-9bd1-251b" name="Kustom Job" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="edc5-bab9-a709-dfe5" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="121f-7446-220a-855c" name="Kustom Job" publicationId="7af8-4270-d84b-79ff" page="72" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle. Your army can have one additional Kustom Job (pg 76-77). All of the Kustom Jobs that you include must be different and be given to different units.
+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink id="5e14-ebc6-c625-983c" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -13565,6 +14150,189 @@ Command Point.</characteristic>
             <cost name="pts" typeId="points" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
+        </selectionEntry>
+        <selectionEntry id="07ed-ea00-a611-fc85" name="Goffs: Bull Charge" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5602-29aa-24d5-612d" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4402-7301-1523-5e27" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="af71-b6ac-e315-ffa3" name="Goffs: Bull Charge" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Bull Charge has a warp charge value of 6. If manifested, select one friendly GOFF unit within 18&quot; of this psyker. Until the end of the turn, charge distances of less than 7&quot; rolled for that unit, after modifiers, count as 7&quot;.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="92d3-d434-0da6-e22a" name="Evil Sunz: Visions in the Smoke" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2eb5-ccdb-f8d3-7cb4" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d194-53e2-f368-074c" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="dabc-82bd-7ad8-beca" name="Evil Sunz: Visions in the Smoke" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Visions in the Smoke has a warp charge value of 6. If manifested, select one friendly EVIL SUNZ VEHICLE unit within 12&quot; of this psyker (you can only select a unit with a Wounds characteristic of 18 or more if the result of the psychic test to manifest this psychic power was 9 or
+more). Until the start of your next Psychic phase, when resolving an attack made by a model in that unit, you can re-roll the hit roll.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="fb79-4316-1a26-c387" name="Deathskulls: Maniacal Seizure" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9e0f-d86a-591a-e26f" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1915-6e77-9067-5c82" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="ae20-a36b-27e9-5212" name="Deathskulls: Maniacal Seizure" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">7</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Maniacal Seizure has a warp charge value of 7. If manifested, select one enemy unit within 18&quot; of this psyker. Until the start of your next Psychic phase, when resolving an attack made by that unit, subtract 1 from the hit roll, and when resolving an attack made by a friendly DEATHSKULLS model against that unit, improve the Armour Penetration characteristic of the weapon by 1 for that attack (e.g. AP -2 becomes AP -3).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="6e9e-4953-d933-a69f" name="Blood Axes: Clever Talk" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae38-f508-d394-4a6d" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="afb7-f63b-e72b-e784" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="ba89-4cdf-1ada-ce5f" name="Blood Axes: Clever Talk" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">visible</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Clever Talk has a warp charge value of 6. If manifested, select one enemy unit visible to this psyker. Until the start of your next Psychic phase, that unit cannot fire Overwatch at BLOOD AXE units from your army and cannot be chosen to fight until all eligible BLOOD AXE units from your army have done so. </characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="95d8-03bb-b0fe-37df" name="Bad Moons: Gleamin&apos; Gear" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d90e-57d8-6092-3048" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b98b-8f84-28ec-0a1b" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="178e-f43d-4bc1-15ac" name="Bad Moons: Gleamin&apos; Gear" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Gleamin’ Gear has a warp charge value of 6. If manifested, select one friendly BAD MOONS unit within 18&quot; of this psyker. Until the start of your next Psychic phase, when resolving an attack made against that unit, add 1 to the saving throw (invulnerable saving throws are unaffected).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="21eb-6dae-1074-d04f" name="Snakebites: Constriction" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f8db-12ff-f160-e0b4" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0c14-ec05-15a1-ba17" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="afa6-185f-a8d1-7d96" name="Snakebites: Constriction" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Constriction has a warp charge value of 6. If manifested, select one enemy unit within 12&quot; of this psyker. Until the start of your next Psychic phase, halve the Attacks characteristic of models in that unit.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="d996-98a8-24f3-4bae" name="Freebooterz: Jolly Ork&apos;s Glare" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="22bd-c413-33e8-277b" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="960c-4fe6-8308-6bcb" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="7d71-2871-78b7-84b4" name="Freebooterz: Jolly Ork&apos;s Glare" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Jolly Ork’s Glare has a warp charge value of 6. If manifested, select one enemy unit within 18&quot; of this psyker. Until the start of your next Psychic phase, halve the Move characteristic of models in that unit and subtract 1 from Advance and charge rolls made for it.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -14388,6 +15156,319 @@ Command Point.</characteristic>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="37eb-ec76-4e8a-6913" name="Kustom Jobs" hidden="true" collective="false" import="true">
+      <modifiers>
+        <modifier type="increment" field="5c56-58ae-6332-a2b9" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7957-fd0f-b3f4-2c14" type="atLeast"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="5c56-58ae-6332-a2b9" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b856-70d6-9bd1-251b" type="atLeast"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7957-fd0f-b3f4-2c14" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b856-70d6-9bd1-251b" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5c56-58ae-6332-a2b9" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="3559-fc27-e8e9-f449" name="Squig-Hide Tyres" publicationId="7af8-4270-d84b-79ff" page="76" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ecc9-bb40-5af7-4df7" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="01b1-1133-187d-26d6" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="7999-6cbc-2245-6157" name="Squig-Hide Tyres" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">SPEED FREEKS (excluding named characters and units that can FLY), BATTLEWAGON , GUNWAGON , BONEBREAKA or TRUKK unit only. Add 2&quot; to the unit’s Move characteristic.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="6ce9-8218-d122-b9fd" name="Souped-Up Speshul" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5902-43e9-44cc-aeb5" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5679-d579-51f3-8f6d" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="a94d-40cb-24e3-79ec" name="Souped-Up Speshul" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">BOOMDAKKA SNAZZWAGON unit only. Souped-up Speshul replaces the unit’s mek speshul.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="a025-5a43-10ff-e69a" name="Souped-Up Speshul" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 15</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"></characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="dccf-eb89-636d-1f1a" name="Gyroscopic Whirligig" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="39ae-ccea-ac8b-6bcb" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d9e5-4d22-ddf3-d926" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="e130-87ef-dea0-4dfd" name="Gyroscopic Whirligig" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">SHOKKJUMP DRAGSTA unit only. You can use this unit’s Shokk Tunnel ability when Advancing, even if you did not roll a 4+. In addition, this unit does not suffer any mortal wounds as a result of the Shokk Tunnel ability.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="25d0-9ea9-61fe-8763" name="Sizzly Rivets" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d418-1a3d-5226-acfb" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e4b-5576-1727-1da1" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="6912-a31a-d564-7943" name="Sizzly Rivets" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">KUSTOM BOOSTA BLASTA unit only. When resolving an attack made with a rivet kannon by a model in this unit, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any other damage. </characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="c2ab-20e5-113b-a074" name="Korkscrew" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="141a-0ed5-2aed-d92a" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a48e-2b92-31dc-83d5" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="9cf0-2bd6-0d0a-b7c1" name="Korkscrew" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">MEGATRAKK SCRAPJET unit only. The first time this unit finishes a consolidation move in each Fight phase, it can immediately fight again.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="701f-21c1-1535-f228" name="Nitro-Powered Squigs" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c073-d138-b75b-95c2" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a348-17db-bbc6-e095" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="7f4a-ed9e-20c6-67d5" name="Nitro-Powered Squigs" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">RUKKATRUKK SQUIGBUGGY unit only. When resolving an attack made by this unit’s squig launcha or heavy squig launcha, add 1 to the wound roll.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="269a-0dba-e0c5-db60" name="Gork&apos;s Roar" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b1ad-d4a9-c232-f3aa" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="adb0-d72b-fa37-edea" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="f3bf-9508-db65-8346" name="Gork&apos;s Roar" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">DEFFKILLA WARTRIKE model only. Add 4&quot; to the Range characteristic of this model’s killa jet and change the Type characteristic of its burna profile to Assault 6.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="91d5-1f7f-d995-c71f" name="Da Boomer" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a918-83b3-d128-1085" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="628c-2e1b-01f2-8dd8" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="2d36-d5fa-b1af-6535" name="Da Boomer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">BATTLEWAGON , BONEBREAKA or GUNWAGON model with killkannon only. Da Boomer replaces a killkannon and has the following profile:</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="a4a9-cb58-5348-d907" name="Da Boomer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"></characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="a1b6-54c1-4355-389a" name="ZagZap" hidden="true" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="de09-04c4-58de-4202" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2af8-9ab8-9f29-7a47" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="cbff-5ce9-a51d-09f5" name="ZagZap" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">BATTLEWAGON , BONEBREAKA or GUNWAGON model with zzap gun only. Zagzap replaces a zzap gun and has the following profile:</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="73dd-2615-46f3-321b" name="ZagZap" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">2D6</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, do not make a hit roll; it automatically scores a hit. Before firing this weapon, roll to determine the Strength of the shot. If the result is 9+, do not make a wound roll. Inflict 3 mortal wounds on the target and the attack sequence ends</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="6167-1428-1d62-df5a" name="Forktress" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="1df5-22a3-3c56-4516" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d1c-0ac0-f001-df21" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="f94f-5777-0d08-ec20" name="Forktress" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">BATTLEWAGON , BONEBREAKA or GUNWAGON model only. The model has a Save characteristic of 3+ and a 5+ invulnerable save.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="db12-5c26-3c10-4067" name="Pincha" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="43fc-84f0-a15d-2986" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9c0d-3753-4d71-97fd" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="0605-5886-8f08-4a87" name="Pincha" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Model with grabbin’ klaw only. Pincha replaces the model’s grabbin’ klaw and has the following profile:</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="18ea-8e93-3292-c994" name="Pincha" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it can only make a single attack with this weapon. When resolving an attack made with this weapon, add 3 to the hit roll if the target is a VEHICLE or MONSTER. </characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="0cc2-fe12-baea-d4bd" name="Red Rolla" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="dbc0-2a85-01e3-9bce" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d1f-c204-da13-102d" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="3768-3b4e-5ab6-fc2f" name="Red Rolla" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">BONEBREAKA model only. Replace the model’s Bonebreaka Ram ability with the following: ‘Red Rolla: When this model makes a charge move, add 6 to its Attacks characteristic until the end of the turn.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="cac0-1565-ecf0-bdad" name="Orkymatic Pistons" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="cd77-6a6b-b0fe-3834" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="acd7-0713-24c2-8742" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="b159-004b-f9ae-cd0f" name="Orkymatic Pistons" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">KILLA KANS, DEFF DREADS, MORKANAUT or GORKANAUT unit only. Add 3&quot; to the unit’s Move characteristic. You can re-roll Advance rolls made for the unit.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="91ea-a0f9-edd6-e5bc" name="Sparkly Bitz" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="cb4c-2bd2-d6a5-243f" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6f55-5387-1b21-2e75" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="8e3f-7b82-de56-8062" name="Sparkly Bitz" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">KILLA KANS, DEFF DREADS, MORKANAUT or GORKANAUT unit only. Improve the unit’s Ballistic Skill characteristic by 1 (e.g. a Ballistic Skill characteristic of 5+ becomes 4+).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="235b-cd63-9999-d090" name="Dirty Gubbinz" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b905-683b-1d37-bd8a" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7e0c-bbca-428b-0759" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="a23a-5a9a-d5b2-f725" name="Dirty Gubbinz" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">KILLA KANS or DEFF DREADS unit only. When resolving an attack made with a ranged weapon against this unit, subtract 1 from the hit roll.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="3af2-60b0-1a4e-e52a" name="Slug Gubbin" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8f5a-b685-8013-8ddb" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5949-b3fd-45e8-2863" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="f153-dd25-4915-a1a5" name="Slug Gubbin" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">GORKANAUT model only. Slug gubbin replaces the model’s deffstorm mega-shoota and has the following profile:</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="4749-9fd6-b757-119d" name="Slug Gubbin" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 24</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, if the target was within 12&quot; when the bearer was chosen to shoot with, add 1 to the hit rol</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="655b-700a-b6dd-de74" name="Gog Klaw" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="812a-d008-d4de-5c55" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fdff-6f47-c1eb-d7f7" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="e270-e2ec-af03-e45a" name="Gog Klaw" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">GORKANAUT or MORKANAUT model only. When rolling to determine the Damage characteristic of the crush profile of the bearer’s klaw of gork (or possibly mork), rolls of less than 4 count as 4.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="29a9-39d3-19c1-e06c" name="Blitza-Gatler" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d14c-112d-8961-5312" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9fce-9903-6b93-bce4" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="98db-c8b5-82ad-60ba" name="Blitza-Gatler" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">STOMPA only. The model’s supa-gatler has a Damage characteristic of 2. In addition, when rolling for the weapon’s Psycho-dakka-blasta ability, you can re-roll the D6 once per phase.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
