@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="75" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="74" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="76" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="75" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="11b5-77b9-pubN65537" name="Codex: Orks"/>
     <publication id="11b5-77b9-pubN143628" name="Chapter Approved 2018"/>
@@ -858,6 +858,9 @@
           </costs>
         </selectionEntry>
         <selectionEntry id="da96-304a-7719-5147" name="Warphead" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e207-7f44-7e2b-9210" type="max"/>
+          </constraints>
           <profiles>
             <profile id="4e8d-6c62-411d-65e6" name="Warphead (1 CP)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -2755,6 +2758,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         </entryLink>
         <entryLink id="4a9e-834f-395c-a841" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="c2ce-6759-e009-8c11" type="selectionEntryGroup"/>
         <entryLink id="80cc-76e8-0699-53f5" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry"/>
+        <entryLink id="262c-290b-ed5e-f1be" name="Relic Gubbinz" hidden="false" collective="false" import="true" targetId="04b0-dab2-123b-df51" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
@@ -8915,6 +8919,7 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
         <categoryLink id="c715-d75b-8602-35d9" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="6605-a16f-43d3-d0cc" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true"/>
         <categoryLink id="f23a-a927-ce5b-c51d" name="New CategoryLink" hidden="false" targetId="609c-77e8-7913-3713" primary="false"/>
+        <categoryLink id="e1fa-7388-e565-f496" name="Battlewagon" hidden="false" targetId="5ed3-1da6-32fe-c3a2" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="35e8-8f83-bd65-1d63" name="Deff Rolla" hidden="false" collective="false" import="true" type="upgrade">
@@ -14154,6 +14159,7 @@ hit roll. </characteristic>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="8de1-067f-b622-9680" name="Specialist Mob" hidden="true" collective="false" import="true" type="upgrade">
@@ -14161,6 +14167,11 @@ hit roll. </characteristic>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1d3a-b3e3-445c-f274" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f8e3-353e-84a2-eee2" type="min"/>
       </constraints>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="2439-995f-b05d-0894" name="Kustom Job (Free)" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -14190,6 +14201,7 @@ hit roll. </characteristic>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -15355,16 +15367,6 @@ more). Until the start of your next Psychic phase, when resolving an attack made
     </selectionEntryGroup>
     <selectionEntryGroup id="37eb-ec76-4e8a-6913" name="Kustom Jobs" hidden="true" collective="false" import="true">
       <modifiers>
-        <modifier type="increment" field="5c56-58ae-6332-a2b9" value="1.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7957-fd0f-b3f4-2c14" type="atLeast"/>
-          </conditions>
-        </modifier>
-        <modifier type="increment" field="5c56-58ae-6332-a2b9" value="1.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b856-70d6-9bd1-251b" type="atLeast"/>
-          </conditions>
-        </modifier>
         <modifier type="set" field="hidden" value="false">
           <conditionGroups>
             <conditionGroup type="or">
@@ -15377,7 +15379,8 @@ more). Until the start of your next Psychic phase, when resolving an attack made
         </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5c56-58ae-6332-a2b9" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c7e0-6e9a-25ee-3f07" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6c5d-c533-79fc-2b88" type="min"/>
       </constraints>
       <selectionEntries>
         <selectionEntry id="3559-fc27-e8e9-f449" name="Squig-Hide Tyres" publicationId="7af8-4270-d84b-79ff" page="76" hidden="false" collective="false" import="true" type="upgrade">
