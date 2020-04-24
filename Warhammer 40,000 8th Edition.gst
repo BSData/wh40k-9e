@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="121" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="128" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -14,6 +14,7 @@
     <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
     <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018"/>
     <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening - Phoenix Rising"/>
+    <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening - Ritual of the Damned"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0"/>
@@ -105,7 +106,6 @@
     <categoryEntry id="c888f08a-6cea-4a01-8126-d374a9231554" name="Lord of War" hidden="false"/>
     <categoryEntry id="d713cda3-5d0f-40d8-b621-69233263ec2a" name="Fortification" hidden="false"/>
     <categoryEntry id="2aa2-d9e3-bef6-09be" name="Other" hidden="false"/>
-    <categoryEntry id="ee338739-6edf-4620-a2cc-f38d5dd21606" name="Legendary Unit" hidden="false"/>
     <categoryEntry id="3d52-fccf-10c0-3fae" name="Infantry" hidden="false"/>
     <categoryEntry id="c8fd-783f-3230-493e" name="Vehicle" hidden="false"/>
     <categoryEntry id="e691-aad7-d21c-1023" name="Psyker" hidden="false"/>
@@ -162,12 +162,16 @@
     <categoryEntry id="d569-3d56-cd24-6a31" name="Aircraft" publicationId="82b3-73d0-72b2-3180" hidden="false"/>
     <categoryEntry id="4ad1-1315-97ea-dd25" name="Faction: Officio Assassinorum" hidden="false"/>
     <categoryEntry id="492c-9ae1-0205-c13f" name="Faction: Chaos Knights" hidden="false"/>
+    <categoryEntry id="c845-c72c-6afe-3fc2" name="Stratagems" hidden="false"/>
+    <categoryEntry id="fcff-0f21-93e6-1ddc" name="Configuration" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment" hidden="false">
       <forceEntries>
         <forceEntry id="22fe-e36f-71e2-b796" name="Patrol Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="0879-c6e0-d140-cdf4" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="2a75-b392-fa24-a897" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="08b9-da67-2327-6c1e" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="9217-73a1-3624-1f7d" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="54ff-9b86-6104-b32c" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -180,6 +184,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="9e6f-3e68-ab66-9f48" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="041f-3067-ce7b-06aa" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="b804-eab0-fa1a-b573" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="b201-7a22-83be-fcd2" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -230,7 +236,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="806f-d1ee-da05-0983" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="9b48-cd5f-3949-adc6" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="a8d7-367a-2dfd-6b79" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -288,6 +293,8 @@
       <forceEntries>
         <forceEntry id="c7fc-1172-cd53-2dae" name="Battalion Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="8aec-1b40-57af-1c12" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="83e6-362d-78f3-62e2" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="8ef3-97b6-69fc-bd6b" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="b941-009e-b700-f512" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="69a8-6416-9c97-27a5" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -300,6 +307,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="fc4c-e6c8-3a50-af1d" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="a3a4-d443-2ded-f82f" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0e1f-72c2-388e-0869" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="dc98-c3a9-900b-5345" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -350,7 +359,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="dd16-f9e4-6928-db00" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="70a3-5965-8dfd-0dff" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="f91f-9faa-2dff-6fbb" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -408,6 +416,8 @@
       <forceEntries>
         <forceEntry id="daea-75d3-1073-2ba0" name="Brigade Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="c79d-0e51-f286-b524" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="6d28-63cf-a930-5628" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="96dd-3c8b-0bee-f79f" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="52dd-a45a-dd33-e109" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="2e30-b534-8d26-e6d7" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -420,6 +430,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="cc37-3585-fefc-1935" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="5d10-4858-a639-b7ba" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="4683-00c9-930d-6336" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="b656-705b-2154-356b" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -473,7 +485,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b905-bc19-8b25-f26a" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="b505-6d2b-bb65-191e" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="386d-9c19-e897-b48e" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -531,6 +542,8 @@
       <forceEntries>
         <forceEntry id="780c-2ab9-34f4-7c30" name="Vanguard Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="1eed-df45-a1a3-bb4c" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="d4fd-a9a1-a187-4649" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="669a-cc7e-c5e0-cf5b" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="50c7-e2c2-95f3-ffee" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="cce8-785d-5a88-5a90" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -543,6 +556,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="720e-5977-c571-bf29" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="c065-cb87-2653-4d52" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="4683-00c9-930d-6336" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="a158-6003-3ee2-5924" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -593,7 +608,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1449-c900-5e63-561c" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="c3f6-3055-bcd0-788b" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="6eb8-3c2f-13e7-17e1" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -651,6 +665,8 @@
       <forceEntries>
         <forceEntry id="c50f-184b-1482-8ce7" name="Spearhead Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="d0ab-cdb4-1dee-fbdf" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="7598-503e-4433-fec5" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="3120-2d38-2fe2-ca1a" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="fadb-d53e-8308-d517" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="2d5a-69d3-eb5e-0c39" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -663,6 +679,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="beb4-b8f9-8ee5-d1e8" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="816e-043a-6b2c-fe91" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="6c3b-d81d-e237-32fa" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="a13f-7b3a-ceac-64f4" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -713,7 +731,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="68bd-f7ab-859e-fb22" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="0144-c043-6326-c755" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="dff9-8621-e2dd-b4e3" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -771,6 +788,8 @@
       <forceEntries>
         <forceEntry id="6fb7-031b-0276-59c9" name="Outrider Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="c873-f46b-9399-b343" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="82e3-bbe6-3686-3d32" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="d657-ba0c-61e5-5180" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="0264-8ffd-31bc-2d30" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="6426-b63b-64e2-2ff6" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -783,6 +802,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="8fb8-60d9-8dc8-27fb" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="730a-f4ac-604e-b77b" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="1870-00e5-1915-3ab8" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="b196-6b9f-fb28-4ca9" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -833,7 +854,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3de0-5460-f04b-09ba" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="5411-43af-9074-78ae" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="43a0-ffe6-d029-9152" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -891,6 +911,8 @@
       <forceEntries>
         <forceEntry id="b0ab-9c0d-ff4b-c17e" name="Supreme Command Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="11e5-4f80-3096-825d" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="aea0-3ea4-934f-38e9" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="0f46-1b70-2074-9f38" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="c631-e906-2086-fdf9" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="08df-b76b-e405-c10a" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false"/>
@@ -900,6 +922,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="a45f-e37b-224f-813a" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="e7ac-d434-4bd3-2dd6" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="6fed-d770-852f-a123" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="8a3d-3602-7ef5-9ab1" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -931,7 +955,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="83e7-e60b-0ad5-1d24" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="2421-180e-769d-d51f" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="2e59-df4f-9429-ef1a" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1008,12 +1031,16 @@
       <forceEntries>
         <forceEntry id="6576-b25c-8ce9-8860" name="Super-Heavy Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="445d-efbd-17d4-82b2" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="da37-b4a3-b7a4-0491" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="d689-19e3-5f4f-d9e5" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="97d5-c11b-a1c8-2693" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false"/>
           </categoryLinks>
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="9470-1b9e-1fc2-5554" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="bbe8-0573-760e-a28f" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="964d-8f7c-1171-8b98" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="c0a7-80ba-6d10-0724" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false">
           <constraints>
@@ -1021,7 +1048,6 @@
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="67f2-9795-52db-5a70" type="min"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="9ca8-4fb9-709b-b9a6" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="5ae3-7417-3751-8480" name="Relic Lord of War" hidden="false" targetId="3216-79af-660b-7711" primary="false">
           <modifiers>
             <modifier type="increment" field="c99e-bf0a-6e60-819c" value="1">
@@ -1045,12 +1071,16 @@
       <forceEntries>
         <forceEntry id="444e-30c9-5181-aa6b" name="Air Wing Detachment" hidden="false">
           <categoryLinks>
+            <categoryLink id="02f5-399b-4ea4-864c" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="2cd6-18fe-710e-9344" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="3da0-f292-3c4c-f65b" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="2061-bcdc-2bbf-6c08" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false"/>
           </categoryLinks>
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="e09e-267a-4f71-9e08" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="425c-179c-46b3-5ee8" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false">
           <constraints>
@@ -1058,11 +1088,12 @@
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc65-2978-7619-e375" type="min"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="33b2-565d-d44c-99a7" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="224b-1070-218f-fdf4" name="Super-Heavy Auxiliary Detachment" hidden="false">
       <categoryLinks>
+        <categoryLink id="d42a-fc02-778b-3118" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="dcbb-53c2-a989-ae08" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="a4f9-671f-1bad-73f1" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="fd86-521c-89cd-53b4" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false">
           <constraints>
@@ -1070,19 +1101,22 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b8f-4518-f394-33f4" type="min"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="b1a6-0fc5-d615-d4eb" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="dcee-07fa-ec14-7dec" name="Fortification Network" hidden="false">
       <forceEntries>
         <forceEntry id="a39c-5420-c141-262c" name="Fortification Network" hidden="false">
           <categoryLinks>
+            <categoryLink id="317b-ae75-8706-48d2" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="1384-e000-fa6a-3aa9" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="460d-2811-ab00-a30a" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="5cfe-bc29-4cc8-a694" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false"/>
           </categoryLinks>
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="41e1-846b-92e3-4764" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="cafb-dc6b-1907-0ae3" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="4cf2-55de-1de3-bdfd" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="4fb0-8ba2-1ea6-973e" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false">
           <constraints>
@@ -1090,14 +1124,15 @@
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0214-a689-7537-aafa" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="663d-4540-136a-98c1" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="8a87-f0e3-f2f2-ad1a" name="Auxiliary Support Detachment -1CP" hidden="false">
       <modifiers>
-        <modifier type="increment" field="0d7c-f6da-32e9-53aa" value="1">
+        <modifier type="increment" field="0d7c-f6da-32e9-53aa" value="1.0">
           <repeats>
             <repeat field="selections" scope="8a87-f0e3-f2f2-ad1a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="8a87-f0e3-f2f2-ad1a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fcff-0f21-93e6-1ddc" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="8a87-f0e3-f2f2-ad1a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c845-c72c-6afe-3fc2" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
       </modifiers>
@@ -1110,6 +1145,8 @@
         </rule>
       </rules>
       <categoryLinks>
+        <categoryLink id="3df9-2058-91f4-29ca" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="7e18-f7dd-c869-dcb9" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="fd67-6351-2009-87d7" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="765e-ebad-7cd0-d952" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="4251-29e5-bb48-d668" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1118,7 +1155,6 @@
         <categoryLink id="9153-b8bd-1f8a-9f1f" name="Heavy Support" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="false"/>
         <categoryLink id="0960-9271-26d6-1831" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false"/>
         <categoryLink id="1d7c-3253-d90d-6e3a" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
-        <categoryLink id="09fb-b9a5-3cb5-b0d5" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="ba03-97bb-c51d-9a47" name="Relic" hidden="false" targetId="e10e-b44e-7eda-41d8" primary="false">
           <constraints>
             <constraint field="selections" scope="8a87-f0e3-f2f2-ad1a" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1781-5ba7-241c-c0b3" type="max"/>
@@ -1128,6 +1164,8 @@
     </forceEntry>
     <forceEntry id="44da-9aaf-181b-5ece" name="Unbound Army (Faction)" hidden="false">
       <categoryLinks>
+        <categoryLink id="66d6-b14b-e932-9748" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="3144-7363-0a07-001a" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="00d9-069d-5354-97e7" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="5a8c-53a4-c961-7905" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
         <categoryLink id="8a81-4291-964c-1f95" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1138,7 +1176,6 @@
         <categoryLink id="d5f2-dac9-5cf7-ddac" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
         <categoryLink id="b474-2366-f02e-6f49" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false"/>
         <categoryLink id="7751-b628-068c-ae45" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false"/>
-        <categoryLink id="9a65-6b3b-5e44-03e8" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="8cae-c44c-ef1f-8f43" name="Planetstrike Attacker +5 CP" publicationId="28ec-711c-pubN73170" page="34" hidden="false">
@@ -1148,6 +1185,8 @@
       <forceEntries>
         <forceEntry id="19c2-d22a-7ab4-53f1" name="Planetstrike Attacker" hidden="false">
           <categoryLinks>
+            <categoryLink id="f6ae-2097-d907-3ba0" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="01eb-fe82-2970-46e2" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="b9de-d698-5dba-a52d" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="9c52-f689-6c7d-c819" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="5b41-41c5-eb22-bb56" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1160,6 +1199,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="0d77-282a-1620-dc33" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="0961-1fc6-b141-fcd7" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="958b-ff62-a5a2-f12c" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="4b40-d755-270f-aa80" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1211,7 +1252,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4240-b0fc-8a69-2871" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="7187-699d-2503-992c" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="f717-1d3f-dd97-4126" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1272,6 +1312,8 @@
       <forceEntries>
         <forceEntry id="9fd1-149e-1542-a91c" name="Planetstrike Defender" hidden="false">
           <categoryLinks>
+            <categoryLink id="0ce3-6e7c-70e2-7c2a" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="df45-6faf-30d6-a112" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="d981-db39-9da3-c9f8" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="7edd-0b96-420a-c9bd" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="f2aa-977c-2f18-1698" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1284,6 +1326,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="2f66-04f2-8a87-65db" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="49ef-68b2-d9e2-8ab3" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0b64-fa2c-fe0a-f9de" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="7d81-8310-6094-cf8d" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1335,7 +1379,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ee38-3431-abb2-9e62" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="3c3b-27e3-c0b7-b3ee" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="4191-d1fc-fa74-f144" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1396,6 +1439,8 @@
       <forceEntries>
         <forceEntry id="ecdd-b72a-f9dd-a02a" name="Stronghold Assault Attacker" hidden="false">
           <categoryLinks>
+            <categoryLink id="9ae2-937b-1eb3-dc55" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="0b77-463c-dd19-6a4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="0b8a-c61e-2476-113b" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="e2ec-1211-c558-8e0d" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="939c-bed4-8b91-1dce" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1408,6 +1453,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="c3b4-ccb5-2bb6-8467" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="2042-68c1-c180-19d0" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0a94-a878-e103-6083" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="cd87-e443-1d40-5ccc" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1459,7 +1506,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a18-2f70-70ee-6230" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="eed4-ea5f-257c-0699" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="e346-2f51-2beb-4df1" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1520,6 +1566,8 @@
       <forceEntries>
         <forceEntry id="bfc9-d668-8dec-a0ee" name="Stronghold Assault Defender" hidden="false">
           <categoryLinks>
+            <categoryLink id="1614-3399-4551-3b7e" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="0ba4-5557-b713-c59c" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="3547-81af-f102-632e" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
             <categoryLink id="0e3c-008f-7e8a-3f6d" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="aaf4-ea80-63a1-328b" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
@@ -1533,6 +1581,8 @@
         </forceEntry>
       </forceEntries>
       <categoryLinks>
+        <categoryLink id="04b8-4ded-1c36-fa57" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="02cb-ac0d-fd65-407b" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="722b-09e4-f228-16be" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="7f5c-0518-2449-ad67" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
@@ -1589,7 +1639,6 @@
             <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6ce3-81ab-8b21-3ef4" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="3e5e-b1fa-a208-60bd" name="Warlord" hidden="true" targetId="ae09-117e-a6fa-316b" primary="false"/>
         <categoryLink id="414e-4ecb-b1e8-75c3" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
           <modifiers>
             <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
@@ -1645,6 +1694,8 @@
     </forceEntry>
     <forceEntry id="bffe-7939-c2e6-8f83" name="Reinforcements" hidden="false">
       <categoryLinks>
+        <categoryLink id="74b5-2f6a-b25b-85b0" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+        <categoryLink id="a689-25bf-9943-c23d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="f441-862d-4164-4496" name="Reinforcement Points" hidden="false" targetId="7320-eafd-02c1-94da" primary="false"/>
         <categoryLink id="b1d5-50d6-6742-8377" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="5aab-fcd9-f431-a112" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
@@ -1725,22 +1776,22 @@
     </entryLink>
     <entryLink id="4bcc-b0f4-b425-f38e" name="Gametype" hidden="false" collective="false" import="true" targetId="bf09-85b2-c097-1071" type="selectionEntry">
       <categoryLinks>
-        <categoryLink id="ab48-6dc1-4800-80b6" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+        <categoryLink id="0c5c-0d15-790d-6f8c" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink id="e860-827e-24e0-0bd8" name="Use Beta Rules" hidden="false" collective="false" import="true" targetId="3cf4-7a43-f7a5-51cc" type="selectionEntry">
       <categoryLinks>
-        <categoryLink id="b672-6103-7f8f-a21b" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+        <categoryLink id="f2d4-4c7c-a8d7-e844" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink id="ec87-f19e-eee2-1ba8" name="Detachment CP" hidden="false" collective="false" import="true" targetId="9d97-2793-9882-d48a" type="selectionEntry">
       <categoryLinks>
-        <categoryLink id="22be-7889-5bf9-b0b5" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+        <categoryLink id="56a3-e61a-895c-ce33" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink id="44e3-c224-ba82-1b55" name="Battle-forged CP" hidden="false" collective="false" import="true" targetId="f29d-8a5d-18b6-a071" type="selectionEntry">
       <categoryLinks>
-        <categoryLink id="b5f1-b0a6-bb4a-be2d" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+        <categoryLink id="7518-f5d0-38d5-658f" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink id="074a-5af4-0bed-a6a7" name="Reinforcements" hidden="false" collective="false" import="true" targetId="af7a-d57e-4972-12d3" type="selectionEntry">
@@ -5331,6 +5382,9 @@
           </characteristics>
         </profile>
       </profiles>
+      <categoryLinks>
+        <categoryLink id="0c71-4131-eaaa-b429" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -5624,7 +5678,7 @@
         </profile>
       </profiles>
       <categoryLinks>
-        <categoryLink id="e597-e135-2c00-3232" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+        <categoryLink id="2abe-5886-2b50-fff3" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
       </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
@@ -9561,7 +9615,7 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
