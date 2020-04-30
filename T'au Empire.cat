@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="c0bb-c0cd-a715-99c6" name="T&apos;au Empire" revision="57" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Amis92" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="c0bb-c0cd-a715-99c6" name="T&apos;au Empire" revision="58" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Amis92" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="57" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="c0bb-c0cd-pubN67762" name="Imperial Armour - Index: Xenos"/>
     <publication id="c0bb-c0cd-pubN68738" name="Codex: T&apos;au Empire"/>
@@ -2347,9 +2347,9 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="10f6-9627-3367-6753" type="max"/>
           </constraints>
           <entryLinks>
-            <entryLink id="4f0f-1f96-a82b-ed3b" name="2x Burst cannon" hidden="false" collective="false" import="true" targetId="2702-1d79-3888-1792" type="selectionEntry"/>
             <entryLink id="98d7-5a44-3dcd-f459" name="2x Flamer" hidden="false" collective="false" import="true" targetId="d31b-3061-9b08-dd24" type="selectionEntry"/>
             <entryLink id="677b-d850-34b0-6427" name="2x Fusion blaster" hidden="false" collective="false" import="true" targetId="0846-de51-7149-7860" type="selectionEntry"/>
+            <entryLink id="75ff-bc4e-564c-98a2" name="2x Burst cannon" hidden="false" collective="false" import="true" targetId="2702-1d79-3888-1792" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -2794,14 +2794,9 @@
                 <entryLink id="579f-8db3-93cd-e9b4" name="Wargear options (1-3)" hidden="false" collective="false" import="true" targetId="9296-3976-3750-5a14" type="selectionEntryGroup"/>
                 <entryLink id="4df7-d184-f332-db19" name="XV8-02 Crisis Iridium battlesuit" hidden="false" collective="false" import="true" targetId="48e5-9b07-ac9f-766f" type="selectionEntry">
                   <modifiers>
-                    <modifier type="increment" field="9508-6dbb-49dc-d02a" value="1">
+                    <modifier type="increment" field="9508-6dbb-49dc-d02a" value="1.0">
                       <repeats>
                         <repeat field="selections" scope="d0ff-623f-dc07-41c8" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4373-5cb3-b8b4-f4a9" repeats="1" roundUp="false"/>
-                      </repeats>
-                    </modifier>
-                    <modifier type="decrement" field="9508-6dbb-49dc-d02a" value="1">
-                      <repeats>
-                        <repeat field="selections" scope="d0ff-623f-dc07-41c8" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="34b0-4353-fed8-011f" repeats="1" roundUp="false"/>
                       </repeats>
                     </modifier>
                   </modifiers>
@@ -2954,7 +2949,7 @@
                 <entryLink id="3c73-83ab-de9f-9a0b" name="Wargear options (1-3)" hidden="false" collective="false" import="true" targetId="9296-3976-3750-5a14" type="selectionEntryGroup"/>
                 <entryLink id="2fb7-f351-0d74-ee4e" name="XV8-02 Crisis Iridium battlesuit" hidden="false" collective="false" import="true" targetId="48e5-9b07-ac9f-766f" type="selectionEntry">
                   <modifiers>
-                    <modifier type="increment" field="085f-cbd1-f3e9-707b" value="1">
+                    <modifier type="increment" field="085f-cbd1-f3e9-707b" value="1.0">
                       <repeats>
                         <repeat field="selections" scope="2a57-2755-54cd-8930" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3bbf-990b-1652-2e03" repeats="1" roundUp="false"/>
                       </repeats>
@@ -6331,7 +6326,7 @@
     </selectionEntry>
     <selectionEntry id="2702-1d79-3888-1792" name="2x Burst cannon" hidden="false" collective="false" import="true" type="upgrade">
       <infoLinks>
-        <infoLink id="aa6a-301f-bef1-c436" name="Burst cannon" hidden="false" targetId="1779-86ba-2fc4-8e36" type="profile"/>
+        <infoLink id="1537-74c4-a7a3-38cf" name="Burst cannon" hidden="false" targetId="1779-86ba-2fc4-8e36" type="profile"/>
       </infoLinks>
       <costs>
         <cost name="pts" typeId="points" value="16.0"/>
@@ -10151,9 +10146,14 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
               </conditionGroups>
             </modifier>
             <modifier type="set" field="03b0-79a5-9652-db24" value="0.0">
-              <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5b97-30b9-f286-63f4" type="equalTo"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2702-1d79-3888-1792" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5b97-30b9-f286-63f4" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
