@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="143" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="128" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="144" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="128" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -16462,6 +16462,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="c0d1-ee6f-73bb-6393" name="Scion of the Forge" hidden="false" collective="false" import="true" type="upgrade">
@@ -20424,7 +20425,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                     <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
                     <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                     <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When the bearer fights, it makes 1 additional attack with this weapon</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -21186,13 +21187,39 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
         <entryLink id="7cff-1547-0788-181c" name="Librarius Discipline" hidden="false" collective="false" import="true" targetId="edd9-59c0-8f74-3b36" type="selectionEntryGroup">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b58-36bd-930c-e8be" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b1ec-173e-7346-6d6f" type="equalTo"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b58-36bd-930c-e8be" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="46e5-48c2-0504-5fc7" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b58-36bd-930c-e8be" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b1ec-173e-7346-6d6f" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="995c-efa8-d6e2-d7e0" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b58-36bd-930c-e8be" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b1ec-173e-7346-6d6f" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="46e5-48c2-0504-5fc7" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="995c-efa8-d6e2-d7e0" type="min"/>
           </constraints>
         </entryLink>
         <entryLink id="4012-e3e5-e8ed-8a61" name="Indomitus Discipline" hidden="false" collective="false" import="true" targetId="9420-230e-7273-5694" type="selectionEntryGroup">
