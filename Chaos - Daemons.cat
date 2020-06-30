@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="422a-a40e-3f7c-e8b3" name="Chaos - Daemons" revision="74" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="1" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="422a-a40e-3f7c-e8b3" name="Chaos - Daemons" revision="78" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="128" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="422a-a40e-pubN71142" name="Dataslate: Be&apos;lakor"/>
     <publication id="422a-a40e-pubN120961" name="Index: Chaos"/>
@@ -73,6 +73,11 @@
     <categoryEntry id="d60d-36f1-6770-2d41" name="Hellflayer" hidden="false"/>
     <categoryEntry id="3e48-eea0-896c-55a2" name="Seeker Chariot" hidden="false"/>
     <categoryEntry id="3c24-24b7-5495-8b97" name="Exalted Seeker Chariot" hidden="false"/>
+    <categoryEntry id="6442-d66a-4133-e35c" name="Exalted" hidden="false"/>
+    <categoryEntry id="ab42-2642-c2a0-4213" name="Khorne Warlord" hidden="true"/>
+    <categoryEntry id="d895-6cfe-5bcc-d4df" name="Nurgle Warlord" hidden="false"/>
+    <categoryEntry id="4c20-1265-a52e-5fcb" name="Slaanesh Warlord" hidden="false"/>
+    <categoryEntry id="75ed-ff4a-c0a3-551a" name="Tzeentch Warlord" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="8466-813b-f8f0-e78f" name="Karanak" hidden="false" collective="false" import="true" targetId="b91e-a5fc-d9d4-bf08" type="selectionEntry">
@@ -1319,7 +1324,11 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="2ac2-071e-7f26-6920" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="2ac2-071e-7f26-6920" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="898f-4fac-9729-ac06" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="7df7-c50a-fc0c-b4d9" name="Warlord Traits (Khorne)" hidden="false" collective="false" import="true" targetId="aba9-3f3a-756f-6514" type="selectionEntryGroup"/>
         <entryLink id="44a5-2450-ffa1-2278" name="Hellforged Artefacts (Khorne)" hidden="false" collective="false" import="true" targetId="e658-ddea-5575-9d57" type="selectionEntryGroup"/>
         <entryLink id="0112-4057-5feb-ae3f" name="Blade of Blood" hidden="false" collective="false" import="true" targetId="508c-1f08-9439-1fb6" type="selectionEntry">
@@ -1354,7 +1363,7 @@
     <selectionEntry id="c703-ebae-c615-1221" name="Bloodcrushers" page="0" hidden="false" collective="false" import="true" type="unit">
       <infoLinks>
         <infoLink id="5189-f758-b6c7-de92" name="Unstoppable Ferocity" hidden="false" targetId="ea78-399f-19c0-53fa" type="profile"/>
-        <infoLink id="4c99-6e56-3e69-ae00" name="New InfoLink" hidden="false" targetId="224f-2c86-454d-54aa" type="rule"/>
+        <infoLink id="4c99-6e56-3e69-ae00" name="Daemonic Ritual" hidden="false" targetId="224f-2c86-454d-54aa" type="rule"/>
         <infoLink id="7daf-c144-9faa-3fcd" name="Daemonic" hidden="false" targetId="7ebf-19a7-1108-215c" type="profile"/>
       </infoLinks>
       <categoryLinks>
@@ -1462,6 +1471,18 @@
             <entryLink id="559c-25ab-3a83-9287" name="Instrument of Chaos" hidden="false" collective="false" import="true" targetId="11db-39df-f53b-d823" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="75fd-408d-2df5-79ff" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="4c99-f621-d60f-74da" name="Banner of Blood" hidden="false" collective="false" import="true" targetId="ccf1-a70b-25a4-06a2" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="16ab-5e1f-9ae2-5a7d" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="c703-ebae-c615-1221" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2ec5-350c-ae2f-06c2" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="16ab-5e1f-9ae2-5a7d" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -1573,7 +1594,7 @@
           <selectionEntries>
             <selectionEntry id="2a69-ada1-f389-ff52" name="Daemonic Icon" hidden="false" collective="false" import="true" type="upgrade">
               <modifiers>
-                <modifier type="increment" field="649a-1e88-94e4-bc8a" value="1">
+                <modifier type="increment" field="649a-1e88-94e4-bc8a" value="1.0">
                   <repeats>
                     <repeat field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
                   </repeats>
@@ -1609,6 +1630,18 @@
                 <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6103-239a-9f78-9a01" type="max"/>
               </constraints>
             </entryLink>
+            <entryLink id="795f-6096-e440-117b" name="Banner of Blood" hidden="false" collective="false" import="true" targetId="ccf1-a70b-25a4-06a2" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="fc4d-c8a8-a774-2d07" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="2372-6e48-e202-af38" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2a69-ada1-f389-ff52" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fc4d-c8a8-a774-2d07" type="max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -1623,6 +1656,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="6564-8cab-7d58-11ba" name="Bloodthirster of Unfettered Fury" page="0" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="6442-d66a-4133-e35c">
+          <conditions>
+            <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f6c3-133b-d804-f08c" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="08b3-8571-c17f-a010" name="Bloodthirster of Unfettered Fury" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -1718,6 +1758,9 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ecf7-f180-c703-9837" type="max"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink id="153f-2e89-e429-4616" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
         </entryLink>
         <entryLink id="635b-7806-b234-43aa" name="Axe of Khorne" hidden="false" collective="false" import="true" targetId="7d4e-40a3-53da-89fd" type="selectionEntry">
           <constraints>
@@ -1728,6 +1771,7 @@
         <entryLink id="1162-85ee-a20c-99a2" name="Hellforged Artefacts (Khorne)" hidden="false" collective="false" import="true" targetId="e658-ddea-5575-9d57" type="selectionEntryGroup"/>
         <entryLink id="1730-920c-d387-0750" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="f74f-b2e3-a2cd-f0cb" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
+        <entryLink id="b657-d10a-f313-7687" name="Exalted Bloodthirster" hidden="false" collective="false" import="true" targetId="f6c3-133b-d804-f08c" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="210.0"/>
@@ -1878,7 +1922,7 @@
     </selectionEntry>
     <selectionEntry id="6c6c-e019-3c06-618d" name="Flesh Hounds" page="0" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="4">
+        <modifier type="increment" field="e356-c769-5920-6e14" value="4.0">
           <repeats>
             <repeat field="selections" scope="6c6c-e019-3c06-618d" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="true"/>
           </repeats>
@@ -2092,7 +2136,11 @@
         <categoryLink id="173b-0903-fae3-a3bc" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink id="d970-1ddf-bd22-ef60" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="d970-1ddf-bd22-ef60" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="e538-8e7a-b616-e1a2" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="c98e-629b-80f3-2bba" name="Hellforged Artefacts (Khorne)" hidden="false" collective="false" import="true" targetId="e658-ddea-5575-9d57" type="selectionEntryGroup"/>
         <entryLink id="e1d5-0cd4-55ea-034d" name="Warlord Traits (Khorne)" hidden="false" collective="false" import="true" targetId="aba9-3f3a-756f-6514" type="selectionEntryGroup"/>
         <entryLink id="d96c-0c76-9e8a-c588" name="Blade of Blood" hidden="false" collective="false" import="true" targetId="508c-1f08-9439-1fb6" type="selectionEntry">
@@ -2202,7 +2250,11 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="ca86-644f-cb91-953a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="ca86-644f-cb91-953a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="5060-e081-0a53-33f1" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="70.0"/>
@@ -2211,6 +2263,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="7059-f18f-03b9-4ca2" name="Lord of Change" page="" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="6442-d66a-4133-e35c">
+          <conditions>
+            <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8174-4203-df80-177b" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="c39e-a3fd-8c97-04c0" name="Lord of Change" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -2226,6 +2285,33 @@
           </characteristics>
         </profile>
         <profile id="afed-37ea-2a65-6221" name="Psyker" hidden="false" typeId="bc97-dea9-9e88-bb7d" typeName="Psyker">
+          <modifiers>
+            <modifier type="increment" field="5afb-9914-904b-d3b3" value="1">
+              <conditions>
+                <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8feb-6ff0-b98f-7156" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="69d7-b45e-00a2-7e46" value="Smite and four powers from the Tzeentch discipline.">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8feb-6ff0-b98f-7156" type="equalTo"/>
+                    <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="605f-a914-4165-daaf" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="69d7-b45e-00a2-7e46" value="Smite and five powers from the Tzeentch discipline.">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8feb-6ff0-b98f-7156" type="equalTo"/>
+                    <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="605f-a914-4165-daaf" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Cast" typeId="5afb-9914-904b-d3b3">2</characteristic>
             <characteristic name="Deny" typeId="b5ac-9c20-5d5a-6f9b">2</characteristic>
@@ -2307,6 +2393,127 @@
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
+        <selectionEntry id="8174-4203-df80-177b" name="Exalted Lord of Change" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9cf6-b141-cbc2-b319" type="max"/>
+          </constraints>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="cefd-a045-ca8f-53ef" name="Exalted Abilities" hidden="false" collective="false" import="true">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="de5d-66f1-d1a6-0805" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="8feb-6ff0-b98f-7156" name="1. Mastery of Magic" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b58f-df4c-fa2f-4878" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="4c55-0e4d-f368-af6a" name="Mastery of Magic" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows one additional psychic power from the Tzeentch discipline and can attempt to manifest one additional psychic power in each of your Psychic phases.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="4bee-348e-3256-1c9b" name="2. Spell-thief" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e690-ebd9-8363-5473" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="110e-7269-be3e-fa27" name="Spell-thief" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model successfully denies a psychic power, the PSYKER unit that attempted to manifest that power loses it and cannot attempt to manifest it again this battle.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="062a-03c9-9aef-7c01" name="3. Lord of Flux" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e4d-99ab-ddcc-113e" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="fc6b-0671-8c12-5ea5" name="Lord of Flux" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When an enemy unit suffers mortal wounds as the result of a psychic power manifested by this model, that enemy unit suffers 1 additional mortal wound (e.g. if this model manifested Smite, the nearest visible enemy unit would suffer D3 + 1 mortal wounds).</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="4252-7bd1-c117-c008" name="4. Nexus of Fate" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b16d-902c-44f5-ec06" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="c9b1-ee77-de24-0817" name="Nexus of Fate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is on the battlefield at the start of your turn, roll one D6; on a 1 or 6 you immediately gain one Command Point.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="4e20-832a-146d-c5db" name="5. Aura of Mutability" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8a38-8857-1968-6153" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="8290-0300-0ee4-c698" name="Aura of Mutability" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model would lose a wound as a result of an attack, roll one D6; on a 6 that wound is not lost. After a unit has finished resolving all of its attacks against this model, this model regains one lost wound for each wound it negated because of this ability.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="2621-c166-b46b-5a8f" name="6. Architect of Deception" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5956-05ec-601c-1bc4" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="324a-4abb-9f96-ccc3" name="Architect of Deception" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a ranged weapon against this model, subtract 1 from the hit roll.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <costs>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="ca72-96ab-7227-8a76" name="Secondary weapon" hidden="false" collective="false" import="true">
@@ -2317,6 +2524,13 @@
             <selectionEntry id="7f7d-2135-00d4-2925" name="Baleful sword" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
                 <profile id="7be4-f33d-1d01-a5cc" name="Baleful sword" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <modifiers>
+                    <modifier type="set" field="hidden" value="true">
+                      <conditions>
+                        <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="23c8-d3f0-8b65-5d5b" type="equalTo"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -2362,6 +2576,11 @@
             <modifier type="increment" field="44a5-e4f6-c26d-a302" value="1.0">
               <conditions>
                 <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="605f-a914-4165-daaf" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="44a5-e4f6-c26d-a302" value="1.0">
+              <conditions>
+                <condition field="selections" scope="7059-f18f-03b9-4ca2" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8feb-6ff0-b98f-7156" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -2762,7 +2981,11 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="cdd7-04f8-5889-4404" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="cdd7-04f8-5889-4404" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="bc47-1c6f-2cd9-ff54" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="290.0"/>
@@ -2948,6 +3171,9 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0c19-287c-5633-1aa2" type="max"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink id="ae27-838d-0ae7-30e4" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
         </entryLink>
       </entryLinks>
       <costs>
@@ -2957,6 +3183,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="b2cf-78a5-510c-f24b" name="Bloodthirster of Insensate Rage" page="0" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="6442-d66a-4133-e35c">
+          <conditions>
+            <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f6c3-133b-d804-f08c" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="0c0c-0e1c-fb52-1666" name="Bloodthirster of Insensate Rage" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -3063,10 +3296,15 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="2945-35cb-f6aa-63f5" name="Hellforged Artefacts (Khorne)" hidden="false" collective="false" import="true" targetId="e658-ddea-5575-9d57" type="selectionEntryGroup"/>
-        <entryLink id="25be-a14a-e80d-5170" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="25be-a14a-e80d-5170" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="2697-09e4-be5d-b7c8" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="e0a6-e649-2a84-511e" name="Warlord Traits (Khorne)" hidden="false" collective="false" import="true" targetId="aba9-3f3a-756f-6514" type="selectionEntryGroup"/>
         <entryLink id="3e5a-dc95-0082-4780" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="3e2c-5166-d9e1-142c" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
+        <entryLink id="4bda-ecae-2fda-1f35" name="Exalted Bloodthirster" hidden="false" collective="false" import="true" targetId="f6c3-133b-d804-f08c" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="230.0"/>
@@ -3075,6 +3313,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="1e16-ec82-4872-314a" name="Wrath of Khorne Bloodthirster" page="0" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="6442-d66a-4133-e35c">
+          <conditions>
+            <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f6c3-133b-d804-f08c" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="998e-d2d8-859d-8ba6" name="Wrath of Khorne Bloodthirster" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -3199,6 +3444,9 @@
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4028-7f34-7c32-5fed" type="max"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink id="3d65-550d-382e-3f5a" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
         </entryLink>
         <entryLink id="baa1-32fd-2a3a-3ef0" name="Axe of Khorne" hidden="false" collective="false" import="true" targetId="7d4e-40a3-53da-89fd" type="selectionEntry">
           <constraints>
@@ -3208,6 +3456,7 @@
         </entryLink>
         <entryLink id="7c5e-8584-00aa-dd32" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="f49a-00d7-748d-4c46" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
+        <entryLink id="d642-8850-267e-79a0" name="Exalted Bloodthirster" hidden="false" collective="false" import="true" targetId="f6c3-133b-d804-f08c" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="210.0"/>
@@ -3274,7 +3523,11 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="7c8b-322c-7bf6-e86a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="7c8b-322c-7bf6-e86a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="e665-027b-923a-3cc8" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="173b-e2bf-3baa-7bde" name="Warlord Traits (Khorne)" hidden="false" collective="false" import="true" targetId="aba9-3f3a-756f-6514" type="selectionEntryGroup"/>
         <entryLink id="be69-1adf-07d3-a9eb" name="Hellforged Artefacts (Khorne)" hidden="false" collective="false" import="true" targetId="e658-ddea-5575-9d57" type="selectionEntryGroup"/>
         <entryLink id="8cad-157b-367b-3a68" name="Blade of Blood" hidden="false" collective="false" import="true" targetId="508c-1f08-9439-1fb6" type="selectionEntry">
@@ -3325,20 +3578,6 @@
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="b46a-2b05-1a8e-b576" name="Daemonic Icon" hidden="false" collective="false" import="true" type="upgrade">
-      <profiles>
-        <profile id="ea9b-29d3-9aed-8773" name="Daemonic Icon" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If you roll a 1 when taking a Morale test for a unit with any Daemonic Icons, reality blinks and the daemonic horde is bolstered. No models flee and </characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
-      <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="15.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -3432,7 +3671,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="491d-77f0-b95a-1fc7" name="Kairos Fateweaver" page="0" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="491d-77f0-b95a-1fc7" name="Kairos Fateweaver" page="0" hidden="false" collective="false" import="true" type="model">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ebac-62d5-841e-5d06" type="max"/>
       </constraints>
@@ -3600,7 +3839,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="af59-3a77-c2d9-9c5c" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="723a-3b6e-f93e-08ca" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="723a-3b6e-f93e-08ca" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="24f1-3c51-85ce-50d2" name="Tzeentch Warlord" hidden="false" targetId="75ed-ff4a-c0a3-551a" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="250.0"/>
@@ -3706,7 +3949,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="40f9-a19b-368a-5bc7" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="56af-22d8-d9cb-ccce" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="56af-22d8-d9cb-ccce" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="cf04-6a1d-68c6-1095" name="Tzeentch Warlord" hidden="false" targetId="75ed-ff4a-c0a3-551a" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="100.0"/>
@@ -3794,7 +4041,11 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="bb05-da00-593b-2592" name="Disc of Tzeentch" hidden="false" collective="false" import="true" targetId="7fba-e978-7f40-cdfa" type="selectionEntry"/>
-        <entryLink id="ad27-f8e2-dcfd-cfa1" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="ad27-f8e2-dcfd-cfa1" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="aa99-4c2d-7b1d-37b9" name="Tzeentch Warlord" hidden="false" targetId="75ed-ff4a-c0a3-551a" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="86.0"/>
@@ -3862,7 +4113,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f158-03a2-9c91-8601" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="1845-3a1e-47d3-aa2a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="1845-3a1e-47d3-aa2a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="8e59-634e-434e-9b1f" name="Tzeentch Warlord" hidden="false" targetId="75ed-ff4a-c0a3-551a" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="3083-41fb-d8e8-4bbd" name="Warlord Traits (Tzeentch)" hidden="false" collective="false" import="true" targetId="9f49-1282-a871-d732" type="selectionEntryGroup"/>
         <entryLink id="c561-96c7-7835-7a5a" name="Hellforged Artefacts (Tzeentch)" hidden="false" collective="false" import="true" targetId="f71b-8420-0976-3e2d" type="selectionEntryGroup"/>
         <entryLink id="43ad-fdcb-db83-e4dd" name="Ritual dagger" hidden="false" collective="false" import="true" targetId="10c3-ac79-6994-b3f4" type="selectionEntry">
@@ -3986,7 +4241,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0941-c1d4-36ea-922a" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="d5b0-21db-87c1-b02b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="d5b0-21db-87c1-b02b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="8d32-23f8-c1e9-f91b" name="Tzeentch Warlord" hidden="false" targetId="75ed-ff4a-c0a3-551a" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="c179-28e2-9240-4f40" name="Hellforged Artefacts (Tzeentch)" hidden="false" collective="false" import="true" targetId="f71b-8420-0976-3e2d" type="selectionEntryGroup"/>
         <entryLink id="d414-10fa-cdec-16a3" name="Warlord Traits (Tzeentch)" hidden="false" collective="false" import="true" targetId="9f49-1282-a871-d732" type="selectionEntryGroup"/>
         <entryLink id="71c3-0588-846e-8a14" name="Ritual dagger" hidden="false" collective="false" import="true" targetId="10c3-ac79-6994-b3f4" type="selectionEntry">
@@ -4118,7 +4377,11 @@
           </constraints>
         </entryLink>
         <entryLink id="a4f8-6563-d37a-003d" name="Warlord Traits (Tzeentch)" hidden="false" collective="false" import="true" targetId="9f49-1282-a871-d732" type="selectionEntryGroup"/>
-        <entryLink id="4a63-61cb-1a6d-031e" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="4a63-61cb-1a6d-031e" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="5ef4-92fd-84cf-b441" name="Tzeentch Warlord" hidden="false" targetId="75ed-ff4a-c0a3-551a" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="a742-e081-c599-b598" name="Hellforged Artefacts (Tzeentch)" hidden="false" collective="false" import="true" targetId="f71b-8420-0976-3e2d" type="selectionEntryGroup"/>
         <entryLink id="f8b7-44f8-3485-5008" name="Ritual dagger" hidden="false" collective="false" import="true" targetId="10c3-ac79-6994-b3f4" type="selectionEntry">
           <constraints>
@@ -4142,12 +4405,12 @@
     </selectionEntry>
     <selectionEntry id="f871-ce62-9895-c5a0" name="Horrors" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="set" field="e356-c769-5920-6e14" value="7.0">
+        <modifier type="set" field="e356-c769-5920-6e14" value="8.0">
           <conditions>
             <condition field="selections" scope="f871-ce62-9895-c5a0" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
           </conditions>
         </modifier>
-        <modifier type="set" field="e356-c769-5920-6e14" value="10.0">
+        <modifier type="set" field="e356-c769-5920-6e14" value="12.0">
           <conditions>
             <condition field="selections" scope="f871-ce62-9895-c5a0" value="20.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
           </conditions>
@@ -4220,7 +4483,7 @@ Matched Play: Models added to this unit using the Split ability must be paid for
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="set" field="56b4-ca47-c32c-9eb3" value="2">
+            <modifier type="set" field="56b4-ca47-c32c-9eb3" value="2.0">
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
@@ -4381,6 +4644,18 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </entryLink>
         <entryLink id="9421-4354-8893-cb4b" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="ef24-6fff-43cc-9e91" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="3062-38e5-870e-62c3" name="Blasted Standard" hidden="false" collective="false" import="true" targetId="2202-8ca6-52fe-07a3" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="72b5-8a61-2f48-3d5b" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="f871-ce62-9895-c5a0" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f926-a709-f317-0847" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="72b5-8a61-2f48-3d5b" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -4617,7 +4892,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <categoryLink id="3fdf-1092-724e-6a8e" name="New CategoryLink" hidden="false" targetId="d8fa-3f19-2fbe-ad7e" primary="false"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink id="f1ba-ecf6-a7dc-2e6f" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="f1ba-ecf6-a7dc-2e6f" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="03b9-0be8-bc9b-db47" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="6e8e-eada-8511-4401" name="Balesword" hidden="false" collective="false" import="true" targetId="11e5-62b4-7039-cf54" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="00e9-a298-c5dc-c704" type="min"/>
@@ -4710,7 +4989,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="98f7-4f83-ca1c-69a6" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="f728-5f89-4136-018b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="f728-5f89-4136-018b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="624a-ff7a-dade-ea11" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="1b59-e191-6898-46cd" name="Warlord Traits (Nurgle)" hidden="false" collective="false" import="true" targetId="b44c-8320-46a5-9aa0" type="selectionEntryGroup"/>
         <entryLink id="cb17-3d7f-bb21-ed76" name="Hellforged Artefacts (Nurgle)" hidden="false" collective="false" import="true" targetId="f26d-0c7a-bb26-001e" type="selectionEntryGroup"/>
         <entryLink id="5b82-c513-c673-cade" name="Balesword" hidden="false" collective="false" import="true" targetId="11e5-62b4-7039-cf54" type="selectionEntry">
@@ -4729,8 +5012,22 @@ Matched Play: Models added to this unit using the Split ability must be paid for
       </costs>
     </selectionEntry>
     <selectionEntry id="0e28-1f32-cab3-4af5" name="Great Unclean One" page="" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="6442-d66a-4133-e35c">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3a2a-25ca-5eb0-8b1a" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="cfb1-5840-319c-79f5" name="Great Unclean One" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifiers>
+            <modifier type="set" field="9c9f-9774-a358-3a39" value="8">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f91b-6b4d-54a5-42f9" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -4804,6 +5101,129 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <categoryLink id="61c8-a188-badd-d797" name="New CategoryLink" hidden="false" targetId="0fb6-fcaf-b180-5dda" primary="false"/>
         <categoryLink id="76ea-841b-8626-911f" name="New CategoryLink" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
       </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="3a2a-25ca-5eb0-8b1a" name="Exalted Great Unclean One" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1acf-141c-d2cf-d6cd" type="max"/>
+          </constraints>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="7b40-b371-7330-cf69" name="Exalted Abilities" hidden="false" collective="false" import="true">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="03f1-047a-11e5-9ad7" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="f91b-6b4d-54a5-42f9" name="1. Bloated with Corruption" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5eb6-41c0-674a-2968" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="03da-3432-2282-c72d" name="Bloated with Corruption" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a Toughness characteristic of 8.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="b33e-0346-cb35-5b2b" name="2. Revoltingly Resilient" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8fcc-1569-bff1-36ea" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="5154-72ed-9807-69fe" name="Revoltingly Resilient" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to all Disgustingly Resilient rolls made for this model.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="e260-a560-831b-b2ae" name="3. Avalanche of Rotten Flesh" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d940-2d05-b208-64b2" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="f7cd-1098-b7c2-7bcb" name="Avalanche of Rotten Flesh" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a charge roll is made for this model, add 1 to the result. In addition, this model&apos;s Crushing Bulk ability inflicts D3 mortal wounds on a 2+, instead of inflicting 1 mortal wound on a 4+.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="c9b3-e218-b28b-9b69" name="4. Living Plagues" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6eba-bdf9-4a65-d14e" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="c5d3-d8be-0843-2ef1" name="Living Plagues" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a melee weapon by this model, a successful hit roll scores 1 additional hit if the attack&apos;s Strength characteristic is at least twice the target&apos;s Toughness characteristic.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="4bd2-e639-a88c-1672" name="5. Gift of Bountiful Vomit" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5fbf-8563-96b3-a337" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="9628-b0b5-653e-e8d8" name="Gift of Bountiful Vomit" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In each of your Shooting phases, you can select one enemy unit that is visble to this model and roll one D6 for each model in that unit that is within 12&quot; of this model (to a maximum of 7 dice). For each roll of 3+, that unit suffers 1 mortal wound.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="338f-5c2c-62e8-0f5c" name="6. Hideous Visage" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a25f-bc9c-7811-a69c" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="e65f-117d-4b7b-9930" name="Hideous Visage" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Subtract 1 from the Leadership characteristic of enemy units whilst they are within 12&quot; of any models with this ability from your army (subtract 2 instead if they are within 6&quot;).</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <costs>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="c67e-9ec1-0d24-1bd8" name="Bilesword option" hidden="false" collective="false" import="true" defaultSelectionEntryId="774f-f269-cb3b-ec19">
           <constraints>
@@ -4922,6 +5342,13 @@ Matched Play: Models added to this unit using the Split ability must be paid for
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="4328-493e-f179-7c9e" name="Nurgle Discipline" hidden="false" collective="false" import="true" targetId="c7bb-3d6d-b7b1-6822" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="increment" field="3670-711a-7894-b62b" value="1.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d719-91f6-8aad-efb5" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3670-711a-7894-b62b" type="max"/>
           </constraints>
@@ -4932,7 +5359,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e200-258b-d977-221f" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="369e-ff87-376f-f1ef" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="369e-ff87-376f-f1ef" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="6b29-146a-488a-ed3f" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="5f83-4d50-c23d-b2a8" name="Warlord Traits (Nurgle)" hidden="false" collective="false" import="true" targetId="b44c-8320-46a5-9aa0" type="selectionEntryGroup"/>
         <entryLink id="5e4e-35a9-dfbd-7525" name="Hellforged Artefacts (Nurgle)" hidden="false" collective="false" import="true" targetId="f26d-0c7a-bb26-001e" type="selectionEntryGroup"/>
         <entryLink id="9f24-70fe-f461-1d66" name="Nurglings (Attendants)" hidden="false" collective="false" import="true" targetId="c10c-c363-d5c9-6a15" type="selectionEntry">
@@ -5091,6 +5522,18 @@ Matched Play: Models added to this unit using the Split ability must be paid for
               </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ba1c-828e-a3e2-f186" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="318d-f254-6be5-fac2" name="Plague Banner" hidden="false" collective="false" import="true" targetId="eee3-49f2-1583-1210" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="9f9e-40ce-ab0d-3503" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="01f7-1cfc-11cf-7ffe" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e8c-68aa-317f-66d2" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9f9e-40ce-ab0d-3503" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -5329,6 +5772,18 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </entryLink>
         <entryLink id="b829-7234-cd37-2336" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="d9cc-924d-7020-9f0e" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="c9df-54b2-f4a3-1259" name="Plague Banner" hidden="false" collective="false" import="true" targetId="eee3-49f2-1583-1210" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="5203-911b-c1dd-0503" value="1.0">
+              <conditions>
+                <condition field="selections" scope="fdd7-df4b-5101-2439" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c081-d0eb-9152-402a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5203-911b-c1dd-0503" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -5420,7 +5875,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="50bd-2519-bb0b-c24f" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="50bd-2519-bb0b-c24f" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="7874-8fca-04da-e495" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="78.0"/>
@@ -5452,6 +5911,13 @@ Matched Play: Models added to this unit using the Split ability must be paid for
       </costs>
     </selectionEntry>
     <selectionEntry id="884c-e873-9376-9f6f" name="Keeper of Secrets" page="" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="6442-d66a-4133-e35c">
+          <conditions>
+            <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cfec-7d85-e086-da82" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="3b49-a9ad-b102-dd72" name="Keeper of Secrets" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -5483,6 +5949,13 @@ Matched Play: Models added to this unit using the Split ability must be paid for
           </characteristics>
         </profile>
         <profile id="b295-33b1-1379-507c" name="Keeper of Secrets1" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <modifiers>
+            <modifier type="set" field="bf41-c860-50bc-2a7e" value="16&quot;">
+              <conditions>
+                <condition field="selections" scope="884c-e873-9376-9f6f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="86d4-3b8b-ee33-974e" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">9-16+</characteristic>
             <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">14&quot;</characteristic>
@@ -5491,6 +5964,13 @@ Matched Play: Models added to this unit using the Split ability must be paid for
           </characteristics>
         </profile>
         <profile id="40bb-307c-9290-4bf5" name="Keeper of Secrets2" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <modifiers>
+            <modifier type="set" field="bf41-c860-50bc-2a7e" value="13&quot;">
+              <conditions>
+                <condition field="selections" scope="884c-e873-9376-9f6f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="86d4-3b8b-ee33-974e" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">5-8</characteristic>
             <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">11&quot;</characteristic>
@@ -5499,6 +5979,13 @@ Matched Play: Models added to this unit using the Split ability must be paid for
           </characteristics>
         </profile>
         <profile id="bc20-4572-9041-8ce2" name="Keeper of Secrets3" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <modifiers>
+            <modifier type="set" field="bf41-c860-50bc-2a7e" value="9&quot;">
+              <conditions>
+                <condition field="selections" scope="884c-e873-9376-9f6f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="86d4-3b8b-ee33-974e" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-4</characteristic>
             <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">7&quot;</characteristic>
@@ -5533,6 +6020,18 @@ Matched Play: Models added to this unit using the Split ability must be paid for
           </constraints>
           <profiles>
             <profile id="ee06-394d-f4d7-d7c7" name="Witstealer sword" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="884c-e873-9376-9f6f" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="45aa-424e-ee56-341e" type="equalTo"/>
+                        <condition field="selections" scope="884c-e873-9376-9f6f" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d94e-b7de-8bca-3fcd" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -5547,6 +6046,127 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="cfec-7d85-e086-da82" name="Exalted Keeper of Secrets" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b0f9-bb2b-bbab-bf17" type="max"/>
+          </constraints>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="eb41-4e21-4ee7-aad0" name="Exalted Abilities" hidden="false" collective="false" import="true">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ed35-b37d-5482-5c0b" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="86d4-3b8b-ee33-974e" name="1. Realm-racer" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cd12-6e58-5d46-a851" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="76ff-fb05-6012-a3f7" name="Realm-racer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 2&quot; to this model&apos;s Move characteristic. When an Advance or charge roll is made for this model, add 1 to the result.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="f97d-64d7-368a-0107" name="2. Quicksilver Reflexes" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a9d0-a5fb-6ac8-e52e" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="c686-a0d6-4ed1-a7c8" name="Quicksilver Reflexes" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 4+ invulnerable save.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="78f8-d379-8242-3e6a" name="3. Blessing of the Dark Prince" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="53a0-0969-cd89-db7b" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="037a-8faa-b702-f6e1" name="Blessing of the Dark Prince" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a ranged weapon against this model, subtract 1 from the wound roll.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="9127-47ea-5cdb-a0d8" name="4. Lightning Flayer" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b184-f0e8-514a-672a" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="01c9-0e3f-f061-0160" name="Lightning Flayer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a melee weapon by this model, an unmodified hit roll of 6 scores 1 additional hit.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="094f-704f-7676-7f97" name="5. Fear-seeker" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aba9-3313-9805-3c45" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="c0e4-7e5b-647f-4b84" name="Fear-seeker" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per Morale phase, after an enemy unit fails a Morale test but before any models flee that unit, this model can move as if it were your Movement phase, so long as it ends this move closer to the unit that failed that Morale test. In addition, each time an enemy model flees from a unit whilst its unit is within 6&quot; of this model, this model gains 1 lost wound.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="31b6-5186-38d5-3e43" name="6. Battle Rapture" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa6c-7eb8-bd1d-9dee" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="68c2-269d-e34c-46b2" name="Battle Rapture" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model can perform a Heroic Intervention if there are any enemy units within 6&quot; of them instead of 3&quot;, and when doing so can move up to 6&quot; instead of 3&quot;. In addition, each time this Keeper of Secrets consolidates, it can move up to D3+3&quot; instead of 3.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <costs>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -5604,7 +6224,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="47f8-0174-a925-a133" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="b146-1f47-cf15-1c1a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="b146-1f47-cf15-1c1a" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="dd6c-de76-7889-bb76" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="a826-6c61-2085-8116" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
         <entryLink id="3f2a-38e3-c316-97bd" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="57ec-75f7-f82f-e54e" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
@@ -5674,7 +6298,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7968-3da8-717c-986f" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="c514-d116-dc82-3296" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="c514-d116-dc82-3296" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="7522-b142-9daf-4958" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="d232-2617-f843-1150" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="c00c-abf6-ea20-e070" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
         <entryLink id="c0f5-b061-c37d-44a9" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
@@ -5746,7 +6374,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
           </constraints>
         </entryLink>
         <entryLink id="b725-8752-519b-27a7" name="Steed of Slaanesh" hidden="false" collective="false" import="true" targetId="de13-7d5f-b315-8d20" type="selectionEntry"/>
-        <entryLink id="b163-40bc-8a8d-b35d" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="b163-40bc-8a8d-b35d" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="0264-a3bd-283c-7acc" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="85fd-183b-d468-3301" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
         <entryLink id="2458-3585-28ab-845c" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="e23d-f756-1cfb-a4a5" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
@@ -5853,7 +6485,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc13-3683-13a5-0c82" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="46ea-9989-baed-c07b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="46ea-9989-baed-c07b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="de1d-c074-276d-92fa" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="0f21-f323-6cee-3eb8" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
         <entryLink id="8b1f-1386-e6df-3956" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="0e07-ac3f-56e0-8334" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
@@ -5988,7 +6624,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f8ad-b77b-e803-87e0" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="9991-be2d-d402-cc26" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="9991-be2d-d402-cc26" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="e08a-6d8c-7dbc-2892" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="fc7b-30e6-1b41-137e" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="ce77-d806-2986-ba80" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
         <entryLink id="a16f-8d78-8773-ab54" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
@@ -6098,7 +6738,7 @@ Matched Play: Models added to this unit using the Split ability must be paid for
           <selectionEntries>
             <selectionEntry id="d984-2920-d38b-1e94" name="Daemonic Icon" hidden="false" collective="false" import="true" type="upgrade">
               <modifiers>
-                <modifier type="increment" field="813f-4102-0c40-51c4" value="1">
+                <modifier type="increment" field="813f-4102-0c40-51c4" value="1.0">
                   <repeats>
                     <repeat field="selections" scope="8f28-bce0-a051-f427" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
                   </repeats>
@@ -6132,6 +6772,18 @@ Matched Play: Models added to this unit using the Split ability must be paid for
               </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b3ba-9a03-fe7e-d180" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="765c-c26a-755e-7baf" name="Rapturous Standard" hidden="false" collective="false" import="true" targetId="8461-b4f4-e5be-05c6" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="2708-25ac-c11f-aba9" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="8f28-bce0-a051-f427" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d984-2920-d38b-1e94" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2708-25ac-c11f-aba9" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -6585,17 +7237,17 @@ Matched Play: Models added to this unit using the Split ability must be paid for
     </selectionEntry>
     <selectionEntry id="2672-8419-33c0-5026" name="Seekers" page="0" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="set" field="e356-c769-5920-6e14" value="9.0">
+        <modifier type="set" field="e356-c769-5920-6e14" value="8.0">
           <conditions>
             <condition field="selections" scope="2672-8419-33c0-5026" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
           </conditions>
         </modifier>
-        <modifier type="set" field="e356-c769-5920-6e14" value="13.0">
+        <modifier type="set" field="e356-c769-5920-6e14" value="12.0">
           <conditions>
             <condition field="selections" scope="2672-8419-33c0-5026" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
           </conditions>
         </modifier>
-        <modifier type="set" field="e356-c769-5920-6e14" value="17.0">
+        <modifier type="set" field="e356-c769-5920-6e14" value="16.0">
           <conditions>
             <condition field="selections" scope="2672-8419-33c0-5026" value="15.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
           </conditions>
@@ -6680,6 +7332,18 @@ Matched Play: Models added to this unit using the Split ability must be paid for
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7eac-7ff7-88f8-333f" type="max"/>
               </constraints>
             </entryLink>
+            <entryLink id="ffd4-5595-5a8a-1a5b" name="Rapturous Standard" hidden="false" collective="false" import="true" targetId="8461-b4f4-e5be-05c6" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="4d5e-47bd-59ad-d80a" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="2672-8419-33c0-5026" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bdbc-c697-c951-9295" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4d5e-47bd-59ad-d80a" type="max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -6696,7 +7360,7 @@ Matched Play: Models added to this unit using the Split ability must be paid for
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="dcac-d432-18ef-cb46" name="Exalted Seeker Chariot" page="" hidden="false" collective="false" import="true" type="model">
@@ -6843,6 +7507,48 @@ Matched Play: Models added to this unit using the Split ability must be paid for
       </costs>
     </selectionEntry>
     <selectionEntry id="253a-9e51-cf96-b0d5" name="Daemon Prince of Chaos" page="" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="ab42-2642-c2a0-4213">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c488-0afe-c67e-2606" type="equalTo"/>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f778-4032-27f7-7f2c" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="add" field="category" value="d895-6cfe-5bcc-d4df">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c488-0afe-c67e-2606" type="equalTo"/>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="26eb-4bc7-7470-39ee" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="add" field="category" value="4c20-1265-a52e-5fcb">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c488-0afe-c67e-2606" type="equalTo"/>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ecdf-3215-7463-71df" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="add" field="category" value="75ed-ff4a-c0a3-551a">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c488-0afe-c67e-2606" type="equalTo"/>
+                <condition field="selections" scope="253a-9e51-cf96-b0d5" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7f89-6f90-969b-7fea" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="c42a-c431-c8ff-76b6" name="Daemon Prince of Chaos" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <modifiers>
@@ -7167,11 +7873,6 @@ Matched Play: Models added to this unit using the Split ability must be paid for
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="c555-791e-9c14-e86f" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="797f-d6cc-ebd8-9269" type="max"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="0149-60bb-5ecd-4872" name="Warp bolter" hidden="false" collective="false" import="true" targetId="8be2-ff5a-a5a6-aaec" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="47a9-b7a9-ffe5-2792" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="2ed0-28e4-c3a1-fb3e" name="Hellforged Artefacts (Khorne)" hidden="false" collective="false" import="true" targetId="e658-ddea-5575-9d57" type="selectionEntryGroup">
@@ -7793,7 +8494,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="67b5-5eca-4b8b-ea5c" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="67b5-5eca-4b8b-ea5c" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="682d-b76d-0453-6aa3" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="40eb-9f7f-4d4f-7322" name="Warlord Traits (Khorne)" hidden="false" collective="false" import="true" targetId="aba9-3f3a-756f-6514" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -7903,7 +8608,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="0de5-7c75-752e-7b52" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="0de5-7c75-752e-7b52" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="a17e-31fd-8bc8-bf28" name="Khorne Warlord" hidden="false" targetId="ab42-2642-c2a0-4213" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="8b31-0235-5748-446f" name="Warlord Traits (Khorne)" hidden="false" collective="false" import="true" targetId="aba9-3f3a-756f-6514" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -8370,7 +9079,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="ee51-2069-09b9-5ee2" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="ee51-2069-09b9-5ee2" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="8469-ebaf-33a0-0d29" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="c6f0-e183-f231-6623" name="Warlord Traits (Nurgle)" hidden="false" collective="false" import="true" targetId="b44c-8320-46a5-9aa0" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -8513,7 +9226,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="e4d8-4a80-2557-120d" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="e4d8-4a80-2557-120d" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="e4f3-957f-06e9-4f1e" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="c16c-955b-9841-3b82" name="Warlord Traits (Nurgle)" hidden="false" collective="false" import="true" targetId="b44c-8320-46a5-9aa0" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -8792,6 +9509,18 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <entryLink id="c87b-a19f-1620-1e25" name="Instrument of Chaos" hidden="false" collective="false" import="true" targetId="11db-39df-f53b-d823" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="39d3-8147-776e-950a" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="1190-7a43-63f0-ebf4" name="Plague Banner" hidden="false" collective="false" import="true" targetId="eee3-49f2-1583-1210" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="3fbd-945f-7348-2d52" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="1bcb-ab63-2d0a-fb4f" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4069-690f-7ba3-bf8e" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3fbd-945f-7348-2d52" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -10295,7 +11024,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6904-4e07-05c5-c59a" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="3247-98ac-9a8e-e8ed" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="3247-98ac-9a8e-e8ed" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="6dd8-a69c-b7ea-8821" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="4389-f3e7-9aac-affb" name="Nurglings (Attendants)" hidden="false" collective="false" import="true" targetId="c10c-c363-d5c9-6a15" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="name" value="Nurglings"/>
@@ -10446,7 +11179,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="0a37-5d40-8788-79a9" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="0a37-5d40-8788-79a9" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="94fd-e9a8-c4a3-4608" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="9.0"/>
@@ -10521,7 +11258,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="80c1-6177-8e27-8bfc" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="80c1-6177-8e27-8bfc" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="d5d3-8765-f968-6a0a" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="3d8a-cd0b-4739-83b7" name="Hellforged Artefacts (Nurgle)" hidden="false" collective="false" import="true" targetId="f26d-0c7a-bb26-001e" type="selectionEntryGroup"/>
         <entryLink id="d7b6-8240-12cb-69fe" name="Warlord Traits (Nurgle)" hidden="false" collective="false" import="true" targetId="b44c-8320-46a5-9aa0" type="selectionEntryGroup"/>
         <entryLink id="b738-12a4-32eb-6695" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
@@ -10623,7 +11364,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="e444-6cb6-a6df-afdb" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="e444-6cb6-a6df-afdb" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="e35d-24f3-3158-fc9d" name="Nurgle Warlord" hidden="false" targetId="d895-6cfe-5bcc-d4df" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="18bd-68b1-265b-0330" name="Hellforged Artefacts (Nurgle)" hidden="false" collective="false" import="true" targetId="f26d-0c7a-bb26-001e" type="selectionEntryGroup"/>
         <entryLink id="b256-3ed5-c554-5ca1" name="Warlord Traits (Nurgle)" hidden="false" collective="false" import="true" targetId="b44c-8320-46a5-9aa0" type="selectionEntryGroup"/>
         <entryLink id="f5db-2d39-4477-78b3" name="Plaguesword" hidden="false" collective="false" import="true" targetId="5df1-ff58-ee19-6e21" type="selectionEntry">
@@ -11320,14 +12065,9 @@ Matched Play: Models added to this unit using the Split ability must be paid for
     <selectionEntry id="67ad-4ce5-de37-402a" name="The Slothful Claws" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8202-aed0-c317-6ce9" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d3fe-8818-1145-452a" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8202-aed0-c317-6ce9" type="equalTo"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
@@ -11396,7 +12136,7 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="12ca-0227-bf6e-21e0" name="Infernal Enrapturess" page="" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="12ca-0227-bf6e-21e0" name="Infernal Enrapturess" page="" hidden="false" collective="false" import="true" type="model">
       <profiles>
         <profile id="1b03-2c43-a67a-391d" name="Infernal Enrapturess" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -11486,7 +12226,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
       <entryLinks>
         <entryLink id="02b5-b103-ce1a-ec88" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="166d-bdfb-643d-a51b" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
-        <entryLink id="653f-b4c7-9723-ef89" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="653f-b4c7-9723-ef89" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="fe7d-e82e-0cdc-2fe4" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="3249-b9ef-c335-892f" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="6f41-fa38-f3ed-7e94" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
         <entryLink id="b79b-518c-3ce3-97e4" name="Ravaging claws" hidden="false" collective="false" import="true" targetId="8202-aed0-c317-6ce9" type="selectionEntry"/>
@@ -11704,7 +12448,7 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="969b-f909-e50c-8d0b" name="Syll&apos;Esske" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="969b-f909-e50c-8d0b" name="Syll&apos;Esske" hidden="false" collective="false" import="true" type="model">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d818-dfec-bfda-1fe8" type="max"/>
       </constraints>
@@ -11820,7 +12564,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="7a6f-38c2-a26c-6d3c" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="7a6f-38c2-a26c-6d3c" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="4514-c556-c0e0-7654" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="056c-6163-da56-4c9a" name="Slaanesh Discipline" hidden="false" collective="false" import="true" targetId="61c2-467c-8620-2a1c" type="selectionEntryGroup">
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c2f1-5d16-dcd5-24fd" type="max"/>
@@ -11842,6 +12590,13 @@ Matched Play: Models added to this unit using the Split ability must be paid for
     <selectionEntry id="2069-b92d-8bd5-3c9b" name="Living whip" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
         <profile id="d158-7beb-f98d-f351" name="Living whip" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdfa-ec58-595c-89a1" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 6</characteristic>
@@ -11872,7 +12627,7 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="3252-75c4-922f-98e9" name="Shalaxi Helbane" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="3252-75c4-922f-98e9" name="Shalaxi Helbane" hidden="false" collective="false" import="true" type="model">
       <profiles>
         <profile id="9a95-cbb9-2944-ce80" name="Cloak of Constriction" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -12009,7 +12764,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="87f2-2dd5-2fb3-a4af" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="60c2-af1d-22cd-975c" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="60c2-af1d-22cd-975c" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="411d-226b-11ca-d09e" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="12.0"/>
@@ -12040,17 +12799,17 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="59f7-079e-515e-6911" name="The Contorted Epitome" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="59f7-079e-515e-6911" name="Contorted Epitome" hidden="false" collective="false" import="true" type="model">
       <profiles>
         <profile id="02b5-bc12-5909-31d3" name="The Contorted Epitome" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
             <characteristic name="W" typeId="f330-5e6e-4110-0978">8</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">8</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">6+</characteristic>
           </characteristics>
@@ -12107,33 +12866,10 @@ Matched Play: Models added to this unit using the Split ability must be paid for
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="d3fe-8818-1145-452a" name="Ravaging claws" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2340-23c3-520d-dad0" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0cc2-80cb-f52f-9554" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="d4d0-e233-9b3a-adb2" name="Ravaging claws" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-              <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When the bearer fights, it makes 8 additional attacks with this weapon and no more than 8 attacks can be made with this weapon. When resolving an attack made with this weapon, on a wound roll of 6+ this weapon has an Armour Penetration characteristic of -4 for that attack.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When the bearer fights, it makes 2 additional attacks with this weapon and no more than 2 attacks can be made with this weapon.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -12152,9 +12888,19 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3b1e-26b8-d4ca-29e1" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="6fa3-1dae-d232-e01b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="6fa3-1dae-d232-e01b" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="96e0-9197-12c1-b1c0" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="37de-9812-d0d2-b867" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="c105-3d09-c8d3-ea07" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
+        <entryLink id="b04d-66ae-1ab1-013c" name="Ravaging claws" hidden="false" collective="false" import="true" targetId="8202-aed0-c317-6ce9" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a8da-6de2-ae02-0098" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4719-103c-38d5-c01e" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
@@ -12275,7 +13021,11 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="98b3-033e-9e1b-35f9" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="f1a5-bea2-cc4b-3638" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry"/>
+        <entryLink id="f1a5-bea2-cc4b-3638" name="Warlord" hidden="false" collective="false" import="true" targetId="c488-0afe-c67e-2606" type="selectionEntry">
+          <categoryLinks>
+            <categoryLink id="65f6-0d72-5fd9-f788" name="Slaanesh Warlord" hidden="false" targetId="4c20-1265-a52e-5fcb" primary="false"/>
+          </categoryLinks>
+        </entryLink>
         <entryLink id="12fd-3329-3663-1bf9" name="Hellforged Artefacts (Slaanesh)" hidden="false" collective="false" import="true" targetId="532e-5b2b-c449-213a" type="selectionEntryGroup"/>
         <entryLink id="6b6f-d3ff-abdc-8aee" name="Warlord Traits (Slaanesh)" hidden="false" collective="false" import="true" targetId="a671-d25a-4ef4-3e5d" type="selectionEntryGroup"/>
         <entryLink id="d19d-4ebe-ddfe-6faf" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
@@ -12285,6 +13035,183 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <cost name="pts" typeId="points" value="100.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="ccf1-a70b-25a4-06a2" name="Banner of Blood" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="ad89-a687-84fd-f522" name="Banner of Blood" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The power of the banner can be used once per battle, just before the bearer&apos;s unit declares a charge. When used, the bearer&apos;s unit can charge 3D6&quot; instead of 2D6&quot;.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="eee3-49f2-1583-1210" name="Plague Banner" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="2e6f-2610-1ec1-c042" name="Plague Banner" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The power of the banner can be used once per battle, just before the bearer&apos;s unit fights. When used, increase the Damage characteristic of all plagueswords carried by the bearer&apos;s unit to 2 until the end of the phase.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="2202-8ca6-52fe-07a3" name="Blasted Standard" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="6cfb-0d23-aade-6b63" name="Blasted Standard" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The power of the banner can be used once per battle, at the beginning of any Psychic phase. When used, roll 9 dice; for each roll of 6, the closest visible enemy unit within 9&quot; suffers 1 mortal wound.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="8461-b4f4-e5be-05c6" name="Rapturous Standard" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="f46d-cbd8-28e8-57f8" name="Rapturous Standard" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The power of the banner can be used once per battle, just before the bearer&apos;s unit fights. When used, you can re-roll all failed hit rolls for the bearer&apos;s unit until the end of the phase.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="f6c3-133b-d804-f08c" name="Exalted Bloodthirster" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0f1b-303d-015e-c0ab" type="max"/>
+      </constraints>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="779b-f9e5-841c-f9c2" name="Exalted Abilities" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="17d9-c853-5b8d-d41d" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="e12a-a7e2-d677-e2cd" name="1. Hellfire-wrought Armour" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5869-9c3f-1158-a5e3" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="2911-5a91-5b4d-e222" name="Hellfire-wrought Armour" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a Save characteristic of 2+.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="02ea-c3f9-98db-9b9b" name="2. Blood-blessed" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d787-e23d-7351-c3b3" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="7910-38b8-a6c2-c90b" name="Blood-blessed" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model cannot lose more than 8 wounds in the same phase. Any damange inflicted after this point in the same phase has no effect.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="baed-ee0f-f392-e1da" name="3. Arch-murderer" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="90ba-0412-1889-1dd8" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="0593-10de-a04d-d5da" name="Arch-murderer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Damage characteristic of all weapons this model is equipped with.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="9fad-26f1-0bf5-ee15" name="4. Slaughterborn" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="76b8-7c05-12ae-de88" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="ef90-d3c1-5783-1ff2" name="Slaughterborn" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If, in the Charge phase, this model makes a charge move, is charged or performs a Heroic Intervention, add 1 to its Strength and Attacks characteristic until the end of the following Fight phase. This is cumulative with the Unstoppble Ferocity ability.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="087c-5654-2b24-d8a0" name="5. Rage Unchained" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="59ed-aad8-94ed-b1f9" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="45fb-e5c8-9bbf-45dc" name="Rage Unchained" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model is consdered to have double the number of wounds remaining for the purposes of determining what row to use on its damage table.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="27b5-0174-0dec-9b69" name="6. Unrivalled Battle-lust" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ad13-daa9-7dd1-33ef" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="66ae-0827-64e7-1403" name="Unrivalled Battle-lust" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a charge roll is made for this model, add 2 to the result. In addition, this model can perform a Heroic Intervention if there are any enemy units within 6&quot; of them instead of 3&quot;, and when doing so can move up to 6&quot; instead of 3&quot;. </characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -12647,6 +13574,105 @@ Matched Play: Models added to this unit using the Split ability must be paid for
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2dbc-372c-a33d-39f7" type="max"/>
         <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2940-fe06-158a-83a7" type="max"/>
       </constraints>
+      <selectionEntries>
+        <selectionEntry id="9ef6-cfcd-f44f-5dcb" name="G&apos;rmakht the Destroyer" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7d4e-40a3-53da-89fd" type="equalTo"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ab42-2642-c2a0-4213" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6ebe-d399-073f-dfc0" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="5506-79ab-ea04-7675" name="G&apos;rmakht the Destroyer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, a damage roll of 1 or 2 counts as 3 instead.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="ec1c-a239-2b01-5db3" name="Blood-drinker Talisman" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ab42-2642-c2a0-4213" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b310-9bdc-c856-f28d" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="f80c-2253-13ef-e6ed" name="Blood-drinker Talisman" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Roll one D6 each time an attack made with a melee weaon by a model with this Relic destroys an enemy model; on a 5+ the model with this Relic regains 1 lost wound after it has resolved all of its close combat attacks for that fight. A model cannot regain more than 8 lost wounds during the same turn as the result of this artefact.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="1ab1-236d-c79e-a574" name="Rune of Brass" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ab42-2642-c2a0-4213" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8b0e-ef0d-e369-fa62" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="9082-907d-38ac-a3c4" name="Rune of Brass" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Enemy PSYKERS suffer Perils of the Warp on any Psychic test that includes any double whilst they are within 16&quot; of this model. Enemy PSYKERS that suffer Perisl of the Warp whilst they are within 16&quot; of this model suffer 3 mortal wounds (do not roll to determine how many mortal wounds are inflicted).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
       <entryLinks>
         <entryLink id="c76c-889d-9498-7dd6" name="A&apos;rgath, the King of Blades" hidden="false" collective="false" import="true" targetId="3fcf-9804-f758-e522" type="selectionEntry"/>
         <entryLink id="c3ba-f7d8-1834-7752" name="Skullreaver" hidden="false" collective="false" import="true" targetId="550a-28fd-dfcd-6c17" type="selectionEntry"/>
@@ -12721,6 +13747,103 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="23c8-d3f0-8b65-5d5b" name="Warpfire Blade" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7f7d-2135-00d4-2925" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="75ed-ff4a-c0a3-551a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8bbc-1c96-cc11-998a" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="f156-b286-89f0-95ec" name="Warpfire Blade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, an unmodified wound roll of 6 inflicts D3 mortal wounds on the target in addition to the normal damage.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="78e3-5b82-5760-c476" name="Soul-eater Stave" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="75ed-ff4a-c0a3-551a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4575-ed00-d3e9-2514" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="ffaa-891c-b223-a7dd" name="Soul-eater Stave" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Roll one D6 when a psychic power manifested by a model with this Relic destroys an enemy model; on a 4+, the model with this Relic immediately regains 1 lost wound. A model cannot regain more than 9 lost wounds during the same turn as the result of this Relic.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="f530-e4bb-f272-b953" name="The Crystal Tome" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="75ed-ff4a-c0a3-551a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2979-1d97-b41e-9a71" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="0372-c607-59e9-595b" name="The Crystal Tome" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the beginning of your opponent&apos;s turn, select one enemy CHARACTER model within 12&quot; of a model with this Relic. You and your opponent then roll off; your opponent adds the Leadership characteristic of their model to the result, and you add the Leadership characteristic of the model with this Relic to your result. If your total equals or beats your opponent&apos;s, then all aura abilities that their CHARACTER model has cannot be used until the beginning of your opponent&apos;s next turn.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -12805,6 +13928,103 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
+        <selectionEntry id="68cc-7553-e8b0-756a" name="Effluvior" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5c18-9092-d1bf-0d98" type="equalTo"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d895-6cfe-5bcc-d4df" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="619f-1fdc-d2e9-f934" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="21b0-1fc3-4c07-4e3c" name="Effluvior" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">7&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 6</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">The bearer can make attacks with this weapon whilst within 1&quot; of an enemy unit, and attacks with this weapon can target enemy units within 1&quot; of friendly units. Excess damage from this weapon is not lost; instead keep allocating damage to another model in the target unit until either all the damage has been allocated or the unit has been destroyed.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="d719-91f6-8aad-efb5" name="Tome of a Thousand Poxes" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d895-6cfe-5bcc-d4df" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b04e-1fc9-30a5-3290" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="2059-7388-3820-28e0" name="Tome of a Thousand Poxes" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with this Relic knows one additional psychic power from the Nurgle discipline. In addition, ...</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="23b4-2a60-9223-e31c" name="The Endless Gift" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d895-6cfe-5bcc-d4df" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3793-56c9-4a3e-9ef5" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="3677-b1c8-769b-8aac" name="The Endless Gift" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with this Relic regains 1 lost wound at the end of each phase in which it lost any wounds.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
       </selectionEntries>
       <entryLinks>
         <entryLink id="7177-4eb4-219d-4668" name="Corruption" hidden="false" collective="false" import="true" targetId="cbf0-f2b6-3ab2-ba0e" type="selectionEntry">
@@ -12880,6 +14100,108 @@ Matched Play: Models added to this unit using the Split ability must be paid for
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="d94e-b7de-8bca-3fcd" name="Silverstrike" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4c20-1265-a52e-5fcb" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="cedf-7d25-415c-c21b" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="623e-6e05-87ad-4ccd" name="Silverstrike" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When the bearer fights, it can make 2 additional attacks with this weapon. In addition, subtract 1 from hit rolls for attacks made by a model that has lost any wounds from this weapon.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="bdfa-ec58-595c-89a1" name="Whip of Agony" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2069-b92d-8bd5-3c9b" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4c20-1265-a52e-5fcb" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c6bc-1b5f-eb3b-558b" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="cdba-45e7-2c53-5a8e" name="Whip of Agony" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 6</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">The bearer can make attacks with this weapon whilst within 1&quot; of an enemy unit, and attacks with this weapon can target enemy units within 1&quot; of friendly units. Attacks made with this weapon automatically wound (no wound roll is made) unless the target is a VEHICLE or TITANIC unit.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="2ba1-da41-825a-9003" name="Jewel of Excess" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6442-d66a-4133-e35c" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4c20-1265-a52e-5fcb" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="be4b-7bfb-1a18-7ee3" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="232e-da69-1a31-16db" name="Jewel of Excess" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a model with this Relic takes a Psychic test whilst attempting to manifest psychic powers from the Slaanesh discipline, add 1 to the result. In addtion, when a Deny the Witch test is taken for a model with this Relic, add 1 to the result.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
