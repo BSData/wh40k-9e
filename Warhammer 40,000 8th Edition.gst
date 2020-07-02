@@ -17,9 +17,9 @@
     <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening - Ritual of the Damned"/>
   </publications>
   <costTypes>
-    <costType id="points" name="pts" defaultCostLimit="0.0"/>
-    <costType id="e356-c769-5920-6e14" name=" PL" defaultCostLimit="-1.0"/>
-    <costType id="2d3b-b544-ad49-fb75" name="CP" defaultCostLimit="-1.0"/>
+    <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
+    <costType id="e356-c769-5920-6e14" name=" PL" defaultCostLimit="-1.0" hidden="false"/>
+    <costType id="2d3b-b544-ad49-fb75" name="CP" defaultCostLimit="-1.0" hidden="false"/>
   </costTypes>
   <profileTypes>
     <profileType id="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" name="Weapon">
@@ -539,6 +539,13 @@
       </categoryLinks>
     </forceEntry>
     <forceEntry id="41af-75ce-79d2-ddff" name="Vanguard Detachment +1CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="name" value="Vanguard Detachment">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <forceEntries>
         <forceEntry id="780c-2ab9-34f4-7c30" name="Vanguard Detachment" hidden="false">
           <categoryLinks>
@@ -5458,7 +5465,7 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="12">
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="12.0">
           <conditions>
             <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cccd-3d99-d4af-d668" type="instanceOf"/>
           </conditions>
