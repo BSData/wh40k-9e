@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="9503-9e14-1988-91a4" name="Imperium - Adeptus Astartes - Raven Guard" revision="11" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="128" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="9503-9e14-1988-91a4" name="Imperium - Adeptus Astartes - Raven Guard" revision="13" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="128" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <selectionEntries>
     <selectionEntry id="cbd4-64ea-2787-3c13" name="Kayvaan Shrike [Legends]" hidden="false" collective="false" import="true" type="model">
       <modifiers>
@@ -234,18 +234,18 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="1a48-3e11-a313-b87f" name="Lieutenants" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e277-184d-4e8a-6177" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <categoryLinks>
         <categoryLink id="0969-29f8-b7a7-b14e" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="77bb-b26e-4026-dd6a" name="Lieutenant" hidden="false" collective="false" import="true" targetId="e176-3548-2126-02c8" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e277-184d-4e8a-6177" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8fa2-dd92-d27a-2cea" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4427-2618-a67e-9669" type="min"/>
@@ -879,6 +879,7 @@
       <entryLinks>
         <entryLink id="81c9-e3c7-2e59-faf6" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="2995-11a2-9ebb-2529" type="selectionEntryGroup"/>
         <entryLink id="9dfb-2dc2-3373-2385" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="3e75-d0f4-766e-d0f2" type="selectionEntryGroup"/>
+        <entryLink id="d983-e3ad-0f0a-b01d" name="Disciplines" hidden="false" collective="false" import="true" targetId="168e-9e38-f042-684a" type="selectionEntryGroup"/>
       </entryLinks>
     </entryLink>
     <entryLink id="1789-77f4-8d9d-cc97" name="Rapier Carrier" hidden="false" collective="false" import="true" targetId="58a4-c616-2b06-62bd" type="selectionEntry">
@@ -1457,6 +1458,11 @@
         <entryLink id="f2bf-dc5c-209f-31f1" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="3e75-d0f4-766e-d0f2" type="selectionEntryGroup"/>
       </entryLinks>
     </entryLink>
+    <entryLink id="9d18-ef01-83c8-2723" name="Lord Inquisitor Kyria Draxus" hidden="false" collective="false" import="true" targetId="132c-a00e-3b0b-5795" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="35c0-661a-59e6-e78e" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="168e-9e38-f042-684a" name="Disciplines" hidden="false" collective="false" import="true">
@@ -1519,15 +1525,10 @@
             </modifier>
             <modifier type="set" field="019e-a35f-8cb4-168e" value="0.0">
               <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7cff-1547-0788-181c" type="atLeast"/>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b4ea-0ba3-78f3-6c03" type="atLeast"/>
-                  </conditions>
-                </conditionGroup>
                 <conditionGroup type="and">
                   <conditions>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b4ea-0ba3-78f3-6c03" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2001,5 +2002,6 @@
   <catalogueLinks>
     <catalogueLink id="1779-664e-5ae7-fbc3" name="Imperium - Space Marines" targetId="846d-3c14-21fc-369f" type="catalogue" importRootEntries="false"/>
     <catalogueLink id="54de-59c7-d52d-94c7" name="Imperium - Inquisition" targetId="e373-3c0a-1185-46ea" type="catalogue" importRootEntries="true"/>
+    <catalogueLink id="8685-9440-b906-aa58" name="Imperium - Officio Assassinorum" targetId="f731-6aa6-c141-8937" type="catalogue" importRootEntries="true"/>
   </catalogueLinks>
 </catalogue>
