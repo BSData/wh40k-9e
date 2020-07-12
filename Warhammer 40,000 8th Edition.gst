@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="128" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="129" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
@@ -17,9 +17,9 @@
     <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening - Ritual of the Damned"/>
   </publications>
   <costTypes>
-    <costType id="points" name="pts" defaultCostLimit="0.0"/>
-    <costType id="e356-c769-5920-6e14" name=" PL" defaultCostLimit="-1.0"/>
-    <costType id="2d3b-b544-ad49-fb75" name="CP" defaultCostLimit="-1.0"/>
+    <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
+    <costType id="e356-c769-5920-6e14" name=" PL" defaultCostLimit="-1.0" hidden="false"/>
+    <costType id="2d3b-b544-ad49-fb75" name="CP" defaultCostLimit="-1.0" hidden="false"/>
   </costTypes>
   <profileTypes>
     <profileType id="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" name="Weapon">
@@ -5756,6 +5756,22 @@
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="11.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="46b3-cb0f-85c5-0e31" name="Strategem: March of the Ancients" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b3d-59c0-a550-452a" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ea85-08f1-00dc-a350" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3f3f-387a-59d8-eb66" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="c360-d189-ce20-d5e7" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
+      </categoryLinks>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
