@@ -167,24 +167,28 @@
     <categoryEntry id="fcff-0f21-93e6-1ddc" name="Configuration" hidden="false"/>
     <categoryEntry id="0f35-2c34-ba6a-8105" name="Agent of the Imperium" hidden="false">
       <modifiers>
-        <modifier type="set" field="d236-7779-6cd2-d1ad" value="1.0">
+        <modifier type="set" field="e5fb-f53d-c9f8-3e9a" value="-1.0">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="d236-7779-6cd2-d1ad" value="1.0">
+          <repeats>
+            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="564e-55d5-79bc-a4d7" repeats="1" roundUp="false"/>
+            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" repeats="1" roundUp="false"/>
+            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a0c7-2a71-bae0-215d" repeats="1" roundUp="false"/>
+          </repeats>
           <conditionGroups>
             <conditionGroup type="and">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0c7-2a71-bae0-215d" type="instanceOf"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="564e-55d5-79bc-a4d7" type="instanceOf"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cccd-3d99-d4af-d668" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="notInstanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="notInstanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="notInstanceOf"/>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="notInstanceOf"/>
+              </conditions>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -200,7 +204,8 @@
         </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d236-7779-6cd2-d1ad" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d236-7779-6cd2-d1ad" type="max"/>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e5fb-f53d-c9f8-3e9a" type="max"/>
       </constraints>
     </categoryEntry>
     <categoryEntry id="25d3-b37a-ad95-d463" name="Kyganil" publicationId="85df-1155-c986-4d71" hidden="false"/>
