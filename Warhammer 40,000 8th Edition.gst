@@ -13,9 +13,11 @@
     <publication id="28ec-711c-pubN118139" name="Index: Xenos 2"/>
     <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
     <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018"/>
-    <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening - Phoenix Rising"/>
-    <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening - Ritual of the Damned"/>
-    <publication id="85df-1155-c986-4d71" name="Psychic Awakening - Pariah"/>
+    <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening: Phoenix Rising"/>
+    <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening: Ritual of the Damned"/>
+    <publication id="85df-1155-c986-4d71" name="Psychic Awakening: Pariah"/>
+    <publication id="52c4-39c0-ae97-d4dc" name="Psychic Awakening: Saga of the Beast"/>
+    <publication id="4593-a2f0-546a-d6f2" name="Psychic Awakening: The Greater Good"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
