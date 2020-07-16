@@ -2,7 +2,7 @@
 <gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="130" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"  shortName="BRB"/>
-    <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
+    <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017" shortName="CA2017"/>
     <publication id="28ec-711c-pubN77581" name="Index: Imperium 2"/>
     <publication id="28ec-711c-pubN78977" name="Index: Imperium 1"/>
     <publication id="28ec-711c-pubN91434" name="Imperial Armour - Index: Astra Militarum"/>
@@ -12,7 +12,7 @@
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
     <publication id="28ec-711c-pubN118139" name="Index: Xenos 2"/>
     <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
-    <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018"/>
+    <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018" shortName="CA2018"/>
     <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening: Phoenix Rising" shortName="PA: PR"/>
     <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening: Ritual of the Damned" shortName="PA: RotD"/>
     <publication id="85df-1155-c986-4d71" name="Psychic Awakening: Pariah" shortName="PA: Pariah"/>
