@@ -5,12 +5,14 @@
     <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017" shortName="CA2017"/>
     <publication id="28ec-711c-pubN77581" name="Index: Imperium 2"/>
     <publication id="28ec-711c-pubN78977" name="Index: Imperium 1"/>
+    <publication id="28ec-711c-pubN99666" name="Index: Chaos"/>
     <publication id="28ec-711c-pubN91434" name="Imperial Armour - Index: Astra Militarum"/>
     <publication id="28ec-711c-pubN97206" name="warhammer_40000_termite_assault_drill_en-2.pdf"/>
     <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant"/>
     <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
     <publication id="28ec-711c-pubN118139" name="Index: Xenos 2"/>
+    <publication id="28ec-711c-pubN76527" name="Index: Xenos 1"/>
     <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
     <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018" shortName="CA2018"/>
     <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening: Phoenix Rising" shortName="PA: PR"/>
