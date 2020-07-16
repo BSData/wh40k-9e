@@ -15,6 +15,7 @@
     <publication id="53e9d88f-pubN134105" name="Imperial Armour - Index: Forces of the Astra Militarum"/>
     <publication id="28ec-711c-pubN97206" name="warhammer_40000_termite_assault_drill_en-2.pdf"/>
     <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant"/>
+    <publication id="ce40-ec9e-21e2-2e42" name="Warhammer Quest: Blackstone Fortress"/>
     <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
     <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
