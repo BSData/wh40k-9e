@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="129" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="130" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
-    <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook"/>
-    <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017"/>
-    <publication id="28ec-711c-pubN77581" name="Index: Imperium 2"/>
-    <publication id="28ec-711c-pubN78977" name="Index: Imperium 1"/>
+    <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook" shortName="BRB" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017" shortName="CA2017" publicationDate="2017-12"/>
+    <publication id="28ec-711c-pubN77581" name="Index: Imperium 2" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN78977" name="Index: Imperium 1" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN99666" name="Index: Chaos" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN118139" name="Index: Xenos 2" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN76527" name="Index: Xenos 1" publicationDate="2017-06-17"/>
     <publication id="28ec-711c-pubN91434" name="Imperial Armour - Index: Astra Militarum"/>
+    <publication id="03b4-8286-592c-c370" name="Imperial Armour - Index: Xenos"/>
+    <publication id="be22-4c1d-1c01-d7ef" name="Imperial Armour - Index: Xenos (Errata)"/>
+    <publication id="0cc2-3545-pubN96526" name="Imperial Armour - Index: Forces of the Adeptus Astartes"/>
+    <publication id="53e9d88f-pubN134105" name="Imperial Armour - Index: Forces of the Astra Militarum"/>
     <publication id="28ec-711c-pubN97206" name="warhammer_40000_termite_assault_drill_en-2.pdf"/>
-    <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant"/>
+    <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant" publicationDate="2018-12-15"/>
+    <publication id="ce40-ec9e-21e2-2e42" name="Warhammer Quest: Blackstone Fortress"/>
     <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
-    <publication id="28ec-711c-pubN118139" name="Index: Xenos 2"/>
-    <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
-    <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018"/>
-    <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening - Phoenix Rising"/>
-    <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening - Ritual of the Damned"/>
-    <publication id="85df-1155-c986-4d71" name="Psychic Awakening - Pariah"/>
+    <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019" publicationDate="2019-04-29" publisherUrl="https://www.warhammer-community.com/wp-content/uploads/2019/04/warhammer_40000_update_April_2019_en.pdf"/>
+    <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018" shortName="CA2018" publicationDate="2018-12-15"/>
+    <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening: Phoenix Rising" shortName="PA: PR" publicationDate="2019-10-19" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Phoenix-Rising-EN-2019"/>
+    <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening: Ritual of the Damned" shortName="PA: RotD" publicationDate="2020-01-25" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Ritual-Of-The-Damned-EN-2020"/>
+    <publication id="85df-1155-c986-4d71" name="Psychic Awakening: Pariah" shortName="PA: Pariah" publicationDate="2020-07-04" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Pariah-EN"/>
+    <publication id="52c4-39c0-ae97-d4dc" name="Psychic Awakening: Saga of the Beast" shortName="PA: SotB" publicationDate="2020-03-28" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Saga-Of-The-Beast-EN-2020"/>
+    <publication id="4593-a2f0-546a-d6f2" name="Psychic Awakening: The Greater Good" shortName="PA: TGG" publicationDate="2020-02-15" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-The-Greater-Good-EN-2020"/>
+    <publication id="ecea-8b62-fefb-9f8e" name="Psychic Awakening: Engine War" shortName="PA: EW" publicationDate="2020-06-06" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Engine-War-EN-2020"/>
+    <publication id="f000-7b0c-01bf-7630" name="Psychic Awakening: Blood of Baal" shortName="PA: BoB" publicationDate="2019-12-07" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Blood-Of-Baal-EN-2019"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
@@ -167,24 +178,28 @@
     <categoryEntry id="fcff-0f21-93e6-1ddc" name="Configuration" hidden="false"/>
     <categoryEntry id="0f35-2c34-ba6a-8105" name="Agent of the Imperium" hidden="false">
       <modifiers>
-        <modifier type="set" field="d236-7779-6cd2-d1ad" value="1.0">
+        <modifier type="set" field="e5fb-f53d-c9f8-3e9a" value="-1.0">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="d236-7779-6cd2-d1ad" value="1.0">
+          <repeats>
+            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="564e-55d5-79bc-a4d7" repeats="1" roundUp="false"/>
+            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" repeats="1" roundUp="false"/>
+            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a0c7-2a71-bae0-215d" repeats="1" roundUp="false"/>
+          </repeats>
           <conditionGroups>
             <conditionGroup type="and">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0c7-2a71-bae0-215d" type="instanceOf"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="564e-55d5-79bc-a4d7" type="instanceOf"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cccd-3d99-d4af-d668" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="notInstanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="notInstanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="notInstanceOf"/>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="notInstanceOf"/>
+              </conditions>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -200,7 +215,8 @@
         </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d236-7779-6cd2-d1ad" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d236-7779-6cd2-d1ad" type="max"/>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e5fb-f53d-c9f8-3e9a" type="max"/>
       </constraints>
     </categoryEntry>
     <categoryEntry id="25d3-b37a-ad95-d463" name="Kyganil" publicationId="85df-1155-c986-4d71" hidden="false"/>
@@ -6031,6 +6047,27 @@
         <cost name="pts" typeId="points" value="115.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="46b3-cb0f-85c5-0e31" name="Stratagem: March of the Ancients" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b3d-59c0-a550-452a" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2227-b6b1-e35e-faec" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="28f1-db26-59b5-03b3" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="b72f-61a2-bf9d-a65b" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
+      </categoryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
