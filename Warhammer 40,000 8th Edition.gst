@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 8th Edition" revision="130" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
-    <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook" shortName="BRB"/>
-    <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017" shortName="CA2017"/>
-    <publication id="28ec-711c-pubN77581" name="Index: Imperium 2"/>
-    <publication id="28ec-711c-pubN78977" name="Index: Imperium 1"/>
-    <publication id="28ec-711c-pubN99666" name="Index: Chaos"/>
-    <publication id="28ec-711c-pubN118139" name="Index: Xenos 2"/>
-    <publication id="28ec-711c-pubN76527" name="Index: Xenos 1"/>
+    <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Rulebook" shortName="BRB" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN73170" name="Chapter Approved 2017" shortName="CA2017" publicationDate="2017-12"/>
+    <publication id="28ec-711c-pubN77581" name="Index: Imperium 2" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN78977" name="Index: Imperium 1" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN99666" name="Index: Chaos" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN118139" name="Index: Xenos 2" publicationDate="2017-06-17"/>
+    <publication id="28ec-711c-pubN76527" name="Index: Xenos 1" publicationDate="2017-06-17"/>
     <publication id="28ec-711c-pubN91434" name="Imperial Armour - Index: Astra Militarum"/>
     <publication id="03b4-8286-592c-c370" name="Imperial Armour - Index: Xenos"/>
     <publication id="be22-4c1d-1c01-d7ef" name="Imperial Armour - Index: Xenos (Errata)"/>
     <publication id="0cc2-3545-pubN96526" name="Imperial Armour - Index: Forces of the Adeptus Astartes"/>
     <publication id="53e9d88f-pubN134105" name="Imperial Armour - Index: Forces of the Astra Militarum"/>
     <publication id="28ec-711c-pubN97206" name="warhammer_40000_termite_assault_drill_en-2.pdf"/>
-    <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant"/>
+    <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant" publicationDate="2018-12-15"/>
     <publication id="ce40-ec9e-21e2-2e42" name="Warhammer Quest: Blackstone Fortress"/>
     <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
-    <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019"/>
-    <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018" shortName="CA2018"/>
-    <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening: Phoenix Rising" shortName="PA: PR"/>
-    <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening: Ritual of the Damned" shortName="PA: RotD"/>
-    <publication id="85df-1155-c986-4d71" name="Psychic Awakening: Pariah" shortName="PA: Pariah"/>
-    <publication id="52c4-39c0-ae97-d4dc" name="Psychic Awakening: Saga of the Beast" shortName="PA: SotB"/>
-    <publication id="4593-a2f0-546a-d6f2" name="Psychic Awakening: The Greater Good" shortName="PA: TGG"/>
-    <publication id="ecea-8b62-fefb-9f8e" name="Psychic Awakening: Engine War" shortName="PA: EW"/>
-    <publication id="f000-7b0c-01bf-7630" name="Psychic Awakening: Blood of Baal" shortName="PA: BoB"/>
+    <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019" publicationDate="2019-04-29" publisherUrl="https://www.warhammer-community.com/wp-content/uploads/2019/04/warhammer_40000_update_April_2019_en.pdf"/>
+    <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018" shortName="CA2018" publicationDate="2018-12-15"/>
+    <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening: Phoenix Rising" shortName="PA: PR" publicationDate="2019-10-19" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Phoenix-Rising-EN-2019"/>
+    <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening: Ritual of the Damned" shortName="PA: RotD" publicationDate="2020-01-25" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Ritual-Of-The-Damned-EN-2020"/>
+    <publication id="85df-1155-c986-4d71" name="Psychic Awakening: Pariah" shortName="PA: Pariah" publicationDate="2020-07-04" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Pariah-EN"/>
+    <publication id="52c4-39c0-ae97-d4dc" name="Psychic Awakening: Saga of the Beast" shortName="PA: SotB" publicationDate="2020-03-28" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Saga-Of-The-Beast-EN-2020"/>
+    <publication id="4593-a2f0-546a-d6f2" name="Psychic Awakening: The Greater Good" shortName="PA: TGG" publicationDate="2020-02-15" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-The-Greater-Good-EN-2020"/>
+    <publication id="ecea-8b62-fefb-9f8e" name="Psychic Awakening: Engine War" shortName="PA: EW" publicationDate="2020-06-06" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Engine-War-EN-2020"/>
+    <publication id="f000-7b0c-01bf-7630" name="Psychic Awakening: Blood of Baal" shortName="PA: BoB" publicationDate="2019-12-07" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Blood-Of-Baal-EN-2019"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
