@@ -13,7 +13,7 @@
     <publication id="be22-4c1d-1c01-d7ef" name="Imperial Armour - Index: Xenos (Errata)"/>
     <publication id="0cc2-3545-pubN96526" name="Imperial Armour - Index: Forces of the Adeptus Astartes"/>
     <publication id="53e9d88f-pubN134105" name="Imperial Armour - Index: Forces of the Astra Militarum"/>
-    <publication id="28ec-711c-pubN97206" name="warhammer_40000_termite_assault_drill_en-2.pdf"/>
+    <publication id="28ec-711c-pubN97206" name="Datasheet: Terrax-Pattern Termite Assault Drill" shortName="Termite Assault Drill" publisher="Forgeworld Website" publisherUrl="https://www.forgeworld.co.uk/resources/PDF/Downloads/warhammer_40000_termite_assault_drill_en.pdf"/>
     <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant" publicationDate="2018-12-15"/>
     <publication id="ce40-ec9e-21e2-2e42" name="Warhammer Quest: Blackstone Fortress"/>
     <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
