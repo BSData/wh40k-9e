@@ -148,6 +148,7 @@
     <categoryEntry id="ae09-117e-a6fa-316b" name="Warlord" hidden="true">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a991-ad91-7d5f-92d1" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6ee0-38ca-e173-ff3d" type="min"/>
       </constraints>
     </categoryEntry>
     <categoryEntry id="e10e-b44e-7eda-41d8" name="Relic" hidden="false"/>
@@ -225,7 +226,14 @@
     <categoryEntry id="1114-7875-d463-df17" name="Aeldari" hidden="false"/>
   </categoryEntries>
   <forceEntries>
-    <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment" hidden="false">
+    <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="name" value="Patrol Detachment 0CP">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="notEqualTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <forceEntries>
         <forceEntry id="22fe-e36f-71e2-b796" name="Patrol Detachment" hidden="false">
           <categoryLinks>
@@ -280,14 +288,9 @@
         </categoryLink>
         <categoryLink id="799b-fc66-7abf-a0c1" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
           <modifiers>
-            <modifier type="increment" field="806f-d1ee-da05-0983" value="1">
+            <modifier type="increment" field="806f-d1ee-da05-0983" value="1.0">
               <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c274d0b0-5866-44bc-9810-91c136ae7438" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e888-1504-aa61-95ff" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3d52-fccf-10c0-3fae" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
           </modifiers>
@@ -348,7 +351,14 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="564e-55d5-79bc-a4d7" name="Battalion Detachment +5CP" hidden="false">
+    <forceEntry id="564e-55d5-79bc-a4d7" name="Battalion Detachment -3CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="name" value="Battalion Detachment 0CP">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="notEqualTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <forceEntries>
         <forceEntry id="c7fc-1172-cd53-2dae" name="Battalion Detachment" hidden="false">
           <categoryLinks>
@@ -403,14 +413,9 @@
         </categoryLink>
         <categoryLink id="461e-243a-a521-ed54" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
           <modifiers>
-            <modifier type="increment" field="dd16-f9e4-6928-db00" value="1">
+            <modifier type="increment" field="dd16-f9e4-6928-db00" value="1.0">
               <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c274d0b0-5866-44bc-9810-91c136ae7438" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e888-1504-aa61-95ff" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3d52-fccf-10c0-3fae" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
           </modifiers>
@@ -471,7 +476,14 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="cccd-3d99-d4af-d668" name="Brigade Detachment +12CP" hidden="false">
+    <forceEntry id="cccd-3d99-d4af-d668" name="Brigade Detachment -4CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="name" value="Brigade Detachment 0CP">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="notEqualTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <forceEntries>
         <forceEntry id="daea-75d3-1073-2ba0" name="Brigade Detachment" hidden="false">
           <categoryLinks>
@@ -529,14 +541,9 @@
         </categoryLink>
         <categoryLink id="1008-da0a-7d30-ae3d" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
           <modifiers>
-            <modifier type="increment" field="b905-bc19-8b25-f26a" value="1">
+            <modifier type="increment" field="b905-bc19-8b25-f26a" value="1.0">
               <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c274d0b0-5866-44bc-9810-91c136ae7438" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e888-1504-aa61-95ff" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3d52-fccf-10c0-3fae" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
           </modifiers>
@@ -597,14 +604,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="41af-75ce-79d2-ddff" name="Vanguard Detachment +1CP" hidden="false">
-      <modifiers>
-        <modifier type="set" field="name" value="Vanguard Detachment">
-          <conditions>
-            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="instanceOf"/>
-          </conditions>
-        </modifier>
-      </modifiers>
+    <forceEntry id="41af-75ce-79d2-ddff" name="Vanguard Detachment -3CP" hidden="false">
       <forceEntries>
         <forceEntry id="780c-2ab9-34f4-7c30" name="Vanguard Detachment" hidden="false">
           <categoryLinks>
@@ -659,14 +659,9 @@
         </categoryLink>
         <categoryLink id="2f97-4e01-2619-467f" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
           <modifiers>
-            <modifier type="increment" field="1449-c900-5e63-561c" value="1">
+            <modifier type="increment" field="1449-c900-5e63-561c" value="1.0">
               <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c274d0b0-5866-44bc-9810-91c136ae7438" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e888-1504-aa61-95ff" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3d52-fccf-10c0-3fae" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
           </modifiers>
@@ -727,7 +722,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="120c-9e15-1d3f-637e" name="Spearhead Detachment +1CP" hidden="false">
+    <forceEntry id="120c-9e15-1d3f-637e" name="Spearhead Detachment -3CP" hidden="false">
       <forceEntries>
         <forceEntry id="c50f-184b-1482-8ce7" name="Spearhead Detachment" hidden="false">
           <categoryLinks>
@@ -782,14 +777,9 @@
         </categoryLink>
         <categoryLink id="70bc-5264-fd6d-0827" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
           <modifiers>
-            <modifier type="increment" field="68bd-f7ab-859e-fb22" value="1">
+            <modifier type="increment" field="68bd-f7ab-859e-fb22" value="1.0">
               <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c274d0b0-5866-44bc-9810-91c136ae7438" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e888-1504-aa61-95ff" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3d52-fccf-10c0-3fae" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
           </modifiers>
@@ -850,7 +840,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="3c85-9649-d2da-9bde" name="Outrider Detachment +1CP" hidden="false">
+    <forceEntry id="3c85-9649-d2da-9bde" name="Outrider Detachment -3CP" hidden="false">
       <forceEntries>
         <forceEntry id="6fb7-031b-0276-59c9" name="Outrider Detachment" hidden="false">
           <categoryLinks>
@@ -905,14 +895,9 @@
         </categoryLink>
         <categoryLink id="f5cc-af4b-11d5-0831" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
           <modifiers>
-            <modifier type="increment" field="3de0-5460-f04b-09ba" value="1">
+            <modifier type="increment" field="3de0-5460-f04b-09ba" value="1.0">
               <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c274d0b0-5866-44bc-9810-91c136ae7438" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e888-1504-aa61-95ff" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3d52-fccf-10c0-3fae" repeats="1" roundUp="false"/>
               </repeats>
             </modifier>
           </modifiers>
@@ -973,125 +958,72 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="5baf-eed5-bb85-7325" name="Supreme Command Detachment +1CP" hidden="false">
-      <forceEntries>
-        <forceEntry id="b0ab-9c0d-ff4b-c17e" name="Supreme Command Detachment" hidden="false">
-          <categoryLinks>
-            <categoryLink id="11e5-4f80-3096-825d" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-            <categoryLink id="aea0-3ea4-934f-38e9" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
-            <categoryLink id="0f46-1b70-2074-9f38" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
-            <categoryLink id="c631-e906-2086-fdf9" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
-            <categoryLink id="08df-b76b-e405-c10a" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false"/>
-            <categoryLink id="ead4-93ca-c5e6-a4f0" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false"/>
-            <categoryLink id="12c8-6b62-f26a-239a" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
-          </categoryLinks>
-        </forceEntry>
-      </forceEntries>
+    <forceEntry id="5baf-eed5-bb85-7325" name="Supreme Command Detachment 0CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="name" value="Supreme Command Detachment +2CP">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" type="equalTo"/>
+                <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a0c7-2a71-bae0-215d" type="atLeast"/>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="564e-55d5-79bc-a4d7" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="name" value="Supreme Command Detachment +4CP">
+          <conditions>
+            <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" type="atLeast"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="name" value="Supreme Command Detachment +3CP">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" type="equalTo"/>
+                <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="564e-55d5-79bc-a4d7" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ad2-51f5-4783-3c57" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="a45f-e37b-224f-813a" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="e7ac-d434-4bd3-2dd6" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="6fed-d770-852f-a123" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="8a3d-3602-7ef5-9ab1" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
+          <modifiers>
+            <modifier type="set" field="c0dc-5bde-d67a-9c09" value="0.0">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" type="notEqualTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
-            <constraint field="selections" scope="force" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="41c1-510e-2e3b-76fc" type="max"/>
-            <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e6a9-7171-c907-0e15" type="min"/>
-          </constraints>
-        </categoryLink>
-        <categoryLink id="b448-138d-b4aa-5025" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false">
-          <constraints>
-            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1d59-1fea-8611-cf48" type="max"/>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c0dc-5bde-d67a-9c09" type="max"/>
           </constraints>
         </categoryLink>
         <categoryLink id="c6de-132c-1b7e-69d3" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false">
           <constraints>
-            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b702-8fc0-cb44-1728" type="max"/>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9c21-7889-d301-ca19" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="a514-61d3-6fd9-6e13" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
-          <modifiers>
-            <modifier type="increment" field="83e7-e60b-0ad5-1d24" value="1">
-              <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c888f08a-6cea-4a01-8126-d374a9231554" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
+        <categoryLink id="5ade-6882-9040-3989" name="Warlord" hidden="false" targetId="ae09-117e-a6fa-316b" primary="false">
           <constraints>
-            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="83e7-e60b-0ad5-1d24" type="max"/>
-          </constraints>
-        </categoryLink>
-        <categoryLink id="2e59-df4f-9429-ef1a" name="Relic Elites" hidden="false" targetId="8d86-9490-0f7d-a5b5" primary="false">
-          <modifiers>
-            <modifier type="increment" field="54d4-89c3-38b6-8877" value="1">
-              <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="decrement" field="54d4-89c3-38b6-8877" value="1">
-              <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8d86-9490-0f7d-a5b5" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="54d4-89c3-38b6-8877" type="max"/>
-          </constraints>
-        </categoryLink>
-        <categoryLink id="c32f-1035-9b39-65de" name="Relic HQ" hidden="false" targetId="655f-e142-dfa9-11a4" primary="false">
-          <modifiers>
-            <modifier type="increment" field="8d95-029f-78db-83ae" value="1">
-              <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="decrement" field="8d95-029f-78db-83ae" value="1">
-              <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="655f-e142-dfa9-11a4" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8d95-029f-78db-83ae" type="max"/>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ea61-c716-bc3b-0b68" type="min"/>
           </constraints>
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="d513-cbf5-9bfc-7270" name="Super-Heavy Detachment +3CP" hidden="false">
+    <forceEntry id="d513-cbf5-9bfc-7270" name="Super-Heavy Detachment -3CP" hidden="false">
       <modifiers>
-        <modifier type="set" field="name" value="Super-Heavy Detachment +6CP">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="greaterThan"/>
-              </conditions>
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="492c-9ae1-0205-c13f" type="greaterThan"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" field="name" value="Super-Heavy Detachment">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="lessThan"/>
-              </conditions>
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="492c-9ae1-0205-c13f" type="greaterThan"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="set" field="name" value="Super-Heavy Detachment -6CP">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="atLeast"/>
+          </conditions>
         </modifier>
       </modifiers>
       <forceEntries>
@@ -1133,30 +1065,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="b7e3-6a38-7bbe-c7d2" name="Air Wing Detachment +1CP" hidden="false">
-      <forceEntries>
-        <forceEntry id="444e-30c9-5181-aa6b" name="Air Wing Detachment" hidden="false">
-          <categoryLinks>
-            <categoryLink id="02f5-399b-4ea4-864c" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-            <categoryLink id="2cd6-18fe-710e-9344" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
-            <categoryLink id="3da0-f292-3c4c-f65b" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
-            <categoryLink id="2061-bcdc-2bbf-6c08" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false"/>
-          </categoryLinks>
-        </forceEntry>
-      </forceEntries>
-      <categoryLinks>
-        <categoryLink id="da3b-e44e-a153-dd53" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
-        <categoryLink id="67bd-fefb-480f-ee4d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
-        <categoryLink id="e09e-267a-4f71-9e08" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
-        <categoryLink id="425c-179c-46b3-5ee8" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false">
-          <constraints>
-            <constraint field="selections" scope="force" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="79cf-a0c0-267b-41b3" type="max"/>
-            <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc65-2978-7619-e375" type="min"/>
-          </constraints>
-        </categoryLink>
-      </categoryLinks>
-    </forceEntry>
-    <forceEntry id="224b-1070-218f-fdf4" name="Super-Heavy Auxiliary Detachment" hidden="false">
+    <forceEntry id="224b-1070-218f-fdf4" name="Super-Heavy Auxiliary Detachment -3CP" hidden="false">
       <categoryLinks>
         <categoryLink id="d42a-fc02-778b-3118" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="dcbb-53c2-a989-ae08" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
@@ -1169,7 +1078,17 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="dcee-07fa-ec14-7dec" name="Fortification Network" hidden="false">
+    <forceEntry id="dcee-07fa-ec14-7dec" name="Fortification Network -1CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="name" value="Fortification Network 0CP">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d224-ab2b-e79e-5491" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8909-9568-d709-4fc8" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="a39c-5420-c141-262c" name="Fortification Network" hidden="false">
           <categoryLinks>
@@ -1192,7 +1111,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="8a87-f0e3-f2f2-ad1a" name="Auxiliary Support Detachment -1CP" hidden="false">
+    <forceEntry id="8a87-f0e3-f2f2-ad1a" name="Auxiliary Support Detachment -2CP" hidden="false">
       <modifiers>
         <modifier type="increment" field="0d7c-f6da-32e9-53aa" value="1.0">
           <repeats>
@@ -1244,7 +1163,7 @@
         <categoryLink id="7751-b628-068c-ae45" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false"/>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="8cae-c44c-ef1f-8f43" name="Planetstrike Attacker +5 CP" publicationId="28ec-711c-pubN73170" page="34" hidden="false">
+    <forceEntry id="8cae-c44c-ef1f-8f43" name="*Planetstrike Attacker +5 CP" publicationId="28ec-711c-pubN73170" page="34" hidden="false">
       <infoLinks>
         <infoLink id="11bc-2f4e-b0db-3981" name="Planetstrike Detachment" hidden="false" targetId="cc24-45b1-6aa4-55bb" type="rule"/>
       </infoLinks>
@@ -1371,7 +1290,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="810f-6b53-1e3b-fe9d" name="Planetstrike Defender +5 CP" publicationId="28ec-711c-pubN73170" page="34" hidden="false">
+    <forceEntry id="810f-6b53-1e3b-fe9d" name="*Planetstrike Defender +5 CP" publicationId="28ec-711c-pubN73170" page="34" hidden="false">
       <infoLinks>
         <infoLink id="4375-bf18-ffdd-657b" name="Planetstrike Detachment" hidden="false" targetId="cc24-45b1-6aa4-55bb" type="rule"/>
       </infoLinks>
@@ -1498,7 +1417,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="c048-e584-e628-474e" name="Stronghold Assault Attacker +5 CP" publicationId="28ec-711c-pubN73170" page="46" hidden="false">
+    <forceEntry id="c048-e584-e628-474e" name="*Stronghold Assault Attacker +5 CP" publicationId="28ec-711c-pubN73170" page="46" hidden="true">
       <infoLinks>
         <infoLink id="4540-d21a-a58f-7415" name="Stronghold Assault Detachment" hidden="false" targetId="91d7-8a00-1945-fab1" type="rule"/>
       </infoLinks>
@@ -1625,7 +1544,7 @@
         </categoryLink>
       </categoryLinks>
     </forceEntry>
-    <forceEntry id="e6cd-ac5b-db70-84ff" name="Stronghold Assault Defender +5 CP" publicationId="28ec-711c-pubN73170" page="46" hidden="false">
+    <forceEntry id="e6cd-ac5b-db70-84ff" name="*Stronghold Assault Defender +5 CP" publicationId="28ec-711c-pubN73170" page="46" hidden="true">
       <infoLinks>
         <infoLink id="5f34-6b5d-80a0-d80d" name="Stronghold Assault Detachment" hidden="false" targetId="91d7-8a00-1945-fab1" type="rule"/>
       </infoLinks>
@@ -5511,119 +5430,123 @@
     </selectionEntry>
     <selectionEntry id="9d97-2793-9882-d48a" name="Detachment CP" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="5.0">
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-6.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="564e-55d5-79bc-a4d7" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="810f-6b53-1e3b-fe9d" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c048-e584-e628-474e" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e6cd-ac5b-db70-84ff" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8cae-c44c-ef1f-8f43" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="notEqualTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="12.0">
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-2.0">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8a87-f0e3-f2f2-ad1a" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0c7-2a71-bae0-215d" type="instanceOf"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-4.0">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cccd-3d99-d4af-d668" type="instanceOf"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-3.0">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="120c-9e15-1d3f-637e" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="41af-75ce-79d2-ddff" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3c85-9649-d2da-9bde" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="564e-55d5-79bc-a4d7" type="instanceOf"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="instanceOf"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-1.0">
           <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cccd-3d99-d4af-d668" type="instanceOf"/>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dcee-07fa-ec14-7dec" type="instanceOf"/>
           </conditions>
         </modifier>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="1">
+        <modifier type="set" field="hidden" value="true">
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b7e3-6a38-7bbe-c7d2" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="41af-75ce-79d2-ddff" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3c85-9649-d2da-9bde" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="120c-9e15-1d3f-637e" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5baf-eed5-bb85-7325" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6fb7-031b-0276-59c9" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22fe-e36f-71e2-b796" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="daea-75d3-1073-2ba0" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="780c-2ab9-34f4-7c30" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a39c-5420-c141-262c" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6576-b25c-8ce9-8860" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c7fc-1172-cd53-2dae" type="instanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c50f-184b-1482-8ce7" type="instanceOf"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-1">
-          <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8a87-f0e3-f2f2-ad1a" type="instanceOf"/>
-          </conditions>
-        </modifier>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="3">
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="3.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="instanceOf"/>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" type="equalTo"/>
+                <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="564e-55d5-79bc-a4d7" type="atLeast"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5baf-eed5-bb85-7325" type="instanceOf"/>
               </conditions>
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="564e-55d5-79bc-a4d7" type="instanceOf"/>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4c9f-f934-ed79-84fe" type="atLeast"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="0.0">
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="2.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b0ab-9c0d-ff4b-c17e" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="780c-2ab9-34f4-7c30" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6fb7-031b-0276-59c9" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="daea-75d3-1073-2ba0" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6576-b25c-8ce9-8860" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c7fc-1172-cd53-2dae" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c50f-184b-1482-8ce7" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="19c2-d22a-7ab4-53f1" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="444e-30c9-5181-aa6b" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9fd1-149e-1542-a91c" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ecdd-b72a-f9dd-a02a" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bfc9-d668-8dec-a0ee" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="22fe-e36f-71e2-b796" type="instanceOf"/>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" type="equalTo"/>
+                <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a0c7-2a71-bae0-215d" type="atLeast"/>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="564e-55d5-79bc-a4d7" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5baf-eed5-bb85-7325" type="instanceOf"/>
               </conditions>
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="lessThan"/>
-                  </conditions>
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="492c-9ae1-0205-c13f" type="greaterThan"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </conditionGroup>
-              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="2d3b-b544-ad49-fb75" value="6">
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="4.0">
           <conditionGroups>
-            <conditionGroup type="or">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdda-36f0-4f32-1639" type="greaterThan"/>
-                  </conditions>
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="492c-9ae1-0205-c13f" type="greaterThan"/>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0116-d165-23e1-4e90" type="greaterThan"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cccd-3d99-d4af-d668" type="instanceOf"/>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4c9f-f934-ed79-84fe" type="atLeast"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" type="atLeast"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5baf-eed5-bb85-7325" type="instanceOf"/>
+              </conditions>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -5631,6 +5554,30 @@
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fac4-ef44-fe8d-5104" type="max"/>
       </constraints>
+      <selectionEntries>
+        <selectionEntry id="d224-ab2b-e79e-5491" name="Command Benefit" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dcee-07fa-ec14-7dec" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7e76-e28b-c61b-086a" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="0aab-1f45-6701-6962" name="Command Benefit" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">+1 Command point if every unit in this Detachment is from the same Faction and that Faction is the same as your WARLORD&apos;s Detachment.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="1.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -5642,6 +5589,21 @@
         <modifier type="set" field="ba25-d308-d6f1-5649" value="1">
           <conditions>
             <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="2d3b-b544-ad49-fb75" value="3.0">
+          <conditions>
+            <condition field="limit::points" scope="roster" value="500.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="2d3b-b544-ad49-fb75" value="6.0">
+          <conditions>
+            <condition field="limit::points" scope="roster" value="1000.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="2d3b-b544-ad49-fb75" value="6.0">
+          <conditions>
+            <condition field="limit::points" scope="roster" value="2000.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
           </conditions>
         </modifier>
       </modifiers>
