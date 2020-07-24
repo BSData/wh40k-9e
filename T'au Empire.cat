@@ -270,7 +270,6 @@
     <entryLink id="c0aa-450c-00ce-e83f" name="Tidewall Droneport" hidden="false" collective="false" import="true" targetId="b5cb-0fc1-45ac-867a" type="selectionEntry"/>
     <entryLink id="bc73-5a40-1f6b-a332" name="Tidewall Gunrig" hidden="false" collective="false" import="true" targetId="32af-cfde-8de0-180a" type="selectionEntry"/>
     <entryLink id="ec66-1bf7-acc8-69f7" name="Tidewall Shieldline" hidden="false" collective="false" import="true" targetId="dea0-7a6e-89e0-9928" type="selectionEntry"/>
-    <entryLink id="6824-74af-c876-deea" name="Cadre Fireblade" hidden="false" collective="false" import="true" targetId="fc98-45a1-95bf-d267" type="selectionEntry"/>
     <entryLink id="dd69-281d-8ac2-26df" name="Aun&apos;Shi" hidden="false" collective="false" import="true" targetId="1da4-7bed-2a70-d50c" type="selectionEntry"/>
     <entryLink id="c9a1-3473-b6ba-93e8" name="Aun&apos;Va" hidden="false" collective="false" import="true" targetId="55d4-7a6e-8ad3-0823" type="selectionEntry"/>
     <entryLink id="678e-4d2c-cc8d-7626" name="Ethereal" hidden="false" collective="false" import="true" targetId="ca18-6d3e-222c-cf95" type="selectionEntry"/>
@@ -1253,9 +1252,21 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="2f26-397f-4113-fd89" name="Ion cannon" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="points" value="0.0">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6d93-812c-1b53-747f" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="813d-efb3-dcc7-2ec4" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <infoLinks>
         <infoLink id="1691-a136-4b4a-0655" name="Ion cannon (Overcharge)" hidden="false" targetId="fb55-a1ee-31a2-828d" type="profile"/>
-        <infoLink id="9ab4-a18e-18fb-bc1e" name="New InfoLink" hidden="false" targetId="38e1-f831-a82d-ed18" type="profile"/>
+        <infoLink id="9ab4-a18e-18fb-bc1e" name="Ion cannon (Standard)" hidden="false" targetId="38e1-f831-a82d-ed18" type="profile"/>
       </infoLinks>
       <costs>
         <cost name="pts" typeId="points" value="5.0"/>
@@ -3543,62 +3554,6 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="fc98-45a1-95bf-d267" name="Cadre Fireblade" publicationId="c0bb-c0cd-pubN68738" page="96" hidden="false" collective="false" import="true" type="model">
-      <modifiers>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="1">
-          <conditions>
-            <condition field="selections" scope="fc98-45a1-95bf-d267" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd7e-cf85-27f9-35bd" type="atLeast"/>
-          </conditions>
-        </modifier>
-      </modifiers>
-      <infoLinks>
-        <infoLink id="b937-2d12-bb8d-beba" name="Cadre Fireblade" hidden="false" targetId="0ef2-2668-6edb-95a1" type="profile"/>
-        <infoLink id="0120-74be-9a14-2602" name="New InfoLink" hidden="false" targetId="9a3a-31af-3eb4-fc3d" type="rule"/>
-        <infoLink id="2bd3-bd6b-d73e-2998" name="Volley Fire" hidden="false" targetId="50e6-fdbf-c3b7-5892" type="profile"/>
-      </infoLinks>
-      <categoryLinks>
-        <categoryLink id="22f8-2c20-0538-ecbd" name="New CategoryLink" hidden="false" targetId="8cc3-4e99-e01d-fed8" primary="false"/>
-        <categoryLink id="ab93-db29-eec2-e3a0" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="ee68-7f48-2fcb-c8b1" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
-        <categoryLink id="f343-4d64-c00b-a38a" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
-        <categoryLink id="f61e-11d1-a938-d152" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
-        <categoryLink id="c57f-b4ed-e48b-1f33" name="New CategoryLink" hidden="false" targetId="1e6a-d4bb-b363-8f61" primary="false"/>
-      </categoryLinks>
-      <entryLinks>
-        <entryLink id="c618-92b5-0bef-a428" name="Pulse rifle" hidden="false" collective="false" import="true" targetId="b137-5a29-f03a-ad3e" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="269c-cf7d-7850-4a15" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="76e0-7c74-7093-feff" type="min"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="31db-81e5-9137-aa31" name="Markerlight" hidden="false" collective="false" import="true" targetId="ca6b-6ce9-0f0f-8c1b" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e4f8-2be3-3cf4-212e" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="df49-b37b-22ee-b6da" type="min"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="864f-fa80-ef4d-df78" name="Photon grenades" hidden="false" collective="false" import="true" targetId="1e4a-b5fd-7be4-3f90" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f2a2-ecd1-9208-6723" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="db88-33cb-8edd-8d93" type="min"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="dd7e-cf85-27f9-35bd" name="Tactical Drones" hidden="false" collective="false" import="true" targetId="a3aa-ea32-ab42-aad5" type="selectionEntryGroup">
-          <modifiers>
-            <modifier type="append" field="name" value=" (0-2)"/>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d667-bc4a-4ac6-35bc" type="max"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="9822-1ecc-8d37-1ff6" name="Character options" hidden="false" collective="false" import="true" targetId="4080-84e0-bcf9-5b82" type="selectionEntryGroup"/>
-      </entryLinks>
-      <costs>
-        <cost name="pts" typeId="points" value="45.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-      </costs>
-    </selectionEntry>
     <selectionEntry id="ca18-6d3e-222c-cf95" name="Ethereal" hidden="false" collective="false" import="true" type="model">
       <modifiers>
         <modifier type="increment" field="e356-c769-5920-6e14" value="1">
@@ -4444,7 +4399,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
-        <cost name="pts" typeId="points" value="120.0"/>
+        <cost name="pts" typeId="points" value="130.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -4545,7 +4500,7 @@
             </entryLink>
           </entryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="7.0"/>
+            <cost name="pts" typeId="points" value="10.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
@@ -4565,7 +4520,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
-        <cost name="pts" typeId="points" value="105.0"/>
+        <cost name="pts" typeId="points" value="115.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -4717,7 +4672,7 @@
           </selectionEntries>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
-            <cost name="pts" typeId="points" value="16.0"/>
+            <cost name="pts" typeId="points" value="20.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
@@ -4909,7 +4864,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="pts" typeId="points" value="70.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -5074,7 +5029,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="19.0"/>
-        <cost name="pts" typeId="points" value="429.0"/>
+        <cost name="pts" typeId="points" value="430.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -5147,7 +5102,7 @@
                 <infoLink id="59eb-4628-cc77-f7eb" name="Tri-axis ion cannon (Coherent beam)" hidden="false" targetId="92e5-dd73-9e60-a0d2" type="profile"/>
               </infoLinks>
               <costs>
-                <cost name="pts" typeId="points" value="214.0"/>
+                <cost name="pts" typeId="points" value="50.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -5157,7 +5112,6 @@
                 <infoLink id="8383-9f99-55b7-aa79" name="Fusion eradicator" hidden="false" targetId="ed2a-f048-071f-bc27" type="profile"/>
               </infoLinks>
               <costs>
-                <cost name="pts" typeId="points" value="166.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -5169,7 +5123,7 @@
                 <infoLink id="2f72-4269-702a-2bda" name="Tri-axis ion cannon (Coherent beam)" hidden="false" targetId="92e5-dd73-9e60-a0d2" type="profile"/>
               </infoLinks>
               <costs>
-                <cost name="pts" typeId="points" value="190.0"/>
+                <cost name="pts" typeId="points" value="25.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -5254,7 +5208,7 @@
                 </entryLink>
               </entryLinks>
               <costs>
-                <cost name="pts" typeId="points" value="35.0"/>
+                <cost name="pts" typeId="points" value="45.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -5612,7 +5566,7 @@
               </entryLinks>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
-                <cost name="pts" typeId="points" value="30.0"/>
+                <cost name="pts" typeId="points" value="60.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -5639,7 +5593,7 @@
               </entryLinks>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
-                <cost name="pts" typeId="points" value="30.0"/>
+                <cost name="pts" typeId="points" value="60.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -5666,7 +5620,7 @@
               </entryLinks>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
-                <cost name="pts" typeId="points" value="30.0"/>
+                <cost name="pts" typeId="points" value="60.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
@@ -5739,7 +5693,7 @@
         <entryLink id="13ac-300c-eb9f-8a0b" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="160.0"/>
+        <cost name="pts" typeId="points" value="200.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="12.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -5828,7 +5782,7 @@
         <entryLink id="728b-c13f-2b09-c874" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="245.0"/>
+        <cost name="pts" typeId="points" value="340.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="21.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -5889,7 +5843,7 @@
         <entryLink id="8b52-32b9-16c4-330b" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="255.0"/>
+        <cost name="pts" typeId="points" value="530.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="30.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6034,7 +5988,7 @@
         <infoLink id="09d6-1c6f-0bd6-5d6f" name="Double-barelled burst cannon" hidden="false" targetId="6c81-4c33-cc3d-132c" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="16.0"/>
+        <cost name="pts" typeId="points" value="4.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6054,7 +6008,7 @@
         <infoLink id="e867-55c8-844e-1515" name="Fusion cascade" hidden="false" targetId="c41b-26ad-b888-54ec" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="35.0"/>
+        <cost name="pts" typeId="points" value="20.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6064,7 +6018,6 @@
         <infoLink id="4627-0c4f-c94b-0e63" name="Heavy rail cannon" hidden="false" targetId="d6b9-b656-293a-9e84" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="130.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6075,7 +6028,6 @@
         <infoLink id="322b-11ed-97ea-b4a4" name="Markerlights" hidden="false" targetId="df2f-c364-5cf6-d067" type="rule"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="7.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6100,11 +6052,17 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="f436-6d01-f237-0b8d" name="Long-barelled burst cannon" hidden="false" collective="true" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="points" value="10.0">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6d93-812c-1b53-747f" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <infoLinks>
         <infoLink id="51de-62fb-1897-5165" name="Long-barelled burst cannon" hidden="false" targetId="e57a-6ed2-c91b-977f" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="12.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6115,7 +6073,6 @@
         <infoLink id="1eed-8fc1-41a1-2e52" name="Long-barelled ion cannon (Overcharge)" page="" hidden="false" targetId="923a-77e8-1ab6-28aa" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="12.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6125,7 +6082,7 @@
         <infoLink id="c85a-f8f5-c180-5e68" name="Nexus meteor missile system" hidden="false" targetId="1626-27bd-bb24-c2db" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="147.0"/>
+        <cost name="pts" typeId="points" value="30.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6135,7 +6092,6 @@
         <infoLink id="4d00-6459-d18d-fdc4" name="Phased ion gun" hidden="false" targetId="3639-f272-0894-5f55" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="12.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6174,7 +6130,6 @@
         <infoLink id="22bc-d5a3-c153-42af" name="Pulse submunitions rifle" hidden="false" targetId="d744-56a7-d551-a778" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="12.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6185,7 +6140,6 @@
         <infoLink id="9242-02be-50b8-5cdf" name="Pulse ordnance multi-driver (Concentrated bombardment)" hidden="false" targetId="6913-18db-04a3-74ad" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="121.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6195,7 +6149,7 @@
         <infoLink id="263a-dd02-dee4-ea00" name="Swiftstrike railgun" hidden="false" targetId="6a83-da2d-7926-60d2" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="101.0"/>
+        <cost name="pts" typeId="points" value="5.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6418,11 +6372,17 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="4171-f64c-c4e2-a41a" name="2x Long-barelled burst cannon" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="points" value="20.0">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6d93-812c-1b53-747f" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <infoLinks>
         <infoLink id="e0d5-b3f5-a403-9810" name="Long-barelled burst cannon" hidden="false" targetId="e57a-6ed2-c91b-977f" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="24.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -6443,12 +6403,19 @@
         <infoLink id="85b7-b1b5-5121-fb89" name="Swiftstrike burst cannon" hidden="false" targetId="bee2-7cd3-c740-7c51" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="70.0"/>
+        <cost name="pts" typeId="points" value="40.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="99be-868a-fbc7-e79f" name="2x Ion cannon" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="points" value="0.0">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="813d-efb3-dcc7-2ec4" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <infoLinks>
         <infoLink id="256d-f081-d5d9-b9b4" name="Ion cannon (Standard)" hidden="false" targetId="38e1-f831-a82d-ed18" type="profile"/>
         <infoLink id="4e1a-b996-bfc0-7c48" name="Ion cannon (Overcharge)" hidden="false" targetId="fb55-a1ee-31a2-828d" type="profile"/>
@@ -8341,7 +8308,7 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
         <infoLink id="5338-3444-6f19-4fc3" name="Swiftstrike burst cannon" hidden="false" targetId="bee2-7cd3-c740-7c51" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="55.0"/>
+        <cost name="pts" typeId="points" value="25.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -9533,6 +9500,7 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
             <modifier type="set" field="points" value="40.0">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bcc6-5ed3-90de-f2ea" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="74dc-28f8-5c0f-02e9" type="instanceOf"/>
               </conditions>
             </modifier>
             <modifier type="set" field="hidden" value="true">
@@ -9556,6 +9524,8 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="686a-7d0d-b533-2053" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bade-5696-1d4d-3f86" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="725a-82bb-106e-d3d9" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="74dc-28f8-5c0f-02e9" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bcc6-5ed3-90de-f2ea" type="instanceOf"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -9566,13 +9536,15 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
         <entryLink id="555c-65a6-6604-7bac" name="Drone controller" hidden="false" collective="false" import="true" targetId="1e6a-b88e-8437-8cb6" type="selectionEntry"/>
         <entryLink id="5378-eb6e-6024-e5e4" name="Early warning override" hidden="false" collective="false" import="true" targetId="3ff5-ce63-c9f8-b39e" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="10">
+            <modifier type="set" field="points" value="10.0">
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="686a-7d0d-b533-2053" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="74dc-28f8-5c0f-02e9" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bade-5696-1d4d-3f86" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="725a-82bb-106e-d3d9" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="686a-7d0d-b533-2053" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bcc6-5ed3-90de-f2ea" type="instanceOf"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -9590,6 +9562,7 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bade-5696-1d4d-3f86" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="725a-82bb-106e-d3d9" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bcc6-5ed3-90de-f2ea" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="74dc-28f8-5c0f-02e9" type="instanceOf"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -9605,6 +9578,7 @@ If you have chosen a sept that does not have an associated Sept Tenet, you can c
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="686a-7d0d-b533-2053" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bade-5696-1d4d-3f86" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="725a-82bb-106e-d3d9" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="74dc-28f8-5c0f-02e9" type="instanceOf"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bcc6-5ed3-90de-f2ea" type="instanceOf"/>
                   </conditions>
                 </conditionGroup>
