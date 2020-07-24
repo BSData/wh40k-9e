@@ -13,7 +13,7 @@ Warhammer 40,000 8th Edition
 ## Important ##
 [Important]: #important
 
-__The Battlescribe data editor can cause problems when merging updates. Because of this, and also to avoid duplicated effort where multiple people are working on the same files, please join us on Gitter before you commit changes to the files.__
+__The Battlescribe data editor can cause problems when merging updates. Because of this, and also to avoid duplicated effort where multiple people are working on the same files, please join us on Discord before you commit changes to the files.__
 
 
 __Previous editions__: _However we don't support older editions actively, the files are available from [7th Edition repo](https://github.com/BSData/wh40k-7th-edition) - also there you can find archived files for 7th and 6th edition for BattleScribe v1.15._
