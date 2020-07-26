@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="159" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="134" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="160" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="134" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -340,6 +340,18 @@
           </modifiers>
         </entryLink>
         <entryLink id="fd5d-bcc1-9bdc-31f2" name="Stratagem: Chapter Champion" hidden="false" collective="false" import="true" targetId="29bc-7957-a56d-1aeb" type="selectionEntry"/>
+        <entryLink id="0c15-2a6d-f1b7-be0c" name="Jump Pack" hidden="false" collective="false" import="true" targetId="181e-0718-160e-2e75" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="e356-c769-5920-6e14" value="1.0"/>
+            <modifier type="increment" field="points" value="25.0"/>
+            <modifier type="set" field="name" value="Jump Pack Legends"/>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
@@ -1873,6 +1885,18 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0bf8-eaa8-693f-1436" type="max"/>
               </constraints>
             </entryLink>
+            <entryLink id="dd90-ffde-ebd2-e794" name="Jump Pack" hidden="false" collective="false" import="true" targetId="181e-0718-160e-2e75" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="e356-c769-5920-6e14" value="1.0"/>
+                <modifier type="increment" field="points" value="25.0"/>
+                <modifier type="set" field="name" value="Jump Pack Legends"/>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
         <selectionEntryGroup id="b5ec-eb00-3ee1-3333" name="Stratagems" hidden="false" collective="false" import="true">
@@ -2779,6 +2803,18 @@
           </modifiers>
         </entryLink>
         <entryLink id="a95a-5afb-af8f-2c62" name="Stratagem: Chapter Ancient" hidden="false" collective="false" import="true" targetId="c791-b2fc-df48-1834" type="selectionEntry"/>
+        <entryLink id="ec32-63f7-8b22-900f" name="Jump Pack" hidden="false" collective="false" import="true" targetId="181e-0718-160e-2e75" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="e356-c769-5920-6e14" value="1.0"/>
+            <modifier type="increment" field="points" value="25.0"/>
+            <modifier type="set" field="name" value="Jump Pack Legends"/>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -2923,13 +2959,20 @@
         <categoryLink id="3ad5-7717-0b82-5190" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="62b2-8d40-752a-7a38" name="Veteran Sergeant" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="62b2-8d40-752a-7a38" name="Veteran Sergeant" hidden="false" collective="false" import="true" type="model">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bbce-66bd-1b22-baac" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9f3d-8564-5230-9ba4" type="max"/>
           </constraints>
           <profiles>
             <profile id="fecd-f974-5f7a-57f2" name="Veteran Sergeant" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <modifiers>
+                <modifier type="set" field="0bdf-a96e-9e38-7779" value="12&quot;">
+                  <conditions>
+                    <condition field="selections" scope="339f-3bb9-0c10-034b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="181e-0718-160e-2e75" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
               <characteristics>
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -3060,13 +3103,20 @@
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="bb78-bcb7-c045-ae93" name="Space Marine Veteran" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="bb78-bcb7-c045-ae93" name="Space Marine Veteran" hidden="false" collective="false" import="true" type="model">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="afcb-e33c-848d-dc4d" type="min"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="6e5c-2ac6-af17-681d" type="max"/>
           </constraints>
           <profiles>
             <profile id="3bf0-1791-7fd1-0de6" name="Space Marine Veteran" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <modifiers>
+                <modifier type="set" field="0bdf-a96e-9e38-7779" value="12&quot;">
+                  <conditions>
+                    <condition field="selections" scope="339f-3bb9-0c10-034b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="181e-0718-160e-2e75" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
               <characteristics>
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -3153,6 +3203,28 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink id="3b4e-d5da-fe74-0fca" name="Jump Pack" hidden="false" collective="false" import="true" targetId="181e-0718-160e-2e75" type="selectionEntry">
+          <modifiers>
+            <modifier type="increment" field="e356-c769-5920-6e14" value="1.0">
+              <conditions>
+                <condition field="selections" scope="339f-3bb9-0c10-034b" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="339f-3bb9-0c10-034b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+            <modifier type="set" field="name" value="Jump Pack Legends"/>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
