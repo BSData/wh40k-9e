@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="134" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="135" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -1300,7 +1300,7 @@
         <categoryLink id="56a3-e61a-895c-ce33" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="44e3-c224-ba82-1b55" name="Battle-forged CP" hidden="false" collective="false" import="true" targetId="f29d-8a5d-18b6-a071" type="selectionEntry">
+    <entryLink id="44e3-c224-ba82-1b55" name="Battle Size" hidden="false" collective="false" import="true" targetId="f29d-8a5d-18b6-a071" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="7518-f5d0-38d5-658f" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
@@ -5196,8 +5196,20 @@
           </conditionGroups>
         </modifier>
       </modifiers>
+      <modifierGroups>
+        <modifierGroup>
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="44da-9aaf-181b-5ece" type="instanceOf"/>
+          </conditions>
+          <modifiers>
+            <modifier type="set" field="fac4-ef44-fe8d-5104" value="0.0"/>
+            <modifier type="set" field="479b-ff93-4cba-b3d8" value="0.0"/>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fac4-ef44-fe8d-5104" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="479b-ff93-4cba-b3d8" type="min"/>
       </constraints>
       <selectionEntries>
         <selectionEntry id="d224-ab2b-e79e-5491" name="Command Benefit" hidden="false" collective="false" import="true" type="upgrade">
@@ -5232,51 +5244,98 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="f29d-8a5d-18b6-a071" name="Battle-forged CP" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="f29d-8a5d-18b6-a071" name="Battle Size" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="ba25-d308-d6f1-5649" value="1.0">
           <conditions>
-            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="equalTo"/>
+            <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="lessThan"/>
           </conditions>
         </modifier>
-        <modifier type="increment" field="2d3b-b544-ad49-fb75" value="3.0">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="limit::e356-c769-5920-6e14" scope="roster" value="25.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-                <condition field="limit::points" scope="roster" value="500.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" field="2d3b-b544-ad49-fb75" value="6.0">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="limit::e356-c769-5920-6e14" scope="roster" value="50.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-                <condition field="limit::points" scope="roster" value="1000.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" field="2d3b-b544-ad49-fb75" value="6.0">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="limit::e356-c769-5920-6e14" scope="roster" value="100.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-                <condition field="limit::points" scope="roster" value="2000.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
       </modifiers>
+      <modifierGroups>
+        <modifierGroup>
+          <conditions>
+            <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
+          </conditions>
+          <modifiers>
+            <modifier type="set" field="1a29-fbbf-01a7-1c91" value="0.0"/>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
       <constraints>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ba25-d308-d6f1-5649" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ba25-d308-d6f1-5649" type="min"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1a29-fbbf-01a7-1c91" type="max"/>
       </constraints>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="2883-57e8-87a6-38e2" name="Battle Size" hidden="false" collective="false" import="true" defaultSelectionEntryId="af70-08c1-1c6f-0770">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2a48-d522-f093-f993" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b273-5ae1-26a2-84cd" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="5686-7cd9-6664-635b" name="2. Incursion (51-100 Total PL / 501-1000 Points) " hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="2d3b-b544-ad49-fb75" value="0.0">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="6.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="09f9-b586-8d63-7635" name="3. Strike Force (101-200 Total PL / 1001-2000 Points) " hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="2d3b-b544-ad49-fb75" value="0.0">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="9.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="fad2-035f-88a7-60c0" name="4. Onslaught (201-300 Total PL / 2001-3000 Points) " hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="2d3b-b544-ad49-fb75" value="0.0">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="12.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="af70-08c1-1c6f-0770" name="1. Combat Patrol (0-50 Total PL / 0-500 Points) " hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="2d3b-b544-ad49-fb75" value="0.0">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="3.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="3.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="af7a-d57e-4972-12d3" name="Reinforcements" hidden="false" collective="false" import="true" type="upgrade">
