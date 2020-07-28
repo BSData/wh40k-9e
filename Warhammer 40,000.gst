@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="136" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="138" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -1235,7 +1235,7 @@
     </forceEntry>
   </forceEntries>
   <entryLinks>
-    <entryLink id="46df-b154-20ff-cce1" name="Aegis Defense Line" hidden="false" collective="false" import="true" targetId="a505-05af-bd44-56b6" type="selectionEntry">
+    <entryLink id="46df-b154-20ff-cce1" name="Aegis Defence Line" hidden="false" collective="false" import="true" targetId="a505-05af-bd44-56b6" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="46df-b154-20ff-cce1-d713cda3-5d0f-40d8-b621-69233263ec2a" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
       </categoryLinks>
@@ -1329,9 +1329,19 @@
         <categoryLink id="340b-ca49-5722-d355" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="d3f8-6d8c-7e97-4c5a" name="Macro-cannon Aquila Strongpoint" hidden="false" collective="false" import="true" targetId="ec16-8c4f-7c32-2d58" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="e3de-77d5-7c0d-4a2c" name="New CategoryLink" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="1f4c-2aec-3f77-2f88" name="Vortex Missile Aquila Strongpoint" hidden="false" collective="false" import="true" targetId="7fa0-59ee-8d71-e174" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="d031-d3e6-4fdc-0eba" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
-    <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defense Line" publicationId="28ec-711c-pubN77581" page="79" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defence Line" publicationId="28ec-711c-pubN77581" page="79" hidden="false" collective="false" import="true" type="unit">
       <infoLinks>
         <infoLink id="4ae0-157d-0f63-5531" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
         <infoLink id="238a-f756-6edf-3af8" name="Static Defence Network" hidden="false" targetId="c60f-7b10-88fd-9eba" type="profile"/>
@@ -1407,14 +1417,14 @@
         </selectionEntry>
       </selectionEntries>
       <costs>
-        <cost name="pts" typeId="points" value="75.0"/>
+        <cost name="pts" typeId="points" value="80.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="16d6-25c4-af92-4329" name="Aquila Strongpoint" publicationId="28ec-711c-pubN77581" page="" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="16d6-25c4-af92-4329" name="Aquila Strongpoint" publicationId="28ec-711c-pubN77581" page="" hidden="true" collective="false" import="true" type="model">
       <modifiers>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="1">
+        <modifier type="increment" field="e356-c769-5920-6e14" value="1.0">
           <conditions>
             <condition field="selections" scope="16d6-25c4-af92-4329" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1600-8ea4-6f3f-383f" type="atLeast"/>
           </conditions>
@@ -1448,7 +1458,7 @@
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="cbf3-33ac-73e9-50c7" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
+        <infoLink id="cbf3-33ac-73e9-50c7" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
         <infoLink id="769e-c3f8-d4d9-8c25" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile"/>
         <infoLink id="d1b0-0bbd-8997-301b" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile"/>
         <infoLink id="1dcc-a6af-664d-6aa0" name="Explodes (2D6&quot; / D6)" hidden="false" targetId="4ab1-b4c4-a404-8c2f" type="profile">
@@ -1538,7 +1548,7 @@
       <entryLinks>
         <entryLink id="a66e-a15d-3c96-15b1" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="8"/>
+            <modifier type="set" field="points" value="8.0"/>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9669-776c-84f2-6150" type="max"/>
@@ -1611,7 +1621,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="points" value="160.0"/>
+        <cost name="pts" typeId="points" value="170.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="13.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -1715,7 +1725,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="400.0"/>
+        <cost name="pts" typeId="points" value="440.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="21.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -1776,7 +1786,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="160.0"/>
+        <cost name="pts" typeId="points" value="150.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="11.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -1827,7 +1837,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="points" value="100.0"/>
+        <cost name="pts" typeId="points" value="110.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -1891,7 +1901,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="points" value="85.0"/>
+        <cost name="pts" typeId="points" value="90.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -1946,14 +1956,14 @@
             </profile>
           </profiles>
           <costs>
-            <cost name="pts" typeId="points" value="40.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
       <costs>
-        <cost name="pts" typeId="points" value="150.0"/>
+        <cost name="pts" typeId="points" value="210.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -1998,7 +2008,7 @@
         <categoryLink id="3b13-2e07-f357-c9d8" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
       </categoryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="110.0"/>
+        <cost name="pts" typeId="points" value="120.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -2061,7 +2071,7 @@
             </selectionEntryGroup>
           </selectionEntryGroups>
           <costs>
-            <cost name="pts" typeId="points" value="80.0"/>
+            <cost name="pts" typeId="points" value="88.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
@@ -2103,7 +2113,7 @@
         <categoryLink id="f202-7d66-e9c8-b288" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
       </categoryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="190.0"/>
+        <cost name="pts" typeId="points" value="200.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -3295,7 +3305,7 @@
         <infoLink id="5768-a1a7-3cf6-ebfe" name="Icarus Lascannon" hidden="false" targetId="cb26-27b4-9393-a768" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="25.0"/>
+        <cost name="pts" typeId="points" value="20.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -3315,7 +3325,7 @@
         <infoLink id="adbb-1be8-bbc4-4470" name="Quad Icarus Lascannon" hidden="false" targetId="d503-4001-e4b8-c804" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="70.0"/>
+        <cost name="pts" typeId="points" value="80.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -5522,7 +5532,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="160.0"/>
+        <cost name="pts" typeId="points" value="170.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="11.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -5772,6 +5782,156 @@
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="ec16-8c4f-7c32-2d58" name="Macro-cannon Aquila Strongpoint" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="3dc7-7e07-df5e-9fd1" name="Aquila Strongpoint" publicationId="28ec-711c-pubN77581" page="135" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">30</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="0094-6926-0d7c-e425" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile"/>
+        <infoLink id="3985-1cea-515e-958f" name="Explodes (2D6&quot; / D6)" hidden="false" targetId="4ab1-b4c4-a404-8c2f" type="profile"/>
+        <infoLink id="f958-e691-027a-faf4" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile"/>
+        <infoLink id="6d4c-1c31-8c95-2452" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
+      </infoLinks>
+      <selectionEntries>
+        <selectionEntry id="aa99-376d-2d0d-9c5e" name="Aquila Macro-cannon" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9c9b-2c75-18a1-417d" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ee2-2588-322f-388d" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="7f35-3cc4-be9b-3a32" name="Aquila Macro-cannon (Macro Shell)" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">14</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Treat any damage rolls of 1 or 2 made for this weapon as 3 instead.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="327e-e494-dae6-d008" name="Aquila Macro-cannon (Quake Shell)" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">180&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="9ce3-92ba-b5fc-2ba4" name="Magazine Explosion (Macro-cannon)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any embarked models disembark. On a 6 its magazine explodes, and each unit within 2D6&quot; suffers D6 mortal wounds.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name="pts" typeId="points" value="80.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="01e4-d413-522e-1b60" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="8.0"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0318-46a5-d299-9ae7" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="21.0"/>
+        <cost name="pts" typeId="points" value="440.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="7fa0-59ee-8d71-e174" name="Vortex Missile Aquila Strongpoint" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="b5df-548e-5464-d939" name="Containment Failure" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model is destroyed, before any embarked models disembark its vortex missiles explode. Each unit within 2D6&quot; suffers D6 mortal wounds. If a model loses any wounds as a result of those mortal wounds but is not destroyed, roll another D6; on a 6 that model suffers a further D6 mortal wounds.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="38e6-c245-8238-130e" name="Aquila Strongpoint" publicationId="28ec-711c-pubN77581" page="135" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">30</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="30d1-b547-1125-d612" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile"/>
+        <infoLink id="f1bf-f67b-bc39-6b7e" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile"/>
+        <infoLink id="69a2-0099-7ecf-eb18" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
+      </infoLinks>
+      <selectionEntries>
+        <selectionEntry id="1566-ed32-0c78-265b" name="Vortex Missile Battery" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5f19-4108-79da-31bf" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="621a-66bd-935a-dfe9" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="45fe-2ece-6d97-a023" name="Vortex Missile Battery" publicationId="28ec-711c-pubN77581" page="136" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">180&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">-</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">-</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon may target units that are not visible to the bearer, even when firing in accordance with the Automated Weapons ability. Each time you hit the target with this weapon it suffers D6 mortal wounds. If a model is wounded but but not slain by this attack, roll another dice; on a 6, the model suffers a further D6 mortal wounds.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="4525-1cde-2fcd-d4cf" name="Containment Failure" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, before removing it from the battlefield and before any embarked models disembark, its vortex missiles explode. Each unit within 2D6&quot; suffers D6 mortal wounds. If a model is wounded but not slain by in this manner roll another dice; on a 6, the model is sucked up into the swirling vortex and slain.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name="pts" typeId="points" value="100.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="cd5e-06a3-d8de-80c5" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="8.0"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5789-5292-6fdf-302d" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="22.0"/>
+        <cost name="pts" typeId="points" value="470.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
