@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="141" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="142" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -247,6 +247,7 @@
             <categoryLink id="0879-c6e0-d140-cdf4" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
             <categoryLink id="2a75-b392-fa24-a897" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="08b9-da67-2327-6c1e" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+            <categoryLink id="2371-dbb2-4792-99f4" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false"/>
             <categoryLink id="9217-73a1-3624-1f7d" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="54ff-9b86-6104-b32c" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
             <categoryLink id="277f-2488-2867-06fc" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false"/>
@@ -254,6 +255,7 @@
             <categoryLink id="37de-4b8c-3cf3-00f3" name="Heavy Support" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="false"/>
             <categoryLink id="f494-d4ee-0846-773f" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false"/>
             <categoryLink id="e62c-d409-cb2b-4d75" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
+            <categoryLink id="2371-dbb2-4792-99f4" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false"/>
           </categoryLinks>
         </forceEntry>
       </forceEntries>
@@ -261,6 +263,19 @@
         <categoryLink id="9e6f-3e68-ab66-9f48" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="041f-3067-ce7b-06aa" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="b804-eab0-fa1a-b573" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+        <categoryLink id="85ea-e722-ca93-db4b" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
+          <modifiers>
+            <modifier type="set" field="name" value="Agents of the Imperium"/>
+            <modifier type="set" field="3828-0a05-1032-9a45" value="2.0">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3828-0a05-1032-9a45" type="max"/>
+          </constraints>
+        </categoryLink>
         <categoryLink id="b201-7a22-83be-fcd2" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
             <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f309-30a4-c2a6-80cf" type="max"/>
@@ -372,6 +387,7 @@
             <categoryLink id="8aec-1b40-57af-1c12" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
             <categoryLink id="83e6-362d-78f3-62e2" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="8ef3-97b6-69fc-bd6b" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+            <categoryLink id="b6ed-1ad0-749d-ccae" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false"/>
             <categoryLink id="b941-009e-b700-f512" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="69a8-6416-9c97-27a5" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
             <categoryLink id="30b0-63c8-a9d5-d86f" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false"/>
@@ -386,6 +402,19 @@
         <categoryLink id="fc4c-e6c8-3a50-af1d" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="a3a4-d443-2ded-f82f" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0e1f-72c2-388e-0869" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+        <categoryLink id="d71e-4848-690e-49dd" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
+          <modifiers>
+            <modifier type="set" field="name" value="Agents of the Imperium"/>
+            <modifier type="set" field="bf5a-85cb-693e-4239" value="2.0">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="bf5a-85cb-693e-4239" type="max"/>
+          </constraints>
+        </categoryLink>
         <categoryLink id="dc98-c3a9-900b-5345" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9fdc-aad8-04dc-bf45" type="max"/>
@@ -497,6 +526,7 @@
             <categoryLink id="c79d-0e51-f286-b524" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
             <categoryLink id="6d28-63cf-a930-5628" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
             <categoryLink id="96dd-3c8b-0bee-f79f" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+            <categoryLink id="a258-5be1-96b2-f9f0" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false"/>
             <categoryLink id="52dd-a45a-dd33-e109" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
             <categoryLink id="2e30-b534-8d26-e6d7" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
             <categoryLink id="9d9f-64f3-f99a-6e23" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false"/>
@@ -511,6 +541,19 @@
         <categoryLink id="cc37-3585-fefc-1935" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="5d10-4858-a639-b7ba" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="4683-00c9-930d-6336" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+        <categoryLink id="1c36-da97-3d95-b5ab" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
+          <modifiers>
+            <modifier type="set" field="name" value="Agents of the Imperium"/>
+            <modifier type="set" field="a1c0-1958-0b1f-f56d" value="2.0">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a1c0-1958-0b1f-f56d" type="max"/>
+          </constraints>
+        </categoryLink>
         <categoryLink id="b656-705b-2154-356b" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <constraints>
             <constraint field="selections" scope="force" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="043f-5e79-dc42-8a9a" type="max"/>
