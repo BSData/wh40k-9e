@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="138" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="139" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -4095,7 +4095,7 @@
       <profiles>
         <profile id="f457-a366-e21d-196f" name="Inspiring Leader" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly units within 6&quot; of this warlord can add 1 to their leadership characteristic.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Leadership characteristic of friendly units whilst they are within 6&quot; of this WARLORD.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -5941,9 +5941,7 @@
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ddaf-3652-257e-33de" type="max"/>
       </constraints>
       <entryLinks>
-        <entryLink id="bef9-3a50-5ff4-1ba0" name="1. Legendary Fighter" hidden="false" collective="false" import="true" targetId="1bad-1970-8d5d-733f" type="selectionEntry"/>
         <entryLink id="034f-ad37-f67b-95fe" name="2. Inspiring Leader" hidden="false" collective="false" import="true" targetId="bad4-7cc1-6b79-0e18" type="selectionEntry"/>
-        <entryLink id="c3cf-4cf7-145c-e210" name="3. Tenacious Survivor" hidden="false" collective="false" import="true" targetId="9a24-3ad2-9f48-7049" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="f673-3d9b-bb1b-377f" name="Warlord Traits (CA)" hidden="true" collective="false" import="true">
