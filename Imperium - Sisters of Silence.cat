@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="a008-1eeb-8c4e-96b7" name="Imperium - Sisters of Silence" revision="17" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas | Twitter: @_alphalas" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="143" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="a008-1eeb-8c4e-96b7" name="Imperium - Sisters of Silence" revision="18" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas | Twitter: @_alphalas" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="143" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="a008-1eeb-pubN69744" name="Codex: Space Marines"/>
   </publications>
@@ -13,7 +13,7 @@
     <categoryEntry id="4b0b-94bb-a2de-73d3" name="Prosecutors" hidden="false"/>
   </categoryEntries>
   <forceEntries>
-    <forceEntry id="0383-bad5-390e-4cca" name="Vanguard Detachment" hidden="false">
+    <forceEntry id="0383-bad5-390e-4cca" name="Vanguard Detachment (No HQ) -3CP" hidden="false">
       <forceEntries>
         <forceEntry id="ff3a-fba8-4f66-fe7e" name="Vanguard Detachment" hidden="false">
           <categoryLinks>
@@ -87,6 +87,15 @@
       <categoryLinks>
         <categoryLink id="928f-92a5-9bea-1e0e" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
+    </entryLink>
+    <entryLink id="a491-1bf8-5c79-4a9e" name="Detachment CP" hidden="false" collective="false" import="true" targetId="6286-09d0-4e7b-cd2b" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0383-bad5-390e-4cca" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
@@ -499,6 +508,20 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="6286-09d0-4e7b-cd2b" name="Detachment CP" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-3.0">
+          <comment>Outrider, Spearhead, Vanguard, Non-Titanic Super-Heavy, and Super-Heavy Auxiliary CP Cost.</comment>
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0383-bad5-390e-4cca" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7cf2-57bf-d095-c017" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="af80-377c-1bd4-5b09" type="min"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedRules>
