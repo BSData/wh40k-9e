@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="143" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="144" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -180,49 +180,7 @@
     <categoryEntry id="492c-9ae1-0205-c13f" name="Faction: Chaos Knights" hidden="false"/>
     <categoryEntry id="c845-c72c-6afe-3fc2" name="Stratagems" hidden="false"/>
     <categoryEntry id="fcff-0f21-93e6-1ddc" name="Configuration" hidden="false"/>
-    <categoryEntry id="0f35-2c34-ba6a-8105" name="Agent of the Imperium" hidden="false">
-      <modifiers>
-        <modifier type="set" field="e5fb-f53d-c9f8-3e9a" value="-1.0">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="increment" field="d236-7779-6cd2-d1ad" value="1.0">
-          <repeats>
-            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="564e-55d5-79bc-a4d7" repeats="1" roundUp="false"/>
-            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cccd-3d99-d4af-d668" repeats="1" roundUp="false"/>
-            <repeat field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a0c7-2a71-bae0-215d" repeats="1" roundUp="false"/>
-          </repeats>
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="notInstanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="notInstanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" field="d236-7779-6cd2-d1ad" value="-1.0">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f731-6aa6-c141-8937" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d236-7779-6cd2-d1ad" type="max"/>
-        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e5fb-f53d-c9f8-3e9a" type="max"/>
-      </constraints>
-    </categoryEntry>
+    <categoryEntry id="0f35-2c34-ba6a-8105" name="Agent of the Imperium" hidden="false"/>
     <categoryEntry id="25d3-b37a-ad95-d463" name="Kyganil" publicationId="85df-1155-c986-4d71" hidden="false"/>
     <categoryEntry id="1b30-1696-d043-ddef" name="Ephrael Stern" publicationId="85df-1155-c986-4d71" hidden="false"/>
     <categoryEntry id="f475-3e56-fd5f-4737" name="Adepta Sororitas" hidden="false"/>
