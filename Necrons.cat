@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="61c6-c8c5-a304-ff5f" name="Necrons" revision="68" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="142" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="61c6-c8c5-a304-ff5f" name="Necrons" revision="69" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="145" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="61c6-c8c5-pubN65537" name="Codex: Necrons" shortName="Necrons" publisher="Codex: Necrons" publicationDate="March 2018" publisherUrl="https://www.games-workshop.com/en-US/Codex-Necrons-2018-ENG"/>
     <publication id="61c6-c8c5-pubN106894" name="Seraptek Construct Datasheet" shortName="FW Datasheet" publisher="Forgeworld Website" publisherUrl="https://www.forgeworld.co.uk/resources/PDF/Downloads/Forgeworld_Necron_Seraptek_Datasheet.pdf"/>
@@ -5702,10 +5702,15 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="38ef-9d12-4e99-2a32" value="1">
-          <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="00c8-26f8-e8b4-b58c" type="instanceOf"/>
-          </conditions>
+        <modifier type="set" field="38ef-9d12-4e99-2a32" value="1.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8056-ce75-9ad4-f269" type="atLeast"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="00c8-26f8-e8b4-b58c" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -6349,15 +6354,35 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="set" field="114c-818a-d047-40ca" value="1">
+        <modifier type="set" field="114c-818a-d047-40ca" value="1.0">
           <conditionGroups>
             <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e6de-4de0-e695-be74" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6f14-943d-c02e-c562" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ea9b-4e8a-12f5-273c" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="de91-4514-2040-fe63" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8056-ce75-9ad4-f269" type="atLeast"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ea9b-4e8a-12f5-273c" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8056-ce75-9ad4-f269" type="atLeast"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6f14-943d-c02e-c562" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8056-ce75-9ad4-f269" type="atLeast"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e6de-4de0-e695-be74" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8056-ce75-9ad4-f269" type="atLeast"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="de91-4514-2040-fe63" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -6495,9 +6520,14 @@
     <selectionEntry id="1661-5f15-1cf5-8774" name="Warlord Trait (Codex 5): Implacable Conqueror" publicationId="61c6-c8c5-pubN65537" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="719d-ec23-5c51-0a4d" value="1.0">
-          <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7fab-f8ff-90cc-2858" type="instanceOf"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8056-ce75-9ad4-f269" type="atLeast"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7fab-f8ff-90cc-2858" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
