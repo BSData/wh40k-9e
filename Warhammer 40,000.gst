@@ -1514,7 +1514,7 @@
                     <characteristic name="S" typeId="59b1-319e-ec13-d466">14</characteristic>
                     <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                     <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Treat any damage rolls of 1 or 2 made for this weapon as 3 instead.</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Treat any damage rolls of 1 or 2 made for this weapon as 3 instead.</characteristic>
                   </characteristics>
                 </profile>
                 <profile id="c2e0-4b21-bef8-704e" name="Aquila Macro-cannon (Quake Shell)" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -1524,7 +1524,7 @@
                     <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
                     <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
                     <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast.</characteristic>
                   </characteristics>
                 </profile>
                 <profile id="14b1-1529-10dd-db95" name="Magazine Explosion (Macro-cannon)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
