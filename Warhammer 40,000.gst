@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="147" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="148" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -1568,9 +1568,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="a66e-a15d-3c96-15b1" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8.0"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9669-776c-84f2-6150" type="max"/>
           </constraints>
@@ -1797,9 +1794,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="e9d2-249f-cbc1-de00" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d943-3c7b-91a2-5609" type="min"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c578-c926-4646-944f" type="max"/>
@@ -4021,9 +4015,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="32ef-5dde-0a92-aef5" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f945-c820-e0a8-a343" type="max"/>
           </constraints>
@@ -5436,7 +5427,7 @@
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="95.0"/>
+        <cost name="pts" typeId="points" value="100.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="05be-50b6-5107-9878" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" type="upgrade">
@@ -5495,9 +5486,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="6e8f-c7b9-60a7-b395" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c5de-3e65-e0b7-7f68" type="min"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d6da-8059-1e69-461d" type="max"/>
@@ -5821,9 +5809,6 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="01e4-d413-522e-1b60" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8.0"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0318-46a5-d299-9ae7" type="max"/>
           </constraints>
@@ -5893,9 +5878,6 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="cd5e-06a3-d8de-80c5" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8.0"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5789-5292-6fdf-302d" type="max"/>
           </constraints>
