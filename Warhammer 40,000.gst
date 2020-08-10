@@ -1568,9 +1568,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="a66e-a15d-3c96-15b1" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8.0"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9669-776c-84f2-6150" type="max"/>
           </constraints>
@@ -1797,9 +1794,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="e9d2-249f-cbc1-de00" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d943-3c7b-91a2-5609" type="min"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c578-c926-4646-944f" type="max"/>
@@ -4021,9 +4015,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="32ef-5dde-0a92-aef5" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f945-c820-e0a8-a343" type="max"/>
           </constraints>
@@ -5495,9 +5486,6 @@
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="6e8f-c7b9-60a7-b395" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c5de-3e65-e0b7-7f68" type="min"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d6da-8059-1e69-461d" type="max"/>
@@ -5821,9 +5809,6 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="01e4-d413-522e-1b60" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8.0"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0318-46a5-d299-9ae7" type="max"/>
           </constraints>
@@ -5893,9 +5878,6 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="cd5e-06a3-d8de-80c5" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="points" value="8.0"/>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5789-5292-6fdf-302d" type="max"/>
           </constraints>
