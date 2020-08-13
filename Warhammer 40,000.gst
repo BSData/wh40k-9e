@@ -8797,7 +8797,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
       </characteristics>
     </profile>
     <profile id="691d-11e2-ebfb-d4ad" name="Heavy plasma cannon, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8807,7 +8807,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">For each hit roll of 1, the bearer suffers 1 mortal wound after all of this weapon&apos;s shots have been resolved. Blast.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. For each hit roll of 1, the bearer suffers 1 mortal wound after all of this weapon&apos;s shots have been resolved.</characteristic>
       </characteristics>
     </profile>
     <profile id="0c32-fc5b-5235-f6ba" name="Hurricane bolter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9147,7 +9147,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon can target units that are not visible to the firing model. Blast.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the firing model. Blast.</characteristic>
       </characteristics>
     </profile>
     <profile id="f4df-b39c-08a7-5255" name="Whirlwind vengeance launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
