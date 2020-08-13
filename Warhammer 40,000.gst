@@ -3189,7 +3189,7 @@
         <infoLink id="80f2-63be-fb01-da34" name="Power lance" hidden="false" targetId="de62-5c9a-e27d-3fa3" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="5.0"/>
+        <cost name="pts" typeId="points" value="4.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
