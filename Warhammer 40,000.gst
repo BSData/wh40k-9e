@@ -1640,7 +1640,7 @@
       </selectionEntryGroups>
       <costs>
         <cost name="pts" typeId="points" value="170.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="13.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="14.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -1744,7 +1744,7 @@
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="440.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="21.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="24.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -1802,7 +1802,7 @@
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="150.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="11.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="12.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -1853,7 +1853,7 @@
       </selectionEntryGroups>
       <costs>
         <cost name="pts" typeId="points" value="110.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -1917,7 +1917,7 @@
       </selectionEntryGroups>
       <costs>
         <cost name="pts" typeId="points" value="90.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -1979,7 +1979,7 @@
       </selectionEntries>
       <costs>
         <cost name="pts" typeId="points" value="210.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="11.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -2029,13 +2029,6 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="04bf-6c22-19fb-4e46" name="Vengeance Weapon Batteries" page="" hidden="false" collective="false" import="true" type="unit">
-      <modifiers>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="6">
-          <conditions>
-            <condition field="selections" scope="04bf-6c22-19fb-4e46" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-          </conditions>
-        </modifier>
-      </modifiers>
       <profiles>
         <profile id="4ca0-bdc4-9090-1647" name="Fully Automated Weapons" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -2057,7 +2050,7 @@
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="9ff0-e1ea-d6b4-f945" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
+        <infoLink id="9ff0-e1ea-d6b4-f945" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
         <infoLink id="02a2-99ca-97cb-5db5" name="Explodes (2D6&quot;)" hidden="false" targetId="8e81-7c95-43ba-6e0d" type="profile"/>
       </infoLinks>
       <categoryLinks>
@@ -5810,7 +5803,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="21.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="22.0"/>
         <cost name="pts" typeId="points" value="440.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -5879,7 +5872,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="22.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="24.0"/>
         <cost name="pts" typeId="points" value="470.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
