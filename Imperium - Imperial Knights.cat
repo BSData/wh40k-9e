@@ -2711,7 +2711,7 @@ of 2. </characteristic>
         <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2f48-faf8-ffe0-4dc8" type="min"/>
       </constraints>
       <selectionEntryGroups>
-        <selectionEntryGroup id="0f82-a8ca-137a-4ca0" name="Household" hidden="false" collective="false" import="true" defaultSelectionEntryId="f9c1-3901-8d67-cee4">
+        <selectionEntryGroup id="0f82-a8ca-137a-4ca0" name="Household" hidden="false" collective="false" import="true">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6eb4-cc0f-b300-64ed" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a89e-9e9d-8bb2-c804" type="max"/>
@@ -2774,38 +2774,15 @@ of 2. </characteristic>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
-        <selectionEntryGroup id="bf18-d429-e046-689e" name="Allegiance" hidden="false" collective="false" import="true" defaultSelectionEntryId="5738-3ac0-e204-7197">
+        <selectionEntryGroup id="bf18-d429-e046-689e" name="Allegiance" hidden="false" collective="false" import="true">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b38b-780a-a0f9-2dd6" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="04e2-733e-e877-dc5a" type="min"/>
           </constraints>
           <entryLinks>
-            <entryLink id="5738-3ac0-e204-7197" name="Questor Imperialis" hidden="false" collective="false" import="true" targetId="0331-f3d9-7e76-8298" type="selectionEntry">
-              <infoLinks>
-                <infoLink id="cb85-e7f4-ecda-7771" name="Vow of Honour" hidden="false" targetId="28a0-3aa5-799b-71b0" type="profile">
-                  <modifiers>
-                    <modifier type="set" field="hidden" value="true">
-                      <conditions>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                </infoLink>
-              </infoLinks>
-            </entryLink>
-            <entryLink id="2460-3c41-dcff-0fee" name="Questor Mechanicus" hidden="false" collective="false" import="true" targetId="05dc-b991-1a99-40e6" type="selectionEntry">
-              <infoLinks>
-                <infoLink id="442d-b520-433c-75a1" name="Sacristan Pledge" hidden="false" targetId="b9b9-92f8-a081-9524" type="profile">
-                  <modifiers>
-                    <modifier type="set" field="hidden" value="true">
-                      <conditions>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                </infoLink>
-              </infoLinks>
-            </entryLink>
+            <entryLink id="5738-3ac0-e204-7197" name="Questor Imperialis" hidden="false" collective="false" import="true" targetId="0331-f3d9-7e76-8298" type="selectionEntry"/>
+            <entryLink id="2460-3c41-dcff-0fee" name="Questor Mechanicus" hidden="false" collective="false" import="true" targetId="05dc-b991-1a99-40e6" type="selectionEntry"/>
+            <entryLink id="c964-8f92-2d2d-57cf" name="Questor Allegiace &lt;Mixed&gt;" hidden="false" collective="false" import="true" targetId="c335-1f2a-e252-3ede" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
         <selectionEntryGroup id="d4b4-0f03-05bb-daf8" name="Household Tradition" hidden="false" collective="false" import="true">
@@ -3578,6 +3555,18 @@ of 2. </characteristic>
       </costs>
     </selectionEntry>
     <selectionEntry id="e7b7-7e60-d76d-15fc" name="House &lt;Custom&gt;" publicationId="82cd-d24f-pubN65537" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0331-f3d9-7e76-8298" type="lessThan"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="05dc-b991-1a99-40e6" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a389-8b6d-3588-8aca" type="max"/>
       </constraints>
@@ -3875,32 +3864,8 @@ of 2. </characteristic>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ead6-8861-ecb4-8f20" type="min"/>
           </constraints>
           <entryLinks>
-            <entryLink id="f86f-a7e0-02e2-0815" name="Freeblade Questor Imperialis" hidden="false" collective="false" import="true" targetId="6a57-dab7-ec3c-4625" type="selectionEntry">
-              <infoLinks>
-                <infoLink id="4614-d27d-66da-a49d" name="Vow of Honour" hidden="false" targetId="28a0-3aa5-799b-71b0" type="profile">
-                  <modifiers>
-                    <modifier type="set" field="hidden" value="true">
-                      <conditions>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                </infoLink>
-              </infoLinks>
-            </entryLink>
-            <entryLink id="cfa1-e914-32b2-e029" name="Freeblade Questor Mechanicus" hidden="false" collective="false" import="true" targetId="3d27-e216-2483-792d" type="selectionEntry">
-              <infoLinks>
-                <infoLink id="2c78-c17f-b94a-bbf6" name="Sacristan Pledge" hidden="false" targetId="b9b9-92f8-a081-9524" type="profile">
-                  <modifiers>
-                    <modifier type="set" field="hidden" value="true">
-                      <conditions>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                </infoLink>
-              </infoLinks>
-            </entryLink>
+            <entryLink id="f86f-a7e0-02e2-0815" name="Freeblade Questor Imperialis" hidden="false" collective="false" import="true" targetId="6a57-dab7-ec3c-4625" type="selectionEntry"/>
+            <entryLink id="cfa1-e914-32b2-e029" name="Freeblade Questor Mechanicus" hidden="false" collective="false" import="true" targetId="3d27-e216-2483-792d" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -6089,6 +6054,17 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c667-c115-88ec-84bc" type="max"/>
       </constraints>
+      <infoLinks>
+        <infoLink id="bedf-9967-8431-aec9" name="Vow of Honour" hidden="false" targetId="28a0-3aa5-799b-71b0" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -6099,6 +6075,17 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9611-1e95-fe24-b8c2" type="max"/>
       </constraints>
+      <infoLinks>
+        <infoLink id="ce1b-6c80-799e-ec16" name="Sacristan Pledge" hidden="false" targetId="b9b9-92f8-a081-9524" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -6109,6 +6096,17 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0033-c3c8-fa9b-d4c1" type="max"/>
       </constraints>
+      <infoLinks>
+        <infoLink id="1dde-1822-dcea-48b3" name="Vow of Honour" hidden="false" targetId="28a0-3aa5-799b-71b0" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -6119,6 +6117,17 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3b91-55a9-ffc9-6174" type="max"/>
       </constraints>
+      <infoLinks>
+        <infoLink id="bc36-c219-6529-84e5" name="Sacristan Pledge" hidden="false" targetId="b9b9-92f8-a081-9524" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -7520,6 +7529,11 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
       </costs>
     </selectionEntry>
     <selectionEntry id="2e05-b10c-9609-d15f" name="House &lt;Mixed&gt;" hidden="false" collective="false" import="true" type="upgrade"/>
+    <selectionEntry id="c335-1f2a-e252-3ede" name="Questor Allegiance &lt;Mixed&gt;" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="029c-4e08-719f-882a" type="max"/>
+      </constraints>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="8a10-ffae-4091-99d9" name="Questoris Carapace Weapons" hidden="false" collective="false" import="true">
