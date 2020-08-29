@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="65" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="153" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="66" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="153" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="82cd-d24f-pubN65537" name="Codex: Imperial Knights" shortName="Codex" publisher="Codex: Imperial Knights"/>
     <publication id="ddcc-9444-870e-9593" name="Imperial Knights FW Army List" shortName="Forgeworld" publisher="Imperial Knights FW Army List"/>
@@ -2711,7 +2711,7 @@ of 2. </characteristic>
         <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2f48-faf8-ffe0-4dc8" type="min"/>
       </constraints>
       <selectionEntryGroups>
-        <selectionEntryGroup id="0f82-a8ca-137a-4ca0" name="Household" hidden="false" collective="false" import="true" defaultSelectionEntryId="58e7-47ff-1a57-b1c5">
+        <selectionEntryGroup id="0f82-a8ca-137a-4ca0" name="Household" hidden="false" collective="false" import="true" defaultSelectionEntryId="f9c1-3901-8d67-cee4">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6eb4-cc0f-b300-64ed" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a89e-9e9d-8bb2-c804" type="max"/>
@@ -2765,6 +2765,11 @@ of 2. </characteristic>
             <entryLink id="6f32-8384-4412-3f26" name="House &lt;Custom&gt;" hidden="false" collective="false" import="true" targetId="e7b7-7e60-d76d-15fc" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d54f-0407-167a-9361" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="f9c1-3901-8d67-cee4" name="House &lt;Mixed&gt;" hidden="false" collective="false" import="true" targetId="2e05-b10c-9609-d15f" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9946-4144-e667-ec13" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -4945,9 +4950,16 @@ of 2. </characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1a3e-2757-cab2-5bde" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1a3e-2757-cab2-5bde" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -4974,10 +4986,17 @@ of 2. </characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="643d-392f-e1cb-8739" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f997-b8ab-a3c3-6868" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="643d-392f-e1cb-8739" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -5009,10 +5028,17 @@ of 2. </characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f648-9f71-21e9-7b3a" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c239-09b7-6bfc-4ab8" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f648-9f71-21e9-7b3a" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -5045,8 +5071,15 @@ of 2. </characteristic>
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="46c4-d7d5-e181-3d7c" type="lessThan"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="46c4-d7d5-e181-3d7c" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -5073,9 +5106,16 @@ of 2. </characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c430-2abc-7440-ea3d" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c430-2abc-7440-ea3d" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -5102,10 +5142,17 @@ of 2. </characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9bf4-333b-a60a-49f4" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="35c4-c945-a85e-d5c6" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9bf4-333b-a60a-49f4" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -5144,7 +5191,7 @@ of 2. </characteristic>
                 <conditionGroup type="and">
                   <conditions>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3be9-ae63-fcc3-8c2c" type="lessThan"/>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -5174,9 +5221,16 @@ of 2. </characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c611-7ad7-b2d5-4c22" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c611-7ad7-b2d5-4c22" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -5250,9 +5304,16 @@ of 2. </characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="33f6-664b-bd3a-4f1d" type="lessThan"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="atLeast"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="33f6-664b-bd3a-4f1d" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -7458,6 +7519,7 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="2e05-b10c-9609-d15f" name="House &lt;Mixed&gt;" hidden="false" collective="false" import="true" type="upgrade"/>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="8a10-ffae-4091-99d9" name="Questoris Carapace Weapons" hidden="false" collective="false" import="true">
@@ -7675,7 +7737,7 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="675f-1d51-385c-7b12" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="a8cc-4de8-3e97-c8c7" name="Heirloom: Angel&apos;s Grace" hidden="false" collective="false" import="true" targetId="6c29-dcb8-b621-9c65" type="selectionEntry">
+        <entryLink id="a8cc-4de8-3e97-c8c7" name="Heirloom (Hawkshroud): Angel&apos;s Grace" hidden="false" collective="false" import="true" targetId="6c29-dcb8-b621-9c65" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cb57-a53d-f330-8130" type="max"/>
           </constraints>
@@ -7742,9 +7804,14 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
         <entryLink id="51dc-75c3-01cc-0308" name="Warlord Trait (Vulker): Adamantium Knight" hidden="false" collective="false" import="true" targetId="08bf-f276-8eaf-c02a" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="33f6-664b-bd3a-4f1d" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="33f6-664b-bd3a-4f1d" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -7752,12 +7819,17 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5e8a-082f-b0f0-77c8" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="8baa-d41a-352f-5b0f" name="Warlord Trait Terryn: Champion of the Household" hidden="false" collective="false" import="true" targetId="12d5-da9c-7185-acf0" type="selectionEntry">
+        <entryLink id="8baa-d41a-352f-5b0f" name="Warlord Trait (Terryn): Champion of the Household" hidden="false" collective="false" import="true" targetId="12d5-da9c-7185-acf0" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="643d-392f-e1cb-8739" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="643d-392f-e1cb-8739" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -7768,9 +7840,14 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
         <entryLink id="76dd-0b6d-1e67-9085" name="Warlord Trait (Taranis): Knight of Mars" hidden="false" collective="false" import="true" targetId="e338-0993-1683-aa21" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9bf4-333b-a60a-49f4" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9bf4-333b-a60a-49f4" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -7778,12 +7855,17 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="090b-5164-9536-a984" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="da3f-6e39-4f69-b22a" name="Warlord Trait Raven: Master of the Trial" hidden="false" collective="false" import="true" targetId="7020-2326-823a-0da4" type="selectionEntry">
+        <entryLink id="da3f-6e39-4f69-b22a" name="Warlord Trait (Raven): Master of the Trial" hidden="false" collective="false" import="true" targetId="7020-2326-823a-0da4" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3be9-ae63-fcc3-8c2c" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3be9-ae63-fcc3-8c2c" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -7794,9 +7876,14 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
         <entryLink id="ce1f-df7f-4b5b-6838" name="Warlord Trait (Mortan): Legacy of the Black Pall" hidden="false" collective="false" import="true" targetId="269a-dfa5-31dc-88d0" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f648-9f71-21e9-7b3a" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f648-9f71-21e9-7b3a" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -7807,9 +7894,14 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
         <entryLink id="01bf-fe90-3691-17c1" name="Warlord Trait (Hawkshroud): Duty of the Forsworn" hidden="false" collective="false" import="true" targetId="77be-97f3-290e-0aa9" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c430-2abc-7440-ea3d" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c430-2abc-7440-ea3d" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -7820,9 +7912,14 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
         <entryLink id="c7c1-5720-46d8-c860" name="Warlord Trait (Griffith): Master of the Joust" hidden="false" collective="false" import="true" targetId="7497-86f3-53ce-8211" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="46c4-d7d5-e181-3d7c" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="46c4-d7d5-e181-3d7c" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -7833,9 +7930,14 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
         <entryLink id="314d-b925-5250-b541" name="Warlord Trait (Krast): First Knight" hidden="false" collective="false" import="true" targetId="d790-51db-006d-815f" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c611-7ad7-b2d5-4c22" type="lessThan"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c611-7ad7-b2d5-4c22" type="lessThan"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2e05-b10c-9609-d15f" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
