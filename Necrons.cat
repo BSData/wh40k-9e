@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="61c6-c8c5-a304-ff5f" name="Necrons" revision="73" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="149" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="61c6-c8c5-a304-ff5f" name="Necrons" revision="74" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="153" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="61c6-c8c5-pubN65537" name="Codex: Necrons" shortName="Necrons" publisher="Codex: Necrons" publicationDate="March 2018" publisherUrl="https://www.games-workshop.com/en-US/Codex-Necrons-2018-ENG"/>
     <publication id="61c6-c8c5-pubN106894" name="Seraptek Construct Datasheet" shortName="FW Datasheet" publisher="Forgeworld Website" publisherUrl="https://www.forgeworld.co.uk/resources/PDF/Downloads/Forgeworld_Necron_Seraptek_Datasheet.pdf"/>
@@ -5758,6 +5758,7 @@
       </constraints>
       <entryLinks>
         <entryLink id="4e77-69ff-a2d9-916f" name="Dynastic Code" hidden="false" collective="false" import="true" targetId="c084-1fe3-9662-2308" type="selectionEntryGroup"/>
+        <entryLink id="d5cb-5c36-c3a8-020d" name="Custom Dynastic Code" hidden="false" collective="false" import="true" targetId="05ab-527d-32b4-fe08" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -6807,9 +6808,6 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="e552-6548-b984-1da6" name="Dynasty: Maynarkh" publicationId="03b4-8286-592c-c370" hidden="false" collective="false" import="true" type="upgrade">
-      <entryLinks>
-        <entryLink id="9960-8e92-0c6d-8aef" name="Custom Dynastic Code" hidden="false" collective="false" import="true" targetId="05ab-527d-32b4-fe08" type="selectionEntryGroup"/>
-      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -6887,9 +6885,6 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="56dd-f1e1-5dcb-f538" name="Dynasty: &lt;Custom&gt;" publicationId="61c6-c8c5-pubN65537" hidden="false" collective="false" import="true" type="upgrade">
-      <entryLinks>
-        <entryLink id="a203-3b9a-c1a7-b695" name="Custom Dynastic Code" hidden="false" collective="false" import="true" targetId="05ab-527d-32b4-fe08" type="selectionEntryGroup"/>
-      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -8516,7 +8511,29 @@
         </entryLink>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="05ab-527d-32b4-fe08" name="Custom Dynastic Code" publicationId="61c6-c8c5-pubN65537" hidden="false" collective="false" import="true" defaultSelectionEntryId="4a81-17ee-cb56-e699">
+    <selectionEntryGroup id="05ab-527d-32b4-fe08" name="Custom Dynastic Code" publicationId="61c6-c8c5-pubN65537" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="56dd-f1e1-5dcb-f538" type="lessThan"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e552-6548-b984-1da6" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="5cc2-e6e8-b7bb-c34f" value="0.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="56dd-f1e1-5dcb-f538" type="lessThan"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e552-6548-b984-1da6" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5cc2-e6e8-b7bb-c34f" type="min"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eb04-6f48-0887-b4d5" type="max"/>
