@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="153" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="154" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Developer" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -5883,6 +5883,34 @@
         <cost name="pts" typeId="points" value="470.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="06e4-8b2d-822a-d894" name="*Core Stratagems" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a0d2-f731-bdd7-fb39" type="max"/>
+      </constraints>
+      <rules>
+        <rule id="fadb-f22f-0a34-4f7b" name="Command Re-Roll - 1 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
+          <description>Use this Stratagem after you have nade a hit roll, a wound roll, a damage roll, a saving throw, an Advance roll, a charge roll, a Psychic test, a Deny the Witch test or you have rolled the dice to determine the number of attacks made by a weapon. Re-roll that roll, test or saving throw.</description>
+        </rule>
+        <rule id="5207-420c-d1c4-db47" name="Cut them down - 1 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
+          <description>Use this Stratagem when an enemy unit Falls Back, before any models in that unit are moved. Roll one D6 for each model from your army that is within Engagement Range of that enemy unit; for each result of 6, that enemy unit suffers 1 mortal wound.</description>
+        </rule>
+        <rule id="e263-18fe-f1f2-5a17" name="Desperate Breakout - 2 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
+          <description>Use this Stratagem in your Movement phase. Select one unit from your army that has not been selected to move this phase and which is in Engagement Range with at least one enemy unit. Roll one D6 for each model in that unit; for each result of 1 one model in that unit of your choice is destroyed. Assuming that unit was not destroyed, it can now attempt to Fall Back, and when doing so its models can be moved across enemy models as if they were not there. Any model in that unit that ends its Fall Back move within Engagement Range of any enemy model is destroyed. Assuming the unit is not destroyed, it cannot do anything else this turn (i.e. it cannot attempt to manifest psychic powers, shoot, declare a charge, be selected to fight etc.) even if it has a rule that would allow it do do so after Falling Back.</description>
+        </rule>
+        <rule id="63fa-fc28-6b57-b4e1" name="Emergency Disemparkation - 1 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
+          <description>Use this Stratagem when a TRANSPORT model from your army is destroyed. All units that are embarked within that model can be set up wholly within 6&quot; of the destroyed model when they disembark instead of the normal 3&quot; before the model itself is removed from the battlefield. These units are not affected by the destroyed model&apos;s Explodes ability (or equivalent) - instead you must roll one D6 for each model you just set up on the battlefield. Instead of one model that disembarked (your choice) being destroyed on a roll of 1, one model that is disembarked (of your choice) is destroyed for each roll of 1 or 2. Units cannot declare a charge (pg 224) or perform a Heroic Intervention (pg 255) in the same turn that they disembarked from a destroyed TRANSPORT model.</description>
+        </rule>
+        <rule id="42bf-44ca-7ec7-3d5d" name="Fire Overwatch - 1 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
+          <description>Use this Stratagen after an enemy unit has declared a charge against one or more units from your army. One of the units that was chosen as the target of that charge can fire Overwatch (pg 227) before the charge roll is made.</description>
+        </rule>
+        <rule id="bb68-54ef-d631-2609" name="Counter-Offensive - 2 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
+          <description>Use this Stratagem after an enemy unit has fought in this turn. Select one of your own eligible units and fight with it next.</description>
+        </rule>
+        <rule id="16d2-81a9-932b-1e86" name="Insane Bravery - 2 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
+          <description>Use this Stratagen before you take a Morale test for a unit in your army. That test is automatically pased (do not roll any dice). You can only use this Stratagem once per battle.</description>
+        </rule>
+      </rules>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
