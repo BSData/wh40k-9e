@@ -1,18 +1,18 @@
+# This action continuously checks all pushes and Pull requests
+# for validity, integrity and bugs in datafiles.
+# For details, visit https://github.com/BSData/check-datafiles
 name: CI
-
 on: [ push, pull_request ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Install wham
-      run: dotnet tool install wham --version 0.7.0 --tool-path ../tools
-    - name: Publish snapshot.bsr
-      run: ../tools/wham publish -f snapshot -o artifacts/snapshot --verbosity detailed
-    - name: Upload snapshot.bsr as workflow artifact
-      uses: actions/upload-artifact@v1
+
+    - uses: BSData/check-datafiles@v1
+      id: check
+
+    - uses: actions/upload-artifact@v1
       with:
-        name: snapshot
-        path: artifacts/snapshot
+        name: artifact
+        path: ${{ steps.check.outputs.staging-path }}
