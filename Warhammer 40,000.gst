@@ -197,8 +197,6 @@
     <categoryEntry id="da67-195b-7909-341a" name="Daemon Primarch" hidden="false"/>
     <categoryEntry id="5750-de0a-589d-eacf" name="Supreme Commander" hidden="false"/>
     <categoryEntry id="26b0-4bb9-73aa-d3d7" name="Primarch | Daemon Primarch | Supreme Commander" hidden="false"/>
-    <categoryEntry id="175a-5be5-3118-f2f5" name="Faction: &lt;Craftworlds&gt;" hidden="false"/>
-    <categoryEntry id="0468-3651-9d60-6706" name="Faction: Drukhari" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
