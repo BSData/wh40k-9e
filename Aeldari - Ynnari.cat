@@ -2122,6 +2122,7 @@ form, it is automatically passed. In addition, each time a model with this form 
     <selectionEntryGroup id="6d53-0ef2-f778-f2e8" name="Detachment Type" hidden="false" collective="false" import="true">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="348d-5ff4-3ab2-4449" type="min"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="7024-4496-d5bc-fcd7" type="max"/>
       </constraints>
       <selectionEntries>
         <selectionEntry id="4981-9c64-7ab7-7edc" name="Ynnari" hidden="true" collective="false" import="true" type="upgrade">
@@ -2177,11 +2178,76 @@ form, it is automatically passed. In addition, each time a model with this form 
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="14d7-069c-2018-2af1" name="Craftworld Attributes" hidden="false" collective="false" import="true" targetId="1aad-b228-da34-9b39" type="selectionEntryGroup"/>
-        <entryLink id="f958-d130-4078-3324" name="Masque Form" hidden="false" collective="false" import="true" targetId="84c8-a885-8281-6ebb" type="selectionEntryGroup"/>
-        <entryLink id="8874-3258-a351-12b8" name="Haemonculus Coven" hidden="false" collective="false" import="true" targetId="2be6-8dc6-b5b9-bf00" type="selectionEntryGroup"/>
-        <entryLink id="bde3-db7b-44a7-8921" name="Kabal" hidden="false" collective="false" import="true" targetId="b510-bdc6-c883-4217" type="selectionEntryGroup"/>
-        <entryLink id="8f4a-d365-bf92-c30a" name="Wych Cult" hidden="false" collective="false" import="true" targetId="e03b-b743-f081-46a1" type="selectionEntryGroup"/>
+        <entryLink id="14d7-069c-2018-2af1" name="Craftworld Attributes" hidden="false" collective="false" import="true" targetId="1aad-b228-da34-9b39" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="20fc-5c6e-4a04-320f" type="lessThan"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="f958-d130-4078-3324" name="Masque Form" hidden="false" collective="false" import="true" targetId="84c8-a885-8281-6ebb" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b8a1-9cde-4384-c698" type="lessThan"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="8874-3258-a351-12b8" name="Haemonculus Coven" hidden="false" collective="false" import="true" targetId="2be6-8dc6-b5b9-bf00" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="955e-536a-e290-5dcf" type="lessThan"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="bde3-db7b-44a7-8921" name="Kabal" hidden="false" collective="false" import="true" targetId="b510-bdc6-c883-4217" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="955e-536a-e290-5dcf" type="lessThan"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="8f4a-d365-bf92-c30a" name="Wych Cult" hidden="false" collective="false" import="true" targetId="e03b-b743-f081-46a1" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="955e-536a-e290-5dcf" type="lessThan"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="2be6-8dc6-b5b9-bf00" name="Haemonculus Coven" hidden="false" collective="false" import="true"/>
@@ -2189,20 +2255,20 @@ form, it is automatically passed. In addition, each time a model with this form 
     <selectionEntryGroup id="e03b-b743-f081-46a1" name="Wych Cult" hidden="false" collective="false" import="true"/>
     <selectionEntryGroup id="9b35-7aef-974a-5b0f" name="Relics of Ynnead" hidden="false" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" childId="2ce0-03a1-ec03-76aa" type="lessThan"/>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
         <modifier type="increment" field="9e47-ae6e-5c89-deeb" value="1.0">
           <repeats>
             <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a1c9-09d6-2587-9553" repeats="1" roundUp="false"/>
           </repeats>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="lessThan"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2ce0-03a1-ec03-76aa" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
