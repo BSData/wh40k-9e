@@ -5888,13 +5888,13 @@
           <description>Use this Stratagem when a TRANSPORT model from your army is destroyed. All units that are embarked within that model can be set up wholly within 6&quot; of the destroyed model when they disembark instead of the normal 3&quot; before the model itself is removed from the battlefield. These units are not affected by the destroyed model&apos;s Explodes ability (or equivalent) - instead you must roll one D6 for each model you just set up on the battlefield. Instead of one model that disembarked (your choice) being destroyed on a roll of 1, one model that is disembarked (of your choice) is destroyed for each roll of 1 or 2. Units cannot declare a charge (pg 224) or perform a Heroic Intervention (pg 255) in the same turn that they disembarked from a destroyed TRANSPORT model.</description>
         </rule>
         <rule id="42bf-44ca-7ec7-3d5d" name="Fire Overwatch - 1 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
-          <description>Use this Stratagen after an enemy unit has declared a charge against one or more units from your army. One of the units that was chosen as the target of that charge can fire Overwatch (pg 227) before the charge roll is made.</description>
+          <description>Use this Stratagem after an enemy unit has declared a charge against one or more units from your army. One of the units that was chosen as the target of that charge can fire Overwatch (pg 227) before the charge roll is made.</description>
         </rule>
         <rule id="bb68-54ef-d631-2609" name="Counter-Offensive - 2 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
           <description>Use this Stratagem after an enemy unit has fought in this turn. Select one of your own eligible units and fight with it next.</description>
         </rule>
         <rule id="16d2-81a9-932b-1e86" name="Insane Bravery - 2 CP" publicationId="28ec-711c-pubN72690" page="255" hidden="false">
-          <description>Use this Stratagen before you take a Morale test for a unit in your army. That test is automatically passed (do not roll any dice). You can only use this Stratagem once per battle.</description>
+          <description>Use this Stratagem before you take a Morale test for a unit in your army. That test is automatically passed (do not roll any dice). You can only use this Stratagem once per battle.</description>
         </rule>
       </rules>
       <costs>
