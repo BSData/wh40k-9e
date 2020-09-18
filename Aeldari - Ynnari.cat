@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="58" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR @FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="158" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="59" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR @FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="159" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <comment>This library will now become an Aeldari library - all shared pointy ear stuff will live here - eventually...</comment>
   <readme>This library will now become an Aeldari library - all shared pointy ear stuff will live here - eventually...</readme>
   <publications>
@@ -14,7 +14,7 @@
     </profileType>
   </profileTypes>
   <categoryEntries>
-    <categoryEntry id="ebb3-4f37-6e57-7a8e" name="Faction: Ynnari" hidden="false"/>
+    <categoryEntry id="ebb3-4f37-6e57-7a8e" name="Ynnari" hidden="false"/>
     <categoryEntry id="c8df-4b67-2b52-4472" name="Yvraine" hidden="false"/>
     <categoryEntry id="48e7-cfd4-1ea3-5847" name="The Visarch" hidden="false"/>
     <categoryEntry id="94b1-311f-cf71-99dd" name="Daemon" hidden="false"/>
@@ -32,6 +32,7 @@
     <categoryEntry id="43ef-6837-7167-e8ec" name="Faction: Prophets of Flesh" hidden="false"/>
     <categoryEntry id="e95e-5a32-aa75-4fc7" name="Faction: Reborn Drukhari" hidden="false"/>
     <categoryEntry id="859a-9acf-049d-dcd9" name="Faction: Wych Cult of Strife" hidden="false"/>
+    <categoryEntry id="85a4-070d-d3c6-dc3b" name="Faction: Reborn Asuryani" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="a049-52ed-ef53-63ec" name="Yvraine" hidden="false" collective="false" import="true" targetId="1409-e740-c7c9-3758" type="selectionEntry"/>
@@ -600,6 +601,17 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="9ce9-34d4-da91-c9bf" name="Hungering Blade" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="124a-de32-6682-0bd7" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cf07-6449-96f1-cb95" type="max"/>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f4d2-2dbf-e979-5647" type="max"/>
@@ -994,10 +1006,10 @@
     </selectionEntry>
     <selectionEntry id="f044-1fd2-2aa0-0217" name="Relic of Ynnead" publicationId="5b08-09e5-a80a-fd67" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="d87e-56e9-068d-6c67" value="2.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="746d-c99b-ba49-17bb" type="equalTo"/>
-          </conditions>
+        <modifier type="increment" field="d87e-56e9-068d-6c67" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="746d-c99b-ba49-17bb" repeats="1" roundUp="false"/>
+          </repeats>
         </modifier>
         <modifier type="decrement" field="d87e-56e9-068d-6c67" value="1.0">
           <conditions>
@@ -1486,6 +1498,28 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="124a-de32-6682-0bd7" name="Huskblade" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c5c0-2253-2f42-56b6" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="e929-6ef3-e01c-bef3" name="Huskblade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="5.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="7f93-a621-fdeb-0426" name="Revenant Discipline" publicationId="6a4d-2a41-5e6b-c57a" hidden="false" collective="false" import="true">
@@ -1614,6 +1648,13 @@
       </selectionEntries>
     </selectionEntryGroup>
     <selectionEntryGroup id="2fc3-8ba7-0594-29f6" name="Warlord Trait (Ynnari)" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="882f-3708-86b8-151e" value="2.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="746d-c99b-ba49-17bb" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f682-fc54-d21a-3941" type="max"/>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="882f-3708-86b8-151e" type="max"/>
@@ -1693,7 +1734,7 @@
             <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2ce0-03a1-ec03-76aa" type="notEqualTo"/>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d043-3847-e963-fb5d" type="notEqualTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="746d-c99b-ba49-17bb" type="equalTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
