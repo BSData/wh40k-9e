@@ -47,15 +47,6 @@
         </modifier>
       </modifiers>
     </entryLink>
-    <entryLink id="a1a6-d9fb-3187-fa28" name="Stratagem: Exalted of Ynnead" hidden="false" collective="false" import="true" targetId="746d-c99b-ba49-17bb" type="selectionEntry">
-      <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
-          </conditions>
-        </modifier>
-      </modifiers>
-    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="1409-e740-c7c9-3758" name="Yvraine" publicationId="28ec-711c-pubN76527" page="78" hidden="false" collective="false" import="true" type="unit">
@@ -549,6 +540,7 @@
     <selectionEntry id="746d-c99b-ba49-17bb" name="Stratagem: Exalted of Ynnead" publicationId="5b08-09e5-a80a-fd67" page="91" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b840-e4c9-08e2-f599" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3242-73b4-23aa-ed62" type="max"/>
       </constraints>
       <profiles>
         <profile id="8c02-bbab-76b2-4085" name="Stratagem: Exalted of Ynnead" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -697,17 +689,20 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="2ce0-03a1-ec03-76aa" name="Warlord" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="4fcb-1fd9-2d03-b668" value="2.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="746d-c99b-ba49-17bb" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b24d-164f-af8c-68a7" type="max"/>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4fcb-1fd9-2d03-b668" type="max"/>
       </constraints>
-      <entryLinks>
-        <entryLink id="0cf2-9198-a99b-6845" name="Warlord" hidden="false" collective="false" import="true" targetId="33f6-60da-7b70-5fee" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5315-22f3-11e9-c7e6" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ea1-efa9-3d1f-fa7a" type="min"/>
-          </constraints>
-        </entryLink>
-      </entryLinks>
+      <categoryLinks>
+        <categoryLink id="5136-07c6-b1d0-b5af" name="Warlord" hidden="false" targetId="ae09-117e-a6fa-316b" primary="false"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -1734,7 +1729,7 @@
             <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2ce0-03a1-ec03-76aa" type="notEqualTo"/>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="746d-c99b-ba49-17bb" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="746d-c99b-ba49-17bb" type="notEqualTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -2601,6 +2596,9 @@ form, it is automatically passed. In addition, each time a model with this form 
       </constraints>
       <selectionEntries>
         <selectionEntry id="a5f6-e065-b5c1-f7ae" name="*Custom Coven*" hidden="false" collective="false" import="true" type="upgrade">
+          <categoryLinks>
+            <categoryLink id="4290-d20e-55ee-e9d5" name="Faction: &lt;Haemonculus Coven&gt;" hidden="false" targetId="6dc4-d2cd-0f45-5586" primary="false"/>
+          </categoryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup id="6b92-6a3c-65a2-249d" name="Coven Obsessions" hidden="false" collective="false" import="true">
               <modifierGroups>
@@ -2772,6 +2770,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="3210-edbb-d711-b9e0" name="Faction: &lt;Haemonculus Coven&gt;" hidden="false" targetId="6dc4-d2cd-0f45-5586" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -2786,6 +2787,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="e912-92da-42d0-fc14" name="Faction: &lt;Haemonculus Coven&gt;" hidden="false" targetId="6dc4-d2cd-0f45-5586" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -2800,6 +2804,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="fd2c-19be-e317-86a5" name="Faction: &lt;Haemonculus Coven&gt;" hidden="false" targetId="6dc4-d2cd-0f45-5586" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -2815,6 +2822,9 @@ form, it is automatically passed. In addition, each time a model with this form 
       </constraints>
       <selectionEntries>
         <selectionEntry id="e132-5f1e-1f13-6805" name="*Custom Kabal*" hidden="false" collective="false" import="true" type="upgrade">
+          <categoryLinks>
+            <categoryLink id="2974-ac2f-c9f7-89eb" name="Faction: &lt;Kabal&gt;" hidden="false" targetId="105d-2b08-1dc3-2f69" primary="false"/>
+          </categoryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup id="962b-7967-4a87-44b0" name="Kabal Obsessions" hidden="false" collective="false" import="true">
               <constraints>
@@ -2975,6 +2985,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="4b68-a9e9-01ea-ac44" name="Faction: &lt;Kabal&gt;" hidden="false" targetId="105d-2b08-1dc3-2f69" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -2989,6 +3002,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="3603-c123-8032-7191" name="Faction: &lt;Kabal&gt;" hidden="false" targetId="105d-2b08-1dc3-2f69" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -3003,6 +3019,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="ca83-ae94-1256-3da5" name="Faction: &lt;Kabal&gt;" hidden="false" targetId="105d-2b08-1dc3-2f69" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -3017,6 +3036,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="d811-ad7a-f6ea-595b" name="Faction: &lt;Kabal&gt;" hidden="false" targetId="105d-2b08-1dc3-2f69" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -3032,6 +3054,9 @@ form, it is automatically passed. In addition, each time a model with this form 
       </constraints>
       <selectionEntries>
         <selectionEntry id="7fa3-a898-7ad6-3d89" name="*Custom Cult*" hidden="false" collective="false" import="true" type="upgrade">
+          <categoryLinks>
+            <categoryLink id="d088-48e2-7fb2-b14b" name="Faction: &lt;Wych Cult&gt;" hidden="false" targetId="ce1e-8a0d-dae0-8bd3" primary="false"/>
+          </categoryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup id="d52e-88e9-2192-5d23" name="Cult Obsessions" hidden="false" collective="false" import="true">
               <modifierGroups>
@@ -3217,6 +3242,9 @@ form, it is automatically passed. In addition, each time a model with this form 
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="590a-47c1-0a58-68dc" name="Faction: &lt;Wych Cult&gt;" hidden="false" targetId="ce1e-8a0d-dae0-8bd3" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -3232,6 +3260,9 @@ obsession, it is automatically passed.</characteristic>
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="d559-13ca-3b60-45a0" name="Faction: &lt;Wych Cult&gt;" hidden="false" targetId="ce1e-8a0d-dae0-8bd3" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -3246,6 +3277,9 @@ obsession, it is automatically passed.</characteristic>
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="fd40-3356-c730-aaff" name="Faction: &lt;Wych Cult&gt;" hidden="false" targetId="ce1e-8a0d-dae0-8bd3" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
