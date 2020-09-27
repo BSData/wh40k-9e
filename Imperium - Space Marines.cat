@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="177" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="154" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="178" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="159" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -10110,6 +10110,7 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                                 <condition field="selections" scope="5dba-fb9b-215e-7d1e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="58d9-7966-fd34-79da" type="equalTo"/>
                                 <condition field="selections" scope="5dba-fb9b-215e-7d1e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1943-e56e-b6a4-942d" type="equalTo"/>
                                 <condition field="selections" scope="5dba-fb9b-215e-7d1e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4a44-8ed1-b85d-3683" type="equalTo"/>
+                                <condition field="selections" scope="5dba-fb9b-215e-7d1e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a6a3-0bb6-3d11-ec2f" type="equalTo"/>
                               </conditions>
                             </conditionGroup>
                           </conditionGroups>
@@ -10226,6 +10227,21 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
                         <cost name="pts" typeId="points" value="0.0"/>
                         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                       </costs>
+                    </selectionEntry>
+                    <selectionEntry id="a6a3-0bb6-3d11-ec2f" name="Silver Templars" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="28e2-d179-3d66-a272" type="notInstanceOf"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
+                      <rules>
+                        <rule id="492c-d185-1732-9373" name="The Bond Matrial" hidden="false">
+                          <description>Each time a model with this tactic make a melee attack against an INFANTRY or BIKER unit, an unmodified hit roll of a 6 automatically wounds the target
+Each time a unit with this tactic is selected to shoot or fight you can re-roll one hit roll when resolving that units attacks. </description>
+                        </rule>
+                      </rules>
                     </selectionEntry>
                   </selectionEntries>
                 </selectionEntryGroup>
@@ -15289,8 +15305,16 @@ Crewed Artillery:After this unit is set up on the battlefield for the first time
       </costs>
     </selectionEntry>
     <selectionEntry id="e277-184d-4e8a-6177" name="Show Primaris Only" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="d369-7217-3ae2-6357" value="1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a6a3-0bb6-3d11-ec2f" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a3f9-dfde-eded-af50" type="max"/>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d369-7217-3ae2-6357" type="min"/>
       </constraints>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
