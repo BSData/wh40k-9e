@@ -1,7 +1,7 @@
 ---
-title: RELEASE THREAD: {{ 'now' | date: "%-m" }} {{ 'now' | date: "%Y" }}
-assignees: DrTobogganMD
-labels: Type: Release Thread
+title: "RELEASE THREAD: {{ 'now' | date: "%-m" }} {{ 'now' | date: "%Y" }}"
+assignees: "DrTobogganMD"
+labels: "Type: Release Thread"
 ---
 Data Developers - Please use this issue to push new releases if doing so via comment.
 
