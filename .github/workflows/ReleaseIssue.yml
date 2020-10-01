@@ -1,5 +1,5 @@
 name: Monthly Release
-  
+
 on:
   push:
   #schedule:
@@ -9,22 +9,24 @@ jobs:
   monthly_release:
     name: Monthly Release
     runs-on: ubuntu-latest
-           
     steps:
+
     # Repo code checkout required if `template` is used
     - name: Checkout
       uses: actions/checkout@v2
-      
+
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%B %Y')"
+
     - name: issue-bot
       uses: imjohnbo/issue-bot@v2
-
       with:
         assignees: "DrTobogganMD" # GitHub handles without the @
         labels: "Type: Release Thread"
         pinned: true
         close-previous: true
-        Title: "RELEASE THREAD: ${{ DATE }}"
+        title: "RELEASE THREAD: ${{ steps.date.outputs.date }}"
         template: ".github/RELEASE_TEMPLATE.md"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DATE: $(Get-Date -Format yyyyMMddhhmmss)
