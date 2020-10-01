@@ -1,7 +1,7 @@
-- name: Scheduled Issue
-  uses: imjohnbo/issue-bot@v2.3.1
-  
 name: Monthly Release
+uses: imjohnbo/issue-bot@v2.3.1
+with:
+  repo-token: ${{ secrets.GITHUB_TOKEN }}
 on:
   schedule:
    - cron: 0 0 1 * *  # Every 1st day of the month at 0000 – https://crontab.guru
@@ -24,5 +24,3 @@ jobs:
         pinned: true
         close-previous: true
         template: ".github/ISSUE_TEMPLATE/RELEASE_TEMPLATE.md
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
