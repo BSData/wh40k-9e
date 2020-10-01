@@ -1,5 +1,5 @@
 ---
-title: "RELEASE THREAD: {{ 'now' | date: "%-m" }} {{ 'now' | date: "%Y" }}"
+title: "RELEASE THREAD: {{ 'now' | date: '%-m' }} {{ 'now' | date: '%Y' }}"
 assignees: "DrTobogganMD"
 labels: "Type: Release Thread"
 ---
