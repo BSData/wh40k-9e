@@ -1,5 +1,4 @@
 ---
-title: "RELEASE THREAD: <$today:MM/dd/yyyy>"
 assignees: "DrTobogganMD"
 labels: "Type: Release Thread"
 ---
