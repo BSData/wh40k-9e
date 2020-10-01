@@ -1,3 +1,4 @@
+# Workflow to create a github issue every month to facilitate comment based releases
 name: Monthly Release
 
 on:
@@ -6,19 +7,22 @@ on:
 
 jobs:
   monthly_release:
-    name: Monthly Release
+    name: monthly-release
     runs-on: ubuntu-latest
     steps:
 
-    # Repo code checkout required if `template` is used
+# Repo code checkout required if `template` is used
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Get current date
+# Get current month for issue title
+    - name: get-date
       id: date
       run: echo "::set-output name=date::$(date +'%B %Y')"
 
-    - name: issue-bot
+# Create, pin, label, and assign release issue
+    - name: create-issue
+      id: issue
       uses: imjohnbo/issue-bot@v2
       with:
         pinned: true
