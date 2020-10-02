@@ -19,7 +19,7 @@ Add a comment with one of the following to push a release:
 *given latest release v2.2.2, will create a release v2.2.3 (increases patch)*
 > /release
 >
-> This is title of v2.3.0
+> This is title of v2.2.3
 
 ### For a Chapter Approved/Big FAQ initial releases (game-wide updates):
 *given latest release v2.2.2, will create a release v2.3.0 (increases minor, resets patch)*
