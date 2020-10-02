@@ -1,5 +1,4 @@
 ---
-assignees: "DrTobogganMD"
 labels: "Type: Release Thread"
 ---
 Data Developers - Please use this issue to push new releases if doing so via comment.
