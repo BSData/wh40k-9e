@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="162" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="163" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -197,6 +197,7 @@
     <categoryEntry id="da67-195b-7909-341a" name="Daemon Primarch" hidden="false"/>
     <categoryEntry id="5750-de0a-589d-eacf" name="Supreme Commander" hidden="false"/>
     <categoryEntry id="26b0-4bb9-73aa-d3d7" name="Primarch | Daemon Primarch | Supreme Commander" hidden="false"/>
+    <categoryEntry id="08f1-d244-eb44-7e01" name="Core" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -2945,7 +2946,6 @@
         <infoLink id="df42-5dc2-4e53-ec49" name="Storm bolter" hidden="false" targetId="505e-a5aa-edab-6d5b" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="3.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
