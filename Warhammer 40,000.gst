@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="163" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="164" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -2948,6 +2948,7 @@
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="38e3-37a8-42a3-e195" name="Stormstrike missile launcher" hidden="false" collective="false" import="true" type="upgrade">
@@ -3269,7 +3270,7 @@
     </selectionEntry>
     <selectionEntry id="38b5-ef30-f87f-5275" name="Storm shield" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="points" value="10">
+        <modifier type="set" field="points" value="10.0">
           <conditions>
             <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
           </conditions>
@@ -7889,7 +7890,7 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 3</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
@@ -7905,12 +7906,12 @@
     </profile>
     <profile id="cdc3-3459-a28c-a9cf" name="Flamer" publicationId="28ec-711c-pubN72690" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
       </characteristics>
     </profile>
     <profile id="ec4c-1132-ddaf-db8e" name="Meltagun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -7920,7 +7921,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2.</characteristic>
       </characteristics>
     </profile>
     <profile id="03e5-60f2-4726-5cdd" name="Plasma gun, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -7940,17 +7941,17 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon is allocated to a model with a Save characteristic of 3+ or better, that attack has a Damage characteristic of 2.</characteristic>
       </characteristics>
     </profile>
-    <profile id="c76b-4051-dbf4-d5b8" name="Grav-cannon and grav-amp" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="c76b-4051-dbf4-d5b8" name="Grav-cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon is allocated to a model with a Save characteristic of 3+ or better, that attack has a Damage characteristic of 2.</characteristic>
       </characteristics>
     </profile>
     <profile id="4609-79eb-7505-68a5" name="Hot-shot Laspistol" publicationId="28ec-711c-pubN72690" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8005,12 +8006,12 @@
     </profile>
     <profile id="2608-8425-4f4f-7f41" name="Heavy flamer" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
       </characteristics>
     </profile>
     <profile id="92be-1bfc-f355-f214" name="Multi-laser" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8056,14 +8057,14 @@
     <profile id="1768-d7b9-37ba-f3bf" name="Multi-melta" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2.</characteristic>
       </characteristics>
     </profile>
-    <profile id="fdd8-1a5f-5722-d6ee" name="Frag grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="fdd8-1a5f-5722-d6ee" name="Frag grenades" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade D6</characteristic>
@@ -8089,8 +8090,8 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, subtract 1 from that attack’s hit roll, and if that attack is allocated to a VEHICLE model, that attack has a Damage characteristic of 3.</characteristic>
       </characteristics>
     </profile>
     <profile id="07cb-70d7-15c3-5117" name="Shotgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8130,7 +8131,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll failed wound rolls for this weapon. If a model is armed with two lightning claws, each time it fights it can make 1 additional attack with them.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it makes 1 additional attack with this weapon. Each time an attack is made with this weapon, you can re-roll the wound roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="3520-0bb4-90f2-084b" name="Power fist" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8139,15 +8140,15 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, subtract 1 from that attack’s hit roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="4635-64e7-2344-ea7c" name="Power axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -8157,7 +8158,7 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -8167,7 +8168,7 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -8188,12 +8189,12 @@
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, subtract 1 from that attack’s hit roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="3bf6-b4f7-6b2f-bb7b" name="Krak grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="3bf6-b4f7-6b2f-bb7b" name="Krak grenades" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade 1</characteristic>
@@ -8300,7 +8301,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target has a Save characteristic of 3+ or better, this weapon has a Damage characteristic of D3.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon is allocated to a model with a Save characteristic of 3+ or better, that attack has a Damage characteristic of 2.</characteristic>
       </characteristics>
     </profile>
     <profile id="505e-a5aa-edab-6d5b" name="Storm bolter" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8320,7 +8321,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
       </characteristics>
     </profile>
     <profile id="e92d-1654-a3f9-f981" name="Space Marine Shotgun" publicationId="28ec-711c-pubN72690" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8355,12 +8356,12 @@
     </profile>
     <profile id="0964-678c-96c7-28af" name="Dragon&apos;s Breath Flamer" publicationId="28ec-711c-pubN72690" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Template</characteristic>
-        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466"/>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484"/>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7"/>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
       </characteristics>
     </profile>
     <profile id="b309-2758-151b-e2f2" name="Heat Ray (Dispersed Beam)" publicationId="28ec-711c-pubN72690" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8387,10 +8388,10 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, subtract 1 from that attack&apos;s hit roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="e209-5038-fc25-4927" name="Heavy Chainsword" publicationId="28ec-711c-pubN72690" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8407,7 +8408,7 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -8417,7 +8418,7 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -8427,7 +8428,7 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -8600,10 +8601,10 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">10</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">A model can only fire each of its hunter killer missiles once per battle.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">The bearer can only shoot with each hunter-killer missile it is equipped with once per battle.</characteristic>
       </characteristics>
     </profile>
     <profile id="acb5-7b58-0d17-a33a" name="Plasma gun, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8613,7 +8614,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain after all of this weapon&apos;s shots have been resolved.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="5779-2931-fe17-2b27" name="Plasma pistol, Supercharge" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8623,7 +8624,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="6644-7150-c910-865d" name="Twin heavy bolter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8632,7 +8633,7 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 6</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
@@ -8643,7 +8644,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain after all of this weapon&apos;s shots have been resolved. Blast.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="9b1e-61f9-4a5b-0044" name="Chainsword" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8668,7 +8669,7 @@
     </profile>
     <profile id="3735-f76f-f06c-1d71" name="Astartes grenade launcher, Frag grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">3</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
@@ -8678,7 +8679,7 @@
     </profile>
     <profile id="ac6d-bf1b-73d0-e6af" name="Astartes grenade launcher, Krak grenade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
@@ -8688,12 +8689,12 @@
     </profile>
     <profile id="961a-afdd-b0a9-f43d" name="Astartes shotgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 2</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range, add 1 to this weapon&apos;s Strength.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
     <profile id="cddb-d686-f7b9-ec39" name="Bolt rifle" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8711,7 +8712,7 @@
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 3</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
@@ -8759,7 +8760,7 @@
     <profile id="5207-ef08-27f7-166d" name="Cyclone missile launcher, Frag missile" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
-        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D3</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
@@ -8779,7 +8780,7 @@
     <profile id="b1a9-6785-fb1a-a5cb" name="Deathwind launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
-        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
@@ -8822,7 +8823,7 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D3</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
       </characteristics>
     </profile>
@@ -8832,8 +8833,8 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D3</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. For each hit roll of 1, the bearer suffers 1 mortal wound after all of this weapon&apos;s shots have been resolved.</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Each time an unmodified hit roll of 1 is made for an attack with this weapon profile, the bearer suffers 1 mortal wound after shooting with this weapon. </characteristic>
       </characteristics>
     </profile>
     <profile id="0c32-fc5b-5235-f6ba" name="Hurricane bolter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8853,7 +8854,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to all hit rolls made for this weapon against targets that can FLY. Subtract 1 from the hit rolls made for this weapon against all other targets.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, make 2 hit rolls instead of 1 and add 1 to both those hit rolls.</characteristic>
       </characteristics>
     </profile>
     <profile id="10cf-9931-74ee-504e" name="Kheres pattern assault cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8923,7 +8924,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain after all of this weapon&apos;s shots have been resolved.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="614c-c09f-c4b4-504f" name="Plasma cutter, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8943,7 +8944,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="474e-aeec-1b23-c181" name="Plasma incinerator, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8963,7 +8964,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">On a hit roll of 1, the bearer is slain after all of this weapon&apos;s shots have been resolved.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If any unmodified hit rolls of 1 are made for attacks with this weapon profile, the bearer is destroyed after shooting with this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="2c56-ff56-a155-032d" name="Predator autocannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8981,7 +8982,7 @@
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
@@ -8993,7 +8994,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to all hit rolls made for this weapon against targets that can FLY. Subtract 1 from the hit rolls made for this weapon against all other targets.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, add 1 to that attack’s hit roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="11e1-cbd0-5c56-dce9" name="Skyspear missile launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9003,7 +9004,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to all hit rolls made for this weapon against targets that can FLY. You can re-roll failed hit rolls for this weapon.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, add 2 to that attack’s hit roll. Each time an attack made with this weapon is allocated to an AIRCRAFT model, that attack has a Damage characteristic of D6+6.</characteristic>
       </characteristics>
     </profile>
     <profile id="a57c-ff3f-49d4-f3b8" name="Special issue boltgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9030,10 +9031,10 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">60&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4D3</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon can target units that are not visible to the firing model. Blast.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the bearer.</characteristic>
       </characteristics>
     </profile>
     <profile id="acb8-7501-1f1b-b483" name="Twin assault cannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9068,12 +9069,12 @@
     </profile>
     <profile id="1a79-9730-f078-07b6" name="Twin heavy flamer" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
       </characteristics>
     </profile>
     <profile id="3f51-8cbe-78c2-0b36" name="Twin heavy plasma cannon, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9082,7 +9083,7 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D3</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast.</characteristic>
       </characteristics>
     </profile>
@@ -9092,8 +9093,8 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D3</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">For each hit roll of 1, the bearer suffers 1 mortal wound after all of this weapon&apos;s shots have been resolved. Blast.</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Each time an unmodified hit roll of 1 is made for an attack with this weapon profile, the bearer suffers 1 mortal wound after shooting with this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="1662-54b9-46da-fefc" name="Twin lascannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9109,11 +9110,11 @@
     <profile id="c3c9-08d7-bfae-4ff7" name="Twin multi-melta" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2.</characteristic>
       </characteristics>
     </profile>
     <profile id="f7ba-88b9-c604-cd89" name="Twin plasma gun, Standard" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9173,7 +9174,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the firing model. Blast.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the bearer.</characteristic>
       </characteristics>
     </profile>
     <profile id="f4df-b39c-08a7-5255" name="Whirlwind vengeance launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9183,7 +9184,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon can target units that are not visible to the firing model. Blast.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the bearer.</characteristic>
       </characteristics>
     </profile>
     <profile id="802b-8d1b-8b9f-41e2" name="Wrist-mounted grenade launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9202,8 +9203,8 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, subtract 1 from that attack&apos;s hit roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="cd4f-c27a-233f-0f55" name="Champion&apos;s blade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9230,7 +9231,7 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -9242,15 +9243,15 @@
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">4</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2D3</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon is allocated to a VEHICLE model, that attack has a Damage characteristic of 6.</characteristic>
       </characteristics>
     </profile>
     <profile id="4242-3014-c49c-9fe6" name="Master-crafted power sword" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -9260,9 +9261,9 @@
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
@@ -9273,7 +9274,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">5</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, subtract 1 from that attack&apos;s hit roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="9112-c49a-ee46-0f81" name="Servo-arm" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9283,7 +9284,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each servo-arm can only be used to make one attack each time this model fights. When a model attacks with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, no more than one attack can be made with each servo-arm.</characteristic>
       </characteristics>
     </profile>
     <profile id="1f08-202d-3093-d4a2" name="Siege drills" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9308,7 +9309,7 @@
     </profile>
     <profile id="541d-ade9-7496-9c62" name="Storm shield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with a storm shield has a 3+ invulnerable save.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer has a 4+ invulnerable save. In addition, add 1 to armour saving throws made for the bearer.</characteristic>
       </characteristics>
     </profile>
     <profile id="042e-bff6-0d45-8423" name="Grenade harness" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9355,7 +9356,7 @@
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2.</characteristic>
       </characteristics>
     </profile>
     <profile id="74b1-313a-9041-dfd5" name="Hot-Shot Lasgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
