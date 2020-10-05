@@ -7822,6 +7822,9 @@
     <rule id="73c3-c791-cd2f-6ad2" name="Hateful Assault" hidden="false">
       <description>If this unit makes a charge move, is charged or performs a Heroic Intervention, add 1 to the Attacks characteristic of models in this unit until the end of the turn.</description>
     </rule>
+    <rule id="e07e-8dbf-0b15-7485" name="Objective Secured" publicationId="28ec-711c-pubN72690" page="237" hidden="false">
+      <description>A player controls an objective marker if they have any models with this ability within range of that objective marker, even if there are more enemy models within range of that objective marker. If an enemy model within range of an objective marker also has this ability (or a similar ability), then the objective marker is controlled by the player who has the most models within range of that objective marker as normal.</description>
+    </rule>
   </sharedRules>
   <sharedProfiles>
     <profile id="fcde-3e6a-e240-1157" name="Autogun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
