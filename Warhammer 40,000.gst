@@ -7814,13 +7814,16 @@
       <description>All ADEPTUS ASTARTES and HERETIC ASTARTES models gain this ability. Instead of following the normal rules for Rapid Fire weapons, Rapid Fire bolt weapons used by models with this ability make double the number of attacks if any of the following conditions apply: 1) The firing model&apos;s target is within half the weapon&apos;s maximum range. 2)    The firing model is INFANTRY and every model in its unit remained stationary in your previous Movement phase. 3) The firing model is a TERMINATOR, BIKER, CENTURION, or DREADNOUGHT. For the purposes of this ability a Rapid Fire Bolt weapon is any weapon with the Rapid Fire type whose name includes the word &apos;bolt&apos; (e.g. boltgun, bolt rifle, storm bolter, combi-bolter, hurricane bolter, inferno boltgun, etc.) This also applies when firing the boltgun profile of a combi-weapon (including the bolt weapon profile of Relics such as Blood Song and the Lion&apos;s Wrath) and when firing relics that replace a Rapid Fire bolt weapon, so long as the relic is also a rapid-fire weapon (e.g. Primarch&apos;s Wrath, Fury of Deimos, etc) The gauntlets of ultramar and the Talon of Horus are also considered Rapid Fire Bolt weapons, as is the guardian spear used by Deathwatch Watch Masters.</description>
     </rule>
     <rule id="01a4-bec8-b573-fde7" name="Angels of Death" hidden="false">
-      <description>This unit has the following abilities: And They Shall Know No Fear, Bolter Discipline, Shock Assault and Combat Doctrines.’</description>
+      <description>This unit has the following abilities: And They Shall Know No Fear, Bolter Discipline, Shock Assault and Combat Doctrines.</description>
     </rule>
     <rule id="f9ce-5a8b-7abd-2395" name="Shock Assault" hidden="false">
       <description>If this unit makes a charge move, is charged or performs a Heroic Intervention, add 1 to the Attacks characteristic of models in this unit until the end of the turn.</description>
     </rule>
     <rule id="73c3-c791-cd2f-6ad2" name="Hateful Assault" hidden="false">
       <description>If this unit makes a charge move, is charged or performs a Heroic Intervention, add 1 to the Attacks characteristic of models in this unit until the end of the turn.</description>
+    </rule>
+    <rule id="e07e-8dbf-0b15-7485" name="Objective Secured" publicationId="28ec-711c-pubN72690" page="237" hidden="false">
+      <description>A player controls an objective marker if they have any models with this ability within range of that objective marker, even if there are more enemy models within range of that objective marker. If an enemy model within range of an objective marker also has this ability (or a similar ability), then the objective marker is controlled by the player who has the most models within range of that objective marker as normal.</description>
     </rule>
   </sharedRules>
   <sharedProfiles>
