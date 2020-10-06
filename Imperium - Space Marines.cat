@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="181" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="163" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="182" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="164" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -138,6 +138,8 @@
     <categoryEntry id="baff-31d5-797d-42b8" name="Intercessors" hidden="false"/>
     <categoryEntry id="dbd9-d6c2-febe-1a1b" name="Ravenwing" hidden="false"/>
     <categoryEntry id="f474-9908-18d8-b720" name="Swiftclaw" hidden="false"/>
+    <categoryEntry id="38b6-ad30-95f8-9587" name="Deathwing" hidden="false"/>
+    <categoryEntry id="b95f-a56d-1ae5-7b66" name="Wolf Guard" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="d534-f897-d102-fbaa" name="Ephrael Stern and Kyganil of the Bloody Tears" hidden="false" collective="false" import="true" targetId="7dca-e055-7a15-4bf3" type="selectionEntry">
@@ -499,11 +501,6 @@
             <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
           </conditions>
         </modifier>
-        <modifier type="remove" field="category" value="8352-7f67-7e2b-3b4f">
-          <conditions>
-            <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
-          </conditions>
-        </modifier>
         <modifier type="set" field="name" value="Chapter Master">
           <conditions>
             <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
@@ -541,18 +538,6 @@
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="968c-cd28-ae98-dda1" name="Chapter Master" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="a0b8-6a5c-ea09-44f9" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You can re-roll hit rolls for attacks made by models in friendly &lt;CHAPTER&gt; units whilst their unit is within 6&quot; of this model.’ </characteristic>
-          </characteristics>
-        </profile>
       </profiles>
       <infoLinks>
         <infoLink id="b977-9858-9a44-cbdf" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
@@ -575,7 +560,7 @@
         <categoryLink id="7100-6d5d-2096-b512" name="New CategoryLink" hidden="false" targetId="8352-7f67-7e2b-3b4f" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
-        <selectionEntryGroup id="88a9-3155-eb57-9b03" name="Weapon Options" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="88a9-3155-eb57-9b03" name="Weapon Options" hidden="false" collective="false" import="true" defaultSelectionEntryId="85c9-56b4-cc8f-e096">
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9db3-8f13-6455-c017" type="min"/>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="362f-30de-46cc-9fdf" type="max"/>
@@ -6839,10 +6824,15 @@
             <condition field="selections" scope="a0f4-1ef1-00a6-b9a7" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5409-d1de-7c79-f12f" type="greaterThan"/>
           </conditions>
         </modifier>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="3.0">
-          <conditions>
-            <condition field="selections" scope="a0f4-1ef1-00a6-b9a7" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5409-d1de-7c79-f12f" type="greaterThan"/>
-          </conditions>
+        <modifier type="increment" field="e356-c769-5920-6e14" value="5.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="a0f4-1ef1-00a6-b9a7" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5409-d1de-7c79-f12f" type="greaterThan"/>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" field="e356-c769-5920-6e14" value="2.0">
           <conditions>
@@ -6853,6 +6843,26 @@
           <conditions>
             <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e277-184d-4e8a-6177" type="equalTo"/>
           </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="f474-9908-18d8-b720">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="dbd9-d6c2-febe-1a1b">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="e356-c769-5920-6e14" value="3.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="a0f4-1ef1-00a6-b9a7" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5409-d1de-7c79-f12f" type="greaterThan"/>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <profiles>
@@ -6897,6 +6907,7 @@
         <categoryLink id="6af8-39a6-ba71-1abb" name="New CategoryLink" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="f152-a000-1622-69ea" name="New CategoryLink" hidden="false" targetId="1c6f-0311-3eba-3180" primary="false"/>
         <categoryLink id="3376-e235-e9d0-badb" name="New CategoryLink" hidden="false" targetId="cacc-940d-5be5-0940" primary="false"/>
+        <categoryLink id="08cc-e837-3835-615c" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="d958-53c6-ab69-979b" name="Attack Bike" hidden="false" collective="false" import="true" type="model">
@@ -6904,17 +6915,25 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="214f-8fb4-7719-b379" type="max"/>
           </constraints>
           <infoLinks>
-            <infoLink id="165c-b5aa-3aa6-4eb7" name="New InfoLink" hidden="false" targetId="a59d-dcf2-38a7-c570" type="profile"/>
+            <infoLink id="165c-b5aa-3aa6-4eb7" name="Attack Bike" hidden="false" targetId="a59d-dcf2-38a7-c570" type="profile"/>
           </infoLinks>
           <selectionEntryGroups>
-            <selectionEntryGroup id="ce6d-1059-ef8a-1a35" name="Weapon Options" hidden="false" collective="false" import="true">
+            <selectionEntryGroup id="ce6d-1059-ef8a-1a35" name="Weapon Options" hidden="false" collective="false" import="true" defaultSelectionEntryId="01bf-bf90-2c86-bec3">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bd8a-8d2b-2c8a-9e21" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e3ff-05ab-9170-122c" type="max"/>
               </constraints>
               <entryLinks>
-                <entryLink id="01bf-bf90-2c86-bec3" name="New EntryLink" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry"/>
-                <entryLink id="642f-e0f7-df2d-56ca" name="New EntryLink" hidden="false" collective="false" import="true" targetId="2b37-65ee-9443-b4ef" type="selectionEntry"/>
+                <entryLink id="01bf-bf90-2c86-bec3" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="points" value="0.0"/>
+                  </modifiers>
+                </entryLink>
+                <entryLink id="642f-e0f7-df2d-56ca" name="Multi-melta" hidden="false" collective="false" import="true" targetId="2b37-65ee-9443-b4ef" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="points" value="10.0"/>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -6939,7 +6958,7 @@
             </entryLink>
           </entryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="30.0"/>
+            <cost name="pts" typeId="points" value="45.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
@@ -6947,12 +6966,22 @@
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="5409-d1de-7c79-f12f" name="Bikers" hidden="false" collective="false" import="true" defaultSelectionEntryId="bbef-d379-453d-dce0">
+          <modifiers>
+            <modifier type="set" field="fa29-cc49-528e-6f0b" value="15.0">
+              <conditions>
+                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="32a7-9248-a04c-8dd7" type="min"/>
             <constraint field="selections" scope="parent" value="8.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa29-cc49-528e-6f0b" type="max"/>
           </constraints>
           <selectionEntries>
             <selectionEntry id="bbef-d379-453d-dce0" name="Space Marine Biker w/Bolt Pistol" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="7.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a405-8d8f-5c4f-fa95" type="max"/>
+              </constraints>
               <entryLinks>
                 <entryLink id="c44d-9729-99b4-c7a2" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
                   <constraints>
@@ -6974,7 +7003,7 @@
                 </entryLink>
               </entryLinks>
               <costs>
-                <cost name="pts" typeId="points" value="25.0"/>
+                <cost name="pts" typeId="points" value="30.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -6991,22 +7020,31 @@
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="58e7-99b2-bae2-97ca" type="max"/>
                   </constraints>
                   <entryLinks>
-                    <entryLink id="0bfa-fbef-e890-20f0" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="0334-f487-8229-0c1a" type="selectionEntry"/>
-                    <entryLink id="3915-066b-d394-e7b6" name="Grav-pistol" hidden="false" collective="false" import="true" targetId="7b66-cac7-e582-a518" type="selectionEntry"/>
-                    <entryLink id="d573-ee79-38fc-a3b0" name="Plasma pistol" hidden="false" collective="false" import="true" targetId="83be-1ba9-c326-4760" type="selectionEntry"/>
-                    <entryLink id="5ae8-3885-06ab-8317" name="Chainsword" hidden="false" collective="false" import="true" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry"/>
-                    <entryLink id="a180-569b-1b4a-48fe" name="Power sword" hidden="false" collective="false" import="true" targetId="bc9e-551d-9afb-78d5" type="selectionEntry"/>
-                    <entryLink id="821c-b216-c8eb-25ee" name="Power axe" hidden="false" collective="false" import="true" targetId="3292-34e6-f679-d5b9" type="selectionEntry"/>
-                    <entryLink id="6b26-5b1d-7f52-3e4f" name="Power maul" hidden="false" collective="false" import="true" targetId="6ea7-1195-7144-438e" type="selectionEntry"/>
-                    <entryLink id="2e09-63a0-90f3-2287" name="Lightning Claw" hidden="false" collective="false" import="true" targetId="571f-9ce0-488c-0857" type="selectionEntry"/>
-                    <entryLink id="b06b-1aff-a3dd-5df0" name="Power fist" hidden="false" collective="false" import="true" targetId="caae-f721-310b-3798" type="selectionEntry"/>
-                    <entryLink id="d847-3680-8617-0ae5" name="Thunder hammer" hidden="false" collective="false" import="true" targetId="f1cb-bfc4-0b93-1203" type="selectionEntry"/>
-                    <entryLink id="6f2b-5d74-cf24-209e" name="Storm bolter" hidden="false" collective="false" import="true" targetId="2b03-8d64-3711-f300" type="selectionEntry"/>
-                    <entryLink id="cd58-1fc5-26d0-2369" name="Combi-plasma" hidden="false" collective="false" import="true" targetId="fdce-cdf7-21a9-f9ac" type="selectionEntry"/>
-                    <entryLink id="04a5-d38a-7864-96e1" name="Combi-melta" hidden="false" collective="false" import="true" targetId="c445-e211-f316-5d83" type="selectionEntry"/>
-                    <entryLink id="e22c-4375-378c-fde6" name="Combi-grav" hidden="false" collective="false" import="true" targetId="c027-24d6-7a3d-cf12" type="selectionEntry"/>
-                    <entryLink id="4e62-0105-a7ba-3e8d" name="Combi-flamer" hidden="false" collective="false" import="true" targetId="c6a1-e0c4-c1b1-dce1" type="selectionEntry"/>
-                    <entryLink id="7c58-4400-eabe-0e6d" name="Boltgun" hidden="false" collective="false" import="true" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry"/>
+                    <entryLink id="0bfa-fbef-e890-20f0" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="0334-f487-8229-0c1a" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3500-974d-867b-74e3" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="7c58-4400-eabe-0e6d" name="Boltgun" hidden="false" collective="false" import="true" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f74b-2533-6687-0166" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="49a0-8785-cef7-3a42" name="Combi-Weapons" hidden="false" collective="false" import="true" targetId="37ef-f6fa-fe1f-306c" type="selectionEntryGroup">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85a7-7f46-c259-d86d" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="3766-4cf9-d67b-7e49" name="Melee Weapons" hidden="false" collective="false" import="true" targetId="ce40-8190-5033-a0c1" type="selectionEntryGroup">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e206-e748-2aaf-6edf" type="max"/>
+                      </constraints>
+                    </entryLink>
+                    <entryLink id="ded5-393e-1884-1c68" name="Pistols" hidden="false" collective="false" import="true" targetId="fb38-f29c-b8de-3ba6" type="selectionEntryGroup">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="028b-5b0a-bc55-d6db" type="max"/>
+                      </constraints>
+                    </entryLink>
                   </entryLinks>
                 </selectionEntryGroup>
               </selectionEntryGroups>
@@ -7026,12 +7064,19 @@
                 <entryLink id="2ece-7633-f963-8338" name="Special-Issue Wargear" hidden="false" collective="false" import="true" targetId="81fa-73cf-0cea-37a0" type="selectionEntryGroup"/>
               </entryLinks>
               <costs>
-                <cost name="pts" typeId="points" value="25.0"/>
+                <cost name="pts" typeId="points" value="30.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="aff8-2540-01ce-ffb9" name="Space Marine Biker w/Special Weapon" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="decrement" field="2ae0-ac48-40de-aab2" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="a0f4-1ef1-00a6-b9a7" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3312-e399-4595-d34e" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2ae0-ac48-40de-aab2" type="max"/>
               </constraints>
@@ -7056,12 +7101,15 @@
                 </entryLink>
               </entryLinks>
               <costs>
-                <cost name="pts" typeId="points" value="25.0"/>
+                <cost name="pts" typeId="points" value="30.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="6db2-81d9-a49f-9868" name="Space Marine Biker w/Chainsword" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="7.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f849-bffe-cb68-58c3" type="max"/>
+              </constraints>
               <entryLinks>
                 <entryLink id="e521-94a9-6b5c-a5e4" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
                   <constraints>
@@ -7075,7 +7123,7 @@
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f36f-e7f6-26cc-aada" type="max"/>
                   </constraints>
                 </entryLink>
-                <entryLink id="83fe-99f6-2549-6250" name="Chainsword" hidden="false" collective="false" import="true" targetId="4334-d2da-32f5-dc53" type="selectionEntry">
+                <entryLink id="83fe-99f6-2549-6250" name="Astartes Chainsword" hidden="false" collective="false" import="true" targetId="87ee-4c8b-6e56-0a83" type="selectionEntry">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a366-c80b-7e46-3e3e" type="min"/>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="59b2-e6d3-3274-5719" type="max"/>
@@ -7083,7 +7131,49 @@
                 </entryLink>
               </entryLinks>
               <costs>
-                <cost name="pts" typeId="points" value="25.0"/>
+                <cost name="pts" typeId="points" value="30.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="3312-e399-4595-d34e" name="Space Marine Biker w/Plasma Pistol" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="decrement" field="b0e3-7511-acb9-0da9" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="a0f4-1ef1-00a6-b9a7" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="aff8-2540-01ce-ffb9" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b0e3-7511-acb9-0da9" type="max"/>
+              </constraints>
+              <entryLinks>
+                <entryLink id="fec0-8881-8738-d445" name="New EntryLink" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ded-fa68-ec8e-da33" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c1f0-1a87-b28c-4177" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="0526-0bd4-d7cb-5f1a" name="Twin boltgun" hidden="false" collective="false" import="true" targetId="4c54-1c89-299c-05c5" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c560-5524-b309-c100" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7130-b255-612b-a9b8" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="29ff-0b15-8c3e-c656" name="Plasma pistol" hidden="false" collective="false" import="true" targetId="83be-1ba9-c326-4760" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce04-f0fe-2f3c-0e8b" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="740b-e9d7-5b6d-78f6" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="30.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -13972,20 +14062,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="29c0-3526-09e2-09ea" name="Stratagem: Chief Librarian" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
+    <selectionEntry id="29c0-3526-09e2-09ea" name="Chapter Command:  Chief Librarian" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ce82-873f-2ce7-d1ba" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0696-5fa4-7319-cbc1" type="max"/>
@@ -13997,9 +14074,8 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <categoryLink id="7baf-b4d7-fb39-4a03" name="Chief Librarian" hidden="false" targetId="4215-316f-c94d-89fb" primary="false"/>
       </categoryLinks>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="pts" typeId="points" value="25.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="01dc-1d3c-1fb0-da0b" name="Boltstorm gauntlet" hidden="false" collective="false" import="true" type="upgrade">
@@ -14183,6 +14259,16 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <modifier type="add" field="category" value="1b89-4aed-3b44-8d0c">
           <conditions>
             <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c791-b2fc-df48-1834" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="38b6-ad30-95f8-9587">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="b95f-a56d-1ae5-7b66">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -15430,28 +15516,24 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="bd73-ea51-1f7f-a39a" name="Stratagem: Chapter Master" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="bd73-ea51-1f7f-a39a" name="Chapter Command:  Chapter Master" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="203b-f8dd-2a64-2676" type="instanceOf"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3e65-ef35-0705-07d9" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5011-463d-c7e6-452a" type="max"/>
       </constraints>
+      <infoLinks>
+        <infoLink id="f786-bd83-ba7e-98a2" name="Chapter Master" hidden="false" targetId="fdb4-b1a5-3c97-6400" type="profile"/>
+      </infoLinks>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+        <cost name="pts" typeId="points" value="40.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="e277-184d-4e8a-6177" name="Show Primaris Only" hidden="false" collective="false" import="true" type="upgrade">
@@ -15896,20 +15978,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="e0a6-ed26-3732-6cde" name="Stratagem: Master of Sanctity" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
+    <selectionEntry id="e0a6-ed26-3732-6cde" name="Chapter Command:  Master of Sanctity" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="51a9-e2ec-56f6-a52b" type="max"/>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="937a-cdfb-0aac-3df0" type="max"/>
@@ -15922,49 +15991,21 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         </profile>
       </profiles>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+        <cost name="pts" typeId="points" value="25.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="3084-8fed-8fe6-f200" name="Stratagem: Chief Apothecary" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
+    <selectionEntry id="3084-8fed-8fe6-f200" name="Chapter Command:  Chief Apothecary" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="578a-2866-b37f-754a" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2fdb-742c-f36b-2773" type="max"/>
       </constraints>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+        <cost name="pts" typeId="points" value="15.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="07db-61ce-b741-93a8" name="Stratagem: Master of the Forge" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
+    <selectionEntry id="07db-61ce-b741-93a8" name="Chapter Command:  Master of the Forge" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e0d1-7d9c-a268-7108" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="04f9-de75-9562-4bad" type="max"/>
@@ -15973,23 +16014,16 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <categoryLink id="5ec5-cc83-a739-26fa" name="Master of the Forge" hidden="false" targetId="ec7f-63af-0bf7-9b40" primary="false"/>
       </categoryLinks>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+        <cost name="pts" typeId="points" value="20.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="c791-b2fc-df48-1834" name="Stratagem: Chapter Ancient" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="c791-b2fc-df48-1834" name="Chapter Command: Chapter Ancient" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
@@ -15997,23 +16031,16 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1405-e928-6bcf-2453" type="max"/>
       </constraints>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+        <cost name="pts" typeId="points" value="20.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="29bc-7957-a56d-1aeb" name="Stratagem: Chapter Champion" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="29bc-7957-a56d-1aeb" name="Chapter Command:  Chapter Champion" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="eb0f-c144-a282-8bdc" type="instanceOf"/>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8a47-6e7e-22fa-6014" type="instanceOf"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
@@ -16021,9 +16048,8 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c46a-4782-9a01-83ae" type="max"/>
       </constraints>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+        <cost name="pts" typeId="points" value="15.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="0ed2-f740-f723-4eb1" name="Orbital Comms Array" hidden="false" collective="false" import="true" type="upgrade">
@@ -16777,6 +16803,18 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
       </costs>
     </selectionEntry>
     <selectionEntry id="0da5-bbc7-769c-7ae4" name="Bladeguard Veteran Squad" hidden="false" collective="false" import="true" type="unit">
+      <modifiers>
+        <modifier type="add" field="category" value="38b6-ad30-95f8-9587">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="b95f-a56d-1ae5-7b66">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <infoLinks>
         <infoLink id="2008-4632-5dd5-4bac" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
       </infoLinks>
@@ -16788,11 +16826,12 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <categoryLink id="1b93-723d-9fe5-4d98" name="Primaris" hidden="false" targetId="53b7-cff3-c3b4-d36a" primary="false"/>
         <categoryLink id="8da8-1a2d-43a2-1c7f" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
         <categoryLink id="56ad-4dda-c7f7-3520" name="Bladeguard Veteran Squad" hidden="false" targetId="fd91-c1b7-6e5e-ced1" primary="false"/>
+        <categoryLink id="879e-64bf-7713-4b8a" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="879b-1c30-e913-8cf7" name="Bladeguard Veteran" hidden="false" collective="false" import="true" type="model">
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6d00-566c-acd7-1eca" type="max"/>
+            <constraint field="selections" scope="parent" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6d00-566c-acd7-1eca" type="max"/>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="69e1-2971-6cab-7d86" type="min"/>
           </constraints>
           <profiles>
@@ -16817,11 +16856,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="45ba-d991-1425-281d" type="min"/>
               </constraints>
               <infoLinks>
-                <infoLink id="ae88-9c0e-d198-8386" name="Storm shield" hidden="false" targetId="541d-ade9-7496-9c62" type="profile">
-                  <modifiers>
-                    <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="The bearer has a 4+ invulnerable save.  In addition, add 1 to armour saving throws made for the bearer."/>
-                  </modifiers>
-                </infoLink>
+                <infoLink id="ae88-9c0e-d198-8386" name="Storm shield" hidden="false" targetId="541d-ade9-7496-9c62" type="profile"/>
               </infoLinks>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -16837,7 +16872,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4bc1-4b21-f7f5-835a" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="e22c-a697-8857-675c" name="Heavy Bolt Pistol (Indomitus)" hidden="false" collective="false" import="true" targetId="339d-cf44-ec7c-872f" type="selectionEntry">
+            <entryLink id="e22c-a697-8857-675c" name="Heavy Bolt Pistol" hidden="false" collective="false" import="true" targetId="e4cc-d26c-05a8-9eac" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f612-b97d-7103-7283" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ab5-9f7f-0963-a761" type="min"/>
@@ -16877,35 +16912,13 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
             </profile>
           </profiles>
           <selectionEntries>
-            <selectionEntry id="1c90-f56a-8dc4-c2a5" name="Heavy Bolt Pistol" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="851b-0f0e-b8b6-0edb" type="max"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b4db-1dbc-9e5f-5ce1" type="min"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="dba4-1e37-fcab-032a" name="Heavy Bolt Pistol" hidden="false" targetId="206b-edd4-0d52-d873" type="profile">
-                  <modifiers>
-                    <modifier type="set" field="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464" value="18&quot;"/>
-                  </modifiers>
-                </infoLink>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
             <selectionEntry id="22d4-24f8-bc08-ca26" name="Storm Shield" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c1b7-58e4-a233-6357" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1564-8c95-0ba4-0737" type="min"/>
               </constraints>
               <infoLinks>
-                <infoLink id="7a4e-3b11-0567-4630" name="Storm shield" hidden="false" targetId="541d-ade9-7496-9c62" type="profile">
-                  <modifiers>
-                    <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="The bearer has a 4+ invulnerable save.  In addition, add 1 to armour saving throws made for the bearer."/>
-                  </modifiers>
-                </infoLink>
+                <infoLink id="7a4e-3b11-0567-4630" name="Storm shield" hidden="false" targetId="541d-ade9-7496-9c62" type="profile"/>
               </infoLinks>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -16914,6 +16927,23 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
               </costs>
             </selectionEntry>
           </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="00e1-5dc2-cb16-98c7" name="Pistol" hidden="false" collective="false" import="true" defaultSelectionEntryId="2900-c2da-a32c-2f39">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ac6d-e232-8daa-7297" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3b6c-35d4-2e3e-255c" type="min"/>
+              </constraints>
+              <entryLinks>
+                <entryLink id="69d7-8282-7621-87e1" name="Plasma pistol" hidden="false" collective="false" import="true" targetId="83be-1ba9-c326-4760" type="selectionEntry"/>
+                <entryLink id="2900-c2da-a32c-2f39" name="Heavy Bolt Pistol" hidden="false" collective="false" import="true" targetId="1d61-94e5-b2d1-13ac" type="selectionEntry"/>
+                <entryLink id="6e3d-2d53-cad1-c659" name="Neo-volkite pistol" hidden="false" collective="false" import="true" targetId="4c4c-c7e5-9be9-b74e" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="points" value="5.0"/>
+                  </modifiers>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
           <entryLinks>
             <entryLink id="dec0-a41f-0a09-aa65" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
               <constraints>
@@ -16922,7 +16952,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
               </constraints>
             </entryLink>
             <entryLink id="385e-1cbc-5810-08f0" name="Special-Issue Wargear" hidden="false" collective="false" import="true" targetId="81fa-73cf-0cea-37a0" type="selectionEntryGroup"/>
-            <entryLink id="e55f-95ac-c471-13f0" name="Master-crafted Power Sword (Indomitus)" hidden="false" collective="false" import="true" targetId="c754-9c52-a162-2032" type="selectionEntry">
+            <entryLink id="e55f-95ac-c471-13f0" name="Master-crafted Power Sword" hidden="false" collective="false" import="true" targetId="2500-aed6-f77e-88f9" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cf3f-d155-d4b7-72ba" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="90c8-fccf-f1d3-eedd" type="min"/>
@@ -17172,6 +17202,18 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
       </costs>
     </selectionEntry>
     <selectionEntry id="0dac-86be-d7a0-9dd8" name="Bladeguard Ancient" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="38b6-ad30-95f8-9587">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b8fe-8d38-37ec-90e8" type="instanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="b95f-a56d-1ae5-7b66">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="24b6-2b46-0063-2867" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="ebcf-b8a0-b937-8b76" name="Bladeguard Ancient" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -17194,11 +17236,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
       </profiles>
       <infoLinks>
         <infoLink id="1ad3-56f9-d43a-1387" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
-        <infoLink id="e682-7cfe-f105-014c" name="Astartes Banner" hidden="false" targetId="6586-5d43-b320-83cf" type="profile">
-          <modifiers>
-            <modifier type="set" field="name" value="Astartes Banner [Aura]"/>
-          </modifiers>
-        </infoLink>
+        <infoLink id="e682-7cfe-f105-014c" name="Astartes Banner [Aura]" hidden="false" targetId="6586-5d43-b320-83cf" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="7554-20d9-47c6-cdae" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
@@ -17209,6 +17247,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <categoryLink id="0615-3c37-3c46-b308" name="Primaris" hidden="false" targetId="53b7-cff3-c3b4-d36a" primary="false"/>
         <categoryLink id="d6c8-7ffb-ce6a-7740" name="Bladeguard" hidden="false" targetId="a75d-f182-c709-c6de" primary="false"/>
         <categoryLink id="3f73-ef01-d2b4-49c8" name="Bladeguard Ancient" hidden="false" targetId="0069-6b06-05df-208d" primary="false"/>
+        <categoryLink id="5553-b8e9-77c5-1ff5" name="Ancient" hidden="false" targetId="2d28-8fed-1b2d-1999" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="ff2d-103f-78d0-b7c3" name="Stratagems" hidden="false" collective="false" import="true">
@@ -17231,7 +17270,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           </constraints>
         </entryLink>
         <entryLink id="1a2e-2c9a-5179-de57" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
-        <entryLink id="c00b-acd6-12c0-9745" name="Heavy Bolt Pistol (Indomitus)" hidden="false" collective="false" import="true" targetId="339d-cf44-ec7c-872f" type="selectionEntry">
+        <entryLink id="c00b-acd6-12c0-9745" name="Heavy Bolt Pistol" hidden="false" collective="false" import="true" targetId="1d61-94e5-b2d1-13ac" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6c43-ea05-d8c7-825e" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ce1-6e34-113e-8715" type="min"/>
@@ -17411,10 +17450,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="c754-9c52-a162-2032" name="Master-crafted Power Sword (Indomitus)" hidden="false" collective="true" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="name" value="Master-crafted Power Sword"/>
-      </modifiers>
+    <selectionEntry id="c754-9c52-a162-2032" name="Master-crafted Power Sword" hidden="false" collective="true" import="true" type="upgrade">
       <infoLinks>
         <infoLink id="00a5-eea5-15f4-b2e8" name="Master-crafted Power Sword" hidden="false" targetId="4dff-d8cf-a1b1-567e" type="profile">
           <modifiers>
@@ -21972,11 +22008,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c3ab-8b2c-2039-6f5a" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
@@ -21994,11 +22025,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c3ab-8b2c-2039-6f5a" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
@@ -22014,11 +22040,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                   <conditions>
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="edd9-59c0-8f74-3b36" type="atLeast"/>
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c3ab-8b2c-2039-6f5a" type="atLeast"/>
-                  </conditions>
-                </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -22048,11 +22069,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4867-6449-af62-d88f" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
@@ -22070,11 +22086,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c3ab-8b2c-2039-6f5a" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
@@ -22090,11 +22101,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                   <conditions>
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="edd9-59c0-8f74-3b36" type="atLeast"/>
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c3ab-8b2c-2039-6f5a" type="atLeast"/>
-                  </conditions>
-                </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -22120,11 +22126,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
-                </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bdd9-c10d-79f5-48e6" type="equalTo"/>
-                  </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -22399,24 +22400,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="5c8a-ec79-0dd3-1355" name="Steadfast Example" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly &lt;CHAPTER&gt; INFANTRY units have the Defenders of Humanity ability, whilst they are within 3&quot; of this Warlord. If such a unit already has this ability, each model counts as one additional model when determining control of an Objective. </characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="1381-a4c9-9d31-4ae1" name="Singular Presence" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2c13-24a5-57e5-12e5" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="ebd3-0d66-8c05-8a73" name="Singular Presence" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly &lt;CHAPTER&gt; INFANTRY, BIKER and DREADNOUGHT units within 3&quot; of this Warlord can perform Heroic Interventions as if they were CHARACTERS</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;CHAPTER&gt; CORE unit is within 6&quot; of this WARLORD, that unit has the Objective Secured ability. If a model in such a unit already has this ability, that model counts as one additional model when determining control of an objective marker</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -22449,24 +22433,8 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="5e96-7894-9d48-1b38" name="Selfless Healer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord can provide medical attention to up to two units instead of one, and a unit that was provided medical attention by this warlord can be provided with medical attention for a second time in a turn by this warlord, Note that this warlord can do so even if it is recovering the gene-seed of a fallen warrior</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="4a16-111f-f1b1-8464" name="Father of the Future" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8141-c464-c278-d518" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="ef3f-b4b6-e71c-d869" name="Father of the Future" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a model in a friendly &lt;CHAPTER&gt; INFANTRY or BIKER unit would lose a wound whilst their unit is within 6&quot; of this warlord, roll one D6; on a 6 that wound is not lost. If that unit has the Flesh is Weak Chapter tactic, that wound is not lost on a 5+ instead. </characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD uses it&apos;s Combat Restoratives ability, the model being healed regains up to 3 lost wounds instead of D3
+Each time this WARLORD is selected to return a destroyed model to a unit by using the Combat Revival Stratagem, that Stratagem costs 0 command points</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -22492,19 +22460,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         </modifier>
       </modifiers>
       <selectionEntries>
-        <selectionEntry id="bdd9-c10d-79f5-48e6" name="High Scholar of the Librarius" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e9e-1197-555c-0d34" type="max"/>
-          </constraints>
-          <infoLinks>
-            <infoLink id="d477-e1ba-c2e1-0e5e" name="High Scholar of the Librarius" hidden="false" targetId="edf2-dcc7-5999-5f86" type="profile"/>
-          </infoLinks>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
         <selectionEntry id="01cb-fee1-e26e-83ca" name="Psychic Mastery" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="07be-368c-de01-e705" type="max"/>
@@ -22659,24 +22614,8 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="6705-b35b-58dc-bcb9" name="Wise Orator" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When you roll to determine if a litany recited by this Warlord is inspiring, you can re-roll the dice</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="2c9a-03ca-2c06-9d4e" name="Bellowing Firebrand" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="86dd-9965-e5b7-acc1" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="d0ab-2095-e168-a76b" name="Bellowing Firebrand" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 3&quot; to the range of this Warlord&apos;s Spiritual Leadership ability and all litanies recited by this warlord. </characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD recites a Litany, add 1 to the roll to see if it is inspiring. 
+Each time this WARLORD is selected to use the Commanding Oratory stratagem, that stratagem costs 1 command point. </characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -22702,23 +22641,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         </modifier>
       </modifiers>
       <selectionEntries>
-        <selectionEntry id="e27b-8f46-d2ff-aff4" name="Master of the Machine" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="864a-f746-c214-b7da" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="2dda-e7e0-3b9b-20c4" name="Master of the Machine" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made by a friendly &lt;CHAPTER&gt; VEHICLE model within 6&quot; of this Warlord, add 1 to the roll. </characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
         <selectionEntry id="3a47-8f43-ce65-8a52" name="Warden of the Ancients" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="acd9-005a-380a-a927" type="max"/>
@@ -22726,7 +22648,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="8e2b-d67b-e18d-e517" name="Warden of the Ancients" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Strength and Attacks characteristics of friendly &lt;CHAPTER&gt; DREADNOUGHT models whilst they are within 6&quot; of this warlord.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;CHAPTER&gt; DREADNOUGHT is within 6&quot; of this WARLORD, add 1 to its strength and Attacks characteristics</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23012,21 +22934,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="3612-13c4-e7c4-7627" name="Pennant of the Fallen" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">&lt;CHAPTER&gt; models that attack with one of their melee weapons as  a result of this model&apos;s Astartes Banner ability can make two attacks instead of one</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="c5b9-c9e6-0f09-28e0" name="Standard of Righteous Hatred" hidden="false" collective="false" import="true" type="upgrade">
-          <profiles>
-            <profile id="b191-80b1-22f4-20bb" name="Standard of Righteous Hatred" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models that shoot with one of their ranged weapons, or make a single attack with one of their melee weapons, as a result of this model&apos;s Astartes Banner ability always resolve their attack as if they had BS and WS 2+</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a friendly model is destroyed and makes attacks as a result of the bearer&apos;s Astartes Banner ability, that model can  make 2 attacks with one of its melee weapons instead of 1</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23056,28 +22964,14 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="833e-451b-efaa-17cb" type="max"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="0eeb-0f74-1564-786e" name="The Angel Artifice" hidden="false" collective="false" import="true" type="upgrade">
-          <profiles>
-            <profile id="4739-b09f-e58e-1cf2" name="The Angel Artifice" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with this Relic has a save characteristic of 2+ and a 4+ Invulnerable save. </characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
         <selectionEntry id="625f-2e0a-5d47-cf2e" name="Blade of Triumph" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
             <profile id="cd6f-dc67-594b-5734" name="Blade of Triumph" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
                 <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
               </characteristics>
@@ -23104,30 +22998,16 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d770-2183-0f58-166a" type="max"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="a88d-6979-ed34-4495" name="Healer&apos;s Aegis" hidden="false" collective="false" import="true" type="upgrade">
-          <profiles>
-            <profile id="d411-1c77-08a9-be04" name="Healer&apos;s Aegis" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly &lt;CHAPTER&gt; INFANTRY models have a 5+ invulnerable save whilst they are within 1&quot; of this model</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
         <selectionEntry id="663a-a0cf-345b-543e" name="Acquittal" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
             <profile id="bd89-339f-2ecc-9c41" name="Acquittal" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">16&quot;</characteristic>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack against a unit that is not a VEHICLE or MONSTER, this weapon has a damage of D6 for that attack</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time and attack is made with this weapon against an INFANTRY unit, that attack always wounds on an unmodified roll of 2+ and has a damage characteristic of 4</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23156,33 +23036,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="16ec-c78a-fd9d-79de" name="Neural Shroud" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 12&quot; to the range of a model with this Relic&apos;s Psychic Hood ability</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="dc52-6157-4e73-367b" name="Vinculum Vitae" hidden="false" collective="false" import="true" type="upgrade">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="07e7-1f9b-4c1c-aad9" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <profiles>
-            <profile id="25e9-d90b-2826-9c6b" name="Vinculum Vitae" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-              <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon, an unmodified wound roll of 6 inflicts D3 mortal wounds on the target instead of any other damage</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Increase the range of the bearer&apos;s Psychic Hood ability to 24&quot;</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23477,21 +23331,8 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="34ae-30b0-71a8-4ad6" name="The Emperor&apos;s Judgement" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made against this model with this relic, your opponent cannot re-roll the hit roll, wound roll, or damage roll. In addition, when a Morale test is taken for an enemy unit within 6&quot; of this model, roll two dice and discard the lowest(or either if they are the same)</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="4eed-ca34-123a-e890" name="Sacrosanct Rosarius" hidden="false" collective="false" import="true" type="upgrade">
-          <profiles>
-            <profile id="fb48-4f41-5dff-a95b" name="Sacrosanct Rosarius" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model with this Relic has a 3+ Invulnerable save</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an attack is made against the bearer, your opponent cannot reroll the hit roll, cannot reroll the wound roll and cannot reroll the damage roll. 
+The bearer has the follwing ability: The Emperor&apos;s Judgement [Aura]: While an enemy unit is within 6&quot; of the bearer, each time a Morale test is taken for that unit, roll one addtional D6 and discard the lowest result</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23523,23 +23364,9 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon against a VEHICLE unit, if the saving throw is failed that unit suffers 1 mortal wound in addition to any other damage</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="cb10-81f4-71be-bde8" name="The Endurant Protector" hidden="false" collective="false" import="true" type="upgrade">
-          <profiles>
-            <profile id="1c18-c367-804b-cbf0" name="The Endurant Protector" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Toughness characteristic of a model with this Relic. A model with this Relic has a 4+ invulnerable save.</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against a VEHICLE unit, the saving throw is failed, the target suffers 1 mortal wound in addition to any normal damage	</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23678,24 +23505,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <profiles>
             <profile id="1ebf-5f35-6657-bfff" name="Martial Exemplar" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a charge roll is made for a friendly &lt;CHAPTER&gt; unit within 6&quot; of this Warlord, you can re-roll the roll</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-        <selectionEntry id="1e3d-cd92-aa30-e890" name="Master Duelist" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8fd2-42b8-f342-0c4c" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="ed87-a465-3a64-00b2" name="Master Duelist" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving and attack made with a melee weapon by a model against this Warlord, on a hit roll of 1 roll one D6; on a 4+ that model&apos;s unit suffers 1 mortal wound after that unit has finished shooting or fighting</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;CHAPTER&gt; CORE or &lt;CHAPTER&gt; CHARACTER unit is within 6&quot; of this WARLORD, you can re-roll charge rolls made for that unit</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -23848,6 +23658,47 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="7162-c44d-a800-1519" name="Warlord Traits (Chapter Master)" hidden="false" collective="false" import="true">
+      <selectionEntries>
+        <selectionEntry id="05bd-7f1d-fba5-f2e9" name="Master of the Codex" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6dea-5d84-571d-778c" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="405c-de53-e0d5-7cdd" name="Master of the Codex" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Command phase if this WARLORD is on the battlefield, roll one D6; on a 4+ you	gain 1 command point</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="65f9-e6ba-7666-0267" name="Chapter Master Relics" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bd73-ea51-1f7f-a39a" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7536-a9bd-d6cb-ffb8" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7a83-4db1-d352-ed75" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="d4d9-2c03-125c-6c1c" name="Angel Artifice" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="ebe6-7060-bff6-a61d" name="Angel Artifice" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer has a save characteristic of 2+
+Add 1 to the bearer&apos;s Wounds and Toughness characteristics</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -24216,7 +24067,7 @@ a similar ability, then the objective marker is controlled by the player who has
     </profile>
     <profile id="fdb4-b1a5-3c97-6400" name="Chapter Master" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You can re-roll any failed hit rolls from friendly CHAPTER units within 6&quot; of this model.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase select one friendly &lt;CHAPTER&gt; CORE	 or &lt;CHAPTER&gt; CHARACTER within 6&quot; of this model. Until the start of your next Command phase, each time a model in that unit makes an attack, you can re-roll the hit roll. </characteristic>
       </characteristics>
     </profile>
     <profile id="95a0-e2cb-1ad9-df9f" name="Initiate" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -24663,7 +24514,7 @@ a similar ability, then the objective marker is controlled by the player who has
     </profile>
     <profile id="26ef-7783-da4a-8db6" name="Psychic Mastery" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a Psychic test is taken for this Warlord for the first time in a phase, add 1 to the total.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to psychic tests taken for this WARLORD</characteristic>
       </characteristics>
     </profile>
     <profile id="edf2-dcc7-5999-5f86" name="High Scholar of the Librarius" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
