@@ -4141,7 +4141,7 @@
                     <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                   </costs>
                 </selectionEntry>
-                <selectionEntry id="3ab4-97da-1f47-b1ff" name="Narrative" hidden="false" collective="false" import="true" type="upgrade">
+                <selectionEntry id="3ab4-97da-1f47-b1ff" name="Narrative (Non Crusade)" hidden="false" collective="false" import="true" type="upgrade">
                   <costs>
                     <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                     <cost name="pts" typeId="points" value="0.0"/>
@@ -4948,7 +4948,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="4763-757f-499f-d998" name="Has Battle Honours" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="4763-757f-499f-d998" name="Has Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
@@ -5914,7 +5914,7 @@
         <entryLink id="034f-ad37-f67b-95fe" name="Inspiring Leader" hidden="false" collective="false" import="true" targetId="bad4-7cc1-6b79-0e18" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="8774-e003-4a50-56c7" name="Custom Character Selections (Chapter Approved)" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="8774-e003-4a50-56c7" name="Custom Character Selections (Chapter Approved 2018)" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
@@ -7046,7 +7046,7 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
-    <selectionEntryGroup id="5518-d0f5-a880-d71c" name="Battle Honours (Chapter Approved)" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="5518-d0f5-a880-d71c" name="Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
