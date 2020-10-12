@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="68" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="163" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="69" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="164" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>Imperial Knights are a unique faction within Warhammer 40,000, for their armies typically comprise just a handful of models. Where other players’ forces contain infantry, battle tanks, monstrous beasts and the like, an Imperial Knights army is made up solely of towering, heavily armed and armoured bipedal war  engines. Even the least of these is more than a match for whole regiments of the foe. Piloted by highly trained Nobles whose minds are saturated with concepts of chivalry, honour and fealty, these ironclad giants shatter battle lines with ease, devastating the enemy’s forces with bombardments of searing energy and explosive shells. Those who somehow survive this fusillade – and are not subsequently trampled underfoot – are sent scattering before the Knights like leaves on a gale.</readme>
   <publications>
     <publication id="82cd-d24f-pubN65537" name="Codex: Imperial Knights" shortName="Codex" publisher="Codex: Imperial Knights"/>
@@ -2297,16 +2297,8 @@ of 2. </characteristic>
       </costs>
     </selectionEntry>
     <selectionEntry id="7fcb-f39d-214d-f2b1" name="Warlord Trait: Fearsome Reputation" publicationId="82cd-d24f-pubN65537" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="a0c0-82a2-a3bb-7b17" value="1">
-          <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3a62-00de-b0b5-7cf4" type="instanceOf"/>
-          </conditions>
-        </modifier>
-      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d1f4-a893-bf68-d79c" type="max"/>
-        <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a0c0-82a2-a3bb-7b17" type="min"/>
       </constraints>
       <infoLinks>
         <infoLink id="72a6-c22e-49e2-f679" name="Fearsome Reputation" hidden="false" targetId="9651-0818-0929-74e7" type="profile"/>
@@ -2320,9 +2312,14 @@ of 2. </characteristic>
     <selectionEntry id="96f2-3321-e974-f12a" name="Warlord" publicationId="28ec-711c-pubN72690" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef18-746a-369f-43a4" type="lessThan"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef18-746a-369f-43a4" type="lessThan"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3a62-00de-b0b5-7cf4" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -3729,15 +3726,6 @@ of 2. </characteristic>
         <infoLink id="b7ed-705a-e021-2a8a" name="Last of Their Line" hidden="false" targetId="1a15-af19-45b6-993c" type="profile"/>
         <infoLink id="1929-8e7e-6b21-94c1" name="Legendary Hero" hidden="false" targetId="dc41-a707-e931-05a4" type="profile"/>
         <infoLink id="ebe7-c275-b2b3-e911" name="Obsessed with Vengeance" hidden="false" targetId="14b1-b99d-f951-6768" type="profile"/>
-        <infoLink id="c5a1-62e9-4efb-cdc2" name="Fearsome Reputation" hidden="false" targetId="9651-0818-0929-74e7" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="3a62-00de-b0b5-7cf4" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="96f2-3321-e974-f12a" type="lessThan"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </infoLink>
         <infoLink id="ba10-ce2b-2e57-373d" name="Super-Heavy Walker" hidden="false" targetId="184b-c0f6-24c8-8b65" type="profile"/>
       </infoLinks>
       <categoryLinks>
@@ -3779,6 +3767,14 @@ of 2. </characteristic>
           <categoryLinks>
             <categoryLink id="4611-c8d7-7e47-e4db" name="Titanic Warlord" hidden="false" targetId="6c1d-32d6-b16c-3b0c" primary="false"/>
           </categoryLinks>
+          <entryLinks>
+            <entryLink id="95e2-c06d-9140-2045" name="Warlord Trait: Fearsome Reputation" hidden="false" collective="false" import="true" targetId="7fcb-f39d-214d-f2b1" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fb2a-61ec-0a11-245b" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f08b-3298-23bf-1f34" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
         </entryLink>
         <entryLink id="9fd8-3b2d-5107-086e" name="Archeotech Pistol" hidden="false" collective="false" import="true" targetId="cd5c-ab21-5b48-2927" type="selectionEntry">
           <constraints>
