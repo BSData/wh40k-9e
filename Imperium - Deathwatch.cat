@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="203b-f8dd-2a64-2676" name="Imperium - Deathwatch" revision="104" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Technoblazed" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="164" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="203b-f8dd-2a64-2676" name="Imperium - Deathwatch" revision="105" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Technoblazed" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="164" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="203b-f8dd-pubN98915" name="Chapter Approved 2017"/>
     <publication id="ed02-1cee-3c56-c0d5" name="White Dwarf May 2020"/>
@@ -418,6 +418,7 @@
     <entryLink id="4ae0-f6d7-8e34-69b9" name="Spectrus Kill Team" hidden="false" collective="false" import="true" targetId="80c9-78fd-3628-a03d" type="selectionEntry"/>
     <entryLink id="804c-f7fa-79be-8d70" name="Relic Terminator Squad" hidden="false" collective="false" import="true" targetId="f928-d2b7-7b49-23fc" type="selectionEntry"/>
     <entryLink id="63cc-87de-62ab-937a" name="Spectrus Kill Team" hidden="false" collective="false" import="true" targetId="0a19-890d-f924-0f87" type="selectionEntry"/>
+    <entryLink id="fcba-1208-d3fe-0051" name="Indomitor Kill Team" hidden="false" collective="false" import="true" targetId="13b0-2231-db5a-a493" type="selectionEntry"/>
   </entryLinks>
   <infoLinks>
     <infoLink id="41be-73c5-e78a-0d0c" name="Combat Doctrines" hidden="false" targetId="137f-d3e3-4668-e29b" type="rule"/>
@@ -2660,6 +2661,7 @@
             <modifier type="append" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="This ability only applies to Outriders in this unit."/>
           </modifiers>
         </infoLink>
+        <infoLink id="e80d-f2cd-b900-2f5c" name="Combat Squads" hidden="false" targetId="3e31-4e4b-6ab6-d90b" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="0ed4-efdf-52ea-6a96" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
@@ -2670,9 +2672,10 @@
         <categoryLink id="1bc9-538b-24c3-81d1" name="Fortis" hidden="false" targetId="c199-2542-af52-c960" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
-        <selectionEntryGroup id="48ba-6efa-54f6-0958" name="Kill Team" hidden="false" collective="false" import="true" defaultSelectionEntryId="c22c-c4e1-a57a-822f">
+        <selectionEntryGroup id="48ba-6efa-54f6-0958" name="Kill Team" hidden="false" collective="false" import="true" defaultSelectionEntryId="d34e-f798-97b0-12cc">
           <constraints>
             <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0a5f-07eb-ce14-4471" type="max"/>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c6cc-9527-8c30-7b7d" type="min"/>
           </constraints>
           <selectionEntryGroups>
             <selectionEntryGroup id="ea59-6056-4565-c0a9" name="Hellblasters" hidden="false" collective="false" import="true">
@@ -2712,41 +2715,6 @@
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup id="d8ad-37b1-116e-f291" name="Intercessors" hidden="false" collective="false" import="true">
-              <constraints>
-                <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a132-84d7-2cf2-b347" type="min"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="33f0-225f-7e8d-988d" name="Intercessor w/ Astartes Grenade Launcher" hidden="false" collective="false" import="true" targetId="2a5d-236f-a111-bc98" type="selectionEntry">
-                  <modifiers>
-                    <modifier type="set" field="dc3f-07e1-1a72-2e99" value="2.0">
-                      <conditions>
-                        <condition field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="equalTo"/>
-                      </conditions>
-                    </modifier>
-                  </modifiers>
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dc3f-07e1-1a72-2e99" type="max"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="0eb1-7e67-cf1e-aa74" name="Intercessor w/ Auto Bolt Rifle" hidden="false" collective="false" import="true" targetId="105b-bbc1-8302-fde5" type="selectionEntry"/>
-                <entryLink id="4008-dd89-b7bf-18da" name="Intercessor w/ Bolt rifle" hidden="false" collective="false" import="true" targetId="2d80-a9dc-03ce-efb9" type="selectionEntry">
-                  <modifiers>
-                    <modifier type="decrement" field="ac16-bfc7-288e-4524" value="1.0">
-                      <repeats>
-                        <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2a5d-236f-a111-bc98" repeats="1" roundUp="false"/>
-                        <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="105b-bbc1-8302-fde5" repeats="1" roundUp="false"/>
-                        <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1f94-5744-8cf3-a680" repeats="1" roundUp="false"/>
-                      </repeats>
-                    </modifier>
-                  </modifiers>
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ac16-bfc7-288e-4524" type="min"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="0d1d-c742-7946-bf76" name="Intercessor w/ Stalker Bolt Rifle" hidden="false" collective="false" import="true" targetId="1f94-5744-8cf3-a680" type="selectionEntry"/>
-              </entryLinks>
-            </selectionEntryGroup>
           </selectionEntryGroups>
           <entryLinks>
             <entryLink id="c22c-c4e1-a57a-822f" name="Intercessor Sergeant" hidden="false" collective="false" import="true" targetId="abe9-6272-f205-9b4d" type="selectionEntry">
@@ -2754,6 +2722,63 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b7e-b37d-0d6c-74fb" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="40f8-54cc-3c26-03c4" type="min"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink id="9082-35a4-9b90-6c8e" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+            </entryLink>
+            <entryLink id="a843-74c8-f48d-0073" name="Intercessor w/ Astartes Grenade Launcher" hidden="false" collective="false" import="true" targetId="2a5d-236f-a111-bc98" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="3ca6-2e54-1108-2415" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="80c9-78fd-3628-a03d" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="baff-31d5-797d-42b8" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ca6-2e54-1108-2415" type="max"/>
+              </constraints>
+              <categoryLinks>
+                <categoryLink id="9201-1106-e422-9e3b" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+              </costs>
+            </entryLink>
+            <entryLink id="0229-237c-ce4f-cc6b" name="Intercessor w/ Auto Bolt Rifle" hidden="false" collective="false" import="true" targetId="105b-bbc1-8302-fde5" type="selectionEntry">
+              <categoryLinks>
+                <categoryLink id="1fe7-47c6-7e74-c66d" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+              </costs>
+            </entryLink>
+            <entryLink id="d34e-f798-97b0-12cc" name="Intercessor w/ Bolt rifle" hidden="false" collective="false" import="true" targetId="2d80-a9dc-03ce-efb9" type="selectionEntry">
+              <modifiers>
+                <modifier type="decrement" field="3b80-298c-6f05-1cd8" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2a5d-236f-a111-bc98" repeats="1" roundUp="false"/>
+                    <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="105b-bbc1-8302-fde5" repeats="1" roundUp="false"/>
+                    <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1f94-5744-8cf3-a680" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3b80-298c-6f05-1cd8" type="min"/>
+              </constraints>
+              <categoryLinks>
+                <categoryLink id="1544-2dee-b160-5cbe" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+              </costs>
+            </entryLink>
+            <entryLink id="57fa-ddc7-6557-ccd6" name="Intercessor w/ Stalker Bolt Rifle" hidden="false" collective="false" import="true" targetId="1f94-5744-8cf3-a680" type="selectionEntry">
+              <categoryLinks>
+                <categoryLink id="3a06-fe35-2f88-f9e0" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+              </costs>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
@@ -3209,7 +3234,7 @@
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
-        <selectionEntryGroup id="fc15-32e5-cc0f-5dae" name="Reiver Wargear" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="79ac-bd85-d2ea-b016" name="Reiver Wargear" hidden="false" collective="false" import="true">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
@@ -3223,7 +3248,7 @@
             </modifier>
           </modifiers>
           <entryLinks>
-            <entryLink id="03da-84b2-ddd8-6dca" name="Reiver Grapnel Launcher" hidden="false" collective="false" import="true" targetId="95c5-5493-6e42-0ecb" type="selectionEntry">
+            <entryLink id="dd5b-6ec6-478b-981b" name="Reiver Grapnel Launcher" hidden="false" collective="false" import="true" targetId="95c5-5493-6e42-0ecb" type="selectionEntry">
               <modifiers>
                 <modifier type="increment" field="points" value="2.0">
                   <repeats>
@@ -3233,10 +3258,10 @@
                 </modifier>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="540a-02f3-14cc-4db9" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aef7-48af-3691-226b" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="e1e8-b41d-2e19-c956" name="Reiver Grav Chutes" hidden="false" collective="false" import="true" targetId="df0e-0772-d707-4fc6" type="selectionEntry">
+            <entryLink id="63fb-4670-83df-05a5" name="Reiver Grav Chutes" hidden="false" collective="false" import="true" targetId="df0e-0772-d707-4fc6" type="selectionEntry">
               <modifiers>
                 <modifier type="increment" field="points" value="2.0">
                   <repeats>
@@ -3246,7 +3271,7 @@
                 </modifier>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dd12-2f12-ebde-8718" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6a68-57e6-6068-4f8a" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -3333,7 +3358,6 @@
       </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -3701,7 +3725,6 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="074c-8fb1-bbfc-8f44" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="e61c-bc83-214a-6271" name="Special-Issue Wargear" hidden="false" collective="false" import="true" targetId="81fa-73cf-0cea-37a0" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="20.0"/>
@@ -3729,7 +3752,7 @@
         <entryLink id="e6db-8f55-ac4c-d7f7" name="Bolt rifle" hidden="false" collective="false" import="true" targetId="5907-c64e-703e-5778" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="66b4-8b02-d9b9-1e6d" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6fa9-88eb-e867-068b" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6fa9-88eb-e867-068b" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>
@@ -3880,6 +3903,740 @@
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="24.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="a28a-50a8-e5aa-470d" name="Auto Boltstorm Gauntlets" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="0391-4bf5-57c2-2340" name="Auto Boltstorm Gauntlets (Melee)" hidden="false" targetId="3b91-0f17-4b9d-8453" type="profile"/>
+        <infoLink id="aa8b-ce27-8965-1df3" name="Auto Boltstorm Gauntlets (Shooting)" hidden="false" targetId="d9d9-a2bb-931e-ec19" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="91c4-69ad-68bb-6f51" name="Flamestorm Gauntlets" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="4468-d970-c7a7-0bb4" name="Flamstorm Gauntlets (Melee)" hidden="false" targetId="d98c-65df-cfb8-692a" type="profile"/>
+        <infoLink id="f895-4d0f-0322-6c1a" name="Flamstorm Gauntlets (Shooting)" hidden="false" targetId="46e5-ad92-78f8-b90a" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4bb1-b164-f21a-d8ab" name="Aggressor w/ Boltstorm Gauntlets/Fragstorm Launcher" hidden="false" collective="false" import="true" type="model">
+      <infoLinks>
+        <infoLink id="d1ef-8712-d091-ca2b" name="Aggressor" hidden="false" targetId="309a-bf97-0ea9-520f" type="profile"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink id="0609-f1c7-21b6-b180" name="Auto Boltstorm Gauntlets" hidden="false" collective="false" import="true" targetId="a28a-50a8-e5aa-470d" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2da5-ca34-f166-ce76" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f9f-7e13-b9ed-8ee8" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="3ba4-cd7b-f9df-2f5e" name="Fragstorm Grenade Launcher" hidden="false" collective="false" import="true" targetId="4d06-9dc8-8c8f-c03e" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5cb6-1f8f-25fb-64c3" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c269-6240-c007-b5b8" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="40.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4d06-9dc8-8c8f-c03e" name="Fragstorm Grenade Launcher" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="8027-8520-f162-ff4f" name="Fragstorm Missile Launcher" hidden="false" targetId="57d3-f99c-a885-6548" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="5.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="6ae6-0ceb-b567-2aa0" name="Aggressor w/ Flamestorm Gauntlets" hidden="false" collective="false" import="true" type="model">
+      <infoLinks>
+        <infoLink id="4628-2a8a-9a85-12df" name="Aggressor" hidden="false" targetId="309a-bf97-0ea9-520f" type="profile"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink id="957c-49b4-839d-dccb" name="Flamestorm Gauntlets" hidden="false" collective="false" import="true" targetId="91c4-69ad-68bb-6f51" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3749-47e5-2604-cf98" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c271-1edb-36bd-0dc3" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="40.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="13b0-2231-db5a-a493" name="Indomitor Kill Team" hidden="false" collective="false" import="true" type="unit">
+      <profiles>
+        <profile id="18db-5c30-1bdb-6c9c" name="Indomitor Kill Team" publicationId="092b-b6e3-4472-a522" page="5" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="13b0-2231-db5a-a493" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e90-0f0d-5a71-3c81" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While aa INDOMITOR KILL TEAM only contains Inceptors, it has the FLY keyword.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="b22b-7e9b-c4a4-7195" name="Total Obliteration" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="13b0-2231-db5a-a493" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cefd-5a45-dbf2-0396" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="append" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="Only Eradicators in this unit can shoot twice when this unit uses the Total Obliteration ability."/>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your shooting phase, you can declare this unit will only shoot at a single target. If you do, select one target unit;  models in this unit can shoot twice this phase, but they can only target that enemy unit. </characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="e510-3ba5-91b7-66e0" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
+        <infoLink id="3907-5f92-d939-dc08" name="Combat Squads" hidden="false" targetId="3e31-4e4b-6ab6-d90b" type="profile"/>
+        <infoLink id="a307-9395-0d37-bf91" name="Death From Above" hidden="false" targetId="350e-2132-9401-2657" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="13b0-2231-db5a-a493" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e90-0f0d-5a71-3c81" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="645e-3bea-774a-24b9" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
+        <categoryLink id="b011-51ae-1dea-8f07" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+        <categoryLink id="f4bb-cec0-36a6-213a" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+        <categoryLink id="08c1-bd47-fdb9-a11c" name="Primaris" hidden="false" targetId="53b7-cff3-c3b4-d36a" primary="false"/>
+        <categoryLink id="8b45-cbd6-6a51-22f1" name="Mk X Gravis" hidden="false" targetId="82df-13db-9e7b-15a3" primary="false"/>
+        <categoryLink id="8922-2fa6-e668-04d1" name="Kill Team" hidden="false" targetId="52fb-9973-e2c2-78fc" primary="false"/>
+        <categoryLink id="ecfb-0da2-9c9b-a25a" name="Indomitor" hidden="false" targetId="9a88-8fe2-775a-b6f9" primary="false"/>
+        <categoryLink id="322e-3592-274e-1d29" name="Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="0d3e-3940-dc2c-6558" name="Deathwatch" hidden="false" targetId="89d9-d083-eea1-1d31" primary="false"/>
+        <categoryLink id="b0e9-2403-44a4-0198" name="Adeptus Astartes" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
+      </categoryLinks>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="8a5b-89e3-b672-26b3" name="Kill Team" hidden="false" collective="false" import="true" defaultSelectionEntryId="ebe5-04cd-c7fc-46ec">
+          <constraints>
+            <constraint field="selections" scope="parent" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5a67-10c8-c9f3-d4d7" type="max"/>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="46ca-7087-307e-3f9f" type="min"/>
+          </constraints>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="626b-7e60-6e1f-aba7" name="Aggressors" hidden="false" collective="false" import="true">
+              <entryLinks>
+                <entryLink id="72ce-4256-16d9-57aa" name="Aggressor" hidden="false" collective="false" import="true" targetId="4bb1-b164-f21a-d8ab" type="selectionEntry">
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+                  </costs>
+                </entryLink>
+                <entryLink id="5c34-32f2-710a-29f4" name="Aggressor w/ Flamestorm Gauntlets" hidden="false" collective="false" import="true" targetId="6ae6-0ceb-b567-2aa0" type="selectionEntry">
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup id="4e90-0f0d-5a71-3c81" name="Inceptors" hidden="false" collective="false" import="true">
+              <entryLinks>
+                <entryLink id="349e-8da3-25aa-4264" name="Inceptor w/ Plasma Exterminators" hidden="false" collective="false" import="true" targetId="4fb3-4be2-fe32-dd8f" type="selectionEntry">
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+                  </costs>
+                </entryLink>
+                <entryLink id="772f-93df-ee17-40c9" name="Inceptor w/ Assault Bolters" hidden="false" collective="false" import="true" targetId="71f2-bcda-1e28-544e" type="selectionEntry">
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+            <selectionEntryGroup id="4e73-1969-de9b-eb55" name="Eradicators" hidden="false" collective="false" import="true">
+              <entryLinks>
+                <entryLink id="3ea8-056d-6581-2ab1" name="Eradicator w/ Melta Rifle" hidden="false" collective="false" import="true" targetId="cefd-5a45-dbf2-0396" type="selectionEntry">
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
+                  </costs>
+                </entryLink>
+                <entryLink id="e9d4-57c1-80b6-a7d6" name="Eradicator w/ Heavy Melta Rifle" hidden="false" collective="false" import="true" targetId="58b8-24e8-92fa-4383" type="selectionEntry">
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
+                  </costs>
+                </entryLink>
+                <entryLink id="669b-da76-f4e6-71bc" name="Eradicator w/ Multi-melta" hidden="false" collective="false" import="true" targetId="4dd2-1b02-dbef-7aa4" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="hidden" value="true">
+                      <conditions>
+                        <condition field="selections" scope="13b0-2231-db5a-a493" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e73-1969-de9b-eb55" type="lessThan"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="decrement" field="130f-3f26-4f45-e567" value="1.0">
+                      <conditions>
+                        <condition field="selections" scope="13b0-2231-db5a-a493" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e73-1969-de9b-eb55" type="lessThan"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="set" field="130f-3f26-4f45-e567" value="1.0"/>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="130f-3f26-4f45-e567" type="max"/>
+                  </constraints>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
+                  </costs>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <entryLinks>
+            <entryLink id="ebe5-04cd-c7fc-46ec" name="Heavy Intercessor w/ Heavy Bolt RIfle" hidden="false" collective="false" import="true" targetId="9d17-85be-6fe3-ef45" type="selectionEntry">
+              <modifiers>
+                <modifier type="decrement" field="a138-3ee5-be36-3da2" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0305-9b49-5e33-d9b0" repeats="1" roundUp="false"/>
+                    <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0d6a-03ad-642d-b8df" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a138-3ee5-be36-3da2" type="min"/>
+              </constraints>
+              <categoryLinks>
+                <categoryLink id="d022-8eb3-ad16-1ab2" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+              </costs>
+            </entryLink>
+            <entryLink id="15e3-3773-0b57-0b5a" name="Heavy Intercessor w/ Executor Bolt Rifle" hidden="false" collective="false" import="true" targetId="0d6a-03ad-642d-b8df" type="selectionEntry">
+              <categoryLinks>
+                <categoryLink id="58ea-647c-72c2-c519" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+              </costs>
+            </entryLink>
+            <entryLink id="af91-a4cf-76ad-dd21" name="Heavy Intercessor w/ Hellstorm Bolt Rifle" hidden="false" collective="false" import="true" targetId="0305-9b49-5e33-d9b0" type="selectionEntry">
+              <categoryLinks>
+                <categoryLink id="0bd6-7c0d-9f36-f4cd" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+              </costs>
+            </entryLink>
+            <entryLink id="de66-c3eb-ace8-9d18" name="Heavy Intercessor w/ Heavy Bolter" hidden="false" collective="false" import="true" targetId="d9f3-f640-a5ab-ab6f" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="7937-a9f3-e79a-9a9d" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="13b0-2231-db5a-a493" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="baff-31d5-797d-42b8" type="equalTo"/>
+                  </conditions>
+                </modifier>
+                <modifier type="decrement" field="7937-a9f3-e79a-9a9d" value="1.0"/>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7937-a9f3-e79a-9a9d" type="max"/>
+              </constraints>
+              <categoryLinks>
+                <categoryLink id="8805-d8d6-89c8-848d" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+              </costs>
+            </entryLink>
+            <entryLink id="107f-89e2-b052-7b18" name="Heavy Intercessor Sergeant" hidden="false" collective="false" import="true" targetId="1342-3c86-22c8-3c89" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7b0e-1b94-8605-930b" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ceb-d56c-f3b8-768c" type="min"/>
+              </constraints>
+              <categoryLinks>
+                <categoryLink id="a5c2-4a53-1d7f-6689" name="Intercessors" hidden="false" targetId="baff-31d5-797d-42b8" primary="false"/>
+              </categoryLinks>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="9d17-85be-6fe3-ef45" name="Heavy Intercessor w/ Heavy Bolt RIfle" hidden="false" collective="false" import="true" type="model">
+      <profiles>
+        <profile id="26b8-0f36-bc5a-c55c" name="Heavy Intercessor" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <entryLinks>
+        <entryLink id="4a37-c0b8-81ae-d0df" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="acff-7b6a-4ab6-e5e8" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e05f-67e9-6bdf-08dd" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="ad7b-8e43-f095-6805" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="234e-f73a-7f8a-cc8c" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2846-c3ec-a2e1-7746" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="227d-cf3e-7b19-158a" name="Heavy Bolt Rifle" hidden="false" collective="false" import="true" targetId="1ccc-d41a-92bf-dd01" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="086b-841f-7912-cf02" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d682-4cb5-8756-cdcc" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="28.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="1ccc-d41a-92bf-dd01" name="Heavy Bolt Rifle" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="479a-0aa4-b5dd-ccaf" name="Heavy Bolt Rifle" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="0305-9b49-5e33-d9b0" name="Heavy Intercessor w/ Hellstorm Bolt Rifle" hidden="false" collective="false" import="true" type="model">
+      <profiles>
+        <profile id="7b43-6e45-7114-5fed" name="Heavy Intercessor" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <entryLinks>
+        <entryLink id="e23f-9857-5614-3773" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0596-f371-57e9-edfa" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cc42-c720-48bf-1035" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="bbac-48c8-002e-ecc7" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2650-31b5-604d-7ada" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d398-722d-5d55-2824" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="1f07-8219-0b59-b618" name="Hellstorm Bolt Rifle" hidden="false" collective="false" import="true" targetId="661c-004f-01d6-7103" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0adb-6adb-5c01-4058" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dba3-a10a-e883-a58f" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="28.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0d6a-03ad-642d-b8df" name="Heavy Intercessor w/ Executor Bolt Rifle" hidden="false" collective="false" import="true" type="model">
+      <profiles>
+        <profile id="d4c6-95ff-c89e-92c4" name="Heavy Intercessor" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <entryLinks>
+        <entryLink id="0033-0873-d232-e739" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5d26-ea67-478d-b242" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c24b-6f77-ceac-b5e2" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="61e7-5e3b-b316-f36d" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f612-d2aa-2743-680a" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f19c-9077-d647-2fb6" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="f4fb-49e8-5d70-bcf1" name="Executor Bolt Rifle" hidden="false" collective="false" import="true" targetId="0aec-fe5e-0370-3f71" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fc27-5a0e-c716-e44d" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c9c5-5e3f-dbaf-0c0d" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="28.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0aec-fe5e-0370-3f71" name="Executor Bolt Rifle" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="2e38-363b-24c8-355a" name="Executor Bolt Rifle" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">42&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="661c-004f-01d6-7103" name="Hellstorm Bolt Rifle" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="52d8-4b95-dc19-8b74" name="Hellstorm Bolt Rifle" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 3</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="d9f3-f640-a5ab-ab6f" name="Heavy Intercessor w/ Heavy Bolter" hidden="false" collective="false" import="true" type="model">
+      <profiles>
+        <profile id="4c8d-c967-16e2-1727" name="Heavy Intercessor" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="6c07-6c31-370d-9894" name="Heavy Bolter Type" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa07-a613-a791-45b1" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0768-1251-bcca-387d" type="min"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="6330-41b6-f169-9355" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f721-d397-3e40-8cd3" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="7e31-c317-514e-b8ba" name="Hellstorm Heavy Bolter" hidden="false" collective="false" import="true" targetId="bc53-a90c-189a-1a3c" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="441a-f594-769b-ae6e" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="ca93-2efc-4783-f14e" name="Executor Heavy Bolter" hidden="false" collective="false" import="true" targetId="0487-6e91-bb59-871a" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6086-7298-0c9b-832c" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="cceb-d019-9357-184f" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8193-e0d2-c9bf-2c19" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d324-a32e-6e7f-e951" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="11ee-bdf8-ad86-7356" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c4d6-0e5b-fd98-0de0" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="18ec-6979-fe3d-948b" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="28.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0487-6e91-bb59-871a" name="Executor Heavy Bolter" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="7879-2955-d294-9601" name="Executor Heavy Bolter" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">42&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="10.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="bc53-a90c-189a-1a3c" name="Hellstorm Heavy Bolter" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="5cc2-4d6c-6dec-5f81" name="Hellstorm Heavy Bolter" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="10.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="1342-3c86-22c8-3c89" name="Heavy Intercessor Sergeant" hidden="false" collective="false" import="true" type="model">
+      <profiles>
+        <profile id="2c23-11c2-9bb5-933a" name="Heavy Intercessor Sergeant" publicationId="1973-efc9-3214-865a" page="141" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="993e-5045-a832-c51d" name="Replace Rifle" hidden="false" collective="false" import="true" defaultSelectionEntryId="676b-3b6c-f99d-9d96">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="116d-db60-5bed-8a17" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="15ac-7fed-ecba-89da" type="min"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="12ff-ab45-e973-a537" name="Executor Bolt Rifle" hidden="false" collective="false" import="true" targetId="0aec-fe5e-0370-3f71" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="8e56-3fb4-cd5f-e685" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="676b-3b6c-f99d-9d96" name="Heavy Bolt Rifle" hidden="false" collective="false" import="true" targetId="1ccc-d41a-92bf-dd01" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="38c4-8736-a8e1-2e0a" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="db76-bf45-61ac-1658" name="Hellstorm Bolt Rifle" hidden="false" collective="false" import="true" targetId="661c-004f-01d6-7103" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="feec-ed32-0d22-24a9" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="163b-12c8-2149-cc20" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="19a8-5aeb-3985-8c58" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="de76-1bc7-3b79-abfe" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="4adc-3510-a9ad-3231" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d108-0142-8e17-1f98" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1a1a-a761-9868-8fb9" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="20.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="71f2-bcda-1e28-544e" name="Inceptor w/ Assault Bolters" hidden="false" collective="false" import="true" type="model">
+      <infoLinks>
+        <infoLink id="d8a5-92eb-b8e7-b8c2" name="Inceptor" hidden="false" targetId="7a44-cdbe-eadb-3a2f" type="profile"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink id="b9de-672a-6fac-cdef" name="2x Assault Bolters" hidden="false" collective="false" import="true" targetId="1a9b-3f7a-47f8-2487" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4f02-0e6e-b6ad-5544" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9cd7-5e7a-efc6-77d9" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="40.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="1a9b-3f7a-47f8-2487" name="2x Assault Bolters" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="e41c-462b-6955-26e4" name="Assault bolter" hidden="false" targetId="21ef-7459-ad22-ece0" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="4f99-cbe3-9f5d-487b" name="2x Plasma Exterminators" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="720c-4b0a-a752-d6e9" name="Plasma Exterminator, Standard" hidden="false" targetId="fa3b-444e-2437-c9bb" type="profile"/>
+        <infoLink id="f6b4-0875-b179-8764" name="Plasma Exterminator, Supercharged" hidden="false" targetId="c1e5-688f-13e6-ac26" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="10.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4fb3-4be2-fe32-dd8f" name="Inceptor w/ Plasma Exterminators" hidden="false" collective="false" import="true" type="model">
+      <infoLinks>
+        <infoLink id="6029-30ef-e602-606b" name="Inceptor" hidden="false" targetId="7a44-cdbe-eadb-3a2f" type="profile"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink id="b3e2-2ce2-2a6d-7516" name="2x Plasma Exterminators" hidden="false" collective="false" import="true" targetId="4f99-cbe3-9f5d-487b" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6067-d93d-f67d-e337" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a7ae-4ed8-5382-d116" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="40.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="cefd-5a45-dbf2-0396" name="Eradicator w/ Melta Rifle" hidden="false" collective="false" import="true" type="model">
+      <infoLinks>
+        <infoLink id="b924-f193-166f-82c2" name="Eradicator" hidden="false" targetId="fb2d-7d0d-d91c-3cf6" type="profile"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink id="609b-ad2f-9e23-526c" name="Heavy Melta Rifle" hidden="false" collective="false" import="true" targetId="9eef-73d5-d9e8-0a7e" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3977-22d3-09fd-58e5" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ea6-3073-2d90-0827" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="d4e4-453c-0f3a-4b1a" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1bfa-c058-590c-c78e" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ef8e-7852-076f-e95e" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="40.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="58b8-24e8-92fa-4383" name="Eradicator w/ Heavy Melta Rifle" hidden="false" collective="false" import="true" type="model">
+      <infoLinks>
+        <infoLink id="96db-17f2-f997-4b93" name="Eradicator" hidden="false" targetId="fb2d-7d0d-d91c-3cf6" type="profile"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink id="b608-6e7f-40a0-e1a7" name="Melta rifle" hidden="false" collective="false" import="true" targetId="62c5-d4eb-396c-fe59" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0fea-6e78-a21e-5f6d" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7357-aae2-fe87-c7ed" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="a701-2e04-9935-49cd" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2d08-8e3b-a786-14c6" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e0f8-7859-00e9-52f4" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="40.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4dd2-1b02-dbef-7aa4" name="Eradicator w/ Multi-melta" hidden="false" collective="false" import="true" type="model">
+      <infoLinks>
+        <infoLink id="9bf1-40e6-7a97-731d" name="Eradicator" hidden="false" targetId="fb2d-7d0d-d91c-3cf6" type="profile"/>
+      </infoLinks>
+      <entryLinks>
+        <entryLink id="c887-a411-8a01-5ff4" name="Multi-melta" hidden="false" collective="false" import="true" targetId="2b37-65ee-9443-b4ef" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="10.0"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5f28-374d-4e6b-69c8" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="22a1-6bb2-3796-c269" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="4264-3c6e-5a00-0c43" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="37d3-7098-d596-9948" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c6ad-71de-6ab2-7b06" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7bcf-c338-147e-9cf9" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="40.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="9eef-73d5-d9e8-0a7e" name="Heavy Melta Rifle" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="002b-b29f-b5b3-eb42" name="Heavy Melta Rifle" publicationId="1973-efc9-3214-865a" page="175" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">4</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6+2</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+4.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="5.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
