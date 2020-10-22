@@ -129,7 +129,11 @@
     <entryLink id="153c-2250-d024-389d" name="Belial" hidden="false" collective="false" import="true" targetId="7d3f-a10f-0a57-d488" type="selectionEntry"/>
     <entryLink id="c086-ffb6-0621-accb" name="Sammael" hidden="false" collective="false" import="true" targetId="28b1-58d0-9871-9f8a" type="selectionEntry"/>
     <entryLink id="353d-f3c0-2b9a-8c5f" name="Interrogator-Chaplain" hidden="false" collective="false" import="true" targetId="b522-207b-e408-8948" type="selectionEntry"/>
-    <entryLink id="c928-8d45-f960-7366" name="Interrogator-Chaplain in Terminator Armor" hidden="false" collective="false" import="true" targetId="fc5f-fe4d-4bcb-3727" type="selectionEntry"/>
+    <entryLink id="c928-8d45-f960-7366" name="Interrogator-Chaplain in Terminator Armor" hidden="false" collective="false" import="true" targetId="fc5f-fe4d-4bcb-3727" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="7669-14ce-8434-3375" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink id="c716-3c17-e675-04de" name="Interrogator-Chaplain on Bike [Legends]" hidden="false" collective="false" import="true" targetId="7fc2-e1ed-6a70-1677" type="selectionEntry"/>
     <entryLink id="12e8-d6f5-8cfa-6a0a" name="Asmodai" hidden="false" collective="false" import="true" targetId="892e-81b4-2047-a5ac" type="selectionEntry"/>
     <entryLink id="7cef-96b6-df26-b99f" name="Ezekiel" hidden="false" collective="false" import="true" targetId="f142-6890-334c-0994" type="selectionEntry"/>
@@ -2024,7 +2028,6 @@
         <categoryLink id="0889-031e-1549-e4e3" name="New CategoryLink" hidden="false" targetId="3a4a-f508-9466-4bd6" primary="false"/>
         <categoryLink id="ce53-b6a1-dfc3-bf47" name="Terminator" hidden="false" targetId="abb0-a38c-f9a6-aeb5" primary="false"/>
         <categoryLink id="6c03-036e-7ee3-0925" name="Chaplain" hidden="false" targetId="6a29-a8c3-7b22-c00f" primary="false"/>
-        <categoryLink id="d756-82fc-603e-d591" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
         <categoryLink id="1b1d-24a6-4cf2-533a" name="Inner Circle" hidden="false" targetId="bfe5-7a54-96da-5247" primary="false"/>
         <categoryLink id="86f8-d10b-6a8c-cb40" name="Priest" hidden="false" targetId="b0b9-4578-dfef-18fd" primary="false"/>
         <categoryLink id="02ed-ded0-86de-3bb9" name="Deathwing" hidden="false" targetId="38b6-ad30-95f8-9587" primary="false"/>
@@ -3047,7 +3050,7 @@
       </profiles>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="pts" typeId="points" value="5.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -5691,9 +5694,14 @@
             <entryLink id="c36c-d753-52b9-0ca8" name="Reliquary of the Repentant" hidden="false" collective="false" import="true" targetId="e973-c24e-1be2-f446" type="selectionEntry">
               <modifiers>
                 <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dbd9-d6c2-febe-1a1b" type="notInstanceOf"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dbd9-d6c2-febe-1a1b" type="notInstanceOf"/>
+                        <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6b32-0f09-efcd-b234" type="instanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
             </entryLink>
