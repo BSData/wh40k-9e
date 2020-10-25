@@ -16344,6 +16344,18 @@ Weapon: Purgatorus</characteristic>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="2c3e-b88b-c78b-7f36" name="Weapon Options" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="8d31-04ba-cd75-a817" value="1.0">
+              <conditions>
+                <condition field="selections" scope="e176-3548-2126-02c8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b050-572b-911b-d51c" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="61b5-8fcb-fab0-0e83" value="1.0">
+              <conditions>
+                <condition field="selections" scope="e176-3548-2126-02c8" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b050-572b-911b-d51c" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d31-04ba-cd75-a817" type="min"/>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="61b5-8fcb-fab0-0e83" type="max"/>
@@ -16395,6 +16407,11 @@ Weapon: Purgatorus</characteristic>
               <constraints>
                 <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="80ee-38d2-41b8-bb1e" type="max"/>
               </constraints>
+            </entryLink>
+            <entryLink id="6c14-dfa8-915f-c5d1" name="Lightning Claw (Pair)" hidden="false" collective="false" import="true" targetId="b050-572b-911b-d51c" type="selectionEntry">
+              <costs>
+                <cost name="pts" typeId="points" value="5.0"/>
+              </costs>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
@@ -20295,6 +20312,30 @@ Weapon: Purgatorus</characteristic>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, each time this model is selected to shoot, its Hammerfall heavy bolter array or its Hammerfall heavy flamer array can target, and resolve attacks against, every eligible enemy unit. Each time this model fires overwatch, it only resolves attacks with its weapons against the charging unit, but when doing so the Type of its Hammerfall heavy bolter array is changed to Heavy 6, and the type of its Hammerfall heavy flamer array is changed to 2D6</characteristic>
           </characteristics>
         </profile>
+        <profile id="80f6-5d44-9468-1fb4" name="Hammerfail Bunker 1" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">8+</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">4+</characteristic>
+            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa"/>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba"/>
+          </characteristics>
+        </profile>
+        <profile id="643e-b79a-9cee-4458" name="Hammerfail Bunker 2" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">4-7</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">5+</characteristic>
+            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa"/>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba"/>
+          </characteristics>
+        </profile>
+        <profile id="cae4-0ed3-cd3a-237c" name="Hammerfail Bunker 3" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-3</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">6+</characteristic>
+            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa"/>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba"/>
+          </characteristics>
+        </profile>
       </profiles>
       <infoLinks>
         <infoLink id="1de3-c2a8-d839-6b50" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
@@ -20639,9 +20680,14 @@ Weapon: Purgatorus</characteristic>
         <entryLink id="c8f6-e9ec-3fdc-9126" name="Plasma pistol" hidden="false" collective="false" import="true" targetId="83be-1ba9-c326-4760" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="0.0">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0b8-6a5c-ea09-44f9" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e176-3548-2126-02c8" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0b8-6a5c-ea09-44f9" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <costs>
@@ -20651,9 +20697,14 @@ Weapon: Purgatorus</characteristic>
         <entryLink id="11c1-a0c9-c811-3040" name="Grav-pistol" hidden="false" collective="false" import="true" targetId="7b66-cac7-e582-a518" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="0.0">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0b8-6a5c-ea09-44f9" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e176-3548-2126-02c8" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0b8-6a5c-ea09-44f9" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <costs>
