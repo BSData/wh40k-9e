@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="8a47-6e7e-22fa-6014" name="Imperium - Adeptus Astartes - Black Templars" revision="27" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="164" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="8a47-6e7e-22fa-6014" name="Imperium - Adeptus Astartes - Black Templars" revision="27" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="165" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <selectionEntries>
     <selectionEntry id="03ac-4576-88d8-3b67" name="Crusader Squad" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -686,7 +686,6 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
     </selectionEntry>
     <selectionEntry id="c518-2acc-2e03-8c6f" name="Lieutenants" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
-        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8134-50e4-936b-3e86" type="max"/>
         <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7fba-ebea-6e7e-2eff" type="max"/>
       </constraints>
       <infoLinks>
@@ -695,39 +694,47 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
       <categoryLinks>
         <categoryLink id="4c72-bad4-870b-4644" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink id="eb95-d8c1-062c-0e5d" name="Lieutenant" hidden="false" collective="false" import="true" targetId="e176-3548-2126-02c8" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e277-184d-4e8a-6177" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="0549-cdc4-0e3e-aa74" name="Up to Two" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="82d6-810e-2b40-2a64" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b9b-7e76-a67e-05fd" type="min"/>
+          </constraints>
           <entryLinks>
-            <entryLink id="bd2d-0b7e-37ff-e2ed" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
-            <entryLink id="6ff0-7fda-e92c-6b16" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
+            <entryLink id="5498-0662-544c-fcf3" name="Lieutenant" hidden="false" collective="false" import="true" targetId="e176-3548-2126-02c8" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e277-184d-4e8a-6177" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <entryLinks>
+                <entryLink id="0394-1fa6-5b7f-82be" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
+                <entryLink id="41d6-903b-b62a-b3dc" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
+              </entryLinks>
+            </entryLink>
+            <entryLink id="50ce-5ae1-b156-76d6" name="Lieutenant in Phobos Armour" hidden="false" collective="false" import="true" targetId="dacf-c1ae-563f-3632" type="selectionEntry">
+              <entryLinks>
+                <entryLink id="aaf8-c8b4-c8f8-83e9" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
+                <entryLink id="b480-2cf7-6030-6135" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
+              </entryLinks>
+            </entryLink>
+            <entryLink id="0faf-6ae7-5e9e-20c3" name="Lieutenant in Reiver Armour" hidden="false" collective="false" import="true" targetId="692c-72aa-bfa3-204f" type="selectionEntry">
+              <entryLinks>
+                <entryLink id="1f07-2282-c22e-acd7" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
+                <entryLink id="8c78-6f29-15aa-7520" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
+              </entryLinks>
+            </entryLink>
+            <entryLink id="287d-8b0e-57e0-578b" name="Primaris Lieutenant" hidden="false" collective="false" import="true" targetId="13fa-cbe0-ef6c-a134" type="selectionEntry">
+              <entryLinks>
+                <entryLink id="9779-01b8-d94a-196a" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
+                <entryLink id="ed9d-83de-976b-d3e3" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
+              </entryLinks>
+            </entryLink>
           </entryLinks>
-        </entryLink>
-        <entryLink id="eb5f-0278-a7ab-0bd9" name="Lieutenant in Phobos Armour" hidden="false" collective="false" import="true" targetId="dacf-c1ae-563f-3632" type="selectionEntry">
-          <entryLinks>
-            <entryLink id="0e2f-f0be-de12-17b6" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
-            <entryLink id="3cae-2a7d-fe24-3823" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
-          </entryLinks>
-        </entryLink>
-        <entryLink id="6379-5304-d4dc-9036" name="Lieutenant in Reiver Armour" hidden="false" collective="false" import="true" targetId="692c-72aa-bfa3-204f" type="selectionEntry">
-          <entryLinks>
-            <entryLink id="8933-ce2b-ee63-4aae" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
-            <entryLink id="979c-4ef8-7772-8bdf" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
-          </entryLinks>
-        </entryLink>
-        <entryLink id="73b8-1657-7912-bc0c" name="Primaris Lieutenant" hidden="false" collective="false" import="true" targetId="13fa-cbe0-ef6c-a134" type="selectionEntry">
-          <entryLinks>
-            <entryLink id="f94c-b872-d408-8ea0" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="5842-f786-0a52-75ef" type="selectionEntryGroup"/>
-            <entryLink id="d2ab-c57e-a35a-f205" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
-          </entryLinks>
-        </entryLink>
-      </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
