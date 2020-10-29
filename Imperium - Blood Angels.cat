@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="eb0f-c144-a282-8bdc" name="Imperium - Adeptus Astartes - Blood Angels" revision="196" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas | Twitter: @_alphalas" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="167" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="eb0f-c144-a282-8bdc" name="Imperium - Adeptus Astartes - Blood Angels" revision="198" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas | Twitter: @_alphalas" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="167" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="eb0f-c144-pubN65537" name="Codex: Blood Angels"/>
   </publications>
@@ -3009,9 +3009,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="04b8-72ed-b68b-f715" name="Magna-grapple" hidden="false" collective="false" import="true" type="upgrade">
-      <infoLinks>
-        <infoLink id="f02b-8f3f-ca72-449c" name="New InfoLink" hidden="false" targetId="7fc6-8c71-11b6-b0f4" type="profile"/>
-      </infoLinks>
+      <profiles>
+        <profile id="e696-9fb0-de36-d865" name="Magna-grapple" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an enemy Vehicle unit (excluding Aircraft) is selected to Fall Back whilst it is within Engagement Range of the bearer, you can engage the bearer’s magna-grapple. If you do, roll 2D6. If the result is less than the Strength characteristic of that enemy unit, it can Fall Back normally; otherwise it cannot Fall Back this phase and must Remain Stationary instead.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
       <costs>
         <cost name="pts" typeId="points" value="5.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -4717,7 +4721,7 @@ a model in that unit makes a melee attack, add 1 to that attack’s hit roll.</c
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="a9ef-b556-0191-54e7" type="max"/>
                   </constraints>
                   <entryLinks>
-                    <entryLink id="0079-d154-229e-bb8e" name="Chainsword" hidden="false" collective="false" import="true" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry">
+                    <entryLink id="0079-d154-229e-bb8e" name="Astartes Chainsword" hidden="false" collective="false" import="true" targetId="c5f0-76db-2a6c-403e" type="selectionEntry">
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b5fd-9724-51cc-14cb" type="max"/>
                       </constraints>
@@ -7242,24 +7246,24 @@ a model in that unit makes a melee attack, add 1 to that attack’s hit roll.</c
       <selectionEntryGroups>
         <selectionEntryGroup id="34f5-8505-237b-15c7" name="Litanies of Battle" hidden="false" collective="false" import="true">
           <modifiers>
-            <modifier type="increment" field="5d88-5a47-55f0-fe82" value="1.0">
+            <modifier type="set" field="5d88-5a47-55f0-fe82" value="2.0">
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9eb4-972d-198c-f280" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e826-4453-a0fc-be3a" type="instanceOf"/>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e0a6-ed26-3732-6cde" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e0a6-ed26-3732-6cde" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
-            <modifier type="increment" field="f81a-3cdd-d6b1-4856" value="1.0">
+            <modifier type="set" field="f81a-3cdd-d6b1-4856" value="2.0">
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9eb4-972d-198c-f280" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e826-4453-a0fc-be3a" type="instanceOf"/>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e0a6-ed26-3732-6cde" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e0a6-ed26-3732-6cde" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -7828,7 +7832,7 @@ taken for this model, you can re-roll one of the dice.</characteristic>
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="29c0-3526-09e2-09ea" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="29c0-3526-09e2-09ea" type="equalTo"/>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="effc-3f56-0279-fde8" type="instanceOf"/>
               </conditions>
             </conditionGroup>
@@ -8936,11 +8940,6 @@ The Armour Penetration characteristic of Pistol and melee weapons this model is 
         <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
         <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="7fc6-8c71-11b6-b0f4" name="Magna-grapple" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If a model with a magna-grapple only targets a single VEHICLE unit in the Charge phase, add 2 to its charge roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="0811-93b6-0951-4968" name="Baal Predator" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
