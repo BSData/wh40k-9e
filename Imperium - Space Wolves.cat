@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="24b6-2b46-0063-2867" name="Imperium - Adeptus Astartes - Space Wolves" revision="159" battleScribeVersion="2.03" authorName="CrusherJoe" authorContact="@CrusherJoe" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="167" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="24b6-2b46-0063-2867" name="Imperium - Adeptus Astartes - Space Wolves" revision="160" battleScribeVersion="2.03" authorName="CrusherJoe" authorContact="@CrusherJoe" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="167" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="24b6-2b46-pubN65537" name="Codex: Space Wolves"/>
   </publications>
@@ -2731,8 +2731,8 @@
         <infoLink id="0da0-f851-9ca8-24de" name="Hunters Unleashed" hidden="false" targetId="05af-49f8-8692-ec9f" type="rule"/>
         <infoLink id="871e-25a6-0d24-1611" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
         <infoLink id="5235-4584-da1d-7648" name="Abilities" hidden="false" targetId="6092-ebc0-60ac-68bd" type="infoGroup"/>
-        <infoLink id="9b40-c014-e9ff-998e" name="Swift Hunters" hidden="false" targetId="1640-a9e3-5c03-ac7b" type="profile"/>
         <infoLink id="a736-9223-3cfd-8607" name="Rites of Battle (Aura)" hidden="false" targetId="9396-ba74-a305-56ff" type="profile"/>
+        <infoLink id="ce34-ac1d-2637-a41c" name="Swift Hunters" hidden="false" targetId="1640-a9e3-5c03-ac7b" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="062f-7ed3-5ad2-ae2f" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
@@ -2756,7 +2756,7 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" id="e479-20b9-5277-2de1" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="4de8-4f22-9932-0603" name="Space Wolves Melee Weapons" hidden="false" collective="false" import="true" targetId="5283-211e-6d8e-ca9a" type="selectionEntryGroup">
+            <entryLink id="4de8-4f22-9932-0603" name="Wolf Lord Melee Weapon" hidden="false" collective="false" import="true" targetId="ed66-360b-493b-595d" type="selectionEntryGroup">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" id="978f-b327-b62b-b963" type="max"/>
               </constraints>
@@ -5347,13 +5347,6 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="f658-9d4e-0ed1-3364" name="Wolf Guard" hidden="false" collective="false" import="true" type="model">
-          <modifiers>
-            <modifier type="set" field="points" value="21.0">
-              <conditions>
-                <condition field="selections" scope="ad37-e26a-6cab-8c1b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e96a-c219-d078-5e15" type="atLeast"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="44c5-bd82-8fa1-efab" type="max"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4cbb-683a-7989-ed5a" type="min"/>
@@ -5441,7 +5434,11 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="1a99-c36e-d9e1-6bde" type="max"/>
                   </constraints>
                 </entryLink>
-                <entryLink id="f15d-f624-0ee1-1eda" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="0334-f487-8229-0c1a" type="selectionEntry"/>
+                <entryLink id="f15d-f624-0ee1-1eda" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="0334-f487-8229-0c1a" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="13fa-852f-7384-a021" type="max"/>
+                  </constraints>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -5468,6 +5465,11 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
                 <condition field="selections" scope="ad37-e26a-6cab-8c1b" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
               </conditions>
             </modifier>
+            <modifier type="increment" field="points" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2855-11a9-da72-a33c" type="max"/>
@@ -5480,6 +5482,9 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2f1e-3e76-f56b-bcf5" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3e96-c8f0-f6ba-b729" type="max"/>
           </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="19.0"/>
+          </costs>
         </entryLink>
       </entryLinks>
       <costs>
@@ -6587,6 +6592,9 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7115-90ce-7b9f-8f6f" type="max"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+              </costs>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
@@ -8102,6 +8110,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
       </selectionEntryGroups>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="33.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="fb9a-c2c9-751e-287c" name="Wolf Guard Pack Leader" hidden="false" collective="false" import="true" type="model">
@@ -8198,18 +8207,8 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="35f9-b585-e178-1060" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="3edd-93c6-d954-14eb" name="Astartes Chainsword" hidden="false" collective="false" import="true" targetId="c5f0-76db-2a6c-403e" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="de73-4a18-f28f-ddfe" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="dbed-6976-1513-b76a" type="min"/>
-          </constraints>
-          <costs>
-            <cost name="pts" typeId="points" value="1.0"/>
-          </costs>
-        </entryLink>
       </entryLinks>
       <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
         <cost name="pts" typeId="points" value="18.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -8270,62 +8269,83 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="7f09-4a38-01f4-3e9a" name="Space Wolves Combi-Weapons" hidden="false" collective="false" import="true">
+      <categoryLinks>
+        <categoryLink id="03f2-9b0d-a4d2-8672" name="Terminator" hidden="false" targetId="15d7-1ea5-1780-00bf" primary="false"/>
+      </categoryLinks>
       <entryLinks>
         <entryLink id="4fc9-4fdf-4d82-b4cd" name="Storm bolter" hidden="false" collective="false" import="true" targetId="2b03-8d64-3711-f300" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="5.0"/>
+            <modifier type="set" field="points" value="5.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="15d7-1ea5-1780-00bf" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </entryLink>
         <entryLink id="0971-b105-b1ef-1455" name="Combi-plasma" hidden="false" collective="false" import="true" targetId="fdce-cdf7-21a9-f9ac" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="5.0"/>
+            <modifier type="set" field="points" value="5.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="15d7-1ea5-1780-00bf" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </entryLink>
         <entryLink id="4ac0-8d09-bced-8c0b" name="Combi-flamer" hidden="false" collective="false" import="true" targetId="c6a1-e0c4-c1b1-dce1" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="5.0"/>
+            <modifier type="set" field="points" value="5.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="15d7-1ea5-1780-00bf" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </entryLink>
         <entryLink id="f721-406f-88e4-8929" name="Combi-melta" hidden="false" collective="false" import="true" targetId="c445-e211-f316-5d83" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="5.0"/>
+            <modifier type="set" field="points" value="5.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="15d7-1ea5-1780-00bf" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </entryLink>
         <entryLink id="5c6a-7dfe-659c-d56e" name="Combi-grav" hidden="false" collective="false" import="true" targetId="c027-24d6-7a3d-cf12" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="5.0"/>
+            <modifier type="set" field="points" value="5.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="15d7-1ea5-1780-00bf" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
         </entryLink>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="5283-211e-6d8e-ca9a" name="Space Wolves Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="81fc-af69-67b2-5e46">
       <entryLinks>
-        <entryLink id="81fc-af69-67b2-5e46" name="Astartes Chainsword" hidden="false" collective="false" import="true" targetId="c5f0-76db-2a6c-403e" type="selectionEntry"/>
+        <entryLink id="81fc-af69-67b2-5e46" name="Astartes Chainsword" hidden="false" collective="false" import="true" targetId="c5f0-76db-2a6c-403e" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="1.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2e39-6ee4-1903-7c95" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="5bdf-1754-acc9-fc32" name="Lightning Claw" hidden="false" collective="false" import="true" targetId="90de-7b01-e401-888b" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="3.0">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fb9a-c2c9-751e-287c" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f658-9d4e-0ed1-3364" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad37-e26a-6cab-8c1b" type="instanceOf"/>
+              </conditions>
             </modifier>
           </modifiers>
         </entryLink>
         <entryLink id="8be9-0765-7b60-edec" name="Power axe" hidden="false" collective="false" import="true" targetId="3292-34e6-f679-d5b9" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="3.0">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fb9a-c2c9-751e-287c" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f658-9d4e-0ed1-3364" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad37-e26a-6cab-8c1b" type="instanceOf"/>
+              </conditions>
             </modifier>
           </modifiers>
         </entryLink>
@@ -8333,42 +8353,27 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           <modifiers>
             <modifier type="set" field="points" value="10.0"/>
             <modifier type="set" field="points" value="8.0">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fb9a-c2c9-751e-287c" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f658-9d4e-0ed1-3364" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad37-e26a-6cab-8c1b" type="instanceOf"/>
+              </conditions>
             </modifier>
           </modifiers>
         </entryLink>
         <entryLink id="1d94-66e0-b629-4ff0" name="Power maul" hidden="false" collective="false" import="true" targetId="6ea7-1195-7144-438e" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="3.0">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fb9a-c2c9-751e-287c" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f658-9d4e-0ed1-3364" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad37-e26a-6cab-8c1b" type="instanceOf"/>
+              </conditions>
             </modifier>
           </modifiers>
         </entryLink>
         <entryLink id="cda7-063d-ba30-bb81" name="Power sword" hidden="false" collective="false" import="true" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="3.0">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fb9a-c2c9-751e-287c" type="instanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f658-9d4e-0ed1-3364" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad37-e26a-6cab-8c1b" type="instanceOf"/>
+              </conditions>
             </modifier>
           </modifiers>
         </entryLink>
@@ -8376,13 +8381,9 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           <modifiers>
             <modifier type="set" field="points" value="15.0"/>
             <modifier type="set" field="points" value="12.0">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad37-e26a-6cab-8c1b" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad37-e26a-6cab-8c1b" type="instanceOf"/>
+              </conditions>
             </modifier>
           </modifiers>
         </entryLink>
@@ -8580,6 +8581,9 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e31-b6c7-282c-8968" type="max"/>
           </constraints>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+          </costs>
         </entryLink>
         <entryLink id="8567-3778-05ca-5daa" name="Wolf Guard Terminator Pack Leader" hidden="false" collective="false" import="true" targetId="f0b4-002a-a1b8-dc19" type="selectionEntry">
           <constraints>
@@ -8859,7 +8863,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <modifier type="set" field="points" value="10"/>
           </modifiers>
         </entryLink>
-        <entryLink id="d476-57b3-f3e7-4ed6" name="Chainsword" hidden="false" collective="false" import="true" targetId="0dd1-2e2b-7dd1-5495" type="selectionEntry"/>
+        <entryLink id="d476-57b3-f3e7-4ed6" name="Astartes Chainsword" hidden="false" collective="false" import="true" targetId="c5f0-76db-2a6c-403e" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="4b0f-2bc6-edd6-6c5e" name="Warlord Traits (SW)" hidden="false" collective="false" import="true">
