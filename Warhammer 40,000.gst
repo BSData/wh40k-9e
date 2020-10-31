@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="167" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="168" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -30,6 +30,7 @@
     <publication id="f000-7b0c-01bf-7630" name="Psychic Awakening III: Blood of Baal" shortName="PA: BoB" publicationDate="2019-12-07" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Blood-Of-Baal-EN-2019"/>
     <publication id="c9fe-4431-b76d-267a" name="Psychic Awakening VIII: War of the Spider" shortName="PA: WotS" publicationDate="2020-06-20" publisherUrl="https://www.games-workshop.com/en-GB/Psychic-Awakening-War-Of-The-Spider-EN-2020"/>
     <publication id="5093-9448-d8cc-5327" name="Psychic Awakening II: Faith and Fury" shortName="PA: F&amp;F" publicationDate="2019-11-29" publisherUrl="https://www.games-workshop.com/en-GB/Psychic-Awakening-Faith-And-Fury-EN-2019"/>
+    <publication id="7573-8d1b-acdf-2de8" name="Imperial Armour Compendium" publicationDate="2020-11-06" publisherUrl="www.forgeworld.co.uk/Imperial-Armour-Compendium-2020-FW"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
