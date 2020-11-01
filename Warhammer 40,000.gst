@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="168" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="169" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -2275,7 +2275,7 @@
       <modifiers>
         <modifier type="set" field="points" value="15.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c7b7-edbc-bc14-6238" type="notInstanceOf"/>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="instanceOf"/>
@@ -2335,7 +2335,7 @@
       <modifiers>
         <modifier type="set" field="points" value="15.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c7b7-edbc-bc14-6238" type="notInstanceOf"/>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="instanceOf"/>
@@ -3266,7 +3266,7 @@
       <modifiers>
         <modifier type="set" field="points" value="40.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c7b7-edbc-bc14-6238" type="notInstanceOf"/>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
@@ -3308,7 +3308,7 @@
       <modifiers>
         <modifier type="set" field="points" value="10.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c7b7-edbc-bc14-6238" type="notInstanceOf"/>
@@ -3634,7 +3634,7 @@
       <modifiers>
         <modifier type="set" field="points" value="40.0">
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c7b7-edbc-bc14-6238" type="notInstanceOf"/>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
