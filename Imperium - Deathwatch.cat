@@ -3323,7 +3323,12 @@
               <selectionEntryGroups>
                 <selectionEntryGroup id="fbd8-09be-1571-ef94" name="Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="331d-27ec-7f3b-b030">
                   <modifiers>
-                    <modifier type="set" field="f86a-ae89-faa5-4ef6" value="2.0">
+                    <modifier type="increment" field="f86a-ae89-faa5-4ef6" value="2.0">
+                      <conditions>
+                        <condition field="selections" scope="169e-fec1-faf2-fffe" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae46-8351-6394-d68c" type="greaterThan"/>
+                      </conditions>
+                    </modifier>
+                    <modifier type="increment" field="f86a-ae89-faa5-4ef6" value="1.0">
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
@@ -3371,11 +3376,7 @@
                     </selectionEntry>
                   </selectionEntries>
                   <entryLinks>
-                    <entryLink id="a722-a0b4-e0f3-1fec" name="Deathwatch Veteran Weapons" hidden="false" collective="false" import="true" targetId="aee4-a070-c730-29a8" type="selectionEntryGroup">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="550c-80fc-6817-1d91" type="max"/>
-                      </constraints>
-                    </entryLink>
+                    <entryLink id="a722-a0b4-e0f3-1fec" name="Deathwatch Veteran Weapons" hidden="false" collective="false" import="true" targetId="aee4-a070-c730-29a8" type="selectionEntryGroup"/>
                     <entryLink id="cd94-517f-4516-bbfc" name="Heavy Thunder Hammer" hidden="false" collective="false" import="true" targetId="e0ce-5297-3262-4e89" type="selectionEntry">
                       <modifiers>
                         <modifier type="decrement" field="05b6-19c6-6988-555f" value="1.0">
@@ -6213,9 +6214,6 @@ While a PROTEUS KILL TEAM unit only contains Veteran Bikers, it has the BIKER ke
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="44e0-64a6-bc26-1b19" name="Deathwatch Equipment List" hidden="false" collective="false" import="true">
-      <constraints>
-        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1c50-eba7-0d12-b83d" type="max"/>
-      </constraints>
       <entryLinks>
         <entryLink id="b1ee-5ac8-adba-ebf2" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="de35-9da4-047c-a147" type="selectionEntry">
           <constraints>
@@ -6842,7 +6840,7 @@ While a PROTEUS KILL TEAM unit only contains Veteran Bikers, it has the BIKER ke
     </selectionEntryGroup>
     <selectionEntryGroup id="aee4-a070-c730-29a8" name="Deathwatch Veteran Weapons" hidden="false" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="2492-24a1-da69-b409" value="2.0">
+        <modifier type="increment" field="2492-24a1-da69-b409" value="1.0">
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
@@ -6852,6 +6850,11 @@ While a PROTEUS KILL TEAM unit only contains Veteran Bikers, it has the BIKER ke
               </conditions>
             </conditionGroup>
           </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="2492-24a1-da69-b409" value="1.0">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae46-8351-6394-d68c" type="greaterThan"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
@@ -6892,6 +6895,13 @@ While a PROTEUS KILL TEAM unit only contains Veteran Bikers, it has the BIKER ke
           </costs>
         </entryLink>
         <entryLink id="d1bf-3d81-73ed-87c7" name="Deathwatch Equipment List" hidden="false" collective="false" import="true" targetId="44e0-64a6-bc26-1b19" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="1700-f1dd-eca6-f128" value="3.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae46-8351-6394-d68c" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1700-f1dd-eca6-f128" type="max"/>
           </constraints>
@@ -7262,6 +7272,28 @@ While a PROTEUS KILL TEAM unit only contains Veteran Bikers, it has the BIKER ke
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="271e-9899-6337-23c2" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="1b0e-bb7e-f532-b9b2" name="Obscuration Discipline" hidden="false" collective="false" import="true" targetId="c3ab-8b2c-2039-6f5a" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5b58-36bd-930c-e8be" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6adc-2a3e-740e-ed8c" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="19b1-e810-86fb-1da2" value="0.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6adc-2a3e-740e-ed8c" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="19b1-e810-86fb-1da2" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>
@@ -7859,6 +7891,43 @@ While a PROTEUS KILL TEAM unit only contains Veteran Bikers, it has the BIKER ke
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="9555-24af-5772-0d41" name="Black Templars: Oathkeeper" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4492-4c61-d386-43b7" type="max"/>
+          </constraints>
+          <infoLinks>
+            <infoLink id="fd3c-6ac8-7e9d-b86b" name="Oathkeeper" hidden="false" targetId="5883-f835-684c-1215" type="profile"/>
+          </infoLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="9e38-3da6-dfcf-04ec" name="Flesh Tearers: Merciless Butcher" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="7ed0-04ee-f7ee-01db" name="Merciless Butcher" publicationId="1973-efc9-3214-865a" page="107" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD fights, if there are 5 or more enemy models within 3&quot; of it, it makes D3 additional attacks</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="5f8c-3394-f591-6a29" name="Crimson Fists: Refuse to Die" hidden="false" collective="false" import="true" type="upgrade">
+          <infoLinks>
+            <infoLink id="ff38-7fd0-5cbb-3656" name="Refuse to Die" hidden="false" targetId="3421-2042-b0e7-91ed" type="profile"/>
+          </infoLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
