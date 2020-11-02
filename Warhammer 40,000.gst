@@ -4743,13 +4743,6 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="732b-967e-1bca-5846" name="Terrax-Pattern Termite Assault Drill" publicationId="28ec-711c-pubN97206" page="1" hidden="false" collective="false" import="true" type="model">
-      <modifiers>
-        <modifier type="set" field="e356-c769-5920-6e14" value="7.0">
-          <conditions>
-            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ebe8-544e-1fe8-fcde" type="instanceOf"/>
-          </conditions>
-        </modifier>
-      </modifiers>
       <profiles>
         <profile id="da37-5957-9ddb-0eb4" name="Subterranean Assault" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -4783,7 +4776,7 @@
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">10</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">14</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
@@ -4791,26 +4784,26 @@
         </profile>
         <profile id="a9ff-6709-6e30-8fde" name="Terrax-Pattern Termite Assault Drill 1" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
           <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">6-10+</characteristic>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">8-14</characteristic>
             <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">8&quot;</characteristic>
             <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">3+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">6</characteristic>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">3</characteristic>
           </characteristics>
         </profile>
         <profile id="197d-34c8-59b7-8856" name="Terrax-Pattern Termite Assault Drill 2" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
           <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">3-5</characteristic>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">4-7</characteristic>
             <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">6&quot;</characteristic>
             <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">4+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">D6</characteristic>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">D3</characteristic>
           </characteristics>
         </profile>
         <profile id="2f1f-123d-0228-58cf" name="Terrax-Pattern Termite Assault Drill 3" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
           <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-2</characteristic>
+            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-3</characteristic>
             <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">4&quot;</characteristic>
             <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">5+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">D3</characteristic>
+            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">1</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -4819,20 +4812,20 @@
         <categoryLink id="ea84-f0b4-bc6a-6d95" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="dea4-3240-53c2-7936" name="Melta cutter" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="dea4-3240-53c2-7936" name="Terrax melta cutter" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="00de-ddaa-67fb-f322" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e0c-42c4-8d4d-9640" type="max"/>
           </constraints>
           <profiles>
-            <profile id="6267-b848-b826-2b89" name="Melta cutter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+            <profile id="6267-b848-b826-2b89" name="Terrax melta cutter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D3</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 5</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon targets a unit within half range, that attack has a Damage charateristic of D6+2.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -4855,7 +4848,7 @@
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">After the bearer has made all of its attacks, roll a D6 for each model that suffered damage from this weapon this phase but has not been destroyed; on a 2+ the model being rolled for suffers a mortal wound and, if that model is not destroyed, you can roll another D6. This time, that model suffers a mortal wound on a 3+. Keep rolling a D6, increasing the result required to cause a mortal wound by 1 each time, until the model being rolled for is destroyed or the roll is failed.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Eac time an attack made with this weapon is allocated to a VEHICLE model, that attack has  a Damage characteristic of D3+6</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -4873,12 +4866,16 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" id="43aa-2be2-b65c-3630" type="max"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="1bd3-74f8-3f8e-7ece" name="Heavy Flamers" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="1bd3-74f8-3f8e-7ece" name="Terrax heavy Flamers" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="5318-90b1-1c73-5a29" type="max"/>
               </constraints>
               <entryLinks>
                 <entryLink id="5555-f94f-05be-be09" name="Heavy flamer" hidden="false" collective="false" import="true" targetId="18bc-b335-29c2-2ae2" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="name" value="Terrax heavy flamer"/>
+                    <modifier type="set" field="points" value="0.0"/>
+                  </modifiers>
                   <constraints>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fb00-a0aa-4325-c0ba" type="min"/>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b7f-ed5c-c87b-e6df" type="max"/>
@@ -4891,12 +4888,18 @@
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="91f6-886c-fffa-da3b" name="Storm Bolters" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="91f6-886c-fffa-da3b" name="Terrax storm Bolters" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="name" value="Terrax storm bolters"/>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ce5e-5830-093e-4a2e" type="max"/>
               </constraints>
               <entryLinks>
                 <entryLink id="f83d-9d53-f40e-c670" name="Storm bolter" hidden="false" collective="false" import="true" targetId="2b03-8d64-3711-f300" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="name" value="Terrax storm bolter"/>
+                  </modifiers>
                   <constraints>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="171c-ef64-b007-357b" type="min"/>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea85-f19a-2437-a631" type="max"/>
@@ -4909,9 +4912,9 @@
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="4eb5-0c83-4c9b-b7cc" name="Twin volkite chargers" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="4eb5-0c83-4c9b-b7cc" name="Twin Terrax volkite chargers" hidden="false" collective="false" import="true" type="upgrade">
               <selectionEntries>
-                <selectionEntry id="a81e-7092-d4df-80c4" name="Twin volkite Charger" hidden="false" collective="false" import="true" type="upgrade">
+                <selectionEntry id="a81e-7092-d4df-80c4" name="Twin Terrax volkite Charger" hidden="false" collective="false" import="true" type="upgrade">
                   <constraints>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e3b4-7bd0-add5-a583" type="max"/>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7637-e9dd-5f0c-e5e8" type="min"/>
@@ -4929,7 +4932,7 @@
                     </profile>
                   </profiles>
                   <costs>
-                    <cost name="pts" typeId="points" value="10.0"/>
+                    <cost name="pts" typeId="points" value="5.0"/>
                     <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                     <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                   </costs>
@@ -4945,8 +4948,8 @@
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="8.0"/>
-        <cost name="pts" typeId="points" value="130.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
+        <cost name="pts" typeId="points" value="180.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
