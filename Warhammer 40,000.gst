@@ -18,6 +18,7 @@
     <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant" publicationDate="2018-12-15"/>
     <publication id="ce40-ec9e-21e2-2e42" name="Warhammer Quest: Blackstone Fortress"/>
     <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
+    <publication id="c6aa-38e7-468e-3cc9" name="White Dwarf May 2020" shortName="WD520" publisher="White Dwarf" publicationDate="2020-05"/>
     <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
     <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019" publicationDate="2019-04-29" publisherUrl="https://www.warhammer-community.com/wp-content/uploads/2019/04/warhammer_40000_update_April_2019_en.pdf"/>
     <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018" shortName="CA2018" publicationDate="2018-12-15"/>
@@ -30,7 +31,7 @@
     <publication id="f000-7b0c-01bf-7630" name="Psychic Awakening III: Blood of Baal" shortName="PA: BoB" publicationDate="2019-12-07" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Blood-Of-Baal-EN-2019"/>
     <publication id="c9fe-4431-b76d-267a" name="Psychic Awakening VIII: War of the Spider" shortName="PA: WotS" publicationDate="2020-06-20" publisherUrl="https://www.games-workshop.com/en-GB/Psychic-Awakening-War-Of-The-Spider-EN-2020"/>
     <publication id="5093-9448-d8cc-5327" name="Psychic Awakening II: Faith and Fury" shortName="PA: F&amp;F" publicationDate="2019-11-29" publisherUrl="https://www.games-workshop.com/en-GB/Psychic-Awakening-Faith-And-Fury-EN-2019"/>
-    <publication id="7573-8d1b-acdf-2de8" name="Imperial Armour Compendium" publicationDate="2020-11-06" publisherUrl="www.forgeworld.co.uk/Imperial-Armour-Compendium-2020-FW"/>
+    <publication id="7573-8d1b-acdf-2de8" name="Imperial Armour: Compendium" shortName="IA:C" publicationDate="2020-11-06" publisherUrl="https://www.forgeworld.co.uk/Imperial-Armour-Compendium-2020-FW"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
