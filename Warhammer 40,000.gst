@@ -9,18 +9,8 @@
     <publication id="28ec-711c-pubN99666" name="Index: Chaos" publicationDate="2017-06-17"/>
     <publication id="28ec-711c-pubN118139" name="Index: Xenos 2" publicationDate="2017-06-17"/>
     <publication id="28ec-711c-pubN76527" name="Index: Xenos 1" publicationDate="2017-06-17"/>
-    <publication id="28ec-711c-pubN91434" name="Imperial Armour - Index: Astra Militarum"/>
-    <publication id="03b4-8286-592c-c370" name="Imperial Armour - Index: Xenos"/>
-    <publication id="be22-4c1d-1c01-d7ef" name="Imperial Armour - Index: Xenos (Errata)"/>
-    <publication id="0cc2-3545-pubN96526" name="Imperial Armour - Index: Forces of the Adeptus Astartes"/>
-    <publication id="53e9d88f-pubN134105" name="Imperial Armour - Index: Forces of the Astra Militarum"/>
-    <publication id="28ec-711c-pubN97206" name="Datasheet: Terrax-Pattern Termite Assault Drill" shortName="Termite Assault Drill" publisher="Forgeworld Website" publisherUrl="https://www.forgeworld.co.uk/resources/PDF/Downloads/warhammer_40000_termite_assault_drill_en.pdf"/>
     <publication id="28ec-711c-pubN98266" name="Imperium Nihilus: Vigilus Defiant" publicationDate="2018-12-15"/>
-    <publication id="ce40-ec9e-21e2-2e42" name="Warhammer Quest: Blackstone Fortress"/>
-    <publication id="28ec-711c-pubN110542" name="White Dwarf Feb 2019"/>
-    <publication id="c6aa-38e7-468e-3cc9" name="White Dwarf May 2020" shortName="WD520" publisher="White Dwarf" publicationDate="2020-05"/>
-    <publication id="28ec-711c-pubN113754" name="Stronghold Assault"/>
-    <publication id="82b3-73d0-72b2-3180" name="Warhammer 40,000 Update - April 2019" publicationDate="2019-04-29" publisherUrl="https://www.warhammer-community.com/wp-content/uploads/2019/04/warhammer_40000_update_April_2019_en.pdf"/>
+    <publication id="ce40-ec9e-21e2-2e42" name="Warhammer Quest: Blackstone Fortress" shortName="Blackstone Fortress" publicationDate="2019-12-14" publisherUrl="https://www.games-workshop.com/en-US/Blackstone-Fortress-Annual-EN-2019"/>
     <publication id="2ec0-6d53-e36b-9895" name="Chapter Approved 2018" shortName="CA2018" publicationDate="2018-12-15"/>
     <publication id="5b08-09e5-a80a-fd67" name="Psychic Awakening I: Phoenix Rising" shortName="PA: PR" publicationDate="2019-10-19" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Phoenix-Rising-EN-2019"/>
     <publication id="5c2d-db9f-58ca-e7b2" name="Psychic Awakening IV: Ritual of the Damned" shortName="PA: RotD" publicationDate="2020-01-25" publisherUrl="https://www.games-workshop.com/Psychic-Awakening-Ritual-Of-The-Damned-EN-2020"/>
@@ -32,6 +22,7 @@
     <publication id="c9fe-4431-b76d-267a" name="Psychic Awakening VIII: War of the Spider" shortName="PA: WotS" publicationDate="2020-06-20" publisherUrl="https://www.games-workshop.com/en-GB/Psychic-Awakening-War-Of-The-Spider-EN-2020"/>
     <publication id="5093-9448-d8cc-5327" name="Psychic Awakening II: Faith and Fury" shortName="PA: F&amp;F" publicationDate="2019-11-29" publisherUrl="https://www.games-workshop.com/en-GB/Psychic-Awakening-Faith-And-Fury-EN-2019"/>
     <publication id="7573-8d1b-acdf-2de8" name="Imperial Armour: Compendium" shortName="IA:C" publicationDate="2020-11-06" publisherUrl="https://www.forgeworld.co.uk/Imperial-Armour-Compendium-2020-FW"/>
+    <publication id="b652-8bab-1453-da20" name="Warhammer Legends" shortName="Legends" publisher="" publicationDate="Ongoing" publisherUrl="https://www.warhammer-community.com/legends/#warhammer-40000"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
@@ -185,13 +176,13 @@
     <categoryEntry id="d9b9-e9ab-155a-8109" name="Helbrute" hidden="false"/>
     <categoryEntry id="1481-ffc3-f85a-eb36" name="Faction: Questor Traitoris" hidden="false"/>
     <categoryEntry id="b096-59fd-a5eb-5739" name="Chaos Space Marines" hidden="false"/>
-    <categoryEntry id="d569-3d56-cd24-6a31" name="Aircraft" publicationId="82b3-73d0-72b2-3180" hidden="false"/>
+    <categoryEntry id="d569-3d56-cd24-6a31" name="Aircraft" hidden="false"/>
     <categoryEntry id="4ad1-1315-97ea-dd25" name="Faction: Officio Assassinorum" hidden="false"/>
     <categoryEntry id="492c-9ae1-0205-c13f" name="Faction: Chaos Knights" hidden="false"/>
     <categoryEntry id="c845-c72c-6afe-3fc2" name="Stratagems" hidden="false"/>
     <categoryEntry id="fcff-0f21-93e6-1ddc" name="Configuration" hidden="false"/>
     <categoryEntry id="0f35-2c34-ba6a-8105" name="Agent of the Imperium" hidden="false"/>
-    <categoryEntry id="25d3-b37a-ad95-d463" name="Kyganil" publicationId="85df-1155-c986-4d71" hidden="false"/>
+    <categoryEntry id="25d3-b37a-ad95-d463" name="Kyganil" hidden="false"/>
     <categoryEntry id="1b30-1696-d043-ddef" name="Ephrael Stern" publicationId="85df-1155-c986-4d71" hidden="false"/>
     <categoryEntry id="f475-3e56-fd5f-4737" name="Adepta Sororitas" hidden="false"/>
     <categoryEntry id="1114-7875-d463-df17" name="Aeldari" hidden="false"/>
@@ -3724,7 +3715,7 @@
     </selectionEntry>
     <selectionEntry id="6267-6959-b9ec-4a6b" name="Imperial Fortress Walls" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="8bf2-f6dc-fa36-cb2b" name="Imperial Fortress Wall" publicationId="28ec-711c-pubN91434" page="52" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="8bf2-f6dc-fa36-cb2b" name="Imperial Fortress Wall" page="52" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <modifiers>
             <modifier type="increment" field="f330-5e6e-4110-0978" value="5">
               <repeats>
@@ -3747,19 +3738,19 @@
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
           </characteristics>
         </profile>
-        <profile id="7c71-893b-e33d-c857" name="Mighty Bulwark" publicationId="28ec-711c-pubN91434" page="52" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="7c71-893b-e33d-c857" name="Mighty Bulwark" page="52" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each unit that is embarked on this model may both shoot as if it were in the open and also be shot at as if it were in the open. Models embarked on this model have a 4+ invulnerable save. Place the embarked unit on the battlements to show where they are.</characteristic>
           </characteristics>
         </profile>
-        <profile id="5332-4327-90b2-d60e" name="Explosion" publicationId="28ec-711c-pubN91434" page="52" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="5332-4327-90b2-d60e" name="Explosion" page="52" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any models disembark. On a 6 it explodes, and each unit within 3D6&quot; suffers D6 mortal wounds.</characteristic>
           </characteristics>
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="cbce-e7ee-b6c4-d939" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
+        <infoLink id="cbce-e7ee-b6c4-d939" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="bb60-2080-d842-cf02" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
@@ -3839,7 +3830,7 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7479-8e06-b43b-36cc" type="max"/>
               </constraints>
               <profiles>
-                <profile id="1dad-1154-dc7e-7b30" name="Twin Long-barrelled Autocannon" publicationId="28ec-711c-pubN91434" page="115" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="1dad-1154-dc7e-7b30" name="Twin Long-barrelled Autocannon" page="115" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
@@ -3906,7 +3897,7 @@
     </selectionEntry>
     <selectionEntry id="b801-d1d1-7c34-facf" name="Primus Redoubt" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="27fb-27b3-f042-1118" name="Primus Redoubt" publicationId="28ec-711c-pubN91434" page="53" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="27fb-27b3-f042-1118" name="Primus Redoubt" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
@@ -3919,17 +3910,17 @@
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+/5++</characteristic>
           </characteristics>
         </profile>
-        <profile id="51d4-df4c-ff22-356e" name="Battle Crew" publicationId="28ec-711c-pubN91434" page="53" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="51d4-df4c-ff22-356e" name="Battle Crew" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You may add 1 to this model&apos;s hit rolls when making shooting attacks against models with the TITANIC keyword.</characteristic>
           </characteristics>
         </profile>
-        <profile id="888f-fcce-8911-d3c3" name="Force Dome" publicationId="28ec-711c-pubN91434" page="53" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="888f-fcce-8911-d3c3" name="Force Dome" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 5+ invulnerable save.</characteristic>
           </characteristics>
         </profile>
-        <profile id="d146-c17b-222c-3b02" name="Reactor Explosion" publicationId="28ec-711c-pubN91434" page="53" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="d146-c17b-222c-3b02" name="Reactor Explosion" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any models disembark. On a 6 its reactor explodes, and each unit within 2D6&quot; suffers D6 mortal wounds.</characteristic>
           </characteristics>
@@ -3950,7 +3941,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="db4c-b408-1839-18b0" type="max"/>
           </constraints>
           <profiles>
-            <profile id="021d-ee95-1021-9783" name="Dual Turbo-laser Destructor" publicationId="28ec-711c-pubN91434" page="112" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+            <profile id="021d-ee95-1021-9783" name="Dual Turbo-laser Destructor" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Macro 2D3</characteristic>
@@ -3976,7 +3967,7 @@
           <selectionEntries>
             <selectionEntry id="4449-1153-8f2f-cf7c" name="Air Defence Missiles" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
-                <profile id="9bab-9b39-e151-eefa" name="Air Defence Missiles" publicationId="28ec-711c-pubN91434" page="112" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="9bab-9b39-e151-eefa" name="Air Defence Missiles" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D3</characteristic>
@@ -3995,7 +3986,7 @@
             </selectionEntry>
             <selectionEntry id="dc8e-4fdf-7ce1-2d52" name="Icarus Quad Lascannon" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
-                <profile id="a93c-ebe0-7c65-202d" name="Icarus Quad Lascannon" publicationId="28ec-711c-pubN91434" page="113" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="a93c-ebe0-7c65-202d" name="Icarus Quad Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
@@ -4743,7 +4734,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="732b-967e-1bca-5846" name="Terrax-Pattern Termite Assault Drill" publicationId="28ec-711c-pubN97206" page="1" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="732b-967e-1bca-5846" name="Terrax-Pattern Termite Assault Drill" page="" hidden="false" collective="false" import="true" type="model">
       <profiles>
         <profile id="da37-5957-9ddb-0eb4" name="Subterranean Assault" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -7860,7 +7851,7 @@
     <rule id="91d7-8a00-1945-fab1" name="Stronghold Assault Detachment" publicationId="28ec-711c-pubN73170" page="46" hidden="false">
       <description>The 5 CPs from this detachment can only be spent on Stronghold Assault Stratagems.</description>
     </rule>
-    <rule id="5a7e-f984-487c-d767" name="Bolter Discipline" publicationId="28ec-711c-pubN110542" hidden="false">
+    <rule id="5a7e-f984-487c-d767" name="Bolter Discipline" hidden="false">
       <description>Instead of following the normal rules for Rapid Fire weapons, models in this unit shooting Rapid Fire bolt weapons make double the number of attacks if any of the following apply
 
 - The shooting model&apos;s target is within half the weapon&apos;s range
@@ -8533,17 +8524,17 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model in cover behind an ammunition dump has a 5+ cover save. Any model within 2&quot; of an ammunition dump re-rolls failed To Hit rolls of 1 in the Shooting phase.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e144-1293-ec28-d3a9" name="Void Shield" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="e144-1293-ec28-d3a9" name="Void Shield" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each hit scored against the model will instead hit a void shield (whilst they remain). Close combat attacks come from inside the shield and therefore are not stopped. Void shields have an Armour Value of 12. A glancing or penetrating hit (or any hit from a Destroyer weapon) scored against a void shield causes it to collapse. After all the void shields have collapsed, further hits strike the model instead. At the end of each of the controlling player&apos;s turns, roll one dice for each collapsed void  shield: each roll of 5+ instantly restores one collapsed shield.  If a weapon uses a template or blast marker and it hits one or more units protected by a Void Shield Zone, ignore the number of hits it would normally cause to the units &amp; instead roll to pen the void shield once using the weapons normal rules &amp; profile for each template or blast marker that hits.</characteristic>
       </characteristics>
     </profile>
-    <profile id="31ba-2b94-6600-22f3" name="Magos Machine Spirit" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="31ba-2b94-6600-22f3" name="Magos Machine Spirit" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This building&apos;s automated fire is resolved using BS3.</characteristic>
       </characteristics>
     </profile>
-    <profile id="4986-b80f-dc78-d02f" name="Escape Hatch" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="4986-b80f-dc78-d02f" name="Escape Hatch" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this building is first occupied, the owning player can place an escape hatch marker anywhere within 12&quot; of the building that is not impassable terrain or within another building. The escape hatch marker is an additional Access Point for the building, but models using it cannot use the Repel the Enemy special rule.</characteristic>
       </characteristics>
@@ -8553,22 +8544,22 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The first unit to occupy this building (friend or foe) immediately suffers 2D6 S4 AP5 hits with the Ignores Cover special rule.</characteristic>
       </characteristics>
     </profile>
-    <profile id="68d8-f686-c260-76db" name="Barricades" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="68d8-f686-c260-76db" name="Barricades" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model in cover behind a barricade or wall has a 4+ cover save. Models that are in base contact with a barricade or wall are treated as being in base contact with any enemy models who are directly opposite them and in base contact with the other side of that barricade or wall. Units charging an enemy that is behind a barricade or wall count as charging through difficult terrain.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e158-7adf-1565-ef08" name="Tanglewire" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="e158-7adf-1565-ef08" name="Tanglewire" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Dangerous Terrain. A model in cover behind tanglewire has a 6+ cover save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="4a45-65e5-2d8c-8792" name="Tank Traps" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="4a45-65e5-2d8c-8792" name="Tank Traps" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Impassable Terrain to non-Skimmer vehicles, Dangerous Terrain to Bikes, and open ground for all other units. A model in cover behind tank traps hasa 4+ cover save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="1da7-2e0b-0114-762c" name="Gun Emplacement" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+    <profile id="1da7-2e0b-0114-762c" name="Gun Emplacement" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
       <characteristics>
         <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
         <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
@@ -8581,12 +8572,12 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
       </characteristics>
     </profile>
-    <profile id="705c-91aa-6591-507b" name="Gun Emplacement (Details)" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="705c-91aa-6591-507b" name="Gun Emplacement (Details)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model in cover behind a gun emplacement has a 4+ cover save. One non-vehicle model in base contact with a gun emplacement can fire it instead of firing its own weapons. A model that fires a gun emplacement has the Relentless special rule for that shooting attack. A gun emplacement can be shot at and attacked in close combat. It is hit automatically in close combat.</characteristic>
       </characteristics>
     </profile>
-    <profile id="70aa-366f-15ac-da4d" name="Comms Relay" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="70aa-366f-15ac-da4d" name="Comms Relay" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Any player with an unengaged model within 2&quot; of a comms relay can re-roll Reserves rolls. A model in cover behind a comms relay has a 5+ cover save.</characteristic>
       </characteristics>
@@ -8631,12 +8622,12 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls made for this weapon against targets that can FLY. Subtract 1 from hit rolls made for this Weapon against all other targets.</characteristic>
       </characteristics>
     </profile>
-    <profile id="7571-d9f2-17b0-c3e0" name="Imperial Statuary" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="7571-d9f2-17b0-c3e0" name="Imperial Statuary" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A model from the Armies of the Imperium that is within 2&quot; of Imperial Statuary terrain has the Fearless special rule. A model in cover behind Imperial Statuary has a 3+ cover save.</characteristic>
       </characteristics>
     </profile>
-    <profile id="7d5c-1af6-942c-8ca2" name="Wreckage and Rubble" publicationId="28ec-711c-pubN113754" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="7d5c-1af6-942c-8ca2" name="Wreckage and Rubble" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Area Terrain. A model in cover behind wreckage or rubble has a 4+ cover save.</characteristic>
       </characteristics>
