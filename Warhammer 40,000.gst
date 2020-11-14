@@ -4734,7 +4734,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="732b-967e-1bca-5846" name="Terrax-Pattern Termite Assault Drill" page="" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="732b-967e-1bca-5846" name="Terrax-Pattern Termite" page="" hidden="false" collective="false" import="true" type="model">
       <profiles>
         <profile id="da37-5957-9ddb-0eb4" name="Subterranean Assault" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -4758,7 +4758,7 @@
         </profile>
         <profile id="0d57-5e48-2ff3-d144" name="Transport (Adeptus Mechanicus)" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 12  Secutarii Infantry or &lt;Forge World&gt; Infantry models. It cannot transport Belisarius Cawl, Kataphron Breacher or Kataphron Destroyer models.</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 12 INFANTRY models. It cannot transport BELISARIUS CAWL, KATAPHRON BREACHER or KATAPHRON DESTROYER models.</characteristic>
           </characteristics>
         </profile>
         <profile id="87e4-f78d-a9d1-4033" name="Terrax-pattern Termite Assault Drill" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -4785,7 +4785,7 @@
         <profile id="197d-34c8-59b7-8856" name="Terrax-Pattern Termite Assault Drill 2" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
           <characteristics>
             <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">4-7</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">6&quot;</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">5&quot;</characteristic>
             <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">4+</characteristic>
             <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">D3</characteristic>
           </characteristics>
@@ -4793,7 +4793,7 @@
         <profile id="2f1f-123d-0228-58cf" name="Terrax-Pattern Termite Assault Drill 3" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
           <characteristics>
             <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-3</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">4&quot;</characteristic>
+            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">3&quot;</characteristic>
             <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">5+</characteristic>
             <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">1</characteristic>
           </characteristics>
@@ -4839,7 +4839,7 @@
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3+3</characteristic>
                 <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Eac time an attack made with this weapon is allocated to a VEHICLE model, that attack has  a Damage characteristic of D3+6</characteristic>
               </characteristics>
             </profile>
@@ -4906,20 +4906,20 @@
             </selectionEntry>
             <selectionEntry id="4eb5-0c83-4c9b-b7cc" name="Twin Terrax volkite chargers" hidden="false" collective="false" import="true" type="upgrade">
               <selectionEntries>
-                <selectionEntry id="a81e-7092-d4df-80c4" name="Twin Terrax volkite Charger" hidden="false" collective="false" import="true" type="upgrade">
+                <selectionEntry id="a81e-7092-d4df-80c4" name="Twin Terrax volkite charger" hidden="false" collective="false" import="true" type="upgrade">
                   <constraints>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e3b4-7bd0-add5-a583" type="max"/>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7637-e9dd-5f0c-e5e8" type="min"/>
                   </constraints>
                   <profiles>
-                    <profile id="b4c6-ae27-806e-947f" name="Twin volkite charger" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                    <profile id="b4c6-ae27-806e-947f" name="Twin Terrax volkite charger" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                       <characteristics>
-                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">15&quot;</characteristic>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">20&quot;</characteristic>
                         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
                         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
                         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
                         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, a unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.</characteristic>
                       </characteristics>
                     </profile>
                   </profiles>
