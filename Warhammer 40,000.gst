@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="170" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="172" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -5011,13 +5011,6 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="8228-46c7-01af-14b0" name="Battle Honors Cost Points? (UNOFFICIAL! 18pts per PL)" hidden="false" collective="false" import="true" type="upgrade">
-      <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-      </costs>
-    </selectionEntry>
     <selectionEntry id="9d97-2793-9882-d48a" name="Detachment CP" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="2d3b-b544-ad49-fb75" value="-6.0">
@@ -5346,6 +5339,28 @@
                 <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
+            <selectionEntry id="e6c7-87a2-73a3-a475" name="5. Onslaught++ (301+ Total PL / 3001+ Points) " hidden="false" collective="false" import="true" type="upgrade">
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="c3ea-99ee-0ccb-39a9" name="Command Points" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="f29d-8a5d-18b6-a071" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e6c7-87a2-73a3-a475" type="lessThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <selectionEntries>
+            <selectionEntry id="b08b-08b3-f34d-b4c7" name="Command Points" hidden="false" collective="false" import="true" type="upgrade">
+              <costs>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="1.0"/>
+              </costs>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -5526,19 +5541,19 @@
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6a30-3007-a2da-b6bb" type="max"/>
       </constraints>
       <profiles>
-        <profile id="5654-aaef-a8ca-ff2a" name="Cast Together by Fate" publicationId="85df-1155-c986-4d71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="5654-aaef-a8ca-ff2a" name="Cast Together by Fate" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, both models in this unit must be set up at the same time, though they do not need to be set up in unit coherency. From that point onwards, each model is treated as a separate unit.</characteristic>
           </characteristics>
         </profile>
-        <profile id="2965-f84b-f060-e7ba" name="Wanderers" publicationId="85df-1155-c986-4d71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="2965-f84b-f060-e7ba" name="Wanderers" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Neither Ephrael Stern nor Kyganil can be your Warlord. In addition, during deployment, you can set up these models in the webway instead of setting them up on the battlefield. If you do, at the end of one of your Movement phases you can set up these models anywhere on the battlefield within 3&quot; of each other and more than 9&quot; away from any enemy models.</characteristic>
           </characteristics>
         </profile>
       </profiles>
       <rules>
-        <rule id="d1b1-e42c-2a3b-2ac3" name="Unexpected Allies" publicationId="85df-1155-c986-4d71" hidden="false">
+        <rule id="d1b1-e42c-2a3b-2ac3" name="Unexpected Allies" publicationId="85df-1155-c986-4d71" page="55" hidden="false">
           <description>This unit can be included in any IMPERIUM Detachment without taking up a slot, as long as every unit in your army (with the exception of those that are UNALIGNED) has the IMPERIUM keyword (and does not have the FALLEN keyword). This unit does not prevent other units from your army from benefiting from Detachment abilities (e.g. Chapter Tactics, Canticles of the Omnissiah), and does not prevent units from gaining abilities that require every model in your army to have that ability (e.g. Combat Doctrines). In a matched play game, these models are ignored for the purposes of the Battle Brothers rule (although all units from your army must still have the IMPERIUM Faction keyword).</description>
         </rule>
       </rules>
@@ -5552,7 +5567,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ecbb-7279-89ea-18cd" type="min"/>
           </constraints>
           <profiles>
-            <profile id="e2dd-83f0-b0a7-7690" name="Ephrael Stern" publicationId="85df-1155-c986-4d71" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+            <profile id="e2dd-83f0-b0a7-7690" name="Ephrael Stern" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
               <characteristics>
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -5565,12 +5580,12 @@
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
               </characteristics>
             </profile>
-            <profile id="4f49-18f9-ab71-9e0b" name="Daemonifuge" publicationId="85df-1155-c986-4d71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="4f49-18f9-ab71-9e0b" name="Daemonifuge" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Shooting phase, roll 2D6, adding 2 to the result if there are any CHAOS units within 18&quot; of Ephrael Stern. On a 5+, the nearest enemy unit that is within 18&quot; of and visible to Ephrael Stern suffers D3 mortal wounds (if the result is 9 or more, that unit instead suffers D6 mortal wounds).</characteristic>
               </characteristics>
             </profile>
-            <profile id="5e61-3a10-954c-2959" name="Divine Protection" publicationId="85df-1155-c986-4d71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="5e61-3a10-954c-2959" name="Divine Protection" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 4+ invulnerable save. In addition, when resolving an attack against this model, subtract 1 from the hit roll.</characteristic>
               </characteristics>
@@ -5589,7 +5604,7 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="af3a-5f3f-f547-bd21" type="max"/>
               </constraints>
               <profiles>
-                <profile id="ea94-133a-1234-64bc" name="Sanctity" publicationId="85df-1155-c986-4d71" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="ea94-133a-1234-64bc" name="Sanctity" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -5633,7 +5648,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a481-63ad-9069-8b3a" type="min"/>
           </constraints>
           <profiles>
-            <profile id="c82c-859a-6aa5-9237" name="Kyganil of the Bloody Tears" publicationId="85df-1155-c986-4d71" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+            <profile id="c82c-859a-6aa5-9237" name="Kyganil of the Bloody Tears" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
               <characteristics>
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -5646,12 +5661,12 @@
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">6+</characteristic>
               </characteristics>
             </profile>
-            <profile id="d291-af31-7939-e589" name="Knight of Shadows" publicationId="85df-1155-c986-4d71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="d291-af31-7939-e589" name="Knight of Shadows" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 4+ invulnerable save. In addition, this model can fight first in the Fight phase, even if it did not make a charge move that turn. If your opponent has units that did make a charge move that turn, or that have a similar ability, then alternate choosing units to fight with, starting with the player whose turn is taking place.</characteristic>
               </characteristics>
             </profile>
-            <profile id="f591-3441-0e96-9188" name="Mysterious Saviour" publicationId="85df-1155-c986-4d71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="f591-3441-0e96-9188" name="Mysterious Saviour" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst this model is within 3&quot; of a friendly EPHRAEL STERN model, roll one D6 each time that model would lose a wound; on a 5+ that wound is not lost.</characteristic>
               </characteristics>
@@ -5670,7 +5685,7 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4a5d-52b3-7501-01d8" type="max"/>
               </constraints>
               <profiles>
-                <profile id="ee58-7738-1a13-fa01" name="Harlequin&apos;s Kiss" publicationId="85df-1155-c986-4d71" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="ee58-7738-1a13-fa01" name="Harlequin&apos;s Kiss" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -5693,7 +5708,7 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7294-d3fd-2957-7286" type="max"/>
               </constraints>
               <profiles>
-                <profile id="7014-60f1-d12d-9d09" name="Plasma Grenades" publicationId="85df-1155-c986-4d71" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="7014-60f1-d12d-9d09" name="Plasma Grenades" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade D6</characteristic>
@@ -5716,7 +5731,7 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0dd3-ed3b-7926-d284" type="max"/>
               </constraints>
               <profiles>
-                <profile id="a220-e457-c7ba-f7bb" name="The Outcast&apos;s Blades" publicationId="85df-1155-c986-4d71" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="a220-e457-c7ba-f7bb" name="The Outcast&apos;s Blades" publicationId="85df-1155-c986-4d71" page="55" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
