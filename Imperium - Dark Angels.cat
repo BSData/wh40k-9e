@@ -4477,7 +4477,7 @@
       <profiles>
         <profile id="1da5-22fe-b4e6-475a" name="Stratagem: Honoured by the Rock" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem after nominating a model drawn from a Dark Angels successor Chapter to be your Warlord. You can give one Relic of Caliban (see page 57 and Codex: Dark  Angels) to a CHARACTER model from your army that is drawn from a Dark Angels successor Chapter instead of giving them a Special-issue Wargear Relic (pg 58). If you do, ,replace the DARK ANGELS keyword in all instances on that Relic (if any) with that model’s successor Chapter keyword. You can only use this Stratagem once per battle.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem after nominating a model drawn from a Dark Angels successor Chapter to be your Warlord. You can give one Relic of Caliban (see page 57 and Codex: Dark  Angels) to a CHARACTER model from your army that is drawn from a Dark Angels successor Chapter instead of giving them a Special-issue Wargear Relic (pg 58). If you do, replace the DARK ANGELS keyword in all instances on that Relic (if any) with that model’s successor Chapter keyword. You can only use this Stratagem once per battle.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -5329,13 +5329,34 @@
     <selectionEntryGroup id="e22d-9d1c-bd59-dde0" name="Relics" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="ff41-5e06-5422-7504" value="1.0">
           <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="01cf-00c7-c4af-701b" type="lessThan"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
           </conditions>
+        </modifier>
+        <modifier type="increment" field="ff41-5e06-5422-7504" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="ff41-5e06-5422-7504" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" repeats="1" roundUp="false"/>
+          </repeats>
         </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b24e-dbc9-5714-96ad" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ff41-5e06-5422-7504" type="max"/>
       </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="3449-3eac-43fb-cb70" name="Special Issue Wargear" hidden="false" collective="false" import="true">
