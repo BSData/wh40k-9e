@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Adeptus Astartes - Dark Angels" revision="181" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne @FarseerV" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="170" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Adeptus Astartes - Dark Angels" revision="182" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne @FarseerV" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="172" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="b8fe-8d38-pubN65537" name="Codex: Dark Angels"/>
   </publications>
@@ -3252,6 +3252,17 @@
       </constraints>
       <profiles>
         <profile id="a184-3c16-ac07-cedf" name="Ravenwing Champion" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <modifierGroups>
+            <modifierGroup>
+              <conditions>
+                <condition field="selections" scope="abf2-77c1-5d1c-b171" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" childId="cbc4-6741-a5bd-2077" type="equalTo"/>
+              </conditions>
+              <modifiers>
+                <modifier type="set" field="00ca-f8b8-876d-b705" value="9"/>
+                <modifier type="set" field="13fc-b29b-31f2-ab9f" value="5"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">14&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -3266,7 +3277,7 @@
         </profile>
         <profile id="b0c3-66b8-2248-5056" name="Command Squad" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">For each Ravenwing Black Knightsunit included in a Detachment, one Ravenwing Championunit can be included in that Detachment without taking up a Battlefield Role slot</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">For each Ravenwing Black Knights unit included in a Detachment, one Ravenwing Champion unit can be included in that Detachment without taking up a Battlefield Role slot</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -4466,7 +4477,7 @@
       <profiles>
         <profile id="1da5-22fe-b4e6-475a" name="Stratagem: Honoured by the Rock" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem after nominating a model drawn from a Dark Angels successor Chapter to be your Warlord. You can give one Relic of Caliban (see page 57 and Codex: Dark  Angels) to a CHARACTER model from your army that is drawn from a Dark Angels successor Chapter instead of giving them a Special-issue Wargear Relic (pg 58). If you do, ,replace the DARK ANGELS keyword in all instances on that Relic (if any) with that model’s successor Chapter keyword. You can only use this Stratagem once per battle.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem after nominating a model drawn from a Dark Angels successor Chapter to be your Warlord. You can give one Relic of Caliban (see page 57 and Codex: Dark  Angels) to a CHARACTER model from your army that is drawn from a Dark Angels successor Chapter instead of giving them a Special-issue Wargear Relic (pg 58). If you do, replace the DARK ANGELS keyword in all instances on that Relic (if any) with that model’s successor Chapter keyword. You can only use this Stratagem once per battle.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -5318,13 +5329,34 @@
     <selectionEntryGroup id="e22d-9d1c-bd59-dde0" name="Relics" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="ff41-5e06-5422-7504" value="1.0">
           <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="01cf-00c7-c4af-701b" type="lessThan"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
           </conditions>
+        </modifier>
+        <modifier type="increment" field="ff41-5e06-5422-7504" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="ff41-5e06-5422-7504" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" repeats="1" roundUp="false"/>
+          </repeats>
         </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b24e-dbc9-5714-96ad" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ff41-5e06-5422-7504" type="max"/>
       </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="3449-3eac-43fb-cb70" name="Special Issue Wargear" hidden="false" collective="false" import="true">
@@ -5887,7 +5919,12 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e2f8-bcbf-2e69-df5f" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="2d0d-1749-33b8-efad" name="Thunder Hammer &amp; Storm Shield" hidden="false" collective="false" import="true" targetId="cf37-7339-d042-ba4a" type="selectionEntry"/>
+            <entryLink id="2d0d-1749-33b8-efad" name="Thunder Hammer &amp; Storm Shield" hidden="false" collective="false" import="true" targetId="cf37-7339-d042-ba4a" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1aaa-1bf9-ba34-b28a" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1346-24a2-4334-b821" type="max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -5933,6 +5970,10 @@
               <modifiers>
                 <modifier type="set" field="points" value="10.0"/>
               </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c69b-6470-4b6d-8dd6" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dbf3-a8b3-dc5d-735d" type="max"/>
+              </constraints>
             </entryLink>
           </entryLinks>
           <costs>
@@ -5956,6 +5997,10 @@
               <modifiers>
                 <modifier type="set" field="points" value="5.0"/>
               </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bf3b-6613-53c9-e824" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c169-6b8e-af8a-a6d1" type="max"/>
+              </constraints>
             </entryLink>
           </entryLinks>
           <costs>
@@ -5979,6 +6024,10 @@
               <modifiers>
                 <modifier type="set" field="points" value="10.0"/>
               </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="115b-6cf3-b578-c1a5" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fe06-390f-b80b-2b97" type="max"/>
+              </constraints>
             </entryLink>
           </entryLinks>
           <costs>
@@ -6032,6 +6081,10 @@
               <modifiers>
                 <modifier type="set" field="points" value="10.0"/>
               </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0cae-c4cc-813a-76b0" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3d56-1b8f-08f9-3af7" type="min"/>
+              </constraints>
             </entryLink>
           </entryLinks>
           <costs>
@@ -6055,6 +6108,10 @@
               <modifiers>
                 <modifier type="set" field="points" value="5.0"/>
               </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e2b-fd36-2876-8041" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1170-f672-a2e6-1dda" type="max"/>
+              </constraints>
             </entryLink>
           </entryLinks>
           <costs>
@@ -6078,6 +6135,10 @@
               <modifiers>
                 <modifier type="set" field="points" value="10.0"/>
               </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7118-e2e0-e473-6af9" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6852-efa8-ad78-aab8" type="max"/>
+              </constraints>
             </entryLink>
           </entryLinks>
           <costs>
