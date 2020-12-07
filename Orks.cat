@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="99" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="172" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="11b5-77b9-31bf-7b74" name="Orks" revision="100" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="172" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="11b5-77b9-pubN65537" name="Codex: Orks"/>
   </publications>
@@ -26,22 +26,6 @@
         <characteristicType id="f07d-1cad-c2eb-16a8" name="Move"/>
         <characteristicType id="5f83-5a93-75ac-9270" name="BS"/>
         <characteristicType id="c4fd-ff8c-7114-2cc3" name="Attacks"/>
-      </characteristicTypes>
-    </profileType>
-    <profileType id="dc42-c17d-54f3-df0a" name="Kill Tank Wound Track">
-      <characteristicTypes>
-        <characteristicType id="50c7-d15c-aa1b-eaf0" name="Wounds"/>
-        <characteristicType id="2910-7d1f-bf86-b8fc" name="Move"/>
-        <characteristicType id="cc38-4460-3423-8bb3" name="Strength"/>
-        <characteristicType id="991b-e56a-1d88-4947" name="Attacks"/>
-      </characteristicTypes>
-    </profileType>
-    <profileType id="d58d-8c3d-54e1-9821" name="GS Wound Track">
-      <characteristicTypes>
-        <characteristicType id="a4c7-5af4-a86c-9484" name="Wounds"/>
-        <characteristicType id="d40d-8d54-3984-1384" name="Move"/>
-        <characteristicType id="31fd-d5bc-e8dd-1324" name="Strength"/>
-        <characteristicType id="5fd2-84a5-9c9a-6f52" name="Attacks"/>
       </characteristicTypes>
     </profileType>
     <profileType id="77e2-f55e-0f49-2781" name="Big Red Button">
@@ -7464,6 +7448,11 @@ When rolling to wound this unit, use the Big Mek’s Toughness while it is on th
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
+        <profile id="d629-622c-ef9c-171f" name="Da Beast" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model Advances, do not make an Advance roll. Instead, until the end of the phase, add 6&quot; to the Move characteristic of this model.</characteristic>
+          </characteristics>
+        </profile>
       </profiles>
       <infoLinks>
         <infoLink id="b6f2-9a67-efdb-2dbc" name="&apos;Ere We Go!" hidden="false" targetId="de72-9941-3d27-44e9" type="rule"/>
@@ -8255,32 +8244,54 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
           </characteristics>
         </profile>
         <profile id="dfc5-9481-2de5-b155" name="Squiggoth" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="e6c8-1855-9421-3cc4" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b3d8-73ff-d4fc-c2ac" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 10 FLASH GITZ or &lt;CLAN&gt; INFANTRY models. It cannot transport MEGA ARMOUR or JUMP PACK models.</characteristic>
           </characteristics>
         </profile>
-        <profile id="fb25-4ad4-8c13-bf02" name="Squiggoth 1" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="fb25-4ad4-8c13-bf02" name="Squiggoth [1] (10-18+ wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">10-18+</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">10&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">8</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">4</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">10&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">8</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">18</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">4</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="e477-3573-be2e-ed5c" name="Squiggoth 2" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="e477-3573-be2e-ed5c" name="Squiggoth [2] (5-9 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">5-9</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">8&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">7</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">3</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="f501-69ad-2e6a-b206" name="Squiggoth 3" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="f501-69ad-2e6a-b206" name="Squiggoth [3] (1-4 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">1-3</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">6&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">6</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">2</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
         <profile id="8432-6c23-2eac-a38a" name="Howdah" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -8288,9 +8299,9 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, units embarked on this model can be selected to shoot. Measure the range and draw line of sight from any point on this model. When shooting with units embarked on this model, they do not count as being within Engagement Range of enemy units, and if this model made a Normal Move or Fell Back, they count as having Remained Stationary. Any other restrictions or modifiers that apply to this model also apply to models embarked upon it; for example, if this model Advanced, models embarked upon it also count as having Advanced.</characteristic>
           </characteristics>
         </profile>
-        <profile id="72b3-cb3e-8e88-adf3" name="Stampede!" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="72b3-cb3e-8e88-adf3" name="Stampede" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model finishes a charge move, roll a D6 for each enemy unit within 1&quot; of it; on a 2+ that unit suffers D3 mortal wounds.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model finishes a charge move, select one enemy unit within Engagement Range of it and roll one D6; on a 2+, that unit suffers D3 mortal wounds.</characteristic>
           </characteristics>
         </profile>
         <profile id="91ac-54c2-3301-10ab" name="Enraged Demise" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -8319,11 +8330,18 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
           </constraints>
         </entryLink>
         <entryLink id="7204-b6e6-cd48-1ac9" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="4450-2f9d-aea9-d9ae" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="4450-2f9d-aea9-d9ae" name="Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="0080-8c0c-c1ca-8d31" name="Kannon" hidden="false" collective="false" import="true" targetId="b3d8-73ff-d4fc-c2ac" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7cca-519a-dfe0-ea21" type="max"/>
           </constraints>
+          <profiles>
+            <profile id="e3d7-0e4e-811d-1096" name="Squiggoth (Kannon)" publicationId="7573-8d1b-acdf-2de8" page="197" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+              <characteristics>
+                <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 6 FLASH GITZ or &lt;CLAN&gt; INFANTRY models. It cannot transport MEGA ARMOUR or JUMP PACK models.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
           <costs>
             <cost name="pts" typeId="points" value="15.0"/>
           </costs>
@@ -8574,6 +8592,13 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
       </costs>
     </selectionEntry>
     <selectionEntry id="9576-6195-fe16-dab7" name="Big Trakk" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="remove" field="category" value="6cc4-1b62-8e8a-05cd">
+          <conditions>
+            <condition field="selections" scope="9576-6195-fe16-dab7" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1488-b982-0723-3c3d" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="e3ba-fd3c-1712-68c4" name="Big Trakk" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -8588,28 +8613,43 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
-        <profile id="e7e3-b720-0734-133a" name="Big Trakk 1" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="e7e3-b720-0734-133a" name="Big Trakk [1] (7-12+ wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">7-12+</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">14&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">6</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">4</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">14&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">6</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">12</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">4</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
-        <profile id="8cf1-7a3b-37fb-6afa" name="Big Trakk 3" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="8cf1-7a3b-37fb-6afa" name="Big Trakk [3] (1-3 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">1-3</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">7&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">4</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">1</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">6</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
-        <profile id="f525-f965-cb3e-3945" name="Big Trakk 2" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="f525-f965-cb3e-3945" name="Big Trakk [2] (4-6 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">4-6</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">10&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">5</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">2</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">10&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">6</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">6</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
         <profile id="1462-6c8f-4a9f-d217" name="Big Trakk" publicationId="7573-8d1b-acdf-2de8" page="198" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
@@ -8619,7 +8659,7 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
                 <condition field="selections" scope="9576-6195-fe16-dab7" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1f7f-9cf3-1ccb-2aca" type="equalTo"/>
               </conditions>
             </modifier>
-            <modifier type="set" field="15aa-1916-a38b-d223" value="None.">
+            <modifier type="set" field="hidden" value="true">
               <conditions>
                 <condition field="selections" scope="9576-6195-fe16-dab7" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1488-b982-0723-3c3d" type="equalTo"/>
               </conditions>
@@ -8637,7 +8677,7 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
       </profiles>
       <infoLinks>
         <infoLink id="1cbb-e966-4bd6-0728" name="Open-Topped" hidden="false" targetId="c284-5882-8566-317a" type="profile"/>
-        <infoLink id="04e3-9222-eec9-9f50" name="Explodes (6+/6&quot;/D6)" hidden="false" targetId="8159-a610-444f-d93c" type="profile"/>
+        <infoLink id="04e3-9222-eec9-9f50" name="Explodes (6+/6&quot;/D3)" hidden="false" targetId="56f0-3891-61a7-c830" type="profile"/>
         <infoLink id="65e9-0a2a-e058-9a37" name="Dakka Dakka Dakka" hidden="false" targetId="52cc-983f-0b7b-683a" type="rule"/>
         <infoLink id="dc7c-02cd-ba1c-6ee7" name="Ramshackle" hidden="false" targetId="93c5-1d57-3331-f167" type="profile"/>
       </infoLinks>
@@ -8837,28 +8877,43 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="4718-6f76-1ff4-6f52" name="Kannonwagon 1" publicationId="7573-8d1b-acdf-2de8" page="199" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="4718-6f76-1ff4-6f52" name="Kannonwagon [1] (9-16+ wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="199" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">9-16+</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">12&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">8</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">6</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">8</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">16</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">6</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="fa9c-82dd-a58a-bfd7" name="Kannonwagon 3" publicationId="7573-8d1b-acdf-2de8" page="199" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="fa9c-82dd-a58a-bfd7" name="Kannonwagon [3] (1-4 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="199" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">1-4</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">6&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">4</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">D3</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">D3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="e5b7-cb1d-5cd9-d754" name="Kannonwagon 2" publicationId="7573-8d1b-acdf-2de8" page="199" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
+        <profile id="e5b7-cb1d-5cd9-d754" name="Kannonwagon [2] (5-8 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="199" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">5-8</characteristic>
-            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">9&quot;</characteristic>
-            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b">6</characteristic>
-            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92">D6</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">9&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">D6</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
         <profile id="98aa-439c-0565-b7c7" name="Kannonwagon" publicationId="7573-8d1b-acdf-2de8" page="199" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
@@ -8932,28 +8987,43 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
             <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 12 FLASH GITZ or &lt;CLAN&gt; INFANTRY models. Each MEGA ARMOUR or JUMP PACK model takes the space of 2 models.</characteristic>
           </characteristics>
         </profile>
-        <profile id="3e71-6990-c8ea-e50c" name="Kill Tank 1" publicationId="7573-8d1b-acdf-2de8" page="201" hidden="false" typeId="dc42-c17d-54f3-df0a" typeName="Kill Tank Wound Track">
+        <profile id="3e71-6990-c8ea-e50c" name="Kill Tank [1] (13-24+ wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="201" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="50c7-d15c-aa1b-eaf0">13-24+</characteristic>
-            <characteristic name="Move" typeId="2910-7d1f-bf86-b8fc">12&quot;</characteristic>
-            <characteristic name="Strength" typeId="cc38-4460-3423-8bb3">8</characteristic>
-            <characteristic name="Attacks" typeId="991b-e56a-1d88-4947">8</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">8</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">24</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">8</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="fcb6-99e0-3ab0-4e4d" name="Kill Tank 3" publicationId="7573-8d1b-acdf-2de8" page="201" hidden="false" typeId="dc42-c17d-54f3-df0a" typeName="Kill Tank Wound Track">
+        <profile id="fcb6-99e0-3ab0-4e4d" name="Kill Tank [3] (1-6 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="201" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="50c7-d15c-aa1b-eaf0">1-6</characteristic>
-            <characteristic name="Move" typeId="2910-7d1f-bf86-b8fc">6&quot;</characteristic>
-            <characteristic name="Strength" typeId="cc38-4460-3423-8bb3">6</characteristic>
-            <characteristic name="Attacks" typeId="991b-e56a-1d88-4947">4</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">4</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="2f29-b715-94bd-2431" name="Kill Tank 2" publicationId="7573-8d1b-acdf-2de8" page="201" hidden="false" typeId="dc42-c17d-54f3-df0a" typeName="Kill Tank Wound Track">
+        <profile id="2f29-b715-94bd-2431" name="Kill Tank [2] (7-12 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="201" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="50c7-d15c-aa1b-eaf0">7-12</characteristic>
-            <characteristic name="Move" typeId="2910-7d1f-bf86-b8fc">9&quot;</characteristic>
-            <characteristic name="Strength" typeId="cc38-4460-3423-8bb3">7</characteristic>
-            <characteristic name="Attacks" typeId="991b-e56a-1d88-4947">6</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">9&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">6</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
         <profile id="2a01-5ca8-2013-b49d" name="Kill Tank Grot Riggers" publicationId="7573-8d1b-acdf-2de8" page="201" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -9241,36 +9311,56 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
             <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 20 FLASH GITZ or &lt;CLAN&gt; INFANTRY models. Each MEGA ARMOUR or JUMP PACK model takes up the space of 2 models.</characteristic>
           </characteristics>
         </profile>
-        <profile id="1146-327b-a97b-2b08" name="Kustom Stompa 1" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+        <profile id="1146-327b-a97b-2b08" name="Kustom Stompa [1] (31-40+ wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">31-40+</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">10&quot;</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">3+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">6</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">10&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">40</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">6</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="31a0-d1fd-e512-7a9a" name="Kustom Stompa 2" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+        <profile id="31a0-d1fd-e512-7a9a" name="Kustom Stompa [2] (21-30 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">21-30</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">9&quot;</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">4+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">5</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">9&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">5</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="3464-1b32-d10d-891d" name="Kustom Stompa 3" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+        <profile id="3464-1b32-d10d-891d" name="Kustom Stompa [3] (11-20 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">11-20</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">8&quot;</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">4+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">4</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">4</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="2956-5595-9467-4422" name="Kustom Stompa 4" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
+        <profile id="2956-5595-9467-4422" name="Kustom Stompa [4] (1-10 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-10</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">6&quot;</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">5+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">3</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
         <profile id="4052-9654-54ec-7677" name="Effigy: Ork" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -9305,13 +9395,13 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
         <categoryLink id="5456-63eb-9afa-11c4" name="Walkerz" hidden="false" targetId="32dc-deeb-a09a-cdf0" primary="false"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="fc5b-5eb7-779b-ee10" name="The Gaze of Mork" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="fc5b-5eb7-779b-ee10" name="Gaze of Mork" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dbbe-5d4b-11c7-b2e8" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bf9a-d3e4-ffab-240f" type="max"/>
           </constraints>
           <profiles>
-            <profile id="3295-1092-fa43-6c92" name="The Gaze of Mork" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+            <profile id="3295-1092-fa43-6c92" name="Gaze of Mork" publicationId="7573-8d1b-acdf-2de8" page="202" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 3</characteristic>
@@ -9532,7 +9622,7 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
           <modifiers>
             <modifier type="set" field="15aa-1916-a38b-d223" value="This model has a transport capacity of 15 FLASH GITZ or &lt;CLAN&gt; INFANTRY models. It cannot transport MEGA ARMOUR or JUMP PACK models.">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cdaf-3ff3-eca9-3d25" type="greaterThan"/>
+                <condition field="selections" scope="e8f4-86e5-a97d-2817" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cdaf-3ff3-eca9-3d25" type="greaterThan"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -9540,28 +9630,43 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
             <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 20 FLASH GITZ or &lt;CLAN&gt; INFANTRY models. It cannot transport MEGA ARMOUR or JUMP PACK models.</characteristic>
           </characteristics>
         </profile>
-        <profile id="0026-8329-0d6a-85c0" name="Gargantuan Squiggoth 1" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="d58d-8c3d-54e1-9821" typeName="GS Wound Track">
+        <profile id="0026-8329-0d6a-85c0" name="Gargantuan Squiggoth [1] (19-36+ wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="a4c7-5af4-a86c-9484">19-36+</characteristic>
-            <characteristic name="Move" typeId="d40d-8d54-3984-1384">10&quot;</characteristic>
-            <characteristic name="Strength" typeId="31fd-d5bc-e8dd-1324">12</characteristic>
-            <characteristic name="Attacks" typeId="5fd2-84a5-9c9a-6f52">8</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">10&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">12</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">36</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">8</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="cb3f-cc97-3b16-7680" name="Gargantuan Squiggoth 2" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="d58d-8c3d-54e1-9821" typeName="GS Wound Track">
+        <profile id="cb3f-cc97-3b16-7680" name="Gargantuan Squiggoth [2] (10-18 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="a4c7-5af4-a86c-9484">10-18</characteristic>
-            <characteristic name="Move" typeId="d40d-8d54-3984-1384">8&quot;</characteristic>
-            <characteristic name="Strength" typeId="31fd-d5bc-e8dd-1324">10</characteristic>
-            <characteristic name="Attacks" typeId="5fd2-84a5-9c9a-6f52">7</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">7</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="a3ff-23d3-7e0a-e865" name="Gargantuan Squiggoth 3" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="d58d-8c3d-54e1-9821" typeName="GS Wound Track">
+        <profile id="a3ff-23d3-7e0a-e865" name="Gargantuan Squiggoth [3] (1-9 wounds remaining)" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Wounds" typeId="a4c7-5af4-a86c-9484">1-8</characteristic>
-            <characteristic name="Move" typeId="d40d-8d54-3984-1384">6&quot;</characteristic>
-            <characteristic name="Strength" typeId="31fd-d5bc-e8dd-1324">8</characteristic>
-            <characteristic name="Attacks" typeId="5fd2-84a5-9c9a-6f52">6</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">8</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">6</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
         <profile id="d5d6-27e9-9cb8-3dfc" name="Howdah" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -9569,9 +9674,9 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, units embarked on this model can be selected to shoot. Measure the range and draw line of sight from any point on this model. When shooting with units embarked on this model, they do not count as being within Engagement Range of enemy units, and if this model made a Normal Move or Fell Back, they count as having Remained Stationary. Any other restrictions or modifiers that apply to this model also apply to models embarked upon it; for example, if this model Advanced, models embarked upon it also count as having Advanced.</characteristic>
           </characteristics>
         </profile>
-        <profile id="6cf0-74ac-0472-200e" name="Stampede!" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="6cf0-74ac-0472-200e" name="Stampede" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model finishes a charge move, roll a D6 for eachenemy unit within Engagement Range of it; on a 2+, that unit suffers D6 mortal wounds.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model finishes a charge move, roll a D6 for each enemy unit within Engagement Range of it; on a 2+, that unit suffers D6 mortal wounds.</characteristic>
           </characteristics>
         </profile>
         <profile id="2e51-bd91-a99e-67d7" name="Gargantuan" publicationId="7573-8d1b-acdf-2de8" page="200" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -12377,28 +12482,28 @@ hit roll. </characteristic>
             <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">20 FLASHGITZ or (CLAN) INFANTRY models.  Each MEGA ARMOUR or JUMP PACK model takes the space of 2.  </characteristic>
           </characteristics>
         </profile>
-        <profile id="0580-05c4-fc5b-a398" name="Deffrolla1" hidden="false" typeId="dc42-c17d-54f3-df0a" typeName="Kill Tank Wound Track">
+        <profile id="0580-05c4-fc5b-a398" name="Deffrolla1" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
           <characteristics>
-            <characteristic name="Wounds" typeId="50c7-d15c-aa1b-eaf0">14-24+</characteristic>
-            <characteristic name="Move" typeId="2910-7d1f-bf86-b8fc">12&quot;</characteristic>
-            <characteristic name="Strength" typeId="cc38-4460-3423-8bb3"/>
-            <characteristic name="Attacks" typeId="991b-e56a-1d88-4947"/>
+            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">14-24+</characteristic>
+            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">12&quot;</characteristic>
+            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b"/>
+            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92"/>
           </characteristics>
         </profile>
-        <profile id="81a2-11f1-4345-5ff6" name="Deffrolla3" hidden="false" typeId="dc42-c17d-54f3-df0a" typeName="Kill Tank Wound Track">
+        <profile id="81a2-11f1-4345-5ff6" name="Deffrolla3" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
           <characteristics>
-            <characteristic name="Wounds" typeId="50c7-d15c-aa1b-eaf0">1-5</characteristic>
-            <characteristic name="Move" typeId="2910-7d1f-bf86-b8fc">8&quot;</characteristic>
-            <characteristic name="Strength" typeId="cc38-4460-3423-8bb3"/>
-            <characteristic name="Attacks" typeId="991b-e56a-1d88-4947"/>
+            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">1-5</characteristic>
+            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">8&quot;</characteristic>
+            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b"/>
+            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92"/>
           </characteristics>
         </profile>
-        <profile id="2937-2517-180a-2baf" name="Deffrolla2" hidden="false" typeId="dc42-c17d-54f3-df0a" typeName="Kill Tank Wound Track">
+        <profile id="2937-2517-180a-2baf" name="Deffrolla2" hidden="false" typeId="67c2-86d6-5956-58cb" typeName="Transport Wound Track">
           <characteristics>
-            <characteristic name="Wounds" typeId="50c7-d15c-aa1b-eaf0">6-13</characteristic>
-            <characteristic name="Move" typeId="2910-7d1f-bf86-b8fc">10&quot;</characteristic>
-            <characteristic name="Strength" typeId="cc38-4460-3423-8bb3"/>
-            <characteristic name="Attacks" typeId="991b-e56a-1d88-4947"/>
+            <characteristic name="Wounds" typeId="e143-dcd2-6c87-9a3e">6-13</characteristic>
+            <characteristic name="Move" typeId="e293-95b7-16a2-ba35">10&quot;</characteristic>
+            <characteristic name="Strength" typeId="4caa-ff63-05ce-af9b"/>
+            <characteristic name="Attacks" typeId="511e-cd8e-e9cd-db92"/>
           </characteristics>
         </profile>
         <profile id="8450-9c7e-aeb7-3620" name="Firing Points" publicationId="7573-8d1b-acdf-2de8" page="8" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -14553,7 +14658,7 @@ Detachment also includes Ghazghkull Thraka. Note, however, that this model does 
             <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-5</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">9</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon, an unmodified wound roll of a 4+ inflicts D3 mortal wounds on the target in addition to any normal damagen.</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon, an unmodified wound roll of a 4+ inflicts D3 mortal wounds on the target in addition to any normal damage.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -14569,7 +14674,7 @@ Detachment also includes Ghazghkull Thraka. Note, however, that this model does 
           <characteristics>
             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4D3</characteristic>
-            <characteristic name="S" typeId="59b1-319e-ec13-d466">-</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">*</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3+3</characteristic>
             <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack made with this weapon successfully hits, roll 3D6. If the result is greater than the target&apos;s Toughness characteristic, that attack successfully wounds.</characteristic>
@@ -16599,7 +16704,7 @@ While this transport is within Engagement Range of any enemy units, embarked uni
     </profile>
     <profile id="3202-2878-7cb1-93a2" name="Keepin&apos; Order" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a &lt;CLAN&gt; unit is within 3&quot; of any friendly &lt;Cl an&gt; units with this ability, each time a model would flee that unit as a result of a failed Morale or Combat Attrition test, roll one D6: on a 6, that model does not flee.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a &lt;CLAN&gt; unit is within 3&quot; of any friendly &lt;CLAN&gt; units with this ability, each time a model would flee that unit as a result of a failed Morale or Combat Attrition test, roll one D6: on a 6, that model does not flee.</characteristic>
       </characteristics>
     </profile>
     <profile id="5dbe-c4d8-6c28-07fa" name="Waaagh!" publicationId="11b5-77b9-pubN65537" page="85" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
