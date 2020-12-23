@@ -110,7 +110,7 @@
     <categoryEntry id="3984-854b-4603-be64" name="Faction: Militarum Tempestus" hidden="false"/>
     <categoryEntry id="e035-adc9-4e15-cfc6" name="Atlas Recovery Tank" hidden="false"/>
     <categoryEntry id="3d05-7d74-22dd-f60d" name="Salamander" hidden="false"/>
-    <categoryEntry id="dbc8-2e0d-294e-a269" name="Salamander Command Tank" hidden="false"/>
+    <categoryEntry id="dbc8-2e0d-294e-a269" name="Salamander Command Vehicle" hidden="false"/>
     <categoryEntry id="4755-b1fa-1ab0-b2c9" name="Hades Breaching Drill" hidden="false"/>
     <categoryEntry id="e550-702c-a8f5-12d8" name="Centaur Light Carrier" hidden="false"/>
     <categoryEntry id="8e57-af73-ef52-5b95" name="Gryphonne Pattern Chimera" hidden="false"/>
@@ -205,6 +205,8 @@
     <categoryEntry id="ba38-8701-6b9d-3f6c" name="Carnodon" hidden="false"/>
     <categoryEntry id="f5c3-5616-fe23-e164" name="Voss-pattern Lightning" hidden="false"/>
     <categoryEntry id="ce2a-6807-2b00-eff3" name="Combat Engineer Squad" hidden="false"/>
+    <categoryEntry id="ee7d-2e9e-df72-d0db" name="Death Korps Grenadier Squad" hidden="false"/>
+    <categoryEntry id="ef6b-a0e8-dbc9-c510" name="Quartermaster Cadre" hidden="false"/>
   </categoryEntries>
   <rules>
     <rule id="431d-d055-dd6e-d714" name="Defenders of Humanity" hidden="false">
@@ -3692,61 +3694,67 @@
     </selectionEntry>
     <selectionEntry id="e172-910d-aae4-d668" name="Atlas Recovery Tank" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="3eba-f46a-8778-0312" name="Atlas Recovery Tank" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="54dd-ea9d-26ef-676e" name="Recovery Vehicle" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of your Movement phase, this model can repair one other friendly &lt;REGIMENT&gt; VEHICLE model within 3&quot; of it. That model regains up to D3 lost wounds. Each model can only be repaired once per turn.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="b14d-8071-da90-723b" name="Atlas Recovery Tank [1] (6-11+ wounds remaining)" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
             <characteristic name="W" typeId="f330-5e6e-4110-0978">11</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="eeb3-6c93-721c-70e4" name="Atlas Recovery Tank 1" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
+        <profile id="e0df-26fc-659b-edd6" name="Atlas Recovery Tank [2] (3-5 wounds remaining)" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">6-11+</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">12&quot;</characteristic>
-            <characteristic name="BS" typeId="8010-b879-355a-c137">4+</characteristic>
-            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">3</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">D3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="7ea2-c243-e6c0-6e62" name="Atlas Recovery Tank 3" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
+        <profile id="7df8-0b82-44c0-b0f3" name="Atlas Recovery Tank [3] (1-2 wounds remaining)" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">1-2</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">4&quot;</characteristic>
-            <characteristic name="BS" typeId="8010-b879-355a-c137">6+</characteristic>
-            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">1</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="8da8-2e54-31fb-df36" name="Atlas Recovery Tank 2" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
-          <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">3-5</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">8&quot;</characteristic>
-            <characteristic name="BS" typeId="8010-b879-355a-c137">5+</characteristic>
-            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">D3</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="54dd-ea9d-26ef-676e" name="Recovery Vehicle" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of this model&apos;s Movement phase, this model can repair a single &lt;REGIMENT&gt; VEHICLE within 3&quot; (but not itself). That model regains D3 lost wounds.</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">4&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">6+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
       </profiles>
       <infoLinks>
         <infoLink id="0d2e-f805-3352-c034" name="Smoke Launchers" hidden="false" targetId="c883-3078-1367-cc2c" type="profile"/>
-        <infoLink id="da35-bb2a-b1a2-d17e" name="Explodes" hidden="false" targetId="9bde-7aa6-8e9a-0792" type="profile"/>
+        <infoLink id="da35-bb2a-b1a2-d17e" name="Explodes (6+/6&quot;/D3)" hidden="false" targetId="9bde-7aa6-8e9a-0792" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="1ec8-2097-212a-7b22" name="Atlas Recovery Tank" hidden="false" targetId="e035-adc9-4e15-cfc6" primary="false"/>
         <categoryLink id="987b-2d16-04a3-3ea2" name="Faction: &lt;REGIMENT&gt;" hidden="false" targetId="3e01-e6cf-1353-96f4" primary="false"/>
         <categoryLink id="bf70-1647-47fa-5aca" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="9505-1fc1-38c7-1960" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+        <categoryLink id="e707-da5c-6f9b-6da0" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="6957-80a4-0d46-2291" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="087c-1d2a-d54b-3fe8" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1e6c-caf7-3102-7849" type="min"/>
@@ -3763,7 +3771,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-        <cost name="pts" typeId="points" value="90.0"/>
+        <cost name="pts" typeId="points" value="80.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -8852,6 +8860,7 @@
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="7280-1831-a72f-22d7" name="Two Autocannons" hidden="false" collective="false" import="true" type="upgrade">
@@ -14234,62 +14243,64 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="a152-0b14-b280-e96a" name="Salamander Command Vehicle" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="a152-0b14-b280-e96a" name="Salamander Command Vehicle [Legends]" hidden="false" collective="false" import="true" type="unit">
       <profiles>
-        <profile id="c9e2-93b7-e27d-5193" name="Auspex Surveyor" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="c9e2-93b7-e27d-5193" name="Auspex Surveyor" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During the Shooting phase, a single friendly &lt;REGIMENT&gt; VEHICLE within 6&quot; may add 1 to all hit rolls until the end of the phase. A single model cannot benefit from multiple SALAMANDER COMMAND VEHICLE auspex surveyors.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Shooting phase, select one enemy unit within 24&quot; of and visible to this model. Until the end of the phase, this model has the following ability: &apos;Enemy Sighted (Aura): While a friendly &lt;REGIMENT&gt; VEHICLE unit is within 6&quot; of this model, each time a model in that unit makes an attack against that enemy unit, the target does not receive the benefits of cover against that attack.&apos;</characteristic>
           </characteristics>
         </profile>
-        <profile id="a17b-f00d-3c56-a120" name="Salamander Command Vehicle" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="bdd1-4e1b-1af1-9f2f" name="Salamander Command Vehicle [1] (6-10+ wounds remaining)" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
             <characteristic name="W" typeId="f330-5e6e-4110-0978">10</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="a73f-c6d1-e07e-c80d" name="Salamander Command Vehicle 3" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
+        <profile id="6551-426a-555c-d07a" name="Salamander Command Vehicle [2] (3-5 wounds remaining)" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">1-2</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">4&quot;</characteristic>
-            <characteristic name="BS" typeId="8010-b879-355a-c137">5+</characteristic>
-            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">1</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">D3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="bc95-db10-935c-1df6" name="Salamander Command Vehicle 2" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
+        <profile id="d2dc-83b9-057a-4340" name="Salamander Command Vehicle [3] (1-2 wounds remaining)" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">3-5</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">8&quot;</characteristic>
-            <characteristic name="BS" typeId="8010-b879-355a-c137">4+</characteristic>
-            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">D3</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="49de-93ce-9bf0-4463" name="Salamander Command Vehicle 1" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
-          <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">6-10+</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">12&quot;</characteristic>
-            <characteristic name="BS" typeId="8010-b879-355a-c137">3+</characteristic>
-            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">3</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">4&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
       </profiles>
       <infoLinks>
         <infoLink id="4f80-d5ce-7e94-0ad0" name="Scout Vehicle" hidden="false" targetId="6338-ae1c-93c9-2e89" type="profile"/>
         <infoLink id="2ce4-cc18-bf1c-8535" name="Smoke Launchers" hidden="false" targetId="c883-3078-1367-cc2c" type="profile"/>
-        <infoLink id="84f6-87bb-eabb-186a" name="Explodes" hidden="false" targetId="9bde-7aa6-8e9a-0792" type="profile"/>
+        <infoLink id="84f6-87bb-eabb-186a" name="Explodes (6+/6&quot;/D3)" hidden="false" targetId="9bde-7aa6-8e9a-0792" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="f321-33c0-0fdf-d000" name="Faction: &lt;REGIMENT&gt;" hidden="false" targetId="3e01-e6cf-1353-96f4" primary="false"/>
         <categoryLink id="b28f-81d1-829a-5f91" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
-        <categoryLink id="1bd1-46cb-c656-c34e" name="Salamander" hidden="false" targetId="3d05-7d74-22dd-f60d" primary="false"/>
         <categoryLink id="c831-1391-d82b-aceb" name="Salamander Command Tank" hidden="false" targetId="dbc8-2e0d-294e-a269" primary="false"/>
         <categoryLink id="c012-219d-6098-449d" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+        <categoryLink id="7e72-7ebb-b4e2-790b" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="8e37-f109-72a6-be0e" name="Pintle Mount" hidden="false" collective="false" import="true" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
@@ -14299,6 +14310,9 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
           </constraints>
         </entryLink>
         <entryLink id="5890-067f-2237-769b" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f7ed-e7fe-d44b-a8b6" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b9bf-3743-559e-daa8" type="max"/>
@@ -14307,15 +14321,18 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
         <entryLink id="d6c5-3ebd-8b76-e8a1" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="1b83-5b96-3c7e-7d7e" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="8e9d-d1ed-7831-36a2" name="Heavy flamer" hidden="false" collective="false" import="true" targetId="18bc-b335-29c2-2ae2" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b0c6-a2fc-d3be-fbbb" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="bc6a-f09c-50b0-6495" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="bc6a-f09c-50b0-6495" type="min"/>
           </constraints>
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-        <cost name="pts" typeId="points" value="110.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
+        <cost name="pts" typeId="points" value="100.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -15861,6 +15878,11 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
         <entryLink id="1ad6-dc71-70af-cf2c" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="0334-f487-8229-0c1a" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="2.0"/>
+            <modifier type="set" field="points" value="22.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef6b-a0e8-dbc9-c510" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7100-9078-d635-60ae" type="max"/>
@@ -15869,6 +15891,11 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
         <entryLink id="5577-49a2-68d2-7a06" name="Boltgun" hidden="false" collective="false" import="true" targetId="b61f-a3c1-827d-c5b6" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="2.0"/>
+            <modifier type="set" field="points" value="22.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef6b-a0e8-dbc9-c510" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4395-4f06-187d-abdf" type="max"/>
@@ -15877,6 +15904,11 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
         <entryLink id="9bbd-6142-9f32-f5dc" name="Plasma pistol" hidden="false" collective="false" import="true" targetId="83be-1ba9-c326-4760" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="5"/>
+            <modifier type="set" field="points" value="25.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef6b-a0e8-dbc9-c510" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0a0a-2dcf-9aa3-c6dd" type="max"/>
@@ -15934,6 +15966,11 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
         <entryLink id="a1b1-e04f-679f-de4e" name="Plasma gun" hidden="false" collective="false" import="true" targetId="8c14-22cc-93ce-b85a" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="5.0"/>
+            <modifier type="set" field="points" value="10.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee7d-2e9e-df72-d0db" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dfe1-beac-e668-3aa1" type="max"/>
@@ -15942,6 +15979,11 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
         <entryLink id="8463-2030-bdc5-c2a3" name="Meltagun" hidden="false" collective="false" import="true" targetId="efc8-c51d-5b02-a3a2" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="5.0"/>
+            <modifier type="set" field="points" value="10.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee7d-2e9e-df72-d0db" type="instanceOf"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e897-06c4-9779-9820" type="max"/>
@@ -16162,6 +16204,7 @@ Each inferno bomb can only be dropped once per battle.’</characteristic>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9db7-2732-6040-c8cd" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7ea2-f323-15c7-6a32" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="baa9-dbdb-8fa4-6149" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e035-adc9-4e15-cfc6" type="instanceOf"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
