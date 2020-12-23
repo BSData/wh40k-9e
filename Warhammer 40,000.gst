@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="172" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="173" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -191,6 +191,14 @@
     <categoryEntry id="5750-de0a-589d-eacf" name="Supreme Commander" hidden="false"/>
     <categoryEntry id="26b0-4bb9-73aa-d3d7" name="Primarch | Daemon Primarch | Supreme Commander" hidden="false"/>
     <categoryEntry id="08f1-d244-eb44-7e01" name="Core" hidden="false"/>
+    <categoryEntry id="81e2-27cb-19e6-43c5" name="Obstacles" page="Terrain" hidden="false"/>
+    <categoryEntry id="c901-fe8a-a156-f3fa" name="Terrain" hidden="false"/>
+    <categoryEntry id="e9e2-df26-24d5-c19b" name="Imperial Fortress Walls" hidden="false"/>
+    <categoryEntry id="4ef7-2542-fad4-fe29" name="Gate Section" hidden="false"/>
+    <categoryEntry id="21f3-049b-26c4-dd3c" name="Gate Tower Section" hidden="false"/>
+    <categoryEntry id="d022-96ee-79c9-2373" name="Tower Section" hidden="false"/>
+    <categoryEntry id="2423-1997-8069-ed6d" name="Wall Section" hidden="false"/>
+    <categoryEntry id="3c2e-8ca6-a7c3-95f6" name="Primaris Redoubt" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -1335,7 +1343,7 @@
         <categoryLink id="d9f9-95c9-081c-f754" name="New CategoryLink" hidden="false" targetId="7320-eafd-02c1-94da" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="d692-f83a-aa11-a25a" name="Primus Redoubt" hidden="false" collective="false" import="true" targetId="b801-d1d1-7c34-facf" type="selectionEntry">
+    <entryLink id="d692-f83a-aa11-a25a" name="Primaris Redoubt" hidden="false" collective="false" import="true" targetId="b801-d1d1-7c34-facf" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="340b-ca49-5722-d355" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
       </categoryLinks>
@@ -3713,85 +3721,149 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="6267-6959-b9ec-4a6b" name="Imperial Fortress Walls" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="6267-6959-b9ec-4a6b" name="Imperial Fortress Walls [Legends]" hidden="false" collective="false" import="true" type="unit">
       <profiles>
-        <profile id="8bf2-f6dc-fa36-cb2b" name="Imperial Fortress Wall" page="52" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-          <modifiers>
-            <modifier type="increment" field="f330-5e6e-4110-0978" value="5">
-              <repeats>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8231-109e-5912-82ce" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="16ab-220b-a2d2-a80e" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="35a0-9b59-2eeb-7931" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
+        <profile id="41fa-ab39-a71d-f2bb" name="Fortress Set-up" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
-            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">5</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
-            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this Fortification is first set up on the battlefield, each model in this unit must be set u p so that it is in end-to-end contact with at least one other friendly Imperial Fortress Walls model. Each Gate Section model must be in end-to-end contact with 2 Gate Tower Section models. You do not have to set up all of the models in this unit in the battlefield if you do not wish to (or if you have insufficient room). This unit can be set up within 3&quot; of other terrain features. After it is set up, models in this unit are treated as a single terrain feature with the following Terrain Traits, as described in the Warhammer 40,000 Core Rules:
+
+- Defensible
+- Light Cover
+- Heavy Cover</characteristic>
           </characteristics>
         </profile>
-        <profile id="7c71-893b-e33d-c857" name="Mighty Bulwark" page="52" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="20f8-04d5-a073-e62c" name="Gates" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each unit that is embarked on this model may both shoot as if it were in the open and also be shot at as if it were in the open. Models embarked on this model have a 4+ invulnerable save. Place the embarked unit on the battlements to show where they are.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this Fortification is first set up on the battlefield, each Gate Section model can be set up with its gate open or closed. In your Command phase, you can open or close the gate for each of this unit&apos;s Gate Section models. While a Gate section&apos;s gate is open, it is no longer an Obstacle and does not have any Terrain Traits.</characteristic>
           </characteristics>
         </profile>
-        <profile id="5332-4327-90b2-d60e" name="Explosion" page="52" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="6411-249c-37e6-63a3" name="Automated Weapons" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any models disembark. On a 6 it explodes, and each unit within 3D6&quot; suffers D6 mortal wounds.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this unit is selected to shoot, for each Tower Section or Gate Tower Section model in this unit, if no friendly units are embarked within that model, you can only select one of the following targets that that section&apos;s attacks:
+
+- The closest eligible enemy unit.
+- The closest eligible enemy AIRCRAFT unit.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="cf6d-b572-3248-a1b1" name="Fire Points" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, up to 8 models embarked within each Tower Section or Gate Tower Section model can be selected to shoot with; measure distances and draw line of sight from any point on that section when doing so (these embarked models can still shoot while the building is within Engagement Range of enemy units).</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="f482-cd8a-14d1-ed0b" name="Wrecked" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is destroyed, roll one D6 before any embarked models disembark and before removing it from play. On a 6 it explodes, and each unit within 9&quot; suffers D6 mortal wounds. On any other result that model is wrecked; though the model counts as destroyed for all rules purposes do not remove it from the battlefield. Instead, for the remainder of the battle it is treated as an Obstacles terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Rules:
+
+- Difficult Ground
+- Exposed Position
+- Unstable Position</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="cbce-e7ee-b6c4-d939" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="bb60-2080-d842-cf02" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
-        <categoryLink id="ff91-41c7-7fb9-a89a" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
-        <categoryLink id="749b-280a-0122-2827" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
-        <categoryLink id="820a-ebaa-b959-086d" name="New CategoryLink" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="b50d-eeb8-6152-3517" name="Gate" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="b50d-eeb8-6152-3517" name="Gate Section" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="24cc-64b2-87b6-19de" type="min"/>
           </constraints>
           <profiles>
-            <profile id="c06f-8621-9a9e-4a64" name="Gate Section" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+            <profile id="c06f-8621-9a9e-4a64" name="Gate Section" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
               <characteristics>
-                <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">Any number of INFANTRY CHARACTERS and one other INFANTRY unit, up to a maximum of 20 models.</characteristic>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">-</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">8</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="a01d-deda-0191-fdef" name="Building" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+            <categoryLink id="8cf9-9563-6e8a-a637" name="Gate Section" hidden="false" targetId="4ef7-2542-fad4-fe29" primary="false"/>
+            <categoryLink id="d2de-1f65-a815-821c" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+            <categoryLink id="85b4-faa3-7c40-5ae6" name="Obstacles" hidden="false" targetId="81e2-27cb-19e6-43c5" primary="false"/>
+            <categoryLink id="073c-2907-1b97-42cd" name="Imperial Fortress Walls" hidden="false" targetId="e9e2-df26-24d5-c19b" primary="false"/>
+          </categoryLinks>
           <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="pts" typeId="points" value="80.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="16ab-220b-a2d2-a80e" name="Gate Tower" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="16ab-220b-a2d2-a80e" name="Gate Tower Section" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
-            <modifier type="decrement" field="da64-78e3-4232-15bc" value="1"/>
-            <modifier type="increment" field="da64-78e3-4232-15bc" value="1">
-              <repeats>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
+            <modifier type="decrement" field="9b45-0462-4a36-44b6" value="1.0"/>
           </modifiers>
+          <modifierGroups>
+            <modifierGroup>
+              <modifiers>
+                <modifier type="increment" field="da64-78e3-4232-15bc" value="2.0">
+                  <repeats>
+                    <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="increment" field="9b45-0462-4a36-44b6" value="2.0">
+                  <repeats>
+                    <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="da64-78e3-4232-15bc" type="min"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="da64-78e3-4232-15bc" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b45-0462-4a36-44b6" type="min"/>
           </constraints>
+          <profiles>
+            <profile id="622f-fcf2-7e4f-498a" name="Gate Tower Section" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">16</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="217c-a315-e2be-b9c1" name="Gate Tower Section" publicationId="b652-8bab-1453-da20" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+              <characteristics>
+                <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This building has a transport capacity of 12 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 of more. No more than two units can be embarked within this building.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <categoryLinks>
+            <categoryLink id="8942-1344-7c67-6312" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+            <categoryLink id="caee-f135-3403-77af" name="Building" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+            <categoryLink id="bdc9-4168-96c0-f537" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+            <categoryLink id="f51c-002f-34a0-5f9b" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+            <categoryLink id="bf00-8b99-c836-74ca" name="Imperial Fortress Walls" hidden="false" targetId="e9e2-df26-24d5-c19b" primary="false"/>
+            <categoryLink id="2fb4-80b6-c180-3a09" name="Gate Tower Section" hidden="false" targetId="21f3-049b-26c4-dd3c" primary="false"/>
+          </categoryLinks>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="0c0b-2020-28a3-3d58" name="Tower Weapons (1-2)" hidden="false" collective="false" import="true" defaultSelectionEntryId="68ae-be8d-2c1f-1cc4">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="418c-d939-232c-f3c8" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8df0-e503-e7eb-18e2" type="min"/>
+              </constraints>
+              <entryLinks>
+                <entryLink id="68ae-be8d-2c1f-1cc4" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry"/>
+                <entryLink id="128d-68c6-8d48-a820" name="Twin lascannon" hidden="false" collective="false" import="true" targetId="ee18-b1cd-6b60-464d" type="selectionEntry"/>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
           <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="pts" typeId="points" value="160.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="8231-109e-5912-82ce" name="Wall Section" hidden="false" collective="false" import="true" type="upgrade">
@@ -3799,19 +3871,34 @@
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8e49-0e20-f547-1ef3" type="min"/>
           </constraints>
           <profiles>
-            <profile id="13d3-851e-838d-3e67" name="Wall Section" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+            <profile id="13d3-851e-838d-3e67" name="Wall Section" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
               <characteristics>
-                <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">Any number of INFANTRY CHARACTERS and one other INFANTRY unit, up to a maximum of 20 models.</characteristic>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">-</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">12</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
               </characteristics>
             </profile>
           </profiles>
+          <categoryLinks>
+            <categoryLink id="173f-366a-7205-a785" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+            <categoryLink id="2903-4d8b-60cb-1839" name="Obstacles" hidden="false" targetId="81e2-27cb-19e6-43c5" primary="false"/>
+            <categoryLink id="f7a5-0f7b-7f51-3dc4" name="Building" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+            <categoryLink id="1c23-76b0-06a1-75e0" name="Imperial Fortress Walls" hidden="false" targetId="e9e2-df26-24d5-c19b" primary="false"/>
+            <categoryLink id="f2ad-0685-ddce-4254" name="Wall Section" hidden="false" targetId="2423-1997-8069-ed6d" primary="false"/>
+          </categoryLinks>
           <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="pts" typeId="points" value="120.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="35a0-9b59-2eeb-7931" name="Tower" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="35a0-9b59-2eeb-7931" name="Tower Section" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="increment" field="d26c-78ff-aba4-7741" value="1">
               <repeats>
@@ -3823,6 +3910,34 @@
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1976-84ec-2456-4ab5" type="min"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d26c-78ff-aba4-7741" type="max"/>
           </constraints>
+          <profiles>
+            <profile id="a973-a6ba-64f8-69f6" name="Tower Section" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">10</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">12</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="7b76-d97d-c0c1-edd1" name="Tower Section" publicationId="b652-8bab-1453-da20" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+              <characteristics>
+                <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This building has a transport capacity of 20 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 of more. No more than two units can be embarked within this building.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <categoryLinks>
+            <categoryLink id="1d41-e0e0-7146-ccfc" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+            <categoryLink id="fbe8-a47e-0d64-0701" name="Building" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+            <categoryLink id="5f2d-7835-3c62-f4d8" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+            <categoryLink id="7a6b-9a75-e07c-7d30" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+            <categoryLink id="8ea0-e927-e998-669f" name="Imperial Fortress Walls" hidden="false" targetId="e9e2-df26-24d5-c19b" primary="false"/>
+            <categoryLink id="5262-f864-e87d-103c" name="Tower Section" hidden="false" targetId="d022-96ee-79c9-2373" primary="false"/>
+          </categoryLinks>
           <selectionEntries>
             <selectionEntry id="7b7f-11e9-7ffc-2c28" name="Twin Long-barrelled Autocannon" hidden="false" collective="true" import="true" type="upgrade">
               <constraints>
@@ -3830,125 +3945,112 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7479-8e06-b43b-36cc" type="max"/>
               </constraints>
               <profiles>
-                <profile id="1dad-1154-dc7e-7b30" name="Twin Long-barrelled Autocannon" page="115" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="1dad-1154-dc7e-7b30" name="Twin Long-barrelled Autocannon" publicationId="b652-8bab-1453-da20" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
                     <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
                     <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
                     <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
               <costs>
-                <cost name="pts" typeId="points" value="35.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="153d-ac1f-6ba8-be89" name="Additional Tower Weapon" hidden="false" collective="false" import="true">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5d55-2138-0e59-3358" type="max"/>
+              </constraints>
+              <entryLinks>
+                <entryLink id="7078-935c-51a8-a036" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry"/>
+                <entryLink id="4710-f8d0-ea88-fd70" name="Twin lascannon" hidden="false" collective="false" import="true" targetId="ee18-b1cd-6b60-464d" type="selectionEntry"/>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
           <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="pts" typeId="points" value="120.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
-      <selectionEntryGroups>
-        <selectionEntryGroup id="8dde-9320-f50a-6c1f" name="Turret Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="d232-4017-cd9f-b55a">
-          <modifiers>
-            <modifier type="increment" field="85b6-136c-3441-7c71" value="1">
-              <repeats>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="16ab-220b-a2d2-a80e" repeats="1" roundUp="false"/>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="35a0-9b59-2eeb-7931" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="decrement" field="4589-1139-ccf9-9e9d" value="2"/>
-            <modifier type="increment" field="4589-1139-ccf9-9e9d" value="1">
-              <repeats>
-                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="16ab-220b-a2d2-a80e" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85b6-136c-3441-7c71" type="max"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4589-1139-ccf9-9e9d" type="min"/>
-          </constraints>
-          <entryLinks>
-            <entryLink id="d232-4017-cd9f-b55a" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="14"/>
-              </modifiers>
-            </entryLink>
-            <entryLink id="a84e-e180-55eb-d56c" name="Twin lascannon" hidden="false" collective="false" import="true" targetId="ee18-b1cd-6b60-464d" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="40"/>
-              </modifiers>
-            </entryLink>
-          </entryLinks>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
       <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-        <cost name="pts" typeId="points" value="800.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="b801-d1d1-7c34-facf" name="Primus Redoubt" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="b801-d1d1-7c34-facf" name="Primaris Redoubt [Legends]" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="27fb-27b3-f042-1118" name="Primus Redoubt" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="be45-68f1-16ba-2142" name="Primaris Redoubt" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">8</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
             <characteristic name="W" typeId="f330-5e6e-4110-0978">20</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
-            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+/5++</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="51d4-df4c-ff22-356e" name="Battle Crew" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="5a87-cf31-4ba3-5de8" name="Automated Weapons" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You may add 1 to this model&apos;s hit rolls when making shooting attacks against models with the TITANIC keyword.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this unit is selected to shoot, for each Tower Section or Gate Tower Section model in this unit, if no friendly units are embarked within that model, you can only select one of the following targets that that section&apos;s attacks:
+
+- The closest eligible enemy unit.
+- The closest eligible enemy AIRCRAFT unit.</characteristic>
           </characteristics>
         </profile>
-        <profile id="888f-fcce-8911-d3c3" name="Force Dome" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="ec34-77e6-d090-444f" name="Force Dome" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 5+ invulnerable save.</characteristic>
           </characteristics>
         </profile>
-        <profile id="d146-c17b-222c-3b02" name="Reactor Explosion" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="c9ec-7850-1da5-3f69" name="Wrecked" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield and before any models disembark. On a 6 its reactor explodes, and each unit within 2D6&quot; suffers D6 mortal wounds.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is destroyed, roll one D6 before any embarked models disembark and before removing it from play. On a 6 it explodes, and each unit within 9&quot; suffers D6 mortal wounds. On any other result that model is wrecked; though the model counts as destroyed for all rules purposes do not remove it from the battlefield. Instead, for the remainder of the battle it is treated as an Obstacles terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Rules:
+
+- Difficult Ground
+- Exposed Position
+- Unstable Position</characteristic>
           </characteristics>
         </profile>
-        <profile id="4766-36e8-d6fa-53a2" name="Primus Redoubt" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+        <profile id="049a-d647-0dde-df0d" name="Primaris Redoubt [Legends]" publicationId="b652-8bab-1453-da20" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">Any number of INFANTRY CHARACTERS and one other INFANTRY unit, up to a maximum of 20 models.</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 15 INFANTRY models. Each model with a Wounds characteristic of 3 or more takes up the space of 2 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 4 or more. No more than two units can be embarked within this model.</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="4231-88a3-9766-c5ab" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="4cb7-034c-3a94-3a96" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+        <categoryLink id="0cf8-9e0b-f147-2061" name="Building" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+        <categoryLink id="9253-66f7-0279-7e5e" name="Faction: Unaligned" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
+        <categoryLink id="472e-9385-115a-aeec" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false"/>
+        <categoryLink id="5be5-230a-1c59-2f44" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+        <categoryLink id="7c42-d64d-db3d-e90f" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+        <categoryLink id="869d-9b0e-8151-863b" name="Primaris Redoubt" hidden="false" targetId="3c2e-8ca6-a7c3-95f6" primary="false"/>
+      </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="279b-3e86-f8f2-3cd6" name="Dual Turbo-laser Destructor" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="279b-3e86-f8f2-3cd6" name="Primaris Rebout Turbo-Laser Destructor" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b62f-357c-6080-23b4" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="db4c-b408-1839-18b0" type="max"/>
           </constraints>
           <profiles>
-            <profile id="021d-ee95-1021-9783" name="Dual Turbo-laser Destructor" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+            <profile id="021d-ee95-1021-9783" name="Primaris Rebout Turbo-Laser Destructor" publicationId="b652-8bab-1453-da20" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Macro 2D3</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D3</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">16</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2D6</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Any wound roll of 6 made with this attack automatically inflicts D3 mortal wounds on the target.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Each time an attack is made with this weapon, on an unmodified wound roll of 6, the target suffers D3 mortal wounds in addition to the normal damage.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -3965,35 +4067,35 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f221-cff6-2246-cd0d" type="max"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="4449-1153-8f2f-cf7c" name="Air Defence Missiles" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="4449-1153-8f2f-cf7c" name="Primaris Air Defence Missiles" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
-                <profile id="9bab-9b39-e151-eefa" name="Air Defence Missiles" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="9bab-9b39-e151-eefa" name="Primaris Air Defence Missiles" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D3</characteristic>
                     <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
                     <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
                     <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls made for this weapon against targets that can FLY. Subtract 1 from hit rolls made for this weapon against all other targets.</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, add 2 to that attack&apos;s hit roll.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
               <costs>
-                <cost name="pts" typeId="points" value="10.0"/>
+                <cost name="pts" typeId="points" value="20.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="dc8e-4fdf-7ce1-2d52" name="Icarus Quad Lascannon" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="a123-41be-635c-2d44" name="Primaris Quad Icarus Lascannon" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
-                <profile id="a93c-ebe0-7c65-202d" name="Icarus Quad Lascannon" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                <profile id="b974-33bb-44ac-ce5c" name="Primaris Quad Icarus Lascannon" publicationId="b652-8bab-1453-da20" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                   <characteristics>
                     <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
                     <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
                     <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
                     <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                     <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls made for this weapon against targets that can FLY. Subtract 1 from hit rolls made for this weapon against all other targets.</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, add 2 to that attack&apos;s hit roll.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -4003,35 +4105,108 @@
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
+            <selectionEntry id="07fc-c25e-fb95-c55d" name="Primaris Icarus Lascannon" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="1f28-86db-2736-9030" name="Primaris Icarus Lascannon" publicationId="b652-8bab-1453-da20" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, add 2 to that attack&apos;s hit roll.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name="pts" typeId="points" value="25.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="9481-db05-d5be-f839" name="Primaris Quad Gun" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="28d1-c2f5-89af-6c2a" name="Primaris Quad Gun" publicationId="b652-8bab-1453-da20" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 8</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, add 2 to that attack&apos;s hit roll.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name="pts" typeId="points" value="30.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="def3-cc88-a9ad-9f21" name="Primaris Castellan Launcher" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="f68c-e4cf-9681-83d0" name="Primaris Castellan Launcher" publicationId="b652-8bab-1453-da20" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the bearer.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name="pts" typeId="points" value="30.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="1e96-94bf-76fa-0cff" name="Primaris Vengeance Launcher" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="7df6-6fd5-fe2f-2f37" name="Primaris Vengeance Launcher" publicationId="b652-8bab-1453-da20" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D3</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the bearer.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name="pts" typeId="points" value="40.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
           </selectionEntries>
           <entryLinks>
             <entryLink id="23f4-f1cb-709c-4502" name="Battle cannon" hidden="false" collective="false" import="true" targetId="1d7b-4f46-b77b-ead1" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="22"/>
-              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="20.0"/>
+              </costs>
             </entryLink>
-            <entryLink id="6f16-8ed5-835b-6edb" name="Icarus Lascannon" hidden="false" collective="false" import="true" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry"/>
             <entryLink id="2f90-2ff5-3a2a-4079" name="Multi-melta" hidden="false" collective="false" import="true" targetId="2b37-65ee-9443-b4ef" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="20"/>
-              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="25.0"/>
+              </costs>
             </entryLink>
-            <entryLink id="fac3-8167-b856-599f" name="Quad-gun" hidden="false" collective="false" import="true" targetId="e4c2-0571-1de7-02e1" type="selectionEntry"/>
             <entryLink id="fef2-2d4a-1246-88ed" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="14"/>
-              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="30.0"/>
+              </costs>
             </entryLink>
             <entryLink id="f33b-85de-5839-5ec3" name="Twin lascannon" hidden="false" collective="false" import="true" targetId="ee18-b1cd-6b60-464d" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="40"/>
-              </modifiers>
+              <costs>
+                <cost name="pts" typeId="points" value="40.0"/>
+              </costs>
             </entryLink>
-            <entryLink id="d620-9bba-0653-37a6" name="Whirlwind castellan launcher" hidden="false" collective="false" import="true" targetId="e640-c148-5944-6874" type="selectionEntry"/>
-            <entryLink id="bf29-eeff-3d7e-237b" name="Whirlwind vengeance launcher" hidden="false" collective="false" import="true" targetId="79a5-23f2-b542-a73f" type="selectionEntry">
-              <modifiers>
-                <modifier type="set" field="points" value="30"/>
-              </modifiers>
+            <entryLink id="6ec3-47f7-d708-50ff" name="Twin heavy flamer" hidden="false" collective="false" import="true" targetId="8d70-a6af-cbad-f08c" type="selectionEntry">
+              <costs>
+                <cost name="pts" typeId="points" value="30.0"/>
+              </costs>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
@@ -4041,11 +4216,14 @@
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f945-c820-e0a8-a343" type="max"/>
           </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="15.0"/>
+          </costs>
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="20.0"/>
-        <cost name="pts" typeId="points" value="300.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="42.0"/>
+        <cost name="pts" typeId="points" value="750.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -5961,6 +6139,16 @@
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="14b1-5f3b-4943-82e1" name="Twin heavy bolter" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="6479-a056-9dcf-eb1b" name="Twin heavy bolter" hidden="false" targetId="6644-7150-c910-865d" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="30.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
