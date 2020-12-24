@@ -3798,27 +3798,21 @@
         </selectionEntry>
         <selectionEntry id="16ab-220b-a2d2-a80e" name="Gate Tower Section" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
-            <modifier type="decrement" field="9b45-0462-4a36-44b6" value="1.0"/>
+            <modifier type="increment" field="da64-78e3-4232-15bc" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+            <modifier type="increment" field="9b45-0462-4a36-44b6" value="2.0">
+              <repeats>
+                <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+            <modifier type="decrement" field="9b45-0462-4a36-44b6" value="2.0"/>
           </modifiers>
-          <modifierGroups>
-            <modifierGroup>
-              <modifiers>
-                <modifier type="increment" field="da64-78e3-4232-15bc" value="2.0">
-                  <repeats>
-                    <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
-                  </repeats>
-                </modifier>
-                <modifier type="increment" field="9b45-0462-4a36-44b6" value="2.0">
-                  <repeats>
-                    <repeat field="selections" scope="6267-6959-b9ec-4a6b" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b50d-eeb8-6152-3517" repeats="1" roundUp="false"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
           <constraints>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="da64-78e3-4232-15bc" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b45-0462-4a36-44b6" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b45-0462-4a36-44b6" type="min"/>
           </constraints>
           <profiles>
             <profile id="622f-fcf2-7e4f-498a" name="Gate Tower Section" publicationId="b652-8bab-1453-da20" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -3959,6 +3953,7 @@
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -3982,6 +3977,8 @@
       </selectionEntries>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="b801-d1d1-7c34-facf" name="Primaris Redoubt [Legends]" hidden="false" collective="false" import="true" type="model">
