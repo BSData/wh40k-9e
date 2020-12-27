@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="173" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="174" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -3857,7 +3857,7 @@
           <costs>
             <cost name="pts" typeId="points" value="160.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="8231-109e-5912-82ce" name="Wall Section" hidden="false" collective="false" import="true" type="upgrade">
@@ -3977,7 +3977,7 @@
       </selectionEntries>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -4011,7 +4011,7 @@
         </profile>
         <profile id="c9ec-7850-1da5-3f69" name="Wrecked" publicationId="b652-8bab-1453-da20" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is destroyed, roll one D6 before any embarked models disembark and before removing it from play. On a 6 it explodes, and each unit within 9&quot; suffers D6 mortal wounds. On any other result that model is wrecked; though the model counts as destroyed for all rules purposes do not remove it from the battlefield. Instead, for the remainder of the battle it is treated as an Obstacles terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Rules:
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is destroyed, roll one D6 before any embarked models disembark and before removing it from play. On a 6 it explodes, and each unit within 6&quot; suffers D3 mortal wounds. On any other result that model is wrecked; though the model counts as destroyed for all rules purposes do not remove it from the battlefield. Instead, for the remainder of the battle it is treated as an Obstacles terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Rules:
 
 - Difficult Ground
 - Exposed Position
