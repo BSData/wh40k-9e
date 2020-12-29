@@ -10700,7 +10700,7 @@
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="fd9b-9a0c-040b-868d" name="New InfoLink" hidden="false" targetId="f5f1-324f-5ba1-c4ae" type="profile"/>
+        <infoLink id="fd9b-9a0c-040b-868d" name="Summary Execution" hidden="false" targetId="f5f1-324f-5ba1-c4ae" type="profile"/>
         <infoLink id="0269-dadc-aff5-7585" name="New InfoLink" hidden="false" targetId="74b0-e2c2-29bf-2997" type="profile"/>
         <infoLink id="5b6b-ab4a-2e0e-854b" name="Voice of Command" hidden="false" targetId="2ff26b94-8048-d15d-c541-fd4da0f49571" type="profile">
           <modifiers>
@@ -10787,16 +10787,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ad72-abdf-09c1-fdf1" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="317e-8ecb-fee6-5c89" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry">
-          <entryLinks>
-            <entryLink id="7330-8857-31dd-3af0" name="WT: Master of Command" hidden="false" collective="false" import="true" targetId="4a25-7a1d-4442-3728" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5386-4b93-6988-42df" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9fe1-7f18-dc28-8e77" type="max"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-        </entryLink>
+        <entryLink id="317e-8ecb-fee6-5c89" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry"/>
         <entryLink id="1d9e-f53a-3b4a-c8f0" name="Display Astra Militarum Orders" hidden="true" collective="false" import="true" targetId="af30-711d-1707-fcdc" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="false">
@@ -10806,6 +10797,7 @@
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="5ed4-8c8a-7f56-a4bf" name="Required Warlord Traits" hidden="false" collective="false" import="true" targetId="2669-d582-9c66-e919" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="105.0"/>
@@ -18084,6 +18076,11 @@
         </modifier>
         <modifier type="decrement" field="76e3-704b-3060-9022" value="1.0">
           <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2669-d582-9c66-e919" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="decrement" field="76e3-704b-3060-9022" value="1.0">
+          <conditions>
             <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d6e2-a400-a8db-d4f2" type="greaterThan"/>
           </conditions>
         </modifier>
@@ -18965,6 +18962,74 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="2669-d582-9c66-e919" name="Required Warlord Traits" hidden="true" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1f07-a468-bda8-fd3f" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <modifierGroups>
+        <modifierGroup>
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1f07-a468-bda8-fd3f" type="equalTo"/>
+          </conditions>
+          <modifiers>
+            <modifier type="set" field="hidden" value="false"/>
+            <modifier type="set" field="7c8a-b266-fcc6-5edd" value="1.0"/>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e835-c1fe-7fa4-0b07" type="max"/>
+        <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7c8a-b266-fcc6-5edd" type="min"/>
+      </constraints>
+      <entryLinks>
+        <entryLink id="3e18-b99a-98bd-ea17" name="WT (Catachan): Lead From the Front" hidden="true" collective="false" import="true" targetId="1fff-d44f-98e9-609c" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9145-1d3b-9057-7a17" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7014-e6c3-eb98-a590" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="3579-995d-a784-660a" name="WT (Cadia): Superior Tactical Training" hidden="true" collective="false" import="true" targetId="8d6d-9c06-8025-de58" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="092e-5104-6d53-e1e1" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ed50-206a-b564-921b" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="078d-3b57-a663-33c8" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="cae0-fd46-76f0-f17f" name="WT: Master of Command" hidden="true" collective="false" import="true" targetId="4a25-7a1d-4442-3728" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5dac-1ff6-7352-3745" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </entryLink>
+      </entryLinks>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
