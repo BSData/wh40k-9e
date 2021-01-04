@@ -225,9 +225,15 @@
     <categoryEntry id="b608-fcfa-ee0d-2bef" name="Death Company" hidden="false"/>
     <categoryEntry id="b4c5-05a4-0c77-ac2c" name="Death Company Captain" hidden="false">
       <comment>Used for validating Captain limits alongside regular SM restrictions.</comment>
+      <constraints>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="dc11-89b3-2694-0086" type="max"/>
+      </constraints>
     </categoryEntry>
     <categoryEntry id="010a-06b2-767a-040f" name="Death Company Lieutenant" hidden="false">
       <comment>Used for validating Lieutenant limits alongside regular SM restrictions.</comment>
+      <constraints>
+        <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8958-8739-d4bd-fb68" type="max"/>
+      </constraints>
     </categoryEntry>
   </categoryEntries>
   <entryLinks>
@@ -11266,7 +11272,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
       <modifiers>
         <modifier type="set" field="name" value="Primaris Chapter Master">
           <conditions>
-            <condition field="selections" scope="5eda-df7b-e300-499e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="73a7-22a8-541d-3868" type="equalTo"/>
+            <condition field="selections" scope="5eda-df7b-e300-499e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="25a8-62ee-e288-552f" type="equalTo"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -11275,7 +11281,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
           <modifiers>
             <modifier type="set" field="name" value="Primaris Chapter Master">
               <conditions>
-                <condition field="selections" scope="5eda-df7b-e300-499e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="73a7-22a8-541d-3868" type="equalTo"/>
+                <condition field="selections" scope="5eda-df7b-e300-499e" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="25a8-62ee-e288-552f" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -11294,8 +11300,25 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
       </profiles>
       <infoLinks>
         <infoLink id="11d0-9178-2cc5-8f0e" name="Iron Halo" hidden="false" targetId="242c-3bac-1ff3-48b0" type="profile"/>
-        <infoLink id="f613-3c9e-569c-9d20" name="Rites of Battle" hidden="false" targetId="922c-75db-5ca4-3750" type="profile"/>
         <infoLink id="7e42-75cf-21aa-9c0c" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
+        <infoLink id="d5b1-e486-78d1-7ac4" name="Rites of Battle" hidden="false" targetId="922c-75db-5ca4-3750" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="5eda-df7b-e300-499e" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="86ea-4dd5-04ef-146f" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+        <infoLink id="10e6-c484-0233-95bc" name="Rites of Rage (Aura)" hidden="false" targetId="2aa9-599d-dca7-35e2" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="5eda-df7b-e300-499e" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="86ea-4dd5-04ef-146f" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="5f79-6048-f43e-c56c" name="New CategoryLink" hidden="false" targetId="c7b7-edbc-bc14-6238" primary="false"/>
@@ -11465,6 +11488,15 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
             <entryLink id="514d-cae6-0be8-0c74" name="Stratagem: A Vigil Unmatched" hidden="false" collective="false" import="true" targetId="4224-8526-e82d-518c" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
+        <selectionEntryGroup id="bc91-e120-205d-bfcd" name="Command Options" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b10d-00a4-fde7-8a46" type="max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="25a8-62ee-e288-552f" name="Chapter Command:  Chapter Master" hidden="false" collective="false" import="true" targetId="bd73-ea51-1f7f-a39a" type="selectionEntry"/>
+            <entryLink id="86ea-4dd5-04ef-146f" name="Death Company Captain" hidden="false" collective="false" import="true" targetId="4ad6-eb88-f4b3-590e" type="selectionEntry"/>
+          </entryLinks>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="ccd2-4c2e-2d6f-dc32" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
@@ -11473,7 +11505,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6258-fe23-7506-65ac" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="33bf-1084-fc97-cfe2" name="Master-crafted Power Sword" hidden="false" collective="false" import="true" targetId="2500-aed6-f77e-88f9" type="selectionEntry">
+        <entryLink id="33bf-1084-fc97-cfe2" name="Master-crafted power sword" hidden="false" collective="false" import="true" targetId="2500-aed6-f77e-88f9" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="e756-b509-106c-967e" value="0.0">
               <conditionGroups>
@@ -11504,7 +11536,6 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink id="73a7-22a8-541d-3868" name="Stratagem: Chapter Master" hidden="false" collective="false" import="true" targetId="bd73-ea51-1f7f-a39a" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="90.0"/>
@@ -12895,7 +12926,7 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
     </selectionEntry>
     <selectionEntry id="01cf-00c7-c4af-701b" name="Warlord" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="3818-6fa9-18ff-4a00" value="0.0">
+        <modifier type="set" field="hidden" value="true">
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -13643,7 +13674,15 @@ Each time a unit with this tactic is selected to shoot or fight you can re-roll 
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="4ac5-3a53-d6f5-2c01" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile"/>
+        <infoLink id="4ac5-3a53-d6f5-2c01" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="010a-06b2-767a-040f" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink id="f300-907f-2600-9b6b" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
         <infoLink id="979b-63c1-cbf8-1017" name="Death From Above" hidden="false" targetId="350e-2132-9401-2657" type="profile"/>
         <infoLink id="9842-5433-7328-3c25" name="Company Heroes" hidden="false" targetId="b6ba-39af-6402-3665" type="profile"/>
@@ -16480,7 +16519,15 @@ Weapon: Purgatorus</characteristic>
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="4de2-815c-fd7c-93b6" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile"/>
+        <infoLink id="4de2-815c-fd7c-93b6" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="010a-06b2-767a-040f" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink id="6c8e-ddf6-0952-e8a3" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
         <infoLink id="037a-b30e-d369-0f1d" name="Company Heroes" hidden="false" targetId="b6ba-39af-6402-3665" type="profile"/>
       </infoLinks>
@@ -16639,7 +16686,15 @@ Weapon: Purgatorus</characteristic>
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="c317-9185-7370-887a" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile"/>
+        <infoLink id="c317-9185-7370-887a" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="010a-06b2-767a-040f" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink id="479c-fe63-6253-7514" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
         <infoLink id="9631-7671-5f4f-5302" name="Company Heroes" hidden="false" targetId="b6ba-39af-6402-3665" type="profile"/>
       </infoLinks>
@@ -18270,7 +18325,15 @@ Weapon: Purgatorus</characteristic>
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="cb2c-d0fe-ad8a-9466" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile"/>
+        <infoLink id="cb2c-d0fe-ad8a-9466" name="Tactical Precision" hidden="false" targetId="ca86-a970-9bab-d29a" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="010a-06b2-767a-040f" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
         <infoLink id="b379-1f84-b689-8a3d" name="Angels of Death" hidden="false" targetId="01a4-bec8-b573-fde7" type="rule"/>
         <infoLink id="1e9c-e109-64a3-1fdd" name="Terror Troops" hidden="false" targetId="dd1c-d082-6395-e289" type="profile"/>
         <infoLink id="a5a2-b694-4c3d-a377" name="Company Heroes" hidden="false" targetId="b6ba-39af-6402-3665" type="profile"/>
@@ -20824,9 +20887,6 @@ Weapon: Purgatorus</characteristic>
           </conditions>
         </modifier>
       </modifiers>
-      <constraints>
-        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8940-d1c4-9fb1-54c7" type="max"/>
-      </constraints>
       <categoryLinks>
         <categoryLink id="fb9e-f1e1-4218-f95b" name="Death Company" hidden="false" targetId="b608-fcfa-ee0d-2bef" primary="false"/>
         <categoryLink id="90e6-680f-a2be-e50e" name="Death Company Captain (Hidden)" hidden="false" targetId="b4c5-05a4-0c77-ac2c" primary="false"/>
