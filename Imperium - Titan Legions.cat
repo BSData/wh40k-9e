@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="f944-98a5-b73d-f132" name="Imperium - Titan Legions" revision="17" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="170" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="f944-98a5-b73d-f132" name="Imperium - Titan Legions" revision="17" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="176" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>The Collegia Titanica is the division of the ancient Mechanicum and the current Adeptus Mechanicus that operates and oversees the Titans, the colossal combat walkers that are the most powerful engines of war in the Imperium of Man. The Collegia is also more rarely known as the Adeptus Titanicus (a contraction of &quot;Adeptus Mechanicus Collegia Titanica&quot;) and as the Legio Titanicus in ancient records dating back to the Great Crusade and the Horus Heresy. Born of the time during the Age of Strife when the first temples to the Omnissiah were being raised on Mars, the Titans are the personification of the military might available to the Emperor of Mankind. Bristling with massive cannons and missile launchers capable of wreaking terrible destruction upon an enemy, they dominate the battlefields of the galaxy and are a testimony to the consummate skills of the Tech-priests of the Cult Mechanicus.</readme>
   <profileTypes>
     <profileType id="d663-48aa-4a14-260b" name="Unit (Titan)">
@@ -781,6 +781,11 @@
                 <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9cec-1691-50a7-d312" type="max"/>
               </constraints>
             </entryLink>
+            <entryLink id="1a34-7b5e-463c-8ad3" name="Macro Gatling Blaster" hidden="false" collective="false" import="true" targetId="0c76-ea85-87a3-fd26" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85ca-0b83-6aca-d2b2" type="max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -962,6 +967,16 @@
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
+        <selectionEntryGroup id="f835-c7dc-b39b-a6e0" name="Carapace-Mounted Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="068d-3dbb-3b0d-a1e1">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a966-8377-f386-444d" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="741b-cbf0-67e3-2724" type="max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="068d-3dbb-3b0d-a1e1" name="Nemesis Quake Cannon" hidden="false" collective="false" import="true" targetId="9d88-9a94-95f8-ae7c" type="selectionEntry"/>
+            <entryLink id="4091-1078-0e7b-bca1" name="Nemesis Volcano Cannon" hidden="false" collective="false" import="true" targetId="8332-f3e7-4919-2fe7" type="selectionEntry"/>
+          </entryLinks>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="b6cd-239d-64ed-511f" name="Warbringer Nemesis Feet" hidden="false" collective="false" import="true" targetId="5f7a-c304-4ba0-4c49" type="selectionEntry">
@@ -980,12 +995,6 @@
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0f4b-97d0-7711-d847" type="min"/>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="44f8-23c7-d6d6-a9f0" type="max"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="ac74-3209-9189-2614" name="Nemesis Quake Cannon" hidden="false" collective="false" import="true" targetId="9d88-9a94-95f8-ae7c" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="658a-8693-d42a-f124" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f874-1a34-b176-f503" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="047e-a191-1858-f4b5" name="Has Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
@@ -1091,6 +1100,34 @@
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="8332-f3e7-4919-2fe7" name="Nemesis Volcano Cannon" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="9192-e9e0-5f7e-e791" name="Nemesis Volcano Cannon" publicationId="7573-8d1b-acdf-2de8" page="111" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;-120&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 3D3</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">18</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-5</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">12</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="0c76-ea85-87a3-fd26" name="Macro Gatling Blaster" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="7c7a-701a-44d2-2753" name="Macro Gatling Blaster" publicationId="7573-8d1b-acdf-2de8" page="112" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">100&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 12</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">4</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedProfiles>
