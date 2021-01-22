@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="61c6-c8c5-a304-ff5f" name="Necrons" revision="82" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="176" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="61c6-c8c5-a304-ff5f" name="Necrons" revision="83" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="178" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>The Necrons are amongst the most ancient and powerful races in the galaxy. Armoured bodies of living metal, they advance in inexorable lockstep upon their terrified foes. Their weapons unleash the fundamental energies of the cosmos, even as flickering portals beam Necrons into battle from across impossible interstellar gulfs. Shattered shards of insane star gods warp reality itself to annihilate the enemy, even as deranged nobles command mighty war engines to eradicate their victims wholesale. Terrible, monstrous beings with bladed limbs and glowing eyes stalk their victims from the shadows, attacking in sudden explosions of insane butchery. As the Necrons archeotechnological tomb cities rise up from below and their eerie invasion fleets sweep down from the skies, their enemies feel the icy grip of terror clutch their hearts; surely their doom is upon them.</readme>
   <publications>
     <publication id="61c6-c8c5-pubN65537" name="Codex: Necrons" shortName="Necrons" publisher="Codex: Necrons" publicationDate="October 2020" publisherUrl="https://www.games-workshop.com/en-US/Codex-Necrons-2020-ENG"/>
@@ -3818,6 +3818,7 @@ units can be placed into Strategic Reserves without having to spend any addition
         <infoLink id="2daa-01ae-a293-8b1b" name="Hardwired for Destruction" publicationId="61c6-c8c5-pubN65537" hidden="false" targetId="8fc2-276b-299f-abb4" type="profile"/>
         <infoLink id="718d-a99f-3b6b-3b6a" name="United in Destruction (Aura)" publicationId="61c6-c8c5-pubN65537" hidden="false" targetId="3b66-ca13-612f-b9d1" type="profile"/>
         <infoLink id="a85f-1bc3-6908-ded7" name="Living Metal" publicationId="61c6-c8c5-pubN65537" hidden="false" targetId="601f-ad02-3e1f-fcc4" type="rule"/>
+        <infoLink id="244a-29c6-1b9e-729a" name="Phase Shifter" publicationId="61c6-c8c5-pubN65537" hidden="false" targetId="e779-9e29-3400-0b2d" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="576b-3c60-da14-ff7f" name="" publicationId="61c6-c8c5-pubN65537" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
@@ -11097,6 +11098,26 @@ Directive 2: This unit is eligible to shoot in a turn in which it Fell Back, but
       </costs>
     </selectionEntry>
     <selectionEntry id="7482-b4b9-3bae-6e7e" name="Dynastic Advisor" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="decrement" field="afa3-5cc0-78dc-24df" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="true" childId="598f-6101-1273-9dfb" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="092a-b667-f7aa-1b33" type="lessThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="afa3-5cc0-78dc-24df" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="true" childId="092a-b667-f7aa-1b33" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="true" id="afa3-5cc0-78dc-24df" type="max"/>
+      </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="9bc0-eb32-ca8f-dcc1" name="Cryptek Choice" hidden="false" collective="false" import="true" defaultSelectionEntryId="8a23-eacc-7d10-d483">
           <constraints>
@@ -11108,21 +11129,33 @@ Directive 2: This unit is eligible to shoot in a turn in which it Fell Back, but
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="18c0-cb63-0bff-dd7c" type="max"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink id="a791-305f-a6af-73f5" name="Dynastic Advisor" hidden="false" targetId="598f-6101-1273-9dfb" primary="false"/>
+              </categoryLinks>
             </entryLink>
             <entryLink id="47ef-c7e0-2dc5-b5a6" name="Psychomancer" hidden="false" collective="false" import="true" targetId="9a67-e60b-d442-edb9" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="d1ff-4de5-3f54-c9d5" type="max"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink id="76d0-8079-e456-afe3" name="Dynastic Advisor" hidden="false" targetId="598f-6101-1273-9dfb" primary="false"/>
+              </categoryLinks>
             </entryLink>
             <entryLink id="8a23-eacc-7d10-d483" name="Technomancer" hidden="false" collective="false" import="true" targetId="e5d8-d5a6-55bf-e6fa" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="d3e4-0c7d-0f19-7adb" type="max"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink id="c157-3697-2669-454f" name="Dynastic Advisor" hidden="false" targetId="598f-6101-1273-9dfb" primary="false"/>
+              </categoryLinks>
             </entryLink>
             <entryLink id="630f-b996-f491-a863" name="Chronomancer" hidden="false" collective="false" import="true" targetId="e4d8-225b-cae1-1f20" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="e228-a29c-d0b3-cede" type="max"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink id="9f59-fe2b-f3f8-2930" name="Dynastic Advisor" hidden="false" targetId="598f-6101-1273-9dfb" primary="false"/>
+              </categoryLinks>
             </entryLink>
             <entryLink id="b4d5-f684-cc8c-40e4" name="Toholk the Blinded [Legends]" hidden="false" collective="false" import="true" targetId="f40d-d7dc-c067-37bf" type="selectionEntry">
               <modifiers>
@@ -11147,6 +11180,9 @@ Directive 2: This unit is eligible to shoot in a turn in which it Fell Back, but
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b5be-01cb-854c-2c0b" type="max"/>
               </constraints>
+              <categoryLinks>
+                <categoryLink id="fb13-f3e8-7b4b-2041" name="Dynastic Advisor" hidden="false" targetId="598f-6101-1273-9dfb" primary="false"/>
+              </categoryLinks>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
