@@ -1,5 +1,5 @@
 # Workflow to create a github issue every month to facilitate comment based releases
-name: Monthly Release
+name: Monthly Release Thread
 
 on:
   schedule:
@@ -7,7 +7,6 @@ on:
 
 jobs:
   monthly_release:
-    name: monthly-release
     runs-on: ubuntu-latest
     steps:
 
@@ -31,3 +30,10 @@ jobs:
         template: ".github/RELEASE_TEMPLATE.md"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+# Lock the new issue to collaborators
+    - name: lock issue
+      uses: actions/github-script@v3
+      with:
+        script: |
+          github.issues.lock({ ...context.repo, issue_number: context.issue.number })
