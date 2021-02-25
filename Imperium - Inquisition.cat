@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Inquisition" revision="66" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="178" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Inquisition" revision="67" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="178" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <categoryEntries>
     <categoryEntry id="78cc-daf7-1448-610f" name="Faction: Inquisition" hidden="false"/>
     <categoryEntry id="6f95-3a9f-9235-519a" name="Inquisitor" hidden="false">
@@ -252,7 +252,7 @@
         <infoLink id="e9af-ddb6-eabf-9207" name="Authority of the Inquisition" hidden="false" targetId="260d-3221-8e7c-9ebc" type="profile"/>
         <infoLink id="1b53-dfd9-a2c7-4185" name="Quarry - Malleus" hidden="false" targetId="5086-d3c4-7238-d42f" type="profile"/>
         <infoLink id="6b57-de5f-04b8-8c96" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
-        <infoLink id="2e84-7893-da7f-64d5" name="Malleus - Psychic Mastery" hidden="false" targetId="ee2b-d88b-2464-2aec" type="profile">
+        <infoLink id="2e84-7893-da7f-64d5" name="Psychic Mastery" hidden="false" targetId="ee2b-d88b-2464-2aec" type="profile">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
@@ -402,9 +402,14 @@
         <infoLink id="2966-dfda-389f-3912" name="Formidable Resolve" hidden="false" targetId="8a9b-a11a-ed4a-cd40" type="profile">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="59d5-160c-f21d-6e49" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="59d5-160c-f21d-6e49" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                    <condition field="selections" scope="59d5-160c-f21d-6e49" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </infoLink>
@@ -497,7 +502,7 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="42dc-1cc4-f53e-929e" name="Warlord" hidden="false" collective="false" import="true" targetId="a4e2-fd07-0e14-f13b" type="selectionEntry"/>
-        <entryLink id="d889-8395-a614-057c" name="Stratagem: Inquisitorial Mandate" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="d889-8395-a614-057c" name="Stratagem: Arbiter of the Emperor&apos;s Will" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="125.0"/>
@@ -1166,6 +1171,20 @@ D6 Result
         <infoLink id="c0b4-2712-b80b-f3d6" name="Quarry - Hereticus" hidden="false" targetId="3dec-967b-c8fd-af29" type="profile"/>
         <infoLink id="b777-54b2-ccb0-3db1" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
         <infoLink id="3b21-0a08-b419-1cfb" name="Refractor Field" hidden="false" targetId="f74d-e89a-68d5-81d8" type="profile"/>
+        <infoLink id="bd1c-5e90-ffc6-03f2" name="No Escape" hidden="false" targetId="bb4f-1507-e24d-271e" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="f62e-4435-c6f2-eeac" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
@@ -2149,7 +2168,7 @@ Note: The above additions have already been included in the profile for the Malu
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e79d-0a83-3ea1-9097" type="max"/>
       </constraints>
       <profiles>
-        <profile id="f305-dced-792a-59a8" name="Stratagem: Inquisitorial Mandate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="f305-dced-792a-59a8" name="Stratagem: Arbiter of the Emperor&apos;s Will" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this stratagem before the battle, Select one INQUISITOR model from your army that is not your Warlord and determine one Warlord Trait for it. It is regarded as your Warlord for the purposes of that Warlord Trait. If the model is not a named character or VEHICLE, you can then give one Relic of the Inquisition to that model. All of the Relics your army includes must be different and given to different models. You can only use this stratagem once per battle.</characteristic>
           </characteristics>
@@ -3317,12 +3336,12 @@ If your army does not include any INQUISITION detachments, one INQUISITOR unit c
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made by a model in this unit against a unit that is not CHAOS, IMPERIUM, or UNALIGNED, you can re-roll the hit roll and you can re-roll the wound roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="bb4f-1507-e24d-271e" name="Hereticus - No Escape" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="bb4f-1507-e24d-271e" name="No Escape" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord can perform a Heroic Intervention if there any enemy units within 6” of them instead of 3”, and when doing so can move up to 6” instead of 3”. When an enemy unit within 1” of this Warlord is chosen to Fall Back, you can roll one D6; unless any models in that unit have a minimum move characteristic, on a 4+ that unit cannot Fall Back this turn.</characteristic>
       </characteristics>
     </profile>
-    <profile id="ee2b-d88b-2464-2aec" name="Malleus - Psychic Mastery" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="ee2b-d88b-2464-2aec" name="Psychic Mastery" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord knows one additional psychic power from the Telethesia discipline, and can attempt to manifest one additional psychic power in your Psychic phase and attempt to deny one additional psychic power in your opponent’s Psychic phase.</characteristic>
       </characteristics>
