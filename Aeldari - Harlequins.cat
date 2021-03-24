@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="7d24-b92f-c5d5-3bf0" name="Aeldari - Harlequins" revision="49" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR @FarseerV" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="159" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="7d24-b92f-c5d5-3bf0" name="Aeldari - Harlequins" revision="52" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR @FarseerV" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="178" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="7d24-b92f-pubN65537" name="Codex: Harlequins"/>
-    <publication id="c6aa-38e7-468e-3cc9" name="White Dwarf May 2020" shortName="WD520" publisher="White Dwarf" publicationDate="May 2020"/>
   </publications>
   <categoryEntries>
     <categoryEntry id="fb5a-2f35-6253-b891" name="Faction: &lt;Masque&gt;" hidden="false"/>
@@ -79,7 +78,7 @@
             <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -103,9 +102,9 @@
         </profile>
       </profiles>
       <costs>
-        <cost name="pts" typeId="points" value="10.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="1ed4-125a-cd0b-cf43" name="Shrieker Cannon" publicationId="7d24-b92f-pubN65537" hidden="false" collective="false" import="true" type="upgrade">
@@ -209,7 +208,7 @@
         </profile>
       </profiles>
       <costs>
-        <cost name="pts" typeId="points" value="15.0"/>
+        <cost name="pts" typeId="points" value="5.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -526,7 +525,11 @@
             <entryLink id="cc4b-b56b-e3b3-04c9" name="New EntryLink" hidden="false" collective="false" import="true" targetId="4f51-c975-5042-dca4" type="selectionEntry"/>
             <entryLink id="6c46-3fd0-ca09-55d3" name="New EntryLink" hidden="false" collective="false" import="true" targetId="fddb-199b-84b4-280f" type="selectionEntry"/>
             <entryLink id="df73-2a15-9a1c-8ccd" name="New EntryLink" hidden="false" collective="false" import="true" targetId="29c4-069f-247a-d22b" type="selectionEntry"/>
-            <entryLink id="0494-601c-7e17-07fc" name="Power sword" hidden="false" collective="false" import="true" targetId="bc9e-551d-9afb-78d5" type="selectionEntry"/>
+            <entryLink id="0494-601c-7e17-07fc" name="Power sword" hidden="false" collective="false" import="true" targetId="bc9e-551d-9afb-78d5" type="selectionEntry">
+              <costs>
+                <cost name="pts" typeId="points" value="5.0"/>
+              </costs>
+            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
         <selectionEntryGroup id="130f-ad80-aa72-535e" name="Ranged Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="0b74-5abc-c275-bff5">
@@ -559,7 +562,7 @@
         <entryLink id="b69e-2012-877a-0c54" name="Custom Character Selections (Chapter Approved)" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="5237-d9ab-ee79-7a3a" name="Relics of Ynnead" hidden="false" collective="false" import="true" targetId="9b35-7aef-974a-5b0f" type="selectionEntryGroup"/>
         <entryLink id="7a6f-55d4-0f3d-be21" name="Pivotal Roles - Troupe Master" hidden="false" collective="false" import="true" targetId="ce4f-8e83-f6ba-94b7" type="selectionEntryGroup"/>
-        <entryLink id="1235-05e0-0204-58bf" name="Stratagem: Pivotal Role" publicationId="c6aa-38e7-468e-3cc9" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
+        <entryLink id="1235-05e0-0204-58bf" name="Stratagem: Pivotal Role" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="75a4-e61c-fb36-00ba" type="max"/>
           </constraints>
@@ -631,12 +634,18 @@
       </categoryLinks>
       <entryLinks>
         <entryLink id="5a9a-03c9-65f6-3287" name="Harlequin&apos;s Caress" hidden="false" collective="false" import="true" targetId="29c4-069f-247a-d22b" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9708-812f-be6d-95bb" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4a92-4e65-ea0f-f688" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="ad02-d473-5d03-cf1b" name="New EntryLink" hidden="false" collective="false" import="true" targetId="4f51-c975-5042-dca4" type="selectionEntry">
+        <entryLink id="ad02-d473-5d03-cf1b" name="Harlequin&apos;s Kiss" hidden="false" collective="false" import="true" targetId="4f51-c975-5042-dca4" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9fa4-cfe6-ecac-8ab0" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="de9a-5267-6a06-bfab" type="max"/>
@@ -650,7 +659,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f7b-9819-ea6a-bc05" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="8cec-d4bc-06f5-6d80" name="Stratagem: Pivotal Role" publicationId="c6aa-38e7-468e-3cc9" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
+        <entryLink id="8cec-d4bc-06f5-6d80" name="Stratagem: Pivotal Role" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c699-e06d-d915-9f24" type="max"/>
           </constraints>
@@ -659,7 +668,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-        <cost name="pts" typeId="points" value="90.0"/>
+        <cost name="pts" typeId="points" value="102.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -762,7 +771,7 @@
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c58d-a22a-8686-e3f8" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="0c78-b172-fe61-b88d" name="Stratagem: Pivotal Role" publicationId="c6aa-38e7-468e-3cc9" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
+        <entryLink id="0c78-b172-fe61-b88d" name="Stratagem: Pivotal Role" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7753-83cf-60ce-5744" type="max"/>
           </constraints>
@@ -857,7 +866,7 @@
         <entryLink id="b5ae-df14-e935-6e72" name="Is a Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="2481-064e-8371-605d" name="Custom Character Selections (Chapter Approved)" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="59b4-6548-da0c-9405" name="Relics of Ynnead" hidden="false" collective="false" import="true" targetId="9b35-7aef-974a-5b0f" type="selectionEntryGroup"/>
-        <entryLink id="25c0-de41-9da9-34ac" name="Stratagem: Pivotal Role" publicationId="c6aa-38e7-468e-3cc9" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
+        <entryLink id="25c0-de41-9da9-34ac" name="Stratagem: Pivotal Role" hidden="false" collective="false" import="true" targetId="5737-ab88-1e77-7483" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9fe7-59cd-4715-d317" type="max"/>
           </constraints>
@@ -942,7 +951,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
-        <cost name="pts" typeId="points" value="60.0"/>
+        <cost name="pts" typeId="points" value="80.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -997,8 +1006,16 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="28a5-a5ad-090e-41f7" type="min"/>
           </constraints>
           <entryLinks>
-            <entryLink id="89c3-49c2-7317-d965" name="Haywire Cannon" hidden="false" collective="false" import="true" targetId="e2fb-277f-b1db-836b" type="selectionEntry"/>
-            <entryLink id="d044-a8aa-3772-f097" name="Prismatic Cannon" hidden="false" collective="false" import="true" targetId="a38e-00b0-2bea-3202" type="selectionEntry"/>
+            <entryLink id="89c3-49c2-7317-d965" name="Haywire Cannon" hidden="false" collective="false" import="true" targetId="e2fb-277f-b1db-836b" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="points" value="0.0"/>
+              </modifiers>
+            </entryLink>
+            <entryLink id="d044-a8aa-3772-f097" name="Prismatic Cannon" hidden="false" collective="false" import="true" targetId="a38e-00b0-2bea-3202" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="points" value="0.0"/>
+              </modifiers>
+            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -1014,7 +1031,7 @@
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
-        <cost name="pts" typeId="points" value="65.0"/>
+        <cost name="pts" typeId="points" value="90.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -1098,12 +1115,16 @@
               </constraints>
               <entryLinks>
                 <entryLink id="a8bf-701f-a210-81ea" name="New EntryLink" hidden="false" collective="false" import="true" targetId="e2fb-277f-b1db-836b" type="selectionEntry"/>
-                <entryLink id="dc56-dc99-421c-05e4" name="New EntryLink" hidden="false" collective="false" import="true" targetId="c791-d8b1-80d1-d707" type="selectionEntry"/>
+                <entryLink id="dc56-dc99-421c-05e4" name="Shuriken Cannon" hidden="false" collective="false" import="true" targetId="c791-d8b1-80d1-d707" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="points" value="0.0"/>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
           <costs>
-            <cost name="pts" typeId="points" value="35.0"/>
+            <cost name="pts" typeId="points" value="45.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
@@ -1469,6 +1490,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="5737-ab88-1e77-7483" name="Stratagem: Pivotal Role" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -1624,9 +1652,14 @@
           </conditionGroups>
         </modifier>
         <modifier type="increment" field="d3e1-1778-7f2f-7def" value="1.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2ce0-03a1-ec03-76aa" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2ce0-03a1-ec03-76aa" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" field="d3e1-1778-7f2f-7def" value="1.0">
           <conditions>
@@ -1942,13 +1975,13 @@
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="2496-7ebb-4c35-a5c7" name="Veil of Illusion" publicationId="c6aa-38e7-468e-3cc9" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="2496-7ebb-4c35-a5c7" name="Veil of Illusion" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eac7-b857-d879-0a16" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f99a-0251-006c-a0ab" type="max"/>
           </constraints>
           <profiles>
-            <profile id="bd91-81b7-0e25-0747" name="Veil of Illusion" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="bd91-81b7-0e25-0747" name="Veil of Illusion" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;MASQUE&gt; unit is within 6&quot; of this model, when determining if that unit is within range of attacks made by enemy models with ranged weapons, add 6&quot; to the distance measured. Half range is determined after adding this distance.</characteristic>
               </characteristics>
@@ -1960,13 +1993,13 @@
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="8dc4-f05b-7b0f-6acb" name="Gloomwake" publicationId="c6aa-38e7-468e-3cc9" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="8dc4-f05b-7b0f-6acb" name="Gloomwake" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="18ed-56cc-a156-d98e" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bf13-b8ed-9fcf-3497" type="max"/>
           </constraints>
           <profiles>
-            <profile id="20c8-b81f-089b-9f36" name="Gloomwake" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="20c8-b81f-089b-9f36" name="Gloomwake" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a &lt;MASQUE&gt; unit is within 6&quot; of this model, each time a ranged attack is made against that unit, models in its unit gain the benefit of cover to their saving throw.</characteristic>
               </characteristics>
@@ -1978,13 +2011,13 @@
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="b966-8bc3-241a-17b3" name="Agent of Bedlam" publicationId="c6aa-38e7-468e-3cc9" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="b966-8bc3-241a-17b3" name="Agent of Bedlam" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a48d-e471-e690-06a6" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b507-c8f0-ad66-5ecc" type="max"/>
           </constraints>
           <profiles>
-            <profile id="be5f-f020-9c30-e797" name="Agent of Bedlam" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="be5f-f020-9c30-e797" name="Agent of Bedlam" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While an enemy unit is within 6&quot; of this model, subtract 1 from the attacks characteristic of models in that unit (to a minimum of 1).</characteristic>
               </characteristics>
@@ -2047,7 +2080,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="98fa-62ec-ad09-d7ef" type="max"/>
           </constraints>
           <profiles>
-            <profile id="9e33-333b-e2b9-fb4d" name="Prince of Light" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="9e33-333b-e2b9-fb4d" name="Prince of Light" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;MASQUE&gt; unit is within 6&quot; of this model, you can re-roll charge rolls made for that unit. If you could already re-roll charge rolls made for that unit, add 1 to the charge roll instead.</characteristic>
               </characteristics>
@@ -2065,7 +2098,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d8b7-ee43-0a0f-a2a3" type="max"/>
           </constraints>
           <profiles>
-            <profile id="a240-1e5c-05bd-d45f" name="Darkness&apos; Bite" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="a240-1e5c-05bd-d45f" name="Darkness&apos; Bite" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">each time this model fights, after it has fought, you can select one enemy unit this model made an attack against, that unit suffers two mortal wounds.</characteristic>
               </characteristics>
@@ -2083,7 +2116,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3f7c-2dc0-9073-8bd7" type="max"/>
           </constraints>
           <profiles>
-            <profile id="a73e-102d-5c64-9ff7" name="Twilight&apos;s Grasp" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="a73e-102d-5c64-9ff7" name="Twilight&apos;s Grasp" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a melee attack is made by this model against a unit that is not a MONSTER or VEHICLE, an unmodified wound roll of 2+ is always successful.</characteristic>
               </characteristics>
@@ -2146,7 +2179,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="17be-d1f7-8ad0-67fb" type="max"/>
           </constraints>
           <profiles>
-            <profile id="3b44-f75d-3f46-3518" name="Shocking Emergence" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="3b44-f75d-3f46-3518" name="Shocking Emergence" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, you can set up this model shimmering instead of placing it on the battlefield. If you do, then at the end of one of your movement phases you can set this model up anywhere on the battlefield that is more than 9&quot; from enemy models. Each time a charge roll is made for this model, if it was set up on the battlefield this turn, roll one additional </characteristic>
               </characteristics>
@@ -2164,7 +2197,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="16bd-1334-cb21-5206" type="max"/>
           </constraints>
           <profiles>
-            <profile id="0f67-79b5-3170-8ffa" name="Chromatic Rush" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="0f67-79b5-3170-8ffa" name="Chromatic Rush" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model advances, do not make an advance roll, instead, until the end of the phase, add 6&quot; to the move characteristic of this model. Each time this model piles in or consolidates, it can move an additional 3&quot;</characteristic>
               </characteristics>
@@ -2182,7 +2215,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6a48-35f9-ecd7-397e" type="max"/>
           </constraints>
           <profiles>
-            <profile id="fb7c-036d-9511-4faa" name="Unnatural Acrobatics" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="fb7c-036d-9511-4faa" name="Unnatural Acrobatics" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">each time an attack is made against this model, subtract 1 from that attack&apos;s hit roll</characteristic>
               </characteristics>
@@ -2196,7 +2229,7 @@
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
-    <selectionEntryGroup id="2963-6e2a-c6e3-e38a" name="Pivotal Roles - Death Jester" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="2963-6e2a-c6e3-e38a" name="Pivotal Roles - Death Jester" hidden="false" collective="false" import="true" defaultSelectionEntryId="d16f-7a61-ad5e-89dd">
       <modifiers>
         <modifier type="set" field="8655-a4ab-1717-9d6a" value="2.0">
           <conditions>
@@ -2245,7 +2278,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ed61-86d3-587d-1961" type="max"/>
           </constraints>
           <profiles>
-            <profile id="5310-55bb-bcd7-f6ab" name="Harvester of Torment" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="5310-55bb-bcd7-f6ab" name="Harvester of Torment" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model shoots with the shuriken profile of a shrieker cannon (or the shuriken profile of a Relic which replaces a shrieker cannon), if the target contains 6 or more models, each successful hit roll scores 3 hits instead of 1. This is not cumulative with any other rules that cause additional hits.</characteristic>
               </characteristics>
@@ -2263,7 +2296,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a5cc-a2b1-690b-3e7e" type="max"/>
           </constraints>
           <profiles>
-            <profile id="0133-2c03-4107-871d" name="The Jest Inescapable" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="0133-2c03-4107-871d" name="The Jest Inescapable" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">add 12&quot; to the range characteristic of ranged weapons this model is equipped with. Each time this model shoots, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage and the target does not receive the benefit of cover to its saving throw.</characteristic>
               </characteristics>
@@ -2281,7 +2314,7 @@
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e01a-c668-dea7-19c9" type="max"/>
           </constraints>
           <profiles>
-            <profile id="200a-fb56-39c7-8bf2" name="Humbling Cruelty" publicationId="c6aa-38e7-468e-3cc9" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="200a-fb56-39c7-8bf2" name="Humbling Cruelty" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an attack made by this model against an enemy unit scores a hit, that unit is pinned until the start of your next turn. While a unit is pinned, subtract 2&quot; from the move characteristic of models in its unit and it cannot fire overwatch.</characteristic>
               </characteristics>

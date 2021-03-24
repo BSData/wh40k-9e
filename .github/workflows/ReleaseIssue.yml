@@ -1,0 +1,39 @@
+# Workflow to create a github issue every month to facilitate comment based releases
+name: Monthly Release Thread
+
+on:
+  schedule:
+   - cron: 0 0 1 * *  # Every 1st day of the month at 0000 – https://crontab.guru
+
+jobs:
+  monthly_release:
+    runs-on: ubuntu-latest
+    steps:
+
+# Repo code checkout required if `template` is used
+    - name: Checkout
+      uses: actions/checkout@v2
+
+# Get current month for issue title
+    - name: get-date
+      id: date
+      run: echo "::set-output name=date::$(date +'%B %Y')"
+
+# Create, pin, label, and assign release issue
+    - name: create-issue
+      id: issue
+      uses: imjohnbo/issue-bot@v2
+      with:
+        pinned: true
+        close-previous: true
+        title: "RELEASE THREAD: ${{ steps.date.outputs.date }}"
+        template: ".github/RELEASE_TEMPLATE.md"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+# Lock the new issue to collaborators
+    - name: lock issue
+      uses: actions/github-script@v3
+      with:
+        script: |
+          github.issues.lock({ ...context.repo, issue_number: context.issue.number })
