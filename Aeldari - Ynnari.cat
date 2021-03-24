@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="71" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="179" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="72" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="179" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <comment>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</comment>
   <readme>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</readme>
   <publications>
@@ -34,6 +34,9 @@
     <categoryEntry id="859a-9acf-049d-dcd9" name="Faction: Wych Cult of Strife" hidden="false"/>
     <categoryEntry id="85a4-070d-d3c6-dc3b" name="Faction: Reborn Asuryani" hidden="false"/>
     <categoryEntry id="9139-0705-87d7-2d4b" name="Faction: Reborn Harlequin" hidden="false"/>
+    <categoryEntry id="e199-a6b3-c954-bbbe" name="Master Archon" hidden="false"/>
+    <categoryEntry id="3fa5-9569-a481-fdad" name="Master Succubus" hidden="false"/>
+    <categoryEntry id="19a9-184d-4492-40ce" name="Master Haemonculus" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="a049-52ed-ef53-63ec" name="Yvraine" hidden="false" collective="false" import="true" targetId="1409-e740-c7c9-3758" type="selectionEntry"/>
@@ -1274,7 +1277,7 @@
       <profiles>
         <profile id="c18f-b9e5-6e88-f567" name="Ancient Evil" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The opposing player must roll an extra dice when taking Morale tests for units within 3&quot; of this Warlord and use the highest result</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of the Fight phase, you can select one enemy unit within Engagement Range of this WARLORD. That unit is not eligible to fight this phase until after all eligible units from your army have done so.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1288,7 +1291,7 @@
       <profiles>
         <profile id="0dc0-83f6-c7ec-fff5" name="Deathly Perfectionist" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Increase the Damage characteristic of weapons (other than Artefacts of Cruelty) used by this Warlord by 1.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Strength characteristic of weapons this WARLORD is equipped with (excluding Relics).</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1302,7 +1305,7 @@
       <profiles>
         <profile id="82be-9e9a-28b9-fba3" name="Famed Savagery" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Increase this Warlord’s Strength and Attacks characteristics by 1 during any turn in which they charged, were charged or made a Heroic Intervention</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to this WARLORD’s Strength and Attacks characteristics.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1316,7 +1319,7 @@
       <profiles>
         <profile id="98ad-2ba7-aada-2105" name="Hatred Eternal" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You can re-roll failed wound rolls for this Warlord.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD makes an attack, you can re-roll the hit roll and the wound roll.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1330,7 +1333,7 @@
       <profiles>
         <profile id="9992-536b-dea8-e85a" name="Labyrinthine Cunning" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst your Warlord is on the battlefield, roll a D6 each time you or your opponent spends a Command Point to use a Stratagem; you gain one Command Point for each roll of 6.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst this WARLORD is on the battlefield, each time you or your opponent spends any Command Points to use a Stratagem you can roll one D6 fr each Command Point; on a 6, you gain one Command Point.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1340,11 +1343,12 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="311b-18b0-3afa-95bc" name="Soulthirst" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="311b-18b0-3afa-95bc" name="Soul Thirst" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
-        <profile id="f96d-86b8-99bb-a214" name="Soulthirst" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="f96d-86b8-99bb-a214" name="Soul Thirst" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to this Warlord’s Attacks characteristic in any turn in which they charged, were charged or made a Heroic Intervention. In addition, this Warlord regains 1 lost wound each time they slay an enemy model in the Fight phase.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Attacks characteristic of this WARLORD.
+Once per turn, when an enemy model that is within 6&quot; of this WARLORD is destroyed, this model regains 1 lost wound.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1358,7 +1362,12 @@
       <profiles>
         <profile id="4771-234e-5a83-7ee3" name="Towering Arrogance" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly KABAL OF THE POISONED TONGUEunits can use this Warlord’s Leadership whilst they are within 12&quot; of them</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD would lose a wound as the result of a mortal wound, roll one D6: on a 5+, that wound is not lost.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="6ddf-3ef9-deb5-19bf" name="Towering Arrogance (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly KABAL OF THE POISONED TONGUE unit is within 6&quot; of this WARLORD, each time a Combat Attrition test is taken for that unit, ignore any or all modifiers.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1372,7 +1381,9 @@
       <profiles>
         <profile id="fbaf-a09d-f21e-698c" name="Diabolical Soothsayer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, you can re-roll a single hit roll, wound roll, saving throw or damage roll for your Warlord. In addition, if your army is Battle-forged, roll a D3 before the battle begins; you gain a number of additional Command Points equal to the result.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model is set up on the battlefield, choose one of the below:
+Until the end of the battle, add 1 to this WARLORD&apos;s Toughness and Wounds characteristics.
+Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks characteristics.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1386,7 +1397,7 @@
       <profiles>
         <profile id="83f1-6d40-01f8-f3f5" name="Fear Incarnate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Roll 2D6 for each enemy unit that is within 3&quot; of your Warlord at the start of the Fight phase. If the result exceeds the highest Leadership characteristic in that unit, it suffers a mortal wound.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of the Movement phase, you can select one enemy unit within 9&quot; of this WARLORD and roll 3D6; if the result is greater than the enemy unit&apos;s Leadership characteristic, until the start of your next Movement phase, that enemy unit cannot perform actions (if that unit is currently performing an action, it immediately fails), and it loses the Objective Secured ability.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1400,7 +1411,7 @@
       <profiles>
         <profile id="b5ac-8410-599c-5904" name="Master Artisan" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Re-roll Inured to Suffering rolls (pg 87) of 1 for friendly &lt;HAEMONCULUS COVEN&gt;models within 6&quot; of this Warlord</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Toughness and Wounds characteristics of this WARLORD.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1414,7 +1425,7 @@
       <profiles>
         <profile id="349c-2948-0ce4-1c11" name="Master Nemesine" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to wound rolls made for this Warlord in the Fight phase</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD makes an attack, add 1 to that attack&apos;s wound roll.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1428,7 +1439,7 @@
       <profiles>
         <profile id="64bb-aa16-472d-1e8d" name="Master Regenerist" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord regains D3 lost wounds at the start of each of your turns</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD used their Fleshcraft ability, the target model regains up to 3 lost wounds instead of D3.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1442,7 +1453,7 @@
       <profiles>
         <profile id="32b6-9a6c-9ef0-afeb" name="Scarlet Epicurean" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Reduce all damage inflicted on your Warlord by 1 (to a minimum of 1). For example, if your Warlord fails a saving throw against a weapon that inflicts 3 damage, he will only lose 2 wounds</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an attack is allocated to this WARLORD, subtract 1 from the Damage characteristic of that attack (to a minimum of 1).</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1456,7 +1467,7 @@
       <profiles>
         <profile id="ce24-cb6e-a043-5276" name="Blood Dancer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time you roll a hit roll of 6+ for this Warlord in the Fight phase, that hit scores 3 hits instead of 1.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD makes a melee attack, an unmodified hit roll of 6 scores 2 additional hits.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1470,7 +1481,7 @@
       <profiles>
         <profile id="055d-c5ad-bb39-b105" name="Hyper-swift Reflexes" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to invulnerable saving throws made for this Warlord</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a melee attack is made against this WARLORD an unmodified hit roll of 1-3 for that attack fails, irrespective of any abilities that the weapon or the model making the attack may have.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1484,7 +1495,7 @@
       <profiles>
         <profile id="9e66-204e-816b-3616" name="Quicksilver Fighter" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord always fights first in the Fight phase, even if they didn’t charge. If the enemy has units that charged, or that have a similar ability, then alternate choosing units to fight with, starting with the player whose turn is taking place.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 2 to the Attacks characteristic of this WARLORD.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1498,7 +1509,7 @@
       <profiles>
         <profile id="7614-feac-f50a-7133" name="Precision Blows" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time you roll a wound roll of 6+ for this Warlord in the Fight phase, the target suffers a mortal wound in addition to the normal damage.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an unmodified hit roll of 6 is made for a melee attack made by this WARLORD, the target unit suffers number of mortal wounds equal to the Damage characteristic of the weapon used for that attack, and the attack sequence ends.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1512,7 +1523,7 @@
       <profiles>
         <profile id="ad63-7047-f94d-11d0" name="Stimm Addict" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Before the battle, when determining the bonus this Warlord receives from its Combat Drugs ability, roll two dice instead of one and apply both results (duplicate results are cumulative). Alternatively, you can pick two different bonuses to apply to this Warlord.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When determining the effects of the Combat Drugs ability for this WARLORD before the battle, roll 2 additional dice, re-rolling results of 6 or results that are already in effect. This WARLORD&apos;s Combat Drugs ability has these benefits in addition to any others.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1526,7 +1537,7 @@
       <profiles>
         <profile id="3b98-3246-235b-8f19" name="Treacherous Deceiver" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time you roll an unmodified saving throw of 6 for this Warlord in the Fight phase, the enemy unit that made that attack suffers a mortal wound after it has resolved all of it attacks</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time you make an unmodified saving throw of 4+ for this WARLORD against a melee attack, after the attacking model&apos;s unit has finished making its attacks, that enemy unit suffers 1 mortal wound. This WARLORD does not benefit from the second part of the Cursed Blades&apos; Only the Strong Will Thrive Obsession.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1595,6 +1606,33 @@
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="07aa-68fe-1dca-74d8" name="Consummate Weaponmaster" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="5947-d6ce-9cd8-9935" name="Consummate Weaponmaster" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Damage characteristic of all melee weapons this WARLORD is equipped with (excluding Relics).</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="1755-fc77-4999-b756" name="Twisted Animator" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="295e-b2b3-76c8-cd2d" name="Twisted Animator" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, you can select one friendly &lt;Haemonculus Coven&gt; WRACK unit within 3&quot; of this WARLORD. D3 destroyed models can be added back to the unit. These models can be setup within Engagement Range of enemy units that are already within Engagement Range of that unit.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="b077-728f-c102-330f" name="Whirling Death" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="08b2-fffb-0afd-e611" name="Whirling Death" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD fights, after any pile-in moves, until that fight is resolved, you can choose for its Attacks characteristic to be equal to 3 plus the number of enemy models that are within 2&quot; of it.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -3487,6 +3525,7 @@ obsession, it is automatically passed.</characteristic>
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="e412-f9bb-9e8d-5cf1" name="Consummate Weaponmaster" hidden="false" collective="false" import="true" targetId="07aa-68fe-1dca-74d8" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="33d3-f307-ba47-b2eb" name="Warlord Trait (Haemonculus)" hidden="false" collective="false" import="true">
@@ -3524,6 +3563,7 @@ obsession, it is automatically passed.</characteristic>
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="6a41-6b72-20ec-3f91" name="Twisted Animator" hidden="false" collective="false" import="true" targetId="1755-fc77-4999-b756" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="7771-c894-b60b-26fc" name="Warlord Trait (Succubus)" hidden="false" collective="false" import="true">
@@ -3561,6 +3601,7 @@ obsession, it is automatically passed.</characteristic>
             </modifier>
           </modifiers>
         </entryLink>
+        <entryLink id="dc65-68eb-9614-e1c0" name="Whirling Death" hidden="false" collective="false" import="true" targetId="b077-728f-c102-330f" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
