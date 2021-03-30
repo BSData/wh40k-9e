@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="73" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="179" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="74" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="179" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <comment>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</comment>
   <readme>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</readme>
   <publications>
@@ -1657,6 +1657,9 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
           </characteristics>
         </profile>
       </profiles>
+      <categoryLinks>
+        <categoryLink id="4dbc-3214-bcfa-4362" name="Master Archon" hidden="false" targetId="e199-a6b3-c954-bbbe" primary="false"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
         <cost name="pts" typeId="points" value="15.0"/>
@@ -1671,6 +1674,9 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
           </characteristics>
         </profile>
       </profiles>
+      <categoryLinks>
+        <categoryLink id="0e90-6f01-9c80-1ad5" name="Master Succubus" hidden="false" targetId="3fa5-9569-a481-fdad" primary="false"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
         <cost name="pts" typeId="points" value="15.0"/>
@@ -1685,10 +1691,44 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
           </characteristics>
         </profile>
       </profiles>
+      <categoryLinks>
+        <categoryLink id="6267-cce8-f7b3-cf6a" name="Master Haemonculus" hidden="false" targetId="19a9-184d-4492-40ce" primary="false"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
         <cost name="pts" typeId="points" value="20.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="61a2-8744-e23f-7323" name="Stratagem: Alliance of Agony" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5fc1-0bf5-caf9-3702" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <profiles>
+        <profile id="d15a-6724-b0bd-02d2" name="Stratagem: Alliance of Agony" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagembefore the battle, when you are mustering your army, if your WARLORD is a REALSPACE RAIDER ARCHON. Select one SUCCUBUS model from your army and one HAEMONCULUS model from your army (excluding named characters) and determine one Warlord Trait for each of these models (this must be a Warlord Trait it can have); those models are only regarded as your WARLORD for the purposes of that Warlord Trait. Each Warlord Trait in your army must be unique (if randomly generated, re-roll duplicate results), and you cannot use this Stratagem to give a model two Warlord Traits. You can only use this Stratagem once.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="2d6c-4e53-385f-6d4e" name="Stratagem: Tolerated Ambition" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="3a02-9306-f5b8-26c3" name="Stratagem: Tolerated Ambition" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228"/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -1872,6 +1912,8 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2ce0-03a1-ec03-76aa" type="notEqualTo"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="746d-c99b-ba49-17bb" type="notEqualTo"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d043-3847-e963-fb5d" type="notEqualTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5fc1-0bf5-caf9-3702" type="notEqualTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2d6c-4e53-385f-6d4e" type="notEqualTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -2723,6 +2765,11 @@ form, it is automatically passed. In addition, each time a model with this form 
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dc79-ea64-8a30-0f4e" type="max"/>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="64c0-97fc-60e9-112c" type="max"/>
           </constraints>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
