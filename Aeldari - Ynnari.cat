@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="77" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="179" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="78" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="179" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <comment>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</comment>
   <readme>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</readme>
   <publications>
@@ -1734,6 +1734,11 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
             <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="equalTo"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2ce0-03a1-ec03-76aa" type="equalTo"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="734d-f997-4fc7-a172" type="max"/>
@@ -1771,6 +1776,33 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="d17c-833d-24e3-7af0" name="Competitive Edge" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="7e34-d84f-9339-74e7" name="Competitive Edge" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD fights, if all of its attacks target one enemy unit, after resolving all of those attacks, it can make a number of additional attacks against that enemy unit equal to the number of attacks that did not reach the inflict damage step of the attack sequence during the fight.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="a13d-e3e0-4e41-051f" name="Unparalleled Agony" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="b227-629b-0d7f-a693" name="Unparalleled Agony" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an attack is made against this WARLORD, subtract 1 from that attack&apos;s hit roll and wound roll.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="cc06-f9bb-7f32-6341" name="Master Executioner" hidden="false" collective="false" import="true" type="upgrade">
+      <profiles>
+        <profile id="a1da-25db-de8b-4a82" name="Master Executioner" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD makes an attack, you can re-roll the wound roll.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -3939,6 +3971,33 @@ Each time you declare a charge for a unit with this Obsession, if there are no o
             <modifier type="set" field="hidden" value="true">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3fa5-9569-a481-fdad" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="f2e1-0ed2-4846-3c77" name="Competitive Edge" hidden="false" collective="false" import="true" targetId="d17c-833d-24e3-7af0" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="3bcf-86f7-2233-93b6" name="Unparalleled Agony" hidden="false" collective="false" import="true" targetId="a13d-e3e0-4e41-051f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="71ee-2e98-6a00-184c" name="Master Executioner" hidden="false" collective="false" import="true" targetId="cc06-f9bb-7f32-6341" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
