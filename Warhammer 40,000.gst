@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="179" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://discord.gg/KqPVhds" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="182" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -23,6 +23,7 @@
     <publication id="5093-9448-d8cc-5327" name="Psychic Awakening II: Faith and Fury" shortName="PA: F&amp;F" publicationDate="2019-11-29" publisherUrl="https://www.games-workshop.com/en-GB/Psychic-Awakening-Faith-And-Fury-EN-2019"/>
     <publication id="7573-8d1b-acdf-2de8" name="Imperial Armour: Compendium" shortName="IA:C" publicationDate="2020-11-06" publisherUrl="https://www.forgeworld.co.uk/Imperial-Armour-Compendium-2020-FW"/>
     <publication id="b652-8bab-1453-da20" name="Warhammer Legends" shortName="Legends" publisher="" publicationDate="Ongoing" publisherUrl="https://www.warhammer-community.com/legends/#warhammer-40000"/>
+    <publication id="0865-ee21-d1f1-ed38" name="War Zone Charadon, Act I: The Book of Rust" shortName="Book of Rust" publisher="" publicationDate="2021-03-27"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
@@ -199,6 +200,7 @@
     <categoryEntry id="d022-96ee-79c9-2373" name="Tower Section" hidden="false"/>
     <categoryEntry id="2423-1997-8069-ed6d" name="Wall Section" hidden="false"/>
     <categoryEntry id="3c2e-8ca6-a7c3-95f6" name="Primaris Redoubt" hidden="false"/>
+    <categoryEntry id="379d-40e9-8977-64e6" name="Metalica" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -6059,6 +6061,20 @@
       <infoLinks>
         <infoLink id="6479-a056-9dcf-eb1b" name="Twin heavy bolter" hidden="false" targetId="6644-7150-c910-865d" type="profile"/>
       </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="38ee-6dae-3cb1-7f84" name="Army of Renown -  Mechanicus Defence Cohort" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b1a7-5990-d618-b5ed" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1e22-0cee-2bea-58a1" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="fadb-26da-8680-7524" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
