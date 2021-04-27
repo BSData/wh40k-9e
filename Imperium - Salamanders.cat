@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="4501-8439-ec2c-efad" name="Imperium - Adeptus Astartes - Salamanders" revision="35" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="178" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="4501-8439-ec2c-efad" name="Imperium - Adeptus Astartes - Salamanders" revision="36" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="180" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <selectionEntries>
     <selectionEntry id="264d-cbed-e233-21d1" name="Adrax Agatone" hidden="false" collective="false" import="true" type="model">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="603c-1b3b-c78c-d92b" type="equalTo"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9e43-6e51-2a4a-56cc" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="91a5-4f66-56be-1952" type="equalTo"/>
+          </conditions>
         </modifier>
       </modifiers>
       <profiles>
@@ -137,14 +132,9 @@
     <selectionEntry id="6dd6-e606-b377-f261" name="Vulkan He&apos;stan" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="603c-1b3b-c78c-d92b" type="equalTo"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9e43-6e51-2a4a-56cc" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="91a5-4f66-56be-1952" type="equalTo"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
@@ -1377,6 +1367,75 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="60c9-eea4-0f26-baee" name="**Chapter Selector**" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a179-052d-1dd7-5b94" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8112-9244-d801-442d" type="min"/>
+      </constraints>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="96fd-b796-62a6-36ff" name="Chapter" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a814-66e7-353f-5b7c" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e181-6d23-0289-ed17" type="min"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="91a5-4f66-56be-1952" name="Salamanders" hidden="false" collective="false" import="true" type="upgrade">
+              <rules>
+                <rule id="b2b9-0531-970b-66a7" name="Forged in Battle" hidden="false">
+                  <description>- Each time a unit with this tactic is selected to shoot or fight, you can re-roll one wound roll when resolving that unit&apos;s attacks.
+- Each time an attack with an Armour Penetration characteristic of -1 is allocated to a model with this tactic, that attack has an Armour Penetration characteristic of 0 instead.</description>
+                </rule>
+              </rules>
+            </selectionEntry>
+            <selectionEntry id="462e-fbd8-fa11-d911" name="Salamanders Successor" hidden="false" collective="false" import="true" type="upgrade"/>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="f31e-3862-c1b3-b27a" name="Successor Chapters" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="60c9-eea4-0f26-baee" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="462e-fbd8-fa11-d911" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="0f94-61a4-4db2-3f60" value="1.0">
+              <conditions>
+                <condition field="selections" scope="60c9-eea4-0f26-baee" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="462e-fbd8-fa11-d911" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5892-fd03-8610-3883" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0f94-61a4-4db2-3f60" type="min"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="6420-fffa-c4bc-ee0d" name="Custom Chapter" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a10e-2738-3936-1492" type="max"/>
+              </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <entryLinks>
+            <entryLink id="bc9b-6fa9-38e0-643a" name="Forge World Chapters" hidden="false" collective="false" import="true" targetId="3700-470e-f75d-6cba" type="selectionEntryGroup"/>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="d58d-7ed5-967a-bbaa" name="Tactics" hidden="false" collective="false" import="true" targetId="a7a4-4d2d-81c8-5bd1" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="60c9-eea4-0f26-baee" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6420-fffa-c4bc-ee0d" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+      </entryLinks>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="e92c-a3a4-ffdf-8777" name="Warlord Traits" hidden="false" collective="false" import="true">
@@ -1405,16 +1464,6 @@
       <selectionEntryGroups>
         <selectionEntryGroup id="a02d-fef3-e502-d6ef" name="Warlord Traits (Salamanders)" hidden="false" collective="false" import="true">
           <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="603c-1b3b-c78c-d92b" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
             <modifier type="set" field="hidden" value="true">
               <conditions>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d043-3847-e963-fb5d" type="equalTo"/>
@@ -1568,32 +1617,17 @@
       <selectionEntryGroups>
         <selectionEntryGroup id="0768-34ec-2556-5b18" name="Relics of Nocturne" hidden="false" collective="false" import="true">
           <modifiers>
+            <modifier type="set" field="2c79-c77c-ec5a-2326" value="1.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f422-7c39-2864-f15f" type="equalTo"/>
+              </conditions>
+            </modifier>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="603c-1b3b-c78c-d92b" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" field="2c79-c77c-ec5a-2326" value="1.0">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ffd3-625e-5ffd-c328" type="atLeast"/>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f422-7c39-2864-f15f" type="atLeast"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" field="eef7-7a6f-0461-1a92" value="0.0">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f422-7c39-2864-f15f" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="603c-1b3b-c78c-d92b" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="91a5-4f66-56be-1952" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f422-7c39-2864-f15f" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>

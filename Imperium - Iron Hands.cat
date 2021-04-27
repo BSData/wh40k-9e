@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="5b3d-59c0-a550-452a" name="Imperium - Adeptus Astartes - Iron Hands" revision="36" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="178" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="5b3d-59c0-a550-452a" name="Imperium - Adeptus Astartes - Iron Hands" revision="37" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://discord.gg/KqPVhds" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="180" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <selectionEntries>
     <selectionEntry id="e1a1-c276-086c-8bf2" name="Iron Father Feirros" hidden="false" collective="false" import="true" type="model">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="61f2-e5f1-fbc9-f97e" type="equalTo"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9e43-6e51-2a4a-56cc" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d7a7-61fa-f38c-3da8" type="equalTo"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
@@ -212,7 +207,7 @@
     </selectionEntry>
   </selectionEntries>
   <entryLinks>
-    <entryLink id="3a38-f830-9429-787e" name="**Chapter Selection**" hidden="false" collective="false" import="true" targetId="5dba-fb9b-215e-7d1e" type="selectionEntry">
+    <entryLink id="3a38-f830-9429-787e" name="**Chapter Selector**" hidden="false" collective="false" import="true" targetId="5a7f-4c42-bda1-4d47" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="6a8d-fb97-f952-c179" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
@@ -1280,6 +1275,75 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="5a7f-4c42-bda1-4d47" name="**Chapter Selector**" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="042f-8942-e92e-608b" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e426-30a3-688e-d24d" type="min"/>
+      </constraints>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="a8dd-39ba-3212-06a9" name="Chapter" hidden="false" collective="false" import="true" defaultSelectionEntryId="d7a7-61fa-f38c-3da8">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3d6f-222e-ead0-29a2" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0307-5c96-11bc-89db" type="min"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="d7a7-61fa-f38c-3da8" name="Iron Hands" hidden="false" collective="false" import="true" type="upgrade">
+              <rules>
+                <rule id="a981-95a6-1458-943e" name="The Flesh Is Weak" hidden="false">
+                  <description>- Each time a model with this tactic would lose a wound, roll one D6: on a 6, that wound is not lost.
+- Models with this tactic whose characteristics can change as they suffer damage are considered to have double the number of wounds remaining for the purposes of determining what those characteristics are.</description>
+                </rule>
+              </rules>
+            </selectionEntry>
+            <selectionEntry id="e0fd-1fc9-23f5-2703" name="Iron Hands Successor" hidden="false" collective="false" import="true" type="upgrade"/>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="7790-56dc-61fe-b797" name="Successor Chapters" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="5a7f-4c42-bda1-4d47" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e0fd-1fc9-23f5-2703" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="1d22-4744-00a9-9197" value="1.0">
+              <conditions>
+                <condition field="selections" scope="5a7f-4c42-bda1-4d47" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e0fd-1fc9-23f5-2703" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d9e2-90bc-4d76-40a8" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1d22-4744-00a9-9197" type="min"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="7259-28f4-8145-4f22" name="Custom Chapter" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2488-2521-b296-5acb" type="max"/>
+              </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <entryLinks>
+            <entryLink id="0817-b243-b1f9-061a" name="Forge World Chapters" hidden="false" collective="false" import="true" targetId="3700-470e-f75d-6cba" type="selectionEntryGroup"/>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="5236-4b87-9c9b-edae" name="Tactics" hidden="false" collective="false" import="true" targetId="a7a4-4d2d-81c8-5bd1" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="5a7f-4c42-bda1-4d47" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7259-28f4-8145-4f22" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+      </entryLinks>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="a32a-ba73-8c86-dc85" name="Chapter Relics" hidden="true" collective="false" import="true">
@@ -1323,18 +1387,8 @@
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="61f2-e5f1-fbc9-f97e" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="837c-23e9-dbe4-199d" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" field="e9c3-dc6f-a0cb-a129" value="0.0">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1234-2c14-9ed3-3f03" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="61f2-e5f1-fbc9-f97e" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d7a7-61fa-f38c-3da8" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1234-2c14-9ed3-3f03" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -1343,7 +1397,7 @@
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="837c-23e9-dbe4-199d" type="atLeast"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d7a7-61fa-f38c-3da8" type="atLeast"/>
                     <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1234-2c14-9ed3-3f03" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
@@ -1544,7 +1598,6 @@
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c3ab-8b2c-2039-6f5a" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
-                <conditionGroup type="and"/>
               </conditionGroups>
             </modifier>
           </modifiers>
@@ -1733,16 +1786,6 @@
       <selectionEntryGroups>
         <selectionEntryGroup id="734a-960a-581f-d426" name="Warlord Traits (Iron Hands)" hidden="false" collective="false" import="true">
           <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="61f2-e5f1-fbc9-f97e" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="837c-23e9-dbe4-199d" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
             <modifier type="set" field="hidden" value="true">
               <conditions>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d043-3847-e963-fb5d" type="equalTo"/>
