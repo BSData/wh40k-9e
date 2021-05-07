@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Adeptus Astartes - Dark Angels" revision="207" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="185" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="b8fe-8d38-37ec-90e8" name="Imperium - Adeptus Astartes - Dark Angels" revision="208" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="185" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="b8fe-8d38-pubN65537" name="Codex: Dark Angels"/>
   </publications>
@@ -2587,6 +2587,7 @@
       <entryLinks>
         <entryLink id="86cd-e4a5-976d-a65a" name="Relics" hidden="false" collective="false" import="true" targetId="e22d-9d1c-bd59-dde0" type="selectionEntryGroup"/>
         <entryLink id="32f1-5eef-3707-1a89" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="25ab-3c66-3dc4-0e00" type="selectionEntryGroup"/>
+        <entryLink id="975b-624b-f160-57bf" name="Stratagems" hidden="false" collective="false" import="true" targetId="3a33-a5e2-3223-72e6" type="selectionEntryGroup"/>
       </entryLinks>
     </entryLink>
     <entryLink id="46bb-640e-af19-dc1b" name="Terminator Assault Squad" hidden="false" collective="false" import="true" targetId="418f-04b7-2679-eddf" type="selectionEntry">
@@ -2907,6 +2908,7 @@
       <entryLinks>
         <entryLink id="a85e-d96c-5cfa-222f" name="Relics" hidden="false" collective="false" import="true" targetId="e22d-9d1c-bd59-dde0" type="selectionEntryGroup"/>
         <entryLink id="fdb4-47d3-eb42-4efd" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="25ab-3c66-3dc4-0e00" type="selectionEntryGroup"/>
+        <entryLink id="ea61-6c60-e4ca-24ec" name="Stratagems" hidden="false" collective="false" import="true" targetId="3a33-a5e2-3223-72e6" type="selectionEntryGroup"/>
       </entryLinks>
     </entryLink>
     <entryLink id="458f-e72d-28ff-11e1" name="Company Ancient" hidden="true" collective="false" import="true" targetId="0e51-de2e-2557-b79e" type="selectionEntry">
@@ -7930,9 +7932,14 @@
         <entryLink id="a86b-2dfc-96bd-1352" name="Tactics" hidden="false" collective="false" import="true" targetId="a7a4-4d2d-81c8-5bd1" type="selectionEntryGroup">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8a5f-a7fd-b1a4-bd3a" type="equalTo"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8a5f-a7fd-b1a4-bd3a" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3700-470e-f75d-6cba" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </entryLink>
@@ -8735,7 +8742,15 @@
     </selectionEntryGroup>
     <selectionEntryGroup id="3a33-a5e2-3223-72e6" name="Stratagems" hidden="false" collective="false" import="true">
       <entryLinks>
-        <entryLink id="49f2-cbb3-0fd5-8128" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="49f2-cbb3-0fd5-8128" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5654-2e3b-1351-bed9" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="e8c2-696f-438b-59c9" name="Stratagem: Paragon of the Chapter" hidden="false" collective="false" import="true" targetId="7000-c92a-40c0-2663" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
