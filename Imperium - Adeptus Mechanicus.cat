@@ -1844,6 +1844,11 @@
               <categoryLinks>
                 <categoryLink id="b820-8cd9-7973-0be9" name="Smokescreen" hidden="false" targetId="5eae-b811-fd13-2154" primary="false"/>
               </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
@@ -5457,6 +5462,7 @@ Each time an attack is made with this weapon, the target does not receive the be
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="6e4e-e0b0-9781-226b" name="Belleros Energy Cannon" hidden="false" collective="false" import="true" type="upgrade">
@@ -8385,6 +8391,11 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
       <categoryLinks>
         <categoryLink id="c7f5-6c52-01fe-3160" name="Data-Tether" hidden="false" targetId="613c-50b6-79c4-b61a" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -9571,12 +9582,19 @@ During deployment, you can set up this unit in orbit instead of setting it up in
       </characteristics>
     </profile>
     <profile id="1113-b787-77c6-ec62" name="Rad-saturation" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <modifiers>
-        <modifier type="set" field="name" value="Extreme Rad Saturation"/>
-        <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="While an enemy unit (excluding VEHICLE units) is within 3&quot; of this unit, subtract 1 from the Strength and Toughness characteristic of models in that enemy unit."/>
-      </modifiers>
+      <modifierGroups>
+        <modifierGroup>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6a01-f9de-c733-3985" type="equalTo"/>
+          </conditions>
+          <modifiers>
+            <modifier type="set" field="name" value="Extreme Rad Saturation"/>
+            <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="While an enemy unit (excluding VEHICLE units) is within 3&quot; of this unit, subtract 1 from the Strength and Toughness characteristic of models in that enemy unit."/>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While an enemy unit (excluding VEHICLE units) is within 3&quot; of this unit, subtract 1 from the Strength and Toughness characteristic of models in that enemy unit.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While an enemy unit (excluding VEHICLE units) is within Engagement range of this unit, subtract 1 from the Strength and Toughness characteristic of models in that enemy unit.</characteristic>
       </characteristics>
     </profile>
     <profile id="3dcf-2116-08d7-c21f" name="Pistoleers" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
