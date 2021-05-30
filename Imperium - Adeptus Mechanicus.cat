@@ -445,7 +445,15 @@
       </categoryLinks>
     </entryLink>
     <entryLink id="e1c2-8810-5302-aac3" name="Army of Renown -  Mechanicus Defence Cohort" hidden="false" collective="false" import="true" targetId="38ee-6dae-3cb1-7f84" type="selectionEntry"/>
-    <entryLink id="ca80-7317-3d89-af8d" name="Skitarii Marshal" hidden="false" collective="false" import="true" targetId="4936-c7d9-d0e0-c23b" type="selectionEntry"/>
+    <entryLink id="ca80-7317-3d89-af8d" name="Skitarii Marshal" hidden="false" collective="false" import="true" targetId="4936-c7d9-d0e0-c23b" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="38ee-6dae-3cb1-7f84" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+    </entryLink>
     <entryLink id="04e3-4baf-83d6-a492" name="Technoarchaeologist" hidden="false" collective="false" import="true" targetId="e9a6-2bda-7401-94e0" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="28cf-991c-8f28-5fb4" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
@@ -2021,8 +2029,8 @@
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
             <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3D3</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it makes 1 additional attack with this weapon. Each time an attack made with this weapon its a VEHICLE unit, that attack inflicts 1 mortal wound in addition to any damage.</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it makes 1 additional attack with this weapon. Each time an attack made with this weapon hits a VEHICLE unit, that attack inflicts 1 mortal wound in addition to any damage.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -3270,10 +3278,10 @@ Each time an attack made with this weapon targets a unit within half range, that
         </profile>
       </profiles>
       <selectionEntryGroups>
-        <selectionEntryGroup id="9b4a-74a5-39b8-edb1" name="Primary Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="4e62-74e3-5325-ce4b">
+        <selectionEntryGroup id="9b4a-74a5-39b8-edb1" name="Primary Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="4e62-74e3-5325-ce4b">
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2e99-8f65-c429-cedd" type="min"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ae02-c840-b61c-a37a" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2e99-8f65-c429-cedd" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ae02-c840-b61c-a37a" type="max"/>
           </constraints>
           <entryLinks>
             <entryLink id="4e62-74e3-5325-ce4b" name="Kastelan Fist" hidden="false" collective="false" import="true" targetId="7142-93d0-f3f8-bece" type="selectionEntry">
@@ -3302,6 +3310,24 @@ Each time an attack made with this weapon targets a unit within half range, that
             <entryLink id="0218-cbd3-2006-8c77" name="Incendine Combustor" hidden="false" collective="false" import="true" targetId="cdc2-7df5-f3b7-e914" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="64c8-6833-2bfe-c1a0" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="8cf0-9bd9-7579-cf60" name="Primary Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="6148-2942-d245-e1aa">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0264-3325-515e-d825" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a4e2-99d6-5c30-b510" type="max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="3f7e-738d-5f9f-981c" name="Kastelan Fist" hidden="false" collective="false" import="true" targetId="7142-93d0-f3f8-bece" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="daa7-d1cb-9880-a223" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="6148-2942-d245-e1aa" name="Kastelan Phosphor Blaster" hidden="false" collective="false" import="true" targetId="31d5-4c52-a6b6-c873" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5596-8624-93eb-8a9e" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -4897,7 +4923,7 @@ Each time an attack is made with this weapon, the target does not receive the be
             <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time you make a wound roll of 6+ with this weapon, the target suffers D3 mortal wounds instead of the normal damage.</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, on an unmodified wound roll of 6 inflicts 2 mortal wounds on the target and the attack sequence ends.</characteristic>
           </characteristics>
         </profile>
       </profiles>
