@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="185" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="186" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -24,6 +24,7 @@
     <publication id="7573-8d1b-acdf-2de8" name="Imperial Armour: Compendium" shortName="IA:C" publicationDate="2020-11-06" publisherUrl="https://www.forgeworld.co.uk/Imperial-Armour-Compendium-2020-FW"/>
     <publication id="b652-8bab-1453-da20" name="Warhammer Legends" shortName="Legends" publisher="" publicationDate="Ongoing" publisherUrl="https://www.warhammer-community.com/legends/#warhammer-40000"/>
     <publication id="0865-ee21-d1f1-ed38" name="War Zone Charadon, Act I: The Book of Rust" shortName="Book of Rust" publisher="" publicationDate="2021-03-27"/>
+    <publication id="977a-446b-737a-b571" name="Chapter Approved 2021" shortName="CA2021" publicationDate="2021-06-05"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
@@ -1387,6 +1388,11 @@
       </categoryLinks>
     </entryLink>
     <entryLink id="bea6-35ff-0062-7366" name="Chaos Bastion" hidden="false" collective="false" import="true" targetId="f8c9-c03b-f8af-009f" type="selectionEntry"/>
+    <entryLink id="fe51-1bc8-bd77-14a6" name="Shared Faction Bonus" hidden="false" collective="false" import="true" targetId="8129-3536-b511-b045" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="a7d5-9a78-2254-2a59" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defence Line" publicationId="28ec-711c-pubN77581" page="79" hidden="false" collective="false" import="true" type="unit">
@@ -6120,6 +6126,33 @@
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="8129-3536-b511-b045" name="Shared Faction Bonus" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="lessThan"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7848-330c-45b1-5f59" type="max"/>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7b5c-aa54-b980-a302" type="max"/>
+      </constraints>
+      <rules>
+        <rule id="cc45-f368-4c00-9b2d" name="Shared Faction Bonus" publicationId="977a-446b-737a-b571" page="4" hidden="false">
+          <description>If your army includes one or more Super-Heavy Auxiliary Detachments, y ou can change the Command Benefits of one of them to: &apos;+2 Command points if the unit in this Detachment is not your Warlod, but it is from the same Faction as your Warlord&apos;s Detachment, and that faction is not CHAOS, IMPERIUM, AELDARI , YNNARI or TYRANIDS.&apos;</description>
+        </rule>
+      </rules>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="2.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
