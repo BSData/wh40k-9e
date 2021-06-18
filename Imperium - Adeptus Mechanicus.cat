@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="157" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="187" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="161" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="189" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="ebe8-544e-pubN65537" name="Codex: Adeptus Mechanicus"/>
     <publication id="ebe8-544e-pubN79295" name="Forgeworld Datasheet"/>
@@ -46,7 +46,6 @@
     <categoryEntry id="0310-2aa0-62fc-d659" name="Onager Dunecrawler" hidden="false"/>
     <categoryEntry id="dfde-d915-6e58-09af" name="Faction: &lt;Forge World&gt;" hidden="false"/>
     <categoryEntry id="2293-bc6b-5261-a2c0" name="Faction: Mars" hidden="false"/>
-    <categoryEntry id="ca27-5069-1c2c-a28b" name="Faction: Adeptus Mechanicus" hidden="false"/>
     <categoryEntry id="6bb8-fe7f-7918-bf8f" name="Faction: Cult Mechanicus" hidden="false"/>
     <categoryEntry id="3c55-5bc9-3dc3-a3ff" name="Faction: Astra Militarum" hidden="false"/>
     <categoryEntry id="cdee-83f1-5387-56cc" name="Faction: Skitarii" hidden="false"/>
@@ -458,7 +457,7 @@
         <categoryLink id="1fca-042b-fe78-5ada" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="5ce9-de44-491c-4005" name="Stratagem: Artefactorum" hidden="false" collective="false" import="true" targetId="f9c2-964c-2879-d33c" type="selectionEntry">
+    <entryLink id="5ce9-de44-491c-4005" name="Stratagem: Artefactotum" hidden="false" collective="false" import="true" targetId="f9c2-964c-2879-d33c" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="8747-2bff-72af-3e4f" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
       </categoryLinks>
@@ -526,7 +525,7 @@
         </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f63c-b5e0-259e-1170" type="max"/>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="f63c-b5e0-259e-1170" type="max"/>
       </constraints>
       <categoryLinks>
         <categoryLink id="bc80-bb47-caf7-5f63" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
@@ -544,6 +543,7 @@
         <categoryLink id="cc3f-225e-8a67-6635" name="New CategoryLink" hidden="false" targetId="26b0-4bb9-73aa-d3d7" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="dc8d-5229-6996-1566" name="Unit Filter" hidden="false" collective="false" import="true" targetId="8a28-8f79-4ac0-1f45" type="selectionEntry"/>
   </entryLinks>
   <infoLinks>
     <infoLink id="b9a6-a085-224e-39a1" name="Extremis Sentinel Protocols" hidden="false" targetId="098e-f085-f124-c297" type="rule"/>
@@ -1779,6 +1779,9 @@
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="94e1-c127-3d54-301b" type="min"/>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="3797-5641-c489-1479" type="max"/>
                   </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="5.0"/>
+                  </costs>
                 </entryLink>
                 <entryLink id="5eef-0960-6d8b-3b98" name="Neutron Laser" hidden="false" collective="false" import="true" targetId="3f3d-094b-622e-1ccd" type="selectionEntry">
                   <constraints>
@@ -8348,13 +8351,6 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
       </costs>
     </selectionEntry>
     <selectionEntry id="f9c2-964c-2879-d33c" name="Stratagem: Artefactotum" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d4fa-d036-f5dd-f91d" type="equalTo"/>
-          </conditions>
-        </modifier>
-      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9938-cc51-b11d-5738" type="max"/>
       </constraints>
@@ -8397,13 +8393,6 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="df50-e0eb-b5af-5970" name="New SelectionEntry" hidden="false" collective="false" import="true" type="upgrade">
-      <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
-      </costs>
-    </selectionEntry>
     <selectionEntry id="57ab-1c67-732f-ccb9" name="Broad Spectrum Data-Tether" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8206-9fa7-177b-f617" type="max"/>
@@ -8414,6 +8403,24 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
       <categoryLinks>
         <categoryLink id="c7f5-6c52-01fe-3160" name="Data-Tether" hidden="false" targetId="613c-50b6-79c4-b61a" primary="false"/>
       </categoryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="8a28-8f79-4ac0-1f45" name="Unit Filter" hidden="false" collective="false" import="true" type="upgrade">
+      <categoryLinks>
+        <categoryLink id="efbd-ff0d-f24d-f404" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink id="4ece-85c0-1a17-dfec" name="Hide Imperial Agents" hidden="false" collective="false" import="true" targetId="b734-1c2c-054d-4867" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="name" value="Hide Agents of the Imperium"/>
+          </modifiers>
+        </entryLink>
+        <entryLink id="ee4a-5670-8e7c-3e42" name="Hide Legends Units" hidden="false" collective="false" import="true" targetId="c47c-a3e1-c91e-436a" type="selectionEntry"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -9022,7 +9029,7 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
 1. Shroudpsalm:
 While this canticle is active, this unit counts as receiving the benefits of Light Cover.
 
-2. Chant of the Remorseless Fist: 
+2. Chant of the Remorseless Fist:
 While this canticle is active, each time a model in this unit makes a melee attack, add 1 to the Strength characteristic of this attack.
 
 3. Incantation of the Iron Soul:
@@ -9504,7 +9511,7 @@ During deployment, you can set up this unit in orbit instead of setting it up in
     </profile>
     <profile id="e939-5e4e-fada-ed70" name="Command Uplink" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly &lt;FORGE WORLD&gt; models can use this unit&apos;s leadership instead of their own whilst they are within 6&quot; of this model.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer gains the DATA-TETHER keyword and the following ability: &apos;Command Uplink (Aura): While a friendly &lt;FORGE WORLD&gt; SKITARII CORE unit is within 3&quot; of this model, add 1 to the Leadership characteristic of models in that unit and that unit gains the DATA-TETHER keyword.</characteristic>
       </characteristics>
     </profile>
     <profile id="ee15-063b-6426-c99a" name="Chaff Launcher" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -9759,7 +9766,7 @@ During deployment, you can set up this unit in orbit instead of setting it up in
     </profile>
     <profile id="2b7f-5b7d-148b-439c" name="Combined Landing" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If a detachment contains multiple ARCHAEOPTER TRANSVECTOR models, you can choose for pairs of them to make combined landings instead of setting them up on the battlefield. 
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If a detachment contains multiple ARCHAEOPTER TRANSVECTOR models, you can choose for pairs of them to make combined landings instead of setting them up on the battlefield.
 For each combined landing that you want to make, select two &lt;FORGE WORLD&gt; ARCHAEOPTER TRANSVECTOR models:
 
 • Those two TRANSPORT models are treated as one model with a combined transport capacity of 12 &lt;FORGE WORLD&gt; INFANTRY models for the purposes of which units can be embarked within them. This means that an eligible INFANTRY unit containing 7-12 models can start the battle embarked within those two TRANSPORT models, the INFANTRY models in that unit being split between the two transports. Make a note of which INFANTRY models are embarked within which TRANSPORT model.

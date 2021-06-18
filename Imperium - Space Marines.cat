@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="248" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="187" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="250" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="188" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -250,6 +250,11 @@
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="906c-57c5-4113-af42" type="max"/>
       </constraints>
     </categoryEntry>
+    <categoryEntry id="8158-9b4f-8dca-1173" name="Faction: Tome Keepers" hidden="false"/>
+    <categoryEntry id="5236-e2c0-4386-9bc9" name="Nasiem" hidden="false"/>
+    <categoryEntry id="55bb-c9e9-2348-26b2" name="Lykandos" hidden="false"/>
+    <categoryEntry id="c7a9-7b15-c0b7-01a7" name="Sephax" hidden="false"/>
+    <categoryEntry id="aae4-a60f-7a83-f0f0" name="Kae" hidden="false"/>
   </categoryEntries>
   <infoLinks>
     <infoLink id="69aa-c5f2-5b03-a0f4" name="Bolter Discipline" hidden="false" targetId="5a7e-f984-487c-d767" type="rule"/>
@@ -3464,8 +3469,8 @@
                 </modifier>
               </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4604-bc5a-9577-c010" type="min"/>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9cec-bcc6-5cac-12c8" type="max"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4604-bc5a-9577-c010" type="min"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9cec-bcc6-5cac-12c8" type="max"/>
               </constraints>
               <selectionEntryGroups>
                 <selectionEntryGroup id="02ae-97a4-c306-373f" name="Shield" hidden="false" collective="false" import="true">
@@ -3534,11 +3539,35 @@
                   </constraints>
                 </entryLink>
                 <entryLink id="1bf8-7d25-8a12-d49e" name="Combi-Weapons" hidden="false" collective="false" import="true" targetId="37ef-f6fa-fe1f-306c" type="selectionEntryGroup">
+                  <modifiers>
+                    <modifier type="set" field="8ed9-7fee-d72a-5f07" value="0.0">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b61f-a3c1-827d-c5b6" type="equalTo"/>
+                            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2c8f-1bfe-53a5-1fb3" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ed9-7fee-d72a-5f07" type="max"/>
                   </constraints>
                 </entryLink>
                 <entryLink id="d87d-ea13-682d-88bf" name="Special Weapons" hidden="false" collective="false" import="true" targetId="2c8f-1bfe-53a5-1fb3" type="selectionEntryGroup">
+                  <modifiers>
+                    <modifier type="set" field="c35b-26b0-c991-3c68" value="0.0">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b61f-a3c1-827d-c5b6" type="equalTo"/>
+                            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="37ef-f6fa-fe1f-306c" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </modifier>
+                  </modifiers>
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c35b-26b0-c991-3c68" type="max"/>
                   </constraints>
@@ -15994,7 +16023,7 @@ Weapon: Purgatorus</characteristic>
                 <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="15cc-ce97-b5f6-b535" name="Neo-volkite pistol, Master-crafter power sword and Storm Shield" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="15cc-ce97-b5f6-b535" name="Neo-volkite pistol, Master-crafted power sword and Storm Shield" hidden="false" collective="false" import="true" type="upgrade">
               <entryLinks>
                 <entryLink id="6d9a-24e9-bb49-cfe1" name="Neo-volkite pistol" hidden="false" collective="false" import="true" targetId="4c4c-c7e5-9be9-b74e" type="selectionEntry">
                   <constraints>
@@ -21562,9 +21591,14 @@ Weapon: Purgatorus</characteristic>
             <selectionEntry id="876b-80bc-4805-f702" name="Sunwrath Pistol" hidden="false" collective="false" import="true" type="upgrade">
               <modifiers>
                 <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="83be-1ba9-c326-4760" type="equalTo"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5236-e2c0-4386-9bc9" type="notInstanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="83be-1ba9-c326-4760" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -22678,12 +22712,12 @@ time a model in that unit makes an attack against the enemy unit you selected at
                   <conditionGroups>
                     <conditionGroup type="and">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="356b-dfec-bc66-34d9" type="equalTo"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0ea8-99df-4500-1b49" type="equalTo"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4bac-e6fe-24fd-0166" type="equalTo"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0140-c9f2-0524-34cc" type="equalTo"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="33bf-1084-fc97-cfe2" type="equalTo"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cc71-29c7-ea47-c052" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="356b-dfec-bc66-34d9" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0ea8-99df-4500-1b49" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4bac-e6fe-24fd-0166" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0140-c9f2-0524-34cc" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="33bf-1084-fc97-cfe2" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cc71-29c7-ea47-c052" type="equalTo"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
