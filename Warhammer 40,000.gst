@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="191" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="192" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -25,6 +25,7 @@
     <publication id="b652-8bab-1453-da20" name="Warhammer Legends" shortName="Legends" publisher="" publicationDate="Ongoing" publisherUrl="https://www.warhammer-community.com/legends/#warhammer-40000"/>
     <publication id="0865-ee21-d1f1-ed38" name="War Zone Charadon, Act I: The Book of Rust" shortName="Book of Rust" publisher="" publicationDate="2021-03-27"/>
     <publication id="977a-446b-737a-b571" name="Chapter Approved 2021" shortName="CA2021" publicationDate="2021-06-05"/>
+    <publication id="b854-bcb5-5746-e0d3" name="War Zone Charadon, Act II: The Book of Fire"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
@@ -207,6 +208,19 @@
     <categoryEntry id="3365-ccd0-46ed-209a" name="Area Terrain" hidden="false"/>
     <categoryEntry id="0f75-4f3e-b6f5-771a" name="Raiding Forces" hidden="false"/>
     <categoryEntry id="ca27-5069-1c2c-a28b" name="Faction: Adeptus Mechanicus" hidden="false"/>
+    <categoryEntry id="d8d3-6bf7-9b21-8e58" name="Daemon Prince" hidden="false">
+      <modifiers>
+        <modifier type="set" field="2580-d1be-f19a-e54c" value="1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cb2e-2f63-133e-a79c" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2580-d1be-f19a-e54c" type="max"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry id="cb2e-2f63-133e-a79c" name="Be&apos;lakor" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -5941,6 +5955,13 @@
       <categoryLinks>
         <categoryLink id="6bec-d375-7bc4-f0f0" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="88b1-c697-e840-2850" name="Army of Renown - Disciples of Be&apos;lakor" hidden="false" collective="false" import="true" type="upgrade">
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
