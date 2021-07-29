@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="3bba-af85-a93c-6bdf" name="Orks 2021" revision="4" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="3bba-af85-a93c-6bdf" name="Orks 2021" revision="5" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tag8833" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="11b5-77b9-pubN65537" name="Codex: Orks 2021"/>
   </publications>
@@ -331,7 +331,18 @@
     <entryLink id="723e-3f2c-afb1-c075" name="Specialist Detachment" hidden="false" collective="false" import="true" targetId="fc96-1331-c935-0c46" type="selectionEntry"/>
     <entryLink id="ca78-e4f2-952c-eb48" name="Big Mek W/ Kustom Force Field" hidden="false" collective="false" import="true" targetId="ce6c-aef1-67fb-3af4" type="selectionEntry"/>
     <entryLink id="6409-cec0-e0bf-81e9" name="Da Red Gobbo [Legends]" hidden="false" collective="false" import="true" targetId="e485-5416-cd99-cb07" type="selectionEntry"/>
-    <entryLink id="e47c-3b46-72b4-19c3" name="Makari" hidden="false" collective="false" import="true" targetId="8c8a-dd06-c0df-3fb3" type="selectionEntry"/>
+    <entryLink id="e47c-3b46-72b4-19c3" name="Makari" hidden="false" collective="false" import="true" targetId="8c8a-dd06-c0df-3fb3" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="19e5-b299-9323-b1c4" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink id="97a9-1762-4348-737c" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+      </categoryLinks>
+    </entryLink>
     <entryLink id="de04-7157-b699-81d8" name="Grukk Face-Rippa" hidden="false" collective="false" import="true" targetId="7dbc-f5e8-9260-d985" type="selectionEntry">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
@@ -404,6 +415,11 @@
     <entryLink id="278a-b86d-6b32-6fd6" name="Unit Filter" hidden="false" collective="false" import="true" targetId="a3ec-486f-eaaf-b19d" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="ed26-ba2f-42de-bfd8" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="917a-1b1b-e0a6-8c52" name="Makari" hidden="false" collective="false" import="true" targetId="8c8a-dd06-c0df-3fb3" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="d983-8fc4-df38-2acf" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -12132,9 +12148,14 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
     <selectionEntry id="f816-d517-7b97-ee2a" name="Proper Killy" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5602-29aa-24d5-612d" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="19e5-b299-9323-b1c4" type="notInstanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5602-29aa-24d5-612d" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -13527,42 +13548,11 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
       </costs>
     </selectionEntry>
     <selectionEntry id="8c8a-dd06-c0df-3fb3" name="Makari" publicationId="52c4-39c0-ae97-d4dc" page="70" hidden="false" collective="false" import="true" type="model">
-      <modifiers>
-        <modifier type="set" field="4235-bfde-e4c0-8cf2" value="0.0">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="84e7-10dc-db59-a1b2" type="equalTo"/>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5602-29aa-24d5-612d" type="equalTo"/>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="19e5-b299-9323-b1c4" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4235-bfde-e4c0-8cf2" type="max"/>
       </constraints>
       <profiles>
         <profile id="8ab7-63bc-bf7a-57c3" name="Makari" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-          <modifiers>
-            <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1">
-              <conditions>
-                <condition field="selections" scope="8c8a-dd06-c0df-3fb3" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f816-d517-7b97-ee2a" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <modifierGroups>
-            <modifierGroup>
-              <conditions>
-                <condition field="selections" scope="8c8a-dd06-c0df-3fb3" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4829-1f2a-ae41-4ba4" type="equalTo"/>
-              </conditions>
-              <modifiers>
-                <modifier type="increment" field="2218-aa3c-265f-2939" value="1"/>
-                <modifier type="increment" field="13fc-b29b-31f2-ab9f" value="1"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
@@ -13607,7 +13597,6 @@ Each time a roll is made to wound this unit, if Mek Boss Buzzgob is on the battl
         <categoryLink id="6c8c-bd6a-9e13-6045" name="Faction: Ork" hidden="false" targetId="1c58-037f-7b58-1223" primary="false"/>
         <categoryLink id="090c-2827-c57e-e684" name="Gretchin" hidden="false" targetId="0b2c-1505-90c2-24ed" primary="false"/>
         <categoryLink id="6c48-bcdc-ac8c-27a8" name="Makari" hidden="false" targetId="1964-1c67-3af1-8278" primary="false"/>
-        <categoryLink id="14b9-c6b2-eefc-9de7" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
         <categoryLink id="263d-4834-9308-580b" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
       <selectionEntries>
