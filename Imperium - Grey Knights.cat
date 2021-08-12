@@ -95,7 +95,7 @@
     <entryLink id="0244-9f38-1f40-4689" name="New EntryLink" hidden="false" collective="false" import="true" targetId="e012-a289-720d-a36c" type="selectionEntry"/>
     <entryLink id="6cb7-4e4d-9811-a18f" name="Brother-Captain" hidden="false" collective="false" import="true" targetId="f4b7-6f8e-448d-9c3b" type="selectionEntry"/>
     <entryLink id="e7b9-75a0-5700-eb0e" name="Lord Kaldor Draigo" hidden="false" collective="false" import="true" targetId="630a-1d50-0a37-a639" type="selectionEntry"/>
-    <entryLink id="db00-b971-96ba-1ba7" name="New EntryLink" hidden="false" collective="false" import="true" targetId="c701-7188-c97c-cce6" type="selectionEntry"/>
+    <entryLink id="db00-b971-96ba-1ba7" name="Brother-Captain Stern" hidden="false" collective="false" import="true" targetId="c701-7188-c97c-cce6" type="selectionEntry"/>
     <entryLink id="e653-39ff-b13a-74b5" name="New EntryLink" hidden="false" collective="false" import="true" targetId="1cb4-ee5e-e756-5299" type="selectionEntry"/>
     <entryLink id="cd08-22f1-42d1-b0e2" name="New EntryLink" hidden="false" collective="false" import="true" targetId="c122-d85d-f519-81ae" type="selectionEntry"/>
     <entryLink id="c1a2-ba3e-b4dc-d16f" name="Grand Master" hidden="false" collective="false" import="true" targetId="ae77-bbb6-8a07-c24b" type="selectionEntry"/>
@@ -149,6 +149,14 @@
     <entryLink id="d575-2ebf-ba53-99b3" name="Land Raider Banisher" hidden="false" collective="false" import="true" targetId="015d-e419-1dd0-0319" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="20c5-1511-2b2a-ffea" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="833a-7d38-836c-f157" name="Brotherhood" hidden="false" collective="false" import="true" targetId="b3b9-70f1-126f-4bcc" type="selectionEntry">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3499-a20c-3dd2-1026" type="min"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="f4c8-ab8f-18ad-2255" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -1407,6 +1415,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="30b4-cee3-1edf-7ee5" name="Grand Master Voldus" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7b6-e2c6-94c9-8327" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cff4-233c-0845-e36b" type="max"/>
       </constraints>
@@ -5968,6 +5983,19 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="b3b9-70f1-126f-4bcc" name="Brotherhood" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f2d-abdc-3530-79e5" type="max"/>
+      </constraints>
+      <entryLinks>
+        <entryLink id="684f-7b7b-7951-7a91" name="Brotherhood" hidden="false" collective="false" import="true" targetId="0a52-40e7-e75f-89dc" type="selectionEntryGroup"/>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="942d-b10a-8cc5-3854" name="Brother Captain Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="2699-daad-ca38-5742">
@@ -7339,8 +7367,20 @@
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="6746-5589-ddc1-dc53" name="Oath of Witness" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="73e8-6b6b-b1d2-ef9c" type="lessThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <profiles>
             <profile id="3135-e56d-b7fd-4197" name="Oath of Witness" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -7349,6 +7389,11 @@
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -7827,35 +7872,42 @@
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="20.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="2227-727b-e512-7ecd" name="Heroism&apos;s Favour" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="15.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="492d-6e93-e5ea-a103" name="A Noble Death" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="7451-3fdb-a7d4-d6fd" name="Omen of Incursion" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="30.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="4e90-b609-7b3b-abe2" name="Presaged Paralysis" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="15.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="5c28-b32d-8865-49d3" name="Foretelling of Locus" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="30.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -7866,41 +7918,110 @@
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="10.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="f3ea-0919-e9ad-6bcb" name="Temportal Bombs" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="15.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="bff8-2712-4d97-eeb8" name="Servant of the Throne" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="20.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="efa7-7b13-25e1-2533" name="Deluminator of Majesty" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="15.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="8e98-e18e-5c58-4f9b" name="Gem of Inoktu" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="15.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="28aa-0013-8b40-732e" name="Severance Bolt" hidden="false" collective="false" import="true" type="upgrade">
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="30.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="0a52-40e7-e75f-89dc" name="Brotherhood" publicationId="0cc2-3545-pubN112001" hidden="false" collective="false" import="true">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8be0-121b-76fa-3f5f" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="73e8-6b6b-b1d2-ef9c" name="Exactors" publicationId="0cc2-3545-pubN112001" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="cccd-a8ea-e301-34fb" name="Silverblades" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="1be0-f4dd-1f6b-486e" name="Swordbearers" publicationId="0cc2-3545-pubN112001" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="d69e-d595-c0ac-b7be" name="Blades of Victory" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="1812-4aba-98d5-cd3f" name="Preservers" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="68e8-4053-6e4e-6afb" name="Rapiers" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="f7b6-e2c6-94c9-8327" name="Wardmakers" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="2f86-5489-d689-5435" name="Precient Berthern" hidden="false" collective="false" import="true" type="upgrade">
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
