@@ -5528,6 +5528,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2aaf-b004-5638-8250" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="67e0-d740-5745-f1fa" name="Brotherhood Psyker Power" hidden="false" collective="false" import="true" targetId="d6ae-fe14-202c-6351" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="11.0"/>
@@ -6051,7 +6052,42 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="d6ae-fe14-202c-6351" name="Brotherhood Psyker Power" hidden="false" collective="false" import="true" type="upgrade"/>
+    <selectionEntry id="d6ae-fe14-202c-6351" name="Brotherhood Psyker Power" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2913-fa02-e9a2-ea9a" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8e3a-beaf-690e-cc28" type="min"/>
+      </constraints>
+      <profiles>
+        <profile id="491e-1eae-9238-cee7" name="Empyric Lodestone" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1be0-f4dd-1f6b-486e" type="lessThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">7</characteristic>
+            <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+            <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Malediction: If manifested, select one enemy unit within 18&quot; of the Psyker. Until the start of your next Psychic phase, each time a friendly SWORDBEARERS Vehicle unit makes a ranged attack against that enemy unit, add 1 to that attack&apos;s wound roll. A unit can only be selected for this psychic power once per phase</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="dc04-d28e-b2dd-8a66" name="Inescapable Persuit" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d69e-d595-c0ac-b7be" type="lessThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+            <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">Self</characteristic>
+            <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Blessing: If manifested, unti the start of your next Psychic phase, you can reroll charge rolls for this Psykers unit</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="942d-b10a-8cc5-3854" name="Brother Captain Melee Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="2699-daad-ca38-5742">
