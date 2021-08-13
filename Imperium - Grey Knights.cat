@@ -6355,7 +6355,7 @@
       <profiles>
         <profile id="9497-27c0-afc6-5511" name="Augrium Scrolls" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a Nemesis weapon by a model in a friendly GREY KNIGHTS unit within 6&quot; of a model with this relic, an unmodified hit roll of 6 scored 1 additional hit.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Model with Nemesis weapon only. Each time the bearer is selected to fight, you can re-roll one hit roll and one wound roll when resolving the bearer&apos;s attacks</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -6406,7 +6406,7 @@
       <profiles>
         <profile id="e0b5-2cec-65e1-0726" name="Sanctic Shard" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a Psychic test is taken for a model with this Relic, you can re-roll the result. Add 1 to the total for Psychic tests taken for a model with this Relic.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a Deny the Witch test is taken for the bearer, if the result of that test was an unmodified result of 8+, or it was greater than the result of the Psychic test, that Deny the Witch test passed</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -6421,9 +6421,19 @@
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0c49-f772-763e-84ce" type="max"/>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5ac1-328d-d02d-789a" type="max"/>
       </constraints>
-      <infoLinks>
-        <infoLink id="6326-2a53-b8ad-2203" name="Domina Liber Demonica" hidden="false" targetId="56f3-8e33-0a1b-fbd7" type="rule"/>
-      </infoLinks>
+      <profiles>
+        <profile id="4a47-e570-69fb-2bab" name="Domina Liber Demonica" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Enemy Daemon units that are set up on the battlefield as Reinforcements cannot be set up within 12&quot; of the bearer
+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="22d5-70da-9ba5-000c" name="Domina Liber Demonica (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While an enemy Daemon unit is within 6&quot; of this model, each time a Combat Attrition test is taken for that unit, subtract 1 from that test</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -6437,6 +6447,46 @@
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="5ba6-57bd-ae11-55ed" name="Gyrotemporal Vault" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f5d5-949c-721e-fbdf" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e977-0605-5cb1-e501" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="fb0a-830e-7f80-627d" name="Gyrotemporal Vault" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+          <characteristics>
+            <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">5</characteristic>
+            <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">3&quot;</characteristic>
+            <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Psychic Action: In your Psychic phase, the bearer can attempt to empower their allies. If this action is completed successfully, select one friendly Grey Knights Core or Grey Knights Character unit within 3&quot; of the bearer. Untl the start of your next Psychic phase, at the start of the Fight phase, if the selected unit is withing Engagement Range of any enemy units, it can fight first that phase</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="4f3f-4933-8756-98a9" name="Sigil of Exigence" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5f77-f733-47fc-2fe8" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9745-3b5f-629d-9408" type="max"/>
+      </constraints>
+      <rules>
+        <rule id="a5df-229b-a3dc-0583" name="Sigil of Exigence" hidden="false">
+          <description>Once per battle, in your opponents Shooting phase, when the bearer is selected as the target of a ranged attacks it can activate this relic. If it does, remove the bearer from the battlefield and then set it back up on the battlefield, anywhere this is more than 9&quot; away from an enemy model. If the beaerer is no longer an eligible target, your opponent can then select new eligible targets for the ranged attacks.</description>
+        </rule>
+      </rules>
+    </selectionEntry>
+    <selectionEntry id="19e8-0045-7001-3e8a" name="Kantu Vambrace" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="574f-c699-945b-6e87" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5753-8e1e-0421-c68a" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="94e8-65b7-089c-4ca6" name="Kantu Vambrace" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time the bearer would lose a wound as a result of a mortal wound, roll one D6: on a 4+ that wound is not lost
+- Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack (to a minimum of 1)</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -7471,7 +7521,7 @@
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon against a DAEMON unit, and invulnerable saving throw cannot be made.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against a Daemon unit, an unmodified wound roll of 2+ successfully wounds the target. If that unit has the Monster of Vehicle keyword, an unmodified wound roll of 4+ successfully wounds the target instead</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -7494,9 +7544,9 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cf64-3cae-caf9-6787" type="max"/>
           </constraints>
           <profiles>
-            <profile id="1ef2-06d3-9f7d-250f" name="Artisan Nullifier Matrix" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="1ef2-06d3-9f7d-250f" name="Artisan Nullifier Matrix (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">LIBRARIAN model only. Once per turn, when a Psychic test is taken for a friendly GREY KNIGHTS unit within 6&quot; of a model with this Relicm you can increase of decrease by 1 the value shown on one of the dice.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While  friendly Grey Knight Psyker unit is within 9&quot; of this model, each time a Psychic test is taken for that unit, it does not suffer Perils of the Warp.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -7521,7 +7571,7 @@
           <profiles>
             <profile id="c31c-8702-d695-9a4e" name="Aetheric Conduit" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">TECHMARINE model only. When using a model with this Relic&apos;s Bless of the Omnissiah ability, the target model regains up to 2D3 lost wounds instead of up to D3.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">TECHMARINE model only. Each time the bearer repairs a model using its Blessing of the Omnissiah ability, that model regains up to 3 lost wounds instead of up to D3.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -7537,6 +7587,17 @@
         <entryLink id="ba64-c0b0-4046-a736" name="Augurium Scrolls" hidden="false" collective="false" import="true" targetId="8549-8106-700c-bb54" type="selectionEntry"/>
         <entryLink id="bca8-ac72-c3c3-0b98" name="Sanctic Shard" hidden="false" collective="false" import="true" targetId="4ffe-a43f-c47c-eba5" type="selectionEntry"/>
         <entryLink id="aed2-f1d4-7a27-521e" name="Stave of Supremacy" hidden="false" collective="false" import="true" targetId="49bb-0fa0-57ba-9a8b" type="selectionEntry"/>
+        <entryLink id="79fc-55af-2fc4-e6f0" name="Gyrotemporal Vault" hidden="false" collective="false" import="true" targetId="5ba6-57bd-ae11-55ed" type="selectionEntry"/>
+        <entryLink id="a1c6-f38c-4a2c-eca5" name="Sigil of Exigence" hidden="false" collective="false" import="true" targetId="4f3f-4933-8756-98a9" type="selectionEntry"/>
+        <entryLink id="cd3b-c513-041e-5b7c" name="Kantu Vambrace" hidden="false" collective="false" import="true" targetId="19e8-0045-7001-3e8a" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0abf-b3fb-43c9-08d2" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="0589-b86f-dfcf-4ea5" name="Armoury of Titan" hidden="false" collective="false" import="true" defaultSelectionEntryId="38af-c298-4b17-90a7">
@@ -8869,10 +8930,13 @@ If you do, you can only make one attack with that weapon, but when selecting a t
       <description>You can add 1 to hit rolls for this model when targeting an enemy in the Shooting phase that cannot FLY.</description>
     </rule>
     <rule id="56f3-8e33-0a1b-fbd7" name="Domina Liber Demonica" hidden="false">
-      <description>All enemy (Daemon) units must subtract 1 from their Leadership characteristic whilst they are within 6&quot; of the bearer.</description>
+      <description></description>
     </rule>
     <rule id="5423-ad56-2aa0-3fbe" name="Cuirass of Sacrifice" hidden="false">
-      <description>(Infantry) model only. Roll a D6 each time the bearer loses a wound. On a 5+, the damage is ignored and the bearer does not lose a wound.</description>
+      <description>(Infantry) model only.
+
+- Add 1 to armour saving throws made for the bearer
+- Each time the bearer would lose a wound, roll one D6; on a 5+, that wound is not lost</description>
     </rule>
     <rule id="2dcf-4662-7632-86a4" name="Interceptor" hidden="false">
       <description>You can add 1 to hit rolls for this model when targeting an enemy in the Shooting phase that can FLY.</description>
@@ -9354,7 +9418,9 @@ a Damage characteristic of D6+2.</characteristic>
     </profile>
     <profile id="79e4-c23d-7939-80cb" name="Banner of Refining Flame" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Paladin Ancient or Brotherhood Ancient only. The Banner of Refining Flame is a sacred banner. A model equipped with this banner loses the Rites of Banishment ability. Instead, when the bearer manifest the Smite psychic power, it only has a range of 6&quot;, but it inflicts D6 mortal wounds instead of D3 (whether or not the result of the Psychic test is more than 10).</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Ancient model only. The bearer can attempt to perform the following psychic action:
+
+Refining Flame (Psychic Action - Warp Charge 6): In your Psychich phase, the bearer can attempt to perform this psychic action. If completed, each enemy unit withint 6&quot; of the bearer suffers D3 mortal wounds</characteristic>
       </characteristics>
     </profile>
     <profile id="5a0e-235a-0970-04a4" name="Stormtalon Gunship" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -9415,8 +9481,8 @@ a Damage characteristic of D6+2.</characteristic>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 3</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
@@ -9427,17 +9493,17 @@ a Damage characteristic of D6+2.</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">4</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When a model attacks with this weapon, you must subtract 1 from the hit roll.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attck is made with this weapon, subtract 1 from that attack&apos;s hit roll</characteristic>
       </characteristics>
     </profile>
     <profile id="ccf1-d2e9-ffb2-18b3" name="Soul Glaive" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll failed hit and wound rolls made for this weapon.</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, you can re-roll the hit roll and you can re-roll the wound roll</characteristic>
       </characteristics>
     </profile>
     <profile id="f6f3-8933-f1e9-d4b1" name="Psyker (2/1)" hidden="false" typeId="bc97-dea9-9e88-bb7d" typeName="Psyker">
