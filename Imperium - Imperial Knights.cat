@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="82" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="186" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="82" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Dr. Toboggan" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>Imperial Knights are a unique faction within Warhammer 40,000, for their armies typically comprise just a handful of models. Where other players’ forces contain infantry, battle tanks, monstrous beasts and the like, an Imperial Knights army is made up solely of towering, heavily armed and armoured bipedal war  engines. Even the least of these is more than a match for whole regiments of the foe. Piloted by highly trained Nobles whose minds are saturated with concepts of chivalry, honour and fealty, these ironclad giants shatter battle lines with ease, devastating the enemy’s forces with bombardments of searing energy and explosive shells. Those who somehow survive this fusillade – and are not subsequently trampled underfoot – are sent scattering before the Knights like leaves on a gale.</readme>
   <publications>
     <publication id="82cd-d24f-pubN65537" name="Codex: Imperial Knights" shortName="Codex: IK" publisher="Codex: Imperial Knights"/>
@@ -87,7 +87,6 @@
     <categoryEntry id="4ea8-f891-b991-c0ba" name="Knight Asterius" hidden="false"/>
     <categoryEntry id="121a-c775-c3b9-3eaa" name="Knight Moirax" hidden="false"/>
     <categoryEntry id="7acb-9150-b190-bfc7" name="Freeblade Lance" hidden="false"/>
-    <categoryEntry id="b7ae-7058-29a5-7b7f" name="Faction: Adeptus Mechanicus" hidden="false"/>
     <categoryEntry id="7140-b6b5-f5ad-160b" name="Knight of the Cog" hidden="false"/>
   </categoryEntries>
   <entryLinks>
@@ -229,11 +228,6 @@
     <entryLink id="a918-6474-d9de-4dc6" name="[Reference] Household Traditions (All)" hidden="false" collective="false" import="true" targetId="1378-7ed6-3271-7431" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="9b57-68d4-862a-114d" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
-      </categoryLinks>
-    </entryLink>
-    <entryLink id="dc12-8182-46ad-0bcc" name="Ephrael Stern and Kyganil of the Bloody Tears" hidden="false" collective="false" import="true" targetId="7dca-e055-7a15-4bf3" type="selectionEntry">
-      <categoryLinks>
-        <categoryLink id="15b1-6a37-cafa-19a0" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -7406,7 +7400,7 @@
         </profile>
       </profiles>
       <categoryLinks>
-        <categoryLink id="e679-f1df-59d4-07b3" name="Adeptus Mechanicus" hidden="false" targetId="b7ae-7058-29a5-7b7f" primary="false"/>
+        <categoryLink id="8c65-6b58-2f1c-fb71" name="Faction: Adeptus Mechanicus" hidden="false" targetId="ca27-5069-1c2c-a28b" primary="false"/>
       </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
@@ -7420,9 +7414,8 @@
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ebe8-544e-1fe8-fcde" type="notInstanceOf"/>
                 <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="notInstanceOf"/>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b7ae-7058-29a5-7b7f" type="lessThan"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ca27-5069-1c2c-a28b" type="lessThan"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -8085,6 +8078,13 @@
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="3089-475a-2f2f-0664" name="Qualities and Burdens" publicationId="82cd-d24f-pubN65537" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7583-6f77-f1bb-aa57" type="max"/>
       </constraints>
@@ -8097,16 +8097,8 @@
                   <conditions>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e739-6296-9046-12b7" type="lessThan"/>
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="lessThan"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef18-746a-369f-43a4" type="lessThan"/>
                   </conditions>
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5973-c86d-b500-4a14" type="lessThan"/>
-                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b024-daf5-66a7-50c4" type="lessThan"/>
-                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e10-f41d-ef8a-a6dc" type="lessThan"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -8214,12 +8206,6 @@ If a Freeblade from your army has any Burdens, roll 2D6 for them at the start of
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b852-a5b1-1418-5374" type="lessThan"/>
                   </conditions>
                   <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e739-6296-9046-12b7" type="lessThan"/>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3a62-00de-b0b5-7cf4" type="atLeast"/>
-                      </conditions>
-                    </conditionGroup>
                     <conditionGroup type="and">
                       <conditions>
                         <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e739-6296-9046-12b7" type="atLeast"/>
