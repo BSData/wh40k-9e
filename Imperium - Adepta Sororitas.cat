@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="176" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @_alphalas, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="178" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @_alphalas, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="d124-b283-pubN72234" name="Codex: Adepta Sororitas 9th Edition"/>
   </publications>
@@ -7403,6 +7403,13 @@ At the end of the Fight phase, if this PRIEST model is in Engagement Range of an
           </costs>
         </selectionEntry>
         <selectionEntry id="1a63-e105-1b74-f44a" name="Relic: Litanies of Faith" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b57d-c2a9-2713-8872" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="36bd-a330-bfdf-a1bf" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4f60-c960-7556-265c" type="max"/>
@@ -8020,7 +8027,15 @@ Before selecting targets, select one or both of the profiles above to make attac
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="1262-24e4-ff18-a7b7" name="Order of our Martyred Lady Relics" hidden="false" collective="false" import="true" targetId="a587-49a7-4639-4e92" type="selectionEntryGroup"/>
+        <entryLink id="1262-24e4-ff18-a7b7" name="Order of Our Martyred Lady Relics" hidden="false" collective="false" import="true" targetId="a587-49a7-4639-4e92" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f65b-46de-9d3f-dc59" type="lessThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="ee7f-dc69-3e70-9bfb" name="Order Convictions" hidden="false" collective="false" import="true">
@@ -9257,7 +9272,7 @@ You cannot select this conviction if you have already selected either the Raging
         </entryLink>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="923c-c629-db2d-f122" name="Warlord Traits - Martyred Lady" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="923c-c629-db2d-f122" name="Warlord Traits - Our Martyred Lady" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
@@ -9270,15 +9285,15 @@ You cannot select this conviction if you have already selected either the Raging
       </constraints>
       <entryLinks>
         <entryLink id="482e-e87f-734b-5850" name="Warlord Trait: Martyr&apos;s Strength" hidden="false" collective="false" import="true" targetId="664a-6aeb-4aa0-bc40" type="selectionEntry"/>
-        <entryLink id="307b-1804-10b6-4084" name="Warlord Trait: Saintly Example" hidden="false" collective="false" import="true" targetId="417d-a60a-70e0-ece5" type="selectionEntry"/>
+        <entryLink id="307b-1804-10b6-4084" name="Warlord Trait: 1. Saintly Example" hidden="false" collective="false" import="true" targetId="417d-a60a-70e0-ece5" type="selectionEntry"/>
         <entryLink id="a333-57ec-2931-7e8e" name="Warlord Trait: Saint Katherine&apos;s Legacy" hidden="false" collective="false" import="true" targetId="212e-857b-eebd-f6f7" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="a587-49a7-4639-4e92" name="Order of our Martyred Lady Relics" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="a587-49a7-4639-4e92" name="Order of Our Martyred Lady Relics" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="66f6-9ccb-1ca2-4dd3" type="lessThan"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f65b-46de-9d3f-dc59" type="lessThan"/>
           </conditions>
         </modifier>
         <modifier type="set" field="2799-0d56-f7e2-befc" value="1.0">
