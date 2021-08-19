@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="174" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="175" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="ebe8-544e-pubN65537" name="Codex: Adeptus Mechanicus"/>
     <publication id="ebe8-544e-pubN79295" name="Forgeworld Datasheet"/>
@@ -546,9 +546,21 @@
     <selectionEntry id="37a6-acbc-d023-b0a5" name="Belisarius Cawl" publicationId="ebe8-544e-pubN65537" page="86" hidden="false" collective="false" import="true" type="model">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ac03-d781-0c3b-b4be" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ac03-d781-0c3b-b4be" type="equalTo"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bde4-e5f7-024d-78a4" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c930-55c4-9edb-a0fb" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -636,7 +648,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="82e9-5852-f69b-05c6" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="0d01-efd7-48a0-1700" name="Warlord Trait (Codex 2):Masterwork Bionics" hidden="false" collective="false" import="true" targetId="6166-4643-5e1a-9cf2" type="selectionEntry">
+        <entryLink id="0d01-efd7-48a0-1700" name="Warlord Trait (Codex 2): Masterwork Bionics" hidden="false" collective="false" import="true" targetId="6166-4643-5e1a-9cf2" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="6ef1-7a59-e9b5-f6c5" value="1.0">
               <conditions>
@@ -1225,7 +1237,7 @@
         </profile>
         <profile id="ab27-05fa-c457-c56c" name="Field Reprogramming (Action)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of your Movement phase, any number of CYBERNETICA DATASMITH models from your army can start to perform this action. When the action is started, select on friendly &lt;FORGE WORLD&gt; KASTELAN ROBOTS unit within 6&quot; of the model performing the action and one of the available protocols found on that unit&apos;s datasheet. The action is completed at the end if your next Command phase. When it is completed, the selected protocol replaces that unit&apos;s active protocol.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of your Movement phase, any number of CYBERNETICA DATASMITH models from your army can start to perform this action. When the action is started, select one friendly &lt;FORGE WORLD&gt; KASTELAN ROBOTS unit within 6&quot; of the model performing the action and one of the available protocols found on that unit&apos;s datasheet. The action is completed at the end if your next Command phase. When it is completed, the selected protocol replaces that unit&apos;s active protocol.</characteristic>
           </characteristics>
         </profile>
         <profile id="e7a9-476c-7ec6-5d02" name="Machine Sentience (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -1297,8 +1309,8 @@
       <selectionEntryGroups>
         <selectionEntryGroup id="0e84-7269-917d-a886" name="Weapons" hidden="false" collective="false" import="true" defaultSelectionEntryId="3466-d7ce-3fed-e097">
           <constraints>
-            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0f58-9bfd-82d7-8bfd" type="max"/>
-            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cc28-5d05-9709-e6d1" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0f58-9bfd-82d7-8bfd" type="max"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cc28-5d05-9709-e6d1" type="min"/>
           </constraints>
           <entryLinks>
             <entryLink id="3466-d7ce-3fed-e097" name="Servo-arm" hidden="false" collective="false" import="true" targetId="cfe5-d5e7-fd71-897a" type="selectionEntry"/>
@@ -1989,7 +2001,7 @@
         </profile>
         <profile id="0e84-7977-3252-97e6" name="Onager Dunecrawler 3 (1-2 wounds)" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">4&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
@@ -2128,7 +2140,7 @@
             <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon that targets a VEHICLE unit, that attack has a Damage characteristic of 3 and an unmodified wound roll of 4 successfully wounds the target.</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon that targets a VEHICLE unit, that attack has a Damage characteristic of 3 and an unmodified wound roll of 4+ successfully wounds the target.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -2471,7 +2483,7 @@ This weapon replaces the bearer&apos;s Omnissian Axe.</characteristic>
       <profiles>
         <profile id="0133-9681-8eb9-dda4" name="The Solar Flare" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, in your Movement phase, the bearer can use this Relic. If it does so, the bearer&apos;s unit and up to one friendly LUCIUS CORE unit within 3&quot; of the bearer can be removed from the battlefield and set back up anywhere on the battlefield that is more than 9&quot; away from any enemy models. If two units are set back up on the battlefield using this Relic, both units must be placed within 6&quot; of each other.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, in your Movement phase, the bearer can use this Relic. If it does so, the bearer&apos;s unit and up to one friendly LUCIUS CORE unit within 3&quot; of the bearer can be removed from the battlefield and set back up anywhere on the battlefield that is more than 9&quot; away from any enemy models. If two units are set back up on the battlefield using this Relic, both units must be placed wholly within 6&quot; of each other.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -2589,7 +2601,7 @@ This weapon replaces the bearer&apos;s Omnissian Axe.</characteristic>
       <profiles>
         <profile id="bb85-821f-e3fd-2150" name="The Eye of Xi-Lexum" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Shooting phase, select one enemy VEHICLE unit within 18&quot; of the bearer. Until the end of the phases, that bearer gains the following ability:</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Shooting phase, select one enemy VEHICLE unit within 18&quot; of the bearer. Until the end of the phase, that bearer gains the following ability:</characteristic>
           </characteristics>
         </profile>
         <profile id="9308-a6bf-ea3a-9591" name="The Eye of Xi-Lexum (Aura):" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -3207,7 +3219,7 @@ This weapon replaces the bearer&apos;s Omnissian Axe.</characteristic>
             <modifier type="set" field="name" value="(Codex 1) Monitor Malevolus"/>
           </modifiers>
         </infoLink>
-        <infoLink id="7c64-9515-870e-0767" name="Emotionless Clarity" hidden="false" targetId="95f0-222c-8a8c-e06d" type="profile">
+        <infoLink id="7c64-9515-870e-0767" name="Mantra of Discipline" hidden="false" targetId="95f0-222c-8a8c-e06d" type="profile">
           <modifiers>
             <modifier type="set" field="name" value="(Graia) Emotionless Clarity"/>
           </modifiers>
@@ -4130,7 +4142,7 @@ Each time an attack is made with this weapon, the target does not receive the be
             <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against a VEHICLE unit, that attack has a Damage characteristic of 2 and an unmodified wound roll of 4 successfully wounds the target.</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against a VEHICLE unit, that attack has a Damage characteristic of 2 and an unmodified wound roll of 4+ successfully wounds the target.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -5189,7 +5201,7 @@ Each time an attack is made with this weapon, the target does not receive the be
     </selectionEntry>
     <selectionEntry id="344d-e45a-1dec-e0f2" name="Eradication Ray" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
-        <profile id="c9df-ee3c-a300-c6eb" name="Eradication Ray (dispersed)" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+        <profile id="c9df-ee3c-a300-c6eb" name="Eradication Ray (dissipated)" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
           <characteristics>
             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D3</characteristic>
@@ -6234,7 +6246,7 @@ This weapon can target units that are not visible to the bearer</characteristic>
       <profiles>
         <profile id="4019-3aa5-a849-f522" name="Bomb Rack" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per turn, after this model has moved in your Movement phase, you can select one unit it moved through. Roll six D6s for each MONSTER or VEHICLE model in that unit and another D6 for each other model in that unit (up to a maximum of ten D6s), for each 4+, that unit suffers 1MW.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per turn, after this model has moved in your Movement phase, you can select one unit it moved through. Roll six D6s for each VEHICLE or MONSTER model in that unit and roll one D6 for each other model in that unit (to a maximum of ten D6s): for each 4+, that unit suffers 1 mortal wound.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -6315,6 +6327,9 @@ This weapon can target units that are not visible to the bearer</characteristic>
       <infoLinks>
         <infoLink id="f3de-e32a-e5a0-5aed" name="Command Uplink" hidden="false" targetId="e939-5e4e-fada-ed70" type="profile"/>
       </infoLinks>
+      <categoryLinks>
+        <categoryLink id="fd69-fc2b-8e0f-8bcd" name="Data-Tether" hidden="false" targetId="613c-50b6-79c4-b61a" primary="false"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -6692,7 +6707,7 @@ This weapon can target units that are not visible to the bearer</characteristic>
               </constraints>
               <rules>
                 <rule id="7de6-09b5-d933-3c5a" name="Rugged Explorators" hidden="false">
-                  <description>• Models in this unit do nit suffer the penalty to hit rolls incurred for firing Heavy weapons in the same turn that their unit has moved.
+                  <description>• Models in this unit do not suffer the penalty to hit rolls incurred for firing Heavy weapons in the same turn that their unit has moved.
 • VEHICLE models in this unit do not suffer the penalty to hit rolls incurred for firing Assault weapons in the same turn their unit has Advanced.</description>
                 </rule>
               </rules>
@@ -6840,6 +6855,7 @@ This weapon can target units that are not visible to the bearer</characteristic>
         <categoryLink id="3423-a806-a944-c9af" name="Fly" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
         <categoryLink id="f12e-7208-77b3-d7d9" name="Pteraxxi Skystalkers" hidden="false" targetId="cada-03ef-7171-154b" primary="false"/>
         <categoryLink id="1549-55d4-ba5c-53b3" name="Arc Grenades" hidden="false" targetId="80a2-7b69-17e8-b4f0" primary="false"/>
+        <categoryLink id="b75c-4f44-d06c-f6b7" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="56ec-9544-f580-c63e" name="Pteraxii Skystalker" hidden="false" collective="true" import="true" targetId="6f4d-3e3d-3f04-d640" type="selectionEntry">
@@ -6893,7 +6909,6 @@ This weapon can target units that are not visible to the bearer</characteristic>
         </profile>
       </profiles>
       <categoryLinks>
-        <categoryLink id="f5d2-8788-22dc-0eb4" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
         <categoryLink id="ea35-9fe7-c0ea-0fae" name="Pteraxxi Skystalkers" hidden="false" targetId="cada-03ef-7171-154b" primary="false"/>
       </categoryLinks>
       <entryLinks>
@@ -7885,7 +7900,7 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="e9a6-2bda-7401-94e0" name="Technoarchaeologist" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="e9a6-2bda-7401-94e0" name="Technoarcheologist " hidden="false" collective="false" import="true" type="model">
       <modifiers>
         <modifier type="set" field="b449-17fb-7152-092e" value="1.0">
           <conditions>
@@ -7897,7 +7912,7 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
         <constraint field="selections" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b449-17fb-7152-092e" type="max"/>
       </constraints>
       <profiles>
-        <profile id="0794-5842-09af-1237" name="Technoarchaeologist" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="0794-5842-09af-1237" name="Technoarcheologist " hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
@@ -7974,7 +7989,7 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
       <infoGroups>
         <infoGroup id="99a5-bac8-7b62-79c2" name="Fabrications of the Artisan" hidden="false">
           <profiles>
-            <profile id="e92e-317d-ad4d-39dc" name="Artisans Initial - Enhanced Biomechanical" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="e92e-317d-ad4d-39dc" name="Artisans Initial - Enhanced Biomechanical Interface" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of your Movement phase, if this part is active for this model, select one friendly &lt;FORGE WORLD&gt; CORE or &lt;FORGE WORLD&gt; KATAPHRON SERVITORS model within 6&quot; of this model. Until the start of your next Movement phase, that unit is eligible to charge and shoot in a turn in which it Fell Back, but if it does so, each time a model in that unit makes a ranged attack, subtract 1 from the attack&apos;s hit roll.</characteristic>
               </characteristics>
@@ -8000,7 +8015,7 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
       <profiles>
         <profile id="88d2-f21a-1b2c-437f" name="Scriptural Prognosis" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, if this model is on the battlefield when you use an Adeptus Mechanicus Strategic Stratagem, reduce the CP cost of that Stratagem by 1 CP. Note that the CP Cost is only reduced by 1 CP for that use of the Stratagem, any future usages of it cost the normal amount of CPs.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, if this model is on the battlefield when you use an Adeptus Mechanicus Strategic Ploy Stratagem, reduce the CP cost of that Stratagem by 1 CP. Note that the CP Cost is only reduced by 1 CP for that use of the Stratagem, any future usages of it cost the normal amount of CPs.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -8042,10 +8057,10 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
           <profiles>
             <profile id="0fa8-98db-9f05-a25a" name="Magi Initial - Predatory Programming" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In you Command phase, if this part is active for this model, select on friendly &lt;FORGE WORLD&gt; CORE unit within 6&quot; of this model. Until the start of your next Command phase, add 2 to Advance rolls made for that unit.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, if this part is active for this model, select on friendly &lt;FORGE WORLD&gt; CORE unit within 6&quot; of this model. Until the start of your next Command phase, add 2 to Advance rolls made for that unit.</characteristic>
               </characteristics>
             </profile>
-            <profile id="0b88-d97a-d8fe-307c" name="Magi Advanced - Overloaded Safeguard" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="0b88-d97a-d8fe-307c" name="Magi Advanced - Overloaded Safeguards" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, if this part is active for this model, select on friendly &lt;FORGE WORLD&gt; CORE unit within 6&quot; of this model. Until the start of your next Command phase, each time a model in that unit makes a ranged attack, an unmodified roll of 6 scores 1 additional hit.</characteristic>
               </characteristics>
@@ -8075,12 +8090,12 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
           <profiles>
             <profile id="de52-995f-5929-8784" name="Genetors Initial - Biochemical Aggression" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, if this part is active for this model, select one friendly &lt;FORGE WORLD&gt; CORE OR &lt;FORGE WORLD&gt; KATAPHRON SERVITORS unit within 6&quot; of this model. Until the start of your next Command phase, each time a model in that unit makes a melee attack, an unmodified of 6 automatically wounds the target.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, if this part is active for this model, select one friendly &lt;FORGE WORLD&gt; CORE OR &lt;FORGE WORLD&gt; KATAPHRON SERVITORS unit within 6&quot; of this model. Until the start of your next Command phase, each time a model in that unit makes a melee attack, an unmodified of hit roll 6+ automatically wounds the target.</characteristic>
               </characteristics>
             </profile>
             <profile id="64d0-98b2-55c4-5e3e" name="Genetors Advanced - Hypercybernetic Physiology" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, if this part is active for this model, select on friendly FORGE WORLD KAPTAPHRON SERVITORS or FORGE WORLD SERVITORS unit within 6&quot; of this model. Until the start of your next Command phase, each time a model in that unit would lose a wound, roll one D6. On a 6, that wound is not lost.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, if this part is active for this model, select one friendly &lt; FORGE WORLD &gt; KAPTAPHRON SERVITORS or &lt; FORGE WORLD &gt; SERVITORS unit within 6&quot; of this model. Until the start of your next Command phase, each time a model in that unit would lose a wound, roll one D6. On a 6, that wound is not lost.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -8126,61 +8141,6 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
               <description>Each time a CORE model with this dogma makes a ranged attack, on an unmodified wound roll of 6, the Armour Penetration characteristic of that attack is improved by 1.</description>
             </rule>
           </rules>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="a4a2-f396-b4b2-6525" name="Secondary ability" hidden="false" collective="false" import="true" defaultSelectionEntryId="1846-4391-cd2b-96bc">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8c68-bf49-3418-395f" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8110-ac2f-64c4-e6e4" type="max"/>
-              </constraints>
-              <selectionEntries>
-                <selectionEntry id="1846-4391-cd2b-96bc" name="Data-Bleed Generators" hidden="false" collective="false" import="true" type="upgrade">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7974-c140-2443-ed3b" type="max"/>
-                  </constraints>
-                  <rules>
-                    <rule id="da36-b444-1db9-f671" name="Data-Bleed Generators" hidden="false">
-                      <description>Each time an enemy model makes a melee attack against a unit with this dogma, if that enemy model made a charge move, was charged or performed a Heroic Intervention this turn, subtract 1 from that attack&apos;s hit roll.</description>
-                    </rule>
-                  </rules>
-                  <costs>
-                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                    <cost name="pts" typeId="points" value="0.0"/>
-                  </costs>
-                </selectionEntry>
-                <selectionEntry id="cae8-d71f-1726-0470" name="Purified Datasphere" hidden="false" collective="false" import="true" type="upgrade">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1464-6496-6f3c-eeb6" type="max"/>
-                  </constraints>
-                  <rules>
-                    <rule id="2970-614d-679d-8a8f" name="Purified Datasphere" hidden="false">
-                      <description>Add 3&quot; to the range of the aura abilities (excluding the Rad-saturation ability) of units with this dogma (to a maximum of 9&quot;).</description>
-                    </rule>
-                  </rules>
-                  <costs>
-                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                    <cost name="pts" typeId="points" value="0.0"/>
-                  </costs>
-                </selectionEntry>
-                <selectionEntry id="c384-3d24-94ce-fdd0" name="Engineered Nanophages" hidden="false" collective="false" import="true" type="upgrade">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fbb9-9dda-a03a-291d" type="max"/>
-                  </constraints>
-                  <rules>
-                    <rule id="a08f-85d4-a809-b3b2" name="Engineered Nanophages" hidden="false">
-                      <description>Each time a melee attack made by a model with this dogma is allocated to a model with a save characteristic of 3+ or better, the Armour Penetration characteristic of that attack is improved by 1.</description>
-                    </rule>
-                  </rules>
-                  <costs>
-                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                    <cost name="pts" typeId="points" value="0.0"/>
-                  </costs>
-                </selectionEntry>
-              </selectionEntries>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -8188,6 +8148,61 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
           </costs>
         </selectionEntry>
       </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="f96d-1145-b361-e8ea" name="Secondary ability" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6307-6dd8-eede-8955" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d5a7-e7a5-f158-052a" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="c6b5-1871-8a23-fc8a" name="Data-Bleed Generators" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6a2e-609b-a5c7-070a" type="max"/>
+              </constraints>
+              <rules>
+                <rule id="4e84-0986-98b2-c663" name="Data-Bleed Generators" hidden="false">
+                  <description>Each time an enemy model makes a melee attack against a unit with this dogma, if that enemy model made a charge move, was charged or performed a Heroic Intervention this turn, subtract 1 from that attack&apos;s hit roll.</description>
+                </rule>
+              </rules>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="4164-72ed-0d8e-65ab" name="Purified Datasphere" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="799c-fc75-2b9e-fefc" type="max"/>
+              </constraints>
+              <rules>
+                <rule id="c942-b65d-f8e0-4756" name="Purified Datasphere" hidden="false">
+                  <description>Add 3&quot; to the range of the aura abilities (excluding the Rad-saturation ability) of units with this dogma (to a maximum of 9&quot;).</description>
+                </rule>
+              </rules>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="dc3a-3284-863c-df55" name="Engineered Nanophages" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0547-46d9-45cd-15ea" type="max"/>
+              </constraints>
+              <rules>
+                <rule id="7c54-7d86-b46e-542e" name="Engineered Nanophages" hidden="false">
+                  <description>Each time a melee attack made by a model with this dogma is allocated to a model with a save characteristic of 3+ or better, the Armour Penetration characteristic of that attack is improved by 1.</description>
+                </rule>
+              </rules>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -8489,7 +8504,7 @@ If a CHARACTER model with this dogma gains a Warlord trait, they can have the Fo
             <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
           </characteristics>
         </profile>
-        <profile id="9fa2-d5e2-00be-91e1" name="Eradication pistol (dispersed)" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+        <profile id="9fa2-d5e2-00be-91e1" name="Eradication pistol (Dissipated)" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
           <characteristics>
             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol D3</characteristic>
@@ -8984,7 +8999,7 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
                 <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="atLeast"/>
               </conditions>
             </modifier>
-            <modifier type="increment" field="e244-ac09-7339-63de" value="1.0">
+            <modifier type="increment" field="e244-ac09-7339-63de" value="2.0">
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
@@ -9137,7 +9152,7 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="75ed-31a9-721d-a483" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="0d19-0b12-ee40-9f28" name="Warlord Trait (Codex 6): Prime Hermeticon" hidden="false" collective="false" import="true" targetId="a7d8-c5a2-e9df-c0b8" type="selectionEntry">
+            <entryLink id="0d19-0b12-ee40-9f28" name="Warlord Trait (Codex 6): Supervisory Radiance" hidden="false" collective="false" import="true" targetId="a7d8-c5a2-e9df-c0b8" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="870e-75bc-22cb-b3d6" type="max"/>
               </constraints>
@@ -9203,7 +9218,7 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ead-dd62-4637-6c3f" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="56d6-a0a8-4ed4-3bef" name="Warlord Trait (Stygies VIII): Xenarite Studies" hidden="false" collective="false" import="true" targetId="a21a-957a-ff18-76a5" type="selectionEntry">
+            <entryLink id="56d6-a0a8-4ed4-3bef" name="Warlord Trait (Stygies VIII): Veiled Hunter" hidden="false" collective="false" import="true" targetId="a21a-957a-ff18-76a5" type="selectionEntry">
               <modifiers>
                 <modifier type="set" field="hidden" value="true">
                   <conditions>
@@ -9671,20 +9686,20 @@ While this canticle is active, each time a model in this unit makes a melee atta
 
 3. Incantation of the Iron Soul:
 While this canticle is active:
-⁃ Each time a Combat Attrition test is made for this unit, ignore all modifiers.
+⁃ Each time a Combat Attrition test is made for this unit, ignore any or all modifiers.
 ⁃ Each time a model in this unit would lose a wound as a result of a Mortal Wound, roll one D6; on a 5+ that wound is not lost. If this unit has the Refusal to Yield Dogma, that wound is not lost on a 4+ instead.
 
 4. Benediction of the Omnissiah
 While this canticle is active, each time a unit is selected to shoot, when resolving its attacks you can
-⁃ Re-roll a hit roll
-⁃ Re-roll a wound roll
-⁃ Re-roll a damage roll
+⁃ Re-roll one hit roll
+⁃ Re-roll one wound roll
+⁃ Re-roll one damage roll
 
-5. Invocation of Machine Might
+5. Invocation of Machine Vengeance
 While this canticle is active, each time an Advance roll or Charge roll is made for this unit, roll an additional D6 and discard the lowest result.
 
 6. Litany of the Electromancer
-While this canticle is active, each time a melee attack is made against this unit, subtract 1 from the hit roll.</description>
+While this canticle is active, each time a melee attack is made against this unit, subtract 1 from that attack&apos;s hit roll.</description>
     </rule>
     <rule id="36ba-2b6e-86fe-943b" name="Doctrina Imperatives" publicationId="ebe8-544e-pubN65537" page="85" hidden="false">
       <description>
@@ -9879,7 +9894,7 @@ Aggressor Imperative: +3&quot; Move characteristic/-1 Save characteristic</descr
     </profile>
     <profile id="c943-2e72-aa1f-81d2" name="Panegyric Procession" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="7df1-74bd-09c9-492c" typeName="Warlord Trait">
       <characteristics>
-        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">In your Command phase, you can select on friendly MARS CULT MECHANICUS CORE unit within 6&quot; of this WARLORD. If you do so, then select on Canticle - this can be one that has already been active for your army. Until the start of your next Command phase, both this WARLORD and that unit benefit from that selected Canticle instead of the one that is active for your army.</characteristic>
+        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">In your Command phase, you can select one friendly MARS CULT MECHANICUS CORE unit within 6&quot; of this WARLORD. If you do so, then select on Canticle - this can be one that has already been active for your army. Until the start of your next Command phase, both this WARLORD and that unit benefit from that selected Canticle instead of the one that is active for your army.</characteristic>
       </characteristics>
     </profile>
     <profile id="306e-6f8d-0a70-a3a9" name="Radium Carbine" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -9900,7 +9915,7 @@ Aggressor Imperative: +3&quot; Move characteristic/-1 Save characteristic</descr
         <characteristic name="S" typeId="59b1-319e-ec13-d466">3</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an enemy unit (excluding VEHICLE units), a hit roll of 6 automatically wounds the target.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an enemy unit (excluding VEHICLE units), a hit roll of 6+ automatically wounds the target.</characteristic>
       </characteristics>
     </profile>
     <profile id="2b50-080a-8078-822d" name="Chordclaw" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -10043,12 +10058,12 @@ Aggressor Imperative: +3&quot; Move characteristic/-1 Save characteristic</descr
     </profile>
     <profile id="8d3b-f946-e86a-c04e" name="Verse of Vengeance" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="7df1-74bd-09c9-492c" typeName="Warlord Trait">
       <characteristics>
-        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">In your Command phase, select one friendly AGRIPINAA CORE UNIT within 6&quot; of this WARLORD. Until the start of your next Command phase, each time a model in that unit is destroyed by an attack made by an enemy model,  roll one D6; on a 4+, do not remove that destroyed model from play - it can, after the attacking model&apos;s unit has finished its attacks, either shoot with one of its ranged weapons as if it were the Shooting phase, or make one attack with one of its melee weapons as if it were the Fight phase. After resolving these attacks, the destroyed model is then removed.</characteristic>
+        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">In your Command phase, select one friendly AGRIPINAA CORE unit within 6&quot; of this WARLORD. Until the start of your next Command phase, each time a model in that unit is destroyed by an attack made by an enemy model,  roll one D6; on a 4+, do not remove that destroyed model from play - it can, after the attacking model&apos;s unit has finished making its attacks, either shoot with one of its ranged weapons as if it were the Shooting phase, or make one attack with one of its melee weapons as if it were the Fight phase. After resolving these attacks, the destroyed model is then removed.</characteristic>
       </characteristics>
     </profile>
     <profile id="559b-5eaf-90e8-b1cc" name="Veiled Hunter" publicationId="ebe8-544e-pubN65537" hidden="false" typeId="7df1-74bd-09c9-492c" typeName="Warlord Trait">
       <characteristics>
-        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">At the start of the first battle round, you can select up to two friendly STYGIES VIII units wholly within your deployment zone. Remove those units from the battlefield, then set them up anywhere on the battlefield that is wholly within yur deployment zone. If the mission uses the Strategic Reserves rule, any of those units can be placed into Strategic Reserves without having to spend any additional CPs, regardless of how many units are already in Strategic Reserves. If both players have abilities that redeploy units, roll off, the winner chooses who redeploys their units first.</characteristic>
+        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">At the start of the first battle round, you can select up to two friendly STYGIES VIII units wholly within your deployment zone. Remove those units from the battlefield, then set them up anywhere on the battlefield that is wholly within your deployment zone. If the mission uses the Strategic Reserves rule, any of those units can be placed into Strategic Reserves without having to spend any additional CPs, regardless of how many units are already in Strategic Reserves. If both players have abilities that redeploy units, roll off, the winner chooses who redeploys their units first.</characteristic>
       </characteristics>
     </profile>
     <profile id="a393-0ab6-7e6b-d526" name="Citation In Savagery" publicationId="ebe8-544e-pubN65537" page="56" hidden="false" typeId="7df1-74bd-09c9-492c" typeName="Warlord Trait">
@@ -10063,14 +10078,14 @@ Aggressor Imperative: +3&quot; Move characteristic/-1 Save characteristic</descr
     </profile>
     <profile id="4d56-6c20-8ea6-9df6" name="Luminescent Blessings" publicationId="ebe8-544e-pubN65537" page="52" hidden="false" typeId="7df1-74bd-09c9-492c" typeName="Warlord Trait">
       <characteristics>
-        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">In your Command phase, select one LUCIUS CORE unit within 9&quot; of this WARLORD. Until the start of your next Command phase, each time an attack is made against that unit, an unmodified wound roll of 1--3 for that attack fails, irrespective of any abilities that the weapon or the model making the attack may have.</characteristic>
+        <characteristic name="Description" typeId="696e-7a95-ff17-7c91">In your Command phase, select one LUCIUS CORE unit within 9&quot; of this WARLORD. Until the start of your next Command phase, each time an attack is made against that unit, an unmodified wound roll of 1-3 for that attack fails, irrespective of any abilities that the weapon or the model making the attack may have.</characteristic>
       </characteristics>
     </profile>
     <profile id="95f0-222c-8a8c-e06d" name="Mantra of Discipline" publicationId="ebe8-544e-pubN65537" page="" hidden="false" typeId="7df1-74bd-09c9-492c" typeName="Warlord Trait">
       <characteristics>
         <characteristic name="Description" typeId="696e-7a95-ff17-7c91">In your opponent&apos;s Charge phase, at the start of the Heroic Intervention step, select on friendly GRAIA CORE unit within 9&quot; of this WARLORD. Until the end of the phase:
 
-• If not that unit is within 6&quot; horizontally and 5&quot; vertically of any enemy unit, it is eligible to perform Heroic Interventions as if it were a CHARACTER unit.
+• If that unit is within 6&quot; horizontally and 5&quot; vertically of any enemy unit, it is eligible to perform Heroic Interventions as if it were a CHARACTER unit.
 • Each time a model in that unit makes a Heroic Intervention move, it can move up to 6&quot;.</characteristic>
       </characteristics>
     </profile>
@@ -10124,7 +10139,7 @@ During deployment, you can set up this unit in orbit instead of setting it up in
     </profile>
     <profile id="03d5-2314-e4e4-9a46" name="Explodes (Skorpius)" hidden="false" typeId="88a9-3700-776b-79d1" typeName="Explosion">
       <characteristics>
-        <characteristic name="Dice Roll" typeId="b044-79fe-269c-2d24">D6</characteristic>
+        <characteristic name="Dice Roll" typeId="b044-79fe-269c-2d24">6</characteristic>
         <characteristic name="Distance" typeId="fc81-6c6b-ae23-7952">6&quot;</characteristic>
         <characteristic name="Mortal Wounds" typeId="7d5f-527b-0457-086c">D3</characteristic>
       </characteristics>
@@ -10195,7 +10210,7 @@ During deployment, you can set up this unit in orbit instead of setting it up in
     </profile>
     <profile id="e9f9-9e31-897a-1511" name="Explodes (Archaeopter)" hidden="false" typeId="88a9-3700-776b-79d1" typeName="Explosion">
       <characteristics>
-        <characteristic name="Dice Roll" typeId="b044-79fe-269c-2d24">D6</characteristic>
+        <characteristic name="Dice Roll" typeId="b044-79fe-269c-2d24">6</characteristic>
         <characteristic name="Distance" typeId="fc81-6c6b-ae23-7952">6&quot;</characteristic>
         <characteristic name="Mortal Wounds" typeId="7d5f-527b-0457-086c">D3</characteristic>
       </characteristics>
