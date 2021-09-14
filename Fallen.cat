@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="d541-6e16-d152-db06" name="Fallen" revision="18" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="179" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="d541-6e16-d152-db06" name="Fallen" revision="19" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="185" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <categoryEntries>
     <categoryEntry id="cd82-15ee-cad6-4909" name="Fallen Angels" hidden="false"/>
   </categoryEntries>
@@ -169,7 +169,12 @@
             </modifier>
           </modifiers>
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Enemy units within 12&quot; of CYPHER cannot use any abilities, Warlord Traits or Relics that allow them to gain, return or refund Command Points. The range of this ability is increased to 18&quot; while there are 10 or more other friendly FALLEN ANGELS models within 12&quot; of CYPHER. The range of this ability is instead increased to 24&quot; while there are 20 or more other friendly FALLEN ANGELS models within 12&quot; of CYPHER.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While an enemy unit is within discord range of this model, that unit and any models it contains cannot make use of any abilities, Warlord Traits or Relics that allow your opponent to receive or be refunded Command Points.
+
+While this model is within 12&quot; of:
+- Less than 10 other FALLEN ANGELS models, this ability has a discord range of 12&quot;.
+- 10-19 other FALLEN ANGELS models, this ability has a discord range of 18&quot;.
+- 20 or more other FALLEN ANGELS models, this ability has a discord range of 24&quot;.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -182,6 +187,7 @@
         <categoryLink id="04dd-fb51-3751-b3d0" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="8b6a-70be-db6d-8e06" name="New CategoryLink" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
         <categoryLink id="55a0-c6f8-5e06-2758" name="New CategoryLink" hidden="false" targetId="e12c-dd25-cbab-a30d" primary="false"/>
+        <categoryLink id="7997-f4b0-785f-154e" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="d4bb-e35f-e8a5-9cd8" name="Cypher&apos;s bolt pistol" hidden="false" collective="false" import="true" type="upgrade">
@@ -296,6 +302,7 @@
         <categoryLink id="168c-f9d1-e781-617f" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
         <categoryLink id="16fb-88dd-927c-cc83" name="New CategoryLink" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
         <categoryLink id="9a28-74b0-7d93-2bc7" name="Faction: Fallen" hidden="false" targetId="e12c-dd25-cbab-a30d" primary="false"/>
+        <categoryLink id="5d4a-a329-7ea1-80f3" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="a714-db44-a0b1-854c" name="Fallen" hidden="false" collective="false" import="true">
@@ -782,64 +789,57 @@
           </conditions>
           <modifiers>
             <modifier type="add" field="category" value="cd82-15ee-cad6-4909"/>
-            <modifier type="remove" field="category" value="84e2-9fa9-ebe6-1d18"/>
           </modifiers>
         </modifierGroup>
       </modifierGroups>
       <profiles>
-        <profile id="99e9-4f45-c7e0-8c17" name="Chaos Rhino" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="99e9-4f45-c7e0-8c17" name="Chaos Rhino 1 (6+ wounds remaining)" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">12&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
             <characteristic name="W" typeId="f330-5e6e-4110-0978">10</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="cd01-b7c0-e40b-45a6" name="Chaos Rhino" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
-          <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">-</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">M</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">BS</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">A</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="31d8-33d8-2224-bb90" name="Chaos Rhino1" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
-          <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">6-10+</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">12&quot;</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">3+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">3</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="7a30-f469-2784-5c44" name="Chaos Rhino2" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
-          <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">3-5</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">6&quot;</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">4+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">D3</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="db34-8905-af22-bcde" name="Chaos Rhino3" hidden="false" typeId="5f4f-ea74-0630-4afe" typeName="Wound Track">
-          <characteristics>
-            <characteristic name="Remaining W" typeId="8e45-c866-b2d4-c9ab">1-2</characteristic>
-            <characteristic name="Characteristic 1" typeId="bf41-c860-50bc-2a7e">3&quot;</characteristic>
-            <characteristic name="Characteristic 2" typeId="dc18-e51f-309b-8efa">5+</characteristic>
-            <characteristic name="Characteristic 3" typeId="df06-8eca-150f-90ba">1</characteristic>
-          </characteristics>
-        </profile>
         <profile id="1e25-c5dc-c1ea-6ce8" name="Chaos Rhino" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 10 FALLEN INFANTRY models. It cannot, however, transport TERMINATORS , CULT OF DESTRUCTION or JUMP PACK models.</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 10 FALLEN INFANTRY models. It cannot transport JUMP PACK models.</characteristic>
           </characteristics>
         </profile>
         <profile id="51c0-1450-ae1c-ec04" name="Self-repair" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Roll a D6 at the start of each of your turns; on a 6, this unit heals one wound.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="d09b-4481-b475-919c" name="Chaos Rhino 2 (3-5 wounds remaining)" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">D3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="e873-c39e-d191-7796" name="Chaos Rhino 3 (1-2 wounds remaining)" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">3&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -854,6 +854,7 @@
         <categoryLink id="3fd0-ead8-b805-62df" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="22ae-b313-e900-6b89" name="Faction: Fallen" hidden="false" targetId="e12c-dd25-cbab-a30d" primary="false"/>
         <categoryLink id="bc48-6395-7df0-fb22" name="Fallen Angels" hidden="false" targetId="cd82-15ee-cad6-4909" primary="false"/>
+        <categoryLink id="e8da-54d7-b5fa-495f" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="347b-67ea-d9a8-3388" name="Smoke Launchers" hidden="false" collective="false" import="true" targetId="2da9-e64f-fece-7504" type="selectionEntry">
@@ -965,6 +966,7 @@
         <categoryLink id="f6b6-7a48-cd0c-1d4c" name="Faction: Fallen" hidden="false" targetId="e12c-dd25-cbab-a30d" primary="false"/>
         <categoryLink id="16bb-3aa4-96a7-5de7" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
         <categoryLink id="97e0-ed18-9e70-ddaa" name="Fallen Angels" hidden="false" targetId="cd82-15ee-cad6-4909" primary="false"/>
+        <categoryLink id="b678-92a1-e24a-4021" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="9f03-5778-e1a7-41ef" name="Jump Pack" hidden="false" collective="false" import="true" type="upgrade">
@@ -1202,7 +1204,7 @@
             <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Any attacks with a wound roll of 6+ made with this weapon have a Damage characteristic of D6 instead of D3.</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made ith this weapon, on a wound roll of 6+, that attack has a Damage characteristic of D6.</characteristic>
           </characteristics>
         </profile>
         <profile id="e83f-567f-c2b5-5fc2" name="Caliban Steel Blade" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -1453,6 +1455,9 @@
               </conditions>
             </modifier>
           </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6344-b55e-fa1a-d402" type="max"/>
+          </constraints>
           <infoLinks>
             <infoLink id="a8a1-ba5c-bd8e-d83d" name="Fallen Angels" hidden="false" targetId="77ef-14af-644c-c8bb" type="rule"/>
           </infoLinks>
@@ -1795,8 +1800,25 @@
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
-    <rule id="77ef-14af-644c-c8bb" name="Fallen Angels" hidden="false">
-      <description>Use this Stratagem when choosing your army. You can include Sorcerers and Chaos Rhinos in a Vanguard Detachment that includes only FALLEN units. If you do so, they replace their &lt;MARK OF CHAOS&gt;, HERETIC ASTARTES and &lt;LEGION&gt; keywords with the FALLEN keyword. FALLEN Sorcerers also replace their Death to the False Emperor ability with the Fallen Angels ability from the Fallen datasheet. Pick a FALLEN Detachment from your army to be a Fallen Angels Specialist Detachment. FALLEN units in that Detachment gain the FALLEN ANGELS keyword, but they lose the IMPERIUM Faction keyword (if they have it).</description>
+    <rule id="77ef-14af-644c-c8bb" name="Fallen Angels" hidden="true">
+      <description>Use this Stratagem before the battle, when you are mustering your army. You can include one Fallen Angels Specialist Detachment in your army.
+
+A Fallen Angels Specialist Detachment is a Vanguard Detachment that contains only:
+- FALLEN units
+- Sorceror units
+- Chaos Rhino units
+
+Sorcerer units in a Fallen Angels Specialist Detachment
+- Have their &lt;MARK OF CHAOS&gt;, HERETIC ASTARTES and &lt;LEGION&gt; Faction keywords replaced with IMPERIUM and FALLEN Faction keywords.
+- Have their Death to the False Emperor ability replaced with the Fallen Angels ability.
+
+Chaos Rhinos in a Fallen Angels Specialist Detachment
+- Have their &lt;MARK OF CHAOS&gt;, HERETIC ASTARTES and &lt;LEGION&gt; Faction keywords replaced with IMPERIUM and FALLEN Faction keywords.
+- Have their Transport section replaced with the following:
+- &apos;This model has a transport capacity of 10 FALLEN INFANTRY models. It cannot transport JUMP PACK models.&apos;
+
+Units in a Fallen Angels Specialist Detachment gain the FALLEN ANGELS keyword.
+</description>
     </rule>
   </sharedRules>
   <sharedProfiles>

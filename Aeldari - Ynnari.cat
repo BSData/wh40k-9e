@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="81" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://discord.gg/KqPVhds" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="181" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="86" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <comment>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</comment>
   <readme>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</readme>
   <publications>
@@ -38,6 +38,7 @@
     <categoryEntry id="e199-a6b3-c954-bbbe" name="Master Archon" hidden="false"/>
     <categoryEntry id="3fa5-9569-a481-fdad" name="Master Succubus" hidden="false"/>
     <categoryEntry id="19a9-184d-4492-40ce" name="Master Haemonculus" hidden="false"/>
+    <categoryEntry id="92a6-236b-ae84-c050" name="Wraith Host" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="a049-52ed-ef53-63ec" name="Yvraine" hidden="false" collective="false" import="true" targetId="1409-e740-c7c9-3758" type="selectionEntry">
@@ -600,6 +601,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="746d-c99b-ba49-17bb" name="Stratagem: Exalted of Ynnead" publicationId="5b08-09e5-a80a-fd67" page="91" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b840-e4c9-08e2-f599" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3242-73b4-23aa-ed62" type="max"/>
@@ -1186,7 +1194,7 @@
       <profiles>
         <profile id="44eb-d278-ad77-f659" name="Player of the Twilight" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle you can re-roll a hit roll, wound roll, or save roll made for your warlord. In addition, if your army is Battle-forged and your warlord is on the battlefield, roll a D6 each time you or your opponent uses a stratagem. If the result exactly matches the number of command points spent to use that stratagem, then you gain that many command points. The limit of gaining or refunding 1 Command point per battle round does not apply to any Command points gained via this Warlord Trait.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle you can re-roll a hit roll, wound roll, or save roll made for your warlord. In addition, if your army is Battle-forged and your warlord is on the battlefield, roll a D6 each time you or your opponent uses a stratagem. If the result exactly matches the number of command points spent to use that stratagem, then you gain that many command points. The limit of gaining or refunding 1 Command point per battle round does not apply to any Command points gained via this Warlord Trait, but once this Warlord Trait has been triggered, no more Command points can be gained via it until the start of the next battle round.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -1750,12 +1758,12 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
       <modifiers>
         <modifier type="set" field="734d-f997-4fc7-a172" value="3.0">
           <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="equalTo"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="equalTo"/>
           </conditions>
         </modifier>
         <modifier type="set" field="734d-f997-4fc7-a172" value="2.0">
           <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="equalTo"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="equalTo"/>
           </conditions>
         </modifier>
         <modifier type="set" field="hidden" value="true">
@@ -1765,7 +1773,7 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="734d-f997-4fc7-a172" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="734d-f997-4fc7-a172" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a166-b1d8-5bfe-3a99" type="max"/>
       </constraints>
       <profiles>
@@ -1798,6 +1806,7 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="d17c-833d-24e3-7af0" name="Competitive Edge" hidden="false" collective="false" import="true" type="upgrade">
@@ -1905,7 +1914,7 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
               <characteristics>
                 <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">5</characteristic>
                 <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
-                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">If manifested, Select one friendly ynnari infantry, or YNNARI BIKER unit within 18&quot; of the psyker. One model in that unit regains d3 lost wounds. If no models in that unit have lost any wounds, but that unit has suffered one or more casualties, then 1 model is returned to that unit, in unit coherency, with 1 wound remaining.</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">If manifested, select one friendly YNNARI INFANTRY or YNNARI BIKER unit within 18&quot; of this psyker. If that unit contains a model that has lost any wounds, that model regains up to D3 lost wounds. Otherwise, if any models from that unit have been destroyed, roll one D6; on a 4+ you can return one destroyed model from that unit to the battlefield with 1 wound remaining, placing it in unit coherency (if the model cannot be placed in this way, it is not returned to the battlefield).</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -2031,6 +2040,9 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
           </conditionGroups>
         </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="75e2-5acb-f053-7663" type="max"/>
+      </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="a79d-f56b-2797-33af" name="Warlord Traits (Specialist Detachment)" hidden="false" collective="false" import="true">
           <modifiers>
@@ -2059,9 +2071,14 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
             <entryLink id="5b49-070f-0034-f011" name="Revered By The Dead" hidden="false" collective="false" import="true" targetId="a686-820f-8ad2-4b92" type="selectionEntry">
               <modifiers>
                 <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c601-a852-5956-5a37" type="equalTo"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c601-a852-5956-5a37" type="equalTo"/>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="92a6-236b-ae84-c050" type="notInstanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -2079,7 +2096,7 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
                 <conditionGroup type="or">
                   <conditions>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="20fc-5c6e-4a04-320f" type="lessThan"/>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d043-3847-e963-fb5d" type="greaterThan"/>
                   </conditions>
                 </conditionGroup>
@@ -3055,7 +3072,7 @@ form, it is automatically passed. In addition, each time a model with this form 
                   <profiles>
                     <profile id="c199-1d67-b14d-950d" name="Dark Technomancers (All-Consuming)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                       <characteristics>
-                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a unit with this Obsession is selected to shoot, you can choose to enhace any or all of the ranged weapons models in that unit are equipped with. If you do so, until the end of the phase, each time an attack is made with an enhanced weapon, add 1 to that attack&apos;s wound roll and add 1 to the Damage characteristic of that attack, but that attack&apos;s hit roll cannot be re-rolled. If any unmodified hit rolls of 1 are made for attacks with an enhanced weapon, the bearer&apos;s unit suffers 1 mortal wound after shooting with this weapon. If the bearer is a VEHICLE or MONSTER model, it suffers D3 mortal wounds instead.</characteristic>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a unit with this Obsession is selected to shoot, you can choose to enhance any or all of the ranged weapons models in that unit are equipped with (liquifier guns and twin liquifier guns can never be enhanced). If you do so, until the end of the phase, each time an attack is made with an enhanced weapon, add 1 to that attack&apos;s wound roll and add 1 to the Damage characteristic of that attack, but that attack&apos;s hit roll cannot be re-rolled. If any unmodified hit rolls of 1 are made for attacks with an enhanced weapon, the bearer&apos;s unit suffers 1 mortal wound after shooting with this weapon. If the bearer is a VEHICLE or MONSTER model, it suffers D3 mortal wounds instead.</characteristic>
                       </characteristics>
                     </profile>
                   </profiles>
