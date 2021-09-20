@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="c553-15f3-3890-be39" name="Chaos - Thousand Sons" revision="105" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="c553-15f3-3890-be39" name="Chaos - Thousand Sons" revision="107" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="b805-771c-6a82-7307" name="Codex: Thousand Sons 2021" publicationDate="2021-08-14"/>
   </publications>
@@ -161,6 +161,7 @@
     </categoryEntry>
     <categoryEntry id="02bc-0a8e-c2ec-995f" name="Chaos Predator Annihilator" hidden="false"/>
     <categoryEntry id="32a3-dd5f-925b-0a2e" name="Exalted Sorcerer" hidden="false"/>
+    <categoryEntry id="dcc5-345a-bb81-8d01" name="Machine Spirit" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="8d04-1842-4c3f-0d5f" name="Chaos Land Raider" hidden="false" collective="false" import="true" targetId="6991-43a5-55d4-323f" type="selectionEntry">
@@ -5031,7 +5032,7 @@
               <characteristics>
                 <characteristic name="Cast" typeId="5afb-9914-904b-d3b3">1</characteristic>
                 <characteristic name="Deny" typeId="b5ac-9c20-5d5a-6f9b">1</characteristic>
-                <characteristic name="Powers Known" typeId="69d7-b45e-00a2-7e46">Smite and one power from the Discipline of Change and/or the Discipline of Vengeance</characteristic>
+                <characteristic name="Powers Known" typeId="69d7-b45e-00a2-7e46">Smite and one power from the Discipline of Change or the Discipline of Vengeance</characteristic>
                 <characteristic name="Other" typeId="c2e2-f115-0003-5d7b">-</characteristic>
               </characteristics>
             </profile>
@@ -5068,8 +5069,24 @@
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ee65-2bb0-38ae-ed76" type="max"/>
               </constraints>
               <entryLinks>
-                <entryLink id="8093-b6c4-28be-0851" name="Discipline of Change" hidden="false" collective="false" import="true" targetId="c436-bcc7-8498-be61" type="selectionEntryGroup"/>
-                <entryLink id="017f-228a-a933-edaf" name="Discipline of Vengeance" hidden="false" collective="false" import="true" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup"/>
+                <entryLink id="8093-b6c4-28be-0851" name="Discipline of Change" hidden="false" collective="false" import="true" targetId="c436-bcc7-8498-be61" type="selectionEntryGroup">
+                  <modifiers>
+                    <modifier type="set" field="hidden" value="true">
+                      <conditions>
+                        <condition field="selections" scope="d642-1927-cfeb-c527" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cca1-01a1-45fa-e054" type="greaterThan"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
+                <entryLink id="017f-228a-a933-edaf" name="Discipline of Vengeance" hidden="false" collective="false" import="true" targetId="cca1-01a1-45fa-e054" type="selectionEntryGroup">
+                  <modifiers>
+                    <modifier type="set" field="hidden" value="true">
+                      <conditions>
+                        <condition field="selections" scope="d642-1927-cfeb-c527" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c436-bcc7-8498-be61" type="greaterThan"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                </entryLink>
               </entryLinks>
             </selectionEntryGroup>
           </selectionEntryGroups>
@@ -6013,9 +6030,6 @@
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="b718-f988-991d-85b7" name="Special Abilities" hidden="false" targetId="e4fd-b1fa-9c9c-3138" type="infoGroup"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="69fa-3679-e364-db5c" name="New CategoryLink" hidden="false" targetId="ca10-a5dd-f54f-0ed5" primary="false"/>
         <categoryLink id="33a0-b0b0-ebf3-faa4" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
@@ -7139,9 +7153,13 @@
             <characteristic name="Other" typeId="c2e2-f115-0003-5d7b">-</characteristic>
           </characteristics>
         </profile>
+        <profile id="34c8-776f-184f-0566" name="Lord of the Thousand Sons (Aura) - Ahriman" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly THOUSAND SONS CORE unit is within 6&quot; of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1.</characteristic>
+          </characteristics>
+        </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="b086-3be0-a38c-22de" name="Lord of the Thousand Sons (Aura)" hidden="false" targetId="7b33-2619-776d-3081" type="profile"/>
         <infoLink id="839c-fcb0-1274-9583" name="Special Abilities" hidden="false" targetId="e4fd-b1fa-9c9c-3138" type="infoGroup"/>
         <infoLink id="c721-4564-612e-a8e8" name="Cabbalistic Rituals" hidden="false" targetId="e026-2d35-6641-f898" type="rule"/>
         <infoLink id="5b58-2cbe-e8c0-a632" name="Sigil of Corruption" hidden="false" targetId="327f-faf8-23fd-e7d7" type="profile"/>
@@ -7322,6 +7340,7 @@
         <categoryLink id="5308-d5c9-2a56-b717" name="New CategoryLink" hidden="false" targetId="b464-809f-7165-9db0" primary="false"/>
         <categoryLink id="5622-478c-5f89-5537" name="Faction: Arcana Astartes" hidden="false" targetId="f2f5-9b65-6c31-f63b" primary="false"/>
         <categoryLink id="7d23-07d4-b8b3-477d" name="Smokescreen" hidden="false" targetId="23b1-90ca-1e8a-d29f" primary="false"/>
+        <categoryLink id="791f-b98a-7f63-0ce4" name="Machine Spirit" hidden="false" targetId="dcc5-345a-bb81-8d01" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="0ee5-8852-4c0a-a98d" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
@@ -7805,7 +7824,7 @@
                     <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
                     <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
                     <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time you select a target for this weapon, you can ignore the Look out, Sir! rule. Each time an attack is made with this weapon, an unmodified hit roll of 2+ is always successful.</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time you select a target for this weapon, you can ignore the Look out, Sir! rule. Each time an attack is made with this weapon (including when firing Overwatch), an unmodified hit roll of 2+ is always successful.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -8780,7 +8799,7 @@
         </profile>
         <profile id="15c0-8460-774e-078c" name="Infernal Master" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows two pacts from Infernal Pacts. In your Command phase, if this model is on the battlefield, it can attempt to make a pact it knows that has not already been attempted by a friendly model that battle round. Roll one D6, on a 3+, the pact is successful.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows two pacts from Infernal Pacts. In your Command phase, if this model is on the battlefield, it can attempt to make one pact it knows that has not already been attempted by a friendly model that battle round. Roll one D6, on a 3+, the pact is successful.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -9118,7 +9137,7 @@
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="130.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="9.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="8.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name=" Cabal Points" typeId="6a06-928d-a42e-4293" value="0.0"/>
       </costs>
@@ -9214,7 +9233,7 @@
       <profiles>
         <profile id="6ffc-8e31-bd0a-a834" name="Capricious Chest" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle round, when a Psychic test is taken for a model within 18&quot; of the bearer, you can change the result of that Psychic test as follows. If that model is from your army, you can change any roll of 1 to a roll of 6. If that model is from your opponent&apos;s army, you can change any roll of 6 to a roll of 1.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle round, when a Psychic test is taken for a model within 18&quot; of the bearer, after any re-rolls have been made, you can change the result of that Psychic test as follows: if that model is from your army, you can change any dice result of 1 to a roll of 6; if that model is from your opponent&apos;s army, you can change any dice result of 6 to a roll of 1.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -9279,7 +9298,7 @@
         <profile id="251e-308a-b37b-da8c" name="Conniving Plate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- The bearer has a Save characteristic of 2+.
-- In the Fight phase, each time an enemy model within Engagement Range of the bearer selects targets for its attacks, it can only allocate up to half of its close combat attacks against the bearer.</characteristic>
+- In the Fight phase, each time an enemy model within Engagement Range of the bearer selects targets for its attacks, it can only allocate up to half of its close combat attacks against the bearer (rounding up).</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -9689,7 +9708,7 @@
       <profiles>
         <profile id="f6d1-3a25-2093-f351" name="The Prism of Echoes" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time the bearer successfully manifests a Blessing psychic power, double the range of that power&apos;s effects.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time the bearer successfully manifests a Blessing psychic power, double the first range specified in that power&apos;s effects.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -10867,11 +10886,6 @@
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="009b-907d-77fd-74b7" type="notInstanceOf"/>
               </conditions>
             </modifier>
-            <modifier type="set" field="d7a4-89f1-95c9-13a2" value="0.0">
-              <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c766-a2c3-4ac9-fbbb" type="lessThan"/>
-              </conditions>
-            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7a74-6caa-c383-c120" type="max"/>
@@ -10880,7 +10894,7 @@
           <profiles>
             <profile id="ba4a-91d9-4660-e2e6" name="Dilettante" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model can be given one additional Sorcerous Arcana relic. This must be a Reic they could have, but can be done even if this model already has a Relic. Each Relic in your army must be unique.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model can be given one additional Sorcerous Arcana relic. This must be a Relic they could have, but can be done even if this model already has a Relic. Each Relic in your army must be unique.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -11392,7 +11406,7 @@ In your Psychic phase, unless otherwise specified, you can use each Cabbalistic 
     </profile>
     <profile id="7b33-2619-776d-3081" name="Lord of the Thousand Sons (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly THOUSAND SONS CORE unit is within 6&quot; of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;GREAT CULT&gt; CORE unit is within 6&quot; of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1.</characteristic>
       </characteristics>
     </profile>
     <profile id="76b0-e74f-e2a2-f798" name="Explodes" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">

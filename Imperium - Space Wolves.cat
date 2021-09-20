@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="24b6-2b46-0063-2867" name="Imperium - Adeptus Astartes - Space Wolves" revision="204" battleScribeVersion="2.03" authorName="CrusherJoe, Mad-Spy" authorContact="@CrusherJoe, @Mad-Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="24b6-2b46-0063-2867" name="Imperium - Adeptus Astartes - Space Wolves" revision="205" battleScribeVersion="2.03" authorName="CrusherJoe, Mad-Spy" authorContact="@CrusherJoe, @Mad-Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>All LIEUTENANT models are contained within the Lieutenants &quot;unit&quot; in the HQ section. This includes the Wolf Guard Battle Leader in Terminator Armour, Wolf Guard Battle Leader on Thunderwolf and Arjac Rockfist. </readme>
   <publications>
     <publication id="24b6-2b46-pubN65537" name="Codex: Space Wolves"/>
@@ -9321,6 +9321,19 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
                 <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
+            <selectionEntry id="1589-d669-5069-6b39" name="Wolf Spears" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4f1b-2c44-37bb-4fb3" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="c3cb-6244-a7ec-37c2" name="Dark Terror" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Add 1 to Advance rolls and charge rolls made for units with this tactic.
+- Each time a ranged attack is made against a unit with this tactic by a model that is more than 18&quot; away, the unit with this tactic is treated as having the benefits of light cover against that attack.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
           </selectionEntries>
           <entryLinks>
             <entryLink id="47f3-3eb7-72ce-115b" name="Forge World Chapters" hidden="false" collective="false" import="true" targetId="3700-470e-f75d-6cba" type="selectionEntryGroup"/>
@@ -9332,11 +9345,18 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
                   <conditions>
-                    <condition field="selections" scope="5b31-21ba-9d8f-55a1" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6431-d737-ee77-8c22" type="equalTo"/>
-                    <condition field="selections" scope="5b31-21ba-9d8f-55a1" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5a3e-1d0d-9f94-dd52" type="equalTo"/>
+                    <condition field="selections" scope="5b31-21ba-9d8f-55a1" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1589-d669-5069-6b39" type="equalTo"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="5b31-21ba-9d8f-55a1" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6431-d737-ee77-8c22" type="equalTo"/>
+                        <condition field="selections" scope="5b31-21ba-9d8f-55a1" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5a3e-1d0d-9f94-dd52" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -9999,7 +10019,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d043-3847-e963-fb5d" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5efd-6285-c9f7-2a5a" type="equalTo"/>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4da8-aa69-77ec-b49e" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4da8-aa69-77ec-b49e" type="equalTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -10320,6 +10340,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         <entryLink id="e232-c4bc-b8ed-8e64" name="Chapter Ancient Relics" hidden="false" collective="false" import="true" targetId="d324-98f1-ecad-c28a" type="selectionEntryGroup"/>
         <entryLink id="468d-8e1b-af40-1ab1" name="Special-Issue Wargear" hidden="false" collective="false" import="true" targetId="81fa-73cf-0cea-37a0" type="selectionEntryGroup"/>
         <entryLink id="655d-e95f-3f0f-8a9b" name="Chapter Master Relics" hidden="false" collective="false" import="true" targetId="65f9-e6ba-7666-0267" type="selectionEntryGroup"/>
+        <entryLink id="7f30-cdac-6148-15b3" name="Relics - Wolf Spears" hidden="false" collective="false" import="true" targetId="df8e-477b-aa1f-0a6b" type="selectionEntryGroup"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="c55b-ceca-3892-5504" name="Warlord Traits" hidden="false" collective="false" import="true">
@@ -10346,6 +10367,11 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
       <entryLinks>
         <entryLink id="587b-aaeb-9232-aa68" name="Warlord Traits (SW)" hidden="false" collective="false" import="true" targetId="4b0f-2bc6-edd6-6c5e" type="selectionEntryGroup">
           <modifiers>
+            <modifier type="increment" field="202e-9f40-59c6-629d" value="1.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ad41-3ce3-001e-7a9c" type="equalTo"/>
+              </conditions>
+            </modifier>
             <modifier type="increment" field="90f5-1de3-06b1-2651" value="1.0">
               <conditions>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ad41-3ce3-001e-7a9c" type="equalTo"/>
@@ -10354,6 +10380,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="90f5-1de3-06b1-2651" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="202e-9f40-59c6-629d" type="min"/>
           </constraints>
         </entryLink>
         <entryLink id="e8c2-9907-abf9-7070" name="Warlord Traits (BRB)" hidden="false" collective="false" import="true" targetId="d442-1f03-d9da-e77f" type="selectionEntryGroup">
@@ -10438,6 +10465,11 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f5da-2f69-6fca-e565" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="6bf6-f01c-836d-e800" name="Warlord Traits (Wolf Spears)" hidden="false" collective="false" import="true" targetId="7b13-31df-d53a-0262" type="selectionEntryGroup">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ad7e-5dca-06a3-64f7" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="22ae-a50b-bdc5-085e" name="Disciplines" hidden="false" collective="false" import="true">
@@ -10504,6 +10536,142 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           </constraints>
         </entryLink>
       </entryLinks>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="7b13-31df-d53a-0262" name="Warlord Traits (Wolf Spears)" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1589-d669-5069-6b39" type="equalTo"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d043-3847-e963-fb5d" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5efd-6285-c9f7-2a5a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <selectionEntries>
+        <selectionEntry id="c906-2778-35f1-3165" name="Strike for the Throat" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="ef9d-71f6-f763-9fa0" name="Strike for the Throat" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD makes a melee attack:
+- You can re-roll the hit roll.
+- Improve the Armour Penetration characteristic of that attack by 1.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="bf97-2b42-45a6-b46b" name="Hunt from Afar" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="7ce2-eb9c-3a54-1cda" name="Hunt from Afar" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD makes a ranged attack against a non-VEHICLE, non-MONSTER unit, an unmodified hit roll of 2+ is successful and an unmodified wound roll of 2+ is successful.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="a184-f59f-9b0a-027f" name="Howling Beast" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="ff94-ed69-3ba3-a954" name="Howling Beast" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While this WARLORD is within Engagement Range of any enemy models with a Leadership characteristic of 7 or less, add 2 to its Attacks characteristic.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="df8e-477b-aa1f-0a6b" name="Relics - Wolf Spears" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1589-d669-5069-6b39" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="799e-fc2f-0243-7c6f" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="520c-ad3b-3fd9-d00e" name="Elemental Shroud" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4c01-314a-0cd5-0991" type="max"/>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4aa6-f015-1432-2e3d" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="7101-1c47-ad5b-f176" name="Elemental Shroud" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time an attack is made against the bearer, subtract 1 from that attack&apos;s hit roll.
+- The bearer is not an eligible target for ranged attacks if it is more than 18&quot; away from the firing model. If the bearer makes any kind of move, it loses the benefit of this part of this Relic until the start of your next Movement phase.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="0502-6a7b-df2d-e96e" name="Totem of Storms" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e691-aad7-d21c-1023" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="39dd-47a1-fc26-a397" type="max"/>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d1e1-9dec-f45f-c6c4" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="09e2-d742-0745-2f5b" name="Totem of Storms" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle round, you can re-roll one Psychic test or Deny the Witch test taken for this model.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="996f-0a89-c5e6-2790" name="Blacktooth" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e53b-4196-cae3-2846" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bc0b-c19f-0b71-081e" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ddbb-99a1-02ab-d3b9" type="max"/>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9111-7bb0-4fb6-dfb3" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="6c18-6a4a-7172-701c" name="Blacktooth" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it makes 2 additional attacks with this weapon. Each time an attack is made with this weapon, if the wound roll is successful, the target suffers 1 mortal wound and the attack sequence ends.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="c7ca-241a-871b-295d" name="Blacktooth" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Model equipped with a combat knife or paired combat blades only. This Relic replaces a combat knife or paired combat blades and has the profile below.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
