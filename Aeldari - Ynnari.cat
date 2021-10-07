@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="89" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Ynnari" revision="91" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <comment>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</comment>
   <readme>This library will now be an Aeldari library - all shared pointy ear stuff now lives here</readme>
   <publications>
@@ -39,6 +39,55 @@
     <categoryEntry id="3fa5-9569-a481-fdad" name="Master Succubus" hidden="false"/>
     <categoryEntry id="19a9-184d-4492-40ce" name="Master Haemonculus" hidden="false"/>
     <categoryEntry id="92a6-236b-ae84-c050" name="Wraith Host" hidden="false"/>
+    <categoryEntry id="1901-9207-776e-440a" name="Faction: Kabal of the Black Heart" hidden="false"/>
+    <categoryEntry id="ea2c-23fe-8940-b025" name="Faction: Kabal of the Flayed Skull" hidden="false"/>
+    <categoryEntry id="2c6f-d839-448d-e960" name="Faction: Kabal of the Obsidian Rose" hidden="false"/>
+    <categoryEntry id="707a-f581-ea34-fcbc" name="Faction: Kabal of the Poisoned Tongue" hidden="false"/>
+    <categoryEntry id="2abb-746b-68e4-06bf" name="Faction: *Custom Kabal*" hidden="false"/>
+    <categoryEntry id="59ac-afb9-737f-d5e8" name="Faction: The Coven of Twelve" hidden="false"/>
+    <categoryEntry id="e5c9-78c3-68e1-3f2a" name="Faction: The Dark Creed" hidden="false"/>
+    <categoryEntry id="fd0f-38ff-ad75-dd2f" name="Faction: The Prophets of Flesh" hidden="false"/>
+    <categoryEntry id="9ca5-9b47-9e28-0868" name="Faction: *Custom Coven*" hidden="false"/>
+    <categoryEntry id="004d-daf6-c068-6dec" name="Faction: Wych Cult of the Cursed Blade" hidden="false"/>
+    <categoryEntry id="0067-adab-22c9-e827" name="Faction: *Custom Cult*" hidden="false"/>
+    <categoryEntry id="e18c-58b8-c8d8-2c8c" name="Faction: Wych Cult of the Red Grief" hidden="false"/>
+    <categoryEntry id="0fa5-c739-c66f-3d88" name="Archon" hidden="false">
+      <modifiers>
+        <modifier type="set" field="c795-fc29-bcf6-aa73" value="1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5fc1-0bf5-caf9-3702" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c795-fc29-bcf6-aa73" type="min"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry id="65d3-140a-2185-ef41" name="Haemonculus" hidden="false">
+      <modifiers>
+        <modifier type="set" field="d6af-2e38-f65d-3c57" value="1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5fc1-0bf5-caf9-3702" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d6af-2e38-f65d-3c57" type="min"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry id="ef20-5196-feb6-f23d" name="Succubus" hidden="false">
+      <modifiers>
+        <modifier type="set" field="76a0-724a-d802-1d8c" value="1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5fc1-0bf5-caf9-3702" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="76a0-724a-d802-1d8c" type="min"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry id="9c70-9a0a-6131-0324" name="Beastmaster" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="a049-52ed-ef53-63ec" name="Yvraine" hidden="false" collective="false" import="true" targetId="1409-e740-c7c9-3758" type="selectionEntry">
@@ -1320,7 +1369,33 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="e322-8466-e106-e97b" name="Deathly Perfectionist" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="e322-8466-e106-e97b" name="Deathly Perfectionist" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0fa5-c739-c66f-3d88" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9c6b-c47c-ab1b-5048" type="greaterThan"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1800-8e18-43c8-770e" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fa66-1b74-39b7-2422" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="0dc0-83f6-c7ec-fff5" name="Deathly Perfectionist" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1334,7 +1409,33 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="4a38-02a7-bf94-b9aa" name="Famed Savagery" publicationId="d30d-3c56-21b5-f9a4" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="4a38-02a7-bf94-b9aa" name="Famed Savagery" publicationId="d30d-3c56-21b5-f9a4" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0fa5-c739-c66f-3d88" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="acee-8ab0-c23e-4c09" type="greaterThan"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a648-9f1a-b826-1551" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fa66-1b74-39b7-2422" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="82be-9e9a-28b9-fba3" name="Famed Savagery" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1362,7 +1463,33 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="f0d8-2adb-40b2-4724" name="Labyrinthine Cunning" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="f0d8-2adb-40b2-4724" name="Labyrinthine Cunning" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0fa5-c739-c66f-3d88" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9578-d498-fba4-cd50" type="greaterThan"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6ed6-c5e3-6d24-6c8a" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fa66-1b74-39b7-2422" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="9992-536b-dea8-e85a" name="Labyrinthine Cunning" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1391,7 +1518,33 @@ Once per turn, when an enemy model that is within 6&quot; of this WARLORD is des
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="f897-5d5e-e5cb-8d75" name="Towering Arrogance" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="f897-5d5e-e5cb-8d75" name="Towering Arrogance" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0fa5-c739-c66f-3d88" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6edf-c20b-0f65-505b" type="greaterThan"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9b1e-6d3f-89cd-c366" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fa66-1b74-39b7-2422" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="4771-234e-5a83-7ee3" name="Towering Arrogance" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1410,7 +1563,33 @@ Once per turn, when an enemy model that is within 6&quot; of this WARLORD is des
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="fd7c-a1af-3cfa-e38c" name="Diabolical Soothsayer" publicationId="d30d-3c56-21b5-f9a4" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="fd7c-a1af-3cfa-e38c" name="Diabolical Soothsayer" publicationId="d30d-3c56-21b5-f9a4" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="65d3-140a-2185-ef41" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="295b-e432-2735-3f14" type="greaterThan"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="90da-5bb3-77e0-c5bf" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6953-5b59-c75b-7429" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="fbaf-a09d-f21e-698c" name="Diabolical Soothsayer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1426,7 +1605,33 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="e847-b918-6473-dff5" name="Fear Incarnate" publicationId="d30d-3c56-21b5-f9a4" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="e847-b918-6473-dff5" name="Fear Incarnate" publicationId="d30d-3c56-21b5-f9a4" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="65d3-140a-2185-ef41" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7537-2f60-1fa3-9fbc" type="greaterThan"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1286-d92f-3751-cfa7" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6953-5b59-c75b-7429" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="83f1-6d40-01f8-f3f5" name="Fear Incarnate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1482,7 +1687,33 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="5adc-b23b-5955-05ac" name="Scarlet Epicurean" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="5adc-b23b-5955-05ac" name="Scarlet Epicurean" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="65d3-140a-2185-ef41" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1397-5f48-6ed3-2f31" type="greaterThan"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c3fa-6a83-ea20-2ecf" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6953-5b59-c75b-7429" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="32b6-9a6c-9ef0-afeb" name="Scarlet Epicurean" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1496,7 +1727,33 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="d819-6df6-ff33-c63c" name="Blood Dancer" publicationId="d30d-3c56-21b5-f9a4" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="d819-6df6-ff33-c63c" name="Blood Dancer" publicationId="d30d-3c56-21b5-f9a4" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ed5b-af8c-e567-95e7" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b66-4add-9ad9-2ff7" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d75e-64da-9773-ce45" type="greaterThan"/>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2538-0722-fa84-1db3" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="ce24-cb6e-a043-5276" name="Blood Dancer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1510,7 +1767,26 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="d21d-bbe9-4ea2-78da" name="Hyper-swift Reflexes" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="d21d-bbe9-4ea2-78da" name="Hyper-swift Reflexes" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5cb6-01eb-e0ad-067f" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ab58-2035-2d67-b5f5" type="greaterThan"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b66-4add-9ad9-2ff7" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="055d-c5ad-bb39-b105" name="Hyper-swift Reflexes" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1566,7 +1842,26 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="3f1b-0f6f-90be-4bac" name="Treacherous Deceiver" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="3f1b-0f6f-90be-4bac" name="Treacherous Deceiver" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c6ce-d06c-31a4-a035" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="8110-3496-8836-ece4" type="greaterThan"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b66-4add-9ad9-2ff7" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="3b98-3246-235b-8f19" name="Treacherous Deceiver" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1809,7 +2104,33 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="d17c-833d-24e3-7af0" name="Competitive Edge" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="d17c-833d-24e3-7af0" name="Competitive Edge" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ed5b-af8c-e567-95e7" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b66-4add-9ad9-2ff7" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d75e-64da-9773-ce45" type="greaterThan"/>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2538-0722-fa84-1db3" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="7e34-d84f-9339-74e7" name="Competitive Edge" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1823,7 +2144,33 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="a13d-e3e0-4e41-051f" name="Unparalleled Agony" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="a13d-e3e0-4e41-051f" name="Unparalleled Agony" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ed5b-af8c-e567-95e7" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b66-4add-9ad9-2ff7" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d75e-64da-9773-ce45" type="greaterThan"/>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2538-0722-fa84-1db3" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="b227-629b-0d7f-a693" name="Unparalleled Agony" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -1837,7 +2184,33 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="cc06-f9bb-7f32-6341" name="Master Executioner" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="cc06-f9bb-7f32-6341" name="Master Executioner" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ed5b-af8c-e567-95e7" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b66-4add-9ad9-2ff7" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d75e-64da-9773-ce45" type="greaterThan"/>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2538-0722-fa84-1db3" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="a1da-25db-de8b-4a82" name="Master Executioner" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -2144,7 +2517,7 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
                   <conditions>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="955e-536a-e290-5dcf" type="lessThan"/>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="105d-2b08-1dc3-2f69" type="notInstanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0fa5-c739-c66f-3d88" type="notInstanceOf"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -2159,21 +2532,14 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
                   <conditions>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="955e-536a-e290-5dcf" type="lessThan"/>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="65d3-140a-2185-ef41" type="notInstanceOf"/>
                   </conditions>
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="43ef-6837-7167-e8ec" type="notInstanceOf"/>
-                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6dc4-d2cd-0f45-5586" type="notInstanceOf"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink id="4aee-16c5-aab0-7916" name="Warlord Trait (Succubus)" hidden="false" collective="false" import="true" targetId="7771-c894-b60b-26fc" type="selectionEntryGroup">
+        <entryLink id="4aee-16c5-aab0-7916" name="Warlord Trait (Wych Cult)" hidden="false" collective="false" import="true" targetId="7771-c894-b60b-26fc" type="selectionEntryGroup">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
@@ -2185,8 +2551,8 @@ Until the end of the battle, add 1 to this WARLORD&apos;s Movement and Attacks c
                   <conditionGroups>
                     <conditionGroup type="and">
                       <conditions>
-                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="859a-9acf-049d-dcd9" type="notInstanceOf"/>
-                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ce1e-8a0d-dae0-8bd3" type="notInstanceOf"/>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9c70-9a0a-6131-0324" type="notInstanceOf"/>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef20-5196-feb6-f23d" type="notInstanceOf"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -3878,44 +4244,12 @@ Each time you declare a charge for a unit with this Obsession, if there are no o
       </constraints>
       <entryLinks>
         <entryLink id="b944-9998-4a54-4665" name="Ancient Evil" hidden="false" collective="false" import="true" targetId="4fb6-1bde-ce29-7113" type="selectionEntry"/>
-        <entryLink id="fb3e-0b94-b685-0169" name="Deathly Perfectionist" hidden="false" collective="false" import="true" targetId="e322-8466-e106-e97b" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1800-8e18-43c8-770e" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="fb3e-0b94-b685-0169" name="Deathly Perfectionist" hidden="false" collective="false" import="true" targetId="e322-8466-e106-e97b" type="selectionEntry"/>
         <entryLink id="3eaf-801c-5cf9-28be" name="Hatred Eternal" hidden="false" collective="false" import="true" targetId="633e-dab2-f67f-0757" type="selectionEntry"/>
         <entryLink id="dcaa-1391-d7ed-9bb9" name="Soulthirst" hidden="false" collective="false" import="true" targetId="311b-18b0-3afa-95bc" type="selectionEntry"/>
-        <entryLink id="a094-fd25-597b-39b8" name="Famed Savagery" hidden="false" collective="false" import="true" targetId="4a38-02a7-bf94-b9aa" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a648-9f1a-b826-1551" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="6b2e-801a-e361-44fd" name="Labyrinthine Cunning" hidden="false" collective="false" import="true" targetId="f0d8-2adb-40b2-4724" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6ed6-c5e3-6d24-6c8a" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="e1e4-2451-b8b9-8165" name="Towering Arrogance" hidden="false" collective="false" import="true" targetId="f897-5d5e-e5cb-8d75" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9b1e-6d3f-89cd-c366" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="a094-fd25-597b-39b8" name="Famed Savagery" hidden="false" collective="false" import="true" targetId="4a38-02a7-bf94-b9aa" type="selectionEntry"/>
+        <entryLink id="6b2e-801a-e361-44fd" name="Labyrinthine Cunning" hidden="false" collective="false" import="true" targetId="f0d8-2adb-40b2-4724" type="selectionEntry"/>
+        <entryLink id="e1e4-2451-b8b9-8165" name="Towering Arrogance" hidden="false" collective="false" import="true" targetId="f897-5d5e-e5cb-8d75" type="selectionEntry"/>
         <entryLink id="e412-f9bb-9e8d-5cf1" name="Consummate Weaponmaster" hidden="false" collective="false" import="true" targetId="07aa-68fe-1dca-74d8" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
@@ -3932,36 +4266,12 @@ Each time you declare a charge for a unit with this Obsession, if there are no o
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2e04-c764-4efd-a7c1" type="max"/>
       </constraints>
       <entryLinks>
-        <entryLink id="aed0-f6f5-2c0e-fde3" name="Diabolical Soothsayer" hidden="false" collective="false" import="true" targetId="fd7c-a1af-3cfa-e38c" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="90da-5bb3-77e0-c5bf" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="b9bb-88f6-00f2-c7e1" name="Fear Incarnate" hidden="false" collective="false" import="true" targetId="e847-b918-6473-dff5" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1286-d92f-3751-cfa7" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="aed0-f6f5-2c0e-fde3" name="Diabolical Soothsayer" hidden="false" collective="false" import="true" targetId="fd7c-a1af-3cfa-e38c" type="selectionEntry"/>
+        <entryLink id="b9bb-88f6-00f2-c7e1" name="Fear Incarnate" hidden="false" collective="false" import="true" targetId="e847-b918-6473-dff5" type="selectionEntry"/>
         <entryLink id="4dbd-7b83-0cf0-0baf" name="Master Artisan" hidden="false" collective="false" import="true" targetId="e292-ba3e-495d-11fd" type="selectionEntry"/>
         <entryLink id="0cf5-ee17-a3a5-72ae" name="Master Nemesine" hidden="false" collective="false" import="true" targetId="5d1e-57ad-3516-32b0" type="selectionEntry"/>
         <entryLink id="6ce0-b958-0c24-9a4c" name="Master Regenerist" hidden="false" collective="false" import="true" targetId="167f-031f-afd5-5132" type="selectionEntry"/>
-        <entryLink id="f891-297d-7a4f-1725" name="Scarlet Epicurean" hidden="false" collective="false" import="true" targetId="5adc-b23b-5955-05ac" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c3fa-6a83-ea20-2ecf" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="f891-297d-7a4f-1725" name="Scarlet Epicurean" hidden="false" collective="false" import="true" targetId="5adc-b23b-5955-05ac" type="selectionEntry"/>
         <entryLink id="6a41-6b72-20ec-3f91" name="Twisted Animator" hidden="false" collective="false" import="true" targetId="1755-fc77-4999-b756" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
@@ -3973,46 +4283,17 @@ Each time you declare a charge for a unit with this Obsession, if there are no o
         </entryLink>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="7771-c894-b60b-26fc" name="Warlord Trait (Succubus)" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="7771-c894-b60b-26fc" name="Warlord Trait (Wych Cult)" hidden="false" collective="false" import="true">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f883-568f-982a-9532" type="max"/>
       </constraints>
       <entryLinks>
-        <entryLink id="2588-6674-7ae8-7b3b" name="Blood Dancer" hidden="false" collective="false" import="true" targetId="d819-6df6-ff33-c63c" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d75e-64da-9773-ce45" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="4ab0-9f42-84c3-5995" name="Hyper-swift Reflexes" hidden="false" collective="false" import="true" targetId="d21d-bbe9-4ea2-78da" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ab58-2035-2d67-b5f5" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="2588-6674-7ae8-7b3b" name="Blood Dancer" hidden="false" collective="false" import="true" targetId="d819-6df6-ff33-c63c" type="selectionEntry"/>
+        <entryLink id="4ab0-9f42-84c3-5995" name="Hyper-swift Reflexes" hidden="false" collective="false" import="true" targetId="d21d-bbe9-4ea2-78da" type="selectionEntry"/>
         <entryLink id="c41c-3dbb-efb6-18df" name="Quicksilver Fighter" hidden="false" collective="false" import="true" targetId="2301-a88e-7d82-f067" type="selectionEntry"/>
         <entryLink id="49a5-90e0-447a-ca86" name="Stimm Addict" hidden="false" collective="false" import="true" targetId="748e-efe4-b81e-f602" type="selectionEntry"/>
         <entryLink id="2454-fac0-5e86-f153" name="Precision Blows" hidden="false" collective="false" import="true" targetId="d1be-7912-ca03-3e6f" type="selectionEntry"/>
-        <entryLink id="38e0-ff84-d3b1-0f31" name="Treacherous Deceiver" hidden="false" collective="false" import="true" targetId="3f1b-0f6f-90be-4bac" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8110-3496-8836-ece4" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="38e0-ff84-d3b1-0f31" name="Treacherous Deceiver" hidden="false" collective="false" import="true" targetId="3f1b-0f6f-90be-4bac" type="selectionEntry"/>
         <entryLink id="dc65-68eb-9614-e1c0" name="Whirling Death" hidden="false" collective="false" import="true" targetId="b077-728f-c102-330f" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
@@ -4022,49 +4303,200 @@ Each time you declare a charge for a unit with this Obsession, if there are no o
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink id="f2e1-0ed2-4846-3c77" name="Competitive Edge" hidden="false" collective="false" import="true" targetId="d17c-833d-24e3-7af0" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d75e-64da-9773-ce45" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="3bcf-86f7-2233-93b6" name="Unparalleled Agony" hidden="false" collective="false" import="true" targetId="a13d-e3e0-4e41-051f" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d75e-64da-9773-ce45" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="71ee-2e98-6a00-184c" name="Master Executioner" hidden="false" collective="false" import="true" targetId="cc06-f9bb-7f32-6341" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d75e-64da-9773-ce45" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="f2e1-0ed2-4846-3c77" name="Competitive Edge" hidden="false" collective="false" import="true" targetId="d17c-833d-24e3-7af0" type="selectionEntry"/>
+        <entryLink id="3bcf-86f7-2233-93b6" name="Unparalleled Agony" hidden="false" collective="false" import="true" targetId="a13d-e3e0-4e41-051f" type="selectionEntry"/>
+        <entryLink id="71ee-2e98-6a00-184c" name="Master Executioner" hidden="false" collective="false" import="true" targetId="cc06-f9bb-7f32-6341" type="selectionEntry"/>
       </entryLinks>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="6953-5b59-c75b-7429" name="Alternate Coven" hidden="false" collective="false" import="true">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d722-07be-cbdf-067f" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="1397-5f48-6ed3-2f31" name="The Coven of Twelve" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="594b-c778-cf1d-e2cf" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="baad-0461-1728-f2d8" name="Faction: The Coven of Twelve" hidden="false" targetId="59ac-afb9-737f-d5e8" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="5a97-49a9-40c8-fbd1" name="*Custom Coven*" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7d14-4cc3-b09b-76c7" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="26c7-a1cd-7a48-1fad" name="Faction: *Custom Coven*" hidden="false" targetId="9ca5-9b47-9e28-0868" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="7537-2f60-1fa3-9fbc" name="The Dark Creed" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2a81-5080-43a9-3fec" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="04a9-868e-8b43-e63e" name="Faction: The Dark Creed" hidden="false" targetId="e5c9-78c3-68e1-3f2a" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="295b-e432-2735-3f14" name="The Prophets of Flesh" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b8f-9dc1-e0ca-4c8f" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="e691-3002-0bee-a6da" name="Faction: The Prophets of Flesh" hidden="false" targetId="fd0f-38ff-ad75-dd2f" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="fa66-1b74-39b7-2422" name="Alternate Kabal" hidden="false" collective="false" import="true">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b610-54f1-a432-eb6d" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="9578-d498-fba4-cd50" name="Kabal of the Black Heart" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a8d8-6dd0-dd16-2ea5" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="1296-af1c-dd5f-8e18" name="Faction: Kabal of the Black Heart" hidden="false" targetId="1901-9207-776e-440a" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="acee-8ab0-c23e-4c09" name="Kabal of the Flayed Skull" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f2fc-1958-77a4-971f" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="064e-ccb9-393f-54f8" name="Faction: Kabal of the Flayed Skull" hidden="false" targetId="ea2c-23fe-8940-b025" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="9c6b-c47c-ab1b-5048" name="Kabal of the Obsidian Rose" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fbaa-df9a-8ed1-8a75" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="3de2-4046-f085-1080" name="Faction: Kabal of the Obsidian Rose" hidden="false" targetId="2c6f-d839-448d-e960" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="6edf-c20b-0f65-505b" name="Kabal of the Poisoned Tongue" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fd82-ce95-9b41-76b4" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="5e60-cb0e-cbd7-8bee" name="Faction: Kabal of the Poisoned Tongue" hidden="false" targetId="707a-f581-ea34-fcbc" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="c67d-45b5-319a-b3fd" name="*Custom Kabal*" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa16-1de4-3a59-5e20" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="4f34-2069-417d-396f" name="Faction: *Custom Kabal*" hidden="false" targetId="2abb-746b-68e4-06bf" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="0b66-4add-9ad9-2ff7" name="Alternate Wych Cult" hidden="false" collective="false" import="true">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="18c5-eb07-838f-6631" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="ed5b-af8c-e567-95e7" name="Wych Cult of Strife" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ac2-1543-b1b7-04b4" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="3733-44fa-9069-a516" name="Faction: Wych Cult of Strife" hidden="false" targetId="859a-9acf-049d-dcd9" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="c6ce-d06c-31a4-a035" name="Wych Cult of the Cursed Blade" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="88be-eed1-abb2-f3d0" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="7150-0a37-96dd-fde8" name="Faction: Wych Cult of the Cursed Blade" hidden="false" targetId="004d-daf6-c068-6dec" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="9d56-0abe-a4af-a4b3" name="*Custom Cult*" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f58b-c469-0b55-4f70" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="e75d-f363-8747-8a4a" name="Faction: *Custom Cult*" hidden="false" targetId="0067-adab-22c9-e827" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="5cb6-01eb-e0ad-067f" name="Wych Cult of the Red Grief" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7b87-66a6-b637-a720" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="e8ef-4225-e77d-8bce" name="Faction: Wych Cult of the Red Grief" hidden="false" targetId="e18c-58b8-c8d8-2c8c" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
