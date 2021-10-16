@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="193" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="194" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -26,6 +26,7 @@
     <publication id="0865-ee21-d1f1-ed38" name="War Zone Charadon, Act I: The Book of Rust" shortName="Book of Rust" publisher="" publicationDate="2021-03-27"/>
     <publication id="977a-446b-737a-b571" name="Chapter Approved 2021" shortName="CA2021" publicationDate="2021-06-05"/>
     <publication id="b854-bcb5-5746-e0d3" name="War Zone Charadon, Act II: The Book of Fire"/>
+    <publication id="e056-7215-247f-0a20" name="War Zone Octarius, Book 1: Rising Tide"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
