@@ -1443,7 +1443,7 @@
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After it is set up, this unit&apos;s Small Shield Sections and Large Shield Sections are treated as a single Obstacles terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Book:
 - Defence Line
-- Defnensible
+- Defensible
 - Light Cover
 - Heavy Cover
 - Unstable Position
