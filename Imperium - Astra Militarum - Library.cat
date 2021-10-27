@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="a2d9-e3b7-13cc-6f15" name="Imperium - Astra Militarum - Library" revision="72" battleScribeVersion="2.03" authorName="Jon K, Joe B, Wil" authorContact="Discord: @Alphalas, @CrusherJoe, @GenWilhelm | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="192" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="a2d9-e3b7-13cc-6f15" name="Imperium - Astra Militarum - Library" revision="74" battleScribeVersion="2.03" authorName="Jon K, Joe B, Wil" authorContact="Discord: @Alphalas, @CrusherJoe, @GenWilhelm | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="195" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="53e9d88f--pubN88319" name="Codex: Astra Militarum"/>
     <publication id="53e9d88f--pubN183884" name="GW Datasheet"/>
@@ -215,6 +215,7 @@
     <categoryEntry id="8a48-22fc-3bf4-43d4" name="Death Korps Marshal Karis Venner" hidden="false"/>
     <categoryEntry id="7289-ad8d-d326-02b6" name="Faction: Tanith" hidden="false"/>
     <categoryEntry id="3bb8-2f9a-48de-c16f" name="Gaunt&apos;s Ghosts" hidden="false"/>
+    <categoryEntry id="e877-5452-e7f3-cd31" name="Whiteshields" hidden="false"/>
   </categoryEntries>
   <rules>
     <rule id="431d-d055-dd6e-d714" name="Defenders of Humanity" hidden="false">
@@ -9754,14 +9755,21 @@
         </modifier>
       </modifiers>
       <profiles>
-        <profile id="c316-87ca-4d44-9718" name="Raw Recruits" publicationId="53e9d88f--pubN88319" page="93" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="c251-473d-4332-4a89" name="Raw Recruits" publicationId="53e9d88f--pubN88319" page="93" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="95bf-a6bb-aa87-0baa" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <characteristics>
             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Roll a D6 each time an OFFICER uses the Voice of Command ability to issue an order to this unit; on a 4+ the order applies as normal, otherwise the order has no effect and no other orders can be issued to this unit for the rest of the turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="9578-d13b-0719-eced" name="New InfoLink" hidden="false" targetId="fdd8-1a5f-5722-d6ee" type="profile"/>
+        <infoLink id="9578-d13b-0719-eced" name="Frag grenades" hidden="false" targetId="fdd8-1a5f-5722-d6ee" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="5cc0-ba19-c10c-1d7a" name="Conscript" hidden="false" targetId="6048-305b-52c9-b696" primary="false"/>
@@ -9777,6 +9785,13 @@
           </constraints>
           <profiles>
             <profile id="d6ab-d638-e587-2ff2" name="Conscript" publicationId="53e9d88f--pubN88319" page="36" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <modifiers>
+                <modifier type="set" field="00ca-f8b8-876d-b705" value="6">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="95bf-a6bb-aa87-0baa" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
               <characteristics>
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
@@ -9804,10 +9819,36 @@
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
+        <selectionEntry id="dbab-25e8-deb3-361d" name="Whiteshields" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="a3c1-0c09-d6c8-1186" value="1.0">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="95bf-a6bb-aa87-0baa" type="greaterThan"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="c2a4-2c1c-3288-dc5f" value="1.0">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="95bf-a6bb-aa87-0baa" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a3c1-0c09-d6c8-1186" type="min"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c2a4-2c1c-3288-dc5f" type="max"/>
+          </constraints>
+          <categoryLinks>
+            <categoryLink id="4ffa-4227-949f-2dde" name="Whiteshields" hidden="false" targetId="e877-5452-e7f3-cd31" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="7eff-cdad-a9c0-5dbe" name="Unit has battle honors?" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="41ac-c010-c539-0194" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="7eff-cdad-a9c0-5dbe" name="Has Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
+        <entryLink id="41ac-c010-c539-0194" name="Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="28f9-ba24-bd81-c525" name="Emperor&apos;s Conclave" hidden="false" collective="false" import="true" targetId="2547-3e64-56bc-6204" type="selectionEntry"/>
       </entryLinks>
       <costs>
@@ -13010,9 +13051,26 @@
         <entryLink id="5ee3-7d64-9e15-ace3" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry"/>
         <entryLink id="1fbf-3105-7a20-2340" name="Is A Custom Character" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="9ee0-fed6-0fb9-14bc" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
-        <entryLink id="5ac6-c705-5ebb-c547" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup"/>
+        <entryLink id="5ac6-c705-5ebb-c547" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="bed7-65c6-5ef5-566f" value="0.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="de88-2850-74ab-970b" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="a569-ec4b-5609-281a" name="Field Commander" hidden="false" collective="false" import="true" targetId="c7d5-e7b4-87d5-c29a" type="selectionEntry"/>
-        <entryLink id="76d1-de5c-15e3-2366" name="Vigilus Field Commander WLT" hidden="true" collective="false" import="true" targetId="a636-ec69-8616-b2b4" type="selectionEntryGroup"/>
+        <entryLink id="76d1-de5c-15e3-2366" name="Vigilus Field Commander WLT" hidden="true" collective="false" import="true" targetId="a636-ec69-8616-b2b4" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="set" field="9122-6b44-7251-c7a8" value="0.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="de88-2850-74ab-970b" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
+        <entryLink id="3c3e-b0b1-b30c-aaf2" name="Sanctioned Psyker" hidden="false" collective="false" import="true" targetId="de88-2850-74ab-970b" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="50.0"/>
@@ -14863,6 +14921,7 @@
         </entryLink>
         <entryLink id="1c9b-4ddc-3a0c-1a35" name="Unit has battle honors?" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
         <entryLink id="3f73-0867-ccfc-e214" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="80a6-421d-2c2b-6f6e" name="Sanctioned Psyker" hidden="false" collective="false" import="true" targetId="de88-2850-74ab-970b" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
@@ -16667,6 +16726,279 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="d146-2060-489c-c691" name="WT (Cadia): Steel Discipline" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="95c8-53f5-adca-fcf6" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bf6b-d260-3680-c7bd" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="0d6a-3e55-e4dd-aa23" name="Steel Discipline" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly CADIAN unit is performing an action within 6* of this model, that unit can shoot without that action failing</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="cea4-ff99-972d-81fa" name="WT (Cadia): Gifted Commander" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f848-498e-2759-08e0" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bd7a-db49-9930-e4fe" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="cbfd-d422-3a2f-7459" name="Gifted Commander" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After both players have deployed their armies, but before the first battle round begins, select either one CADIAN VEHICLE unit (excluding TITANIC units) from your army that is in your deployment zone, or up to three non-VEHICLE CADIAN units from your army that are in your deployment zone, and redeploy them. If the mission uses the Strategic Reserves rules (see the Warhammer 40,000 Core Book), any of those units can be placed into Strategic Reserves without having to spend any additional CP, regardless of how many units are already in Strategic Reserves. If both players have abilities that redeploy units, roll off, the winner chooses who redeploys their units first.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="9719-1449-97f3-6621" name="WT (Cadia): Mind Like a Fortress" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0dfa-aed4-a7b8-ca3e" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9d73-4429-f425-2c53" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="710f-69e6-8d71-e64e" name="Mind Like a Fortress" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly CADIAN unit is within 6&quot; of this model, in the enemy&apos;s Psychic phase, each time a model in that unit would lose a wound as the result of a mortal wound, roll one D6: on a 5+, that wound is not lost.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="1a76-a46f-bbdb-d14e" name="Relic (Cadia): Dekker&apos;s Auto-Vox Servo Skull" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="lessThan"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e01-e6cf-1353-96f4" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="247c-8fb3-0ccc-0511" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="3618-d23f-71b4-067c" name="Dekker&apos;s Auto-Vox Servo Skull" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">INFANTRY OFFICER only. Each time the bearer uses its Voice of Command ability:
+. You can extend the range of the order to 12&quot;
+. If the bearer is within 3&quot; of a friendly unit with a vox-caster, you can extend the range of the order to 72&quot; if the target unit also contains a vox-caster.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="c723-aa80-a8e0-6a8d" name="Relic (Cadia): Gatekeeper" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="lessThan"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e01-e6cf-1353-96f4" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ea9d-eb8d-3ffe-66b4" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="1352-3693-7958-cb6d" name="Gatekeeper" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Model with battle cannon only. This Relic replaces a battle cannon and has the following profile (it still counts as a battle cannon for all rules purposes):</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="f57e-c58a-8a5c-ca35" name="Gatekeeper" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Each time an attack is made with this weapon against a CHADS unit, add 1 to that attack&apos;s wound roll.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="a4e1-e30f-95f1-34bd" name="Relic (Cadia): Bastonne&apos;s Sword" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="lessThan"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e01-e6cf-1353-96f4" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3602-65e2-2fd9-98a4" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="eaca-8c0e-aa63-6f0c" name="Bastonne&apos;s Sword" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Model with power sword only. This Relic replaces a power sword.
+The bearer has the following ability; &apos;Bastonne&apos;s Example (Aura): While a friendly CADIAN INFANTRY unit is within 6 of the bearer, each time a Combat Attrition test is taken for that unit, you can ignore any or all modifiers.&apos;
+This Relic has the following profile:</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="aaf6-cfee-17e8-033b" name="Bastonne&apos;s Sword" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="9ce5-10ed-7d52-9857" name="Relic (Cadia): Tactica Pax Cadia" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="lessThan"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e01-e6cf-1353-96f4" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1270-bb4c-c375-23bd" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="0412-d89e-6157-44b9" name="Tactica Pax Cadia" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">OFFICER only. Once per battle round, when you use a Battle Tactic or Strategic Ploy Stratagem that requires you to select a CADIAN unit, if that unit is within 6&quot; of this model, this model can use this Relic provided it has not used it for that Stratagem already during this battle. If it does, that Stratagem costs one
+fewer CP to use (to a minimum of 0CP). Note that the CP cost is only reduced by 1CP for that use of the Stratagem; any future usages of it cost the normal amount of CPs.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="de88-2850-74ab-970b" name="Sanctioned Psyker" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="d2f6-7e32-2f68-e4d8" value="2.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="09f9-b586-8d63-7635" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="d2f6-7e32-2f68-e4d8" value="3.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fad2-035f-88a7-60c0" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d2f6-7e32-2f68-e4d8" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1b11-6151-c626-f3b4" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="f072-9b00-9928-610b" name="Sanctioned Psyker" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle, when you are mustering your army, Select one PRIMARIS PSYKER unit or WYRDVANE PSYKERS unit from your army.
+• That unit gains the CADIAN Faction keyword and can benefit from a Regimental Doctrine, but it can never have a Warlord Trait.
+• Add 1 to Deny the Witch tests taken for that unit.
+• That unit gains the following psychic action, as described in the Warhammer 40,000 Core Book: &apos;Telepathic Order (Psychic Action - Warp Charge 4): This unit can attempt this psychic action. If this psychic action is successful, until the end of the turn this unit gains the Voice of Command ability (see Codex: Astra Militarum) and in your Shooting phase can issue one order to one CADIAN INFANTRY unit within 18&quot; of this unit&apos;
+
+You can only use this Stratagem once, unless you are playing a Strike Force battle (in which case, you can use this Stratagem twice) or an Onslaught battle (in which case, you can use this Stratagem three times).</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="95bf-a6bb-aa87-0baa" name="Whiteshields" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-2.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2d05-89c5-1926-3127" type="greaterThan"/>
+                <condition field="selections" scope="force" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2d05-89c5-1926-3127" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="-3.0">
+          <conditions>
+            <condition field="selections" scope="force" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2d05-89c5-1926-3127" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0405-2e33-52a7-5c50" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="818c-67d4-0d0c-c89e" name="Whiteshields" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle, when you are mustering your army, if your WARLORD has the CADIAN keyword. Select one CADIAN Detachment from your army, All CADIAN CONSCRIPTS units in that Detachment: 
+• Gain the WHITESHIELDS keyword.
+• Have a Leadership characteristic of 6.
+• Lose their Raw Recruits ability.
+If that Detachment contains two or fewer CONSCRIPTS units, this Stratagem costs ICP; if it contains three to four CONSCRIPTS units, it costs 2CP; if it contains five or more CONSCRIPTS units, it costs 3CP.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="9ef3-0f17-2aeb-436e" name="Astra Militarum Ranged Weapons" hidden="false" collective="false" import="true">
@@ -18161,6 +18493,48 @@
             <entryLink id="be2b-ae93-c886-91b4" name="WT: Master of Command" hidden="false" collective="false" import="true" targetId="4a25-7a1d-4442-3728" type="selectionEntry"/>
             <entryLink id="729a-9ba0-7448-bfae" name="WT: Bellowing Voice" hidden="false" collective="false" import="true" targetId="2b95-ca70-0ccd-7118" type="selectionEntry"/>
             <entryLink id="af38-d09b-eda1-57d9" name="WT: Old Grudges" hidden="false" collective="false" import="true" targetId="43d2-fba4-4e96-a8d3" type="selectionEntry"/>
+            <entryLink id="f23a-6dcb-3418-531b" name="WT (Cadia): Gifted Commander" hidden="false" collective="false" import="true" targetId="cea4-ff99-972d-81fa" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="equalTo"/>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e01-e6cf-1353-96f4" type="notInstanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </entryLink>
+            <entryLink id="5714-af2e-1751-7d27" name="WT (Cadia): Mind Like a Fortress" hidden="false" collective="false" import="true" targetId="9719-1449-97f3-6621" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="equalTo"/>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e01-e6cf-1353-96f4" type="notInstanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </entryLink>
+            <entryLink id="4d9d-056b-e936-a05f" name="WT (Cadia): Steel Discipline" hidden="false" collective="false" import="true" targetId="d146-2060-489c-c691" type="selectionEntry">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef96-6f0e-04be-8b2c" type="equalTo"/>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3e01-e6cf-1353-96f4" type="notInstanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+            </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -19239,6 +19613,64 @@
         <entryLink id="0488-54a7-52c4-c7c9" name="Relic (43rd Iotan Dragons): Emperor&apos;s Fury" hidden="false" collective="false" import="true" targetId="eb13-2076-18e2-e4e7" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c4b9-90b6-eaec-383a" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="2e6e-fcb6-7c0c-afe0" name="Relic (Cadia): Dekker&apos;s Auto-Vox Servo Skull" hidden="false" collective="false" import="true" targetId="1a76-a46f-bbdb-d14e" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9c1a-aa7d-1069-ce17" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="b867-f02a-6ea1-7e63" name="Relic (Cadia): Bastonne&apos;s Sword" hidden="false" collective="false" import="true" targetId="a4e1-e30f-95f1-34bd" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc9e-551d-9afb-78d5" type="lessThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d98-663e-f841-7ac3" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="9c22-313b-591d-de0e" name="Relic (Cadia): Tactica Pax Cadia" hidden="false" collective="false" import="true" targetId="9ce5-10ed-7d52-9857" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e08-10b6-4f86-dd1b" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="d428-6dc8-639e-726f" name="Relic (Cadia): Gatekeeper" hidden="false" collective="false" import="true" targetId="c723-aa80-a8e0-6a8d" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2fcb-22c9-d86a-96e3" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ad5a-de7c-c237-821e" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e0f5-f3bf-308c-48e8" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>

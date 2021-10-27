@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="194" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="195" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -222,6 +222,13 @@
       </constraints>
     </categoryEntry>
     <categoryEntry id="cb2e-2f63-133e-a79c" name="Be&apos;lakor" hidden="false"/>
+    <categoryEntry id="f384-ed18-8809-0550" name="Skyshield Landing Pad" hidden="false"/>
+    <categoryEntry id="7d4c-822b-b174-1e96" name="Obstacle" hidden="false"/>
+    <categoryEntry id="2c69-bba7-d2ac-2698" name="Aegis Defence Line" hidden="false"/>
+    <categoryEntry id="767f-8c84-8e0f-b5e9" name="Gun Emplacement" hidden="false"/>
+    <categoryEntry id="b357-b3bf-2b45-353e" name="Fortress of Redemption" hidden="false"/>
+    <categoryEntry id="134d-c383-9de8-8ccc" name="Bastion" hidden="false"/>
+    <categoryEntry id="60c3-2c5d-0caa-e9ec" name="Void Shield Generator" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -1425,11 +1432,37 @@
     </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
-    <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defence Line" publicationId="28ec-711c-pubN77581" page="79" hidden="false" collective="false" import="true" type="unit">
-      <infoLinks>
-        <infoLink id="4ae0-157d-0f63-5531" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-        <infoLink id="238a-f756-6edf-3af8" name="Static Defence Network" hidden="false" targetId="c60f-7b10-88fd-9eba" type="profile"/>
-      </infoLinks>
+    <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defence Line" page="" hidden="false" collective="false" import="true" type="unit">
+      <profiles>
+        <profile id="296d-b7c3-bbd5-cff0" name="Set-up (Aegis)" publicationId="e056-7215-247f-0a20" page="66" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this unit is first set up on the battlefield, each Small Shield Section and Large Shield Section in this unit must be set up so that it is in end-to-end contact with at least one other Small Shield Section or Large Shield Section in this unit. You do not have to set up all of the Small Shield Sections or Large Shield Sections up on the battlefield if you do not wish to (or if you have insufficient room). If this unit includes a Gun Emplacement, it must be set up wholly within 3&quot; of any Small Shield Section or Large Shield Section in this unit (if you don&apos;t set up any, you cannot set up the gun Emplacement either).</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="7fb5-211d-9037-abc3" name="Terrain Feature (Shield Sections)" publicationId="e056-7215-247f-0a20" page="66" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After it is set up, this unit&apos;s Small Shield Sections and Large Shield Sections are treated as a single Obstacles terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Book:
+- Defence Line
+- Defensible
+- Light Cover
+- Heavy Cover
+- Unstable Position
+- Difficult Ground</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="6fb7-a1e8-b370-07c4" name="Terrain Feature (Gun Emplacement)" publicationId="e056-7215-247f-0a20" page="66" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After it is set up, this unit&apos;s Gun Emplacement (if any) is a Building terrain feature, as described in the Warhammer 40,000 Core Book.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="9d28-7e42-927b-9bfd" name="Operate Gun Emplacement" publicationId="e056-7215-247f-0a20" page="66" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While there are any Gun Emplacements from your army on the battlefield, INFANTRY units in your army can attempt the following action, as described in the Warhammer 40,000 Core Book:
+
+Operate Gun Emplacement (Action): At the end of your Command phase, one INFANTRY unit from your army that is within 1&quot; of a Gun Emplacement that is not being operated (see below) can start to perform this action. The action is completed at the end of your Movement phase. Once completed, until the end of your turn, this Gun Emplacement loses its Automated Weapons ability, has a  Ballistic Skill characteristic of 4+ and is treated as being operated.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
       <categoryLinks>
         <categoryLink id="39e0-2f5c-f072-ae31" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
       </categoryLinks>
@@ -1439,6 +1472,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3c53-8966-517c-d906" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0916-b1ff-6433-a82f" type="max"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink id="7d12-d1b2-e3fc-4493" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+            <categoryLink id="0129-7d97-7526-bdca" name="Obstacle" hidden="false" targetId="7d4c-822b-b174-1e96" primary="false"/>
+            <categoryLink id="9212-4e3c-10c9-548d" name="Aegis Defence Line" hidden="false" targetId="2c69-bba7-d2ac-2698" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -1450,6 +1488,11 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dc90-065c-71bd-1ca6" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f5d5-7c10-508b-f0ba" type="max"/>
           </constraints>
+          <categoryLinks>
+            <categoryLink id="8066-ab82-a543-0154" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+            <categoryLink id="9665-cd56-d45b-4aed" name="Obstacle" hidden="false" targetId="7d4c-822b-b174-1e96" primary="false"/>
+            <categoryLink id="fafb-7926-460a-ad7a" name="Aegis Defence Line" hidden="false" targetId="2c69-bba7-d2ac-2698" primary="false"/>
+          </categoryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="pts" typeId="points" value="0.0"/>
@@ -1466,11 +1509,11 @@
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
                 <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
                 <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
                 <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
                 <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">4</characteristic>
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
               </characteristics>
             </profile>
@@ -1480,6 +1523,9 @@
           </infoLinks>
           <categoryLinks>
             <categoryLink id="9fd3-c4ec-8e01-1949" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+            <categoryLink id="01f6-32b5-6c51-e9e0" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+            <categoryLink id="06fb-9f0e-9278-58c0" name="Building" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+            <categoryLink id="8f69-6de8-c3b3-18a3" name="Gun Emplacement" hidden="false" targetId="767f-8c84-8e0f-b5e9" primary="false"/>
           </categoryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup id="83e7-47c3-74e8-ce44" name="Emplaced Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="143e-c847-95e7-8941">
@@ -1490,12 +1536,12 @@
               <entryLinks>
                 <entryLink id="143e-c847-95e7-8941" name="Icarus Lascannon" hidden="false" collective="false" import="true" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
                   <costs>
-                    <cost name="pts" typeId="points" value="20.0"/>
+                    <cost name="pts" typeId="points" value="15.0"/>
                   </costs>
                 </entryLink>
                 <entryLink id="3f88-b691-eea1-9a21" name="Quad-gun" hidden="false" collective="false" import="true" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
                   <costs>
-                    <cost name="pts" typeId="points" value="30.0"/>
+                    <cost name="pts" typeId="points" value="20.0"/>
                   </costs>
                 </entryLink>
               </entryLinks>
@@ -1509,7 +1555,7 @@
         </selectionEntry>
       </selectionEntries>
       <costs>
-        <cost name="pts" typeId="points" value="80.0"/>
+        <cost name="pts" typeId="points" value="100.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -1551,7 +1597,6 @@
       </profiles>
       <infoLinks>
         <infoLink id="cbf3-33ac-73e9-50c7" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-        <infoLink id="769e-c3f8-d4d9-8c25" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile"/>
         <infoLink id="d1b0-0bbd-8997-301b" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile"/>
         <infoLink id="1dcc-a6af-664d-6aa0" name="Explodes (2D6&quot; / D6)" hidden="false" targetId="4ab1-b4c4-a404-8c2f" type="profile">
           <modifiers>
@@ -1723,53 +1768,79 @@
     </selectionEntry>
     <selectionEntry id="8300-7ced-aafd-2a27" name="Fortress of Redemption" page="" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="a9bb-cfc7-e595-0252" name="Fortress of Redemption" publicationId="28ec-711c-pubN78977" page="126" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="6c91-1bed-eb98-ebba" name="Fortress of Redemption [1] (16-30+ Wounds Remaining)" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">0</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">0</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">10</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
             <characteristic name="W" typeId="f330-5e6e-4110-0978">30</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">0</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="6c91-1bed-eb98-ebba" name="Fortress of Redemption (1)" hidden="false" typeId="50ea-3b64-d9ae-0e3f" typeName="Stat Damage - BS">
+        <profile id="cf90-f8df-224e-6333" name="Fortress of Redemption" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <characteristics>
-            <characteristic name="Remaining W" typeId="ada9-1c1d-fa2a-3803">21-30+</characteristic>
-            <characteristic name="BS" typeId="b7a6-b64d-4339-eb87">5+</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This building has a transport capacity of 30 INFANTRY models. Each model with a Wounds characteristic of 3 takes up the space of 2 models, and each model with a Wounds characteristic of 4 or more takes up the space of 3 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 5 or more. No more than two units can be embarked within this building.</characteristic>
           </characteristics>
         </profile>
-        <profile id="9863-71f1-397f-a7ce" name="Fortress of Redemption (2)" hidden="false" typeId="50ea-3b64-d9ae-0e3f" typeName="Stat Damage - BS">
+        <profile id="0831-18c8-aa60-9e8c" name="Fortress of Redemption [2] (9-15 Wounds Remaining)" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="ada9-1c1d-fa2a-3803">11-20</characteristic>
-            <characteristic name="BS" typeId="b7a6-b64d-4339-eb87">6+</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="562b-8464-deb7-55ab" name="Fortress of Redemption (3)" hidden="false" typeId="50ea-3b64-d9ae-0e3f" typeName="Stat Damage - BS">
+        <profile id="d343-d08c-a310-fa43" name="Fortress of Redemption [3] (1-8 Wounds Remaining)" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Remaining W" typeId="ada9-1c1d-fa2a-3803">1-10</characteristic>
-            <characteristic name="BS" typeId="b7a6-b64d-4339-eb87">7+</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">6+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="cf90-f8df-224e-6333" name="Fortress of Redemption" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+        <profile id="ee9e-bb1c-8615-f280" name="Wrecked (Fortress of Redemption)" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of 2 INFANTRY units, up to a total of 30 models.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this building is destroyed, roll one D6 before any embarked models disembark and before removing it from play. On a 6 its magazine explodes and each unit within 9&quot; suffers D6 mortal wounds. On any other result, this building is wrecked; though the model counts as destroyed for all rules purposes do not remove it from the battlefield. Instead, for the remainder of the battle, it is treated as an Obstacle terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core book:
+- Difficult Ground
+- Exposed Position
+- Unstable Position</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="ad1e-88d5-2f3f-0486" name="Fire Points (Fortress of Redemption)" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, up to 20 models embarked within this building can be selected to shoot with; measure distances and draw line of sight from any points on this building when doing so (embarked models can make attacks with ranged weapons even while this building is within Engagement Range of enemy units, just as if they had the Big Guns Never Tire rule like a VEHICLE, as described in the Warhammer 40,000 Core Book).</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="3206-7b04-ead2-dd07" name="Automated Weapons (Fortress of Redemption)" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, each time this model is selected to shoot, if no friendly units are embarked within it, its Redemption missile silo can not be fired, its heavy bolters can only target the closest eligible enemy unit, and its Redemption lascannons can only select one of the following targets for that weapon&apos;s attacks:
+- The closest eligible enemy unit.
+- The closest eligible enemy AIRCRAFT unit.</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="61db-ee11-8700-123d" name="Explodes (2D6&quot; / D6)" hidden="false" targetId="4ab1-b4c4-a404-8c2f" type="profile"/>
-        <infoLink id="7ab9-38c1-031c-2c5c" name="Automated Weapons (Icarus)" hidden="false" targetId="0f50-2ea2-b251-a213" type="profile"/>
-        <infoLink id="0f07-c1f6-f80f-45ff" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="12e5-6386-ecbb-79a9" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
         <categoryLink id="2ebd-7369-d7db-6299" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
         <categoryLink id="9818-866d-c5b4-d471" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="b469-4bc0-edc2-eeb0" name="New CategoryLink" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+        <categoryLink id="4926-a231-6e40-db16" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false"/>
+        <categoryLink id="fabe-a68b-df62-2b4c" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+        <categoryLink id="38e0-ec36-9e09-3a96" name="Fortress of Redemption" hidden="false" targetId="b357-b3bf-2b45-353e" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="055b-c20e-3870-39f3" name="Redemption Missile Silo" hidden="false" collective="false" import="true" type="upgrade">
@@ -1778,24 +1849,47 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d2a7-8818-aa73-5a3a" type="max"/>
           </constraints>
           <profiles>
-            <profile id="0739-fefd-af02-d118" name="Krakstorm Missile" publicationId="28ec-711c-pubN78977" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+            <profile id="0739-fefd-af02-d118" name="Krakstorm Missiles" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18-96&quot;</characteristic>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
               </characteristics>
             </profile>
-            <profile id="7068-6a6c-21c8-aebc" name="Fragstorm Missile" publicationId="28ec-711c-pubN78977" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+            <profile id="7068-6a6c-21c8-aebc" name="Fragstorm Missiles" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18-96&quot;</characteristic>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
                 <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">0-1</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="8b58-ea8a-031a-8893" name="Redemption Lascannons" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b043-80f7-4013-4f99" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d4bb-d80b-ddd8-bc1e" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="aa93-f090-de8a-5aaa" name="Redemption Lascannons" publicationId="e056-7215-247f-0a20" page="67" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3+3</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an AIRCRAFT unit, add 1 to that attack&apos;s hit roll.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -1807,12 +1901,6 @@
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="1450-a5d3-3532-acca" name="Twin Icarus Lascannon" hidden="false" collective="false" import="true" targetId="2e50-f562-c0df-3e83" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b49a-b333-4e3d-90e7" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bb71-e225-fac2-2f10" type="max"/>
-          </constraints>
-        </entryLink>
         <entryLink id="fffa-4525-6695-92fe" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" targetId="05be-50b6-5107-9878" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9c87-3102-a6de-4c2a" type="max"/>
@@ -1828,53 +1916,124 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="55c6-268b-357f-d070" name="Imperial Bastion" page="" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="55c6-268b-357f-d070" name="Bastion" page="" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="0b7f-e298-a638-7d9f" name="Imperial Bastion" publicationId="28ec-711c-pubN77581" page="130" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="0b7f-e298-a638-7d9f" name="Bastion [1] (10-18+ Wounds Remaining)" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">18</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="aaaa-857c-b390-65ca" name="Bastion" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+          <characteristics>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This building has a transport capacity of 15 INFANTRY models. Each model with a Wounds characteristic of 3 takes up the space of 2 models, and each model with a Wounds characteristic of 4 or more takes up the space of 3 models. It cannot transport non-CHARACTER models with a Wounds characteristic of 5 or more. No more than two units can be embarked within this building.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="df29-5fdd-b7bd-e005" name="Wrecked (Bastion)" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this building is destroyed, roll one D6 before any embarked models disembark and before removing it from play. On a 6 its magazine explodes, and each unit within 6&quot; suffers D6 mortal wounds. On any other result, this building is wrecked, though the model counts as destroyed for all rules purposes, do not remove it from the battlefield. Instead, for the remainder of the battle it is treated as an Obstacles terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Book:
+- Difficult Ground
+- Exposed Position
+- Unstable Position</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="886f-7327-6244-17f8" name="Bastion [2] (6-9 Wounds Remaining)" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">5+</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">9</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">20</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="aaaa-857c-b390-65ca" name="Imperial Bastion" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+        <profile id="a8d5-10dc-088b-e1d2" name="Bastion [3] (1-5 Wounds Remaining)" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model has a transport capacity of two INFANTRY units, up to a total of 20 models.</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">6+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">N/A</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="d85b-5e5a-4379-1dd3" name="Automated Weapons (Bastion)" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, each time this model is selected to shoot, if no friendly units are embarked within it then its heavy bolters can only target the closest eligible enemy unit and, if it is equipped with either an Icarus lascannon or a quad-gun, you can, only select one of the following targets for that weapon&apos;s attacks:
+- The closest eligible enemy unit.
+- The closest eligible enemy AIRCRAFT unit.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="1e20-18af-b108-3649" name="Fire Points (Bastion)" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, up to 10 models embarked within this model can be selected to shoot with; measure distances and draw line of sight from any point on this building when doing so (embarked models can make attacks with ranged weapons even while this building is within Engagement Range of enemy units, just as if they had the Big Guns Never Tire rule like a VEHICLE, as described in the Warhammer 40,000 Core Book).</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="8307-c6dd-a354-b880" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile"/>
-        <infoLink id="8598-082d-0393-627b" name="Fire Points (10)" hidden="false" targetId="220a-170b-5fd7-36f2" type="profile"/>
-        <infoLink id="0d23-67e2-23ad-bf28" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-        <infoLink id="808f-e911-b586-909f" name="Explodes (2D6&quot;)" hidden="false" targetId="8e81-7c95-43ba-6e0d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="4258-6773-c0a4-1ccb" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
         <categoryLink id="e36e-2bfa-336b-104d" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
         <categoryLink id="09c6-7ce7-521e-c891" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="0e2f-b5d4-56be-a2a4" name="New CategoryLink" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+        <categoryLink id="443a-4cd5-d375-30c1" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+        <categoryLink id="e707-f533-7033-1aa7" name="Bastion" hidden="false" targetId="134d-c383-9de8-8ccc" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
-        <selectionEntryGroup id="334c-d125-6a4b-67e2" name="Turret Weapon" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="334c-d125-6a4b-67e2" name="Turret Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="a01d-0d3a-76a5-51d5">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc1f-b2cb-1915-0ffa" type="max"/>
           </constraints>
+          <selectionEntries>
+            <selectionEntry id="a01d-0d3a-76a5-51d5" name="Roof Hatch" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="afa8-04b3-68d6-1fea" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="5bc0-4693-4833-4114" name="Roof Hatch" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model is selected to shoot, up to 15 embarked models can be selected to shoot using its Fire Points ability, instead of 10.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="1689-e96e-8bce-d6fa" name="Comms Antenna" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e59b-fbc7-8059-9244" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="cb27-7886-ffd7-f9dc" name="Comms Antenna" publicationId="e056-7215-247f-0a20" page="68" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, if one or more CHARACTER units are embarked within this BUILDING model, roll one D6; on a 5+, you gain one Command point.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name="pts" typeId="points" value="5.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
           <entryLinks>
             <entryLink id="852a-14a5-5ed0-62f4" name="Icarus Lascannon" hidden="false" collective="false" import="true" targetId="c0a2-9100-e1e5-8bc0" type="selectionEntry">
               <costs>
-                <cost name="pts" typeId="points" value="20.0"/>
+                <cost name="pts" typeId="points" value="15.0"/>
               </costs>
             </entryLink>
             <entryLink id="6552-c24e-97a5-afe9" name="Quad-gun" hidden="false" collective="false" import="true" targetId="e4c2-0571-1de7-02e1" type="selectionEntry">
               <costs>
-                <cost name="pts" typeId="points" value="30.0"/>
+                <cost name="pts" typeId="points" value="20.0"/>
               </costs>
             </entryLink>
           </entryLinks>
@@ -1889,8 +2048,8 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="210.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="12.0"/>
+        <cost name="pts" typeId="points" value="180.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -2079,48 +2238,52 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="5cdd-edbb-07c3-0ba5" name="Skyshield Landing Pad" publicationId="28ec-711c-pubN77581" page="101" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="5cdd-edbb-07c3-0ba5" name="Skyshield Landing Pad" page="" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="9d4b-230d-876c-b3f4" name="Skyshield Landing Pad" publicationId="28ec-711c-pubN77581" page="137" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="fd58-dd74-cfd5-468e" name="Terrain Feature (Skyshield)" publicationId="e056-7215-247f-0a20" page="65" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
-            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">-</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">20</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
-            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After this model is set up, it is treated as an Obstacle terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Book:
+- Light Cover
+- Heavy Cover
+- Scalable
+- Exposed Position</characteristic>
           </characteristics>
         </profile>
-        <profile id="abe7-f841-acc8-c3f4" name="Landing Pad Configuration" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="c0c0-5415-6ac7-e074" name="Landing Pad Configuration" publicationId="e056-7215-247f-0a20" page="65" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Units can move across this model as if it were a terrain feature. When this model is set up on the battlefield, select either the Shielded or Unfurled configuration to be in effect. At the start of your movement phase, if there are no enemy models within 1&quot; of the Skyshield Landing Pad, you can change which configuration is in effect:</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model is set up, select either the Shielded or Unfurled configuration to be in effect.
+
+While there are any SKYSHIELD LANDING PADS on the battlefield, INFANTRY units in your army can attempt the following action, as described in the Warhammer 40,000 Core Book:
+
+Change Configuration (Action): At the end of your Movement phase, one INFANTRY unit from your army that is within 3&quot; of a SKYSHIELD LANDING PAD terrain feature can start to perform this action provided no enemey units are within 3&quot; of that terrain feature. The action is completed at the end of your turn. Once completed, you can change the configuration that is in effect for this terrain feature.</characteristic>
           </characteristics>
         </profile>
-        <profile id="c01d-4736-944f-b007" name="Shielded" hidden="false" typeId="002f-cc4a-c4e3-0261" typeName="Landing Pad Configuration">
+        <profile id="634b-3f20-78d8-ea82" name="Shielded" publicationId="e056-7215-247f-0a20" page="65" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Effect" typeId="f566-bacc-9414-7661">Whilst this configuration is in effect, models that are on top of the Skyshield Landing Pad have a 5+ invulnerable save against any attacks made in the Shooting phase if the attacking model is not also on top of the Skyshield Landing Pad. The Skyshield Landing Pad itself does not receive an invulnerable save in this manner.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While this configuration is in effect, this terrain feature loses its Exposed Position terrain trait and all models on top of this terrain feature receive a 6+ invulnerable save against ranged attacks. This invulnerable save does not apply if the firing model is also on top of this terrain feature.</characteristic>
           </characteristics>
         </profile>
-        <profile id="c1ed-3585-4739-2266" name="Unfurled" hidden="false" typeId="002f-cc4a-c4e3-0261" typeName="Landing Pad Configuration">
+        <profile id="1f06-e35d-eee8-2b18" name="Unfurled" publicationId="e056-7215-247f-0a20" page="65" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Effect" typeId="f566-bacc-9414-7661">Whilst this configuration is in effect, if a friendly VEHICLE unit with the FLYER Battlefield Role spends its entire turn on top of a Skyshield Landing Pad in this configuration, that model regains up to D3 lost wounds at the end of the turn.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While this configuration is in effect, AIRCRAFT units from your army can perform the following action, even though AIRCRAFT cannot normally perform actions, as described in the Warhammer 40,000 Core Book:
+
+Repair and Rearm (Action): At the end of your Shooting phase, one AIRCRAFT unit from your army (excluding those with the Airborne ability) that is on top of a friendly SKYSHIELD LANDING PAD with the Unfurled configuration in effect can start to perform this action. The action is completed at the end of your next Movement phase provided that AIRCRAFT is still on top of the same SKYSHIELD LANDING PAD. Once completed, that model:
+- Is repaired, and regains 3 lost wounds (a model can only be repaired once per turn).
+- Is re-armed, and can use any &apos;one use only&apos; weapons and abilities it has on its datasheet that it has already used during the battle one additional time. In addition, the next time this model is selected to shoot, until the end of the phase, each time it makes a ranged attack, add 1 to that attack&apos;s hit roll.
+
+Each AIRCRAFT model can only perform this action once during a battle.</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="a8fe-56de-deb2-5c71" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
-        <categoryLink id="c572-57c3-5542-b2ba" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
-        <categoryLink id="5127-3b72-68aa-87cb" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="3b13-2e07-f357-c9d8" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
+        <categoryLink id="93a5-fcf0-2b3d-22c1" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+        <categoryLink id="f9f6-28e2-f5d2-b827" name="Obstacle" hidden="false" targetId="7d4c-822b-b174-1e96" primary="false"/>
+        <categoryLink id="8542-8f6e-78c1-2d96" name="Skyshield Landing Pad" hidden="false" targetId="f384-ed18-8809-0550" primary="false"/>
       </categoryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="120.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
+        <cost name="pts" typeId="points" value="140.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -2197,32 +2360,44 @@
     </selectionEntry>
     <selectionEntry id="bbd4-5f41-35d1-6c5f" name="Void Shield Generator" publicationId="28ec-711c-pubN77581" page="92" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="d0f7-8cc8-2f73-ebf1" name="Void Shield Generator" publicationId="28ec-711c-pubN77581" page="136" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="d0f7-8cc8-2f73-ebf1" name="Void Shield Generator" publicationId="e056-7215-247f-0a20" page="69" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">-</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">18</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">16</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
           </characteristics>
         </profile>
-        <profile id="c818-46ac-f5b8-cd39" name="Projected Void Shields" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="c818-46ac-f5b8-cd39" name="Projected Void Shields (Aura)" publicationId="e056-7215-247f-0a20" page="69" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models wholly within 12&quot; of a Void Shield Generator receive a 5+ invulnerable save against attacks made in the Shooting phase if the firing model is not also wholly within 12&quot; of this model.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly unit is wholly within aura range of this model, models int hat unit have a 5+ invulnerable save against ranged attacks. The aura range of this ability changes as this building suffers damage as follows:
+
+Remaining Wounds | Aura Range
+8+ | 12&quot;
+4-7 | 9&quot;
+1-3 | 6&quot;</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="38dd-046c-ee76-01c3" name="Wrecked (Void Shield Generator)" publicationId="e056-7215-247f-0a20" page="69" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this model is destroyed, roll one D6 before any embarked models disembark and before removing it from play. On a 6 its generators explodes, and each unit within 6&quot; suffers D3 mortal wounds. On any other result, this model is wrecked; through the model counts as destroyed for all rules purposes, do not remove it from the battlefield. Instead, for the remainder of the battle it is treated as an Obstacle terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Book:
+- Difficult Ground
+- Exposed Position
+- Unstable Position</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="90e2-05af-373e-19b7" name="Immobile" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="e46f-6c4c-e34a-708b" name="New CategoryLink" hidden="false" targetId="9df5-bb14-9326-4108" primary="false"/>
         <categoryLink id="2b03-649f-e76b-0136" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="f202-7d66-e9c8-b288" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
+        <categoryLink id="3e67-29c1-671c-504b" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+        <categoryLink id="d2c6-e665-a9a1-c016" name="Void Shield Generator" hidden="false" targetId="60c3-2c5d-0caa-e9ec" primary="false"/>
       </categoryLinks>
       <costs>
         <cost name="pts" typeId="points" value="200.0"/>
@@ -5714,7 +5889,6 @@
       <infoLinks>
         <infoLink id="0094-6926-0d7c-e425" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile"/>
         <infoLink id="3985-1cea-515e-958f" name="Explodes (2D6&quot; / D6)" hidden="false" targetId="4ab1-b4c4-a404-8c2f" type="profile"/>
-        <infoLink id="f958-e691-027a-faf4" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile"/>
         <infoLink id="6d4c-1c31-8c95-2452" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
       </infoLinks>
       <selectionEntries>
@@ -5796,7 +5970,6 @@
       </profiles>
       <infoLinks>
         <infoLink id="30d1-b547-1125-d612" name="Automated Weapons" hidden="false" targetId="a179-f592-3224-72c9" type="profile"/>
-        <infoLink id="f1bf-f67b-bc39-6b7e" name="Fire Points (15)" hidden="false" targetId="298d-b8cf-d3ed-04d8" type="profile"/>
         <infoLink id="69a2-0099-7ecf-eb18" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
       </infoLinks>
       <selectionEntries>
@@ -5976,6 +6149,11 @@
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f35f-7707-c262-04c1" type="max"/>
       </constraints>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -9516,19 +9694,11 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Up to 10 models embarked aboard this model can shoot in your Shooting phase, measuring and drawing line of sight from any point on this model. When they do so, any restrictions and modifiers that apply to this model also apply to its embarked models.</characteristic>
       </characteristics>
     </profile>
-    <profile id="298d-b8cf-d3ed-04d8" name="Fire Points (15)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="57f6-edd9-6170-5c91" name="Automated Weapons (Gun Emplacement)" publicationId="e056-7215-247f-0a20" page="66" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Up to 15 models embarked aboard this model can shoot in your Shooting phase, measuring and drawing line of sight from any point on this model. When they do so, any restrictions and modifiers that apply to this model also apply to its embarked models.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="57f6-edd9-6170-5c91" name="Automated Weapons (Gun Emplacement)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Unless a friendly INFANTRY model is within 1&quot; of this model, this model can only target the closest visible enemy unit when it makes attacks. If two or more units are equally close, you can choose which is targeted.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="c60f-7b10-88fd-9eba" name="Static Defence Network (Aegis)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each Small Shield Section and Large Shield Section in this unit must be set up so that it is in end-to-end contact with at least one other Small Shield Section or Large Shield Section in this unit, and this unit&apos;s Gun Emplacement must be set up within 6&quot; of any Small Shield Section or Large Shield Section in this unit. After it is set up, this unit&apos;s Small Shield Sections and Large Shield Sections are treated as a single terrain feature that follows the rules for Barricades (pg 106).</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, each time a Gun Emplacement from your army is selected to shoot, you can only select one of the following targets for its attacks:
+- The closest eligible enemy unit.
+- The closest eligible enemy AIRCRAFT unit.</characteristic>
       </characteristics>
     </profile>
     <profile id="9446-1148-da70-4028" name="Explodes (D6&quot;)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
