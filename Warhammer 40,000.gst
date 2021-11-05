@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="195" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="196" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -2008,6 +2008,11 @@ Operate Gun Emplacement (Action): At the end of your Command phase, one INFANTRY
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="1689-e96e-8bce-d6fa" name="Comms Antenna" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -2022,6 +2027,8 @@ Operate Gun Emplacement (Action): At the end of your Command phase, one INFANTRY
               </profiles>
               <costs>
                 <cost name="pts" typeId="points" value="5.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -5719,35 +5726,17 @@ Remaining Wounds | Aura Range
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="0b7d-bfe1-b63e-ecb6" name="Operative Requisition Sanctioned" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="0b7d-bfe1-b63e-ecb6" name="Stratagem: Shadow Assignment" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" childId="4c9f-f934-ed79-84fe" type="notEqualTo"/>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" childId="4ad1-1315-97ea-dd25" type="notEqualTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" field="points" value="0.0">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bf09-85b2-c097-1071" type="atLeast"/>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="58c5-1d35-3869-613f" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="38ee-6dae-3cb1-7f84" type="atLeast"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4ad1-1315-97ea-dd25" type="equalTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" childId="4c9f-f934-ed79-84fe" type="atLeast"/>
                 <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ac03-d781-0c3b-b4be" type="atLeast"/>
                 <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b734-1c2c-054d-4867" type="atLeast"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="38ee-6dae-3cb1-7f84" type="atLeast"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -5757,9 +5746,9 @@ Remaining Wounds | Aura Range
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6b94-5ac0-ec9a-424b" type="max"/>
       </constraints>
       <profiles>
-        <profile id="504b-fc17-56ce-c8b8" name="Operative Requisition Sanctioned" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="504b-fc17-56ce-c8b8" name="Shadow Assignment" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You can only use this Stratagem if your Warlord has the IMPERIUM Faction keyword (excluding FALLEN) and your army does not contain any OFFICIO ASSASSINORUM units. Use this Stratagem during deployment. Add 1 OFFICIO ASSASSINORUM unit of your choice to your army. Remember that in a matched play game, you must pay reinforcement points for any new unit added to your army. You can only use this Stratagem once per battle.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle begins. If your army includes exactly 1 OFFICIO ASSASSINORUM unit, remove that unit from your army and then add 1 OFFICIO ASSASSINORUM unit of your choice to your army. The unit that is removed does not count as being destroyed for any rules purposes. Unlike other units that are added to your army,  his new unit does not cost any reinforcement points, even in a matched play game.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -5769,7 +5758,6 @@ Remaining Wounds | Aura Range
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-2.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="100.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="05be-50b6-5107-9878" name="Heavy bolter (Fortification)" hidden="false" collective="false" import="true" type="upgrade">
