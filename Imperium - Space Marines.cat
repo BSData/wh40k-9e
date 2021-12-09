@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="263" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="195" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="846d-3c14-21fc-369f" name="Imperium - Space Marines" revision="264" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="200" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="846d-3c14-pubN65537" name="Index: Imperium 1 &amp; Codex: Space Marines"/>
   </publications>
@@ -10828,6 +10828,7 @@
                   <conditions>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f2f6-ed05-f2a9-f46f" type="equalTo"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fa24-4b8c-d4bc-72b5" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7a95-3b76-9e4d-e42a" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -12038,9 +12039,6 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="819a-2fa7-4838-b965" type="max"/>
               </constraints>
-              <costs>
-                <cost name="pts" typeId="points" value="5.0"/>
-              </costs>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
@@ -21840,9 +21838,20 @@ Weapon: Purgatorus</characteristic>
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="21f6-a553-4422-fca9" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0611-c994-ccfe-9cc6" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="21f6-a553-4422-fca9" value="-1.0">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="4cb6-1c83-e837-f928" type="equalTo"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5be3-7f4d-f864-fa2f" type="max"/>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="21f6-a553-4422-fca9" type="max"/>
       </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="663b-319c-4cd6-7bd9" name="Special Issue - Ultramarines" hidden="false" collective="false" import="true">
@@ -22643,15 +22652,9 @@ time a model in that unit makes an attack against the enemy unit you selected at
                 <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0611-c994-ccfe-9cc6" type="equalTo"/>
               </conditions>
             </modifier>
-            <modifier type="set" field="c1ff-938e-b9f5-7049" value="1.0">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0611-c994-ccfe-9cc6" type="equalTo"/>
-              </conditions>
-            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="80d8-df1b-ac4c-e03f" type="max"/>
-            <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c1ff-938e-b9f5-7049" type="max"/>
           </constraints>
           <entryLinks>
             <entryLink id="f71b-6571-5544-1366" name="Sword of Judgement" hidden="false" collective="false" import="true" targetId="c87c-7eac-1ddf-d620" type="selectionEntry">
@@ -24918,9 +24921,9 @@ a similar ability, then the objective marker is controlled by the player who has
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of your Movement phase this model can repair a one &lt;CHAPTER&gt; VEHICLE within 3&quot;. That VEHICLE regains D3 lost wounds. Each model can only be repaired once per turn.</characteristic>
       </characteristics>
     </profile>
-    <profile id="9287-78a9-f594-c601" name="Litany of Hate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="9287-78a9-f594-c601" name="Litanies of Hate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this litany is inspiring, then while a friendly &lt;CHAPTER&gt; CORE or &lt;CHAPTER&gt; CHARACTER unit is within 6&quot; of this PRIEST, each time a model in that unit makes a melee attack, you can re-roll the hit roll.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You can re-roll failed hit rolls in the Fight phase for friendly CHAPTER units within 6&quot; of this model.</characteristic>
       </characteristics>
     </profile>
     <profile id="3f26-e8cb-ea53-e656" name="Spiritual Leaders" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
