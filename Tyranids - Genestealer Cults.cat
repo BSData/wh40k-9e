@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="83b2-e602-931a-fea1" name="Tyranids - Genestealer Cults" revision="68" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="GenWilhelm#6485" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="186" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="83b2-e602-931a-fea1" name="Tyranids - Genestealer Cults" revision="69" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="GenWilhelm#6485" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="201" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="83b2-e602-pubN65537" name="Codex: Genestealer Cults"/>
   </publications>
@@ -168,6 +168,11 @@
     <entryLink id="5266-4e56-c5f7-9a27" name="[Reference] Ambush Markers" hidden="false" collective="false" import="true" targetId="ec7a-733b-2a2c-cd51" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="58ac-5472-e3fc-be17" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="d497-814f-303d-e2d9" name="Reductus Saboteur" hidden="false" collective="false" import="true" targetId="972d-48c1-3105-df4b" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="2aaa-1095-dd0c-446b" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -2531,7 +2536,24 @@
     </selectionEntry>
     <selectionEntry id="9411-b31c-f3f6-9fbb" name="Blasting Charges" hidden="false" collective="true" import="true" type="upgrade">
       <infoLinks>
-        <infoLink id="c405-9270-b7be-34b8" name="Blasting Charge" hidden="false" targetId="9f44-0dfc-e1dc-af9c" type="profile"/>
+        <infoLink id="c405-9270-b7be-34b8" name="Blasting Charge" hidden="false" targetId="9f44-0dfc-e1dc-af9c" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="972d-48c1-3105-df4b" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
+        <infoLink id="275f-469e-61ed-e045" name="Blasting Charge (Shadow Throne)" hidden="false" targetId="1fd3-da0f-2f37-79ed" type="profile">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="972d-48c1-3105-df4b" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </infoLink>
       </infoLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -6425,6 +6447,105 @@ If your opponent has the first turn, then none of their units can be set up or e
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="972d-48c1-3105-df4b" name="Reductus Saboteur" hidden="false" collective="false" import="true" type="model">
+      <profiles>
+        <profile id="050f-ea17-591d-9d0e" name="Reductus Saboteur" publicationId="4a3e-a6d9-b5f8-3e3d" page="31" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">4</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">5+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="303c-687d-d9da-933c" name="Reductus Explosives" publicationId="4a3e-a6d9-b5f8-3e3d" page="31" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of the Movement phase or your opponent&apos;s Charge phase, if any enemy models are within 3&quot; of this model&apos;s Reductus Explosives marker, it can use this ability. Roll one D6 of each model (excluding AIRCRAFT models) within 3&quot; of that marker, adding 2 if the model is a BIKER, MONSTER or VEHICLE: on a 4+, that model&apos;s unit suffers 1 mortal wound, or 4 mortal wounds if that model is a MONSTER or VEHICLE. Then remove this model&apos;s Reductus Explosives marker from the battlefield.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="d88c-73d9-c3f0-bab9" name="Cloaked" publicationId="4a3e-a6d9-b5f8-3e3d" page="31" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a ranged attack is allocated to this model while it is recieving the benefits of cover, add an additional 1 to any armour saving throw made against that attack.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="6ac8-11a9-581a-152c" name="Deploy Explosives" publicationId="4a3e-a6d9-b5f8-3e3d" page="31" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model can perform the following action: &apos;Plant Explosives (Action): One REDUCTUS SABOTEUR model from your army can start to perform this action in your Command phase. This action is completed at the end of your Movement phase. If this action is successfully completed, place a Reductus Explosives marker within 1&quot; of the model and this model cannot perform this action again. If this model is destroyed, remove its Reductus Explosives marker from the battlefield.&apos;</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="96a1-e0a4-0871-1c5b" name="Clandestine" publicationId="4a3e-a6d9-b5f8-3e3d" page="31" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While this model is within an Area terrain feature, enemy models cannot target it with ranged attacks unless they are within 12&quot; of it. Each time a ranged attack is made against this model, subtract 1 from that attack&apos;s hit roll.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="4e0b-8768-5948-6764" name="Unquestioning Loyalty" hidden="false" targetId="83cc-a64d-d8bd-7a4a" type="rule"/>
+        <infoLink id="d6af-de54-dc6e-687c" name="Conceal" hidden="false" targetId="7305-49a7-ecb6-91cd" type="rule"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="3220-c0dc-036a-0690" name="Faction: Tyranids" hidden="false" targetId="a367-fb78-5192-96eb" primary="false"/>
+        <categoryLink id="c490-56b1-fc36-9e9e" name="Faction: Genestealer Cults" hidden="false" targetId="bf74-61c4-1502-ad4d" primary="false"/>
+        <categoryLink id="8c4c-dcc2-8c76-427d" name="Faction: &lt;Cult&gt;" hidden="false" targetId="1117-30a3-a004-bdbd" primary="false"/>
+        <categoryLink id="3ce6-16df-1eed-cab6" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+        <categoryLink id="8394-f119-2100-fdbb" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="8f49-2f00-050a-349b" name="Remote Explosives" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="794d-39ba-54e5-c35d" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bf21-eb59-b3cd-a4d9" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="adbc-098d-03c0-9711" name="Remote Explosives" publicationId="4a3e-a6d9-b5f8-3e3d" page="31" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 2D3</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Each time you select a target for this weapon, you cannot target AIRCRAFT units. Each time an attack made with this weapon is allocated to a VEHICLE or MONSTER unit, that attack has a Damage characteristic of 3.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="e68a-a5e7-b506-e1a9" name="Autopistol" hidden="false" collective="false" import="true" targetId="0985-3683-24db-1b07" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f9d6-3214-77c4-e518" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="29ae-c121-39b9-dd15" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="f3c2-2e59-2ac1-77e1" name="Blasting Charges" hidden="false" collective="false" import="true" targetId="9411-b31c-f3f6-9fbb" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c44c-00fe-4b3d-c62e" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7a9a-8378-70ac-1e8b" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="06e3-9f55-eef7-4b95" name="Demolition Charge" hidden="false" collective="false" import="true" targetId="d203-6046-e275-9f13" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e739-55f7-3f89-88a5" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0fd3-6eb5-4b1b-86e0" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="063c-0063-3377-8137" name="Frag Grenades" hidden="false" collective="false" import="true" targetId="1c01-a716-69dd-00c2" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dc50-80f0-76d8-010d" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6d75-d384-9b76-abd9" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="80.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="87b1-40a9-6106-ca5e" name="Special Weapons" hidden="false" collective="false" import="true">
@@ -7988,6 +8109,9 @@ BROOD BROTHERS units that have the Voice of Command or Tank Orders abilities (se
 
 BROOD BROTHERS TAUROX PRIMES can only transport 10 BROOD BROTHERS OFFICIO PREFECTUS INFANTRY models or 10 INFANTRY models that replaced their MILITARUM TEMPESTUS keyword with BROOD BROTHERS.</description>
     </rule>
+    <rule id="7305-49a7-ecb6-91cd" name="Conceal" publicationId="83b2-e602-pubN65537" page="TBD" hidden="false">
+      <description>TBD</description>
+    </rule>
   </sharedRules>
   <sharedProfiles>
     <profile id="9f44-0dfc-e1dc-af9c" name="Blasting Charge" publicationId="83b2-e602-pubN65537" page="102" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8007,7 +8131,7 @@ BROOD BROTHERS TAUROX PRIMES can only transport 10 BROOD BROTHERS OFFICIO PREFEC
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon can only be fired if a model (excluding models with a Ballistic Skill characteristic of &apos;-&apos;) is embarked upon the vehicle equipped with it. Blast</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can only be fired if a model (excluding models with a Ballistic Skill characteristic of &apos;-&apos;) is embarked upon the vehicle equipped with it.</characteristic>
       </characteristics>
     </profile>
     <profile id="7e36-8493-f7bf-c9e2" name="Clearance Incinerator" publicationId="83b2-e602-pubN65537" page="102" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8027,7 +8151,7 @@ BROOD BROTHERS TAUROX PRIMES can only transport 10 BROOD BROTHERS OFFICIO PREFEC
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">The bearer can only use this weapon once per battle. Blast</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. The bearer can only use this weapon once per battle.</characteristic>
       </characteristics>
     </profile>
     <profile id="4a08-665d-7602-39df" name="Eradicator Nova Cannon" publicationId="83b2-e602-pubN65537" page="102" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8037,7 +8161,7 @@ BROOD BROTHERS TAUROX PRIMES can only transport 10 BROOD BROTHERS OFFICIO PREFEC
         <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Units in cover do not receive any bonus to their saving throws against wounds caused by this weapon. Blast</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Units in cover do not receive any bonus to their saving throws against wounds caused by this weapon.</characteristic>
       </characteristics>
     </profile>
     <profile id="ff2d-8509-aca0-8a5b" name="Exterminator Autocannon" publicationId="83b2-e602-pubN65537" page="102" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8137,7 +8261,7 @@ BROOD BROTHERS TAUROX PRIMES can only transport 10 BROOD BROTHERS OFFICIO PREFEC
         <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Mortars can target units that are not visible to the firing model. Blast</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Mortars can target units that are not visible to the firing model.</characteristic>
       </characteristics>
     </profile>
     <profile id="4ec3-6aa8-1d55-3f62" name="Needle Pistol" publicationId="83b2-e602-pubN65537" page="102" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8484,7 +8608,7 @@ BROOD BROTHERS TAUROX PRIMES can only transport 10 BROOD BROTHERS OFFICIO PREFEC
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon can target units that are not visible to the bearer. Blast</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. This weapon can target units that are not visible to the bearer.</characteristic>
       </characteristics>
     </profile>
     <profile id="ef45-e91a-fd5d-020e" name="Frag Grenade" publicationId="83b2-e602-pubN65537" page="102" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -8546,6 +8670,16 @@ BROOD BROTHERS TAUROX PRIMES can only transport 10 BROOD BROTHERS OFFICIO PREFEC
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="1fd3-da0f-2f37-79ed" name="Blasting Charge (Shadow Throne)" publicationId="4a3e-a6d9-b5f8-3e3d" page="31" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade D3</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
