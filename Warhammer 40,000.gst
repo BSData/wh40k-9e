@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="202" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="203" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -126,7 +126,26 @@
     <categoryEntry id="6cc4-1b62-8e8a-05cd" name="Transport" hidden="false"/>
     <categoryEntry id="e888-1504-aa61-95ff" name="Flyer" hidden="false"/>
     <categoryEntry id="1b66-3f5f-6705-079a" name="Dedicated Transport" hidden="false"/>
-    <categoryEntry id="ef18-746a-369f-43a4" name="Character" hidden="false"/>
+    <categoryEntry id="ef18-746a-369f-43a4" name="Character" hidden="false">
+      <modifiers>
+        <modifier type="increment" field="4ac4-5e27-bfde-a163" value="1.0">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="83b2-e602-931a-fea1" type="instanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="4ac4-5e27-bfde-a163" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="83b2-e602-931a-fea1" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="ff36a6f3-19bf-4f48-8956-adacfd28fe74" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4ac4-5e27-bfde-a163" type="max"/>
+      </constraints>
+    </categoryEntry>
     <categoryEntry id="3117-16d8-fcef-4f56" name="Fly" hidden="false"/>
     <categoryEntry id="3b77-decb-d468-6bcc" name="Monster" hidden="false">
       <modifiers>
