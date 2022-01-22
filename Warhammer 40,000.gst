@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="202" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="204" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -126,7 +126,26 @@
     <categoryEntry id="6cc4-1b62-8e8a-05cd" name="Transport" hidden="false"/>
     <categoryEntry id="e888-1504-aa61-95ff" name="Flyer" hidden="false"/>
     <categoryEntry id="1b66-3f5f-6705-079a" name="Dedicated Transport" hidden="false"/>
-    <categoryEntry id="ef18-746a-369f-43a4" name="Character" hidden="false"/>
+    <categoryEntry id="ef18-746a-369f-43a4" name="Character" hidden="false">
+      <modifiers>
+        <modifier type="increment" field="4ac4-5e27-bfde-a163" value="1.0">
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="83b2-e602-931a-fea1" type="instanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="4ac4-5e27-bfde-a163" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="83b2-e602-931a-fea1" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="ff36a6f3-19bf-4f48-8956-adacfd28fe74" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4ac4-5e27-bfde-a163" type="max"/>
+      </constraints>
+    </categoryEntry>
     <categoryEntry id="3117-16d8-fcef-4f56" name="Fly" hidden="false"/>
     <categoryEntry id="3b77-decb-d468-6bcc" name="Monster" hidden="false">
       <modifiers>
@@ -311,6 +330,27 @@
     <categoryEntry id="b357-b3bf-2b45-353e" name="Fortress of Redemption" hidden="false"/>
     <categoryEntry id="134d-c383-9de8-8ccc" name="Bastion" hidden="false"/>
     <categoryEntry id="60c3-2c5d-0caa-e9ec" name="Void Shield Generator" hidden="false"/>
+    <categoryEntry id="010a-06b2-767a-040f" name="Death Company Lieutenant" hidden="false">
+      <comment>Used for validating Lieutenant limits alongside regular SM restrictions.</comment>
+      <constraints>
+        <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8958-8739-d4bd-fb68" type="max"/>
+      </constraints>
+    </categoryEntry>
+    <categoryEntry id="0d49-8b06-7815-8e97" name="Lieutenant" hidden="false">
+      <modifiers>
+        <modifier type="increment" field="8eaa-3004-4085-a92e" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="010a-06b2-767a-040f" repeats="1" roundUp="false"/>
+          </repeats>
+          <conditions>
+            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="010a-06b2-767a-040f" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8eaa-3004-4085-a92e" type="max"/>
+      </constraints>
+    </categoryEntry>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -372,6 +412,13 @@
           </constraints>
         </categoryLink>
         <categoryLink id="b201-7a22-83be-fcd2" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
+          <modifiers>
+            <modifier type="increment" field="f309-30a4-c2a6-80cf" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0d49-8b06-7815-8e97" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f309-30a4-c2a6-80cf" type="max"/>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d2f4-9572-bf17-f45e" type="min"/>
@@ -522,6 +569,13 @@
           </constraints>
         </categoryLink>
         <categoryLink id="dc98-c3a9-900b-5345" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
+          <modifiers>
+            <modifier type="increment" field="9fdc-aad8-04dc-bf45" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0d49-8b06-7815-8e97" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9fdc-aad8-04dc-bf45" type="max"/>
             <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9d84-0125-d23f-786e" type="min"/>
@@ -672,6 +726,13 @@
           </constraints>
         </categoryLink>
         <categoryLink id="b656-705b-2154-356b" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
+          <modifiers>
+            <modifier type="increment" field="043f-5e79-dc42-8a9a" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0d49-8b06-7815-8e97" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="043f-5e79-dc42-8a9a" type="max"/>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b292-bdd5-4643-fb35" type="min"/>
@@ -804,6 +865,11 @@
                 </conditionGroup>
               </conditionGroups>
             </modifier>
+            <modifier type="increment" field="f270-7df9-99d8-e027" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0d49-8b06-7815-8e97" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f270-7df9-99d8-e027" type="max"/>
@@ -923,6 +989,13 @@
         <categoryLink id="816e-043a-6b2c-fe91" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="6c3b-d81d-e237-32fa" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="a13f-7b3a-ceac-64f4" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
+          <modifiers>
+            <modifier type="increment" field="ce99-608b-86c4-5b9a" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0d49-8b06-7815-8e97" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ce99-608b-86c4-5b9a" type="max"/>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0b53-16a1-bdc7-cf5e" type="min"/>
@@ -1053,6 +1126,13 @@
         <categoryLink id="730a-f4ac-604e-b77b" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="1870-00e5-1915-3ab8" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
         <categoryLink id="b196-6b9f-fb28-4ca9" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
+          <modifiers>
+            <modifier type="increment" field="65a6-7192-50e6-c304" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0d49-8b06-7815-8e97" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="65a6-7192-50e6-c304" type="max"/>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc9e-6e21-855a-f620" type="min"/>
