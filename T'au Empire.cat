@@ -3,6 +3,13 @@
   <publications>
     <publication id="6d04-0cc1-aee0-9041" name="Codex: Tau Empire" shortName="" publisher=""/>
   </publications>
+  <profileTypes>
+    <profileType id="0c29-9351-f423-99b3" name="Invocations">
+      <characteristicTypes>
+        <characteristicType id="f7b2-b2a3-89d4-0470" name="-"/>
+      </characteristicTypes>
+    </profileType>
+  </profileTypes>
   <categoryEntries>
     <categoryEntry id="77ee-b03b-d244-d535" name="Faction: T&apos;au Empire" hidden="false"/>
     <categoryEntry id="8cc3-4e99-e01d-fed8" name="Faction: &lt;Sept&gt;" hidden="false"/>
@@ -14,7 +21,6 @@
         <infoLink id="1e03-b2f1-2e09-c812" name="Battlesuits" hidden="false" targetId="db3a-1899-3f1f-6c4f" type="rule"/>
       </infoLinks>
     </categoryEntry>
-    <categoryEntry id="c61f-ef38-2718-a725" name="Faction: Kroot" hidden="false"/>
     <categoryEntry id="4c0d-fd8d-e7c1-a2c1" name="Faction: T&apos;au Sept" hidden="false"/>
     <categoryEntry id="fa10-5b69-9887-b4c1" name="Faction: Farsight Enclaves" hidden="false"/>
     <categoryEntry id="dd0e-b02b-ef35-1616" name="Faction: Vior&apos;la Sept" hidden="false"/>
@@ -151,7 +157,7 @@
     <categoryEntry id="04ff-2075-f3f5-eb02" name="Warlord - T&apos;au" hidden="false"/>
     <categoryEntry id="a267-704a-4159-80c4" name="Warlord - Vior&apos;la" hidden="false"/>
     <categoryEntry id="5b12-8430-9970-fadc" name="Crisis" hidden="false"/>
-    <categoryEntry id="2d20-c12b-e8b0-b738" name="Kroot" hidden="false"/>
+    <categoryEntry id="2d20-c12b-e8b0-b738" name="Faction: Kroot" hidden="false"/>
     <categoryEntry id="70d8-9cf3-073f-605e" name="Grav-Inhibitor Drone" hidden="false"/>
     <categoryEntry id="0ea7-489b-b2a3-5350" name="Gun Drone" hidden="false"/>
     <categoryEntry id="6515-c5c0-11bc-fccb" name="Interceptor Drone" hidden="false"/>
@@ -166,6 +172,8 @@
     <categoryEntry id="aeb6-daaf-6230-faa7" name="Shielded Missile Drone" hidden="false"/>
     <categoryEntry id="5939-5cd3-6d36-0d68" name="Warlord - Required" hidden="false"/>
     <categoryEntry id="a586-2e1e-8b34-b17b" name="Counterfire Defence System" hidden="false"/>
+    <categoryEntry id="144c-0460-19f6-e809" name="Photon Grenades" hidden="false"/>
+    <categoryEntry id="5c82-d63a-38fd-8570" name="T&apos;au Auxiliary" hidden="false"/>
   </categoryEntries>
   <selectionEntries>
     <selectionEntry id="4f2e-e0ba-eacd-b233" name="Veteran Cadre (3 models)" hidden="false" collective="false" import="true" type="upgrade">
@@ -434,18 +442,8 @@
         </modifier>
       </modifiers>
     </entryLink>
-    <entryLink id="dd69-281d-8ac2-26df" name="!Aun&apos;Shi" hidden="false" collective="false" import="true" targetId="1da4-7bed-2a70-d50c" type="selectionEntry">
+    <entryLink id="dd69-281d-8ac2-26df" name="Aun&apos;Shi" hidden="false" collective="false" import="true" targetId="1da4-7bed-2a70-d50c" type="selectionEntry">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="36d6-7bcd-f258-e86d" type="greaterThan"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5f48-5fed-7b98-0e66" type="lessThan"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
         <modifier type="set" field="hidden" value="true">
           <conditions>
             <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fa7c-f59e-0645-9dfb" type="atLeast"/>
@@ -453,7 +451,7 @@
         </modifier>
       </modifiers>
     </entryLink>
-    <entryLink id="c9a1-3473-b6ba-93e8" name="!Aun&apos;Va" hidden="false" collective="false" import="true" targetId="55d4-7a6e-8ad3-0823" type="selectionEntry">
+    <entryLink id="c9a1-3473-b6ba-93e8" name="Aun&apos;Va" hidden="false" collective="false" import="true" targetId="55d4-7a6e-8ad3-0823" type="selectionEntry">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
@@ -1684,6 +1682,7 @@
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="d335-96d0-daa2-49d6" name="!High-yield missile pod" hidden="false" collective="false" import="true" type="upgrade">
@@ -1856,19 +1855,9 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="b601-ebb2-589c-c65f" name="!Equalizers" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="8b78-5c86-cc97-57ee" name="Honour Blade" hidden="false" collective="true" import="true" type="upgrade">
       <infoLinks>
-        <infoLink id="53d0-f527-f668-eee8" name="New InfoLink" hidden="false" targetId="43f2-6b9e-540f-c237" type="profile"/>
-      </infoLinks>
-      <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="8b78-5c86-cc97-57ee" name="!Honour blade" hidden="false" collective="false" import="true" type="upgrade">
-      <infoLinks>
-        <infoLink id="00f3-483d-5e1e-33ff" name="New InfoLink" hidden="false" targetId="fa85-f362-0f20-5688" type="profile"/>
+        <infoLink id="00f3-483d-5e1e-33ff" name="Honour Blade" hidden="false" targetId="fa85-f362-0f20-5688" type="profile"/>
       </infoLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -1896,9 +1885,9 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="7347-e9c1-8bf1-0833" name="!Ritual blade" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="7347-e9c1-8bf1-0833" name="Ritual Blade" hidden="false" collective="false" import="true" type="upgrade">
       <infoLinks>
-        <infoLink id="867e-a6e0-3238-ba19" name="New InfoLink" hidden="false" targetId="161d-55df-28b1-f7d6" type="profile"/>
+        <infoLink id="867e-a6e0-3238-ba19" name="Ritual Blade" hidden="false" targetId="161d-55df-28b1-f7d6" type="profile"/>
       </infoLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -2932,13 +2921,9 @@
           </conditions>
         </modifier>
       </modifiers>
-      <infoLinks>
-        <infoLink id="e450-9da4-5e73-10f9" name="Stealthy Hunters" hidden="false" targetId="3884-2cd4-f684-e35a" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="ad97-1220-8808-7827" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
         <categoryLink id="a8c4-183c-730e-373e" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
-        <categoryLink id="5126-c119-1492-716b" name="New CategoryLink" hidden="false" targetId="c61f-ef38-2718-a725" primary="false"/>
         <categoryLink id="1dc9-143c-c21c-2bfb" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
         <categoryLink id="1bf1-3371-e319-8703" name="New CategoryLink" hidden="false" targetId="1607-ad22-6a83-9cd2" primary="false"/>
       </categoryLinks>
@@ -2968,7 +2953,7 @@
       </selectionEntries>
       <entryLinks>
         <entryLink id="bed3-08af-2a79-7847" name="Has Battle Honours" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="e856-345b-b74c-55be" name="Battle Honours" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="e856-345b-b74c-55be" name="Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -2992,7 +2977,6 @@
       <categoryLinks>
         <categoryLink id="8afc-5e0a-4698-a84f" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
         <categoryLink id="efd7-c0aa-3ac7-7f09" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
-        <categoryLink id="7582-9c41-3391-33ed" name="New CategoryLink" hidden="false" targetId="c61f-ef38-2718-a725" primary="false"/>
         <categoryLink id="0b25-c274-04d9-f5db" name="New CategoryLink" hidden="false" targetId="ad01-caec-17d9-cb8d" primary="false"/>
         <categoryLink id="d4ec-5a67-6a8c-2fd4" name="New CategoryLink" hidden="false" targetId="fe99-ed41-d231-7ab0" primary="false"/>
       </categoryLinks>
@@ -3055,7 +3039,6 @@
       </infoLinks>
       <categoryLinks>
         <categoryLink id="c54e-de8c-7819-2f36" name="New CategoryLink" hidden="false" targetId="c274d0b0-5866-44bc-9810-91c136ae7438" primary="true"/>
-        <categoryLink id="11a6-124e-eb35-6561" name="New CategoryLink" hidden="false" targetId="c61f-ef38-2718-a725" primary="false"/>
         <categoryLink id="fc58-4895-a6e6-1b9f" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
         <categoryLink id="bab8-7ca8-13aa-703e" name="New CategoryLink" hidden="false" targetId="7892-58f7-e769-4d87" primary="false"/>
         <categoryLink id="91f0-3cb7-db1c-1126" name="New CategoryLink" hidden="false" targetId="360f-1ff6-6f02-65dc" primary="false"/>
@@ -3723,50 +3706,92 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="38e7-f3a9-b20a-90d3" name="!Kroot Shaper" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="38e7-f3a9-b20a-90d3" name="Kroot Shaper" hidden="false" collective="false" import="true" type="model">
       <infoLinks>
-        <infoLink id="e577-f728-79fb-a494" name="New InfoLink" hidden="false" targetId="9276-1b5b-109c-32b7" type="profile"/>
-        <infoLink id="8182-2c80-901f-0c83" name="The Shaper Commands" hidden="false" targetId="3bbf-c98a-3b56-d2a4" type="profile"/>
+        <infoLink id="e577-f728-79fb-a494" name="Wisest of Their Kind (Aura)" hidden="false" targetId="9276-1b5b-109c-32b7" type="profile"/>
+        <infoLink id="8182-2c80-901f-0c83" name="Stealthy Hunter" hidden="false" targetId="a295-7f6e-2a96-bfe5" type="profile"/>
         <infoLink id="c4f2-fb51-582d-93fb" name="Kroot Shaper" hidden="false" targetId="3a5d-86b8-546a-01ca" type="profile"/>
+        <infoLink id="641b-3bc7-2b53-00d2" name="Ambushing Predators" hidden="false" targetId="663b-0751-9b7e-060b" type="rule"/>
+        <infoLink id="c62e-eb26-9b08-87fa" name="The Shaper Commands (Aura)" hidden="false" targetId="3bbf-c98a-3b56-d2a4" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="9b84-f396-181b-d8aa" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
-        <categoryLink id="fe1b-8e2c-8ec1-6f4e" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
         <categoryLink id="b17f-3ef9-613a-31dd" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
-        <categoryLink id="171f-7e02-6e39-49d6" name="New CategoryLink" hidden="false" targetId="c61f-ef38-2718-a725" primary="false"/>
         <categoryLink id="c3b9-5e4e-ccf7-e471" name="New CategoryLink" hidden="false" targetId="24e2-4d85-9862-b242" primary="false"/>
+        <categoryLink id="b754-6746-0749-9381" name="Faction: Kroot" hidden="false" targetId="2d20-c12b-e8b0-b738" primary="false"/>
+        <categoryLink id="8039-c2d6-94b8-5964" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
+        <categoryLink id="796e-38d9-83be-0d35" name="T&apos;au Auxiliary" hidden="false" targetId="5c82-d63a-38fd-8570" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
-        <selectionEntryGroup id="d0e6-52f4-a269-5d84" name="Shaper Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="14ac-327a-4f59-9607">
+        <selectionEntryGroup id="d0e6-52f4-a269-5d84" name="Shaper Gun" hidden="false" collective="false" import="true" defaultSelectionEntryId="560a-041e-2cf4-fe47">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b085-91b5-9af0-5b99" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cf11-fda0-e99f-54d2" type="min"/>
           </constraints>
+          <selectionEntries>
+            <selectionEntry id="560a-041e-2cf4-fe47" name="Shaper Kroot Rifle" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ee6-547a-1536-0753" type="max"/>
+              </constraints>
+              <infoLinks>
+                <infoLink id="e559-fec5-d2ea-a2c5" name="Shaper Kroot Rifle" hidden="false" targetId="bbe5-6530-c29a-4da4" type="profile"/>
+              </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
           <entryLinks>
-            <entryLink id="14ac-327a-4f59-9607" name="Kroot rifle" hidden="false" collective="false" import="true" targetId="b20d-cc79-c825-fca8" type="selectionEntry"/>
-            <entryLink id="286d-3fb4-8683-884c" name="Pulse rifle" hidden="false" collective="false" import="true" targetId="838d-b4b3-2a3b-84ce" type="selectionEntry"/>
-            <entryLink id="1909-840c-5703-4964" name="Pulse carbine" hidden="false" collective="false" import="true" targetId="a8e7-503c-b96d-3927" type="selectionEntry">
-              <modifiers>
-                <modifier type="append" field="name" value="[Index]"/>
-              </modifiers>
+            <entryLink id="286d-3fb4-8683-884c" name="!Pulse rifle" hidden="false" collective="false" import="true" targetId="838d-b4b3-2a3b-84ce" type="selectionEntry"/>
+          </entryLinks>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="87ee-3408-dbb4-df00" name="Shaper Melee Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="9ca9-43f9-95fe-c98b">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e63b-dbaa-4432-c9f0" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6b5e-8a20-0c9c-35c5" type="min"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="5cb7-820e-903d-9eb3" name="Kroot Pistol &amp; Grenade Belt" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d892-a0cc-3736-cc35" type="max"/>
+              </constraints>
+              <entryLinks>
+                <entryLink id="db17-d1fe-8dd7-6b7d" name="Grenade Belt" hidden="false" collective="false" import="true" targetId="4c96-8644-b10f-bf71" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cd06-59f9-20a8-7481" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cb5e-9964-458b-5797" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="63a8-72e8-9035-4488" name="Kroot Pistol" hidden="false" collective="false" import="true" targetId="bb55-5bf8-5df0-605b" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="12f9-2355-537d-968f" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d665-00a5-9193-3a0b" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <entryLinks>
+            <entryLink id="9ca9-43f9-95fe-c98b" name="Ritual Blade" hidden="false" collective="false" import="true" targetId="7347-e9c1-8bf1-0833" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1161-4d29-a32a-eb29" type="max"/>
+              </constraints>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="fae8-a1fe-9ce7-b51f" name="!Ritual blade" hidden="false" collective="false" import="true" targetId="7347-e9c1-8bf1-0833" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d74e-ae07-948f-c1c0" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c9c7-c656-3e76-08b9" type="min"/>
-          </constraints>
-        </entryLink>
         <entryLink id="c9cb-3711-589f-8b76" name="Warlord" hidden="false" collective="false" import="true" targetId="7db5-63ac-e907-c20f" type="selectionEntry"/>
-        <entryLink id="03e9-b0ce-15d5-eeda" name="!Pack Alpha" hidden="false" collective="false" import="true" targetId="2fd0-e84a-313d-7dbc" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7763-7a60-0324-166a" type="max"/>
-          </constraints>
-        </entryLink>
         <entryLink id="aadc-f26f-2214-ef83" name="Stratagem: Promising Pupil" hidden="false" collective="false" import="true" targetId="97ba-39de-4dd8-58d3" type="selectionEntry"/>
+        <entryLink id="82b5-cfd2-bafe-1cf6" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="0b62-f560-227b-02a9" type="selectionEntryGroup"/>
+        <entryLink id="ca81-d606-75c9-e2c1" name="Signature Systems" hidden="false" collective="false" import="true" targetId="0564-905a-e896-f5ab" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="25.0"/>
@@ -3906,7 +3931,7 @@
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="fc98-45a1-95bf-d267" name="!Cadre Fireblade" page="" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="fc98-45a1-95bf-d267" name="Cadre Fireblade" page="" hidden="false" collective="false" import="true" type="model">
       <modifiers>
         <modifier type="increment" field="e356-c769-5920-6e14" value="1.0">
           <conditions>
@@ -3916,7 +3941,8 @@
       </modifiers>
       <infoLinks>
         <infoLink id="b937-2d12-bb8d-beba" name="Cadre Fireblade" hidden="false" targetId="0ef2-2668-6edb-95a1" type="profile"/>
-        <infoLink id="2bd3-bd6b-d73e-2998" name="Volley Fire" hidden="false" targetId="50e6-fdbf-c3b7-5892" type="profile"/>
+        <infoLink id="2bd3-bd6b-d73e-2998" name="Target Sighted" hidden="false" targetId="edde-cecf-0d6b-b533" type="profile"/>
+        <infoLink id="49d7-f1fa-3dad-e2c2" name="Volley Fire (Aura)" hidden="false" targetId="50e6-fdbf-c3b7-5892" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="22f8-2c20-0538-ecbd" name="New CategoryLink" hidden="false" targetId="8cc3-4e99-e01d-fed8" primary="false"/>
@@ -3925,27 +3951,32 @@
         <categoryLink id="f343-4d64-c00b-a38a" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
         <categoryLink id="f61e-11d1-a938-d152" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
         <categoryLink id="c57f-b4ed-e48b-1f33" name="New CategoryLink" hidden="false" targetId="1e6a-d4bb-b363-8f61" primary="false"/>
+        <categoryLink id="c4eb-5713-836f-47fb" name="Photon Grenades" hidden="false" targetId="144c-0460-19f6-e809" primary="false"/>
       </categoryLinks>
-      <entryLinks>
-        <entryLink id="c618-92b5-0bef-a428" name="Pulse rifle" hidden="false" collective="false" import="true" targetId="b137-5a29-f03a-ad3e" type="selectionEntry">
+      <selectionEntries>
+        <selectionEntry id="3555-fd0c-a668-8d0c" name="Fireblade Pulse Rifle" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="269c-cf7d-7850-4a15" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="76e0-7c74-7093-feff" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="31fa-6059-abc1-7539" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d62f-8c85-1a4a-f61e" type="max"/>
           </constraints>
-        </entryLink>
-        <entryLink id="31db-81e5-9137-aa31" name="!Markerlight" hidden="false" collective="false" import="true" targetId="ca6b-6ce9-0f0f-8c1b" type="selectionEntry">
+          <infoLinks>
+            <infoLink id="b5fd-8a79-a8ee-8400" name="Cadre Fireblade" hidden="false" targetId="0ef2-2668-6edb-95a1" type="profile"/>
+          </infoLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="31db-81e5-9137-aa31" name="Markerlight" hidden="false" collective="false" import="true" targetId="ca6b-6ce9-0f0f-8c1b" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e4f8-2be3-3cf4-212e" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="df49-b37b-22ee-b6da" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="864f-fa80-ef4d-df78" name="!Photon grenades" hidden="false" collective="false" import="true" targetId="1e4a-b5fd-7be4-3f90" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f2a2-ecd1-9208-6723" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="db88-33cb-8edd-8d93" type="min"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="dd7e-cf85-27f9-35bd" name="Tactical Drones" hidden="false" collective="false" import="true" targetId="a3aa-ea32-ab42-aad5" type="selectionEntryGroup">
+        <entryLink id="dd7e-cf85-27f9-35bd" name="Drones" hidden="false" collective="false" import="true" targetId="a3aa-ea32-ab42-aad5" type="selectionEntryGroup">
           <modifiers>
             <modifier type="append" field="name" value=" (0-2)"/>
           </modifiers>
@@ -3959,31 +3990,38 @@
         <entryLink id="a01f-0947-9610-4ba6" name="Stratagem: Promising Pupil" hidden="false" collective="false" import="true" targetId="97ba-39de-4dd8-58d3" type="selectionEntry"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="45.0"/>
+        <cost name="pts" typeId="points" value="50.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="ca18-6d3e-222c-cf95" name="!Ethereal" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="ca18-6d3e-222c-cf95" name="Ethereal" hidden="false" collective="false" import="true" type="model">
       <modifiers>
         <modifier type="increment" field="e356-c769-5920-6e14" value="1.0">
           <conditions>
             <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" type="atLeast"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1742-90e4-26f1-d1d2" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <infoLinks>
-        <infoLink id="e2fe-3444-c959-316d" name="New InfoLink" hidden="false" targetId="c40c-4ee4-7184-d483" type="profile"/>
-        <infoLink id="1244-8abe-c5fd-751d" name="Invocation of the Elements" hidden="false" targetId="cc06-c994-7dd8-17a7" type="profile"/>
+        <infoLink id="e2fe-3444-c959-316d" name="Failure Is Not An Option (Aura)" hidden="false" targetId="c40c-4ee4-7184-d483" type="profile"/>
+        <infoLink id="1244-8abe-c5fd-751d" name="Embodiments of the Empire" hidden="false" targetId="cc06-c994-7dd8-17a7" type="profile"/>
         <infoLink id="7092-9275-53cd-5aa7" name="Ethereal" hidden="false" targetId="c301-1174-2501-d7e4" type="profile">
           <modifiers>
-            <modifier type="set" field="0bdf-a96e-9e38-7779" value="8&quot;">
+            <modifier type="set" field="0bdf-a96e-9e38-7779" value="10&quot;">
               <conditions>
                 <condition field="selections" scope="ca18-6d3e-222c-cf95" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c099-97cd-b44e-633a" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
         </infoLink>
+        <infoLink id="3dee-a6bc-2124-4660" name="Inspired to Greatness" hidden="false" targetId="9138-595d-4656-39d8" type="rule"/>
+        <infoLink id="26ce-7bdd-71b1-ef18" name="Serene Unifier (Ethereal)" hidden="false" targetId="f18e-a10a-50d4-a21b" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="7ebf-5dba-7a13-8daf" name="New CategoryLink" hidden="false" targetId="8cc3-4e99-e01d-fed8" primary="false"/>
@@ -3993,20 +4031,8 @@
         <categoryLink id="e527-6d82-e3a5-d3dd" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
         <categoryLink id="4568-cc31-de2f-f974" name="New CategoryLink" hidden="false" targetId="05f0-8653-4515-8349" primary="false"/>
       </categoryLinks>
-      <selectionEntryGroups>
-        <selectionEntryGroup id="28d5-1457-659b-a19a" name="Ethereal Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="6da9-2c82-a351-2cee">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="811c-4c69-2136-3de9" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9d6f-f36a-51f6-1482" type="max"/>
-          </constraints>
-          <entryLinks>
-            <entryLink id="6da9-2c82-a351-2cee" name="New EntryLink" hidden="false" collective="false" import="true" targetId="8b78-5c86-cc97-57ee" type="selectionEntry"/>
-            <entryLink id="9235-8ba5-9be9-7afb" name="New EntryLink" hidden="false" collective="false" import="true" targetId="b601-ebb2-589c-c65f" type="selectionEntry"/>
-          </entryLinks>
-        </selectionEntryGroup>
-      </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="1246-ff67-4467-b3fa" name="Tactical Drones" hidden="false" collective="false" import="true" targetId="a3aa-ea32-ab42-aad5" type="selectionEntryGroup">
+        <entryLink id="1246-ff67-4467-b3fa" name="Drones" hidden="false" collective="false" import="true" targetId="a3aa-ea32-ab42-aad5" type="selectionEntryGroup">
           <modifiers>
             <modifier type="append" field="name" value=" (0-2)"/>
           </modifiers>
@@ -4014,14 +4040,31 @@
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="addb-fab4-49cb-2cb5" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="2c53-c14a-e8ff-d763" name="!Hover drone" hidden="false" collective="false" import="true" targetId="c099-97cd-b44e-633a" type="selectionEntry"/>
+        <entryLink id="2c53-c14a-e8ff-d763" name="Hover Drone" hidden="false" collective="false" import="true" targetId="c099-97cd-b44e-633a" type="selectionEntry">
+          <costs>
+            <cost name="pts" typeId="points" value="5.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+          </costs>
+        </entryLink>
         <entryLink id="e8db-be61-b4a5-9ae9" name="Warlord" hidden="false" collective="false" import="true" targetId="7db5-63ac-e907-c20f" type="selectionEntry"/>
-        <entryLink id="c1b5-101c-9254-90a1" name="Signature Systems" hidden="false" collective="false" import="true" targetId="0564-905a-e896-f5ab" type="selectionEntryGroup"/>
+        <entryLink id="c1b5-101c-9254-90a1" name="Relics &amp; Signature Systems" hidden="false" collective="false" import="true" targetId="0564-905a-e896-f5ab" type="selectionEntryGroup"/>
         <entryLink id="831e-0468-f4c2-7dda" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="0b62-f560-227b-02a9" type="selectionEntryGroup"/>
         <entryLink id="f4b2-2370-74c6-3c64" name="Stratagem: Promising Pupil" hidden="false" collective="false" import="true" targetId="97ba-39de-4dd8-58d3" type="selectionEntry"/>
+        <entryLink id="83af-f095-0388-3645" name="Honour Blade" hidden="false" collective="false" import="true" targetId="8b78-5c86-cc97-57ee" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ffca-57b6-a59a-4f91" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ba47-2928-9a62-7760" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="607f-edcd-b0d5-0a15" name="Invocations of the Ethereals" hidden="false" collective="false" import="true" targetId="781c-f068-0343-beb8" type="selectionEntryGroup">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e567-7996-25dc-ea23" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ff55-904f-3027-c745" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="55.0"/>
+        <cost name="pts" typeId="points" value="60.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -4374,29 +4417,24 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="1da4-7bed-2a70-d50c" name="!Aun&apos;Shi" hidden="false" collective="false" import="true" type="model">
+    <selectionEntry id="1da4-7bed-2a70-d50c" name="Aun&apos;Shi" hidden="false" collective="false" import="true" type="model">
       <modifiers>
-        <modifier type="set" field="7e75-ca5e-1703-e4bd" value="0.0">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="36d6-7bcd-f258-e86d" type="greaterThan"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5f48-5fed-7b98-0e66" type="lessThan"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1742-90e4-26f1-d1d2" type="greaterThan"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3537-fff0-c054-4938" type="max"/>
-        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="true" id="7e75-ca5e-1703-e4bd" type="max"/>
       </constraints>
       <infoLinks>
-        <infoLink id="b4e4-94c7-da5a-55a9" name="Failure Is Not An Option" hidden="false" targetId="c40c-4ee4-7184-d483" type="profile"/>
-        <infoLink id="92d7-fe15-6510-7d54" name="Invocation of the Elements" hidden="false" targetId="cc06-c994-7dd8-17a7" type="profile"/>
-        <infoLink id="7d1e-9a76-bd78-e381" name="Aun&apos;Shi" hidden="false" targetId="4d4b-7f4d-d712-c78e" type="profile"/>
-        <infoLink id="043f-6485-3ea5-17b5" name="Shield generator" hidden="false" targetId="8f1c-39b1-296b-39ef" type="profile"/>
-        <infoLink id="ef69-7ec2-2374-7d9f" name="Blademaster" hidden="false" targetId="069e-bc12-1bba-fb8b" type="profile"/>
+        <infoLink id="b4e4-94c7-da5a-55a9" name="Failure Is Not An Option (Aura)" hidden="false" targetId="c40c-4ee4-7184-d483" type="profile"/>
+        <infoLink id="7d1e-9a76-bd78-e381" name="Leadership Caste (Aun&apos;Shi)" hidden="false" targetId="e748-f9fe-d638-c9f7" type="profile"/>
+        <infoLink id="043f-6485-3ea5-17b5" name="Shield Generator" hidden="false" targetId="8f1c-39b1-296b-39ef" type="profile"/>
+        <infoLink id="db01-41d0-36ea-3a3b" name="Inspired to Greatness" hidden="false" targetId="9138-595d-4656-39d8" type="rule"/>
+        <infoLink id="1aa1-4dc0-9360-c34f" name="Aun&apos;Shi" hidden="false" targetId="4d4b-7f4d-d712-c78e" type="profile"/>
+        <infoLink id="569a-183e-a8b5-6641" name="Inspirational Defiance (Aura)" hidden="false" targetId="5c81-c8c9-0aac-7d6d" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="5522-e93f-8df0-5f7b" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
@@ -4408,7 +4446,7 @@
         <categoryLink id="1c3c-93c5-1f90-936c" name="New CategoryLink" hidden="false" targetId="efe8-c565-f4af-e252" primary="false"/>
       </categoryLinks>
       <entryLinks>
-        <entryLink id="fb1f-0be9-86b4-e6c4" name="!Honour blade" hidden="false" collective="false" import="true" targetId="8b78-5c86-cc97-57ee" type="selectionEntry">
+        <entryLink id="fb1f-0be9-86b4-e6c4" name="Honour Blade" hidden="false" collective="false" import="true" targetId="8b78-5c86-cc97-57ee" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="18a6-767f-8776-150b" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d4f3-5173-e9e6-55ed" type="max"/>
@@ -4436,38 +4474,30 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="55.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
+        <cost name="pts" typeId="points" value="85.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="55d4-7a6e-8ad3-0823" name="!Aun&apos;Va" page="" hidden="false" collective="false" import="true" type="unit">
+    <selectionEntry id="55d4-7a6e-8ad3-0823" name="Aun&apos;Va" page="" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="set" field="a3ef-ac84-0bce-abbc" value="0.0">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="36d6-7bcd-f258-e86d" type="greaterThan"/>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3b63-2d45-6b9a-a8fb" type="lessThan"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1742-90e4-26f1-d1d2" type="greaterThan"/>
+          </conditions>
         </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aede-c284-5921-1959" type="max"/>
-        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="true" id="a3ef-ac84-0bce-abbc" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="aede-c284-5921-1959" type="max"/>
       </constraints>
       <infoLinks>
-        <infoLink id="24de-c4bc-dfc1-1d8a" name="Failure Is Not An Option" hidden="false" targetId="c40c-4ee4-7184-d483" type="profile"/>
-        <infoLink id="1a7f-05a7-9358-6ce5" name="Grand Invocation of the Elements" hidden="false" targetId="e778-ea88-a8c5-5024" type="profile"/>
-        <infoLink id="51af-0ef9-7abe-20bc" name="Paradox of Duality" hidden="false" targetId="a4d6-3ec9-6efb-f85e" type="profile"/>
-        <infoLink id="b796-0634-2567-3c5e" name="New InfoLink" hidden="false" targetId="69f7-be5e-b59f-2ca8" type="profile"/>
+        <infoLink id="24de-c4bc-dfc1-1d8a" name="Supreme Loyalty (Aura)" hidden="false" targetId="69f7-be5e-b59f-2ca8" type="profile"/>
+        <infoLink id="51af-0ef9-7abe-20bc" name="Leadership Caste" hidden="false" targetId="4875-70e4-ccc2-64b0" type="profile"/>
+        <infoLink id="55ac-dd9b-ed8b-07b0" name="Inspired to Greatness" hidden="false" targetId="9138-595d-4656-39d8" type="rule"/>
+        <infoLink id="42d0-05e6-7dae-3758" name="Paradox of Duality" hidden="false" targetId="a4d6-3ec9-6efb-f85e" type="profile"/>
       </infoLinks>
       <categoryLinks>
-        <categoryLink id="6ba3-2164-70c8-ee34" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
         <categoryLink id="7167-5636-496e-77c6" name="New CategoryLink" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="true"/>
-        <categoryLink id="e049-25a8-21d6-60b4" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="33c3-5c5a-32a1-b2e9" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
         <categoryLink id="64c4-f451-9ed0-c89e" name="New CategoryLink" hidden="false" targetId="4c0d-fd8d-e7c1-a2c1" primary="false"/>
       </categoryLinks>
@@ -4479,30 +4509,34 @@
           </constraints>
           <infoLinks>
             <infoLink id="5e73-cff9-51f8-61a1" name="Aun&apos;va" hidden="false" targetId="6caa-f314-9557-a69e" type="profile"/>
+            <infoLink id="8c36-b541-a24d-8930" name="Serene Unifier (Aun&apos;va)" hidden="false" targetId="e866-a160-2dda-d526" type="profile"/>
           </infoLinks>
           <categoryLinks>
-            <categoryLink id="1885-e48f-25d7-2b80" name="New CategoryLink" hidden="false" targetId="05f0-8653-4515-8349" primary="false"/>
-            <categoryLink id="ceb1-424b-892f-216b" name="New CategoryLink" hidden="false" targetId="9a80-87ed-7165-4bcd" primary="false"/>
+            <categoryLink id="17ac-e28f-970d-a9c5" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+            <categoryLink id="a99b-b957-4760-2481" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
+            <categoryLink id="1a44-b1ae-ba74-34ba" name="Ethereal" hidden="false" targetId="05f0-8653-4515-8349" primary="false"/>
+            <categoryLink id="9e3e-f857-e70c-1b80" name="Aun&apos;Va" hidden="false" targetId="9a80-87ed-7165-4bcd" primary="false"/>
           </categoryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="75.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="99e7-5f15-b850-c236" name="Ethereal Guard" hidden="false" collective="false" import="true" type="model">
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b93e-4af4-1f4b-cb42" type="min"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="78ca-9eec-8627-bfbc" type="max"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b93e-4af4-1f4b-cb42" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="78ca-9eec-8627-bfbc" type="max"/>
           </constraints>
           <infoLinks>
             <infoLink id="e8fb-806a-4739-d64c" name="Ethereal Guard" hidden="false" targetId="2a68-010e-c6ea-a0de" type="profile"/>
           </infoLinks>
           <categoryLinks>
-            <categoryLink id="ce7e-fccb-d390-9699" name="New CategoryLink" hidden="false" targetId="ea0a-80bd-ada9-ca11" primary="false"/>
+            <categoryLink id="3db7-8a59-c7a5-fa6e" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+            <categoryLink id="ee43-3b76-84e5-2e87" name="Ethereal Guard" hidden="false" targetId="ea0a-80bd-ada9-ca11" primary="false"/>
           </categoryLinks>
           <entryLinks>
-            <entryLink id="123e-80f5-693e-7579" name="Honour blade" hidden="false" collective="true" import="true" targetId="8b78-5c86-cc97-57ee" type="selectionEntry">
+            <entryLink id="123e-80f5-693e-7579" name="Honour Blade" hidden="false" collective="false" import="true" targetId="8b78-5c86-cc97-57ee" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8b06-6619-b3d2-ff84" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4787-39d7-3afe-bee9" type="max"/>
@@ -4510,9 +4544,9 @@
             </entryLink>
           </entryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="5.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -4537,10 +4571,16 @@
             </entryLink>
           </entryLinks>
         </entryLink>
+        <entryLink id="4460-9ee9-ec75-7334" name="Invocations of the Ethereals" hidden="false" collective="false" import="true" targetId="781c-f068-0343-beb8" type="selectionEntryGroup">
+          <constraints>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e2e-a0f2-6a7a-73d8" type="min"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ad3-2ffb-df2f-5d8d" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="0.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
+        <cost name="pts" typeId="points" value="80.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -6750,7 +6790,7 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="b20d-cc79-c825-fca8" name="!Kroot rifle" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="b20d-cc79-c825-fca8" name="Kroot Rifle" hidden="false" collective="false" import="true" type="upgrade">
       <infoLinks>
         <infoLink id="21b4-4992-443b-560e" name="Kroot rifle (melee)" hidden="false" targetId="d330-6d92-3db9-3c70" type="profile"/>
         <infoLink id="8f92-c0d5-8da1-2dd5" name="New InfoLink" hidden="false" targetId="425c-3fb5-6051-ae34" type="profile"/>
@@ -6771,9 +6811,9 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="838d-b4b3-2a3b-84ce" name="!Pulse rifle" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="838d-b4b3-2a3b-84ce" name="Pulse Rifle" hidden="false" collective="false" import="true" type="upgrade">
       <infoLinks>
-        <infoLink id="e748-2ed0-f6c0-5d60" name="New InfoLink" hidden="false" targetId="9b19-f1d8-3531-4035" type="profile"/>
+        <infoLink id="e748-2ed0-f6c0-5d60" name="Pulse rifle" hidden="false" targetId="9b19-f1d8-3531-4035" type="profile"/>
       </infoLinks>
       <costs>
         <cost name="pts" typeId="points" value="0.0"/>
@@ -7065,25 +7105,20 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="c099-97cd-b44e-633a" name="!Hover drone" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="c099-97cd-b44e-633a" name="Hover Drone" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f319-20ea-0783-b1df" type="max"/>
       </constraints>
-      <profiles>
-        <profile id="cb4e-14fe-3bed-49c9" name="Hover drone" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The Ethereal&apos;s Move characteristic becomes 8&quot;, and it gains the FLY and JET PACK keywords.</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
+      <infoLinks>
+        <infoLink id="85f1-8031-7572-7f6e" name="Hover Drone" hidden="false" targetId="5b89-99a4-f13e-27a3" type="profile"/>
+      </infoLinks>
       <categoryLinks>
-        <categoryLink id="e45f-2740-07c0-73f5" name="New CategoryLink" hidden="false" targetId="092c-6125-af28-ef5d" primary="false"/>
         <categoryLink id="ba1a-0b05-e379-0f29" name="New CategoryLink" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
       </categoryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="5.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="b09c-0e30-f268-0dc5" name="!Seismic destabiliser" page="" hidden="false" collective="false" import="true" type="upgrade">
@@ -7370,9 +7405,14 @@
     <selectionEntry id="4508-0126-c4c9-c492" name="(Vior&apos;la): Academy Luminary" page="" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5f48-5fed-7b98-0e66" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="efe8-c565-f4af-e252" type="notInstanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5f48-5fed-7b98-0e66" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -7385,7 +7425,7 @@
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="1.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="7ae8-0346-4bd8-26c9" name="(Dal&apos;yth): Unifying Influence" page="" hidden="false" collective="false" import="true" type="upgrade">
@@ -8055,7 +8095,6 @@
         <categoryLink id="ab71-4b3d-544d-a8d6" name="New CategoryLink" hidden="false" targetId="ad01-caec-17d9-cb8d" primary="false"/>
         <categoryLink id="d678-b677-e724-61a5" name="New CategoryLink" hidden="false" targetId="c274d0b0-5866-44bc-9810-91c136ae7438" primary="true"/>
         <categoryLink id="54ba-1ebf-48bb-76b7" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
-        <categoryLink id="b88e-7b21-b1fb-42fa" name="New CategoryLink" hidden="false" targetId="c61f-ef38-2718-a725" primary="false"/>
         <categoryLink id="114d-bfb2-81fe-8c6c" name="Knarloc Riders" hidden="false" targetId="4831-48b8-442e-3d33" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
@@ -8139,7 +8178,6 @@
         <infoLink id="3645-db86-99ca-9e8f" name="Loping Stride" hidden="false" targetId="b4e3-2638-a75e-b37c" type="profile"/>
       </infoLinks>
       <categoryLinks>
-        <categoryLink id="ee77-3a2d-d484-503f" name="New CategoryLink" hidden="false" targetId="c61f-ef38-2718-a725" primary="false"/>
         <categoryLink id="4e3e-e778-9206-da1b" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
         <categoryLink id="42f2-260a-4893-fe2f" name="New CategoryLink" hidden="false" targetId="7cc3-a867-6414-8f73" primary="false"/>
         <categoryLink id="46d8-be12-2fad-2998" name="New CategoryLink" hidden="false" targetId="3b77-decb-d468-6bcc" primary="false"/>
@@ -8326,7 +8364,6 @@
       </profiles>
       <categoryLinks>
         <categoryLink id="8d8c-dc2e-6174-a2e5" name="Faction: T&apos;au Empire" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
-        <categoryLink id="1571-46a3-d40c-1466" name="Faction: Kroot" hidden="false" targetId="c61f-ef38-2718-a725" primary="false"/>
         <categoryLink id="657e-3fdd-c885-e85c" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
         <categoryLink id="065b-6bac-8456-14b2" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="56d2-8aff-a22b-a909" name="Kroot Tracker" hidden="false" targetId="b041-9d2d-6b36-3c14" primary="false"/>
@@ -8455,20 +8492,6 @@
       <infoLinks>
         <infoLink id="67e2-0dc2-5cad-5c7c" name="Stratagem: Promising Pupil" hidden="false" targetId="6d9e-77cc-e260-25b4" type="profile"/>
       </infoLinks>
-      <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="2fd0-e84a-313d-7dbc" name="!Pack Alpha" publicationId="4593-a2f0-546a-d6f2" page="39" hidden="false" collective="false" import="true" type="upgrade">
-      <profiles>
-        <profile id="c29b-e8f5-8d32-c9a7" name="Pack Alpha" publicationId="4593-a2f0-546a-d6f2" page="39" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle. Select one KROOT SHAPER model from your army. Until the end of the battle, when making an Advance roll or charge roll for a friendly KROOT unit within 6&quot; of that model, roll one additional D6 and discard one of the dice.</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -9074,6 +9097,31 @@
       <infoLinks>
         <infoLink id="91ab-972b-8eed-1f0d" name="Positional Relay" hidden="false" targetId="fa09-d803-76de-c281" type="profile"/>
       </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="bb55-5bf8-5df0-605b" name="Kroot Pistol" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="9166-cbb6-7d17-c47e" name="Kroot Pistol" hidden="false" targetId="7e03-b5b7-589c-23ff" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="4c96-8644-b10f-bf71" name="Grenade Belt" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="159f-3754-1690-07d1" name="Grenade Belt" hidden="false" targetId="980c-69cb-3b7b-d7dc" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -9489,7 +9537,7 @@
         <entryLink id="ec84-0ef8-9ead-e7db" name="Warlord Traits (BRB)" hidden="false" collective="false" import="true" targetId="d442-1f03-d9da-e77f" type="selectionEntryGroup"/>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="0564-905a-e896-f5ab" name="Signature Systems" hidden="true" collective="false" import="true">
+    <selectionEntryGroup id="0564-905a-e896-f5ab" name="Relics &amp; Signature Systems" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
@@ -9517,9 +9565,9 @@
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="dfee-c396-bdf4-d627" type="max"/>
       </constraints>
       <entryLinks>
-        <entryLink id="177d-3a50-a4ee-6cec" name="!Onager gauntlet" hidden="false" collective="false" import="true" targetId="220f-efce-6051-0069" type="selectionEntry"/>
+        <entryLink id="177d-3a50-a4ee-6cec" name="Onager Gauntlet" hidden="false" collective="false" import="true" targetId="220f-efce-6051-0069" type="selectionEntry"/>
         <entryLink id="855b-3b17-dd93-f073" name="Puretide Engram Neurochip" hidden="false" collective="false" import="true" targetId="9aa7-098e-c65f-5f18" type="selectionEntry"/>
-        <entryLink id="e9f7-7551-9ed3-ddb9" name="!Multi-sensory discouragement array" hidden="false" collective="false" import="true" targetId="977b-9d46-55fc-069b" type="selectionEntry"/>
+        <entryLink id="e9f7-7551-9ed3-ddb9" name="Multi-sensory Discouragement Array" hidden="false" collective="false" import="true" targetId="977b-9d46-55fc-069b" type="selectionEntry"/>
         <entryLink id="c388-3463-23fb-3121" name="Advanced EM Scrambler" hidden="false" collective="false" import="true" targetId="38e4-9f87-2ebe-752f" type="selectionEntry"/>
         <entryLink id="c348-bdfd-c373-c230" name="(T&apos;au): Vectored manoeuvring thrusters" hidden="false" collective="false" import="true" targetId="0f35-7a03-5119-c1ec" type="selectionEntry"/>
         <entryLink id="57c2-f162-1a4f-3b0a" name="(Vior&apos;la): Automated Armour Defences" hidden="false" collective="false" import="true" targetId="5211-a24d-7a0f-37de" type="selectionEntry"/>
@@ -10730,11 +10778,7 @@
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8475-1d9a-06ec-2650" type="notInstanceOf"/>
               </conditions>
             </modifier>
-            <modifier type="set" field="184a-44d9-019d-0dbc" value="0.0"/>
           </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="184a-44d9-019d-0dbc" type="min"/>
-          </constraints>
           <costs>
             <cost name="pts" typeId="points" value="15.0"/>
           </costs>
@@ -13511,14 +13555,14 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each seeker missile can only be used once per battle. This weapon only hits on a roll of 6, regardless of the firing model&apos;s Ballistic Skill or any modifiers.</characteristic>
       </characteristics>
     </profile>
-    <profile id="161d-55df-28b1-f7d6" name="Ritual blade" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="161d-55df-28b1-f7d6" name="Ritual Blade" publicationId="6d04-0cc1-aee0-9041" page="130" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If any enemy models are destroyed by this weapon, friendly KROOT units within 6&quot; of the bearer do not have to take Morale tests in the Morale phase at that turn.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
     <profile id="92a1-743d-3b4f-35f1" name="Ripping fangs" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -13581,12 +13625,12 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Add 1 to hit rolls for this weapon against targets that can&apos;t FLY. If you roll one or more unmodified hit rolls of 1, the bearer suffers a mortal wound after all of this weapon&apos;s shots have been resolved.</characteristic>
       </characteristics>
     </profile>
-    <profile id="9b19-f1d8-3531-4035" name="Pulse rifle" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="9b19-f1d8-3531-4035" name="Pulse Rifle" publicationId="6d04-0cc1-aee0-9041" page="132" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
@@ -13746,7 +13790,7 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="425c-3fb5-6051-ae34" name="Kroot rifle (shooting)" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="425c-3fb5-6051-ae34" name="Kroot Rifle (shooting)" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
@@ -13756,7 +13800,7 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
-    <profile id="d330-6d92-3db9-3c70" name="Kroot rifle (melee)" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="d330-6d92-3db9-3c70" name="Kroot Rifle (melee)" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -13836,14 +13880,14 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. If you roll one or more unmodified hit rolls of 1, the bearer suffers a mortal wound after all of this weapon&apos;s shots have been resolved.</characteristic>
       </characteristics>
     </profile>
-    <profile id="fa85-f362-0f20-5688" name="Honour blade" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+    <profile id="fa85-f362-0f20-5688" name="Honour Blade" publicationId="6d04-0cc1-aee0-9041" page="104" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, subtract 1 from that attack&apos;s hit roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="07ec-d5fe-a818-9c94" name="High-yield missile pod" page="" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -14598,16 +14642,16 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">A Devilfish can transport up to 12 &lt;SEPT&gt; INFANTRY or DRONE models. It cannot transport BATTLESUITS. It can transport only a single MB3 Recon Drone, but it does not count towards the total number of models embarked on the Devilfish.</characteristic>
       </characteristics>
     </profile>
-    <profile id="3a5d-86b8-546a-01ca" name="Kroot Shaper" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+    <profile id="3a5d-86b8-546a-01ca" name="Kroot Shaper" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
       <characteristics>
         <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
-        <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+        <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
         <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
-        <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+        <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
         <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
-        <characteristic name="W" typeId="f330-5e6e-4110-0978">5</characteristic>
+        <characteristic name="W" typeId="f330-5e6e-4110-0978">4</characteristic>
         <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">6+</characteristic>
       </characteristics>
     </profile>
@@ -14629,20 +14673,20 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
       </characteristics>
     </profile>
-    <profile id="0ef2-2668-6edb-95a1" name="Cadre Fireblade" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+    <profile id="0ef2-2668-6edb-95a1" name="Cadre Fireblade" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
       <characteristics>
         <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
-        <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-        <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
+        <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+        <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
         <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
         <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
-        <characteristic name="W" typeId="f330-5e6e-4110-0978">5</characteristic>
+        <characteristic name="W" typeId="f330-5e6e-4110-0978">4</characteristic>
         <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
         <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
       </characteristics>
     </profile>
-    <profile id="c301-1174-2501-d7e4" name="Ethereal" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+    <profile id="c301-1174-2501-d7e4" name="Ethereal" publicationId="6d04-0cc1-aee0-9041" page="104" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
       <characteristics>
         <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
         <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -14651,7 +14695,7 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
         <characteristic name="W" typeId="f330-5e6e-4110-0978">4</characteristic>
         <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">5+</characteristic>
       </characteristics>
     </profile>
@@ -14668,7 +14712,7 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">5+</characteristic>
       </characteristics>
     </profile>
-    <profile id="6caa-f314-9557-a69e" name="Aun&apos;va" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+    <profile id="6caa-f314-9557-a69e" name="Aun&apos;va" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
       <characteristics>
         <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
         <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
@@ -14677,11 +14721,11 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
         <characteristic name="W" typeId="f330-5e6e-4110-0978">6</characteristic>
         <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
-        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">5+</characteristic>
       </characteristics>
     </profile>
-    <profile id="2a68-010e-c6ea-a0de" name="Ethereal Guard" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+    <profile id="2a68-010e-c6ea-a0de" name="Ethereal Guard" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
       <characteristics>
         <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
         <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -14690,11 +14734,11 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
         <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
         <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
         <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">5+</characteristic>
       </characteristics>
     </profile>
-    <profile id="4d4b-7f4d-d712-c78e" name="Aun&apos;Shi" page="" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+    <profile id="4d4b-7f4d-d712-c78e" name="Aun&apos;Shi" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
       <characteristics>
         <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
         <characteristic name="WS" typeId="e7f0-1278-0250-df0c">2+</characteristic>
@@ -14703,8 +14747,8 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
         <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
         <characteristic name="W" typeId="f330-5e6e-4110-0978">5</characteristic>
         <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">5</characteristic>
-        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
-        <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">-</characteristic>
+        <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">10</characteristic>
+        <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">7+</characteristic>
       </characteristics>
     </profile>
     <profile id="b23e-7365-7adb-56a8" name="Commander Farsight" publicationId="6d04-0cc1-aee0-9041" page="99" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -15596,11 +15640,6 @@ Any models embarked within another model when it embarks upon this model do not 
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model may drop a pulse bomb as it flies over enemy units in its Movement phase. To do so, after this model has moved, target one enemy unit that it moved across. Then, roll a D6 for each model in that unit (up to a maximum of 10), adding 1 to the result if the enemy model is INFANTRY. For each roll of 5+, the target unit suffers 1 mortal wound.</characteristic>
       </characteristics>
     </profile>
-    <profile id="3884-2cd4-f684-e35a" name="Stealthy Hunters" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of the first battle round but before the first turn begins, you can move this unit up to 7&quot;. It cannot end this move within 9&quot; of any enemy models. If both players have units that are able to move at the start of the first battle round but before the first turn begins, the player who is taking the first turn moves their units first.</characteristic>
-      </characteristics>
-    </profile>
     <profile id="3ecf-bf1f-4e2b-869c" name="Agile Brute" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this unit Advances, add 6&quot; to its Move for that Movement phase instead of rolling a D6.</characteristic>
@@ -15626,14 +15665,14 @@ Any models embarked within another model when it embarks upon this model do not 
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Your opponent must subtract 1 from all hit rolls for attacks that target this unit.</characteristic>
       </characteristics>
     </profile>
-    <profile id="3bbf-c98a-3b56-d2a4" name="The Shaper Commands" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="3bbf-c98a-3b56-d2a4" name="The Shaper Commands (Aura)" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Re-roll wound rolls of 1 for friendly KROOT units within 6&quot; of this model.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly KROOT unit is within 6&quot; of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1.</characteristic>
       </characteristics>
     </profile>
-    <profile id="9276-1b5b-109c-32b7" name="Wisest of Their Kind" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="9276-1b5b-109c-32b7" name="Wisest of Their Kind (Aura)" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">KROOT units within 6&quot; of a friendly Kroot Shaper may use the Shaper&apos;s Leadership characteristic instead of their own when taking Morale tests.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly KROOT unit is within 6&quot; of this model, models in that unit can use this model&apos;s Leadership characteristic instead of their own.</characteristic>
       </characteristics>
     </profile>
     <profile id="b21d-2b95-7a43-1500" name="Open-topped" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -15671,9 +15710,9 @@ Any models embarked within another model when it embarks upon this model do not 
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A Tidewall Shieldline can reflect shots back at the enemy. For each unmodified save roll of 6 you make in the Shooting phase for a Tidewall Shieldline, the attacking unit suffers one mortal wound after they have finished shooting.</characteristic>
       </characteristics>
     </profile>
-    <profile id="c40c-4ee4-7184-d483" name="Failure Is Not An Option" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="c40c-4ee4-7184-d483" name="Failure Is Not An Option (Aura)" publicationId="6d04-0cc1-aee0-9041" page="104,105" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">T&apos;AU EMPIRE units within 6&quot; of a friendly ETHEREAL may use the Ethereal&apos;s Leadership characteristic instead of their own when taking Morale tests.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES and T&apos;AU AUXILIARY units) is within 6&quot; of this unit&apos;s ETHEREAL model, models in that unit can use this model&apos;s Leadership characteristic instead of their own.</characteristic>
       </characteristics>
     </profile>
     <profile id="069e-bc12-1bba-fb8b" name="Blademaster" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -15681,32 +15720,19 @@ Any models embarked within another model when it embarks upon this model do not 
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the beginning of each Fight phase, choose one of the following effects to last until the end of the phase:  - Aun&apos;Shi&apos;s close combat attacks have AP-2. - Re-roll failed invulnerable saves for Aun&apos;Shi.</characteristic>
       </characteristics>
     </profile>
-    <profile id="cc06-c994-7dd8-17a7" name="Invocation of the Elements" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="cc06-c994-7dd8-17a7" name="Embodiments of the Empire" publicationId="6d04-0cc1-aee0-9041" page="104" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Movement phase, an ETHEREAL may invoke one of the elemental powers below. All friendly T&apos;AU EMPIRE INFANTRY and BATTLESUIT units within 6&quot; of the model invoking an elemental power gains the relevant benefit until the start of your next turn. A unit can only be affected by the same elemental power once per battle round.
-* Calm of Tides: Subtract 1 from any Morale tests made for affected units.
-* Storm of Fire: Re-roll hit rolls of 1 in the Shooting phase for affected units that remain stationary in the Movement phase.
-* Sense of Stone: Whenever a model in an affected unit loses a wound, roll a D6; on a 6, that model does not lose that wound.
-* Zephyr&apos;s Grace: You can re-roll the dice for affected units when they Advance.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model cannot be drawn from the FARSIGHT ENCLAVES Sept.</characteristic>
       </characteristics>
     </profile>
-    <profile id="e778-ea88-a8c5-5024" name="Grand Invocation of the Elements" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="69f7-be5e-b59f-2ca8" name="Supreme Loyalty (Aura)" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Movement phase, Aun&apos;va may invoke up to two elemental powers. All T&apos;AU EMPIRE INFANTRY and BATTLESUIT units within 6&quot; of the model invoking an elemental power gain the relevant benefit until the start of your next turn. A unit can only be affected by the same elemental power once per battle round.
-* Calm of Tides: Subtract 1 from any Morale tests made for affected units.
-* Storm of Fire: Re-roll hit rolls of 1 in the Shooting phase for affected units that remain stationary in the Movement phase.
-* Sense of Stone: Whenever a model in an affected unit loses a wound, roll a D6; on a 6, that model does not lose that wound.
-* Zephyr&apos;s Grace: You can re-roll the dice for affected units when they Advance.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly T&apos;AU EMPIRE CORE unit  (excluding FARSIGHT ENCLAVES or T&apos;AU AUXILIARY units) is within 9&quot; of this unit&apos;s ETHEREAL model, models in that unit can use this unit&apos;s Leadership characteristic instead of their own.</characteristic>
       </characteristics>
     </profile>
-    <profile id="69f7-be5e-b59f-2ca8" name="Supreme Loyalty" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="a4d6-3ec9-6efb-f85e" name="Paradox of Duality" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst Aun&apos;Va is on the battlefield, you can re-roll Morale tests for all friendly T&apos;AU EMPIRE units.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="a4d6-3ec9-6efb-f85e" name="Paradox of Duality" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this unit is attacked during the Shooting phase, it may add, rather than subtract, the AP of the attack to its Save characteristic (e.g. an AP-1 attack would provide a +1 bonus to its saves).</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models in this unit have a 5+ invulnerable save. Each time an attack is made against this unit, subtract 1 from that atatck&apos;s wound roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="ee5c-5d53-6545-820e" name="Structural Analyser" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -15719,9 +15745,9 @@ Any models embarked within another model when it embarks upon this model do not 
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly T&apos;AU SEPT INFANTRY units within 6&quot; of Darkstrider in the Shooting phase may attack with ranged weapons even if they Fell Back this turn.</characteristic>
       </characteristics>
     </profile>
-    <profile id="50e6-fdbf-c3b7-5892" name="Volley Fire" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="50e6-fdbf-c3b7-5892" name="Volley Fire (Aura)" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models in &lt;SEPT&gt; units within 6&quot; of any friendly &lt;SEPT&gt; Cadre Fireblades may fire an extra shot with pulse pistols, pulse carbines and pulse rifles when shooting at a target within half the weapon&apos;s range.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;SEPT&gt; CORE unit is within 6&quot; of this unit&apos;s CADRE FIREBLADE model, each time a CORE model in that unit makes an attack with a pulse weapon (pg 130), an unmodified hit roll of 6 scores one additional hit.</characteristic>
       </characteristics>
     </profile>
     <profile id="02f2-adda-f001-b312" name="Master of War (Aura) (Shadowsun)" publicationId="6d04-0cc1-aee0-9041" page="98" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -16801,37 +16827,37 @@ E-H Disruption (Aura): While an enemy unit is within 12&quot; of this model, eac
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time you select a target for this weapon, you can ignore the Look Out, Sir rule. Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound to the target in addition to any normal damage. </characteristic>
       </characteristics>
     </profile>
-    <profile id="02b5-af3b-69ff-e543" name="1. Storm of Fire" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="02b5-af3b-69ff-e543" name="1. Storm of Fire" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="0c29-9351-f423-99b3" typeName="Invocations">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this invocation is inspiring, select one friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) within 6&quot; of this ETHEREAL. That unit can make ranged attacks without any actions it is performing failing.</characteristic>
+        <characteristic name="-" typeId="f7b2-b2a3-89d4-0470">If this invocation is inspiring, select one friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) within 6&quot; of this ETHEREAL. That unit can make ranged attacks without any actions it is performing failing.</characteristic>
       </characteristics>
     </profile>
-    <profile id="9508-3a94-3795-df26" name="2. Sense of Stone" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="9508-3a94-3795-df26" name="2. Sense of Stone" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="0c29-9351-f423-99b3" typeName="Invocations">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this invocation is inspiring, select one friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) within 6&quot; of this ETHEREAL. Each time a CORE  model in that unit would lose a wound, roll one D6: on a 5+, that wound is not lost.</characteristic>
+        <characteristic name="-" typeId="f7b2-b2a3-89d4-0470">If this invocation is inspiring, select one friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) within 6&quot; of this ETHEREAL. Each time a CORE  model in that unit would lose a wound, roll one D6: on a 5+, that wound is not lost.</characteristic>
       </characteristics>
     </profile>
-    <profile id="590b-a9f8-b951-1cee" name="3. Zephyr&apos;s Grace" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="590b-a9f8-b951-1cee" name="3. Zephyr&apos;s Grace" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="0c29-9351-f423-99b3" typeName="Invocations">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this invocation is inspiring, select one friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) within 6&quot; of this ETHEREAL. Each time a ranged attack is made against that unit, if it did not Remain Stationary in your previous Movement phase, subtract 1 from that attack&apos;s hit roll.</characteristic>
+        <characteristic name="-" typeId="f7b2-b2a3-89d4-0470">If this invocation is inspiring, select one friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) within 6&quot; of this ETHEREAL. Each time a ranged attack is made against that unit, if it did not Remain Stationary in your previous Movement phase, subtract 1 from that attack&apos;s hit roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="91a1-54cb-dd49-39dd" name="4. Power of Tides" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="91a1-54cb-dd49-39dd" name="4. Power of Tides" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="0c29-9351-f423-99b3" typeName="Invocations">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this invocation is inspiring, select one friendly T&apos;AU AUXILIARY unit within 6&quot; of this ETHEREAL. Each time a model in that unit makes an attack, add 1 to that attack&apos;s wound roll.</characteristic>
+        <characteristic name="-" typeId="f7b2-b2a3-89d4-0470">If this invocation is inspiring, select one friendly T&apos;AU AUXILIARY unit within 6&quot; of this ETHEREAL. Each time a model in that unit makes an attack, add 1 to that attack&apos;s wound roll.</characteristic>
       </characteristics>
     </profile>
-    <profile id="bff8-1328-498a-9aae" name="5. Unifying Mantra (Aura)" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="bff8-1328-498a-9aae" name="5. Unifying Mantra (Aura)" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="0c29-9351-f423-99b3" typeName="Invocations">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this invocation is inspiring, then while a friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) is within 6&quot; of this ETHEREAL:
+        <characteristic name="-" typeId="f7b2-b2a3-89d4-0470">If this invocation is inspiring, then while a friendly T&apos;AU EMPIRE CORE unit (excluding FARSIGHT ENCLAVES units) is within 6&quot; of this ETHEREAL:
 
 - You can re-roll Morale tests taken for that unit.
 - Add 1 to Combat Attrition tests taken for that unit.</characteristic>
       </characteristics>
     </profile>
-    <profile id="a2de-ef5f-7700-9b8d" name="6. Wisdom of the Guides" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+    <profile id="a2de-ef5f-7700-9b8d" name="6. Wisdom of the Guides" publicationId="6d04-0cc1-aee0-9041" page="76" hidden="false" typeId="0c29-9351-f423-99b3" typeName="Invocations">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this invocation is inspiring, you gain 1 Command point.</characteristic>
+        <characteristic name="-" typeId="f7b2-b2a3-89d4-0470">If this invocation is inspiring, you gain 1 Command point.</characteristic>
       </characteristics>
     </profile>
     <profile id="ebeb-65ae-fdf0-121a" name="Advanced Guardian Drone" publicationId="6d04-0cc1-aee0-9041" page="94" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -17057,6 +17083,86 @@ E-H Disruption (Aura): While an enemy unit is within 12&quot; of this model, eac
     <profile id="0d66-8e6a-f8df-0465" name="Aggressive Tactics" publicationId="6d04-0cc1-aee0-9041" page="102" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, you can select one friendly &lt;SEPT&gt; CRISIS CORE unit within 9&quot; of this unit&apos;s COLDSTAR BATTLESUIT COMMANDER model. Until the end of the turn, each time this unit Advances, do not make an Advance roll. Instead, until the end of the phase, add 8&quot; to the Move characteristic of models in this unit.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="6b37-60b6-a644-cb52" name="Fireblade Pulse Rifle" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="edde-cecf-0d6b-b533" name="Target Sighted" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, select one friendly &lt;SEPT&gt; FIRE WARRIOR TEAM unit within 9&quot; of this unit&apos;s CADRE FIREBLADE model, until the start of your next Command phase, each time a CORE model in that unit makes a ranged attack, re-roll a hit roll of 1.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="a295-7f6e-2a96-bfe5" name="Stealthy Hunter" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a ranged attack is allocated to this model, while it is receiving the benefits of cover, add an additional 1 to any armour saving throws made against that attack.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="bbe5-6530-c29a-4da4" name="Shaper Kroot Rifle" publicationId="6d04-0cc1-aee0-9041" page="103" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="7e03-b5b7-589c-23ff" name="Kroot Pistol" publicationId="6d04-0cc1-aee0-9041" page="131" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="980c-69cb-3b7b-d7dc" name="Grenade Belt" publicationId="6d04-0cc1-aee0-9041" page="131" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Grenade 2D6</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. The bearer can only shoot with this weapon once per battle.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="5b89-99a4-f13e-27a3" name="Hover Drone" publicationId="6d04-0cc1-aee0-9041" page="104" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer has a Move characteristic of 10 and the FLY keyword.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="f18e-a10a-50d4-a21b" name="Serene Unifier (Ethereal)" publicationId="6d04-0cc1-aee0-9041" page="104" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows two invocations from the Invocations of the Ethereals (pg 76). In your Command phase, if this model is on the battlefield, it can intone one Invocation it knows that has not already been inspired by a friendly model this turn. Roll one D6: on a 3+, the intoned invocation is inspiring and takes affect until the start of your next Command phase.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="4875-70e4-ccc2-64b0" name="Leadership Caste (Aun&apos;va)" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This unit can be included in any T&apos;AU EMPIRE Detachment (excluding FARSIGHT ENCLAVES Detachments) without preventing that Detachment from being a Sept Detachment and without preventing other units in your army from benefiting from a Sept Tenet (pg 55), but this unit can only benefit from a Sept Tenet is every &lt;SEPT&gt; unit (excluding SUPREME COMMANDER units) in your army is from T&apos;AU SEPT.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="e866-a160-2dda-d526" name="Serene Unifier (Aun&apos;va)" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This unit&apos;s Aun&apos;va model knows three invocations from the Invocations of the Ethereals (pg 76). In your Command phase, if this unit&apos;s Aun&apos;va model is on the battlefield, it can intone up to two invocations it knows that have not already been intoned by a friendly model this turn. Roll one D6: on a 2+, the intoned invocation is inspiring and takes effect until the start of your next Command phase.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="e748-f9fe-d638-c9f7" name="Leadership Caste (Aun&apos;Shi)" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This unit can be included in any T&apos;AU EMPIRE Detachment (excluding FARSIGHT ENCLAVES Detachments) without preventing that Detachment from being a Sept Detachment and without preventing other units in your army from benefiting from a Sept Tenet (pg 55), but this unit can only benefit from a Sept Tenet is every &lt;SEPT&gt; unit (excluding SUPREME COMMANDER units) in your army is from VIOR&apos;LA SEPT.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="5c81-c8c9-0aac-7d6d" name="Inspirational Defiance (Aura)" publicationId="6d04-0cc1-aee0-9041" page="105" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly VIOR&apos;LA CORE unit is within 6&quot; of this model, each time an enemy unit declares a charge against that friendly unit, if that friendly unit is not within Engagement Range of any enemy units, it can Hold Steady or Set to Defend.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
