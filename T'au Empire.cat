@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="c0bb-c0cd-a715-99c6" name="T&apos;au Empire" revision="106" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Techno" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="204" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="c0bb-c0cd-a715-99c6" name="T&apos;au Empire" revision="107" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Techno" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="204" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="6d04-0cc1-aee0-9041" name="Codex: Tau Empire" shortName="" publisher=""/>
   </publications>
@@ -706,7 +706,7 @@
         <categoryLink id="b3aa-08a3-c589-6c81" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="4ce5-2966-368b-282d" name="!Kroot Hounds" hidden="false" collective="false" import="true" targetId="c2ee-761b-33a0-42e2" type="selectionEntry">
+    <entryLink id="4ce5-2966-368b-282d" name="Kroot Hounds" hidden="false" collective="false" import="true" targetId="c2ee-761b-33a0-42e2" type="selectionEntry">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
@@ -725,7 +725,7 @@
         </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5e71-c05b-9a29-bcfe" type="max"/>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="true" id="5e71-c05b-9a29-bcfe" type="max"/>
       </constraints>
       <categoryLinks>
         <categoryLink id="5ad5-eb57-e318-bd5b" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
@@ -1178,9 +1178,9 @@
         <infoLink id="c79d-e75a-85ed-226f" name="Advanced Targeting System" hidden="false" targetId="4d48-1d09-dda7-a541" type="profile"/>
       </infoLinks>
       <costs>
-        <cost name="pts" typeId="points" value="5.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="2e3b-c230-e780-bdd8" name="Airbursting Fragmentation Projector" hidden="false" collective="false" import="true" type="upgrade">
@@ -2732,12 +2732,12 @@
             <entryLink id="999c-90a4-f0fe-5a11" name="2x T&apos;au Flamer" hidden="false" collective="false" import="true" targetId="d31b-3061-9b08-dd24" type="selectionEntry"/>
             <entryLink id="4364-f2cc-4cd3-aa3e" name="2x Airbursting Fragmentation Projector" hidden="false" collective="false" import="true" targetId="d013-7f17-372b-14c4" type="selectionEntry">
               <costs>
-                <cost name="pts" typeId="points" value="10.0"/>
+                <cost name="pts" typeId="points" value="5.0"/>
               </costs>
             </entryLink>
             <entryLink id="fa06-6155-37a0-ddde" name="2x Burst Cannon" hidden="false" collective="false" import="true" targetId="2702-1d79-3888-1792" type="selectionEntry">
               <costs>
-                <cost name="pts" typeId="points" value="10.0"/>
+                <cost name="pts" typeId="points" value="5.0"/>
               </costs>
             </entryLink>
           </entryLinks>
@@ -7327,9 +7327,14 @@
     <selectionEntry id="5285-d00f-b003-ce6e" name="(Farsight Enclaves): Master of the Killing Blow" page="" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1742-90e4-26f1-d1d2" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1742-90e4-26f1-d1d2" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="843f-8a68-2396-f364" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -7384,6 +7389,11 @@
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                 <cost name="pts" typeId="points" value="0.0"/>
               </costs>
+            </selectionEntry>
+            <selectionEntry id="843f-8a68-2396-f364" name="Farsight Enclaves Allied World" hidden="false" collective="false" import="true" type="upgrade">
+              <infoLinks>
+                <infoLink id="380a-f1c6-0d2e-d513" name="Farsight Enclaves Tenet: Devastating Counterstrike" hidden="false" targetId="d35a-0abd-806f-2ab9" type="profile"/>
+              </infoLinks>
             </selectionEntry>
           </selectionEntries>
           <entryLinks>
@@ -10904,16 +10914,16 @@
                   <conditionGroups>
                     <conditionGroup type="and">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d9b5-b00f-ac62-58a5" type="greaterThan"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f60e-1dd6-bb1f-ae50" type="greaterThan"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad5f-488f-1b0f-f066" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f8f9-6b46-5f26-e7fb" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2130-01ca-0fa3-4740" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="703a-ead3-6d87-1608" type="greaterThan"/>
                       </conditions>
                     </conditionGroup>
                     <conditionGroup type="and">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f60e-1dd6-bb1f-ae50" type="greaterThan"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ad5f-488f-1b0f-f066" type="equalTo"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d9b5-b00f-ac62-58a5" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2130-01ca-0fa3-4740" type="greaterThan"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="703a-ead3-6d87-1608" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f8f9-6b46-5f26-e7fb" type="greaterThan"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -14711,7 +14721,7 @@ In either case, write down all of your Detachments&apos; Sept Tenets on your arm
 Note that if a BATTLESUIT model has more than one ranged weapon, you can still choose to target units that are not within Engagement Range of its unit, but it will only be able to make the attacks with that weapon if all enemy units within Engagement Range of its unit have been destroyed when you come to resolve these attacks. In addition, when a BATTLESUIT model shoots a Heavy weapon, subtract 1 from the hit rolls when resolving that weapon&apos;s attacks while any enemy units are within Engagement Range of that model&apos;s unit.</description>
     </rule>
     <rule id="663b-0751-9b7e-060b" name="Ambushing Predators" publicationId="6d04-0cc1-aee0-9041" page="93" hidden="false">
-      <description>At the start of the first battle round, model sin this unit can make a Normal move of up to 7&quot;. They cannot end this move within 9&quot; of any enemy models.</description>
+      <description>At the start of the first battle round, models in this unit can make a Normal move of up to 7&quot;. They cannot end this move within 9&quot; of any enemy models.</description>
     </rule>
     <rule id="9138-595d-4656-39d8" name="Inspired to Greatness" publicationId="6d04-0cc1-aee0-9041" page="93" hidden="false">
       <description>In your Command phase, select one friendly T&apos;AU EMPIRE CORE or T&apos;AU AUXILIARY unit within 6&quot; of this unit&apos;s ETHEREAL model (excluding FARSIGHT ENCLAVES units). Until the start of your next Command phase, while that unit is performing an action, it can make ranged attacks without that action failing.</description>
@@ -15075,7 +15085,7 @@ Note that if a BATTLESUIT model has more than one ranged weapon, you can still c
     </profile>
     <profile id="07ec-d5fe-a818-9c94" name="High-yield Missile Pod" publicationId="6d04-0cc1-aee0-9041" page="131" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">30&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
@@ -17733,7 +17743,7 @@ Integrated Command Structure (Aura): While a friendly T&apos;AU AUXILIARY unit i
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this WARLORD makes an attack:
 
 - On an unmodified wound roll of 6, improve the Armour Penetration characteristic of that attack by 3.
-- The model that attach is allocated to cannot use any rules to ignore the wounds it loses.</characteristic>
+- The model that attack is allocated to cannot use any rules to ignore the wounds it loses.</characteristic>
       </characteristics>
     </profile>
     <profile id="89de-5396-ff91-3e8a" name="Stratagem: Emergency Dispensation" publicationId="6d04-0cc1-aee0-9041" page="67" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -17872,7 +17882,7 @@ E-H Disruption (Aura): While an enemy unit is within 12&quot; of this model, eac
     </profile>
     <profile id="a9f3-a958-2cda-8ec4" name="Stimm Injectors" publicationId="6d04-0cc1-aee0-9041" page="71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">COMMANDER or CRISIS model only. Once per battle, when a saving throw is failed for the bearer, the bearer can use this Prototype SDystem. if it does, until the end of the turn, each time the bearer would lose a wound, roll one D6: on a 4+ that wound is not lost.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">COMMANDER or CRISIS model only. Once per battle, when a saving throw is failed for the bearer, the bearer can use this Prototype System. if it does, until the end of the turn, each time the bearer would lose a wound, roll one D6: on a 4+ that wound is not lost.</characteristic>
       </characteristics>
     </profile>
     <profile id="eca1-dc6f-3ea5-069d" name="Wide-Spectrum Scanners" publicationId="6d04-0cc1-aee0-9041" page="71" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
