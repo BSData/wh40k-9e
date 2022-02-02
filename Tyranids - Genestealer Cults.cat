@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="83b2-e602-931a-fea1" name="Tyranids - Genestealer Cults" revision="70" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="GenWilhelm#6485" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="204" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="83b2-e602-931a-fea1" name="Tyranids - Genestealer Cults" revision="71" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="GenWilhelm#6485" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="204" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="83b2-e602-pubN65537" name="Codex: Genestealer Cults"/>
   </publications>
@@ -622,7 +622,7 @@
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6fb0-d88c-3fbf-3258" type="max"/>
                   </constraints>
                 </entryLink>
-                <entryLink id="0652-b9c7-9065-7878" name="Cult Calws and Knife" hidden="false" collective="false" import="true" targetId="183e-a985-718e-26a5" type="selectionEntry">
+                <entryLink id="0652-b9c7-9065-7878" name="Cult Claws and Knife" hidden="false" collective="false" import="true" targetId="183e-a985-718e-26a5" type="selectionEntry">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="826c-062a-b827-27aa" type="max"/>
                   </constraints>
@@ -2373,7 +2373,7 @@ At the end of the Move Units step of your Movement phase, one ACOLYTE ICONWARD m
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="183e-a985-718e-26a5" name="Cult Calws and Knife" hidden="false" collective="true" import="true" type="upgrade">
+    <selectionEntry id="183e-a985-718e-26a5" name="Cult Claws and Knife" hidden="false" collective="true" import="true" type="upgrade">
       <infoLinks>
         <infoLink id="1add-1f0d-be5c-3457" name="Cult Claws and Knife" hidden="false" targetId="f636-5a1e-3bc2-7aef" type="profile"/>
       </infoLinks>
@@ -3115,9 +3115,14 @@ At the end of the Move Units step of your Movement phase, one ACOLYTE ICONWARD m
             <selectionEntryGroup id="02bf-df4c-c56c-2a05" name="Melee Weapons" hidden="false" collective="false" import="true">
               <modifiers>
                 <modifier type="set" field="23d7-090e-24cb-e0fd" value="1.0">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6078-a421-0f9a-04c0" type="equalTo"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6078-a421-0f9a-04c0" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bca5-893f-3e46-4116" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -3141,9 +3146,14 @@ At the end of the Move Units step of your Movement phase, one ACOLYTE ICONWARD m
             <selectionEntryGroup id="ef29-144e-1bac-193e" name="Pistols" hidden="false" collective="false" import="true" defaultSelectionEntryId="da4c-845d-6bfb-afc0">
               <modifiers>
                 <modifier type="set" field="d754-943f-11d8-8726" value="2.0">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6078-a421-0f9a-04c0" type="equalTo"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6078-a421-0f9a-04c0" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bca5-893f-3e46-4116" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -3191,19 +3201,15 @@ At the end of the Move Units step of your Movement phase, one ACOLYTE ICONWARD m
             </entryLink>
             <entryLink id="6231-4a85-9c02-9d71" name="Autogun" hidden="false" collective="false" import="true" targetId="6078-a421-0f9a-04c0" type="selectionEntry">
               <modifiers>
-                <modifier type="set" field="b67f-480e-f015-cedb" value="0.0">
-                  <conditionGroups>
-                    <conditionGroup type="or">
-                      <conditions>
-                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="02bf-df4c-c56c-2a05" type="atLeast"/>
-                        <condition field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef29-144e-1bac-193e" type="atLeast"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
+                <modifier type="set" field="b67f-480e-f015-cedb" value="0.0"/>
               </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b67f-480e-f015-cedb" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="167d-e745-d7ea-9b89" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="903e-aa4d-e2af-2675" name="Shotgun" hidden="false" collective="false" import="true" targetId="bca5-893f-3e46-4116" type="selectionEntry">
+              <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="167d-e745-d7ea-9b89" type="max"/>
               </constraints>
             </entryLink>
@@ -6136,7 +6142,7 @@ Each unit can only be selected for this ability once per phase.</characteristic>
             </entryLink>
           </entryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="70.0"/>
+            <cost name="pts" typeId="points" value="80.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
