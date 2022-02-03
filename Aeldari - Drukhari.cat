@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e0a4-2172-4397-e39a" name="Aeldari - Drukhari" revision="138" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR @FarseerV" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="204" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e0a4-2172-4397-e39a" name="Aeldari - Drukhari" revision="139" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WindstormSCR @FarseerV" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="204" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="e0a4-2172-pubN65537" name="Codex: Drukhari"/>
     <publication id="d36f-0c87-284a-7055" name="Warhammer Legends - Drukhari"/>
@@ -460,6 +460,11 @@
             <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5fc1-0bf5-caf9-3702" type="equalTo"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d431-9ed3-ca92-bf87" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
     </entryLink>
     <entryLink id="810b-7974-b371-df3f" name="Tantalus" hidden="false" collective="false" import="true" targetId="f0f3-5144-6b79-b79a" type="selectionEntry">
@@ -563,6 +568,30 @@
       <categoryLinks>
         <categoryLink id="7abd-6d57-86b3-7751" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
+    </entryLink>
+    <entryLink id="b295-b9d3-dfd1-a8ef" name="Ur-Ghul (BSF)" hidden="false" collective="false" import="true" targetId="d431-9ed3-ca92-bf87" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="65cd-a17c-d556-3734" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3ea9-f42c-d816-b91a" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="fd18-5d03-2a29-9dc7">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5fc1-0bf5-caf9-3702" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2538-0722-fa84-1db3" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </entryLink>
   </entryLinks>
   <infoLinks>
@@ -8571,6 +8600,80 @@ Each time a melee attack is made by the bearer, that attack automatically hits t
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="d431-9ed3-ca92-bf87" name="Ur-Ghul (BSF)" hidden="false" collective="false" import="true" type="unit">
+      <constraints>
+        <constraint field="selections" scope="force" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c2e3-1081-4fa7-f5a2" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="ee26-dd23-9643-7116" name="Ur-Ghul" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">-</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">4</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">4</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">7+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="ee02-0dcb-94d5-2a51" name="Ferocious Charge" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 2 to this model&apos;s Attacks characteristic if it made a charge move in the same turn.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="e15f-c7e7-359a-cb15" name="Insensible To Pain" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 5+ invulnerable save.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="df49-a620-e780-fe4e" name="Court of the Archon" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">You can re-roll failed hit rolls for this model whilst it is within 3&quot; of any friendly &lt;KABAL&gt; ARCHONS. In addition, if your army is Battle-forged, this model does not take up slots in a detachment that includes and &lt;KABAL&gt; ARCHONS.
+In a Battle-forged army in a matched play game, you can only include &lt;KABAL&gt; COURT OF THE ARCHON models in a detachment that also includes one or more &lt;KABAL&gt; ARCHONS, and you can only include a maximum of 4 COURT OF THE ARCHON models in the same detachment.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink id="b0ca-b29c-8254-aa1d" name="Ur-Ghul" hidden="false" targetId="c562-0478-2bfa-f12c" primary="false"/>
+        <categoryLink id="7130-d651-1c03-8a18" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
+        <categoryLink id="37da-efdd-6202-a6b8" name="Faction: Aeldari" hidden="false" targetId="dbb4-dfd1-04b9-5980" primary="false"/>
+        <categoryLink id="9e58-0355-62b9-6a59" name="Faction: Drukhari" hidden="false" targetId="955e-536a-e290-5dcf" primary="false"/>
+        <categoryLink id="fd3f-2dfa-7510-d383" name="Faction: &lt;Kabal&gt;" hidden="false" targetId="105d-2b08-1dc3-2f69" primary="false"/>
+        <categoryLink id="bc14-5464-a661-ed70" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+        <categoryLink id="a95a-bafc-0ab0-3efe" name="Court of the Archon" hidden="false" targetId="4efc-a4dc-b8ec-ab03" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="095f-1746-f463-18da" name="Claws and Talons" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cb51-bcd8-d4b7-9b10" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c76c-c4ba-4be6-2a46" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="a1cc-aecb-9ef0-9eaa" name="Claws and Talons" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+        <cost name="pts" typeId="points" value="16.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
