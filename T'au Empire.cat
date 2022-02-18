@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="c0bb-c0cd-a715-99c6" name="T&apos;au Empire" revision="115" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Techno" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="205" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="c0bb-c0cd-a715-99c6" name="T&apos;au Empire" revision="119" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Techno" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="205" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="6d04-0cc1-aee0-9041" name="Codex: Tau Empire" shortName="" publisher=""/>
   </publications>
@@ -4200,6 +4200,18 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="b4ff-4dba-5926-4c96" name="Commander Shadowsun" page="" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5baf-eed5-bb85-7325" type="notInstanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3b63-2d45-6b9a-a8fb" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7d19-50ca-66ba-f69e" type="max"/>
       </constraints>
@@ -4387,6 +4399,7 @@
         <categoryLink id="22aa-e977-342b-7abe" name="New CategoryLink" hidden="false" targetId="77ee-b03b-d244-d535" primary="false"/>
         <categoryLink id="f7ad-878b-b665-d90a" name="New CategoryLink" hidden="false" targetId="257e-82d7-82b7-4434" primary="false"/>
         <categoryLink id="6256-707d-a884-cf30" name="New CategoryLink" hidden="false" targetId="460c-cf49-4162-f8f8" primary="false"/>
+        <categoryLink id="ea9b-deab-fa82-2537" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="59b8-9e8b-e6c0-cd87" name="High-intensity Plasma Rifle" page="" hidden="false" collective="false" import="true" type="upgrade">
@@ -4474,6 +4487,11 @@
             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1742-90e4-26f1-d1d2" type="greaterThan"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5f48-5fed-7b98-0e66" type="equalTo"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3537-fff0-c054-4938" type="max"/>
@@ -4548,7 +4566,7 @@
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="85.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -4557,6 +4575,11 @@
         <modifier type="set" field="hidden" value="true">
           <conditions>
             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1742-90e4-26f1-d1d2" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3b63-2d45-6b9a-a8fb" type="equalTo"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -5070,6 +5093,11 @@
         <modifier type="increment" field="e356-c769-5920-6e14" value="1.0">
           <repeats>
             <repeat field="selections" scope="1889-e443-ba55-023a" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
+        <modifier type="decrement" field="e356-c769-5920-6e14" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="1889-e443-ba55-023a" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a3aa-ea32-ab42-aad5" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
       </modifiers>
@@ -9613,10 +9641,13 @@
               </conditions>
             </modifier>
           </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="09a3-5153-b3b0-66ac" type="max"/>
+          </constraints>
           <entryLinks>
             <entryLink id="03a3-9ab6-8bb0-fa6f" name="!1. Precision of the Hunter" hidden="false" collective="false" import="true" targetId="34d7-2947-e86a-c522" type="selectionEntry"/>
             <entryLink id="68d6-dfba-5764-e0fb" name="!4. Through Boldness, Victory" hidden="false" collective="false" import="true" targetId="9c6c-ad61-cc12-4105" type="selectionEntry"/>
-            <entryLink id="003d-c3cc-01fc-e68a" name="!5. Exemplar of the Kauyon" hidden="false" collective="false" import="true" targetId="1e0a-e6bd-efd6-4c45" type="selectionEntry"/>
+            <entryLink id="003d-c3cc-01fc-e68a" name="5. Exemplar of the Kauyon" hidden="false" collective="false" import="true" targetId="1e0a-e6bd-efd6-4c45" type="selectionEntry"/>
             <entryLink id="3dd1-906b-b696-21b4" name="!6. Exemplar of the Mont&apos;ka" hidden="false" collective="false" import="true" targetId="b7de-0757-2392-0295" type="selectionEntry"/>
             <entryLink id="671a-3613-9c15-c599" name="(Bork&apos;an): Seeker of Perfection" hidden="false" collective="false" import="true" targetId="095c-cf3f-1df6-112d" type="selectionEntry"/>
             <entryLink id="ffbb-1d3c-9fbf-3720" name="(Farsight Enclaves): Master of the Killing Blow" hidden="false" collective="false" import="true" targetId="5285-d00f-b003-ce6e" type="selectionEntry"/>
@@ -16528,6 +16559,13 @@ Any models embarked within another model when it embarks upon this model do not 
       </characteristics>
     </profile>
     <profile id="fde9-1c60-7290-286f" name="5. Exemplar of the Kauyon" publicationId="6d04-0cc1-aee0-9041" page="72" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <modifiers>
+        <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="After both players have deployed their armies and determined who has the first turn, select up to one friendly T&apos;AU SEPT unit, or up to three friendly T&apos;AU SEPT units if you have selected the Kauyon Tactical Philosophy this battle (pg 92), and redeploy them. If the mission uses Strategic Reserves rules, any of these units can be placed into Strategic Reserves without having to spend any additional CPs, regardless of how many units are already in Strategic Reserves. If both players have abilities that redeploy units, roll off, the winner chooses who deploys their units first.">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ddce-891f-ea1b-32c0" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After both players have deployed their armies and determined who has the first turn, select up to one friendly &lt;SEPT&gt; unit, or up to three friendly &lt;SEPT&gt; units if you have selected the Kauyon Tactical Philosophy this battle (pg 92), and redeploy them. If the mission uses Strategic Reserves rules, any of these units can be placed into Strategic Reserves without having to spend any additional CPs, regardless of how many units are already in Strategic Reserves. If both players have abilities that redeploy units, roll off, the winner chooses who deploys their units first.</characteristic>
       </characteristics>
@@ -17628,6 +17666,13 @@ E-H Disruption (Aura): While an enemy unit is within 12&quot; of this model, eac
       </characteristics>
     </profile>
     <profile id="be95-c0af-7048-ca01" name="2. Through Unity, Devastation (Aura)" publicationId="6d04-0cc1-aee0-9041" page="72" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <modifiers>
+        <modifier type="set" field="21befb24-fc85-4f52-a745-64b2e48f8228" value="While a friendly T&apos;AU SEPT CORE unit is within 6&quot; of this WARLORD, each time a CORE model in that unit makes a ranged attack, on an unmodified wound roll of 6, improve the Armour Penetration characteristic of that attack by 1.">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9a80-87ed-7165-4bcd" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly &lt;SEPT&gt; CORE unit is within 6&quot; of this WARLORD, each time a CORE model in that unit makes a ranged attack, on an unmodified wound roll of 6, improve the Armour Penetration characteristic of that attack by 1.</characteristic>
       </characteristics>
@@ -18356,7 +18401,7 @@ E-H Disruption (Aura): While an enemy unit is within 12&quot; of this model, eac
     </profile>
     <profile id="c109-e3f5-6759-671e" name="Armoured Aggression" publicationId="6d04-0cc1-aee0-9041" page="123" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of the first battle round before the first turn begiuns, if you selected the Mont&apos;ka Tactical Philosophy at the start of the battle, this unit can make a Normal Move of up to 9&quot;. It cannot end this move within 9&quot; of any enemy models.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of the first battle round before the first turn begins, if you selected the Mont&apos;ka Tactical Philosophy at the start of the battle, this unit can make a Normal Move of up to 9&quot;. It cannot end this move within 9&quot; of any enemy models.</characteristic>
       </characteristics>
     </profile>
     <profile id="817a-8429-66e1-f829" name="Tactical Disengagement" publicationId="6d04-0cc1-aee0-9041" page="123" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
