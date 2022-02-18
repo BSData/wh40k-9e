@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="30b2-6f64-b85e-b4dc" name="Aeldari - Craftworlds" revision="143" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV @WindstormSCR" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="205" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="30b2-6f64-b85e-b4dc" name="Aeldari - Craftworlds" revision="145" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV @WindstormSCR" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="205" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="30b2-6f64-pubN137513" name="Codex: Craftworlds"/>
   </publications>
@@ -95,6 +95,7 @@
     <categoryEntry id="3d7b-e0f0-9b75-28e9" name="Guardian" hidden="false"/>
     <categoryEntry id="82c7-3b0b-30c6-5aa2" name="Craftworlds Warlord" hidden="false"/>
     <categoryEntry id="5ed6-9580-2654-c6a2" name="Corsair Voidscarred" hidden="false"/>
+    <categoryEntry id="b42a-2a2a-3794-7536" name="Corsair Voidreavers" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="7d2a-346f-0883-3b49" name="Eldrad Ulthran" hidden="false" collective="false" import="true" targetId="5707-4953-7cb9-796a" type="selectionEntry">
@@ -9541,7 +9542,7 @@ that Howling Banshee Exarch, and that executioner has a Damage characteristic of
     </selectionEntry>
     <selectionEntry id="8d2a-aa6e-73d4-f65e" name="Wraithcannon" hidden="false" collective="false" import="true" type="upgrade">
       <infoLinks>
-        <infoLink id="0a42-930b-a967-3f87" name="" hidden="false" targetId="8bcd-3283-7dbd-e155" type="profile"/>
+        <infoLink id="0a42-930b-a967-3f87" name="Wraithcannon" hidden="false" targetId="8bcd-3283-7dbd-e155" type="profile"/>
       </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -15059,6 +15060,18 @@ Make sure to obtain opponent consent before using this option, as it is no longe
           </conditions>
         </modifier>
       </modifiers>
+      <profiles>
+        <profile id="648f-d0ae-c02d-8ee8" name="Reavers of the Void" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit makes an attack, an unmodified hit roll of 6 automatically wounds the target (and is treated as an unmodified wound roll of 6).</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="571e-570e-c110-5ad6" name="Outcasts and Pirates" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-Forged, this unit cannot be used as a compulsory selection in a Detachment (e.g. as one of only three Elites units in a Vanguard Detachment), unless that Detachment only contains ANHRATHE units.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
       <categoryLinks>
         <categoryLink id="643f-e4b9-dc45-1d07" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
         <categoryLink id="2075-b76a-e830-2867" name="Faction: Aeldari" hidden="false" targetId="05e9-e880-b1fb-ce90" primary="false"/>
@@ -15090,13 +15103,61 @@ Make sure to obtain opponent consent before using this option, as it is no longe
             </profile>
           </profiles>
           <infoLinks>
-            <infoLink id="ce0d-fa9c-d913-e17d" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
             <infoLink id="6334-c4b6-b8ee-54d7" name="Power sword" hidden="false" targetId="47df-8e01-d0cf-58e8" type="profile">
               <modifiers>
                 <modifier type="set" field="name" value="Aeldari Power Sword"/>
               </modifiers>
             </infoLink>
           </infoLinks>
+          <selectionEntries>
+            <selectionEntry id="4705-e990-ab95-9205" name="Mistshield" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2c5d-2357-1829-886a" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="c496-193e-8f4a-a1c8" name="Mistshield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer has a 4+ invulnerable save.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="8225-b0c7-c28d-6201" name="Shuriken Pistol Replacement" hidden="false" collective="false" import="true" defaultSelectionEntryId="c554-9f11-d3d7-0013">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cbc1-631d-7ca9-c169" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8432-bc53-cd3a-5825" type="max"/>
+              </constraints>
+              <entryLinks>
+                <entryLink id="c554-9f11-d3d7-0013" name="Shuriken Pistol" hidden="false" collective="false" import="true" targetId="00b1-e9ab-61a3-292e" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aa40-a1a9-7749-51e7" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="700f-bd49-644b-16fc" name="Shuriken Rifle" hidden="false" collective="false" import="true" targetId="b208-54e7-c494-4244" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7a94-b762-b327-2c54" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="85c0-a90b-3f17-552e" name="Neuro Disruptor" hidden="false" collective="false" import="true" targetId="7bfc-3e9a-217c-8f52" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dcc5-9b10-1da1-31b0" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="78a6-8317-e226-186b" name="Shade Runner" hidden="false" collective="false" import="true" type="model">
           <constraints>
@@ -15116,10 +15177,30 @@ Make sure to obtain opponent consent before using this option, as it is no longe
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
               </characteristics>
             </profile>
+            <profile id="9191-b460-d53f-eb17" name="Paired Hekatarii Blades" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="a3e3-91a9-2362-8bfb" name="Shade Runner Assault" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While this unit contains a Shade Runner model, each time this unit finishes a charge move, you can select one enemy unit within Engagement Range of this unit and roll one D6. On a 2-5, that enemy unit suffers 1 mortal wound. On a 6, that enemy unit suffers 2 mortal wounds.</characteristic>
+              </characteristics>
+            </profile>
           </profiles>
           <infoLinks>
             <infoLink id="7b66-ce05-6f68-3e58" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
           </infoLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="89fc-9b4e-d373-0635" name="Soul Weaver" hidden="false" collective="false" import="true" type="model">
           <constraints>
@@ -15139,6 +15220,11 @@ Make sure to obtain opponent consent before using this option, as it is no longe
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
               </characteristics>
             </profile>
+            <profile id="5d64-7df8-ddc1-4264" name="Chaneller Stones" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per turn, the first time a saving throw is failed for the bearer&apos;s unit, the Damage characteristic of that attack is changed to 0.</characteristic>
+              </characteristics>
+            </profile>
           </profiles>
           <infoLinks>
             <infoLink id="49e4-50be-7a22-98a9" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
@@ -15148,6 +15234,11 @@ Make sure to obtain opponent consent before using this option, as it is no longe
               </modifiers>
             </infoLink>
           </infoLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="4c3d-0fd4-0bcd-629f" name="Way Seeker" hidden="false" collective="false" import="true" type="model">
           <constraints>
@@ -15167,20 +15258,49 @@ Make sure to obtain opponent consent before using this option, as it is no longe
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
               </characteristics>
             </profile>
+            <profile id="8284-c3d0-4f32-e25c" name="Lodestar Helm" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This unit never suffers Perils of the Warp.</characteristic>
+              </characteristics>
+            </profile>
           </profiles>
           <infoLinks>
             <infoLink id="c404-c59c-e4c9-9a6f" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
+            <infoLink id="3473-211b-9548-b55e" name="Psyker (Way Seeker)" hidden="false" targetId="7333-d004-937f-11a1" type="profile"/>
           </infoLinks>
+          <categoryLinks>
+            <categoryLink id="2680-9864-2b2c-7bfe" name="Psyker" hidden="false" targetId="e691-aad7-d21c-1023" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="e8d2-2b72-719e-8835" name="Corsair Voidscarred" hidden="false" collective="false" import="true" defaultSelectionEntryId="194a-b685-8191-86b1">
+        <selectionEntryGroup id="e8d2-2b72-719e-8835" name="4 - 9 Corsair Voidscarred" hidden="false" collective="false" import="true" defaultSelectionEntryId="194a-b685-8191-86b1">
           <constraints>
             <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b679-d5b6-a7a3-e5b3" type="max"/>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8306-57f3-2f38-74f6" type="min"/>
           </constraints>
+          <profiles>
+            <profile id="ebe8-4f01-b5aa-8fe6" name="Corsair Voidscarred" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
           <selectionEntries>
-            <selectionEntry id="194a-b685-8191-86b1" name="Corsair Voidscarred w/ Pistol &amp; Blade" hidden="false" collective="false" import="true" type="model">
+            <selectionEntry id="194a-b685-8191-86b1" name="Corsair Voidscarred w/ Pistol &amp; Aeldari Power Sword" hidden="false" collective="false" import="true" type="model">
               <infoLinks>
                 <infoLink id="eb49-6112-2436-d0d7" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
                 <infoLink id="6357-ca19-7f25-5636" name="Power sword" hidden="false" targetId="47df-8e01-d0cf-58e8" type="profile">
@@ -15189,16 +15309,131 @@ Make sure to obtain opponent consent before using this option, as it is no longe
                   </modifiers>
                 </infoLink>
               </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
-            <selectionEntry id="7db2-fdfb-e53a-5a69" name="Corsair Voidscarred w/ Shuriken Rifle" hidden="false" collective="false" import="true" type="model"/>
-            <selectionEntry id="ea48-38d3-54a3-910f" name="Corsair Voidscarred Rifle Replacement" hidden="false" collective="false" import="true" type="model"/>
-            <selectionEntry id="7452-beed-84e6-efbc" name="Corsair Voidscarred w/ Shuriken &amp; Fusion Pistols" hidden="false" collective="false" import="true" type="model">
+            <selectionEntry id="7db2-fdfb-e53a-5a69" name="Corsair Voidscarred w/ Shuriken Rifle" hidden="false" collective="false" import="true" type="model">
               <infoLinks>
-                <infoLink id="1e0e-9923-38fd-feea" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
+                <infoLink id="d26b-60d4-7ff5-6ab5" name="Shuriken Rifle" hidden="false" targetId="5af5-76da-bd47-ca72" type="profile"/>
               </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
-            <selectionEntry id="5466-3d97-2b6f-95fd" name="Faolchu" hidden="false" collective="false" import="true" type="upgrade"/>
+            <selectionEntry id="5466-3d97-2b6f-95fd" name="Faolchu" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="d1f1-5687-8d44-f038" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="194a-b685-8191-86b1" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
           </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="12f2-b479-d44a-a9a2" name="For every 5 models" hidden="false" collective="false" import="true">
+              <modifiers>
+                <modifier type="increment" field="b1b0-c599-2d4e-4a57" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="d1f1-5687-8d44-f038" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b1b0-c599-2d4e-4a57" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="c772-c4a4-2842-206b" name="Corsair Voidscarred w/ Corsair Blaster" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="3ecc-2297-f106-d2de" name="Corsair Blaster" hidden="false" targetId="bf79-633e-c590-6afe" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+                <selectionEntry id="3522-cdf3-a478-5a5c" name="Corsair Voidscarred w/ Corsair Shredder" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="1494-66cc-6662-3b4e" name="Corsair Shredder" hidden="false" targetId="328b-151d-b852-085a" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+            <selectionEntryGroup id="6ad8-683c-ec45-540f" name="If this unit contains 10 models (1)" hidden="false" collective="false" import="true">
+              <modifiers>
+                <modifier type="increment" field="cd20-82b0-ced3-074d" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="d1f1-5687-8d44-f038" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cd20-82b0-ced3-074d" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="b39f-051d-d03c-8300" name="Corsair Voidscarred w/ Shuriken Cannon" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="aec8-ee41-125d-73e8" name="Shuriken Cannon" hidden="false" targetId="e3ab-fe7e-1e15-efd8" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+                <selectionEntry id="c1d9-a663-ce40-5557" name="Corsair Voidscarred w/ Wraithcannon" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="e540-85e0-766c-2e70" name="Wraithcannon" hidden="false" targetId="8bcd-3283-7dbd-e155" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+            <selectionEntryGroup id="ea17-af84-31a8-c740" name="If this unit contains 10 models (2)" hidden="false" collective="false" import="true">
+              <modifiers>
+                <modifier type="increment" field="db6a-5dfb-ff36-79bf" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="d1f1-5687-8d44-f038" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="db6a-5dfb-ff36-79bf" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="5db9-f530-dc4e-b7df" name="Corsair Voidscarred w/ Ranger Long Rifle" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="8bac-9521-d10e-1094" name="Ranger Long Rifle" hidden="false" targetId="176f-d6c6-dd4e-b856" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+            <selectionEntryGroup id="2153-0b50-ba8b-e557" name="If this unit contains 10 models (3)" hidden="false" collective="false" import="true">
+              <modifiers>
+                <modifier type="increment" field="70ab-b7b1-2e57-182e" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="d1f1-5687-8d44-f038" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="70ab-b7b1-2e57-182e" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="084e-7cab-fbb3-5c2c" name="Corsair Voidscarred w/ Shuriken &amp; Fusion Pistols" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="be94-8f75-6c0c-e2a3" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
+                    <infoLink id="117b-4e9d-5b19-c9d8" name="Fusion Pistol" hidden="false" targetId="3bd9-30d9-8b8d-31df" type="profile"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
@@ -15206,6 +15441,276 @@ Make sure to obtain opponent consent before using this option, as it is no longe
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b208-54e7-c494-4244" name="Shuriken Rifle" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="3312-3d5c-c8c2-b308" name="Shuriken Rifle" hidden="false" targetId="5af5-76da-bd47-ca72" type="profile"/>
+        <infoLink id="bb07-520c-ab52-b985" name="Shuriken Weapons" hidden="false" targetId="e673-afb2-7449-f53b" type="rule"/>
+      </infoLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="7716-aa87-8af0-82df" name="Corsair Shredder" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="65b7-6988-8ece-88f2" name="Corsair Shredder" hidden="false" targetId="328b-151d-b852-085a" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="f050-e2d7-c6d3-d71b" name="Corsair Blaster" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="7d7d-162c-4abc-abc1" name="Corsair Blaster" hidden="false" targetId="bf79-633e-c590-6afe" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="b126-3f3e-c064-cbb6" name="Corsair Voidreavers" hidden="false" collective="false" import="true" type="unit">
+      <modifiers>
+        <modifier type="set" field="e356-c769-5920-6e14" value="6.0">
+          <conditions>
+            <condition field="selections" scope="b126-3f3e-c064-cbb6" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <profiles>
+        <profile id="024b-5138-0872-612d" name="Reavers of the Void" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit makes an attack, an unmodified hit roll of 6 automatically wounds the target (and is treated as an unmodified wound roll of 6).</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="e6ed-246f-a7aa-d3c6" name="Outcasts and Pirates" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-Forged, this unit cannot be used as a compulsory selection in a Detachment (e.g. as one of only three Elites units in a Vanguard Detachment), unless that Detachment only contains ANHRATHE units.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink id="f494-72e6-f82b-ee56" name="Faction: Aeldari" hidden="false" targetId="05e9-e880-b1fb-ce90" primary="false"/>
+        <categoryLink id="4879-faf6-9ac6-4fbb" name="Faction: Anhrathe" hidden="false" targetId="ebbf-d534-63d7-8786" primary="false"/>
+        <categoryLink id="031b-8193-978d-0a88" name="Faction: Asuryani" hidden="false" targetId="20fc-5c6e-4a04-320f" primary="false"/>
+        <categoryLink id="13a2-4681-b37e-f583" name="Faction: Drukhari" hidden="false" targetId="955e-536a-e290-5dcf" primary="false"/>
+        <categoryLink id="f139-dede-a3ed-c44b" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+        <categoryLink id="b077-463e-0746-a985" name="Corsair Voidreavers" hidden="false" targetId="b42a-2a2a-3794-7536" primary="false"/>
+        <categoryLink id="1689-9509-6e57-bbc7" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="e0ce-0ea6-a97c-8095" name="Voidreaver Felarch" hidden="false" collective="false" import="true" type="model">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fa35-9268-ead1-1b6d" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cabb-7422-748e-d408" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="ef2f-12c7-1ed6-bde8" name="Voidreaver Felarch" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">4</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <infoLinks>
+            <infoLink id="99d6-1f5a-3d3b-79e0" name="Power sword" hidden="false" targetId="47df-8e01-d0cf-58e8" type="profile">
+              <modifiers>
+                <modifier type="set" field="name" value="Aeldari Power Sword"/>
+              </modifiers>
+            </infoLink>
+          </infoLinks>
+          <selectionEntries>
+            <selectionEntry id="69cf-30b2-e86a-f309" name="Mistshield" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f1e2-a544-c7aa-4233" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="0c17-158e-2390-6054" name="Mistshield" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer has a 4+ invulnerable save.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="b3cd-40e0-7ab2-67f3" name="Shuriken Pistol Replacement" hidden="false" collective="false" import="true">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dbb3-0899-5545-9588" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="848d-3ac6-5c76-b040" type="max"/>
+              </constraints>
+              <entryLinks>
+                <entryLink id="3543-cf80-17aa-8d02" name="Shuriken Pistol" hidden="false" collective="false" import="true" targetId="00b1-e9ab-61a3-292e" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="186d-fc00-5b04-8dda" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="2ffd-75dc-c213-45ba" name="Shuriken Rifle" hidden="false" collective="false" import="true" targetId="b208-54e7-c494-4244" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c8a2-4033-4549-44eb" type="max"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="24a6-e639-7354-da7a" name="Neuro Disruptor" hidden="false" collective="false" import="true" targetId="7bfc-3e9a-217c-8f52" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0564-9266-5ec4-b45e" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="b5ba-b43b-033e-8264" name="4 - 9 Corsair Voidreavers" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ec56-3135-cf62-ac78" type="max"/>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4dfb-c057-142c-453b" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="6c9a-5945-83c1-0b5b" name="Corsair Voidscarred" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">7&quot;</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <selectionEntries>
+            <selectionEntry id="f01e-dd75-5582-c6f1" name="Corsair Voidreavers" hidden="false" collective="false" import="true" type="model">
+              <selectionEntryGroups>
+                <selectionEntryGroup id="69ca-cea3-2600-92dd" name="Weapons" hidden="false" collective="false" import="true">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ea4-32f4-061f-a193" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6b01-5774-3209-38a3" type="max"/>
+                  </constraints>
+                  <selectionEntries>
+                    <selectionEntry id="7ea9-3763-1492-9303" name="Shuriken Pistol &amp; Aeldari Power Sword" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="increment" field="points" value="0.0">
+                          <repeats>
+                            <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                          </repeats>
+                        </modifier>
+                      </modifiers>
+                      <infoLinks>
+                        <infoLink id="964c-d0cc-b77e-0143" name="Shuriken Pistol" hidden="false" targetId="d884-56d3-dce3-03ff" type="profile"/>
+                        <infoLink id="ce89-28c5-e159-3950" name="Power sword" hidden="false" targetId="47df-8e01-d0cf-58e8" type="profile">
+                          <modifiers>
+                            <modifier type="set" field="name" value="Aeldari Power Sword"/>
+                          </modifiers>
+                        </infoLink>
+                      </infoLinks>
+                    </selectionEntry>
+                  </selectionEntries>
+                  <entryLinks>
+                    <entryLink id="be37-3bd9-4eb8-5b4b" name="Shuriken Rifle" hidden="false" collective="false" import="true" targetId="b208-54e7-c494-4244" type="selectionEntry">
+                      <modifiers>
+                        <modifier type="increment" field="points" value="10.0">
+                          <repeats>
+                            <repeat field="selections" scope="b126-3f3e-c064-cbb6" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f01e-dd75-5582-c6f1" repeats="1" roundUp="false"/>
+                          </repeats>
+                        </modifier>
+                      </modifiers>
+                    </entryLink>
+                  </entryLinks>
+                </selectionEntryGroup>
+              </selectionEntryGroups>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="e2b8-3502-6b75-441f" name="Corsair Voidscarred w/ Shuriken Rifle" hidden="false" collective="false" import="true" type="model">
+              <infoLinks>
+                <infoLink id="4b86-3b29-1f93-4a36" name="Shuriken Rifle" hidden="false" targetId="5af5-76da-bd47-ca72" type="profile"/>
+              </infoLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <selectionEntryGroups>
+            <selectionEntryGroup id="1a8a-4fbd-7889-5fc3" name="For every 5 models" hidden="false" collective="false" import="true">
+              <modifiers>
+                <modifier type="increment" field="3aa3-d787-6b7d-bb89" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="b126-3f3e-c064-cbb6" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3aa3-d787-6b7d-bb89" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="3f22-0794-5052-2535" name="Corsair Voidscarred w/ Corsair Blaster" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="2908-b1dc-8d5c-0630" name="Corsair Blaster" hidden="false" targetId="bf79-633e-c590-6afe" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+                <selectionEntry id="12f6-f243-8cf3-d70a" name="Corsair Voidscarred w/ Corsair Shredder" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="36e8-2f68-52ef-93a9" name="Corsair Shredder" hidden="false" targetId="328b-151d-b852-085a" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+            <selectionEntryGroup id="33c9-aebe-2a5e-7caa" name="If this unit contains 10 models (1)" hidden="false" collective="false" import="true">
+              <modifiers>
+                <modifier type="increment" field="b4c4-75da-0836-9a97" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="b126-3f3e-c064-cbb6" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b4c4-75da-0836-9a97" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="d0fa-950a-e826-3be4" name="Corsair Voidscarred w/ Shuriken Cannon" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="ddee-f657-81d4-b914" name="Shuriken Cannon" hidden="false" targetId="e3ab-fe7e-1e15-efd8" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+                <selectionEntry id="6dfa-fece-24b6-b393" name="Corsair Voidscarred w/ Wraithcannon" hidden="false" collective="false" import="true" type="model">
+                  <infoLinks>
+                    <infoLink id="beac-824c-59e5-a1a7" name="Wraithcannon" hidden="false" targetId="8bcd-3283-7dbd-e155" type="profile"/>
+                  </infoLinks>
+                </selectionEntry>
+              </selectionEntries>
+            </selectionEntryGroup>
+          </selectionEntryGroups>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="7e98-25f3-f789-4062" name="Plasma Grenades" hidden="false" collective="false" import="true" targetId="b7fa-f88c-305c-534f" type="selectionEntry"/>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -16871,12 +17376,12 @@ As soon as any unit is destroyed, All units from your army benefit from Soulburs
     </profile>
     <profile id="8bcd-3283-7dbd-e155" name="Wraithcannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
       <characteristics>
-        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">10</characteristic>
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3+3</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound on the traget in addition to any normal damage.</characteristic>
       </characteristics>
     </profile>
     <profile id="cf49-d4a8-1992-4b25" name="Aeldari Blade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -17410,6 +17915,44 @@ In your Shooting phase, after this unit has finished making its attacks, unless 
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="5af5-76da-bd47-ca72" name="Shuriken Rifle" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Shuriken.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="328b-151d-b852-085a" name="Corsair Shredder" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="bf79-633e-c590-6afe" name="Corsair Blaster" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="7333-d004-937f-11a1" name="Psyker (Way Seeker)" hidden="false" typeId="bc97-dea9-9e88-bb7d" typeName="Psyker">
+      <characteristics>
+        <characteristic name="Cast" typeId="5afb-9914-904b-d3b3">1</characteristic>
+        <characteristic name="Deny" typeId="b5ac-9c20-5d5a-6f9b">1</characteristic>
+        <characteristic name="Powers Known" typeId="69d7-b45e-00a2-7e46">Smite. One from Runes of Fate OR Runes of Fortune.</characteristic>
+        <characteristic name="Other" typeId="c2e2-f115-0003-5d7b">Each time this unit attempts to Deny the Witch, manifest a psychic power or perform a psychic actions, measure distances and draw line of sight from this unit&apos;s Way Seeker model. If enemy units have any abilities that require distances to be measured or line of sight to be drawn to PSYKER units, do so to this unit&apos;s Way Seeker model.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
