@@ -407,6 +407,7 @@
                     <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2ebb-7865-3983-640d" type="instanceOf"/>
                     <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ac03-d781-0c3b-b4be" type="atLeast"/>
                     <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a8e-f55f-1f63-12e4" type="atLeast"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fff5-0cb2-3255-5678" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -564,6 +565,7 @@
                     <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2ebb-7865-3983-640d" type="instanceOf"/>
                     <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="38ee-6dae-3cb1-7f84" type="atLeast"/>
                     <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ac03-d781-0c3b-b4be" type="atLeast"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fff5-0cb2-3255-5678" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -721,6 +723,7 @@
                     <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2ebb-7865-3983-640d" type="instanceOf"/>
                     <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ac03-d781-0c3b-b4be" type="atLeast"/>
                     <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a8e-f55f-1f63-12e4" type="atLeast"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fff5-0cb2-3255-5678" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -5369,6 +5372,13 @@ Remaining Wounds | Aura Range
       </costs>
     </selectionEntry>
     <selectionEntry id="732b-967e-1bca-5846" name="Terrax-Pattern Termite" page="" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fff5-0cb2-3255-5678" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="da37-5957-9ddb-0eb4" name="Subterranean Assault" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -6505,6 +6515,16 @@ Remaining Wounds | Aura Range
       </costs>
     </selectionEntry>
     <selectionEntry id="ed98-6a58-e87d-0c0d" name="Army of Renown - Crusher Stampede" hidden="false" collective="false" import="true" type="upgrade">
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="fff5-0cb2-3255-5678" name="Army of Renown - Vanguard Spearhead" hidden="false" collective="false" import="true" type="upgrade">
+      <categoryLinks>
+        <categoryLink id="0311-6a19-b23f-e265" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
