@@ -93,11 +93,12 @@
     <categoryEntry id="3166-f011-715c-852b" name="Spirit Host" hidden="false"/>
     <categoryEntry id="fe36-3aad-6375-fb3c" name="Faction: Biel-Tan" hidden="false"/>
     <categoryEntry id="d198-8bc5-aa9e-0c7d" name="Ranger" hidden="false"/>
-    <categoryEntry id="3d7b-e0f0-9b75-28e9" name="Guardian" hidden="false"/>
+    <categoryEntry id="3d7b-e0f0-9b75-28e9" name="Guardians" hidden="false"/>
     <categoryEntry id="82c7-3b0b-30c6-5aa2" name="Asuryani Warlord" hidden="false"/>
     <categoryEntry id="5ed6-9580-2654-c6a2" name="Corsair Voidscarred" hidden="false"/>
     <categoryEntry id="b42a-2a2a-3794-7536" name="Corsair Voidreavers" hidden="false"/>
     <categoryEntry id="8a3d-75e3-93ae-6d09" name="Outcasts" hidden="false"/>
+    <categoryEntry id="ef00-1edf-7d55-3e1a" name="Shroud Runners" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="7d2a-346f-0883-3b49" name="Eldrad Ulthran" hidden="false" collective="false" import="true" targetId="5707-4953-7cb9-796a" type="selectionEntry">
@@ -244,6 +245,7 @@
         <categoryLink id="420b-6fba-de66-6ec3" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="703f-9701-0b83-fe0b" name="Shroud Runners" hidden="false" collective="false" import="true" targetId="0a75-428a-59b4-2c65" type="selectionEntry"/>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="5707-4953-7cb9-796a" name="Eldrad Ulthran" hidden="false" collective="false" import="true" type="model">
@@ -851,15 +853,8 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="3725-493d-89a4-75b1" name="Scatter Laser" hidden="false" collective="true" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="points" value="0.0">
-          <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4690-9288-bbc9-6652" type="instanceOf"/>
-          </conditions>
-        </modifier>
-      </modifiers>
       <infoLinks>
-        <infoLink id="8cd6-d8e1-ae8a-6806" name="" hidden="false" targetId="8dab-043f-e9af-7a18" type="profile"/>
+        <infoLink id="8cd6-d8e1-ae8a-6806" name="Scatter Laser" hidden="false" targetId="8dab-043f-e9af-7a18" type="profile"/>
       </infoLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -2163,6 +2158,8 @@
         <categoryLink id="47d1-0f18-80bb-8959" name="New CategoryLink" hidden="false" targetId="c767-c3b1-2157-1371" primary="false"/>
         <categoryLink id="098b-f596-3814-be1d" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
         <categoryLink id="3e33-0dce-00a9-10cb" name="Faction: Asuryani" hidden="false" targetId="20fc-5c6e-4a04-320f" primary="false"/>
+        <categoryLink id="3242-e4eb-7a56-523f" name="Guardians" hidden="false" targetId="3d7b-e0f0-9b75-28e9" primary="false"/>
+        <categoryLink id="5e2d-9834-332b-2066" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="9b08-05b2-575a-fbc3" name="Serpent Scale Platform" hidden="false" collective="false" import="true" type="upgrade">
@@ -2334,12 +2331,12 @@ Each time a ranged attack is made against that unit, an unmodified wound roll of
     </selectionEntry>
     <selectionEntry id="9a8b-2c28-b676-f305" name="Windriders" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="3.0">
+        <modifier type="set" field="e356-c769-5920-6e14" value="8.0">
           <conditions>
             <condition field="selections" scope="9a8b-2c28-b676-f305" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="db9f-f942-d894-970f" type="greaterThan"/>
           </conditions>
         </modifier>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="4.0">
+        <modifier type="set" field="e356-c769-5920-6e14" value="12.0">
           <conditions>
             <condition field="selections" scope="9a8b-2c28-b676-f305" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="db9f-f942-d894-970f" type="greaterThan"/>
           </conditions>
@@ -2353,15 +2350,34 @@ Each time a ranged attack is made against that unit, an unmodified wound roll of
       <modifierGroups>
         <modifierGroup>
           <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5af8-e7c8-e3bf-6d52" type="equalTo"/>
           </conditions>
           <modifiers>
             <modifier type="remove" field="category" value="fb5a-2f35-6253-b891"/>
             <modifier type="add" field="category" value="ebb3-4f37-6e57-7a8e"/>
-            <modifier type="add" field="category" value="85a4-070d-d3c6-dc3b"/>
           </modifiers>
         </modifierGroup>
       </modifierGroups>
+      <profiles>
+        <profile id="273f-3114-5c8d-6458" name="Swift Demise" publicationId="1f62-db93-63f4-4dc7" page="166" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit makes an attack with a twin shuriken catapult against an enemy unit that is within range of any objective markers, re-roll a hit roll of 1.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="0f08-2be3-7f35-2711" name="Windrider" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">16&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
       <infoLinks>
         <infoLink id="a3ee-c812-98c5-4517" name="Strands of Fate" hidden="false" targetId="f5cf-ac08-7c58-c76d" type="rule"/>
         <infoLink id="3bf5-8f53-b46c-f7ea" name="Battle Focus" hidden="false" targetId="d861-e9f8-5a9c-7595" type="rule"/>
@@ -2375,6 +2391,8 @@ Each time a ranged attack is made against that unit, an unmodified wound roll of
         <categoryLink id="4020-f4a9-a7c5-d189" name="New CategoryLink" hidden="false" targetId="c274d0b0-5866-44bc-9810-91c136ae7438" primary="true"/>
         <categoryLink id="5de5-4078-d17d-c76b" name="New CategoryLink" hidden="false" targetId="433c-3e09-8df8-854c" primary="false"/>
         <categoryLink id="99e6-999e-8818-4cf7" name="Faction: Asuryani" hidden="false" targetId="20fc-5c6e-4a04-320f" primary="false"/>
+        <categoryLink id="370e-bfa0-4197-5da3" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+        <categoryLink id="ef12-2f7e-82f6-4bb2" name="Guardian" hidden="false" targetId="3d7b-e0f0-9b75-28e9" primary="false"/>
       </categoryLinks>
       <selectionEntryGroups>
         <selectionEntryGroup id="db9f-f942-d894-970f" name="Windriders" hidden="false" collective="false" import="true" defaultSelectionEntryId="d522-0737-0bfb-342e">
@@ -2387,23 +2405,8 @@ Each time a ranged attack is made against that unit, an unmodified wound roll of
               <constraints>
                 <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1e3e-b538-9b21-4358" type="max"/>
               </constraints>
-              <profiles>
-                <profile id="b714-383c-748f-c9c1" name="Windrider" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-                  <characteristics>
-                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">16&quot;</characteristic>
-                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
-                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
-                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                    <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
-                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
-                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
-                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
               <entryLinks>
-                <entryLink id="e311-e158-235a-e8c2" name="" hidden="false" collective="false" import="true" targetId="2c52-c5ae-a51b-538b" type="selectionEntry"/>
+                <entryLink id="e311-e158-235a-e8c2" name="Twin Shuriken Catapult" hidden="false" collective="false" import="true" targetId="2c52-c5ae-a51b-538b" type="selectionEntry"/>
               </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="20.0"/>
@@ -2415,23 +2418,12 @@ Each time a ranged attack is made against that unit, an unmodified wound roll of
               <constraints>
                 <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e1b4-fe07-00cc-6782" type="max"/>
               </constraints>
-              <profiles>
-                <profile id="0809-db8d-e217-547d" name="Windrider" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-                  <characteristics>
-                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">16&quot;</characteristic>
-                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
-                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
-                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                    <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
-                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
-                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
-                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
               <entryLinks>
-                <entryLink id="3b5a-2fac-28d5-7c95" name="Shuriken Cannon" hidden="false" collective="false" import="true" targetId="0185-327e-9f27-3bce" type="selectionEntry"/>
+                <entryLink id="3b5a-2fac-28d5-7c95" name="Shuriken Cannon" hidden="false" collective="false" import="true" targetId="0185-327e-9f27-3bce" type="selectionEntry">
+                  <costs>
+                    <cost name="pts" typeId="points" value="10.0"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="20.0"/>
@@ -2443,23 +2435,12 @@ Each time a ranged attack is made against that unit, an unmodified wound roll of
               <constraints>
                 <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e9d3-43bc-2f4c-26e6" type="max"/>
               </constraints>
-              <profiles>
-                <profile id="18d1-0287-1acd-8f90" name="Windrider" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-                  <characteristics>
-                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">16&quot;</characteristic>
-                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
-                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
-                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
-                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                    <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
-                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
-                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
-                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
               <entryLinks>
-                <entryLink id="20e8-0406-4027-6d43" name="Scatter Laser" hidden="false" collective="false" import="true" targetId="3725-493d-89a4-75b1" type="selectionEntry"/>
+                <entryLink id="20e8-0406-4027-6d43" name="Scatter Laser" hidden="false" collective="false" import="true" targetId="3725-493d-89a4-75b1" type="selectionEntry">
+                  <costs>
+                    <cost name="pts" typeId="points" value="5.0"/>
+                  </costs>
+                </entryLink>
               </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="20.0"/>
@@ -4966,15 +4947,25 @@ Each time an enemy unit ends any type of move (excluding pile-in or consolidatio
       <modifierGroups>
         <modifierGroup>
           <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5af8-e7c8-e3bf-6d52" type="equalTo"/>
           </conditions>
           <modifiers>
             <modifier type="remove" field="category" value="fb5a-2f35-6253-b891"/>
             <modifier type="add" field="category" value="ebb3-4f37-6e57-7a8e"/>
-            <modifier type="add" field="category" value="85a4-070d-d3c6-dc3b"/>
           </modifiers>
         </modifierGroup>
       </modifierGroups>
+      <profiles>
+        <profile id="7c0e-6def-9e7c-f450" name="Explodes (Vyper)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 3&quot; suffers one mortal wound.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="0e86-d598-a8eb-7a78" name="Strands of Fate" hidden="false" targetId="f5cf-ac08-7c58-c76d" type="rule"/>
+        <infoLink id="49d8-5f31-4c84-a6c3" name="Ride the Wind" hidden="false" targetId="32b0-fc54-e738-eef7" type="profile"/>
+      </infoLinks>
       <categoryLinks>
         <categoryLink id="761c-fc31-c8d5-c30b" name="New CategoryLink" hidden="false" targetId="fb5a-2f35-6253-b891" primary="false"/>
         <categoryLink id="7916-038c-ff8a-17a7" name="New CategoryLink" hidden="false" targetId="05e9-e880-b1fb-ce90" primary="false"/>
@@ -4982,7 +4973,6 @@ Each time an enemy unit ends any type of move (excluding pile-in or consolidatio
         <categoryLink id="2770-5671-1fbd-151f" name="New CategoryLink" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
         <categoryLink id="f20f-e9b8-3563-298f" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="4a99-5289-6f99-b71e" name="New CategoryLink" hidden="false" targetId="c794-b48b-81fd-1f99" primary="false"/>
-        <categoryLink id="4452-5d1b-69c6-b965" name="New CategoryLink" hidden="false" targetId="1c6f-0311-3eba-3180" primary="false"/>
         <categoryLink id="f05c-c41c-4de1-b3ba" name="Faction: Asuryani" hidden="false" targetId="20fc-5c6e-4a04-320f" primary="false"/>
       </categoryLinks>
       <selectionEntries>
@@ -5006,61 +4996,17 @@ Each time an enemy unit ends any type of move (excluding pile-in or consolidatio
               </characteristics>
             </profile>
           </profiles>
-          <selectionEntries>
-            <selectionEntry id="e6c4-cd79-0373-7d97" name="Blade Wind" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4168-449f-e934-27ca" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aaec-b93f-a3f1-05d4" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="89c2-bd1c-9b64-4e25" name="Blade Wind" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This unit has a Move characteristic of 20&quot; instead of 16&quot; whilst it contains 3 models.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="343c-1200-8874-0be8" name="Explodes" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c990-e259-747a-5747" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1a00-3dba-77c1-8514" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="3f4b-6116-307f-d3be" name="Explodes (Vyper)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield. On a 6 it explodes, and each unit within 3&quot; suffers a mortal wound.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="3b76-6af2-e277-f0ac" name="Support Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="8457-3648-732d-9dfd">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4435-96f8-8d4b-d3ca" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="85ab-5373-4c9e-6678" type="max"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="8457-3648-732d-9dfd" name="Twin Shuriken Catapult" hidden="false" collective="false" import="true" targetId="a43c-78fc-c084-81e3" type="selectionEntry"/>
-                <entryLink id="4b68-efb1-0d0a-954b" name="Shuriken Cannon" hidden="false" collective="false" import="true" targetId="a8ce-8547-64f7-80b5" type="selectionEntry"/>
-              </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
           <entryLinks>
             <entryLink id="9c5e-8391-8588-12ef" name="Heavy Weapons" hidden="false" collective="false" import="true" targetId="7d84-2892-c4e1-b2a1" type="selectionEntryGroup">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e1d3-2af6-180f-bcc4" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="efda-bd38-f996-def3" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="aaa0-0345-ad18-94b1" name="Twin Shuriken Catapult" hidden="false" collective="false" import="true" targetId="a43c-78fc-c084-81e3" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="197e-5acd-b783-292f" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="21d3-ecfc-41c3-e4f8" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -5935,15 +5881,30 @@ If this unit&apos;s Dark Reaper Exarch model is equipped with an Aeldari Missile
       <modifierGroups>
         <modifierGroup>
           <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4981-9c64-7ab7-7edc" type="equalTo"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5af8-e7c8-e3bf-6d52" type="equalTo"/>
           </conditions>
           <modifiers>
             <modifier type="remove" field="category" value="fb5a-2f35-6253-b891"/>
             <modifier type="add" field="category" value="ebb3-4f37-6e57-7a8e"/>
-            <modifier type="add" field="category" value="85a4-070d-d3c6-dc3b"/>
           </modifiers>
         </modifierGroup>
       </modifierGroups>
+      <profiles>
+        <profile id="a78c-8d55-23c2-2358" name="Power Field" publicationId="1f62-db93-63f4-4dc7" page="170" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models in this unit have a 5+ invulnerable save.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="c240-4f2e-a002-63a8" name="Explodes (War Walker)" publicationId="1f62-db93-63f4-4dc7" page="170" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 3&quot; suffers one mortal wound.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="777d-b718-f615-754e" name="Advanced Positions" hidden="false" targetId="2a41-1cec-bebf-7e4e" type="rule"/>
+        <infoLink id="bf74-bfcb-0ea3-651e" name="Strands of Fate" hidden="false" targetId="f5cf-ac08-7c58-c76d" type="rule"/>
+      </infoLinks>
       <categoryLinks>
         <categoryLink id="a8f7-7341-bf2c-eef9" name="New CategoryLink" hidden="false" targetId="fb5a-2f35-6253-b891" primary="false"/>
         <categoryLink id="3bd0-cac0-ed14-6509" name="New CategoryLink" hidden="false" targetId="05e9-e880-b1fb-ce90" primary="false"/>
@@ -5967,72 +5928,12 @@ If this unit&apos;s Dark Reaper Exarch model is equipped with an Aeldari Missile
                 <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
                 <characteristic name="T" typeId="9c9f-9774-a358-3a39">6</characteristic>
                 <characteristic name="W" typeId="f330-5e6e-4110-0978">6</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
                 <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
               </characteristics>
             </profile>
           </profiles>
-          <infoLinks>
-            <infoLink id="629a-48df-5ce7-442b" name="Strands of Fate" hidden="false" targetId="f5cf-ac08-7c58-c76d" type="rule"/>
-            <infoLink id="4c98-ba88-45d9-164e" name="Battle Focus" hidden="false" targetId="d861-e9f8-5a9c-7595" type="rule"/>
-          </infoLinks>
-          <selectionEntries>
-            <selectionEntry id="4b8f-e1ff-48ab-65a4" name="Scout Vehicle" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="abcf-bc52-369d-b5a8" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="20b5-7ca8-ac50-b617" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="fed6-6507-a535-076c" name="Scout Vehicle" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, you can set up this unit on the enemy&apos;s flanks instead of placing it on the battlefield. At the end of any of your Movement phases the unit can join battle - set it up so that all models in the unit are within 3&quot; of a battlefield edge of your choice and more than 9&quot; away from any enemy models.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="5e8e-15c3-8324-7378" name="Power Field" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e5f-1392-fd58-d8c0" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="543d-3521-7452-ab3c" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="80e7-422f-23c0-3877" name="Power Field" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models in this unit have a 5+ invulnerable save.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="5deb-8e37-27ba-0f44" name="Explodes" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5147-af5b-c70d-fc35" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b44-1867-38d0-ecfe" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="d7f0-bc3e-69ef-42fc" name="Explodes (War Walker)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model is reduced to 0 wounds, roll a D6 before removing it from the battlefield. On a 6 it explodes, and each unit within 3&quot; suffers a mortal wound.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
           <entryLinks>
             <entryLink id="42af-99f9-c055-1320" name="Heavy Weapons" hidden="false" collective="false" import="true" targetId="7d84-2892-c4e1-b2a1" type="selectionEntryGroup">
               <constraints>
@@ -6048,8 +5949,8 @@ If this unit&apos;s Dark Reaper Exarch model is equipped with an Aeldari Missile
             </entryLink>
           </entryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="60.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
+            <cost name="pts" typeId="points" value="55.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
@@ -11261,7 +11162,7 @@ That enemy unit is not eligible to fight this phase until after all eligible uni
         </profile>
       </profiles>
     </selectionEntry>
-    <selectionEntry id="aa25-848e-4b78-7f45" name="Warlocks" publicationId="1f62-db93-63f4-4dc7" page="158" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="aa25-848e-4b78-7f45" name="Warlocks" publicationId="1f62-db93-63f4-4dc7" page="158" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
         <modifier type="add" field="category" value="82c7-3b0b-30c6-5aa2">
           <conditions>
@@ -11438,7 +11339,7 @@ That enemy unit is not eligible to fight this phase until after all eligible uni
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="3178-49b4-4fff-c4a7" name="Warlock Skyrunners" publicationId="1f62-db93-63f4-4dc7" page="159" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="3178-49b4-4fff-c4a7" name="Warlock Skyrunners" publicationId="1f62-db93-63f4-4dc7" page="159" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
         <modifier type="add" field="category" value="82c7-3b0b-30c6-5aa2">
           <conditions>
@@ -11596,6 +11497,91 @@ That enemy unit is not eligible to fight this phase until after all eligible uni
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="3.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0a75-428a-59b4-2c65" name="Shroud Runners" publicationId="1f62-db93-63f4-4dc7" page="169" hidden="false" collective="false" import="true" type="unit">
+      <modifierGroups>
+        <modifierGroup>
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5af8-e7c8-e3bf-6d52" type="equalTo"/>
+          </conditions>
+          <modifiers>
+            <modifier type="remove" field="category" value="fb5a-2f35-6253-b891"/>
+            <modifier type="add" field="category" value="ebb3-4f37-6e57-7a8e"/>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
+      <profiles>
+        <profile id="b44e-1f00-1431-9b99" name="Shroud Runner Cloak" publicationId="1f62-db93-63f4-4dc7" page="169" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models in this unit are eligible to recevei the benefits of Light Cover as if they were INFANTRY models. Each time a ranged attack is allocated to a model in this unit while it is receiving the benefits of cover, add an additional 1 to any armour saving thow made against that attack.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="b770-b94c-dfeb-001e" name="Target Acquisition" publicationId="1f62-db93-63f4-4dc7" page="169" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Shooting phase, select one enemy unit within 12&quot; of this unit. Until the end of the phase, each time an OUTCASTS unit from your army makes an attack against that enemy unit with a Ranger Long Rifle or Voidbringer, that enemy unit does not receive the benefits of cover against that attack.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="071a-cc4e-9a4f-baf8" name="Swift Scouts" publicationId="1f62-db93-63f4-4dc7" page="169" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of the first battle round, models in this unit can make a Normal Move. They cannot end this move within 9&quot; of any enemy models.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="2ad5-187c-5edb-11a9" name="Battle Focus" hidden="false" targetId="d861-e9f8-5a9c-7595" type="rule"/>
+        <infoLink id="3e86-df0f-9b7f-6cbf" name="Strands of Fate" hidden="false" targetId="f5cf-ac08-7c58-c76d" type="rule"/>
+        <infoLink id="3739-13a6-5810-be4b" name="Ride the Wind" hidden="false" targetId="32b0-fc54-e738-eef7" type="profile"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="2ff7-5161-3f58-c463" name="New CategoryLink" hidden="false" targetId="c274d0b0-5866-44bc-9810-91c136ae7438" primary="true"/>
+        <categoryLink id="0589-107e-ab05-47b1" name="Faction: &lt;Craftworld&gt;" hidden="false" targetId="fb5a-2f35-6253-b891" primary="false"/>
+        <categoryLink id="62ec-0598-6655-f929" name="Faction: Aeldari" hidden="false" targetId="05e9-e880-b1fb-ce90" primary="false"/>
+        <categoryLink id="04af-7efa-39b4-a635" name="Faction: Asuryani" hidden="false" targetId="20fc-5c6e-4a04-320f" primary="false"/>
+        <categoryLink id="14ca-02d7-741e-11b0" name="Biker" hidden="false" targetId="1c6f-0311-3eba-3180" primary="false"/>
+        <categoryLink id="6157-dcc8-b555-f17b" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+        <categoryLink id="96f8-0f6f-90d3-7ef3" name="Fly" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
+        <categoryLink id="4bb7-d49a-093c-bf7f" name="Outcasts" hidden="false" targetId="8a3d-75e3-93ae-6d09" primary="false"/>
+        <categoryLink id="3b0d-adf6-20db-e3e1" name="Shroud Runners" hidden="false" targetId="ef00-1edf-7d55-3e1a" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="9d1b-802f-810d-dc00" name="Shroud Runner" publicationId="1f62-db93-63f4-4dc7" page="169" hidden="false" collective="false" import="true" type="model">
+          <constraints>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4672-d7dc-ef56-c0de" type="min"/>
+            <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8a5d-611d-ccf8-0435" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="400e-7168-49cf-8886" name="Shroud Runner" publicationId="1f62-db93-63f4-4dc7" page="169" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">16&quot;</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">2+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">3</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <entryLinks>
+            <entryLink id="713e-ee54-b385-e1d1" name="Ranger Long Rifle" hidden="false" collective="false" import="true" targetId="e013-8937-3411-9eb9" type="selectionEntry"/>
+            <entryLink id="3f68-686a-44a3-7e47" name="Scatter Laser" hidden="false" collective="false" import="true" targetId="3725-493d-89a4-75b1" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9169-aac1-294f-035d" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2c4a-e143-f72d-b3fb" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="85e7-4cc0-79de-fc59" name="Shuriken Pistol" hidden="false" collective="false" import="true" targetId="53b9-9fb9-92e8-e0f3" type="selectionEntry"/>
+          </entryLinks>
+          <costs>
+            <cost name="pts" typeId="points" value="35.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -11874,13 +11860,23 @@ That unit cannot perform actions (if that unit is currently performing an action
         <entryLink id="1bbf-a8ef-2873-cad2" name="Aeldari Missile Launcher" hidden="false" collective="false" import="true" targetId="5f31-e870-f91d-1162" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="10.0">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4690-9288-bbc9-6652" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9780-6987-c270-c474" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4690-9288-bbc9-6652" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier type="set" field="points" value="15.0">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="816d-cdb2-dfea-5422" type="instanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="points" value="5.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8cb4-c382-d67e-3d08" type="instanceOf"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -11890,6 +11886,21 @@ That unit cannot perform actions (if that unit is currently performing an action
             <modifier type="set" field="points" value="20.0">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="816d-cdb2-dfea-5422" type="instanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="points" value="15.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9780-6987-c270-c474" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4690-9288-bbc9-6652" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="points" value="10.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8cb4-c382-d67e-3d08" type="instanceOf"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -11905,7 +11916,7 @@ That unit cannot perform actions (if that unit is currently performing an action
         </entryLink>
         <entryLink id="1876-f0a7-9823-173e" name="Shuriken Cannon" hidden="false" collective="false" import="true" targetId="a8ce-8547-64f7-80b5" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="points" value="0.0">
+            <modifier type="set" field="points" value="5.0">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4690-9288-bbc9-6652" type="instanceOf"/>
               </conditions>
@@ -11922,6 +11933,21 @@ That unit cannot perform actions (if that unit is currently performing an action
             <modifier type="set" field="points" value="15.0">
               <conditions>
                 <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="816d-cdb2-dfea-5422" type="instanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="points" value="10.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9780-6987-c270-c474" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4690-9288-bbc9-6652" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="points" value="5.0">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8cb4-c382-d67e-3d08" type="instanceOf"/>
               </conditions>
             </modifier>
           </modifiers>
