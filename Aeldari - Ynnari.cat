@@ -140,6 +140,7 @@
         <categoryLink id="4649-64fa-f74e-121a" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="9338-5cc3-ef78-0c25" name="Stratagem: Treasures of the Aeldari" hidden="false" collective="false" import="true" targetId="b67d-da32-6a5f-0e22" type="selectionEntry"/>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="1409-e740-c7c9-3758" name="Yvraine" publicationId="1f62-db93-63f4-4dc7" page="187" hidden="false" collective="false" import="true" type="model">
@@ -2189,7 +2190,7 @@ The selected unit can still perform actions in a turn in which it Advanced or Fe
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="986b-3749-2765-14f9" type="max"/>
       </constraints>
       <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="1.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="7753-561b-04d0-7e40" name="Stratagem: Champion of the Aeldari" publicationId="1f62-db93-63f4-4dc7" page="99" hidden="true" collective="false" import="true" type="upgrade">
@@ -2228,6 +2229,58 @@ The selected unit can still perform actions in a turn in which it Advanced or Fe
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="b67d-da32-6a5f-0e22" name="Stratagem: Treasures of the Aeldari" publicationId="1f62-db93-63f4-4dc7" page="99" hidden="true" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="bd33-af65-372d-568f" value="2.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="bd33-af65-372d-568f" value="3.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="858e-1bd9-61c9-6dcf" type="greaterThan"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="93a5-5452-136c-f12e" type="greaterThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bd33-af65-372d-568f" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="f295-8460-b568-cdf2" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="8ca6-6aeb-178c-207e" name="Treasures of the Aeldari Relic" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="increment" field="d069-fdc0-fbbe-0a77" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2ce0-03a1-ec03-76aa" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="d069-fdc0-fbbe-0a77" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b67d-da32-6a5f-0e22" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d069-fdc0-fbbe-0a77" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2d4b-7875-2b12-1c27" type="min"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e41-a361-db13-2da2" type="max"/>
+      </constraints>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
