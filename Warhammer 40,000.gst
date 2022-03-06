@@ -351,6 +351,11 @@
         <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8eaa-3004-4085-a92e" type="max"/>
       </constraints>
     </categoryEntry>
+    <categoryEntry id="e2cd-acfa-fa0d-19c2" name="Faction: Asuryani" hidden="false"/>
+    <categoryEntry id="c3ef-f3d7-2f5f-ba44" name="Faction: Harlequins" hidden="false"/>
+    <categoryEntry id="b0a7-1c43-8c17-57bb" name="Faction: Drukhari" hidden="false"/>
+    <categoryEntry id="6715-6aac-fe50-4cb1" name="Terrain Feature" hidden="false"/>
+    <categoryEntry id="af45-7ddf-e81a-8128" name="Webway Gate" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -4875,52 +4880,30 @@ Remaining Wounds | Aura Range
     </selectionEntry>
     <selectionEntry id="52c2-f7a8-dc21-d14d" name="Webway Gate" hidden="false" collective="false" import="true" type="model">
       <profiles>
-        <profile id="5a30-abaf-f4cf-2586" name="Webway Gate" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="ba08-5714-b31c-5cf5" name="Mysterious Appearance" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">-</characteristic>
-            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">-</characteristic>
-            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">-</characteristic>
-            <characteristic name="S" typeId="2218-aa3c-265f-2939">-</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">14</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">-</characteristic>
-            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">-</characteristic>
-            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="ba08-5714-b31c-5cf5" name="Shimmering Arrival" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When you set up this model during deployment, it can be set up anywhere on the battlefield that is more than 12&quot; from the enemy deployment zone and any enemy models, and more than 3&quot; from any other terrain features or the center of any objective markers.</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="9f52-e8b6-268d-fa2d" name="Eldritch Aura" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model has a 5+ Invulnerable save</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, when you set up this unit, it can be set up anywhere on the battlefield that is more than 12&quot; from the enemy deployment zone and any enemy models. When this unit is set up on the battlefield, both of its Wraithbone Arches must be set up within 3&quot; of each other. Once it has been set up, each Wraithbone Arch is treated as an Obstacle terrain feature with the following terrain traits: Light Cover, Heavy Cover, Unstable Position, Inspiring (AELDARI).</characteristic>
           </characteristics>
         </profile>
         <profile id="0fff-6dcb-d884-e8df" name="Webway Strike" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After you set up this model, any AELDARI units you have not yet set up during deployment, other than fortifications, can be set up in a webway spar rather than being set up on the battlefield. One unit in a webway spar can emerge from each friendly Webway Gate at the end of each of your movement phases - Set them up wholly within 3&quot; of the webway gate and more than 9&quot; away from any enemy models. If all friendlyWebway Gates have been destroyed, any units that have not yet arrived from a webway spar are considered to be slain</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="1b16-1941-d120-15ee" name="Webway Gate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When measuring distance to and from a Webway Gate, measure from the closest point of the model. If a Webway Gate is destroyed, remove both arch pieces from the battlefield.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an AELDARI unit from your army arrives from Stategic Reserves, you can choose to set it up anywhere on the battlefield that is wholly within 6&quot; of both of the Wraithbone Arches of a friendly WEBWAY GATE unit. If you do so, that AELDARI unit can be set up within 9&quot; of enemy models. If an AELDARI unit is set up within Engagement Range of any enemy models in this way, it counts as having made a charge move this turn (Overwatach attacks cannot be made against that unit), and until the end of the turn, that unit can target any enemy unit it is within Engagement Range of with melee attacks, even though it did not declare a charge this turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="1a92-ac78-d207-27bd" name="Immobile (Fortification)" hidden="false" targetId="8830-2c9e-ad7e-e57d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
-        <categoryLink id="e7e7-208c-04b2-5ea6" name="New CategoryLink" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
-        <categoryLink id="7ce7-1cff-5c04-d349" name="New CategoryLink" hidden="false" targetId="53cd-314c-599b-8616" primary="false"/>
         <categoryLink id="40f9-d058-6db4-cf64" name="New CategoryLink" hidden="false" targetId="dbb4-dfd1-04b9-5980" primary="false"/>
         <categoryLink id="10ed-5982-ee02-668a" name="New CategoryLink" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
+        <categoryLink id="2514-898a-ab86-204e" name="Faction: Asuryani" hidden="false" targetId="e2cd-acfa-fa0d-19c2" primary="false"/>
+        <categoryLink id="ad5a-f132-08bb-1d6f" name="Faction: Harlequins" hidden="false" targetId="c3ef-f3d7-2f5f-ba44" primary="false"/>
+        <categoryLink id="39d8-33af-1651-2ec3" name="Faction: Drukhari" hidden="false" targetId="b0a7-1c43-8c17-57bb" primary="false"/>
+        <categoryLink id="a993-692a-0d34-a272" name="Terrain Feature" hidden="false" targetId="6715-6aac-fe50-4cb1" primary="false"/>
+        <categoryLink id="fdd6-2657-61f4-555b" name="Obstacle" hidden="false" targetId="7d4c-822b-b174-1e96" primary="false"/>
+        <categoryLink id="7e27-59bc-c760-6143" name="Webway Gate" hidden="false" targetId="af45-7ddf-e81a-8128" primary="false"/>
       </categoryLinks>
       <costs>
         <cost name="pts" typeId="points" value="95.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
