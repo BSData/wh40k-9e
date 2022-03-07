@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="206" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="208" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -215,7 +215,6 @@
     <categoryEntry id="655f-e142-dfa9-11a4" name="Relic HQ" hidden="false"/>
     <categoryEntry id="6c4c-a416-b8cb-c380" name="Relic Heavy Support" hidden="false"/>
     <categoryEntry id="3216-79af-660b-7711" name="Relic Lord of War" hidden="false"/>
-    <categoryEntry id="dbb4-dfd1-04b9-5980" name="Faction: Aeldari" hidden="false"/>
     <categoryEntry id="22e6-c81e-efbd-70d4" name="Faction: SW" hidden="false"/>
     <categoryEntry id="6c38-ec13-d26b-598f" name="Specialist Detachment" hidden="false">
       <constraints>
@@ -290,7 +289,7 @@
     <categoryEntry id="25d3-b37a-ad95-d463" name="Kyganil" hidden="false"/>
     <categoryEntry id="1b30-1696-d043-ddef" name="Ephrael Stern" publicationId="85df-1155-c986-4d71" hidden="false"/>
     <categoryEntry id="f475-3e56-fd5f-4737" name="Adepta Sororitas" hidden="false"/>
-    <categoryEntry id="1114-7875-d463-df17" name="Aeldari" hidden="false"/>
+    <categoryEntry id="1114-7875-d463-df17" name="Faction: Aeldari" hidden="false"/>
     <categoryEntry id="6c1d-32d6-b16c-3b0c" name="Titanic Warlord" hidden="false"/>
     <categoryEntry id="da67-195b-7909-341a" name="Daemon Primarch" hidden="false"/>
     <categoryEntry id="5750-de0a-589d-eacf" name="Supreme Commander" hidden="false"/>
@@ -351,9 +350,6 @@
         <constraint field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8eaa-3004-4085-a92e" type="max"/>
       </constraints>
     </categoryEntry>
-    <categoryEntry id="e2cd-acfa-fa0d-19c2" name="Faction: Asuryani" hidden="false"/>
-    <categoryEntry id="c3ef-f3d7-2f5f-ba44" name="Faction: Harlequins" hidden="false"/>
-    <categoryEntry id="b0a7-1c43-8c17-57bb" name="Faction: Drukhari" hidden="false"/>
     <categoryEntry id="6715-6aac-fe50-4cb1" name="Terrain Feature" hidden="false"/>
     <categoryEntry id="af45-7ddf-e81a-8128" name="Webway Gate" hidden="false"/>
   </categoryEntries>
@@ -4875,35 +4871,6 @@ Remaining Wounds | Aura Range
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="52c2-f7a8-dc21-d14d" name="Webway Gate" hidden="false" collective="false" import="true" type="model">
-      <profiles>
-        <profile id="ba08-5714-b31c-5cf5" name="Mysterious Appearance" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">During deployment, when you set up this unit, it can be set up anywhere on the battlefield that is more than 12&quot; from the enemy deployment zone and any enemy models. When this unit is set up on the battlefield, both of its Wraithbone Arches must be set up within 3&quot; of each other. Once it has been set up, each Wraithbone Arch is treated as an Obstacle terrain feature with the following terrain traits: Light Cover, Heavy Cover, Unstable Position, Inspiring (AELDARI).</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="0fff-6dcb-d884-e8df" name="Webway Strike" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an AELDARI unit from your army arrives from Stategic Reserves, you can choose to set it up anywhere on the battlefield that is wholly within 6&quot; of both of the Wraithbone Arches of a friendly WEBWAY GATE unit. If you do so, that AELDARI unit can be set up within 9&quot; of enemy models. If an AELDARI unit is set up within Engagement Range of any enemy models in this way, it counts as having made a charge move this turn (Overwatach attacks cannot be made against that unit), and until the end of the turn, that unit can target any enemy unit it is within Engagement Range of with melee attacks, even though it did not declare a charge this turn.</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
-      <categoryLinks>
-        <categoryLink id="40f9-d058-6db4-cf64" name="New CategoryLink" hidden="false" targetId="dbb4-dfd1-04b9-5980" primary="false"/>
-        <categoryLink id="10ed-5982-ee02-668a" name="New CategoryLink" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
-        <categoryLink id="2514-898a-ab86-204e" name="Faction: Asuryani" hidden="false" targetId="e2cd-acfa-fa0d-19c2" primary="false"/>
-        <categoryLink id="ad5a-f132-08bb-1d6f" name="Faction: Harlequins" hidden="false" targetId="c3ef-f3d7-2f5f-ba44" primary="false"/>
-        <categoryLink id="39d8-33af-1651-2ec3" name="Faction: Drukhari" hidden="false" targetId="b0a7-1c43-8c17-57bb" primary="false"/>
-        <categoryLink id="a993-692a-0d34-a272" name="Terrain Feature" hidden="false" targetId="6715-6aac-fe50-4cb1" primary="false"/>
-        <categoryLink id="fdd6-2657-61f4-555b" name="Obstacle" hidden="false" targetId="7d4c-822b-b174-1e96" primary="false"/>
-        <categoryLink id="7e27-59bc-c760-6143" name="Webway Gate" hidden="false" targetId="af45-7ddf-e81a-8128" primary="false"/>
-      </categoryLinks>
-      <costs>
-        <cost name="pts" typeId="points" value="95.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
