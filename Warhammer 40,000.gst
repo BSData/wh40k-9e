@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="208" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="209" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -352,6 +352,8 @@
     </categoryEntry>
     <categoryEntry id="6715-6aac-fe50-4cb1" name="Terrain Feature" hidden="false"/>
     <categoryEntry id="af45-7ddf-e81a-8128" name="Webway Gate" hidden="false"/>
+    <categoryEntry id="a476-685a-4747-1980" name="Non-Compulsory Troop" hidden="false"/>
+    <categoryEntry id="508a-b6d4-d4fe-723c" name="Non-Compulsory Elite" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -427,6 +429,13 @@
           </constraints>
         </categoryLink>
         <categoryLink id="701d-f8cf-a497-db95" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false">
+          <modifiers>
+            <modifier type="increment" field="57c7-2337-eef8-a7d3" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a476-685a-4747-1980" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0ecb-6e0d-163a-7998" type="max"/>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="57c7-2337-eef8-a7d3" type="min"/>
@@ -585,6 +594,13 @@
           </constraints>
         </categoryLink>
         <categoryLink id="661b-1f7f-2072-c68b" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false">
+          <modifiers>
+            <modifier type="increment" field="b397-7bc5-a7ef-0345" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a476-685a-4747-1980" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="058b-2417-368a-4d3c" type="max"/>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b397-7bc5-a7ef-0345" type="min"/>
@@ -743,12 +759,26 @@
           </constraints>
         </categoryLink>
         <categoryLink id="c296-bcb4-c3e2-5d9b" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false">
+          <modifiers>
+            <modifier type="increment" field="6aaf-4a21-6ece-5f40" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a476-685a-4747-1980" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="12.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9e74-855c-c621-10cd" type="max"/>
             <constraint field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6aaf-4a21-6ece-5f40" type="min"/>
           </constraints>
         </categoryLink>
         <categoryLink id="e010-a74e-f838-e69e" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false">
+          <modifiers>
+            <modifier type="increment" field="26ad-d4af-1418-57e9" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="508a-b6d4-d4fe-723c" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="8.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5c79-1719-c8e2-514f" type="max"/>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="26ad-d4af-1418-57e9" type="min"/>
@@ -886,6 +916,13 @@
           </constraints>
         </categoryLink>
         <categoryLink id="93c3-802d-d4e3-b9d7" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false">
+          <modifiers>
+            <modifier type="increment" field="4b0f-d3dd-bca2-8ced" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="508a-b6d4-d4fe-723c" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4b0f-d3dd-bca2-8ced" type="min"/>
             <constraint field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9603-b2c6-9e1a-946a" type="max"/>
