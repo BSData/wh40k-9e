@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="191" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @_alphalas, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="205" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="d124-b283-2ff7-beae" name="Imperium - Adepta Sororitas" revision="192" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @_alphalas, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="209" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>Hopefully I&apos;ll get past the Rage stage of grief soon.</readme>
   <publications>
     <publication id="d124-b283-pubN72234" name="Codex: Adepta Sororitas 9th Edition"/>
@@ -118,6 +118,7 @@
     </categoryEntry>
     <categoryEntry id="66f6-9ccb-1ca2-4dd3" name="Warlord - Charadon OOOML" hidden="false"/>
     <categoryEntry id="c6cc-2d4d-b62e-dde4" name="Sisters Novitiate" hidden="false"/>
+    <categoryEntry id="68b5-4db5-37a1-dd11" name="Warlord - Vigilus OOBR" hidden="false"/>
   </categoryEntries>
   <entryLinks>
     <entryLink id="26b0-aaff-05c6-2a72" name="Canoness" hidden="false" collective="false" import="true" targetId="e1bb-8fd1-939d-8952" type="selectionEntry"/>
@@ -5367,6 +5368,37 @@ At the end of the Fight phase, if this PRIEST model is in Engagement Range of an
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="add" field="category" value="68b5-4db5-37a1-dd11">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cd9c-e25f-1d3a-88f7" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="27c1-a25c-4b17-6831" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="caaf-8409-e170-3286" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a0eb-0820-f4dd-c243" type="greaterThan"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ec89-cc53-f40d-90d5" type="notInstanceOf"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b650-bdca-b961-cfd8" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e1bb-8fd1-939d-8952" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5d41-39ba-fcbd-2c11" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2f21-55f2-c323-73a7" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="70dc-3414-76ce-c58e" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7b97-19d7-8136-4b1c" type="instanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="dddc-569d-16a8-72fc" type="max"/>
@@ -9751,9 +9783,14 @@ You cannot select this conviction if you have already selected either the Raging
     <selectionEntryGroup id="a587-49a7-4639-4e92" name="Order of Our Martyred Lady Relics" hidden="false" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f65b-46de-9d3f-dc59" type="lessThan"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f65b-46de-9d3f-dc59" type="lessThan"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="66f6-9ccb-1ca2-4dd3" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="set" field="2799-0d56-f7e2-befc" value="1.0">
           <conditions>
@@ -9945,11 +9982,8 @@ Candela Scroll (Aura): While a friendly ORDER OF OUR MARTYRED LADY CHARACTER or 
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ff72-0e5b-ac56-52d9" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8a05-66df-88c7-f7f6" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f351-39dc-416f-ba68" type="instanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="bb3d-3117-07eb-c67a" type="instanceOf"/>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="25de-4d74-c153-43c5" type="lessThan"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a0eb-0820-f4dd-c243" type="lessThan"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="68b5-4db5-37a1-dd11" type="lessThan"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
