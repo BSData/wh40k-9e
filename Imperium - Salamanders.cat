@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="4501-8439-ec2c-efad" name="Imperium - Adeptus Astartes - Salamanders" revision="46" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="205" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="4501-8439-ec2c-efad" name="Imperium - Adeptus Astartes - Salamanders" revision="47" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="210" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <selectionEntries>
     <selectionEntry id="264d-cbed-e233-21d1" name="Adrax Agatone" hidden="false" collective="false" import="true" type="model">
       <modifiers>
@@ -1374,6 +1374,16 @@
         <entryLink id="5fd8-bdba-775c-05d9" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="e92c-a3a4-ffdf-8777" type="selectionEntryGroup"/>
       </entryLinks>
     </entryLink>
+    <entryLink id="3094-235f-6788-d9e0" name="Army of Renown - Vanguard Spearhead" hidden="false" collective="false" import="true" targetId="fff5-0cb2-3255-5678" type="selectionEntry"/>
+    <entryLink id="26fb-b069-cb45-3af0" name="Primaris Company Champion [Legends]" hidden="false" collective="false" import="true" targetId="9818-6bac-3e50-e194" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="4a28-c498-7d44-74b5" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
+      </categoryLinks>
+      <entryLinks>
+        <entryLink id="3539-1dd6-8daa-d970" name="Chapter Relics" hidden="false" collective="false" import="true" targetId="3c14-f2aa-db72-c3c9" type="selectionEntryGroup"/>
+        <entryLink id="03c9-3a79-119e-4762" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="e92c-a3a4-ffdf-8777" type="selectionEntryGroup"/>
+      </entryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="4d58-a588-16c8-7a14" name="Lord of Fire (Aura)" hidden="false" collective="false" import="true" type="upgrade">
@@ -1426,6 +1436,13 @@
             <selectionEntry id="91a5-4f66-56be-1952" name="Salamanders" hidden="false" collective="false" import="true" type="upgrade">
               <rules>
                 <rule id="b2b9-0531-970b-66a7" name="Forged in Battle" hidden="false">
+                  <modifiers>
+                    <modifier type="set" field="hidden" value="true">
+                      <conditions>
+                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fff5-0cb2-3255-5678" type="atLeast"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
                   <description>- Each time a unit with this tactic is selected to shoot or fight, you can re-roll one wound roll when resolving that unit&apos;s attacks.
 - Each time an attack with an Armour Penetration characteristic of -1 is allocated to a model with this tactic, that attack has an Armour Penetration characteristic of 0 instead.</description>
                 </rule>
@@ -1491,6 +1508,11 @@
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fff5-0cb2-3255-5678" type="atLeast"/>
+              </conditions>
             </modifier>
           </modifiers>
         </entryLink>

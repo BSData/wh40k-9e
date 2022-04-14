@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="210" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="211" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -29,6 +29,7 @@
     <publication id="e056-7215-247f-0a20" name="War Zone Octarius, Book 1: Rising Tide"/>
     <publication id="255d-c624-9fcb-ca23" name="War Zone Octarius, Book 2: Critical Mass"/>
     <publication id="4a3e-a6d9-b5f8-3e3d" name="Shadow Throne" publicationDate="2021-12-18" publisherUrl="games-workshop.com/warhammer-40000-shadow-throne-2021-eng"/>
+    <publication id="db16-1a92-fdd3-95a9" name="The Balance Dataslate" shortName="The Balance Dataslate" publisher="The Balance Dataslate" publicationDate="14th April 2022" publisherUrl="https://www.warhammer-community.com/wp-content/uploads/2022/04/lBLlqvrttJVgyfhC.pdf"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
@@ -8476,6 +8477,13 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
     </rule>
     <rule id="e07e-8dbf-0b15-7485" name="Objective Secured" publicationId="28ec-711c-pubN72690" page="237" hidden="false">
       <description>A player controls an objective marker if they have any models with this ability within range of that objective marker, even if there are more enemy models within range of that objective marker. If an enemy model within range of an objective marker also has this ability (or a similar ability), then the objective marker is controlled by the player who has the most models within range of that objective marker as normal.</description>
+    </rule>
+    <rule id="ab12-fdad-19bf-29d7" name="Armour of Contempt" publicationId="db16-1a92-fdd3-95a9" page="1" hidden="false">
+      <description>Each time an attack is allocated to an ADEPTUS ASTARTES, SANCTIC ASTARTES, HERETIC ASTARTES or ADEPTA SORORITAS model, worsen the Armour Penetration characteristic of that attack by 1.
+This rule does not apply to any of the following:
+• Models equipped with a storm shield, a relic shield or a combat shield (or a Relic that replaces one of these shields).
+• Models with either the Sacresant Shield or Force Shielding ability (Celestian Sacresant and Nemesis Dreadknight units).
+• Models that are under the effects of any other rule that worsens or reduces the Armour Penetration characteristic of an attack.</description>
     </rule>
   </sharedRules>
   <sharedProfiles>
