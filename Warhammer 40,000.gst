@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="210" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="211" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -29,6 +29,7 @@
     <publication id="e056-7215-247f-0a20" name="War Zone Octarius, Book 1: Rising Tide"/>
     <publication id="255d-c624-9fcb-ca23" name="War Zone Octarius, Book 2: Critical Mass"/>
     <publication id="4a3e-a6d9-b5f8-3e3d" name="Shadow Throne" publicationDate="2021-12-18" publisherUrl="games-workshop.com/warhammer-40000-shadow-throne-2021-eng"/>
+    <publication id="db16-1a92-fdd3-95a9" name="The Balance Dataslate" shortName="The Balance Dataslate" publisher="The Balance Dataslate" publicationDate="14th April 2022" publisherUrl="https://www.warhammer-community.com/wp-content/uploads/2022/04/lBLlqvrttJVgyfhC.pdf"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
