@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="7150-5917-ae80-68c5" name="Tyranids" revision="94" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@GenWilhelm" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="211" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="7150-5917-ae80-68c5" name="Tyranids" revision="95" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@GenWilhelm" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="211" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="7150-5917-pubN65537" name="Codex: Tyranids"/>
     <publication id="57c5-6839-bb2f-72da" name="White Dwarf 471" shortName="WD 471" publicationDate="2021-12-17" publisherUrl="https://www.games-workshop.com/white-dwarf-471-dec-2021-eng"/>
@@ -1732,15 +1732,28 @@ Defensive Stance (Action): At the start of your Command phase, any number of HIV
           <selectionEntryGroups>
             <selectionEntryGroup id="8060-20f2-2e1e-7792" name="Cannons" hidden="false" collective="false" import="true">
               <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="aa1c-b4e6-ada7-a7c1" type="max"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aa1c-b4e6-ada7-a7c1" type="max"/>
               </constraints>
               <entryLinks>
                 <entryLink id="cea1-0972-3d15-c453" name="Heavy Venom Cannon" hidden="false" collective="false" import="true" targetId="7616-cf27-58d6-0899" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9095-82c2-5c1a-2c99" type="max"/>
+                  </constraints>
                   <costs>
                     <cost name="pts" typeId="points" value="15.0"/>
                   </costs>
                 </entryLink>
                 <entryLink id="575b-e844-d2fb-0ede" name="Stranglethorn Cannon" hidden="false" collective="false" import="true" targetId="0d1b-6f84-2224-a225" type="selectionEntry">
+                  <modifiers>
+                    <modifier type="set" field="e5ff-0423-3c6f-f796" value="0.0">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7616-cf27-58d6-0899" type="atLeast"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e5ff-0423-3c6f-f796" type="max"/>
+                  </constraints>
                   <costs>
                     <cost name="pts" typeId="points" value="10.0"/>
                   </costs>
@@ -2640,7 +2653,6 @@ Diffusion Field (Aura): While a friendly &lt;HIVE FLEET&gt; unit is within 6&quo
         </modifier>
       </modifiers>
       <infoLinks>
-        <infoLink id="c21a-b975-a899-d6e6" name="Instinctive Behaviour" hidden="false" targetId="b830-920a-231b-073d" type="profile"/>
         <infoLink id="67f5-8430-be22-1107" name="Swooping Assault" hidden="false" targetId="d863-0718-4b4f-1b72" type="profile"/>
       </infoLinks>
       <categoryLinks>
@@ -6016,7 +6028,6 @@ Seed Spores (Action): At the start of your Movement phase, one SPOROCYST model f
       </profiles>
       <infoLinks>
         <infoLink id="8eb6-3418-a365-5137" name="Death Throes (Hierodule)" hidden="false" targetId="e083-5f8f-f165-bfa8" type="profile"/>
-        <infoLink id="d3ef-e6c9-fd7a-e389" name="Instinctive Behaviour" hidden="false" targetId="b830-920a-231b-073d" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="e005-b1a0-7fa8-007a" name="New CategoryLink" hidden="false" targetId="a367-fb78-5192-96eb" primary="false"/>
@@ -6108,9 +6119,6 @@ Seed Spores (Action): At the start of your Movement phase, one SPOROCYST model f
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="3501-1e0f-889f-cfad" name="Instinctive Behaviour" hidden="false" targetId="b830-920a-231b-073d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="f228-cf22-5980-3264" name="New CategoryLink" hidden="false" targetId="a367-fb78-5192-96eb" primary="false"/>
         <categoryLink id="ff54-09b0-910d-49db" name="New CategoryLink" hidden="false" targetId="dc2c-fdd5-528b-e9ad" primary="false"/>
@@ -6354,9 +6362,6 @@ Seed Spores (Action): At the start of your Movement phase, one SPOROCYST model f
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="d155-5abb-24e2-3ebd" name="Swarming Masses" hidden="false" targetId="b830-920a-231b-073d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="fa6c-3d28-0b2e-ff49" name="New CategoryLink" hidden="false" targetId="a367-fb78-5192-96eb" primary="false"/>
         <categoryLink id="1528-98e5-e59e-4560" name="New CategoryLink" hidden="false" targetId="dc2c-fdd5-528b-e9ad" primary="false"/>
@@ -6445,7 +6450,6 @@ Seed Spores (Action): At the start of your Movement phase, one SPOROCYST model f
       </profiles>
       <infoLinks>
         <infoLink id="64e7-cd6c-1c1f-4c79" name="Death Throes (Hierodule)" hidden="false" targetId="e083-5f8f-f165-bfa8" type="profile"/>
-        <infoLink id="c44e-3b27-0f34-e961" name="Instinctive Behaviour" hidden="false" targetId="b830-920a-231b-073d" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="eb55-282e-27ae-2786" name="New CategoryLink" hidden="false" targetId="a367-fb78-5192-96eb" primary="false"/>
@@ -6634,9 +6638,6 @@ If the model has been posed with one or more of its legs raised, agree with your
           </characteristics>
         </profile>
       </profiles>
-      <infoLinks>
-        <infoLink id="4ec8-733e-f487-f619" name="Instinctive Behaviour" hidden="false" targetId="b830-920a-231b-073d" type="profile"/>
-      </infoLinks>
       <categoryLinks>
         <categoryLink id="5d7a-c364-847a-0139" name="New CategoryLink" hidden="false" targetId="a367-fb78-5192-96eb" primary="false"/>
         <categoryLink id="7f4c-7ec7-ef72-8019" name="New CategoryLink" hidden="false" targetId="dc2c-fdd5-528b-e9ad" primary="false"/>
@@ -8923,6 +8924,11 @@ If that unit suffers 2 or more mortal wounds as a result of this ability this ph
           </costs>
         </selectionEntry>
       </selectionEntries>
+      <entryLinks>
+        <entryLink id="8d49-d95b-dcde-2fed" name="Warlord" hidden="false" collective="false" import="true" targetId="c832-2f4e-ee51-f481" type="selectionEntry"/>
+        <entryLink id="d816-4a21-8892-ca08" name="Bio-artefacts" hidden="false" collective="false" import="true" targetId="6bd6-d28a-87ce-355e" type="selectionEntryGroup"/>
+        <entryLink id="9f0a-325f-2a85-fcf4" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="25a0-b547-6079-03a1" type="selectionEntryGroup"/>
+      </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="pts" typeId="points" value="80.0"/>
@@ -10478,6 +10484,11 @@ Bursting the Sac (Action): At the start of your Shooting phase, this model can s
         <modifier type="set" field="3c8f-033a-4e7f-a3e8" value="1.0">
           <conditions>
             <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="atLeast"/>
+          </conditions>
+        </modifier>
+        <modifier type="increment" field="7ee7-a427-5646-b735" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fa44-e9b6-a96e-cb57" type="atLeast"/>
           </conditions>
         </modifier>
       </modifiers>
