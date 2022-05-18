@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="215" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="216" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -1375,30 +1375,61 @@
         </modifier>
         <modifier type="set" field="name" value="Super-Heavy Detachment 0CP">
           <conditionGroups>
-            <conditionGroup type="and">
-              <comment>Titanic Knight Warlord</comment>
+            <conditionGroup type="or">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5d84-5102-f22c-14d4" type="instanceOf"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
+                  </conditions>
                   <conditionGroups>
-                    <conditionGroup type="and">
+                    <conditionGroup type="or">
                       <conditions>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
-                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+                        <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c08d-f66a-1d47-060f" type="atLeast"/>
                       </conditions>
-                    </conditionGroup>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="atLeast"/>
-                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c1d-32d6-b16c-3b0c" type="atLeast"/>
-                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </conditionGroup>
                   </conditionGroups>
                 </conditionGroup>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5d84-5102-f22c-14d4" type="instanceOf"/>
                     <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="instanceOf"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="82b5-25ac-1710-de0e" type="atLeast"/>
+                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </conditionGroup>
@@ -1445,6 +1476,25 @@
       </categoryLinks>
     </forceEntry>
     <forceEntry id="224b-1070-218f-fdf4" name="Super-Heavy Auxiliary Detachment -3CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="name" value="Super-Heavy Auxiliary Detachment 0CP">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5d84-5102-f22c-14d4" type="instanceOf"/>
+                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <categoryLinks>
         <categoryLink id="d42a-fc02-778b-3118" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="dcbb-53c2-a989-ae08" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
@@ -5758,6 +5808,9 @@ Remaining Wounds | Aura Range
                   </conditions>
                 </conditionGroup>
                 <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="instanceOf"/>
+                  </conditions>
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditionGroups>
@@ -5780,8 +5833,8 @@ Remaining Wounds | Aura Range
                           <comment>Not Knights, No TITANICS</comment>
                           <conditions>
                             <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5d84-5102-f22c-14d4" type="notInstanceOf"/>
-                            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="notInstanceOf"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+                            <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="notInstanceOf"/>
                           </conditions>
                         </conditionGroup>
                         <conditionGroup type="and">
@@ -5794,21 +5847,6 @@ Remaining Wounds | Aura Range
                               <conditions>
                                 <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="82b5-25ac-1710-de0e" type="lessThan"/>
                                 <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="lessThan"/>
-                              </conditions>
-                            </conditionGroup>
-                          </conditionGroups>
-                        </conditionGroup>
-                        <conditionGroup type="and">
-                          <comment>Knights, TITANICS, non-TITANIC Warlord</comment>
-                          <conditions>
-                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6c1d-32d6-b16c-3b0c" type="equalTo"/>
-                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
-                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="atLeast"/>
-                          </conditions>
-                          <conditionGroups>
-                            <conditionGroup type="or">
-                              <conditions>
-                                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="instanceOf"/>
                               </conditions>
                             </conditionGroup>
                           </conditionGroups>
@@ -5945,9 +5983,16 @@ Remaining Wounds | Aura Range
                 <conditionGroup type="and">
                   <conditions>
                     <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="instanceOf"/>
-                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5d84-5102-f22c-14d4" type="instanceOf"/>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5d84-5102-f22c-14d4" type="instanceOf"/>
+                        <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="instanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
                 <conditionGroup type="and">
                   <conditions>
@@ -5970,6 +6015,34 @@ Remaining Wounds | Aura Range
                         <conditionGroup type="and">
                           <conditions>
                             <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="instanceOf"/>
+                    <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82cd-d24f-9f22-11f3" type="instanceOf"/>
+                    <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="atLeast"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="82b5-25ac-1710-de0e" type="atLeast"/>
+                      </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
