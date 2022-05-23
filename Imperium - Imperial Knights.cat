@@ -246,6 +246,11 @@
         <categoryLink id="c94f-7843-637f-f311" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="c60c-6efd-426d-edf9" name="Army of Reknown" hidden="false" collective="false" import="true" targetId="76ad-b63c-462a-1519" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="fdb7-e7d6-191a-a183" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <rules>
     <rule id="4b57-8620-2c00-3feb" name="Code Chivalric" publicationId="82cd-d24f-pubN65537" hidden="false">
@@ -589,7 +594,6 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
             </infoLink>
           </infoLinks>
         </entryLink>
-        <entryLink id="1514-c417-4b49-c1f6" name="Freeblade" hidden="false" collective="false" import="true" targetId="b852-a5b1-1418-5374" type="selectionEntry"/>
         <entryLink id="1dc9-5000-6e7c-6e8d" name="Heirlooms of the Noble Houses" hidden="false" collective="false" import="true" targetId="b41b-99f7-d7c3-66ee" type="selectionEntryGroup"/>
         <entryLink id="005d-0170-0031-de95" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="c5e1-43cc-abec-dee0" type="selectionEntryGroup"/>
         <entryLink id="9838-3948-9b89-e150" name="Warlord" hidden="false" collective="false" import="true" targetId="96f2-3321-e974-f12a" type="selectionEntry">
@@ -597,7 +601,6 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
             <categoryLink id="f549-f48d-a4c2-f809" name="Titanic Warlord" hidden="false" targetId="6c1d-32d6-b16c-3b0c" primary="false"/>
           </categoryLinks>
         </entryLink>
-        <entryLink id="821c-f34f-9902-ca87" name="Freeblade Traditions" hidden="false" collective="false" import="true" targetId="2fac-d4fc-3cc1-0ad8" type="selectionEntryGroup"/>
         <entryLink id="51fc-f8d7-1a84-513a" name="Order of Companions" hidden="false" collective="false" import="true" targetId="72f4-872d-e016-0a96" type="selectionEntry">
           <categoryLinks>
             <categoryLink id="cf0d-92ff-947f-4756" name="Titanic Warlord" hidden="false" targetId="6c1d-32d6-b16c-3b0c" primary="false"/>
@@ -5137,9 +5140,14 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
         <infoLink id="bedf-9967-8431-aec9" name="Vow of Honour" hidden="false" targetId="28a0-3aa5-799b-71b0" type="profile">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d451-70df-eeef-7915" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </infoLink>
@@ -5158,9 +5166,14 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
         <infoLink id="ce1b-6c80-799e-ec16" name="Sacristan Pledge" hidden="false" targetId="b9b9-92f8-a081-9524" type="profile">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d451-70df-eeef-7915" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </infoLink>
@@ -6384,11 +6397,14 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
       </costs>
     </selectionEntry>
     <selectionEntry id="e739-6296-9046-12b7" name="Freeblade Lance" publicationId="82cd-d24f-pubN65537" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9547-5552-d54e-1113" type="max"/>
+      </constraints>
       <profiles>
         <profile id="e6e0-4ff0-73d7-e2a2" name="Indomitable Heroes" publicationId="82cd-d24f-pubN65537" hidden="false" typeId="dfe7-9b0a-ece9-9141" typeName="Household Tradition">
           <characteristics>
             <characteristic name="Description" typeId="9271-9853-fe95-0c04">- At the start of each of your Command phases, a model with this Martial Tradition regains 1 lost wound.
-- 0 Each time an Advance or charge roll is made for a model with this Martial Tradition, you can ignore any or all modifiers to that Advance or charge roll.</characteristic>
+-  Each time an Advance or charge roll is made for a model with this Martial Tradition, you can ignore any or all modifiers to that Advance or charge roll.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -7488,6 +7504,14 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="76ad-b63c-462a-1519" name="Army of Reknown" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a944-cc26-6c70-4afe" type="max"/>
+      </constraints>
+      <entryLinks>
+        <entryLink id="fbcf-4219-e609-ff3b" name="Freeblade Lance" hidden="false" collective="false" import="true" targetId="e739-6296-9046-12b7" type="selectionEntry"/>
+      </entryLinks>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="8a10-ffae-4091-99d9" name="Questoris Carapace Weapons" hidden="false" collective="false" import="true">
@@ -8303,6 +8327,12 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                 <categoryLink id="8daf-5a8d-e28d-22cf" name="Faction: House Terryn  " hidden="false" targetId="479a-8322-e013-0cb7" primary="false"/>
               </categoryLinks>
             </selectionEntry>
+            <selectionEntry id="77b1-3a21-5c7f-fd1d" name="Freeblade" hidden="false" collective="false" import="true" type="upgrade">
+              <categoryLinks>
+                <categoryLink id="0fed-89cc-11df-1694" name="Faction: Freeblade" hidden="false" targetId="d451-70df-eeef-7915" primary="false"/>
+              </categoryLinks>
+            </selectionEntry>
+            <selectionEntry id="423e-e51a-c54a-bbf6" name="Custom" hidden="false" collective="false" import="true" type="upgrade"/>
           </selectionEntries>
         </selectionEntryGroup>
         <selectionEntryGroup id="9f29-ac24-b4f1-6173" name="Questor Mechanicus" hidden="false" collective="false" import="true">
@@ -8364,9 +8394,24 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                 <categoryLink id="436d-5bfd-9b24-be51" name="Faction: House Taranis " hidden="false" targetId="db5b-bfa5-fe74-cba7" primary="false"/>
               </categoryLinks>
             </selectionEntry>
+            <selectionEntry id="7a9a-1cf7-8b18-75a6" name="Custom" hidden="false" collective="false" import="true" type="upgrade"/>
+            <selectionEntry id="6773-bad9-9eae-4e83" name="Freeblade" hidden="false" collective="false" import="true" type="upgrade">
+              <categoryLinks>
+                <categoryLink id="3381-7bd8-4731-a5c9" name="Faction: Freeblade" hidden="false" targetId="d451-70df-eeef-7915" primary="false"/>
+              </categoryLinks>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="e19f-000f-3c6e-cf3a" name="Martial Traditions (Freeblade)" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d451-70df-eeef-7915" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
