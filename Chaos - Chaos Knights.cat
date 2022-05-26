@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="5d84-5102-f22c-14d4" name="Chaos - Chaos Knights" revision="69" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="216" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="5d84-5102-f22c-14d4" name="Chaos - Chaos Knights" revision="69" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="217" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <profileTypes>
     <profileType id="3f2c-38d3-b6df-df27" name="D3 Roll">
       <characteristicTypes>
@@ -1819,17 +1819,20 @@
               <entryLinks>
                 <entryLink id="8429-8798-5058-9bcc" name="Undivided - Blessing of the Dark Master" hidden="false" collective="false" import="true" targetId="66db-27a0-cc45-fef4" type="selectionEntry">
                   <modifiers>
-                    <modifier type="set" field="a85b-1863-d0aa-03f0" value="1.0">
+                    <modifier type="set" field="1a06-4efb-b3e4-7e4d" value="1.0">
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="056d-d8e3-9281-e5d1" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="66db-27a0-cc45-fef4" type="lessThan"/>
-                            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="instanceOf"/>
+                            <condition field="selections" scope="056d-d8e3-9281-e5d1" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2c78-7376-bb1f-6458" type="atLeast"/>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="greaterThan"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
                     </modifier>
                   </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="056d-d8e3-9281-e5d1" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="1a06-4efb-b3e4-7e4d" type="min"/>
+                  </constraints>
                 </entryLink>
               </entryLinks>
             </entryLink>
@@ -4409,21 +4412,8 @@
           </costs>
         </selectionEntry>
       </selectionEntries>
-      <entryLinks>
-        <entryLink id="f54b-0682-ce5d-b4a3" name="Diabolus heavy stubber" hidden="false" collective="false" import="true" targetId="f72f-51cf-8157-d73a" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="41d3-fb82-83cb-d8f0" type="min"/>
-          </constraints>
-        </entryLink>
-        <entryLink id="2a45-1f74-3609-fd4b" name="Titanic feet" hidden="false" collective="false" import="true" targetId="b873-b5d1-e25a-0b35" type="selectionEntry"/>
-        <entryLink id="00c6-d416-675a-5801" name="Character (Traitoris Lance)" hidden="false" collective="false" import="true" targetId="75b0-25e5-2828-0125" type="selectionEntry"/>
-        <entryLink id="1a50-148a-2e83-cdc1" name="Character (Tyrannical Court)" hidden="false" collective="false" import="true" targetId="6a6f-6b25-8347-4c3e" type="selectionEntry"/>
-        <entryLink id="3c61-b085-ea66-d696" name="Corrupted Heirlooms" hidden="false" collective="false" import="true" targetId="5f95-2d49-2a64-4f9b" type="selectionEntry"/>
-        <entryLink id="7846-a849-97f7-9da4" name="Warlord" hidden="false" collective="false" import="true" targetId="c50f-9cc4-a751-6707" type="selectionEntry"/>
-        <entryLink id="db6c-3bac-4cff-b238" name="Artefacts of Tyranny" hidden="false" collective="false" import="true" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup"/>
-        <entryLink id="70de-f854-27f9-cc5e" name="Corrupted Heirloom" hidden="false" collective="false" import="true" targetId="f2fd-4bf8-c56a-8a94" type="selectionEntryGroup"/>
-        <entryLink id="2024-7ac0-2ff7-8a4d" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup"/>
-        <entryLink id="b3e2-5769-8df5-4733" name="Warp Storm Discipline" hidden="false" collective="false" import="true" targetId="9f6c-ba00-a471-e291" type="selectionEntryGroup">
+      <selectionEntryGroups>
+        <selectionEntryGroup id="6da6-92fb-8f7c-fb5e" name="Psychic powers" hidden="false" collective="false" import="true">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
@@ -4439,28 +4429,69 @@
           <modifierGroups>
             <modifierGroup>
               <conditions>
-                <condition field="selections" scope="0b4d-9659-75db-63e6" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5400-4626-ca9e-ec95" type="equalTo"/>
+                <condition field="selections" scope="0b4d-9659-75db-63e6" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b407-2720-ed5e-4e33" type="equalTo"/>
               </conditions>
               <modifiers>
-                <modifier type="increment" field="3459-a08a-859c-8a1a" value="1.0"/>
-                <modifier type="increment" field="9347-b7cb-14e2-587d" value="1.0"/>
+                <modifier type="increment" field="ba0e-ce0d-9054-fef2" value="1.0"/>
+                <modifier type="increment" field="d6c9-2b9d-2896-0bf1" value="1.0"/>
               </modifiers>
             </modifierGroup>
             <modifierGroup>
               <conditions>
-                <condition field="selections" scope="0b4d-9659-75db-63e6" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="b407-2720-ed5e-4e33" type="equalTo"/>
+                <condition field="selections" scope="0b4d-9659-75db-63e6" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5400-4626-ca9e-ec95" type="equalTo"/>
               </conditions>
               <modifiers>
-                <modifier type="increment" field="3459-a08a-859c-8a1a" value="1.0"/>
-                <modifier type="increment" field="9347-b7cb-14e2-587d" value="1.0"/>
+                <modifier type="increment" field="d6c9-2b9d-2896-0bf1" value="1.0"/>
+                <modifier type="increment" field="ba0e-ce0d-9054-fef2" value="1.0"/>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3459-a08a-859c-8a1a" type="min"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9347-b7cb-14e2-587d" type="max"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ba0e-ce0d-9054-fef2" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d6c9-2b9d-2896-0bf1" type="max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="7044-31c2-0944-a94f" name="Warp Storm Discipline" hidden="false" collective="false" import="true" targetId="9f6c-ba00-a471-e291" type="selectionEntryGroup">
+              <modifiers>
+                <modifier type="set" field="8cbb-bc6d-8b7d-d5ef" value="0.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="89b9-8745-7b49-5ea5" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8cbb-bc6d-8b7d-d5ef" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="b4d8-a4e0-b9c6-c052" name="Noctic Discipline" hidden="false" collective="false" import="true" targetId="89b9-8745-7b49-5ea5" type="selectionEntryGroup">
+              <modifiers>
+                <modifier type="set" field="d3e9-c486-667c-5dfa" value="0.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9f6c-ba00-a471-e291" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d3e9-c486-667c-5dfa" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="f54b-0682-ce5d-b4a3" name="Diabolus heavy stubber" hidden="false" collective="false" import="true" targetId="f72f-51cf-8157-d73a" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="41d3-fb82-83cb-d8f0" type="min"/>
           </constraints>
         </entryLink>
+        <entryLink id="2a45-1f74-3609-fd4b" name="Titanic feet" hidden="false" collective="false" import="true" targetId="b873-b5d1-e25a-0b35" type="selectionEntry"/>
+        <entryLink id="00c6-d416-675a-5801" name="Character (Traitoris Lance)" hidden="false" collective="false" import="true" targetId="75b0-25e5-2828-0125" type="selectionEntry"/>
+        <entryLink id="1a50-148a-2e83-cdc1" name="Character (Tyrannical Court)" hidden="false" collective="false" import="true" targetId="6a6f-6b25-8347-4c3e" type="selectionEntry"/>
+        <entryLink id="3c61-b085-ea66-d696" name="Corrupted Heirlooms" hidden="false" collective="false" import="true" targetId="5f95-2d49-2a64-4f9b" type="selectionEntry"/>
+        <entryLink id="7846-a849-97f7-9da4" name="Warlord" hidden="false" collective="false" import="true" targetId="c50f-9cc4-a751-6707" type="selectionEntry"/>
+        <entryLink id="db6c-3bac-4cff-b238" name="Artefacts of Tyranny" hidden="false" collective="false" import="true" targetId="b64a-6b3c-e424-afb3" type="selectionEntryGroup"/>
+        <entryLink id="70de-f854-27f9-cc5e" name="Corrupted Heirloom" hidden="false" collective="false" import="true" targetId="f2fd-4bf8-c56a-8a94" type="selectionEntryGroup"/>
+        <entryLink id="2024-7ac0-2ff7-8a4d" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="076d-e9d1-ae0c-e60d" type="selectionEntryGroup"/>
         <entryLink id="600d-a430-2258-d4e3" name="Dread Household" hidden="false" collective="false" import="true" targetId="4f6a-0a86-fd1c-0486" type="selectionEntryGroup"/>
         <entryLink id="752c-bd6c-8b52-9f93" name="Fell Bond (Household)" hidden="false" collective="false" import="true" targetId="a44b-c8f0-e81f-8e49" type="selectionEntryGroup"/>
         <entryLink id="b314-5898-5de8-ef52" name="Arch-Tyrant" hidden="false" collective="false" import="true" targetId="a8ab-483c-34d6-7474" type="selectionEntry"/>
@@ -4742,17 +4773,20 @@
               <entryLinks>
                 <entryLink id="52a5-31e8-bebf-ddf7" name="Undivided - Blessing of the Dark Master" hidden="false" collective="false" import="true" targetId="66db-27a0-cc45-fef4" type="selectionEntry">
                   <modifiers>
-                    <modifier type="set" field="a85b-1863-d0aa-03f0" value="1.0">
+                    <modifier type="set" field="7308-0d28-a05a-2b75" value="1.0">
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="84f7-fe0d-d196-665d" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="66db-27a0-cc45-fef4" type="lessThan"/>
-                            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="instanceOf"/>
+                            <condition field="selections" scope="84f7-fe0d-d196-665d" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2c78-7376-bb1f-6458" type="atLeast"/>
+                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="atLeast"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
                     </modifier>
                   </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="84f7-fe0d-d196-665d" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7308-0d28-a05a-2b75" type="min"/>
+                  </constraints>
                 </entryLink>
               </entryLinks>
             </entryLink>
@@ -5064,17 +5098,20 @@
               <entryLinks>
                 <entryLink id="95e1-78a1-8c68-4144" name="Undivided - Blessing of the Dark Master" hidden="false" collective="false" import="true" targetId="66db-27a0-cc45-fef4" type="selectionEntry">
                   <modifiers>
-                    <modifier type="set" field="a85b-1863-d0aa-03f0" value="1.0">
+                    <modifier type="set" field="82d9-7fe5-0a6f-0d6e" value="1.0">
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="fa81-791d-49ba-72cb" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="66db-27a0-cc45-fef4" type="lessThan"/>
-                            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="instanceOf"/>
+                            <condition field="selections" scope="fa81-791d-49ba-72cb" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2c78-7376-bb1f-6458" type="greaterThan"/>
+                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="atLeast"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
                     </modifier>
                   </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="fa81-791d-49ba-72cb" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="82d9-7fe5-0a6f-0d6e" type="min"/>
+                  </constraints>
                 </entryLink>
               </entryLinks>
               <costs>
@@ -5412,17 +5449,20 @@
               <entryLinks>
                 <entryLink id="b843-8daf-3a55-a04c" name="Undivided - Blessing of the Dark Master" hidden="false" collective="false" import="true" targetId="66db-27a0-cc45-fef4" type="selectionEntry">
                   <modifiers>
-                    <modifier type="set" field="a85b-1863-d0aa-03f0" value="1.0">
+                    <modifier type="set" field="bea1-6ee2-2cd3-92a6" value="1.0">
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="a64b-cc26-05b5-eb7d" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="66db-27a0-cc45-fef4" type="lessThan"/>
-                            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="instanceOf"/>
+                            <condition field="selections" scope="a64b-cc26-05b5-eb7d" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2c78-7376-bb1f-6458" type="atLeast"/>
+                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="atLeast"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
                     </modifier>
                   </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="a64b-cc26-05b5-eb7d" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="bea1-6ee2-2cd3-92a6" type="min"/>
+                  </constraints>
                 </entryLink>
               </entryLinks>
             </entryLink>
@@ -5755,17 +5795,20 @@
               <entryLinks>
                 <entryLink id="431e-4efb-d315-cae4" name="Undivided - Blessing of the Dark Master" hidden="false" collective="false" import="true" targetId="66db-27a0-cc45-fef4" type="selectionEntry">
                   <modifiers>
-                    <modifier type="set" field="a85b-1863-d0aa-03f0" value="1.0">
+                    <modifier type="set" field="005a-511d-fc02-5349" value="1.0">
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="a25d-cb94-ff33-9539" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="66db-27a0-cc45-fef4" type="lessThan"/>
-                            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="instanceOf"/>
+                            <condition field="selections" scope="a25d-cb94-ff33-9539" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2c78-7376-bb1f-6458" type="greaterThan"/>
+                            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="atLeast"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
                     </modifier>
                   </modifiers>
+                  <constraints>
+                    <constraint field="selections" scope="a25d-cb94-ff33-9539" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="005a-511d-fc02-5349" type="min"/>
+                  </constraints>
                 </entryLink>
               </entryLinks>
             </entryLink>
@@ -9112,9 +9155,14 @@ A maximum of 3 mortal wounds can be inflicted on each enemy unit per phase as th
         <entryLink id="6960-4d55-9409-08d9" name="Undivided - Blessing of the Dark Master" hidden="false" collective="false" import="true" targetId="66db-27a0-cc45-fef4" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="a85b-1863-d0aa-03f0" value="1.0">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2c78-7376-bb1f-6458" type="greaterThan"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8f1a-61e5-2a27-9c5e" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
             <modifier type="set" field="hidden" value="true">
               <conditions>
@@ -9124,6 +9172,138 @@ A maximum of 3 mortal wounds can be inflicted on each enemy unit per phase as th
           </modifiers>
         </entryLink>
       </entryLinks>
+    </selectionEntryGroup>
+    <selectionEntryGroup id="89b9-8745-7b49-5ea5" name="Noctic Discipline" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="88b1-c697-e840-2850" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <selectionEntries>
+        <selectionEntry id="26d4-da11-a6e3-1350" name="Shrouded Step" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="59ac-baa3-345e-ad8a" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="970f-8094-191b-a72e" name="Shrouded Step" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Blessing. If manifested, select one friendly DISCIPLES OF BE&apos;LAKOR INFANTRY unit within 18&quot; of this PSYKER. Remove that unit from the battlefield and set them up anywhere on the battlefield that is more than 9&quot; from any enemy models. If that unit Remained Stationary this turn, it is instead treated as having made a Normal Move this turn.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="a9e1-7d42-437f-1171" name="Wreathed in Shades" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5c09-cb51-d755-4f28" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="dee6-47ba-afe1-0220" name="Wreathed in Shades" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">7</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Blessing. If manifested, select one friendly DISCIPLES OF BE&apos;LAKOR unit (excluding MONSTER and VEHICLE units) within 12&quot; of this PSYKER. Until the start of your next Psychic phase, enemy models cannot target that unit with ranged weapons unless that unit is the closest eligible target to the firing model or it is within 12&quot; of the firing model.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="9ed1-7d8a-05ca-5306" name="Pall of Despair" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d208-60f6-b7f0-1b44" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="7884-f14f-8e15-4147" name="Pall of Despair" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">7</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Malediction. If manifested, select one enemy unit that is within 18&quot; of and visible to this PSYKER. Roll 3D6; if the result is greater than the enemy unit&apos;s Leadership characteristic, select one of the following to apply to that unit until the start of your next Psychic phase.
+
+- If that unit has any Aura abilities, select one of those abilities. Until the start of your next Psychic phase, that unit loses that ability.
+- Until the start of your next Psychic phase, that unit cannot perform actions (if that unit is currently performing an action, it immediately fails).
+- Until the start of your next Psychic phase, in the Fight phase, that unit is not eligible to fight that phase until after all eligible units from your army have done so.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="058e-dcbd-02c0-6dc1" name="Voidslivers" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9002-8210-23fc-ba50" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="1133-b527-d7e5-e2ff" name="Voidslivers" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">5</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Witchfire. If manifested, select one enemy model within 12&quot; of and visible to this PSYKER. Draw a line between any part of this PSYKER&apos;s base and any part of the selected model&apos;s base (or hull):
+
+- The selected model&apos;s unit suffers 1 mortal wound (if that unit contains 11 or more models, it suffers D3 mortal wounds instead).
+- Every other enemy unit that this line passes over or through suffers 1 mortal wound (if that unit contains 11 or more models, it suffers D3 mortal wounds instead).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="f66d-573c-ff53-1bc9" name="Penumbral Curse" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="848b-9692-4635-e466" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="5a5d-c620-eab2-f6f0" name="Penumbral Curse" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">7</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Malediction. If manifested, select one enemy unit within 18&quot; of this PSYKER. Until the start of your next Psychic phase, each time a model in that unit makes a melee attack, subtract 1 from that attack&apos;s wound roll and reduce the Armour Penetration characteristic of that attack by 1.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="b365-8ef3-e24b-d46b" name="Betraying Shades" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="03df-6f8f-caed-0be9" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="9e61-5298-4ddf-69db" name="Betraying Shades" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+              <characteristics>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Witchfire. If manifested, select one enemy unit within 18&quot; of and visible to this PSYKER. Select up to 6 models in that unit, and add together the unmodified Attacks characteristics of those models. Roll a number of D6 equal to the total (for example, if five of the selected models had an Attacks characteristic of 2, and one had an Attacks characteristic of 3, you would roll thirteen D6). If the result of the Psychic test was 11 or more, add 1 to each dice result. For each roll of 6+, that unit suffers 1 mortal wound.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
     </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
