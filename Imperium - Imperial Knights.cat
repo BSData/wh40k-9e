@@ -5456,11 +5456,6 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
           </constraints>
         </entryLink>
         <entryLink id="8def-26b3-2b81-f976" name="Exalted Court" hidden="true" collective="false" import="true" targetId="1ccf-115f-8688-664d" type="selectionEntryGroup"/>
-        <entryLink id="7508-bdd8-9efe-68d5" name="Household Martial Traditions" hidden="false" collective="false" import="true" targetId="18b1-e8e6-5f8b-e668" type="selectionEntryGroup">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="cd98-4ccc-a8f0-b080" type="min"/>
-          </constraints>
-        </entryLink>
       </entryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -10645,7 +10640,7 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
                         <condition field="selections" scope="1f7d-c8db-ff1d-7188" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fab6-245c-ccc6-e743" type="atLeast"/>
                       </conditions>
                     </conditionGroup>
@@ -10707,7 +10702,7 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
                         <condition field="selections" scope="1f7d-c8db-ff1d-7188" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fab6-245c-ccc6-e743" type="atLeast"/>
                       </conditions>
                     </conditionGroup>
@@ -10725,7 +10720,7 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
                         <condition field="selections" scope="1f7d-c8db-ff1d-7188" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fab6-245c-ccc6-e743" type="atLeast"/>
                       </conditions>
                     </conditionGroup>
@@ -10815,7 +10810,7 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
                         <condition field="selections" scope="1f7d-c8db-ff1d-7188" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fab6-245c-ccc6-e743" type="atLeast"/>
                       </conditions>
                     </conditionGroup>
@@ -10833,7 +10828,7 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                   <conditionGroups>
                     <conditionGroup type="or">
                       <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
                         <condition field="selections" scope="1f7d-c8db-ff1d-7188" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fab6-245c-ccc6-e743" type="atLeast"/>
                       </conditions>
                     </conditionGroup>
@@ -10874,9 +10869,14 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
             <entryLink id="72f7-8382-7ea9-ff50" name="Martial Tradition: Last of Their Line" hidden="true" collective="false" import="true" targetId="b535-9f63-551a-9750" type="selectionEntry">
               <modifiers>
                 <modifier type="set" field="hidden" value="false">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d451-70df-eeef-7915" type="instanceOf"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d451-70df-eeef-7915" type="instanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -10887,9 +10887,14 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
             <entryLink id="a7f9-a45e-e8c0-4706" name="Martial Tradition: Mysterious Guardian" hidden="true" collective="false" import="true" targetId="e29a-7613-ced4-78bf" type="selectionEntry">
               <modifiers>
                 <modifier type="set" field="hidden" value="false">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d451-70df-eeef-7915" type="instanceOf"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d451-70df-eeef-7915" type="instanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -10900,9 +10905,14 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
             <entryLink id="c7d8-a004-7f48-2af8" name="Martial Tradition: Peerless Warrior" hidden="true" collective="false" import="true" targetId="29d0-3b2b-361d-2523" type="selectionEntry">
               <modifiers>
                 <modifier type="set" field="hidden" value="false">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d451-70df-eeef-7915" type="instanceOf"/>
-                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="notInstanceOf"/>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d451-70df-eeef-7915" type="instanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </modifier>
               </modifiers>
               <constraints>
@@ -10915,6 +10925,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                 <modifier type="set" field="hidden" value="false">
                   <conditions>
                     <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d451-70df-eeef-7915" type="instanceOf"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" field="97eb-233b-f5b6-d6d1" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
                   </conditions>
                 </modifier>
               </modifiers>
