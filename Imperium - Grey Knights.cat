@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="0cc2-3545-6762-a3f7" name="Imperium - Grey Knights" revision="106" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tekton" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="212" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="0cc2-3545-6762-a3f7" name="Imperium - Grey Knights" revision="106" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Tekton" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="218" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="0cc2-3545-pubN112001" name="Codex: Grey Knights"/>
   </publications>
@@ -213,7 +213,7 @@
     <entryLink id="ea50-9c74-d6e2-d797" name="New EntryLink" hidden="false" collective="false" import="true" targetId="5254-e74b-2380-e119" type="selectionEntry"/>
     <entryLink id="b4da-1c17-3d75-4dc9" name="Paladin Ancient" hidden="false" collective="false" import="true" targetId="9790-e0f9-5343-81bc" type="selectionEntry"/>
     <entryLink id="05bc-4c32-0e62-f81e" name="New EntryLink" hidden="false" collective="false" import="true" targetId="feb0-e13f-7b59-7e07" type="selectionEntry"/>
-    <entryLink id="4d61-f94b-94f1-936d" name="Apothecary" hidden="false" collective="false" import="true" targetId="6ad2-bcea-a5bd-6da8" type="selectionEntry"/>
+    <entryLink id="4d61-f94b-94f1-936d" name="Brotherhood Apothecary" hidden="false" collective="false" import="true" targetId="6ad2-bcea-a5bd-6da8" type="selectionEntry"/>
     <entryLink id="4f7a-efc4-0181-c9f4" name="New EntryLink" hidden="false" collective="false" import="true" targetId="45ea-60a2-7f7e-06c7" type="selectionEntry"/>
     <entryLink id="5e19-e5b2-201f-b30d" name="New EntryLink" hidden="false" collective="false" import="true" targetId="0db5-e1aa-6692-1f98" type="selectionEntry"/>
     <entryLink id="79fb-ade6-e3c1-eebb" name="Nemesis Dreadknight" hidden="false" collective="false" import="true" targetId="7c6d-f81e-621d-f141" type="selectionEntry"/>
@@ -950,7 +950,23 @@
         </entryLink>
         <entryLink id="3a9d-11a3-7f4f-0e5a" name="Grey Knight Relics" hidden="false" collective="false" import="true" targetId="c779-4f85-7bfa-aad3" type="selectionEntryGroup"/>
         <entryLink id="1757-2792-13ae-afa5" name="Warlord" hidden="false" collective="false" import="true" targetId="2516-dd30-d80e-f79a" type="selectionEntry"/>
-        <entryLink id="144b-83ab-b7d0-f298" name="Grey Knight Warlord Trait" hidden="false" collective="false" import="true" targetId="87f6-76b7-a0d2-6b2c" type="selectionEntryGroup"/>
+        <entryLink id="144b-83ab-b7d0-f298" name="Grey Knight Warlord Trait" hidden="false" collective="false" import="true" targetId="87f6-76b7-a0d2-6b2c" type="selectionEntryGroup">
+          <profiles>
+            <profile id="a92d-87cc-a19b-55c2" name="Grey Knight Warlord Trait" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779"/>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c"/>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f"/>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939"/>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39"/>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978"/>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f"/>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705"/>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3"/>
+              </characteristics>
+            </profile>
+          </profiles>
+        </entryLink>
         <entryLink id="b53c-3531-0482-52ba" name="Is a Custom Character (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="cba7-02ce-3959-113e" name="Custom Character Selections (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="9524-c591-9de7-533d" name="Wisdom of the Prognosticators" hidden="false" collective="false" import="true" targetId="8c0d-a0b7-aa65-a1de" type="selectionEntryGroup">
@@ -5924,6 +5940,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="887a-2749-e111-629e" name="Armoury of Titan" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2516-dd30-d80e-f79a" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3f06-4f3c-1ca6-a6ef" type="max"/>
       </constraints>
