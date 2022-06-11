@@ -1396,7 +1396,7 @@
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="lessThan"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
@@ -1423,7 +1423,7 @@
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="lessThan"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
@@ -5904,7 +5904,7 @@ Remaining Wounds | Aura Range
                             <conditionGroup type="or">
                               <conditions>
                                 <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c08d-f66a-1d47-060f" type="atLeast"/>
-                                <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                                <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="lessThan"/>
                               </conditions>
                             </conditionGroup>
                           </conditionGroups>
@@ -6044,7 +6044,7 @@ Remaining Wounds | Aura Range
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="lessThan"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
