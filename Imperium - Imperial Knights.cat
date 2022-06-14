@@ -5762,14 +5762,6 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
           <categoryLinks>
             <categoryLink id="4611-c8d7-7e47-e4db" name="Titanic Warlord" hidden="false" targetId="6c1d-32d6-b16c-3b0c" primary="false"/>
           </categoryLinks>
-          <entryLinks>
-            <entryLink id="95e2-c06d-9140-2045" name="Warlord Trait: Revered Knight" hidden="false" collective="false" import="true" targetId="7fcb-f39d-214d-f2b1" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fb2a-61ec-0a11-245b" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f08b-3298-23bf-1f34" type="max"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
         </entryLink>
         <entryLink id="9fd8-3b2d-5107-086e" name="Hekhtur&apos;s Pistol" hidden="false" collective="false" import="true" targetId="cd5c-ab21-5b48-2927" type="selectionEntry">
           <constraints>
@@ -5798,6 +5790,34 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
         <entryLink id="8def-26b3-2b81-f976" name="Exalted Court" hidden="true" collective="false" import="true" targetId="1ccf-115f-8688-664d" type="selectionEntryGroup"/>
         <entryLink id="7b4b-858f-4644-f881" name="Knight of the Cog" hidden="false" collective="false" import="true" targetId="2e4b-dbc6-6149-cfbc" type="selectionEntry"/>
         <entryLink id="9cb2-fc08-cf03-aec9" name="War Zone Nephilim Strats" hidden="false" collective="false" import="true" targetId="929a-6392-7e02-2a3a" type="selectionEntryGroup"/>
+        <entryLink id="86d5-0a33-ff29-0b47" name="Warlord Trait: Revered Knight" hidden="false" collective="false" import="true" targetId="7fcb-f39d-214d-f2b1" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="c5a2-4218-80e2-cb69" value="0.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="c5a2-4218-80e2-cb69" value="1.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="lessThan"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c5a2-4218-80e2-cb69" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ac8-6eb4-c0f7-06d9" type="max"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -7613,16 +7633,9 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="187c-66fe-9a65-9ff4" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0116-d165-23e1-4e90" type="atLeast"/>
               </conditions>
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="atLeast"/>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="0116-d165-23e1-4e90" type="atLeast"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -12164,7 +12177,7 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         </modifier>
         <modifier type="set" field="hidden" value="true">
           <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="187c-66fe-9a65-9ff4" type="notEqualTo"/>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="notEqualTo"/>
           </conditions>
         </modifier>
         <modifier type="set" field="12ba-0b2a-dd9c-13f6" value="1.0">
@@ -13284,7 +13297,15 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         </modifier>
       </modifiers>
       <entryLinks>
-        <entryLink id="1a07-2cca-088e-0f36" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
+        <entryLink id="1a07-2cca-088e-0f36" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="b268-8197-85ca-ead7" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
