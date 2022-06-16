@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="218" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="220" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -30,6 +30,7 @@
     <publication id="255d-c624-9fcb-ca23" name="War Zone Octarius, Book 2: Critical Mass"/>
     <publication id="4a3e-a6d9-b5f8-3e3d" name="Shadow Throne" publicationDate="2021-12-18" publisherUrl="games-workshop.com/warhammer-40000-shadow-throne-2021-eng"/>
     <publication id="db16-1a92-fdd3-95a9" name="The Balance Dataslate" shortName="The Balance Dataslate" publisher="The Balance Dataslate" publicationDate="14th April 2022" publisherUrl="https://www.warhammer-community.com/wp-content/uploads/2022/04/lBLlqvrttJVgyfhC.pdf"/>
+    <publication id="09f4-6657-ccd5-6e61" name="War Zone Nephilim: Grand Tournament"/>
   </publications>
   <costTypes>
     <costType id="points" name="pts" defaultCostLimit="0.0" hidden="false"/>
@@ -1396,7 +1397,7 @@
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="lessThan"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
@@ -1423,7 +1424,7 @@
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="lessThan"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
@@ -4976,9 +4977,6 @@ Remaining Wounds | Aura Range
                   </costs>
                 </selectionEntry>
                 <selectionEntry id="e77a-cc54-efcf-a09a" name="4. Chapter Approved: War Zone Nephilim" hidden="false" collective="false" import="true" type="upgrade">
-                  <modifiers>
-                    <modifier type="set" field="hidden" value="true"/>
-                  </modifiers>
                   <costs>
                     <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                     <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -5904,7 +5902,7 @@ Remaining Wounds | Aura Range
                             <conditionGroup type="or">
                               <conditions>
                                 <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c08d-f66a-1d47-060f" type="atLeast"/>
-                                <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                                <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="lessThan"/>
                               </conditions>
                             </conditionGroup>
                           </conditionGroups>
@@ -6044,7 +6042,7 @@ Remaining Wounds | Aura Range
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eca4-de83-1e4d-cdd6" type="lessThan"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
@@ -6169,6 +6167,11 @@ Remaining Wounds | Aura Range
                     <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
                   </conditions>
                 </modifier>
+                <modifier type="set" field="2d3b-b544-ad49-fb75" value="3.0">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                  </conditions>
+                </modifier>
               </modifiers>
               <costs>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="6.0"/>
@@ -6181,6 +6184,11 @@ Remaining Wounds | Aura Range
                 <modifier type="set" field="2d3b-b544-ad49-fb75" value="0.0">
                   <conditions>
                     <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" field="2d3b-b544-ad49-fb75" value="6.0">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
                   </conditions>
                 </modifier>
               </modifiers>
@@ -6197,6 +6205,11 @@ Remaining Wounds | Aura Range
                     <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
                   </conditions>
                 </modifier>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                  </conditions>
+                </modifier>
               </modifiers>
               <costs>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="18.0"/>
@@ -6211,6 +6224,11 @@ Remaining Wounds | Aura Range
                     <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
                   </conditions>
                 </modifier>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                  </conditions>
+                </modifier>
               </modifiers>
               <costs>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="3.0"/>
@@ -6219,6 +6237,13 @@ Remaining Wounds | Aura Range
               </costs>
             </selectionEntry>
             <selectionEntry id="e6c7-87a2-73a3-a475" name="5. Onslaught++ (301+ Total PL / 3001+ Points) " hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
               <costs>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="pts" typeId="points" value="0.0"/>
@@ -6679,6 +6704,11 @@ Remaining Wounds | Aura Range
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="2d3b-b544-ad49-fb75" value="3.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7848-330c-45b1-5f59" type="max"/>
@@ -6763,6 +6793,77 @@ Remaining Wounds | Aura Range
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="c470-54ac-0863-8848" name="Stratagem: Relic" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="9a09-3db3-e700-2704" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a09-3db3-e700-2704" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7b84-c3c3-c345-ce30" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="5c23-8270-aeeb-4124" name="Stratagem: Relic" publicationId="09f4-6657-ccd5-6e61" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle, when you are mustering your army, after selecting your WARLORD. Select one CHARACTER model from your army that is not a named character; give that model one Relic (this must be a Relic they could have). You can only use this Stratagem once.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="6771-6ab3-1672-6a39" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="de28-da4e-dd95-00c3" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="de28-da4e-dd95-00c3" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5f54-8fb3-27b5-b903" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="ea00-c56a-9aad-5621" name="Stratagem: Warlord Trait" publicationId="09f4-6657-ccd5-6e61" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Use this Stratagem before the battle, when you are mustering your army, after selecting your WARLORD. If your WARLORD is a CHARACTER model, determine a Warlord Trait for them (this must be a Warlord Trait they could have). You can only use this Stratagem once.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
