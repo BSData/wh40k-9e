@@ -11753,6 +11753,32 @@ If your summoning roll included any doubles, your character then suffers a morta
       </costs>
     </selectionEntry>
     <selectionEntry id="3831-0037-831e-3ffe" name="Fleshmetal Exoskeleton" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bb17-4692-b1ad-a620" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c44e-208c-55c4-8b4b" type="instanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1237-1650-ac39-eac6" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="72d4-f53b-a92b-4147" type="max"/>
+      </constraints>
       <profiles>
         <profile id="b088-420f-45ed-6efb" name="Fleshmetal Exoskeleton" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
@@ -11787,7 +11813,26 @@ If your summoning roll included any doubles, your character then suffers a morta
             <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="72cd-9017-77e3-abfc" type="equalTo"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e3f-0a7b-0c8f-84db" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6dba-99ea-aa7d-40a5" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="72cd-9017-77e3-abfc" type="equalTo"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="04be-ac26-066a-973a" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e4c9-a34a-e564-1758" type="max"/>
+      </constraints>
       <profiles>
         <profile id="2ca7-efb3-10ee-fa09" name="Blade of the Hydra" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
           <characteristics>
@@ -11795,13 +11840,8 @@ If your summoning roll included any doubles, your character then suffers a morta
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
             <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
-            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it can make D3 additional attacks with this weapon.</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="ea6a-ea46-00f4-5e8e" name="Blade of the Hydra" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models with a chainsword only. The Blade of the Hydra replaces the bearer&apos;s chainsword.</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it makes D3+3 additional attacks with this weapon (if there are 6 or more enemy models within 3&quot; of the bearer when it is selected to fight, it makes 6 additional attacks with this weapon instead).</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -15006,22 +15046,36 @@ Each model can only be corrupted once per turn.</characteristic>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="4652-46e0-c09e-74ea" name="Viper&apos;s Bite" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="4652-46e0-c09e-74ea" name="Viper&apos;s Spite" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eba0-9fc6-5334-a390" type="equalTo"/>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0334-f487-8229-0c1a" type="equalTo"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e3f-0a7b-0c8f-84db" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6dba-99ea-aa7d-40a5" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7bec-41e4-96ea-7c05" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="df42-9166-6c1f-bbed" type="max"/>
+      </constraints>
       <profiles>
         <profile id="6fb9-ec31-b584-3d2a" name="Viper&apos;s Bite" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
           <characteristics>
-            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
-            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 6</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
             <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
           </characteristics>
         </profile>
@@ -15048,45 +15102,31 @@ Each model can only be corrupted once per turn.</characteristic>
             </conditionGroup>
           </conditionGroups>
         </modifier>
-      </modifiers>
-      <profiles>
-        <profile id="460b-c3e1-55ca-4b54" name="Hydra&apos;s Teeth" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Model with a bolt weapon (see page 58) only. The bolt weapons of the bearer are granted the following abilities:
-- Attacks made with this weapon automatically hit the target (including when using the Daemon Shell stratagem - see Codex: Chaos Space Marines). 
-- This weapon wounds on a 2+ unless it is targeting a VEHICLE or TITANIC unit, in which case it wounds on a 6+.
-- Units do not receive the benefit of cover to their saving throws against attacks made with this weapon.</characteristic>
-          </characteristics>
-        </profile>
-      </profiles>
-      <costs>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="56ff-4c5c-6bc6-d8a0" name="Shadeblade" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
-            <conditionGroup type="and">
+            <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc9e-551d-9afb-78d5" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="07e7-1f9b-4c1c-aad9" type="equalTo"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e3f-0a7b-0c8f-84db" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6dba-99ea-aa7d-40a5" type="equalTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
         </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6753-aa3e-bf85-796d" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="386b-da46-7672-e63b" type="max"/>
+      </constraints>
       <profiles>
-        <profile id="0f67-f0a4-39fc-83aa" name="Shadeblade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+        <profile id="460b-c3e1-55ca-4b54" name="Hydra&apos;s Teeth" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-            <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
-            <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made against the bearer, subtract 1 from the hit roll.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Model with a bolt weapon only. When you give a model this Relic, select one bolt weapon that the bearer is equipped with:
+- That weapon is considered to be a Relic for all rules purposes.
+- Each time the bearer is selected to shoot, you can choose for that weapon to fire a Hydra&apos;s Teeth bolt. If you do so, the bearer can only make one attack with that weapon, but the following rules apply:
+	- That attack automatically hits the target.
+	- Add 2 to the Strength and Damage characteristics of that attack, and improve the Armour Penetration characteristic of that attack by 2.
+	- Invulnerable saving throws cannot be make against that attack.
+</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -15142,6 +15182,19 @@ Each model can only be corrupted once per turn.</characteristic>
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6ea7-1195-7144-438e" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1bfa-c3d6-b168-c326" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0e57-eaf5-763f-9c45" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="44ca-bff0-2ab8-567b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="70e4-e337-c20e-c619" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bb17-4692-b1ad-a620" type="equalTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -15149,13 +15202,9 @@ Each model can only be corrupted once per turn.</characteristic>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6910-a407-e00a-5b4f" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ebd3-09eb-63cf-6bc0" type="max"/>
       </constraints>
       <profiles>
-        <profile id="265f-f9ad-e825-7f96" name="Siegebreaker Mace" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models with a power maul or accursed crozius only. This Relic replaces the bearer&apos;s power maul or accursed crozius.</characteristic>
-          </characteristics>
-        </profile>
         <profile id="d64c-81cf-18c3-4508" name="Siegebreaker Mace - Swing" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
           <characteristics>
             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
@@ -15163,7 +15212,7 @@ Each model can only be corrupted once per turn.</characteristic>
             <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer is selected to fight, it makes 1 additional attack using this weapon&apos;s Smash profile. All other attacks made with this weapon must be made using this weapon&apos;s Swing profile.</characteristic>
           </characteristics>
         </profile>
         <profile id="57a8-5d14-d7a4-f1ce" name="Siegebreaker Mace - Smash" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -15172,8 +15221,8 @@ Each model can only be corrupted once per turn.</characteristic>
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
             <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When the bearer fights using the smash profile, it can only make two attacks. When resolving an attack made with the smash profile, roll two D6 when inflicting damage with it and discard one of the results.</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3+3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer is selected to fight, it makes 1 additional attack using this weapon&apos;s Smash profile. All other attacks made with this weapon must be made using this weapon&apos;s Swing profile.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -15184,8 +15233,33 @@ Each model can only be corrupted once per turn.</characteristic>
       </costs>
     </selectionEntry>
     <selectionEntry id="c11f-65ba-aee8-e737" name="Axe of the Forgemaster" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bb17-4692-b1ad-a620" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2c9b-e9ab-0b26-1a74" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d368-a1bb-72eb-8826" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4cc1-e7e0-a70a-336f" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3292-34e6-f679-d5b9" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a4f4-3cb7-6272-d10e" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="317f-3fb9-4a77-b1be" type="max"/>
       </constraints>
       <profiles>
         <profile id="1e0c-843b-b4fc-1ba1" name="Axe of the Forgemaster" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -15195,7 +15269,7 @@ Each model can only be corrupted once per turn.</characteristic>
             <characteristic name="S" typeId="59b1-319e-ec13-d466">+3</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When resolving an attack made with this weapon against a VEHICLE unit, an unmodified hit roll of 5+ inflicts D3 mortal wounds on the target in addition to any normal damage.</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, on an unmodified wound roll of 6, the target suffers 1 mortal wound in addition to any normal damage (if the target is a VEHICLE unit, it suffers 3 mortal wounds in addition to any normal damage instead).</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -15208,23 +15282,51 @@ Each model can only be corrupted once per turn.</characteristic>
     <selectionEntry id="4f8e-1932-e989-5b91" name="Spitespitter" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eba0-9fc6-5334-a390" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c6a1-e0c4-c1b1-dce1" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fdce-cdf7-21a9-f9ac" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eba0-9fc6-5334-a390" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c445-e211-f316-5d83" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bb17-4692-b1ad-a620" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b297-daed-0ad4-100f" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e906-c2b0-e7b5-d88e" type="max"/>
       </constraints>
       <profiles>
-        <profile id="a4a3-4329-8bf8-d5c6" name="Spitespitter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+        <profile id="a4a3-4329-8bf8-d5c6" name="Spitespitter - combi-bolter" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
           <characteristics>
             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
             <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If this relic replaces a combi-bolter, it uses this profile.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="132f-05ff-3d4c-705c" name="Spitespitter - combi-weapon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 1</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">If this relic replaces the boltgun profile of a combi-weapon, it uses this profile.</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -16993,6 +17095,8 @@ Each model can only be corrupted once per turn.</characteristic>
       </constraints>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="d02b-d381-c599-4937" name="Loyalty&apos;s Reward" hidden="false" collective="false" import="true" type="upgrade">
@@ -17040,6 +17144,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="e9e4-4b84-074f-4426" name="Veilbreaker Plate" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17071,6 +17180,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="3a75-a672-00da-19c1" name="Wrath of the Abyss" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17106,6 +17220,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="30f8-754b-397f-90cd" name="Inferno Tome" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17132,6 +17251,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="8f6a-d391-898a-4dfb" name="Gorget of Eternal Hate" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17154,6 +17278,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="717e-7e4d-d6c5-0775" name="Black Rune of Damnation" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
@@ -17172,6 +17301,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="0cca-88bb-5dc9-3220" name="Mantle of Traitors" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17194,6 +17328,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="fa3b-0e4a-0f4b-0d22" name="The Warp&apos;s Malice" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17219,6 +17358,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="2c61-905c-486f-b756" name="Liber Hereticus" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17240,6 +17384,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="5b7e-58f0-009c-0927" name="Apostle of the Dark Council" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17316,6 +17465,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="5785-62f0-6e01-5cb5" name="Claws of the Stygian Count" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17358,6 +17512,11 @@ Each model can only be corrupted once per turn.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="49d9-41b6-495b-a314" name="Talons of the Night Terror" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -17399,6 +17558,31 @@ Each model can only be corrupted once per turn.</characteristic>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="530b-5ffc-ad50-53a3" name="Icon of the Hydra Cult" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e3f-0a7b-0c8f-84db" type="notInstanceOf"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6dba-99ea-aa7d-40a5" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="37d0-917f-f31b-1b2d" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9ad0-3453-5e57-f04a" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="5308-522d-4ce7-c7ae" name="Icon of the Hydra Cult (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly ALPHA LEGION CULTISTS unit is within 6&quot; of the bearer, each time a ranged attack targets that unit, if the attacker is more than 12&quot; away, the target is treated as having the benefits of Dense Cover against that attack.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -17908,9 +18092,10 @@ Each model can only be corrupted once per turn.</characteristic>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a592-d64b-13f3-0b52" type="max"/>
           </constraints>
           <profiles>
-            <profile id="04b5-616b-e468-c069" name="Siege Lords" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="04b5-616b-e468-c069" name="Iron Within, Iron Without" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in an IRON WARRIORS Detachment gain the following ability: Enemy units attacked by units with this trait do not gain any bonus to their saving throws for being in cover. In addition, you can re-roll failed wound rolls for units with this trait when they target a BUILDING.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time a model with this trait makes an attack, the target does not receive the benefits of cover against that attack.
+- Each time an attack is allocated to a model with this trait, if that attack has an Armour Penetration characteristic of -1 or -2, the Armour Penetration characteristic of that attack is worsened by 1.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -17977,9 +18162,10 @@ Each model can only be corrupted once per turn.</characteristic>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ba76-b411-f0fc-099c" type="max"/>
           </constraints>
           <profiles>
-            <profile id="87d5-65ea-9be6-2a3f" name="Hidden In Plain Sight" publicationId="cb54-c035-pubN125652" page="157" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="87d5-65ea-9be6-2a3f" name="Masters of Duplicity" publicationId="3c0a-f104-07c4-3949" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, all CHARACTER, INFANTRY, BIKERS and HELBRUTE units in an ALPHA LEGION Detachment gain the following ability: Your opponent must subtract 1 from hit rolls that target units with this trait if they are more than 12&quot; away.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time a ranged attack targets a unit with this trait, if the attacker is more than 12&quot; away, subtract from that attack&apos;s hit roll (if the target unit contains any units with a Wounds characteristic of 10 or more, the attacker must be more than 18&quot; away for this benefit to apply.
+- Units with this trait are eligible to perform an action or declare a charge in a turn in which they Fell Back. If a unit with this trait declares a charge while it is performing an action, that action is still failed.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -18392,6 +18578,11 @@ Each model can only be corrupted once per turn.</characteristic>
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="811b-8263-e072-49b6" name="Vox Daemonicus" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
@@ -18547,6 +18738,233 @@ Each model can only be corrupted once per turn.</characteristic>
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
+        <selectionEntry id="24c6-cf75-2e62-1a8a" name="Cranium Malevolus" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bb17-4692-b1ad-a620" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8352-9e39-7489-faf5" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="70ba-029e-2677-b94d" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="693c-c8bc-8e4a-4d06" name="Cranium Malevolus" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Shooting phase, roll one D6 for each enemy VEHICLE unit within 9&quot; of that model; on a 4-5 that unit suffers D3 mortal wounds, and on a 6 that unit suffers 3 mortal wounds.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="23f0-c1c8-68ae-269b" name="Insidium" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bb17-4692-b1ad-a620" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="208d-62e0-f18c-d765" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0bc5-6451-5612-4a25" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8f27-2035-7373-7915" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f6c-9ece-0760-e98d" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="4a62-ae0f-f258-2b31" name="Insidium" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer gains the DAEMON and DAEMONKIN keywords and add 1 to the Strength, Toughness and Wounds characteristics of the bearer.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <categoryLinks>
+            <categoryLink id="ce5e-50b0-8d15-5d46" name="Daemon" hidden="false" targetId="0bc5-6451-5612-4a25" primary="false"/>
+          </categoryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="fc5d-96fd-b539-0b7d" name="Techno-venomous Mechatendrils" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b36f-fae2-eca4-6d1f" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bb17-4692-b1ad-a620" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9069-9251-df5d-0e89" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="10ec-94e3-2103-ffd4" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="6701-b9d8-6f99-9265" name="Techno-venomous Mechatendrils" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time the bearer repairs a model using its Master of Mechanisms ability, that model regains up to 3 lost wounds, instead of up to D3.
+- Each time the bearer makes an attack with its Mechatendrils, if a hit is scored, the target suffers 1 mortal wound and the attack sequence ends.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="605a-a026-f141-7d8e" name="Drakescale Plate" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="208d-62e0-f18c-d765" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e3f-0a7b-0c8f-84db" type="notInstanceOf"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6dba-99ea-aa7d-40a5" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e0b3-0005-36ef-708a" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d5e-1b18-af82-b4d3" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="b14c-1dcb-bcfa-6988" name="Drakescale Plate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- The bearer has a Save characteristic of 2+. 
+- Each time an attack is made against the bearer, an unmodified wound roll of 1-3 for that attack fails, irrespective of any abilities the weapon or the model making the attack may have.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="9139-d657-31b4-e563" name="Hydra&apos;s Wail" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e3f-0a7b-0c8f-84db" type="notInstanceOf"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6dba-99ea-aa7d-40a5" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="208d-62e0-f18c-d765" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="de52-fb30-f133-4648" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="89ea-3e53-7820-419d" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="c595-40de-ffc8-d541" name="Hydra&apos;s Wail" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, after your opponent uses a Stratagem (excluding Command Re-roll), the bearer can use this Relic. If it does so, then until the end of the battle, the CP cost your opponent must pay to use that Stratagem again is increased by 1.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="7a32-172b-596c-3245" name="Mindveil" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="208d-62e0-f18c-d765" type="instanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1e3f-0a7b-0c8f-84db" type="notInstanceOf"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6dba-99ea-aa7d-40a5" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d934-0ed1-2569-c585" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="db4d-41a9-3226-1c5f" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="4624-1ed0-7dc4-be02" name="Mindveil" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time the bearer makes a Normal Move, Advances or Falls Back, until the end of the phase, add one D6 to the bearer&apos;s Movement characteristic.
+- Each time the bearer makes a Normal Move, Advances, Falls Back or makes a charge move, until that move is finished, it can move horizontally through models and terrain features (it cannot finish a move on top of another model, or its base).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="056c-9e7a-42be-31d5" name="Daemon Weapons" hidden="false" collective="false" import="true">
@@ -18611,213 +19029,6 @@ Each model can only be corrupted once per turn.</characteristic>
                 </modifier>
               </modifiers>
             </entryLink>
-          </entryLinks>
-        </selectionEntryGroup>
-        <selectionEntryGroup id="baeb-dd02-d91d-7a10" name="Alpha Legion" hidden="false" collective="false" import="true">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9b8a-fb30-b445-3049" type="equalTo"/>
-                  </conditions>
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="398a-c8da-c8bd-da58" type="equalTo"/>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b83-3a3f-078a-8a13" type="equalTo"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="88b1-c697-e840-2850" type="greaterThan"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <selectionEntries>
-            <selectionEntry id="d66e-afdf-6546-e625" name="Drakescale Plate" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dddc-97d7-67b6-2d5d" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="c8cb-bfe3-76c1-1bcc" name="Drakescale Plate" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">INFANTRY model only. 
-- The bearer has a Save characteristic of 2+. 
-- When athe bearer would lose a wound as a result of a mortal wound, roll one D6; on a 5+ that wound is not lost.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="be9e-35e3-3096-a53b" name="Mindveil" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9ed3-3371-a261-829a" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="5161-6a69-ad99-f8e9" name="Mindveil" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- At the start of your Movement phase, if the bearer is on the battlefield, roll 3D6; until the end of that phase, the bearer’s Move characteristic is equal to the result.
-- In the Movement phase, the bearer can move across other models and terrain as if they were not there. 
-- In the Charge phase, the bearer can move across other models (other than BUILDINGS) as if they were not there. 
-- The bearer can charge in a turn in which they Fall Back.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="73c5-264a-27cc-460f" name="Hydra&apos;s Wail" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1290-3256-9c0e-83af" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="a6da-fc6a-acf1-cff8" name="Hydra&apos;s Wail" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, at the start of the battle round, if the bearer is on the battlefield it can activate the Hydra’s Wail. Until the end of the battle round, when your opponent spends Command Points to use a Stratagem, roll one D6; on a 4+ your opponent must spend one extra Command Point to use that Stratagem, or else it has no effect and the Command Points spent so far are lost.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
-          <entryLinks>
-            <entryLink id="9036-a2c2-8dc8-a4f1" name="Hydra&apos;s Teeth" hidden="false" collective="false" import="true" targetId="4ea6-00ec-536e-2e00" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ea8-f5f5-bb9d-d671" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="c06d-9241-c060-74b4" name="Shadeblade" hidden="false" collective="false" import="true" targetId="56ff-4c5c-6bc6-d8a0" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="48b8-b8ac-ca2b-711a" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="5733-3782-8921-2874" name="Viper&apos;s Bite" hidden="false" collective="false" import="true" targetId="4652-46e0-c09e-74ea" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b9d-3590-e8a7-f7d3" type="max"/>
-              </constraints>
-            </entryLink>
-          </entryLinks>
-        </selectionEntryGroup>
-        <selectionEntryGroup id="d471-7971-6b9f-44e5" name="Iron Warriors" hidden="false" collective="false" import="true">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a1b3-96fc-29f6-d3b1" type="equalTo"/>
-                  </conditions>
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="398a-c8da-c8bd-da58" type="equalTo"/>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0b83-3a3f-078a-8a13" type="equalTo"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="88b1-c697-e840-2850" type="greaterThan"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <selectionEntries>
-            <selectionEntry id="6af2-7d63-ff61-c877" name="Cranium Malevolus" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4397-7194-1c69-aa20" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="cf95-0902-1636-b873" name="Cranium Malevolus" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Shooting phase, the bearer can use the Cranium Malevolus instead of shooting. Roll one D6 for each enemy VEHICLE unit within 9&quot; of that model; on a 4-5 that unit suffers D3 mortal wounds, and on a 6 that unit suffers 3 mortal wounds.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="8310-430e-a156-392b" name="Insidium" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="76aa-5998-fad8-5de3" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="ca49-2f01-6281-d4f3" name="Insidium" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer gains the DAEMON keyword (if it does not already have it). Add 1 to the Strength, Toughness and Wounds characteristics of that model.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <categoryLinks>
-                <categoryLink id="8bd3-79a7-b230-4d98" name="Daemon" hidden="false" targetId="0bc5-6451-5612-4a25" primary="false"/>
-              </categoryLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="004f-3e73-50ad-8c2f" name="Techno-venomous Mechatendrils" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b36f-fae2-eca4-6d1f" type="notInstanceOf"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b8df-5f49-3302-1ad6" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="5b21-4fc4-9ae6-6b55" name="Techno-venomous Mechatendrils" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                  <characteristics>
-                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                    <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
-                    <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
-                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When the bearer fights, it makes 4 additional attacks with this weapon, and only those 4 attacks can be made with this weapon. When resolving an attack made with this weapon, if a hit is scored the target suffers 1 mortal wound and the attack sequence ends.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
-          <entryLinks>
-            <entryLink id="b619-dd1b-05c6-d573" name="Siegebreaker Mace" hidden="false" collective="false" import="true" targetId="d20f-81b1-6644-feca" type="selectionEntry"/>
-            <entryLink id="6e24-7af4-cf36-8bd8" name="Axe of the Forgemaster" hidden="false" collective="false" import="true" targetId="c11f-65ba-aee8-e737" type="selectionEntry"/>
-            <entryLink id="8857-662c-efc1-02c2" name="Spitespitter" hidden="false" collective="false" import="true" targetId="4f8e-1932-e989-5b91" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
         <selectionEntryGroup id="7595-2653-5f5a-c94d" name="Emperor&apos;s Children" hidden="false" collective="false" import="true">
@@ -19152,6 +19363,11 @@ Each model can only be corrupted once per turn.</characteristic>
             <entryLink id="5130-3eae-8927-ed3b" name="Eight-fold Cursed Crozius" hidden="false" collective="false" import="true" targetId="7516-b274-1884-7757" type="selectionEntry"/>
             <entryLink id="bbde-eb8f-3716-bac4" name="Claws of the Stygian Count" hidden="false" collective="false" import="true" targetId="5785-62f0-6e01-5cb5" type="selectionEntry"/>
             <entryLink id="7b53-fa43-ae60-27e2" name="Flayer" hidden="false" collective="false" import="true" targetId="80d9-6093-32e0-17b3" type="selectionEntry"/>
+            <entryLink id="740d-9e41-4ab0-d042" name="Axe of the Forgemaster" hidden="false" collective="false" import="true" targetId="c11f-65ba-aee8-e737" type="selectionEntry"/>
+            <entryLink id="1ad5-427d-3f23-3eab" name="Siegebreaker Mace" hidden="false" collective="false" import="true" targetId="d20f-81b1-6644-feca" type="selectionEntry"/>
+            <entryLink id="49d7-cfd1-d2e9-7a06" name="Spitespitter" hidden="false" collective="false" import="true" targetId="4f8e-1932-e989-5b91" type="selectionEntry"/>
+            <entryLink id="7b4a-273e-0e94-4afa" name="Blade of the Hydra" hidden="false" collective="false" import="true" targetId="1baa-b61b-3dcb-92f2" type="selectionEntry"/>
+            <entryLink id="67ac-c136-80a3-b56c" name="Viper&apos;s Spite" hidden="false" collective="false" import="true" targetId="4652-46e0-c09e-74ea" type="selectionEntry"/>
           </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -19171,6 +19387,9 @@ Each model can only be corrupted once per turn.</characteristic>
         <entryLink id="a40e-a544-cad7-b8a8" name="Intoxicating Elixir" hidden="false" collective="false" import="true" targetId="9e18-f3ed-4524-8ee5" type="selectionEntry"/>
         <entryLink id="9cbb-e973-ebbb-925e" name="Liber Hereticus" hidden="false" collective="false" import="true" targetId="2c61-905c-486f-b756" type="selectionEntry"/>
         <entryLink id="047d-b146-ae3a-b974" name="Talons of the Night Terror" hidden="false" collective="false" import="true" targetId="49d9-41b6-495b-a314" type="selectionEntry"/>
+        <entryLink id="b733-f540-8d60-5283" name="Fleshmetal Exoskeleton" hidden="false" collective="false" import="true" targetId="3831-0037-831e-3ffe" type="selectionEntry"/>
+        <entryLink id="9299-a106-8d2a-45b6" name="Hydra&apos;s Teeth" hidden="false" collective="false" import="true" targetId="4ea6-00ec-536e-2e00" type="selectionEntry"/>
+        <entryLink id="65e8-9876-51d8-0e02" name="Icon of the Hydra Cult" hidden="false" collective="false" import="true" targetId="530b-5ffc-ad50-53a3" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="1165-8247-86f6-7fba" name="Warlord Traits (Codex)" hidden="false" collective="false" import="true">
@@ -20058,9 +20277,10 @@ Each model can only be corrupted once per turn.</characteristic>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="741f-44bf-4115-ee48" type="max"/>
           </constraints>
           <profiles>
-            <profile id="ea6a-5c05-a55b-8bd2" name="I am Alpharius" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="ea6a-5c05-a55b-8bd2" name="I Am Alpharius" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In addition to this Warlord Trait, this WARLORD has one randomly generated Chaos Space Marine Warlord Trait from Codex: Chaos Space Marines. If this WARLORD is destroyed, you can immediately select another ALPHA LEGION CHARACTER model from your army to take their place and generate a Warlord Trait for them (including this one). If the mission you are playing grants victory points for destroying the enemy WARLORD, your opponent will only achieve that objective if all of the ALPHA LEGION CHARACTER models from your army have been destroyed.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- After nominating this model to be your WARLORD, randomly determine one additional Warlord Trait for them (re-rolling duplicate results) from a Warlord Traits table of your choice that this model has access to.
+- If this WARLORD is destroyed, you can immediately select one other ALPHA LEGION CHARACTER model from your army that does not have a Warlord Trait, and select a Warlord Trait for that model to gain (this must be a Warlord Trait no other model from your army has, it must be one that model can have, and it cannot be I Am Alpharius). Until the end of the game, that model counts as your WARLORD for all rules purposes. If any mission objective, secondary objective or Agenda rules are triggered when your WARLORD is destroyed, those rules are not trigged until this new WARLORD is destroyed.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20077,7 +20297,8 @@ Each model can only be corrupted once per turn.</characteristic>
           <profiles>
             <profile id="10b9-1ff1-2c79-71f8" name="Clandestine" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made against this WARLORD, subtract 1 from the hit roll.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time an attack is made against this WARLORD, an unmodified hit roll of 1-3 fails, irrespective of any abilities that the weapon or the model making the attack may have.
+- Each time an attack is allocated to this WARLORD while it is receiving the benefit of cover, add an additional 1 to any armour saving throw made against that attack.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20094,8 +20315,10 @@ Each model can only be corrupted once per turn.</characteristic>
           <profiles>
             <profile id="1126-95e9-dff0-a1a1" name="Headhunter" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time you select a target for a weapon this WARLORD is making an attack with, you can ignore the Look Out, Sir rule. 
-- When resolving an attack made with a ranged weapon by this WARLORD, an unmodified hit roll of 6 inflicts 1 mortal wound on the target in addition to any other damage.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time you select a target for an attack made with a ranged by this WARLORD, if that weapon is a Rapid Fire or Pistol weapon:
+- You can ignore the Look Out, Sir rule.
+- You can re-roll the wound roll.
+- On an unmodified hit roll of 6, the target suffers 1 mortal wound in addition to any other damage.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20112,7 +20335,7 @@ Each model can only be corrupted once per turn.</characteristic>
           <profiles>
             <profile id="7e2b-22b8-5931-6359" name="Master of Diversion" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of the first battle round, before the first turn begins, select up to three other friendly ALPHA LEGION units on the battlefield. Remove these units from the battlefield and set them up again following the usual deployment rules for those units and the mission. If you redeploy a TRANSPORT model, all units embarked inside it remain so when it is set up again.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After both sides have deployed, in the Resolve Pre-battle Abilities step of the mission you are playing, you can select up to three ALPHA LEGION units from your army that are wholly within your deployment zone. Remove those units from the battlefield, then set them up anywhere on the battlefield that is wholly within your deployment zone and more than 9&quot; away from any enemy models. If the mission uses the Strategic Reserves rules, any of those units can be placed into Strategic Reserves without having to spend any additional CPs, regardless of how many units are already in Strategic Reserves.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20127,9 +20350,11 @@ Each model can only be corrupted once per turn.</characteristic>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0365-06e9-806f-c760" type="max"/>
           </constraints>
           <profiles>
-            <profile id="79b1-ec94-e18b-3bfa" name="Cult Leader (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="79b1-ec94-e18b-3bfa" name="Cult Leader" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a weapon by a model in a friendly ALPHA LEGION CHAOS CULTIST unit within 6&quot; of this WARLORD, on an unmodified wound roll of 6 the Armour Penetration characteristic of that weapon is improved by 1 for that attack (e.g. AP 0 becomes AP -1).</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, you can select one friendly ALPHA LEGION CULTISTS unit within 9&quot; of this WARLORD. Until the start of your next Command phase, each time a model in that unit makes an attack:
+- Add 1 to that attack&apos;s hit roll.
+- Improve the Armour Penetration characteristic of that attack by 1.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20139,14 +20364,16 @@ Each model can only be corrupted once per turn.</characteristic>
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="dadb-b43f-c93b-355e" name="6. Faceless Commander" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="dadb-b43f-c93b-355e" name="6. Covert Control" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ccbf-47b9-4b1b-fe86" type="max"/>
           </constraints>
           <profiles>
-            <profile id="416b-6c10-65fa-d570" name="Faceless Commander" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="416b-6c10-65fa-d570" name="Covert Control" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle, at the end of your Movement phase, you can remove this WARLORD from the battlefield and set them up again within 3&quot; of a friendly ALPHA LEGION INFANTRY unit and more than 9&quot; away from enemy models.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, select one friendly ALPHA LEGION CORE unit within 6&quot; of this WARLORD. Until the start of your next Command phase:
+- That unit can shoot while performing an action without that action failing.
+- - That unit has the Objective Secured ability. If a model that unit already has that ability, that model counts as one additional model when determining control of an objective marker.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20162,7 +20389,7 @@ Each model can only be corrupted once per turn.</characteristic>
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
-            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a1b3-96fc-29f6-d3b1" type="equalTo"/>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="87da-018e-ea9b-f5c4" type="notInstanceOf"/>
           </conditions>
         </modifier>
         <modifier type="set" field="hidden" value="true">
@@ -20175,11 +20402,11 @@ Each model can only be corrupted once per turn.</characteristic>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4715-3d2b-0158-38a3" type="max"/>
       </constraints>
       <selectionEntries>
-        <selectionEntry id="4223-f08a-74c9-58d0" name="1. Cold and Bitter" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="4223-f08a-74c9-58d0" name="1. Siege Lord" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
-            <profile id="db91-6c0b-253d-5b84" name="Cold and Bitter (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="db91-6c0b-253d-5b84" name="Siege Lord" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When a Morale test is taken for a friendly IRON WARRIORS unit within 6&quot; of this WARLORD, do not roll the dice; it is automatically passed.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, select one friendly IRON WARRIORS CORE or IRON WARRIORS VEHICLE unit within 6&quot; of this WARLORD. Until the start of your next Command phase, each time a model in that unit makes an attack against an enemy VEHICLE or BUILDING unit, if that attack is made with a weapon with a Strength characteristic of 7 or more, add 1 to the Damage characteristic of that attack.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20191,9 +20418,9 @@ Each model can only be corrupted once per turn.</characteristic>
         </selectionEntry>
         <selectionEntry id="4952-1dae-78e0-ec17" name="2. Daemonsmith" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
-            <profile id="ced3-a426-468c-c46c" name="Daemonsmith (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="ced3-a426-468c-c46c" name="Daemonsmith" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made by a model in a friendly IRON WARRIORS DAEMON ENGINE or IRON WARRIORS CULT OF DESTRUCTION unit within 6&quot; of this WARLORD, an unmodified hit roll of 6 scores 1 additional hit.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, select one friendly IRON WARRIORS DAEMON ENGINE, IRON WARRIORS CULT OF DESTRUCTION or IRON WARRIORS MACHINE SPIRIT unit within 6&quot; of this WARLORD. Until the start of your next Command phase, each time a model in that unit makes an attack, add 1 to that attack&apos;s hit roll.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20203,11 +20430,12 @@ Each model can only be corrupted once per turn.</characteristic>
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="b3f5-3f74-db19-58b5" name="3. Iron Without" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="b3f5-3f74-db19-58b5" name="3. Unyielding Mettle" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
-            <profile id="5854-c727-a234-d9c9" name="Iron Without" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="5854-c727-a234-d9c9" name="Unyielding Mettle" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When this WARLORD would lose a wound, roll one D6; on a 5+ that wound is not lost.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Add 1 to the Toughness characteristic of this WARLORD.
+- Each time this WARLORD would lose a wound, roll one D6; on a 5+ that wound is not lost.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20219,9 +20447,11 @@ Each model can only be corrupted once per turn.</characteristic>
         </selectionEntry>
         <selectionEntry id="c054-9ff4-c568-0345" name="4. Bastion" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
-            <profile id="cea5-a739-97cc-154a" name="Bastion (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="cea5-a739-97cc-154a" name="Bastion" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a weapon that has an Armour Penetration characteristic of -1 against a friendly IRON WARRIORS unit that is within 6&quot; of this WARLORD and receiving the benefit of cover, that weapon is treated as having an Armour Penetration characteristic of 0. You must apply all modifiers to an attack&apos;s Armour Penetration characteristics (e.g. the Dour Duty Stratagem) before seeing if it is affected by this Warlord Trait.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, you can select one friendly IRON WARRIORS CORE unit within 6&quot; of this WARLORD. Until the start of your next Command phase:
+- Each time an enemy unit declares a charge against that unit, if that unit is not within Engagement Range of any enemy units, it can either Hold Steady or Set to Defend.
+- That unit has the Objective Secured ability. If a model that unit already has that ability, that model counts as one additional model when determining control of an objective marker.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20231,11 +20461,11 @@ Each model can only be corrupted once per turn.</characteristic>
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="18df-6502-1f3b-8daf" name="5. Siege Master" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="18df-6502-1f3b-8daf" name="5. Architect of Destruction" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
-            <profile id="ba4c-f1fc-4093-92b1" name="Siege Master (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="ba4c-f1fc-4093-92b1" name="Architect of Destruction" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made with a ranged weapon by a model in a friendly IRON WARRIORS HAVOCS or IRON WARRIORS VEHICLE unit within 6&quot; of this WARLORD, re-roll a wound roll of 1.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, you can select one IRON WARRIORS CORE or IRON WARRIORS VEHICLE unit within 6&quot; of this WARLORD. Until the start of your next Command phase, each time a model in that unit makes an attack, if your army is engaged in either Wanton Massacre or Wanton Slaughter, that unit is considered to be engaged in Wanton Destruction for that attack instead.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -20245,11 +20475,11 @@ Each model can only be corrupted once per turn.</characteristic>
             <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="31d0-a4ac-f6b5-fc64" name="6. Stoic Advance" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="31d0-a4ac-f6b5-fc64" name="6. Implacable Taskmaster" hidden="false" collective="false" import="true" type="upgrade">
           <profiles>
-            <profile id="b4d9-4eee-f490-5063" name="Stoic Advance (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+            <profile id="b4d9-4eee-f490-5063" name="Implacable Taskmaster (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Friendly IRON WARRIORS units do not suffer the penalty for moving and firing Heavy weapons whilst they are within 6&quot; of this WARLORD.</characteristic>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly IRON WARRIORS CORE unit is within 6&quot; of this WARLORD, each time that unit is selected to shoot, if that unit made a Normal Move in your previous Movement phase, then until its shooting attacks have been resolved, it counts as having Remained Stationary.</characteristic>
               </characteristics>
             </profile>
           </profiles>
