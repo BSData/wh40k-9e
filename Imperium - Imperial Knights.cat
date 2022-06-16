@@ -5224,7 +5224,7 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="self" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="dfcb-7e82-5b5e-e379" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="dfcb-7e82-5b5e-e379" type="equalTo"/>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a4e-9f8b-1cbc-3b91" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
@@ -5932,7 +5932,7 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="self" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="dfcb-7e82-5b5e-e379" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="dfcb-7e82-5b5e-e379" type="equalTo"/>
                     <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a4e-9f8b-1cbc-3b91" type="atLeast"/>
                   </conditions>
                 </conditionGroup>
@@ -11695,12 +11695,18 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
           <modifiers>
             <modifier type="set" field="hidden" value="false">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
                   <conditions>
                     <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e739-6296-9046-12b7" type="atLeast"/>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c430-484f-3465-b6ad" type="atLeast"/>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fab6-245c-ccc6-e743" type="atLeast"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="fab6-245c-ccc6-e743" type="atLeast"/>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c430-484f-3465-b6ad" type="atLeast"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
@@ -12025,9 +12031,22 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
               </costs>
             </selectionEntry>
             <selectionEntry id="13f1-3c91-f7d7-1918" name="Freeblade Lance" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="44e1-83c4-b978-bd1b" value="1.0">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e739-6296-9046-12b7" type="atLeast"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="99c7-4fbc-a81f-6425" type="max"/>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="44e1-83c4-b978-bd1b" type="min"/>
               </constraints>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -12721,11 +12740,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4d43-3a51-e488-e021" type="max"/>
       </constraints>
       <entryLinks>
-        <entryLink id="d940-57c8-2be6-ab41" name="Questor Cognis Heavy Stubber" hidden="false" collective="false" import="true" targetId="11d2-18a1-0d20-bd0e" type="selectionEntry">
+        <entryLink id="d940-57c8-2be6-ab41" name="Questor Cognis Heavy Stubber" hidden="true" collective="false" import="true" targetId="11d2-18a1-0d20-bd0e" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="hidden" value="true">
+            <modifier type="set" field="hidden" value="false">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="254d-83b9-c46e-84aa" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5360-3011-a42b-faf2" type="instanceOf"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -12750,9 +12769,9 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         </entryLink>
         <entryLink id="119f-4867-99d7-9ab0" name="Questor Ironhail Heavy Stubber" hidden="false" collective="false" import="true" targetId="d23f-6081-de06-52e4" type="selectionEntry">
           <modifiers>
-            <modifier type="set" field="hidden" value="true">
+            <modifier type="set" field="hidden" value="false">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5360-3011-a42b-faf2" type="instanceOf"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="254d-83b9-c46e-84aa" type="instanceOf"/>
               </conditions>
             </modifier>
           </modifiers>
