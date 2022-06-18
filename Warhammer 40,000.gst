@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="221" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="220" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -361,7 +361,6 @@
     <categoryEntry id="c08d-f66a-1d47-060f" name="Abhorrent-Class" hidden="false"/>
     <categoryEntry id="5583-2a3e-2095-6450" name="Armiger-Class" hidden="false"/>
     <categoryEntry id="82b5-25ac-1710-de0e" name="Questoris-Class" hidden="false"/>
-    <categoryEntry id="69ac-0b9a-535c-6b0d" name="Shared Faction Bonus" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -1892,6 +1891,11 @@
           </conditionGroups>
         </modifier>
       </modifiers>
+    </entryLink>
+    <entryLink id="fe51-1bc8-bd77-14a6" name="Shared Faction Bonus" hidden="false" collective="false" import="true" targetId="8129-3536-b511-b045" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="a7d5-9a78-2254-2a59" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
     </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
@@ -5940,22 +5944,9 @@ Remaining Wounds | Aura Range
         </modifier>
         <modifier type="set" field="2d3b-b544-ad49-fb75" value="-1.0">
           <comment>Fortification Network CP Cost.</comment>
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dcee-07fa-ec14-7dec" type="instanceOf"/>
-              </conditions>
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="69ac-0b9a-535c-6b0d" type="greaterThan"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="instanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dcee-07fa-ec14-7dec" type="instanceOf"/>
+          </conditions>
         </modifier>
         <modifier type="set" field="hidden" value="true">
           <comment>Hide in Child Detachments.</comment>
@@ -6086,13 +6077,6 @@ Remaining Wounds | Aura Range
                       </conditionGroups>
                     </conditionGroup>
                   </conditionGroups>
-                </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="69ac-0b9a-535c-6b0d" type="greaterThan"/>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="instanceOf"/>
-                  </conditions>
                 </conditionGroup>
               </conditionGroups>
             </conditionGroup>
