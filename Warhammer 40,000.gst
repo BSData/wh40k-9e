@@ -6852,7 +6852,7 @@ Remaining Wounds | Aura Range
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="de28-da4e-dd95-00c3" type="max"/>
-        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5f54-8fb3-27b5-b903" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="56a1-104c-6376-4cfd" type="max"/>
       </constraints>
       <profiles>
         <profile id="ea00-c56a-9aad-5621" name="Stratagem: Warlord Trait" publicationId="09f4-6657-ccd5-6e61" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
