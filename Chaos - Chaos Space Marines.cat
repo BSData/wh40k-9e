@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="176" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="221" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="177" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="221" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="cb54-c035-pubN125652" name="Codex: Heretic Astartes - Chaos Space Marines"/>
     <publication id="cb54-c035-pubN153092" name="Imperium Nihilus: Vigilus Ablaze"/>
@@ -43,7 +43,11 @@
     <categoryEntry id="4407-2aa1-2a62-c1dc" name="Horror" hidden="false"/>
     <categoryEntry id="1f29-4695-dfe7-e893" name="Faction: Black Legion" hidden="false"/>
     <categoryEntry id="dba9-7a7f-1310-3028" name="Faction: Red Corsairs" hidden="false"/>
-    <categoryEntry id="eb55-bd6b-3e75-d505" name="Chaos Lord" hidden="false"/>
+    <categoryEntry id="eb55-bd6b-3e75-d505" name="Chaos Lord" hidden="false">
+      <constraints>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0548-fe49-2653-93f1" type="max"/>
+      </constraints>
+    </categoryEntry>
     <categoryEntry id="36b8-cf23-7648-ece9" name="Terminator" hidden="false"/>
     <categoryEntry id="5570-810f-53f4-5a91" name="Cult of Destruction" hidden="false"/>
     <categoryEntry id="649f-80f9-0d71-64c3" name="Faction: Emperor&apos;s Children" hidden="false"/>
@@ -73,7 +77,18 @@
     <categoryEntry id="4795-007f-61fa-aca5" name="Priest" hidden="false"/>
     <categoryEntry id="e0db-3bff-98cd-1a60" name="Faction: Creations of Bile" hidden="false"/>
     <categoryEntry id="dfc4-a1d7-ffb1-e191" name="Agent of Chaos" hidden="false"/>
-    <categoryEntry id="ae44-8e2e-2df1-d463" name="Cultists" hidden="false"/>
+    <categoryEntry id="ae44-8e2e-2df1-d463" name="Cultists" hidden="false">
+      <modifiers>
+        <modifier type="increment" field="d865-a6d8-8797-0ff4" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="08f1-d244-eb44-7e01" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d865-a6d8-8797-0ff4" type="max"/>
+      </constraints>
+    </categoryEntry>
     <categoryEntry id="539a-eb96-edf8-7f84" name="Faction: Chaos Undivided" hidden="false"/>
     <categoryEntry id="c140-5b3a-268c-f12d" name="Surgeon Acolyte" hidden="false"/>
     <categoryEntry id="624c-6670-6bc8-badd" name="Abaddon the Despoiler" hidden="false"/>
@@ -467,7 +482,6 @@
       </modifiers>
       <categoryLinks>
         <categoryLink id="3f27-84c5-82ac-397a" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
-        <categoryLink id="5b64-4e6f-7b5f-64e5" name="New CategoryLink" hidden="false" targetId="5bd5-2b7c-e518-0514" primary="false"/>
       </categoryLinks>
     </entryLink>
     <entryLink id="3ad8-b9e2-9b64-66b9" name="Chaos Hellwright [LEGENDS]" hidden="false" collective="false" import="true" targetId="2a93-2d7d-1bf9-7d8e" type="selectionEntry"/>
@@ -2833,6 +2847,9 @@ If your summoning roll included any doubles, your character then suffers a morta
           </modifiers>
         </modifierGroup>
       </modifierGroups>
+      <constraints>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="d7db-bc8f-6f0c-b9c3" type="max"/>
+      </constraints>
       <profiles>
         <profile id="5746-8975-d4e5-72f6" name="Daemon Prince" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <modifiers>
@@ -4233,6 +4250,8 @@ If your summoning roll included any doubles, your character then suffers a morta
         <categoryLink id="25ff-4538-a89b-5ccf" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="d1b1-3fee-cc4c-e234" name="New CategoryLink" hidden="false" targetId="dfc5-aa04-9546-1b4c" primary="false"/>
         <categoryLink id="c2eb-864a-c0c9-80c9" name="Faction: Traitoris Astartes" hidden="false" targetId="95ae-effa-c9f2-d11b" primary="false"/>
+        <categoryLink id="fc36-3880-32da-8a7d" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+        <categoryLink id="3556-86b9-2a91-36ad" name="Mark of Chaos" hidden="false" targetId="4d5d-f871-856d-84cc" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="8713-bf56-1ba2-fdb2" name="Berzerker Champion" hidden="false" collective="false" import="true" type="model">
@@ -5272,26 +5291,11 @@ If your summoning roll included any doubles, your character then suffers a morta
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="bfbb-5f37-6875-a0ef" name="Plague Marines" publicationId="cb54-c035-pubN125652" page="142" hidden="true" collective="false" import="true" type="unit">
+    <selectionEntry id="bfbb-5f37-6875-a0ef" name="Plague Marines" publicationId="cb54-c035-pubN125652" page="142" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="2">
+        <modifier type="increment" field="e356-c769-5920-6e14" value="6.0">
           <conditions>
             <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
-          </conditions>
-        </modifier>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="2.0">
-          <conditions>
-            <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="8.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
-          </conditions>
-        </modifier>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="5.0">
-          <conditions>
-            <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="11.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
-          </conditions>
-        </modifier>
-        <modifier type="increment" field="e356-c769-5920-6e14" value="5.0">
-          <conditions>
-            <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="16.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
           </conditions>
         </modifier>
         <modifier type="set" field="hidden" value="true">
@@ -5300,36 +5304,100 @@ If your summoning roll included any doubles, your character then suffers a morta
           </conditions>
         </modifier>
       </modifiers>
+      <modifierGroups>
+        <modifierGroup>
+          <comment>&lt;Legion&gt;</comment>
+          <modifiers>
+            <modifier type="add" field="category" value="87da-018e-ea9b-f5c4">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a1b3-96fc-29f6-d3b1" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="dba9-7a7f-1310-3028">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a675-3934-815b-7d5e" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="1f29-4695-dfe7-e893">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="37cd-2830-725b-a321" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="649f-80f9-0d71-64c3">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="51f6-1db1-3e75-3d4b" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="e0db-3bff-98cd-1a60">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8f74-81f3-7093-69e4" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="38e4-b91c-a673-9c76">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2482-8e16-78b0-e9cd" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="2e84-a6d9-bf13-4116">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01f7-d7f1-be88-b861" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="5bd5-2b7c-e518-0514">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e536-b475-827e-e3cf" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="add" field="category" value="1e3f-0a7b-0c8f-84db">
+              <conditions>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9b8a-fb30-b445-3049" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
       <profiles>
-        <profile id="8935-24ff-d7b3-3710" name="Plague Marine" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="5618-b336-c82c-a455" name="Disgustingly Resilient" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack (to a minimum of 1).</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="62a1-1e65-c2ab-3d7d" name="Vectors of Death" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A Plague Marine equipped with 2 melee plague weapons has an Attacks characteristic of 3.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="62bf-69c6-0080-e464" name="Plague Marine" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
             <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="41ef-b828-4af6-0f48" name="Vectors of Death and Disease" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="d8e8-1f1d-3984-84ac" name="Remorseless" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">A Plague Marine equipped with two plague knives, a plague knife and a bubotic axe, or a mace of contagion and bubotic axe, has an Attacks characteristic of 2 instead of 1.</characteristic>
-          </characteristics>
-        </profile>
-        <profile id="5618-b336-c82c-a455" name="Disgustingly Resilient" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-          <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model loses a wound, roll a D6; on a 5-6, it does not lose that wound.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a Combat Attrition test is taken for this unit, ignore any or all modifiers.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <infoLinks>
+        <infoLink id="9bc4-6adb-6f1a-2666" name="Malicious Volleys" hidden="false" targetId="ccba-d5bb-8160-0776" type="rule"/>
+        <infoLink id="41af-db79-a5e3-e9b4" name="Mark of Nurgle" hidden="false" targetId="a6ce-6296-0963-34a0" type="profile"/>
+      </infoLinks>
       <categoryLinks>
         <categoryLink id="3ac2-5a02-8b20-898f" name="New CategoryLink" hidden="false" targetId="0fb6-fcaf-b180-5dda" primary="false"/>
         <categoryLink id="9e12-06a3-d442-9d0b" name="New CategoryLink" hidden="false" targetId="ca10-a5dd-f54f-0ed5" primary="false"/>
         <categoryLink id="b649-c301-c628-8246" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="8eee-34b9-d38b-7cdb" name="New CategoryLink" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
+        <categoryLink id="b471-3aaa-84ce-eb66" name="Faction: Traitoris Astartes" hidden="false" targetId="95ae-effa-c9f2-d11b" primary="false"/>
+        <categoryLink id="4157-6ce0-69c8-0070" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+        <categoryLink id="4e93-aee9-be99-b9ac" name="Mark of Chaos" hidden="false" targetId="4d5d-f871-856d-84cc" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="ccf9-1340-88d0-82d1" name="Plague Champion" page="" hidden="false" collective="false" import="true" type="model">
@@ -5345,15 +5413,15 @@ If your summoning roll included any doubles, your character then suffers a morta
                 <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
                 <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
                 <characteristic name="T" typeId="9c9f-9774-a358-3a39">5</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
                 <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
               </characteristics>
             </profile>
           </profiles>
           <selectionEntryGroups>
-            <selectionEntryGroup id="884c-1077-a77e-6986" name="Weapon Layout" hidden="false" collective="false" import="true">
+            <selectionEntryGroup id="884c-1077-a77e-6986" name="Weapon Options" hidden="false" collective="false" import="true">
               <constraints>
                 <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4362-fd04-d6f0-d58d" type="max"/>
                 <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2c05-3e27-e7b5-81fd" type="min"/>
@@ -5387,7 +5455,7 @@ If your summoning roll included any doubles, your character then suffers a morta
                   <selectionEntries>
                     <selectionEntry id="a2aa-5281-d187-5d02" name="Plague knife" hidden="false" collective="false" import="true" type="upgrade">
                       <infoLinks>
-                        <infoLink id="1704-53fb-4297-30b4" name="New InfoLink" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
+                        <infoLink id="1704-53fb-4297-30b4" name="Plague knife" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
                       </infoLinks>
                       <costs>
                         <cost name="pts" typeId="points" value="0.0"/>
@@ -5395,16 +5463,16 @@ If your summoning roll included any doubles, your character then suffers a morta
                         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                       </costs>
                     </selectionEntry>
-                    <selectionEntry id="1954-58b9-c940-a02e" name="Plaguesword" hidden="false" collective="false" import="true" type="upgrade">
+                    <selectionEntry id="66b0-ed84-a23b-0659" name="Daemonic plague blade" hidden="false" collective="false" import="true" type="upgrade">
                       <profiles>
-                        <profile id="30ff-76d4-55d0-7d39" name="Plaguesword" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                        <profile id="2fa6-3cda-3ea3-ad5c" name="Daemonic plague blade" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                           <characteristics>
                             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
                             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+                            <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
                             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll failed wound rolls for this weapon.</characteristic>
+                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon</characteristic>
                           </characteristics>
                         </profile>
                       </profiles>
@@ -5436,15 +5504,17 @@ If your summoning roll included any doubles, your character then suffers a morta
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="a920-3ccc-958c-51ed" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="b338-11f3-2659-a0dc" name="Krak grenade" hidden="false" collective="false" import="true" targetId="0f23-cd69-d106-371e" type="selectionEntry">
+            <entryLink id="b338-11f3-2659-a0dc" name="Krak grenades" hidden="false" collective="false" import="true" targetId="0f23-cd69-d106-371e" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="3cf5-067b-4ef8-fb3e" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ec79-ddcd-cf45-f85b" type="max"/>
               </constraints>
             </entryLink>
+            <entryLink id="87c7-f719-bd73-309d" name="Trophies of the Long War" hidden="false" collective="false" import="true" targetId="aca4-8837-c8e8-2a14" type="selectionEntry"/>
+            <entryLink id="1fd6-4aa2-575b-615b" name="Trophies of the Long War" hidden="false" collective="false" import="true" targetId="4a2a-7581-67f9-2d0e" type="selectionEntryGroup"/>
           </entryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="18.0"/>
+            <cost name="pts" typeId="points" value="21.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
@@ -5454,12 +5524,12 @@ If your summoning roll included any doubles, your character then suffers a morta
         <selectionEntryGroup id="653a-3565-b205-d49b" name="Plague Marines" hidden="false" collective="false" import="true" defaultSelectionEntryId="cae0-eaf2-dca4-3770">
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="858f-05f4-f4e6-36f4" type="min"/>
-            <constraint field="selections" scope="parent" value="19.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5682-ca8f-8cc8-91e9" type="max"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5682-ca8f-8cc8-91e9" type="max"/>
           </constraints>
           <selectionEntries>
             <selectionEntry id="cae0-eaf2-dca4-3770" name="Plague Marine w/ boltgun" hidden="false" collective="false" import="true" type="model">
               <constraints>
-                <constraint field="selections" scope="parent" value="19.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="04a9-57d3-3899-c1f6" type="max"/>
+                <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="04a9-57d3-3899-c1f6" type="max"/>
               </constraints>
               <selectionEntries>
                 <selectionEntry id="0805-749d-a8aa-dc3a" name="Plague knife" hidden="false" collective="true" import="true" type="upgrade">
@@ -5514,14 +5584,21 @@ If your summoning roll included any doubles, your character then suffers a morta
                 </entryLink>
               </entryLinks>
               <costs>
-                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name="pts" typeId="points" value="21.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="1da3-b974-e930-0574" name="Plague Marine w/ special weapon" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="1bd6-2df2-9c82-a3b9" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1bd6-2df2-9c82-a3b9" type="max"/>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1bd6-2df2-9c82-a3b9" type="max"/>
               </constraints>
               <selectionEntryGroups>
                 <selectionEntryGroup id="475c-ad11-7fe2-1ef1" name="Weapon option" hidden="false" collective="false" import="true">
@@ -5530,28 +5607,6 @@ If your summoning roll included any doubles, your character then suffers a morta
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="53f9-fae3-fc85-3d73" type="min"/>
                   </constraints>
                   <selectionEntries>
-                    <selectionEntry id="2029-4619-9851-ef23" name="Blight launcher" hidden="false" collective="false" import="true" type="upgrade">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c2f6-b437-2143-84b9" type="max"/>
-                      </constraints>
-                      <profiles>
-                        <profile id="1850-e9f8-d5cb-bd1b" name="Blight launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                          <characteristics>
-                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 2</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
-                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll wound rolls of 1 for this weapon.</characteristic>
-                          </characteristics>
-                        </profile>
-                      </profiles>
-                      <costs>
-                        <cost name="pts" typeId="points" value="10.0"/>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
                     <selectionEntry id="ac91-b7d2-9801-a4e3" name="Plague belcher" hidden="false" collective="false" import="true" type="upgrade">
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6edd-b8fa-3455-caa7" type="max"/>
@@ -5570,28 +5625,6 @@ If your summoning roll included any doubles, your character then suffers a morta
                       </profiles>
                       <costs>
                         <cost name="pts" typeId="points" value="5.0"/>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
-                    <selectionEntry id="9554-5844-ddcb-5013" name="Plague spewer" hidden="false" collective="false" import="true" type="upgrade">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6582-ab9e-ce54-5619" type="max"/>
-                      </constraints>
-                      <profiles>
-                        <profile id="9fb7-0745-ca6e-9712" name="Plague spewer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                          <characteristics>
-                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">9&quot;</characteristic>
-                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target. You can re-roll wound rolls of 1 for this weapon.</characteristic>
-                          </characteristics>
-                        </profile>
-                      </profiles>
-                      <costs>
-                        <cost name="pts" typeId="points" value="10.0"/>
                         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                       </costs>
@@ -5618,18 +5651,19 @@ If your summoning roll included any doubles, your character then suffers a morta
                 </selectionEntryGroup>
               </selectionEntryGroups>
               <entryLinks>
-                <entryLink id="4d22-f783-0406-3758" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="986e-f410-9c9a-a973" type="selectionEntry">
+                <entryLink id="4d22-f783-0406-3758" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fe47-d04d-e40e-e4e9" type="min"/>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d70a-53e8-a1c1-2985" type="max"/>
                   </constraints>
                 </entryLink>
-                <entryLink id="37e1-9a80-44bc-740e" name="Krak grenade" hidden="false" collective="false" import="true" targetId="0f23-cd69-d106-371e" type="selectionEntry">
+                <entryLink id="37e1-9a80-44bc-740e" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8bc2-e047-8afb-7709" type="max"/>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c4e3-1581-cf08-61b2" type="min"/>
                   </constraints>
                 </entryLink>
+                <entryLink id="7835-369d-4864-b5a3" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
               </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="18.0"/>
@@ -5637,18 +5671,25 @@ If your summoning roll included any doubles, your character then suffers a morta
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="52e1-b002-cd73-3507" name="Plague Marine w/ melee weapons" hidden="false" collective="false" import="true" type="model">
+            <selectionEntry id="2965-2d93-2b59-c36d" name="Plague Marine w/ 2nd plague knife" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="504b-9ddb-9b88-9acb" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
               <constraints>
-                <constraint field="selections" scope="parent" value="19.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ad7-89ab-98c9-55b2" type="max"/>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="504b-9ddb-9b88-9acb" type="max"/>
               </constraints>
               <selectionEntries>
-                <selectionEntry id="b840-c598-b0ce-1423" name="Plague knife" hidden="false" collective="false" import="true" type="upgrade">
+                <selectionEntry id="31c7-f702-00f2-747f" name="Plague knife" hidden="false" collective="true" import="true" type="upgrade">
                   <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f745-5c71-dfb8-52b3" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c25d-c64b-063c-5840" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="977d-119b-5db5-aa45" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d0d7-123c-73f7-f929" type="min"/>
                   </constraints>
                   <infoLinks>
-                    <infoLink id="4156-3413-b7b3-3113" name="Plague knife" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
+                    <infoLink id="8397-b66e-91e9-0475" name="Plague knife" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
                   </infoLinks>
                   <costs>
                     <cost name="pts" typeId="points" value="0.0"/>
@@ -5656,164 +5697,482 @@ If your summoning roll included any doubles, your character then suffers a morta
                     <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                   </costs>
                 </selectionEntry>
+                <selectionEntry id="f324-d864-3028-c46f" name="2nd Plague knife" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b8b0-548d-6874-43b3" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="731b-a3b8-242a-c9c8" type="min"/>
+                  </constraints>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                  </costs>
+                </selectionEntry>
               </selectionEntries>
-              <selectionEntryGroups>
-                <selectionEntryGroup id="2df9-534f-512f-fa1f" name="Weapon Options" hidden="false" collective="false" import="true">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f1ad-8c83-d3c2-c644" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="012c-45e2-6705-8616" type="min"/>
-                  </constraints>
-                  <selectionEntries>
-                    <selectionEntry id="e4ac-ccc4-4a63-3484" name="Bubotic axe" hidden="false" collective="false" import="true" type="upgrade">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b7b9-1c32-9fc6-245b" type="max"/>
-                      </constraints>
-                      <profiles>
-                        <profile id="1c72-669c-fe4f-fa33" name="Bubotic axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                          <characteristics>
-                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
-                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll wound rolls of 1 for this weapon.</characteristic>
-                          </characteristics>
-                        </profile>
-                      </profiles>
-                      <costs>
-                        <cost name="pts" typeId="points" value="5.0"/>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
-                    <selectionEntry id="c1de-5504-30a7-093b" name="2nd plague knife" hidden="false" collective="false" import="true" type="upgrade">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="92ec-68d2-7e30-73d0" type="max"/>
-                      </constraints>
-                      <costs>
-                        <cost name="pts" typeId="points" value="0.0"/>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
-                    <selectionEntry id="1500-7f72-5ae9-e472" name="Mace of Contagion and bubotic axe" hidden="false" collective="false" import="true" type="upgrade">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bea7-ee44-12bb-0d2d" type="max"/>
-                        <constraint field="selections" scope="bfbb-5f37-6875-a0ef" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2aee-fe1e-23c1-30b3" type="max"/>
-                      </constraints>
-                      <profiles>
-                        <profile id="f2a9-98cf-ea01-fe88" name="Bubotic Axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                          <characteristics>
-                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
-                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll wound rolls of 1 for this weapon.</characteristic>
-                          </characteristics>
-                        </profile>
-                        <profile id="510c-f0f1-6120-4efc" name="Mace of Contagion and bubotic axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                          <characteristics>
-                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll. You can re-roll wound rolls of 1 for this weapon.</characteristic>
-                          </characteristics>
-                        </profile>
-                      </profiles>
-                      <costs>
-                        <cost name="pts" typeId="points" value="10.0"/>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
-                    <selectionEntry id="745a-4410-f84e-7e7e" name="Great plague cleaver" hidden="false" collective="false" import="true" type="upgrade">
-                      <modifiers>
-                        <modifier type="decrement" field="b131-7156-554d-f880" value="1">
-                          <repeats>
-                            <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="066a-add4-8bad-29cb" repeats="1" roundUp="false"/>
-                          </repeats>
-                        </modifier>
-                      </modifiers>
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="07cd-2916-8e04-b051" type="max"/>
-                        <constraint field="selections" scope="bfbb-5f37-6875-a0ef" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b131-7156-554d-f880" type="max"/>
-                      </constraints>
-                      <profiles>
-                        <profile id="55b7-c155-3aad-98ce" name="Great plague cleaver" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                          <characteristics>
-                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
-                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">When attacking with this weapon, you must subtract 1 from the hit roll. You can re-roll wound rolls of 1 for this weapon.</characteristic>
-                          </characteristics>
-                        </profile>
-                      </profiles>
-                      <infoLinks>
-                        <infoLink id="92df-cc0c-6758-6d25" name="Plague knife" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
-                      </infoLinks>
-                      <costs>
-                        <cost name="pts" typeId="points" value="15.0"/>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
-                    <selectionEntry id="066a-add4-8bad-29cb" name="Flail of corruption" hidden="false" collective="false" import="true" type="upgrade">
-                      <modifiers>
-                        <modifier type="decrement" field="2227-0c29-9ee4-54ab" value="1">
-                          <repeats>
-                            <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="745a-4410-f84e-7e7e" repeats="1" roundUp="false"/>
-                          </repeats>
-                        </modifier>
-                      </modifiers>
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dc72-7dec-47c9-1839" type="max"/>
-                        <constraint field="selections" scope="bfbb-5f37-6875-a0ef" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2227-0c29-9ee4-54ab" type="max"/>
-                      </constraints>
-                      <profiles>
-                        <profile id="e1b4-af96-b5cd-d6ab" name="Flail of corruption" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-                          <characteristics>
-                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
-                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
-                            <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
-                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
-                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll wound rolls of 1 for this weapon. Make D3 hit rolls each time you attack with this weapon, instead of only one. Excess damage from this weapon is not lost; instead keep allocating damage to another model in the unit until either all the damage has been allocated or the target is destroyed.</characteristic>
-                          </characteristics>
-                        </profile>
-                      </profiles>
-                      <infoLinks>
-                        <infoLink id="daea-cd37-0b8c-c60e" name="Plague knife" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
-                      </infoLinks>
-                      <costs>
-                        <cost name="pts" typeId="points" value="15.0"/>
-                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                      </costs>
-                    </selectionEntry>
-                  </selectionEntries>
-                </selectionEntryGroup>
-              </selectionEntryGroups>
               <entryLinks>
-                <entryLink id="3cac-9d43-dab3-b3fa" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="986e-f410-9c9a-a973" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5edb-7673-5907-47a2" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b4c3-62ec-220e-7a21" type="min"/>
-                  </constraints>
-                </entryLink>
-                <entryLink id="d4b2-99a6-5c84-3e54" name="Krak grenade" hidden="false" collective="false" import="true" targetId="0f23-cd69-d106-371e" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dbd1-3882-33cd-99a3" type="min"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c800-e550-6504-471a" type="max"/>
-                  </constraints>
-                </entryLink>
+                <entryLink id="37f8-ba05-4a5e-9504" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry"/>
+                <entryLink id="d402-daf7-ae30-6e60" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry"/>
               </entryLinks>
               <costs>
-                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="9ea1-0e93-e43c-2c45" name="Plague Marine w/ blight launcher" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="318d-7812-3c36-d6eb" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="decrement" field="318d-7812-3c36-d6eb" value="1.0">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
+                        <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="45b7-6704-baf8-80ab" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="318d-7812-3c36-d6eb" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="1792-896a-723b-eb1e" name="Blight launcher" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="375a-10b0-e692-0e5c" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e862-ae25-20bb-4da6" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="40dd-8f59-ea84-361c" name="Blight launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                      <characteristics>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 2</characteristic>
+                        <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+                        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+                        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="8d4d-edde-4b90-701c" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="15e7-389e-1fd3-a5eb" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aca9-a260-5745-ee01" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="9625-da94-2820-8d52" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry"/>
+                <entryLink id="55f5-a9c4-111c-3126" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="45b7-6704-baf8-80ab" name="Plague Marine w/ plague spewer" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="9249-24e2-e522-9e0e" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+                <modifier type="decrement" field="9249-24e2-e522-9e0e" value="1.0">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" type="atLeast"/>
+                        <condition field="selections" scope="bfbb-5f37-6875-a0ef" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9ea1-0e93-e43c-2c45" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9249-24e2-e522-9e0e" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="e042-f846-1881-b2c5" name="Plague knife" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f480-9826-0f1a-9e2f" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="847f-7c0b-5f8d-469e" type="min"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink id="8151-e1ca-b3cf-a703" name="Plague knife" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="5372-a2dc-9cdb-417a" name="Plague spewer" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="801e-e207-8c33-8660" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0050-11fd-9c12-7fa9" type="max"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="28ca-c554-564b-ab9f" name="Plague spewer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                      <characteristics>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6</characteristic>
+                        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+                        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon. Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="e1d1-554d-4e81-ba80" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a0e0-d079-d05b-8d66" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9577-0f8a-75c4-3ce1" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="01d5-9e48-231a-eeca" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="f600-beef-f1e6-2ed6" name="Plague Marine w/ bubotic axe" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="b681-8ad2-0396-553b" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b681-8ad2-0396-553b" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="2d0e-1603-6d9a-33ae" name="Bubotic Axe" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1f09-eb34-3953-e2b1" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a8da-9ce2-d37d-d1d1" type="min"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink id="f2f0-70b4-a63b-670a" name="Bubotic axe" hidden="false" targetId="272b-e2f1-b2db-a2de" type="profile"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="3227-ba94-9349-c9ab" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="155f-be14-6f80-eba7" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="48a0-ff24-81e3-7465" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="d507-96da-2937-1d3e" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry"/>
+                <entryLink id="f5c5-ecfd-db1c-08f3" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="1918-2cf0-0927-187a" name="Plague Marine w/ cleaver" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="5de8-3295-1117-fb52" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5de8-3295-1117-fb52" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="3aa0-79bf-c550-3504" name="Great plague cleaver" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0497-5355-8650-967b" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3a0e-7614-96aa-ee49" type="min"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="9ba1-0f79-afa9-8077" name="Great plague cleaver" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                      <characteristics>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                        <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
+                        <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon. Each time an attack is made with this weapon, you must subtract 1 from the hit roll.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="39a9-b4f0-b959-ea14" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="117a-e5df-104c-8fb2" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c278-9f38-27e8-3ad5" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="227f-76c0-e504-b2bd" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry"/>
+                <entryLink id="8ace-7cc1-7321-e1af" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="ce25-1176-1bcf-b46d" name="Plague Marine w/ flail" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="0d60-25a5-6553-1716" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0d60-25a5-6553-1716" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="6c50-5e50-603d-c49a" name="Flail of corruption" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cce7-0827-151a-9511" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b576-12fb-c85b-5f9c" type="min"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="3fc4-7a3c-fd4e-0bb3" name="Flail of corruption" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                      <characteristics>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                        <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+                        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon. Each time an attack is made with this weapon, make 2 attack rolls instead of 1.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="fb7b-4a01-ab22-82fe" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7d23-3707-fed1-567f" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e472-c850-8ea1-ba17" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="3092-00d5-91ad-5d3c" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry"/>
+                <entryLink id="339f-35ee-e967-7189" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="907c-1131-a7d6-2cb7" name="Plague Marine w/ icon" hidden="false" collective="false" import="true" type="model">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6025-b47b-7b82-fd56" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="c695-ee24-036d-acd1" name="Boltgun" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="108b-1b50-8c41-8a80" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ac74-65fc-3f28-d4fc" type="max"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink id="76e9-9ed1-c0f1-5927" name="Boltgun" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="baf9-f4b7-4998-1ba6" name="Icon of Despair" page="0" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="afe2-14cf-0508-b0bf" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="61d7-e555-1a3a-a52e" type="min"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="7d80-565f-9b52-fe9e" name="Icon of Despair" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Morale phase, roll one D6 for each enemy unit within Engagement Range of the bearer&apos;s unit; on a 4+, that enemy unit suffers 1 mortal wound.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="5115-573b-dd3c-b851" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e1af-ec3e-d88b-9080" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="42c4-59b3-a5bb-190c" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="7826-f311-5d12-eae6" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry"/>
+                <entryLink id="4b4e-14a1-6c1b-faeb" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="52e4-3ec2-30e4-4980" name="Plague Marine w/ mace and axe" hidden="false" collective="false" import="true" type="model">
+              <modifiers>
+                <modifier type="increment" field="5a07-f7d0-9313-a7f4" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="bfbb-5f37-6875-a0ef" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5a07-f7d0-9313-a7f4" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="b37d-aa8a-ae25-c7d8" name="Bubotic Axe" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5efb-f47b-0b7c-ada2" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3abf-f157-97e2-68e1" type="min"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink id="7e05-d6f9-741b-5d9a" name="Bubotic axe" hidden="false" targetId="272b-e2f1-b2db-a2de" type="profile"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="0f87-6099-13d7-b438" name="Mace of Contagion" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d2b8-f09d-3fcf-b416" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0cbc-35be-7f60-e825" type="min"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="8bac-6446-01f5-4238" name="Mace of Contagion" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                      <characteristics>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+                        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon. Each time an attack is made with this weapon, you must subtract 1 from the hit roll.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="3dd1-7cd0-40e7-cfb3" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8f28-9226-7dea-8ea9" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d03f-d505-c86a-246f" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="6e4d-51b7-fbed-7b4b" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry"/>
+                <entryLink id="27d9-963e-eaf9-03a0" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="196f-c231-cb78-4dd2" name="Plague Marine w/ sigil" hidden="false" collective="false" import="true" type="model">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f2a1-c655-225f-c18a" type="max"/>
+              </constraints>
+              <selectionEntries>
+                <selectionEntry id="9c8b-d464-9f4a-91b9" name="Boltgun" hidden="false" collective="true" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="aacb-ab9e-7a0f-d82d" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="d992-b363-5a3a-6b0b" type="max"/>
+                  </constraints>
+                  <infoLinks>
+                    <infoLink id="547d-b3e5-6936-b077" name="Boltgun" hidden="false" targetId="3d4b-95ea-f860-dd22" type="profile"/>
+                  </infoLinks>
+                  <costs>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+                <selectionEntry id="e61c-3ca2-1371-2522" name="Sigil of decay" page="0" hidden="false" collective="false" import="true" type="upgrade">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="3ce6-6b5b-84c7-f50c" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a0ed-e68a-c731-30bb" type="min"/>
+                  </constraints>
+                  <profiles>
+                    <profile id="320e-a74e-06cd-81f7" name="Sigil of decay" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                      <characteristics>
+                        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an attack is made with a bolt weapon by a model in the bearer&apos;s unit, an unmodified hit roll of 6 automatically wounds the target.</characteristic>
+                      </characteristics>
+                    </profile>
+                  </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
+                </selectionEntry>
+              </selectionEntries>
+              <entryLinks>
+                <entryLink id="7c4a-cb2a-58a6-9d4c" name="Blight Grenades" hidden="false" collective="false" import="true" targetId="fe40-0ecc-37e1-e5dd" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bde7-a360-8b63-e227" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3514-c91f-e7e2-c5fa" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="b777-38c5-5472-67fb" name="Krak grenades" hidden="false" collective="false" import="true" targetId="1a27-a95f-6d88-2800" type="selectionEntry"/>
+                <entryLink id="7129-95cf-5580-671f" name="Plague knife" hidden="false" collective="false" import="true" targetId="901a-0804-9170-8b9d" type="selectionEntry"/>
+              </entryLinks>
+              <costs>
+                <cost name="pts" typeId="points" value="21.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -5822,8 +6181,8 @@ If your summoning roll included any doubles, your character then suffers a morta
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="points" value="0.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
+        <cost name="pts" typeId="points" value="15.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -10481,21 +10840,11 @@ If your summoning roll included any doubles, your character then suffers a morta
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="bf56-7051-d9a1-621b" name="Rubric Marines" publicationId="cb54-c035-pubN125652" page="141" hidden="true" collective="false" import="true" type="unit">
+    <selectionEntry id="bf56-7051-d9a1-621b" name="Rubric Marines" page="" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
-        <modifier type="set" field="e356-c769-5920-6e14" value="12.0">
+        <modifier type="increment" field="e356-c769-5920-6e14" value="6.0">
           <conditions>
             <condition field="selections" scope="bf56-7051-d9a1-621b" value="5.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-          </conditions>
-        </modifier>
-        <modifier type="set" field="e356-c769-5920-6e14" value="18.0">
-          <conditions>
-            <condition field="selections" scope="bf56-7051-d9a1-621b" value="10.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
-          </conditions>
-        </modifier>
-        <modifier type="set" field="e356-c769-5920-6e14" value="24.0">
-          <conditions>
-            <condition field="selections" scope="bf56-7051-d9a1-621b" value="15.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="model" type="greaterThan"/>
           </conditions>
         </modifier>
         <modifier type="set" field="hidden" value="true">
@@ -10505,30 +10854,39 @@ If your summoning roll included any doubles, your character then suffers a morta
         </modifier>
       </modifiers>
       <profiles>
-        <profile id="00b5-454d-8d75-a56d" name="Favoured of Tzeentch" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="309c-9b3b-05a4-0670" name="All is Dust" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">All models in this unit have a 5+ invulnerable save.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time an attack with a damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack. In addition, models in this unit do not suffer the penalty to hit rolls incurred for firing Heavy weapons in the same turn that their unit has moved.</characteristic>
           </characteristics>
         </profile>
-        <profile id="1c10-0c20-681d-d1cc" name="Rubric Marine" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+        <profile id="df68-0455-71be-6726" name="Rubric Marine" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
-            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">5&quot;</characteristic>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
-            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">1</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="309c-9b3b-05a4-0670" name="All is Dust" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="1953-dc09-f9d6-9f67" name="Arcane Automata" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the saving throws for Rubric Marines if the attack has a Damage characteristic of 1. In addition, the -1 modifier to hit rolls for moving and shooting with a Heavy weapon does not apply to Rubric Marines.</characteristic>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a Morale test is taken for this unit, it is automatically passed.</characteristic>
           </characteristics>
         </profile>
       </profiles>
+      <rules>
+        <rule id="65fa-f2ff-5756-753e" name="Sorcerous Master" hidden="false">
+          <description>Each time a psychic power is manifested by this unit, each time this unit would attempt to perform a psychic action, and each time this unit would Deny the Wtich, measure distances and draw line of sight from this unit&apos;s Aspiring Sorcerer or Scarab Occult Sorcerer model. If enemy units have any abilities that require measuring distance or drawing line of sight to PSYKER units, do so to this unit&apos;s Aspiring Sorcerer or Scarab Occult Sorcerer model.</description>
+        </rule>
+      </rules>
+      <infoLinks>
+        <infoLink id="abb4-b8c9-e4ac-875d" name="Malicious Volleys" hidden="false" targetId="ccba-d5bb-8160-0776" type="rule"/>
+        <infoLink id="e8cf-76fc-94ae-8502" name="Mark of Tzeentch" hidden="false" targetId="6a75-5770-4521-85ae" type="profile"/>
+      </infoLinks>
       <categoryLinks>
         <categoryLink id="3cdb-bdd4-4ddc-24d5" name="New CategoryLink" hidden="false" targetId="e691-aad7-d21c-1023" primary="false"/>
         <categoryLink id="5fea-0245-60e4-0c36" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
@@ -10536,6 +10894,9 @@ If your summoning roll included any doubles, your character then suffers a morta
         <categoryLink id="9971-dc7a-71d2-ad91" name="New CategoryLink" hidden="false" targetId="ca10-a5dd-f54f-0ed5" primary="false"/>
         <categoryLink id="e5ce-c3c0-eee2-cbd8" name="New CategoryLink" hidden="false" targetId="012f-abfc-397b-3519" primary="false"/>
         <categoryLink id="e579-b3c4-03fb-c3dc" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
+        <categoryLink id="e56b-851f-4d9f-ebca" name="Faction: Traitoris Astartes" hidden="false" targetId="95ae-effa-c9f2-d11b" primary="false"/>
+        <categoryLink id="9e00-0aa8-530d-1e47" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+        <categoryLink id="4af0-c259-ba1a-3ebd" name="Mark of Chaos" hidden="false" targetId="4d5d-f871-856d-84cc" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="6739-e34a-3c31-fe0e" name="Aspiring Sorcerer" page="" hidden="false" collective="false" import="true" type="model">
@@ -10544,25 +10905,25 @@ If your summoning roll included any doubles, your character then suffers a morta
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="45ad-9a8f-0d38-c59b" type="max"/>
           </constraints>
           <profiles>
-            <profile id="8fa8-5633-7079-f7dd" name="Aspiring Sorcerer" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+            <profile id="3457-3122-748a-e81a" name="Aspiring Sorcerer" hidden="false" typeId="bc97-dea9-9e88-bb7d" typeName="Psyker">
+              <characteristics>
+                <characteristic name="Cast" typeId="5afb-9914-904b-d3b3">1</characteristic>
+                <characteristic name="Deny" typeId="b5ac-9c20-5d5a-6f9b">1</characteristic>
+                <characteristic name="Powers Known" typeId="69d7-b45e-00a2-7e46">Smite and one power from the Dark Hereticus Discipline</characteristic>
+                <characteristic name="Other" typeId="c2e2-f115-0003-5d7b">-</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="da96-52fe-e09f-8fb7" name="Aspiring Sorcerer" page="0" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
               <characteristics>
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
                 <characteristic name="BS" typeId="381b-eb28-74c3-df5f">3+</characteristic>
                 <characteristic name="S" typeId="2218-aa3c-265f-2939">4</characteristic>
                 <characteristic name="T" typeId="9c9f-9774-a358-3a39">4</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">2</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
                 <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
                 <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
-              </characteristics>
-            </profile>
-            <profile id="3457-3122-748a-e81a" name="Aspiring Sorcerer" hidden="false" typeId="bc97-dea9-9e88-bb7d" typeName="Psyker">
-              <characteristics>
-                <characteristic name="Cast" typeId="5afb-9914-904b-d3b3">1</characteristic>
-                <characteristic name="Deny" typeId="b5ac-9c20-5d5a-6f9b">1</characteristic>
-                <characteristic name="Powers Known" typeId="69d7-b45e-00a2-7e46">Smite</characteristic>
-                <characteristic name="Other" typeId="c2e2-f115-0003-5d7b">When an Aspiring Sorcerer manifests the Smite psychic power, he inflicts 1 mortal wound instead of D3, or D3 mortal wounds instead of D6 if the Psychic test is more than 10.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -10595,9 +10956,9 @@ If your summoning roll included any doubles, your character then suffers a morta
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="e512-f8b7-012f-b714" type="min"/>
               </constraints>
               <selectionEntries>
-                <selectionEntry id="2f71-9f4a-ff83-8312" name="Inferno Bolt Pistol" hidden="false" collective="false" import="true" type="upgrade">
+                <selectionEntry id="2f71-9f4a-ff83-8312" name="Inferno bolt pistol" hidden="false" collective="false" import="true" type="upgrade">
                   <profiles>
-                    <profile id="f063-fa9d-ec68-ea46" name="Inferno Bolt Pistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                    <profile id="f063-fa9d-ec68-ea46" name="Inferno bolt pistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                       <characteristics>
                         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
                         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
@@ -10614,16 +10975,16 @@ If your summoning roll included any doubles, your character then suffers a morta
                     <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                   </costs>
                 </selectionEntry>
-                <selectionEntry id="041a-b6b6-ab11-d022" name="Warpflame Pistol" hidden="false" collective="false" import="true" type="upgrade">
+                <selectionEntry id="041a-b6b6-ab11-d022" name="Warpflame pistol" hidden="false" collective="false" import="true" type="upgrade">
                   <profiles>
                     <profile id="88ea-d095-4257-f8a0" name="Warpflame pistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                       <characteristics>
-                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">6&quot;</characteristic>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
                         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol D6</characteristic>
                         <characteristic name="S" typeId="59b1-319e-ec13-d466">3</characteristic>
                         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
                         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target.</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
                       </characteristics>
                     </profile>
                   </profiles>
@@ -10642,35 +11003,51 @@ If your summoning roll included any doubles, your character then suffers a morta
                 </entryLink>
               </entryLinks>
             </selectionEntryGroup>
-            <selectionEntryGroup id="db1c-58db-72e8-c3d1" name="Force weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="dc65-3305-bf69-810e">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3639-f643-3453-40dd" type="max"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9593-43e6-fa1b-c016" type="min"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="dc65-3305-bf69-810e" name="Force stave" hidden="false" collective="false" import="true" targetId="6f9a-c4fe-3132-d011" type="selectionEntry"/>
-                <entryLink id="e942-78ce-7bc0-c320" name="New EntryLink" hidden="false" collective="false" import="true" targetId="07e7-1f9b-4c1c-aad9" type="selectionEntry"/>
-                <entryLink id="865b-cbc8-e717-e812" name="Force axe" hidden="false" collective="false" import="true" targetId="4a0e-0f13-63c2-9aae" type="selectionEntry"/>
-              </entryLinks>
-            </selectionEntryGroup>
           </selectionEntryGroups>
+          <entryLinks>
+            <entryLink id="fcff-62a3-ac27-4726" name="Force stave" hidden="false" collective="false" import="true" targetId="6f9a-c4fe-3132-d011" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="22f7-6e12-3acc-a735" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d06d-0a9a-cced-c8a5" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="2851-0461-d72e-4f32" name="Dark Hereticus discipline" hidden="false" collective="false" import="true" targetId="0246-3399-3b88-44aa" type="selectionEntryGroup">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="58fd-7f14-5470-00bf" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="c707-ce98-60d7-d92b" name="Trophies of the Long War" hidden="false" collective="false" import="true" targetId="aca4-8837-c8e8-2a14" type="selectionEntry"/>
+            <entryLink id="2d5c-43a2-45b2-9094" name="Trophies of the Long War" hidden="false" collective="false" import="true" targetId="4a2a-7581-67f9-2d0e" type="selectionEntryGroup"/>
+          </entryLinks>
           <costs>
-            <cost name="pts" typeId="points" value="18.0"/>
+            <cost name="pts" typeId="points" value="21.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
+        </selectionEntry>
+        <selectionEntry id="f359-280f-b726-694c" name="Icon of Flame" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6764-0dd0-15ca-90e3" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="a899-aee9-b2bf-8048" name="Icon of Flame" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the start of your Psychic phase, if your army is a Cabal of Sorcerers and the bearer is on the battlefield, you generate 1 additional Cabal point.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
         <selectionEntryGroup id="5391-392f-dfa5-4144" name="Rubric Marines" hidden="false" collective="false" import="true" defaultSelectionEntryId="e9f5-a48a-97dc-7215">
           <constraints>
             <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="7f7d-f574-bfc1-faa8" type="min"/>
-            <constraint field="selections" scope="parent" value="19.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="14a0-669e-c264-33a6" type="max"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="14a0-669e-c264-33a6" type="max"/>
           </constraints>
           <selectionEntries>
-            <selectionEntry id="e9f5-a48a-97dc-7215" name="Rubric Marine w/ Inferno Boltgun" page="" hidden="false" collective="false" import="true" type="model">
+            <selectionEntry id="e9f5-a48a-97dc-7215" name="Rubric Marine w/ inferno boltgun" page="" hidden="false" collective="false" import="true" type="model">
               <constraints>
-                <constraint field="selections" scope="parent" value="19.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2dbc-7132-6f60-6d05" type="max"/>
+                <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2dbc-7132-6f60-6d05" type="max"/>
               </constraints>
               <selectionEntries>
                 <selectionEntry id="13fd-2d34-6db9-ff8d" name="Inferno boltgun" hidden="false" collective="true" import="true" type="upgrade">
@@ -10698,14 +11075,14 @@ If your summoning roll included any doubles, your character then suffers a morta
                 </selectionEntry>
               </selectionEntries>
               <costs>
-                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name="pts" typeId="points" value="21.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="0227-2007-657b-964f" name="Rubric Marine w/ Warpflamer" hidden="false" collective="false" import="true" type="model">
+            <selectionEntry id="0227-2007-657b-964f" name="Rubric Marine w/ warpflamer" hidden="false" collective="false" import="true" type="model">
               <constraints>
-                <constraint field="selections" scope="parent" value="19.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a53e-baea-4b78-079a" type="max"/>
+                <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a53e-baea-4b78-079a" type="max"/>
               </constraints>
               <selectionEntries>
                 <selectionEntry id="7f6f-980d-ce75-a9cb" name="Warpflamer" hidden="false" collective="true" import="true" type="upgrade">
@@ -10716,51 +11093,44 @@ If your summoning roll included any doubles, your character then suffers a morta
                   <profiles>
                     <profile id="91d9-54b3-fc51-488c" name="Warpflamer" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                       <characteristics>
-                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">8&quot;</characteristic>
+                        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
                         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
                         <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
                         <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
                         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon automatically hits its target.</characteristic>
+                        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, that attack automatically hits the target.</characteristic>
                       </characteristics>
                     </profile>
                   </profiles>
                   <costs>
-                    <cost name="pts" typeId="points" value="8.0"/>
+                    <cost name="pts" typeId="points" value="3.0"/>
                     <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                     <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                   </costs>
                 </selectionEntry>
               </selectionEntries>
               <costs>
-                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name="pts" typeId="points" value="21.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="9407-c7b1-3a2f-91f5" name="Rubric Marine w/ Soulreaper cannon" hidden="false" collective="false" import="true" type="model">
-              <modifiers>
-                <modifier type="increment" field="b04c-a430-81c8-8790" value="1.0">
-                  <repeats>
-                    <repeat field="selections" scope="bf56-7051-d9a1-621b" value="10.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="model" repeats="1" roundUp="false"/>
-                  </repeats>
-                </modifier>
-              </modifiers>
+            <selectionEntry id="9407-c7b1-3a2f-91f5" name="Rubric Marine w/ soulreaper cannon" hidden="false" collective="false" import="true" type="model">
               <constraints>
-                <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b04c-a430-81c8-8790" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="b04c-a430-81c8-8790" type="max"/>
               </constraints>
               <selectionEntries>
                 <selectionEntry id="d70e-75fb-e9ff-c4d3" name="Soulreaper cannon" hidden="false" collective="true" import="true" type="upgrade">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6409-15b6-55e3-5b96" type="max"/>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0575-d6e7-56ba-4450" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3fe6-bb78-b004-8639" type="min"/>
                   </constraints>
                   <profiles>
-                    <profile id="e945-38cb-3007-9e4f" name="Soulreaper Cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                    <profile id="e945-38cb-3007-9e4f" name="Soulreaper cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
                       <characteristics>
                         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
-                        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+                        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 5</characteristic>
+                        <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
                         <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
                         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
@@ -10769,13 +11139,13 @@ If your summoning roll included any doubles, your character then suffers a morta
                   </profiles>
                   <costs>
                     <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                    <cost name="pts" typeId="points" value="10.0"/>
+                    <cost name="pts" typeId="points" value="5.0"/>
                     <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                   </costs>
                 </selectionEntry>
               </selectionEntries>
               <costs>
-                <cost name="pts" typeId="points" value="18.0"/>
+                <cost name="pts" typeId="points" value="21.0"/>
                 <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
@@ -10784,8 +11154,8 @@ If your summoning roll included any doubles, your character then suffers a morta
         </selectionEntryGroup>
       </selectionEntryGroups>
       <costs>
-        <cost name="pts" typeId="points" value="0.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
+        <cost name="pts" typeId="points" value="15.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -11433,13 +11803,6 @@ If your summoning roll included any doubles, your character then suffers a morta
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="d4a0-d7d9-64b4-3969" name="Raptor Champion" hidden="false" collective="false" import="true" type="model">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="398a-c8da-c8bd-da58" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="83bb-aaac-6798-f9cd" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="78d1-8871-d5bb-3e92" type="max"/>
@@ -11667,6 +12030,10 @@ If your summoning roll included any doubles, your character then suffers a morta
       </costs>
     </selectionEntry>
     <selectionEntry id="fe40-0ecc-37e1-e5dd" name="Blight Grenades" hidden="false" collective="true" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ef00-1a3a-1455-ec1a" type="min"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5723-c3b9-f529-3134" type="max"/>
+      </constraints>
       <infoLinks>
         <infoLink id="062d-1075-5411-4011" name="Blight Grenades" hidden="false" targetId="1287-6659-b04f-fe37" type="profile"/>
       </infoLinks>
@@ -16252,7 +16619,7 @@ Each model can only be corrupted once per turn.</characteristic>
         </modifierGroup>
       </modifierGroups>
       <constraints>
-        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6427-4c68-cffb-0f23" type="max"/>
+        <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6427-4c68-cffb-0f23" type="max"/>
       </constraints>
       <categoryLinks>
         <categoryLink id="1391-b3cb-72fa-d522" name="Faction: Chaos" hidden="false" targetId="5cf1-acf2-ca3b-c2e5" primary="false"/>
@@ -17978,6 +18345,25 @@ Each model can only be corrupted once per turn.</characteristic>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="1a27-a95f-6d88-2800" name="Krak grenades" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="1167-0c49-34a2-4351" name="Krak grenades" hidden="false" targetId="3bf6-b4f7-6b2f-bb7b" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="901a-0804-9170-8b9d" name="Plague knife" hidden="false" collective="true" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6907-6779-7731-9132" type="min"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5b8d-e6db-4e2e-30ba" type="max"/>
+      </constraints>
+      <infoLinks>
+        <infoLink id="fe96-d0c4-8626-b38b" name="Plague knife" hidden="false" targetId="b62d-7cc2-1b2a-ca61" type="profile"/>
+      </infoLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="a44b-4b4d-46b5-d3a6" name="Special Weapons" hidden="false" collective="false" import="true">
@@ -18200,14 +18586,6 @@ Each model can only be corrupted once per turn.</characteristic>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4cd5-7999-3a9d-1cfe" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ed2-f5a2-6c3a-5c8c" type="min"/>
           </constraints>
-          <profiles>
-            <profile id="7230-a4a1-489f-4281" name="Mark of Nurgle" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time an attack is made against this unit, if the Strength characteristic of that attack either equals or is at least double the Toughness characteristic of this unit, subtract 1 from that attack&apos;s wound roll.
-- While this unit has the ICON keyword, each time a model in this unit makes a ranged attack, an unmodified hit roll of 6 automatically wounds the target.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
           <infoLinks>
             <infoLink id="b778-14a6-ff19-fa8f" name="Putrid Miasma" hidden="false" targetId="47a2-46c5-eed0-eed0" type="profile">
               <modifiers>
@@ -18218,6 +18596,7 @@ Each model can only be corrupted once per turn.</characteristic>
                 </modifier>
               </modifiers>
             </infoLink>
+            <infoLink id="7b66-0d5d-4d6e-919f" name="Mark of Nurgle" hidden="false" targetId="a6ce-6296-0963-34a0" type="profile"/>
           </infoLinks>
           <categoryLinks>
             <categoryLink id="8769-5e33-10c2-48d8" name="New CategoryLink" hidden="false" targetId="0fb6-fcaf-b180-5dda" primary="false"/>
@@ -18234,14 +18613,6 @@ Each model can only be corrupted once per turn.</characteristic>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="df71-95f8-e068-56ce" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="acb5-4251-b198-d958" type="min"/>
           </constraints>
-          <profiles>
-            <profile id="1cb9-5dfa-54ce-786c" name="Mark of Tzeentch" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Once per turn, the first time a saving throw is failed for this unit, the Damage characteristic of that attack is changed to 0.
-- If this unit has the ICON keyword, each time a model in this unit makes a ranged attack, improve the Armour Penetration characteristic of that attack by 1.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
           <infoLinks>
             <infoLink id="07d0-5415-14f2-e211" name="Skeins of Fate" hidden="false" targetId="8620-607a-f257-d7d5" type="profile">
               <modifiers>
@@ -18252,6 +18623,7 @@ Each model can only be corrupted once per turn.</characteristic>
                 </modifier>
               </modifiers>
             </infoLink>
+            <infoLink id="3611-effa-70b6-b232" name="Mark of Tzeentch" hidden="false" targetId="6a75-5770-4521-85ae" type="profile"/>
           </infoLinks>
           <categoryLinks>
             <categoryLink id="4448-2404-fdce-f706" name="New CategoryLink" hidden="false" targetId="012f-abfc-397b-3519" primary="false"/>
@@ -18266,9 +18638,21 @@ Each model can only be corrupted once per turn.</characteristic>
         <selectionEntry id="81f9-01f6-e82e-7eec" name="Mark of Slaanesh" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
             <modifier type="set" field="d14c-5069-4268-91c2" value="1.0">
-              <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="51f6-1db1-3e75-3d4b" type="equalTo"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="649f-80f9-0d71-64c3" type="instanceOf"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="08f1-d244-eb44-7e01" type="instanceOf"/>
+                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -21521,9 +21905,9 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon wi
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484"/>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">You can re-roll wound rolls of 1 for this weapon.</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon</characteristic>
       </characteristics>
     </profile>
     <profile id="fc56-4e98-3cdc-3659" name="Chainaxe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -21704,6 +22088,28 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon wi
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time a model in this unit makes a melee attack, if that model&apos;s unit made a charge move, was charged or performed a Heroic Intervention this turn, add 1 to that attack&apos;s Strength characteristic.
 - If this unit has the ICON keyword, each time a model in that unit makes a melee attack, improve the Armour Penetration characteristic of that attack by 1.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="272b-e2f1-b2db-a2de" name="Bubotic axe" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Plague Weapon</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="a6ce-6296-0963-34a0" name="Mark of Nurgle" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time an attack is made against this unit, if the Strength characteristic of that attack either equals or is at least double the Toughness characteristic of this unit, subtract 1 from that attack&apos;s wound roll.
+- While this unit has the ICON keyword, each time a model in this unit makes a ranged attack, an unmodified hit roll of 6 automatically wounds the target.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="6a75-5770-4521-85ae" name="Mark of Tzeentch" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Once per turn, the first time a saving throw is failed for this unit, the Damage characteristic of that attack is changed to 0.
+- If this unit has the ICON keyword, each time a model in this unit makes a ranged attack, improve the Armour Penetration characteristic of that attack by 1.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
