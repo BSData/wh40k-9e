@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="9419-6862-0e60-6eb3" name="Imperium - Adeptus Astartes - Black Templars" revision="12" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="220" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="9419-6862-0e60-6eb3" name="Imperium - Adeptus Astartes - Black Templars" revision="13" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Acebaur" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="221" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <selectionEntries>
     <selectionEntry id="03ac-4576-88d8-3b67" name="Crusader Squad" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
@@ -570,7 +570,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8a32-1484-5426-5bf4" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="3ce4-3fca-e33e-86cf" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+        <entryLink id="3ce4-3fca-e33e-86cf" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
         <entryLink id="f8f8-4446-f539-cdeb" name="Litanies" hidden="false" collective="false" import="true" targetId="024c-6542-af11-16d9" type="selectionEntryGroup">
           <modifiers>
             <modifier type="set" field="2f4f-fb22-ef59-1382" value="3.0"/>
@@ -580,18 +580,42 @@
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="d0ae-3233-384e-4cd3" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="d0ae-3233-384e-4cd3" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
             </modifier>
             <modifier type="set" field="9e6f-f723-b9fa-a463" value="1.0">
-              <conditions>
-                <condition field="selections" scope="d0ae-3233-384e-4cd3" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7c8b-06c7-0f7e-4e56" type="equalTo"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="d0ae-3233-384e-4cd3" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9e6f-f723-b9fa-a463" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="ec94-8209-667c-f148" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -759,23 +783,52 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fcab-c2d9-96f3-535c" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="d189-0b1b-cf42-ebb7" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+        <entryLink id="d189-0b1b-cf42-ebb7" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
         <entryLink id="f15b-729a-ed89-f96a" name="Frontline Commander" hidden="false" collective="false" import="true" targetId="e1c9-2ed0-7751-19c8" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="ebef-2d11-1743-4b25" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="ebef-2d11-1743-4b25" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
             </modifier>
             <modifier type="set" field="6556-416e-7532-7689" value="1.0">
               <conditions>
-                <condition field="selections" scope="ebef-2d11-1743-4b25" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="ebef-2d11-1743-4b25" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
+            </modifier>
+            <modifier type="set" field="6556-416e-7532-7689" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="ebef-2d11-1743-4b25" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6556-416e-7532-7689" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="f46f-0f3d-86b9-1bfb" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -897,9 +950,9 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e283-90e7-5a85-6830" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="9c46-eed8-0a0e-4839" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
         <entryLink id="93c1-bb5e-3b92-f196" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
         <entryLink id="5854-3860-2bcc-e488" name="Stratagems" hidden="false" collective="false" import="true" targetId="dbd7-664a-a559-6781" type="selectionEntryGroup"/>
+        <entryLink id="fc7c-029d-fd7e-67ef" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -1532,17 +1585,17 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5740-68fc-e23c-f068" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="662d-6381-358d-d451" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+        <entryLink id="662d-6381-358d-d451" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
         <entryLink id="fe42-47fb-146a-1235" name="Frontline Commander" hidden="false" collective="false" import="true" targetId="e1c9-2ed0-7751-19c8" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="cab2-489d-36d3-8e7d" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="cab2-489d-36d3-8e7d" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
             </modifier>
             <modifier type="set" field="6c2f-db48-2860-8ac7" value="1.0">
               <conditions>
-                <condition field="selections" scope="cab2-489d-36d3-8e7d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="cab2-489d-36d3-8e7d" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1640,7 +1693,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eaf5-1053-5d2c-0275" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="9cb1-855c-b13b-6e6a" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+        <entryLink id="9cb1-855c-b13b-6e6a" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
         <entryLink id="2e99-d98c-8390-8511" name="Litanies" hidden="false" collective="false" import="true" targetId="024c-6542-af11-16d9" type="selectionEntryGroup">
           <modifiers>
             <modifier type="set" field="2f4f-fb22-ef59-1382" value="3.0"/>
@@ -1650,12 +1703,12 @@
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="03f2-b74a-9593-6c49" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="03f2-b74a-9593-6c49" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
             </modifier>
             <modifier type="set" field="3727-3946-d923-0a9e" value="1.0">
               <conditions>
-                <condition field="selections" scope="03f2-b74a-9593-6c49" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="03f2-b74a-9593-6c49" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1765,7 +1818,7 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="eef6-ef19-96e3-8605" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="6b55-2306-abdd-63bc" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+        <entryLink id="6b55-2306-abdd-63bc" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
         <entryLink id="c3b1-a511-91df-8474" name="Oathkeeper" hidden="false" collective="false" import="true" targetId="3771-b66e-5fd3-1019" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
@@ -1967,16 +2020,7 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="7e0b-5741-a88c-bfbb" name="Stratagem: Field Commander" hidden="false" collective="false" import="true" targetId="d043-3847-e963-fb5d" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="067e-6044-ef2a-3ee2" type="equalTo"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
-        <entryLink id="7d5b-9c83-3916-323a" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+        <entryLink id="7d5b-9c83-3916-323a" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
         <entryLink id="db2c-753d-e16e-8530" name="Litanies" hidden="false" collective="false" import="true" targetId="024c-6542-af11-16d9" type="selectionEntryGroup"/>
         <entryLink id="29f5-400c-6a3b-3e30" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="568d-b594-77c4-bc93" type="selectionEntryGroup"/>
       </entryLinks>
@@ -2039,14 +2083,6 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
       </categoryLinks>
     </entryLink>
     <entryLink id="cbeb-44c9-81d9-7c59" name="Contemptor Mortis Dreadnought" hidden="false" collective="false" import="true" targetId="2149-8a56-0274-5e59" type="selectionEntry"/>
-    <entryLink id="00dc-aace-86d8-f8af" name="Crusader Relics" hidden="false" collective="false" import="true" targetId="0611-c994-ccfe-9cc6" type="selectionEntry">
-      <categoryLinks>
-        <categoryLink id="d22d-f23f-ac43-2202" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
-      </categoryLinks>
-      <costs>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-      </costs>
-    </entryLink>
     <entryLink id="c403-2898-f7eb-e70e" name="Damocles Command Rhino" hidden="false" collective="false" import="true" targetId="7f53-6376-cd1f-8356" type="selectionEntry"/>
     <entryLink id="3b82-5764-d7c7-f002" name="Deathstorm Drop Pod" hidden="false" collective="false" import="true" targetId="6d7b-340f-c91b-98ac" type="selectionEntry"/>
     <entryLink id="5e55-ce4d-cac7-6643" name="Deimos Pattern Relic Predator [Legends]" hidden="false" collective="false" import="true" targetId="b048-66f2-3f07-e5ec" type="selectionEntry"/>
@@ -2304,11 +2340,6 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
     <entryLink id="cd8b-0031-e1de-3c19" name="Spartan" hidden="false" collective="false" import="true" targetId="251c-52c6-b76e-f737" type="selectionEntry"/>
     <entryLink id="bfeb-8523-6ea8-8bc1" name="Typhon" hidden="false" collective="false" import="true" targetId="e2b1-8e57-c071-300a" type="selectionEntry"/>
     <entryLink id="1d9f-a55c-96fc-4d3b" name="Whirlwind Scorpius" hidden="false" collective="false" import="true" targetId="8a97-e37c-1e15-dbf7" type="selectionEntry"/>
-    <entryLink id="ecf2-2b2b-ba2c-8738" name="Relics of the Chapter (1CP)" hidden="false" collective="false" import="true" targetId="cd40-9145-360f-5b41" type="selectionEntry">
-      <categoryLinks>
-        <categoryLink id="27e7-c0b8-1986-232f" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
-      </categoryLinks>
-    </entryLink>
     <entryLink id="2d78-a9e5-e1f9-79a3" name="Repulsor" hidden="false" collective="false" import="true" targetId="3d07-7a39-998b-32c8" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="e38b-9b26-80dd-6cca" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true"/>
@@ -2354,8 +2385,7 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
       </entryLinks>
     </entryLink>
     <entryLink id="4fd1-f5ef-8fbf-780c" name="Sokar-Pattern Stormbird" hidden="false" collective="false" import="true" targetId="c5c5-9229-e931-8bb7" type="selectionEntry"/>
-    <entryLink id="fdf1-a8d9-5869-cb7d" name="Specialist Detachment" hidden="false" collective="false" import="true" targetId="298a-d647-942d-4a55" type="selectionEntry"/>
-    <entryLink id="1cce-e3ec-dc0d-0375" name="New EntryLink" hidden="false" collective="false" import="true" targetId="2b1c-28cb-0e36-45e9" type="selectionEntry">
+    <entryLink id="1cce-e3ec-dc0d-0375" name="Stalker" hidden="false" collective="false" import="true" targetId="2b1c-28cb-0e36-45e9" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="f0d5-492a-90b0-cc60" name="New CategoryLink" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="true"/>
       </categoryLinks>
@@ -2379,7 +2409,7 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
         <categoryLink id="f70a-4abf-8591-89ab" name="New CategoryLink" hidden="false" targetId="e888-1504-aa61-95ff" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="e757-ee94-1ed0-6d0e" name="New EntryLink" hidden="false" collective="false" import="true" targetId="0775-5d48-0c00-f53f" type="selectionEntry">
+    <entryLink id="e757-ee94-1ed0-6d0e" name="Stormtalon Gunship" hidden="false" collective="false" import="true" targetId="0775-5d48-0c00-f53f" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="7cb8-2128-d528-5e7d" name="New CategoryLink" hidden="false" targetId="e888-1504-aa61-95ff" primary="true"/>
       </categoryLinks>
@@ -2478,7 +2508,7 @@ this model makes a melee attack against an enemy CHARACTER unit, you can re-roll
     <entryLink id="3548-4c05-a4c4-3599" name="Whirlwind Hyperios [Legends]" hidden="false" collective="false" import="true" targetId="7a7c-01f5-bf0d-ae16" type="selectionEntry"/>
     <entryLink id="bbd2-510a-e036-848d" name="Xiphon Interceptor" hidden="false" collective="false" import="true" targetId="1327-c39f-b3aa-63c5" type="selectionEntry"/>
     <entryLink id="dff9-fa43-1fec-3020" name="Castellum Stronghold" hidden="false" collective="false" import="true" targetId="8ae2-6460-9014-1f13" type="selectionEntry"/>
-    <entryLink id="1996-4d21-4b4f-f2b0" name="Operative Requisition Sanctioned" hidden="false" collective="false" import="true" targetId="0b7d-bfe1-b63e-ecb6" type="selectionEntry"/>
+    <entryLink id="1996-4d21-4b4f-f2b0" name="Stratagem: Shadow Assignment" hidden="false" collective="false" import="true" targetId="0b7d-bfe1-b63e-ecb6" type="selectionEntry"/>
     <entryLink id="617d-4bea-683e-c23b" name="Bladeguard Veteran Squad" hidden="false" collective="false" import="true" targetId="0da5-bbc7-769c-7ae4" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="f61b-fade-0251-41a6" name="New CategoryLink" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="true"/>
@@ -3065,22 +3095,35 @@ Passion:
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="568d-b594-77c4-bc93" name="Warlord Traits" hidden="false" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5efd-6285-c9f7-2a5a" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d043-3847-e963-fb5d" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
         <modifier type="set" field="8db4-2fd9-2be6-ec77" value="2.0">
           <conditions>
             <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="636c-f7d3-9583-6786" type="equalTo"/>
           </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5efd-6285-c9f7-2a5a" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="greaterThan"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -3182,38 +3225,43 @@ Passion:
         </entryLink>
         <entryLink id="3c26-af0e-5ec9-fea4" name="Warlord Traits (Master of Sanctity)" hidden="false" collective="false" import="true" targetId="42cf-0421-3907-777f" type="selectionEntryGroup"/>
         <entryLink id="4cda-bc56-2b81-db19" name="Warlord Traits (Master of the Forge)" hidden="false" collective="false" import="true" targetId="5948-c899-e142-c9f1" type="selectionEntryGroup"/>
-        <entryLink id="99c3-d725-524e-50ca" name="Warlord Traits (Specialist Detachment)" hidden="false" collective="false" import="true" targetId="dfb7-cadc-995d-bf1b" type="selectionEntryGroup"/>
         <entryLink id="c843-f600-3605-c317" name="Warlord Traits (Vanguard)" hidden="false" collective="false" import="true" targetId="5284-5a04-b3c5-765a" type="selectionEntryGroup"/>
         <entryLink id="0e7b-5f40-ff06-e8e8" name="Warlord Traits (Chapter Master)" hidden="false" collective="false" import="true" targetId="7162-c44d-a800-1519" type="selectionEntryGroup"/>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="5842-f786-0a52-75ef" name="Chapter Relics" hidden="true" collective="false" import="true">
+    <selectionEntryGroup id="5842-f786-0a52-75ef" name="Chapter Relics" hidden="false" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="hidden" value="false">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="atLeast"/>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cd40-9145-360f-5b41" type="atLeast"/>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
         <modifier type="set" field="cacc-7778-5cc7-7a66" value="1.0">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+          </conditions>
         </modifier>
         <modifier type="increment" field="cacc-7778-5cc7-7a66" value="1.0">
           <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="a2b4-77d8-f95b-09ae" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" repeats="1" roundUp="false"/>
           </repeats>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ee33-18fd-7317-1171" type="lessThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -3414,7 +3462,6 @@ Passion:
       <entryLinks>
         <entryLink id="7d9a-873d-539f-ed22" name="Chapter Ancient Relics" hidden="false" collective="false" import="true" targetId="d324-98f1-ecad-c28a" type="selectionEntryGroup"/>
         <entryLink id="44df-82ba-a7eb-7a0c" name="Chief Apothecary Relics" hidden="false" collective="false" import="true" targetId="47f9-30b5-6284-8102" type="selectionEntryGroup"/>
-        <entryLink id="1473-a041-abd7-f897" name="Vigilus Relics" hidden="false" collective="false" import="true" targetId="7c45-29c3-7bc2-6590" type="selectionEntryGroup"/>
         <entryLink id="a38b-05cc-591e-0935" name="Master of the Forge Relics" hidden="false" collective="false" import="true" targetId="ca5d-2c86-709d-1f85" type="selectionEntryGroup"/>
         <entryLink id="c9dd-cd30-b934-62a0" name="Master of Sanctity Relics" hidden="false" collective="false" import="true" targetId="d8d4-ab92-f035-3606" type="selectionEntryGroup"/>
         <entryLink id="7089-669d-cabb-0855" name="Codex Relics" hidden="false" collective="false" import="true" targetId="6d7d-10f1-04bd-65f4" type="selectionEntryGroup"/>
