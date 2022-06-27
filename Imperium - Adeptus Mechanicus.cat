@@ -8969,6 +8969,7 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
                       <conditions>
                         <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
                         <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1e2c-1226-9ac6-458b" type="equalTo"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -8979,13 +8980,18 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
         </modifier>
         <modifier type="increment" field="6982-7dc9-7852-3ef8" value="1.0">
           <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1288-93ce-67fa-d737" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1e2c-1226-9ac6-458b" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
         <modifier type="increment" field="a054-f422-fddf-db71" value="1.0">
-          <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1e2c-1226-9ac6-458b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="decrement" field="a054-f422-fddf-db71" value="1.0">
           <conditions>
