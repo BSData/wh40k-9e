@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="c553-15f3-3890-be39" name="Chaos - Thousand Sons" revision="123" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="221" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="c553-15f3-3890-be39" name="Chaos - Thousand Sons" revision="124" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="221" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="b805-771c-6a82-7307" name="Codex: Thousand Sons 2021" publicationDate="2021-08-14"/>
   </publications>
@@ -4427,6 +4427,8 @@
         <entryLink id="8146-3355-84eb-754e" name="Warlord" hidden="false" collective="false" import="true" targetId="9aed-5e2d-8d51-5f31" type="selectionEntry"/>
         <entryLink id="8f52-db8b-b222-c006" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="18b9-a369-20ee-a31b" type="selectionEntryGroup"/>
         <entryLink id="c0c9-721e-54e5-57bf" name="High Acolytes" hidden="false" collective="false" import="true" targetId="abbd-9c4e-522b-4cd1" type="selectionEntry"/>
+        <entryLink id="b076-1240-995b-a579" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
+        <entryLink id="fa4c-547f-f20d-94d5" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="140.0"/>
@@ -5625,6 +5627,8 @@
           </costs>
         </entryLink>
         <entryLink id="b80a-9e79-6e1c-8e07" name="Sorcerous Arcana (Dilletante)" hidden="false" collective="false" import="true" targetId="c38c-e655-a6eb-19cd" type="selectionEntryGroup"/>
+        <entryLink id="c51b-25a3-c075-4231" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
+        <entryLink id="cf78-1867-4146-56f6" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="100.0"/>
@@ -6974,35 +6978,36 @@
             <cost name="pts" typeId="points" value="20.0"/>
           </costs>
         </entryLink>
-        <entryLink id="abaa-27a5-96a2-ade7" name="High Acolytes" hidden="false" collective="false" import="true" targetId="abbd-9c4e-522b-4cd1" type="selectionEntry"/>
         <entryLink id="374f-9610-fa89-142d" name="5. Otherworldly Prescience" hidden="true" collective="false" import="true" targetId="efac-38e4-cf3e-44e8" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="c9d1-4795-d2a8-81f0" value="1.0">
+          <modifierGroups>
+            <modifierGroup>
               <conditionGroups>
                 <conditionGroup type="or">
                   <conditions>
-                    <condition field="selections" scope="ea3f-d47c-01f9-f553" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="abbd-9c4e-522b-4cd1" type="equalTo"/>
-                    <condition field="selections" scope="ea3f-d47c-01f9-f553" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="equalTo"/>
+                    <condition field="selections" scope="ea3f-d47c-01f9-f553" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="ea3f-d47c-01f9-f553" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="equalTo"/>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
-            </modifier>
-            <modifier type="set" field="hidden" value="false">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="ea3f-d47c-01f9-f553" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="equalTo"/>
-                    <condition field="selections" scope="ea3f-d47c-01f9-f553" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="abbd-9c4e-522b-4cd1" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="c9d1-4795-d2a8-81f0" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <constraints>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c9d1-4795-d2a8-81f0" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ca86-421b-5cb5-b796" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="32d1-8eec-da45-3970" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="160.0"/>
@@ -7097,7 +7102,7 @@
         </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="265.0"/>
+        <cost name="pts" typeId="points" value="245.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="14.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name=" Cabal Points" typeId="6a06-928d-a42e-4293" value="0.0"/>
@@ -7456,6 +7461,8 @@
         <entryLink id="d9db-b52e-b4c0-5e90" name="Warlord" hidden="false" collective="false" import="true" targetId="9aed-5e2d-8d51-5f31" type="selectionEntry"/>
         <entryLink id="a8d8-8df3-eb8b-3bd1" name="Sorcerous Arcana" hidden="false" collective="false" import="true" targetId="c766-a2c3-4ac9-fbbb" type="selectionEntryGroup"/>
         <entryLink id="ee5b-2e78-ab55-a114" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="18b9-a369-20ee-a31b" type="selectionEntryGroup"/>
+        <entryLink id="8709-7f52-ef73-e5be" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
+        <entryLink id="7c96-17b7-4448-8789" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -7772,6 +7779,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="1b20-1c27-6f89-ddbe" name="Sorcerous Arcana" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3a5d-b917-a379-75c7" type="max"/>
       </constraints>
@@ -8066,6 +8080,8 @@
         <entryLink id="6db1-d562-e1f4-da36" name="Warlord" hidden="false" collective="false" import="true" targetId="9aed-5e2d-8d51-5f31" type="selectionEntry"/>
         <entryLink id="fdfa-11de-7c68-7e7a" name="High Acolytes" hidden="false" collective="false" import="true" targetId="abbd-9c4e-522b-4cd1" type="selectionEntry"/>
         <entryLink id="37cd-1685-6508-4d82" name="Legion Command" hidden="false" collective="false" import="true" targetId="2f56-80fb-9b3f-e9b4" type="selectionEntryGroup"/>
+        <entryLink id="dcde-1643-1583-580a" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
+        <entryLink id="b706-1b6b-c05e-6454" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="105.0"/>
@@ -8213,6 +8229,8 @@
         <entryLink id="d8ec-58a4-8705-9a72" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="18b9-a369-20ee-a31b" type="selectionEntryGroup"/>
         <entryLink id="31fa-53df-7a56-aa26" name="High Acolytes" hidden="false" collective="false" import="true" targetId="abbd-9c4e-522b-4cd1" type="selectionEntry"/>
         <entryLink id="d2cd-1410-d216-ce2e" name="Legion Command" hidden="false" collective="false" import="true" targetId="2f56-80fb-9b3f-e9b4" type="selectionEntryGroup"/>
+        <entryLink id="9d4b-b9f4-66e7-4c6e" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
+        <entryLink id="36ad-85da-aeba-085e" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="90.0"/>
@@ -8649,6 +8667,8 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a4e7-e097-b780-942c" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="1c8e-0d92-fbbf-3104" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
+        <entryLink id="d2bb-84b9-c250-4de3" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -9999,9 +10019,17 @@
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="atLeast"/>
                 <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1b20-1c27-6f89-ddbe" type="atLeast"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="atLeast"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -10061,9 +10089,17 @@
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="equalTo"/>
                 <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="abbd-9c4e-522b-4cd1" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9aed-5e2d-8d51-5f31" type="equalTo"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -11171,7 +11207,14 @@ In your Psychic phase, you can spend any Cabal points you have to use Cabbalisti
 In your Psychic phase, unless otherwise specified, you can use each Cabbalistic Ritual once, and each unit from your army can only benefit from one Cabbalistic Ritual. A unit can only benefit from a Cabbalistic Ritual if it has that ability.</description>
     </rule>
     <rule id="55ae-ab3d-e2ac-dfcc" name="Touched by Tzeentch" hidden="false">
-      <description>- Models in this unit have a 5+ invunerable save.
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cb1c-bf0d-9eb3-cb79" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <description>- Models in this unit have a 5+ invulnerable save.
  - Each time a model in this unit would lose a wound as the result of a mortal wound, roll one D6: on a 5+ that wound is not lost.
 - At the start of the first battle round, before the first turn begins, models in this unit can make a Normal Move of up to 6&quot;. They cannot end this move within 9&quot; of any enemy models. If both players have units that can do this, the player who is taking the first turn moves their models first.</description>
     </rule>
