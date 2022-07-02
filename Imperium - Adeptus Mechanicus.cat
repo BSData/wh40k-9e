@@ -4549,7 +4549,7 @@ Each time an attack is made with this weapon, the target does not receive the be
         <entryLink id="43d4-833f-82ab-228e" name="Host of the Intermediary" hidden="false" collective="false" import="true" targetId="6769-ec64-c38f-74c1" type="selectionEntry"/>
         <entryLink id="97c6-1151-ab78-56b9" name="Skitarii Warlord Traits" hidden="false" collective="false" import="true" targetId="a1ff-f5e5-adc9-81e1" type="selectionEntryGroup"/>
         <entryLink id="bfa0-236b-6c1d-15e9" name="Arcana Mechanicum (Artefactorum)" hidden="false" collective="false" import="true" targetId="d38f-2002-95d8-5440" type="selectionEntryGroup"/>
-        <entryLink id="87a8-3871-b934-67f2" name="Artefactorum" hidden="false" collective="false" import="true" targetId="04ab-a832-7eb2-bf44" type="selectionEntry"/>
+        <entryLink id="87a8-3871-b934-67f2" name="Artefactotum" hidden="false" collective="false" import="true" targetId="04ab-a832-7eb2-bf44" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -5979,7 +5979,7 @@ This weapon can target units that are not visible to the bearer</characteristic>
         <entryLink id="bc70-fdc5-d801-4e8a" name="Host of the Intermediary" hidden="false" collective="false" import="true" targetId="6769-ec64-c38f-74c1" type="selectionEntry"/>
         <entryLink id="0dff-4ed3-39d4-96d7" name="Skitarii Warlord Traits" hidden="false" collective="false" import="true" targetId="a1ff-f5e5-adc9-81e1" type="selectionEntryGroup"/>
         <entryLink id="7e62-1479-edbb-e18c" name="Arcana Mechanicum (Artefactorum)" hidden="false" collective="false" import="true" targetId="d38f-2002-95d8-5440" type="selectionEntryGroup"/>
-        <entryLink id="57ff-1d8a-a781-17e7" name="Artefactorum" hidden="false" collective="false" import="true" targetId="04ab-a832-7eb2-bf44" type="selectionEntry"/>
+        <entryLink id="57ff-1d8a-a781-17e7" name="Artefactotum" hidden="false" collective="false" import="true" targetId="04ab-a832-7eb2-bf44" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -8792,10 +8792,14 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
           </conditionGroups>
         </modifier>
         <modifier type="increment" field="1c89-8b67-1987-954a" value="1.0">
-          <repeats>
-            <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="82f3-69c6-8ebf-a266" repeats="1" roundUp="false"/>
-            <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6771-6ab3-1672-6a39" repeats="1" roundUp="false"/>
-          </repeats>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="82f3-69c6-8ebf-a266" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="decrement" field="1c89-8b67-1987-954a" value="1.0">
           <conditions>
@@ -8959,11 +8963,16 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
                     <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2acd-5989-56ac-69b4" type="notInstanceOf"/>
                   </conditions>
                 </conditionGroup>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
-                  </conditions>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1e2c-1226-9ac6-458b" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </conditionGroup>
@@ -8971,13 +8980,18 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
         </modifier>
         <modifier type="increment" field="6982-7dc9-7852-3ef8" value="1.0">
           <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1288-93ce-67fa-d737" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1e2c-1226-9ac6-458b" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
         <modifier type="increment" field="a054-f422-fddf-db71" value="1.0">
-          <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" repeats="1" roundUp="false"/>
-          </repeats>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1e2c-1226-9ac6-458b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="decrement" field="a054-f422-fddf-db71" value="1.0">
           <conditions>
@@ -9283,10 +9297,15 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
           </conditionGroups>
         </modifier>
         <modifier type="increment" field="4e92-b253-871c-590a" value="1.0">
-          <repeats>
-            <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6769-ec64-c38f-74c1" repeats="1" roundUp="false"/>
-            <repeat field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6771-6ab3-1672-6a39" repeats="1" roundUp="false"/>
-          </repeats>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6769-ec64-c38f-74c1" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="82f3-69c6-8ebf-a266" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="decrement" field="4e92-b253-871c-590a" value="1.0">
           <conditions>
@@ -9329,15 +9348,9 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
             </conditionGroup>
           </conditionGroups>
         </modifier>
-        <modifier type="increment" field="cfd1-1f26-ce1a-8e73" value="1.0">
-          <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="04ab-a832-7eb2-bf44" repeats="1" roundUp="false"/>
-          </repeats>
-        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dab5-1402-9f22-7772" type="max"/>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="cfd1-1f26-ce1a-8e73" type="max"/>
       </constraints>
       <entryLinks>
         <entryLink id="41b0-e635-8e16-f5fd" name="Relic: The Omniscient Mask" hidden="false" collective="false" import="true" targetId="2248-ee9a-0817-5744" type="selectionEntry">
