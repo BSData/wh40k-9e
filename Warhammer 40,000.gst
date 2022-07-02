@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="221" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="222" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -4897,7 +4897,7 @@ Remaining Wounds | Aura Range
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2cf5-b2a3-9fcd-09ff" type="min"/>
       </constraints>
       <selectionEntryGroups>
-        <selectionEntryGroup id="c30c-e1e6-e679-c42c" name="GameType" hidden="false" collective="false" import="true">
+        <selectionEntryGroup id="c30c-e1e6-e679-c42c" name="Game Type" hidden="false" collective="false" import="true">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9bab-dec0-5aa5-8277" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c8b9-c9c5-e217-2ea3" type="min"/>
@@ -6133,7 +6133,7 @@ Remaining Wounds | Aura Range
     </selectionEntry>
     <selectionEntry id="f29d-8a5d-18b6-a071" name="Battle Size" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="ba25-d308-d6f1-5649" value="1.0">
+        <modifier type="set" field="ba25-d308-d6f1-5649" value="0.0">
           <conditions>
             <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="lessThan"/>
           </conditions>
@@ -6150,11 +6150,11 @@ Remaining Wounds | Aura Range
         </modifierGroup>
       </modifierGroups>
       <constraints>
-        <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ba25-d308-d6f1-5649" type="min"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ba25-d308-d6f1-5649" type="min"/>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1a29-fbbf-01a7-1c91" type="max"/>
       </constraints>
       <selectionEntryGroups>
-        <selectionEntryGroup id="2883-57e8-87a6-38e2" name="Battle Size" hidden="false" collective="false" import="true" defaultSelectionEntryId="af70-08c1-1c6f-0770">
+        <selectionEntryGroup id="2883-57e8-87a6-38e2" name="Battle Size" hidden="false" collective="false" import="true" defaultSelectionEntryId="09f9-b586-8d63-7635">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2a48-d522-f093-f993" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b273-5ae1-26a2-84cd" type="max"/>
