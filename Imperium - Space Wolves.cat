@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="24b6-2b46-0063-2867" name="Imperium - Adeptus Astartes - Space Wolves" revision="218" battleScribeVersion="2.03" authorName="CrusherJoe, Mad-Spy" authorContact="@CrusherJoe, @Mad-Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="220" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="24b6-2b46-0063-2867" name="Imperium - Adeptus Astartes - Space Wolves" revision="219" battleScribeVersion="2.03" authorName="CrusherJoe, Mad-Spy" authorContact="@CrusherJoe, @Mad-Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="221" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="24b6-2b46-pubN65537" name="Codex: Space Wolves"/>
   </publications>
@@ -536,7 +536,7 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
         <infoLink id="b2bd-fda2-f238-334f" name="Savage Fury" hidden="false" targetId="50dd-5312-6550-d7e0" type="profile"/>
       </infoLinks>
       <entryLinks>
-        <entryLink id="d7e3-361f-d692-472d" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry"/>
+        <entryLink id="d7e3-361f-d692-472d" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry"/>
         <entryLink id="a02e-f90d-552b-2d1f" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="c55b-ceca-3892-5504" type="selectionEntryGroup"/>
         <entryLink id="781a-1e4e-1c81-1212" name="Litanies" hidden="false" collective="false" import="true" targetId="edab-e2c4-01f5-63cc" type="selectionEntryGroup"/>
         <entryLink id="a3a8-f73a-ef9a-d864" name="Stratagem: Warrior of Legend" hidden="false" collective="false" import="true" targetId="ad41-3ce3-001e-7a9c" type="selectionEntry"/>
@@ -2256,27 +2256,52 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1df7-abe5-1363-f7c3" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="2c3d-cd88-d5bb-308c" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="2c3d-cd88-d5bb-308c" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7260-3e04-5fe3-5650" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="ed08-3671-c526-36da" name="Warrior Born" hidden="true" collective="false" import="true" targetId="e3cd-76c0-7e27-e9ff" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="ed08-3671-c526-36da" name="Warrior Born" hidden="false" collective="false" import="true" targetId="e3cd-76c0-7e27-e9ff" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="0160-6583-9d34-6223" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="0160-6583-9d34-6223" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="388c-e250-1b90-e1e1" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0160-6583-9d34-6223" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="b61d-10b8-a5e6-9b25" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -2456,27 +2481,52 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2d1a-4b9d-d610-fb61" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="7ba1-f209-1cbf-6118" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="7ba1-f209-1cbf-6118" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="439e-08ef-665f-22f7" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="a9f5-242e-4523-3f7d" name="Aura of Majesty" hidden="true" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="a9f5-242e-4523-3f7d" name="Aura of Majesty" hidden="false" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="5f5f-865b-d721-8cb4" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="5f5f-865b-d721-8cb4" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="324a-8993-6624-7d11" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5f5f-865b-d721-8cb4" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="1f13-5d6d-0494-c7e5" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -2624,27 +2674,52 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7f5b-504a-7614-50c1" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="f448-7bcf-0b74-3e4e" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="f448-7bcf-0b74-3e4e" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce34-26b9-2bfa-2756" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="51a4-63f1-260b-0766" name="Aura of Majesty" hidden="true" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="51a4-63f1-260b-0766" name="Aura of Majesty" hidden="false" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="b63d-bcab-a720-f6f6" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="b63d-bcab-a720-f6f6" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6d67-aeba-7cd8-9fe6" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b63d-bcab-a720-f6f6" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="4c5f-2866-3b86-e600" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -2783,7 +2858,7 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="79ea-8bcd-6690-294b" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="5973-57b8-4014-da76" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="5973-57b8-4014-da76" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4ced-0e8c-a116-d77c" type="max"/>
           </constraints>
@@ -2799,6 +2874,15 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
         </entryLink>
         <entryLink id="2413-7d07-43a2-d074" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
         <entryLink id="3733-38bc-5615-c422" name="Stratagem: Warrior of Legend" hidden="false" collective="false" import="true" targetId="ad41-3ce3-001e-7a9c" type="selectionEntry"/>
+        <entryLink id="1fe2-7185-a79c-1b36" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -2901,27 +2985,52 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4062-ab04-877c-c5e6" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="3e97-2321-4b6d-a6f5" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="3e97-2321-4b6d-a6f5" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6016-a74c-0369-1a6a" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="9601-0119-0173-21fd" name="Warrior Born" hidden="true" collective="false" import="true" targetId="e3cd-76c0-7e27-e9ff" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="9601-0119-0173-21fd" name="Warrior Born" hidden="false" collective="false" import="true" targetId="e3cd-76c0-7e27-e9ff" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="ffe3-8e3a-9c8d-7f8a" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="ffe3-8e3a-9c8d-7f8a" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7043-eef6-cd35-4971" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ffe3-8e3a-9c8d-7f8a" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="fe5c-283e-f0cf-5838" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -3049,27 +3158,52 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b468-bc9c-729a-e4bb" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="94a9-5103-88ad-0996" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="94a9-5103-88ad-0996" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f614-d0af-fd64-04b4" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="231c-2c36-2ec3-c750" name="Hunter" hidden="true" collective="false" import="true" targetId="ad4b-27ec-c7ce-a81a" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="231c-2c36-2ec3-c750" name="Hunter" hidden="false" collective="false" import="true" targetId="ad4b-27ec-c7ce-a81a" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="f9fa-6f59-23b7-46de" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="f9fa-6f59-23b7-46de" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9233-0416-d6f0-b253" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f9fa-6f59-23b7-46de" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="16f6-44b3-635a-c05c" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -3203,7 +3337,7 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4c99-8275-da06-93a5" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="134f-ba0e-6a35-20c7" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="134f-ba0e-6a35-20c7" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e7c-8297-ca4e-d47b" type="max"/>
           </constraints>
@@ -3214,6 +3348,15 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
         <entryLink id="d5dd-9f0e-f412-b661" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="8d02-1742-8294-d532" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
         <entryLink id="01c9-0587-dac3-948c" name="Stratagem: Warrior of Legend" hidden="false" collective="false" import="true" targetId="ad41-3ce3-001e-7a9c" type="selectionEntry"/>
+        <entryLink id="ad53-6444-091b-90d8" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -3343,23 +3486,39 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="dd6b-89ea-89a6-18d3" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="75e2-012e-d503-f571" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="75e2-012e-d503-f571" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b31a-fdb3-e841-8855" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="daba-9a8f-695c-e1e2" name="Wolfkin" hidden="true" collective="false" import="true" targetId="796e-b9d3-6b6f-998b" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="daba-9a8f-695c-e1e2" name="Wolfkin" hidden="false" collective="false" import="true" targetId="796e-b9d3-6b6f-998b" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="984f-d766-62ae-cc95" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="984f-d766-62ae-cc95" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8e72-b4ab-8cb0-7cab" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="984f-d766-62ae-cc95" type="min"/>
@@ -3370,6 +3529,15 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="144c-a3d4-41f9-90e3" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b80e-6f7f-8ee9-4327" type="max"/>
           </constraints>
+        </entryLink>
+        <entryLink id="2af5-599e-5546-de3d" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -3502,7 +3670,7 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2d57-af52-0031-3fb8" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="26f8-d810-8645-b8cd" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="26f8-d810-8645-b8cd" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0bd2-927f-ede8-1e57" type="max"/>
           </constraints>
@@ -3512,18 +3680,34 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2928-2f4a-8489-bcab" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="3d0f-63a3-8d30-c336" name="Resolve of the Bear" hidden="true" collective="false" import="true" targetId="8c9e-a4a6-6e17-6054" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="3d0f-63a3-8d30-c336" name="Resolve of the Bear" hidden="false" collective="false" import="true" targetId="8c9e-a4a6-6e17-6054" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="80cc-0222-e2f6-3513" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="80cc-0222-e2f6-3513" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cce3-8041-64a1-80c9" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="80cc-0222-e2f6-3513" type="min"/>
@@ -3534,6 +3718,15 @@ Saga of the Wolfkin (Aura): While a friendly SPACE WOLVES CORE unit is within 6&
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b6f8-7dc1-6d98-2308" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="01a0-b35d-441f-d789" type="max"/>
           </constraints>
+        </entryLink>
+        <entryLink id="8c11-b5f7-4ad3-481a" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -3639,7 +3832,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2b26-ade7-4872-30c2" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="3382-27d1-3d86-bba6" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="3382-27d1-3d86-bba6" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e72e-874a-0a0a-96bb" type="max"/>
           </constraints>
@@ -3650,6 +3843,15 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         <entryLink id="954e-415f-83ed-4187" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="5bb9-dd82-afb4-35ac" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
         <entryLink id="d8d2-3f79-ae2f-35a8" name="Stratagem: Warrior of Legend" hidden="false" collective="false" import="true" targetId="ad41-3ce3-001e-7a9c" type="selectionEntry"/>
+        <entryLink id="f9ad-8783-5d38-70ec" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -3788,7 +3990,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f0d1-0f78-fe5b-f860" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="ae8e-a034-6993-081b" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="ae8e-a034-6993-081b" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5e67-4698-c6ce-c27c" type="max"/>
           </constraints>
@@ -3917,7 +4119,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="8354-d8c5-918e-c28e" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="8354-d8c5-918e-c28e" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f68c-1083-3674-6622" type="max"/>
           </constraints>
@@ -4077,7 +4279,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <categoryLink id="2c73-2a0e-5419-1352" name="New CategoryLink" hidden="false" targetId="b46d-3b8e-d997-933e" primary="false"/>
           </categoryLinks>
         </entryLink>
-        <entryLink id="9a8f-ce9d-cea8-222a" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="9a8f-ce9d-cea8-222a" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2743-5be9-dff3-7b47" type="max"/>
           </constraints>
@@ -4208,28 +4410,43 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ce0f-46af-3c49-766d" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="82f6-0a8f-752d-b3a7" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="82f6-0a8f-752d-b3a7" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="37f2-756d-a886-0af2" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="55de-454c-77f6-5a49" name="Litanies" hidden="false" collective="false" import="true" targetId="edab-e2c4-01f5-63cc" type="selectionEntryGroup"/>
-        <entryLink id="679b-dfc5-32c7-8543" name="Aura of Majesty" hidden="true" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="679b-dfc5-32c7-8543" name="Aura of Majesty" hidden="false" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="69bc-24f5-acbf-1152" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="69bc-24f5-acbf-1152" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="be3c-11fb-5b64-a419" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="69bc-24f5-acbf-1152" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="978e-679b-6fe5-74b3" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -4354,16 +4571,43 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f7bd-38bc-d482-1c16" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="8b0b-57f4-7bb3-583c" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="8b0b-57f4-7bb3-583c" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ba7d-d191-1ae4-b5be" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="e4bb-d423-f283-042a" name="Aura of Majesty" hidden="true" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
+        <entryLink id="e4bb-d423-f283-042a" name="Aura of Majesty" hidden="false" collective="false" import="true" targetId="c568-018b-d7c3-d699" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="e8c0-736d-b959-b748" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <modifierGroups>
             <modifierGroup>
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
               <modifiers>
                 <modifier type="set" field="hidden" value="false"/>
@@ -4375,6 +4619,15 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="32a7-d1e0-4302-6592" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e8c0-736d-b959-b748" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="f384-cefe-7c4e-17f5" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -4475,27 +4728,52 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         </selectionEntry>
       </selectionEntries>
       <entryLinks>
-        <entryLink id="7a2c-ef09-3766-37c0" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="7a2c-ef09-3766-37c0" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9e45-40f4-dc14-7958" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="bce1-dad3-b813-3ffb" name="Resolve of the Bear" hidden="true" collective="false" import="true" targetId="8c9e-a4a6-6e17-6054" type="selectionEntry">
-          <modifierGroups>
-            <modifierGroup>
+        <entryLink id="bce1-dad3-b813-3ffb" name="Resolve of the Bear" hidden="false" collective="false" import="true" targetId="8c9e-a4a6-6e17-6054" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
-              <modifiers>
-                <modifier type="set" field="hidden" value="false"/>
-                <modifier type="set" field="4a80-d8d4-5fc4-2e4f" value="1.0"/>
-              </modifiers>
-            </modifierGroup>
-          </modifierGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="4a80-d8d4-5fc4-2e4f" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea2e-c8db-37f8-e9ec" type="max"/>
             <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4a80-d8d4-5fc4-2e4f" type="min"/>
           </constraints>
+        </entryLink>
+        <entryLink id="1d34-54a1-e5f1-6714" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
         </entryLink>
       </entryLinks>
       <costs>
@@ -4606,7 +4884,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a2da-034c-fdba-80ff" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="09fd-a1ef-1bbd-fa8d" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="09fd-a1ef-1bbd-fa8d" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cdb7-21ad-7746-5362" type="max"/>
           </constraints>
@@ -4617,6 +4895,15 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         <entryLink id="5a6f-3d87-a8b5-4932" name="Custom Character Selections (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="4636-4386-54dc-4fc5" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
         <entryLink id="c45e-0f83-e08b-11e7" name="Stratagem: Warrior of Legend" hidden="false" collective="false" import="true" targetId="ad41-3ce3-001e-7a9c" type="selectionEntry"/>
+        <entryLink id="dfb4-9158-66de-cce3" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -4727,7 +5014,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="15c2-a251-c8a1-33d6" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="66a2-c274-a54a-7377" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="66a2-c274-a54a-7377" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="13c8-c645-46eb-db91" type="max"/>
           </constraints>
@@ -4738,6 +5025,15 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         <entryLink id="bf5a-362d-f314-81ae" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="6f7c-d25e-1fb3-90e2" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
         <entryLink id="bb7c-4129-89bc-4090" name="Stratagem: Warrior of Legend" hidden="false" collective="false" import="true" targetId="ad41-3ce3-001e-7a9c" type="selectionEntry"/>
+        <entryLink id="8b77-6b04-5709-9e0e" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -8143,7 +8439,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b7b0-7fb8-50f5-3e52" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="eae5-eb19-51dd-4c3d" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="eae5-eb19-51dd-4c3d" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d17b-349c-2341-917c" type="max"/>
           </constraints>
@@ -8154,6 +8450,15 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         <entryLink id="ad45-4e7a-84f2-208e" name="Custom Character Selections (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="b032-f078-afa2-11be" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
         <entryLink id="d1ff-b11a-e8cb-2f6a" name="Stratagem: Warrior of Legend" hidden="false" collective="false" import="true" targetId="ad41-3ce3-001e-7a9c" type="selectionEntry"/>
+        <entryLink id="d73c-d385-ee8f-0219" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
@@ -8597,7 +8902,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="339e-d31b-ea36-8c7e" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="ad6a-3f7c-ee8a-4014" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="ad6a-3f7c-ee8a-4014" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="f1fe-0c8d-6762-a55a" type="max"/>
           </constraints>
@@ -8605,6 +8910,15 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         <entryLink id="aabb-aca8-6f66-ba20" name="Relics" hidden="false" collective="false" import="true" targetId="e6ae-603c-ac42-ff8a" type="selectionEntryGroup"/>
         <entryLink id="654b-4ad5-1969-d879" name="Is a Custom Character (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="e05d-d59f-b542-3369" name="Custom Character Selections (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
+        <entryLink id="9795-ab14-6c4f-57f8" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -8705,7 +9019,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="49d6-741b-8056-e473" name="Warlord" hidden="false" collective="false" import="true" targetId="01cf-00c7-c4af-701b" type="selectionEntry">
+        <entryLink id="49d6-741b-8056-e473" name="Warlord" hidden="false" collective="false" import="true" targetId="ee33-18fd-7317-1171" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7fab-43df-9a2c-7962" type="max"/>
           </constraints>
@@ -8714,6 +9028,15 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
         <entryLink id="6454-f9f4-0e1b-e1ac" name="Is a Custom Character (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="43c4-8968-c599-ad5f" type="selectionEntry"/>
         <entryLink id="7844-55e3-a025-1c30" name="Custom Character Selections" hidden="false" collective="false" import="true" targetId="8774-e003-4a50-56c7" type="selectionEntryGroup"/>
         <entryLink id="7e04-c777-d0c8-b516" name="Stratagem: Hero of the Chapter" hidden="false" collective="false" import="true" targetId="5efd-6285-c9f7-2a5a" type="selectionEntry"/>
+        <entryLink id="ead2-e487-eff9-a3d6" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
@@ -9295,7 +9618,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8ad9-2b2c-ebee-d37b" type="equalTo"/>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -9315,7 +9638,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
       <modifiers>
         <modifier type="set" field="1283-2217-42a4-73da" value="0.0">
           <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -10234,7 +10557,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d043-3847-e963-fb5d" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5efd-6285-c9f7-2a5a" type="equalTo"/>
                 <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="4da8-aa69-77ec-b49e" type="equalTo"/>
@@ -10520,26 +10843,40 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
     </selectionEntryGroup>
     <selectionEntryGroup id="e6ae-603c-ac42-ff8a" name="Relics" hidden="false" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="and">
-              <conditions>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a2b4-77d8-f95b-09ae" type="equalTo"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
         <modifier type="increment" field="b519-58a5-0500-80ad" value="1.0">
           <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
           </conditions>
         </modifier>
         <modifier type="increment" field="b519-58a5-0500-80ad" value="1.0">
           <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a2b4-77d8-f95b-09ae" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="cd40-9145-360f-5b41" repeats="1" roundUp="false"/>
             <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="df42-2969-318c-54b2" repeats="1" roundUp="false"/>
           </repeats>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f14b-d50a-11fa-3589" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="cd40-9145-360f-5b41" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ee33-18fd-7317-1171" type="lessThan"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="f14b-d50a-11fa-3589" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -10548,7 +10885,6 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
       </constraints>
       <entryLinks>
         <entryLink id="2468-1531-c82d-80d5" name="Relics of The Fang" hidden="false" collective="false" import="true" targetId="852c-a667-c934-d436" type="selectionEntryGroup"/>
-        <entryLink id="7ada-af55-27d8-0732" name="Vigilus Relics" hidden="false" collective="false" import="true" targetId="7c45-29c3-7bc2-6590" type="selectionEntryGroup"/>
         <entryLink id="2714-824d-1a02-adcd" name="Master of the Forge Relics" hidden="false" collective="false" import="true" targetId="ca5d-2c86-709d-1f85" type="selectionEntryGroup"/>
         <entryLink id="3cf4-cfd6-658b-0067" name="Master of Sanctity Relics" hidden="false" collective="false" import="true" targetId="d8d4-ab92-f035-3606" type="selectionEntryGroup"/>
         <entryLink id="bb00-2390-8dce-0d5b" name="Codex Relics" hidden="false" collective="false" import="true" targetId="6d7d-10f1-04bd-65f4" type="selectionEntryGroup"/>
@@ -10564,20 +10900,35 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
     </selectionEntryGroup>
     <selectionEntryGroup id="c55b-ceca-3892-5504" name="Warlord Traits" hidden="false" collective="false" import="true">
       <modifiers>
+        <modifier type="increment" field="77ba-cb4e-2918-3d80" value="1.0">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ad41-3ce3-001e-7a9c" type="equalTo"/>
+          </conditions>
+        </modifier>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5efd-6285-c9f7-2a5a" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ee33-18fd-7317-1171" type="greaterThan"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
-        </modifier>
-        <modifier type="increment" field="77ba-cb4e-2918-3d80" value="1.0">
-          <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ad41-3ce3-001e-7a9c" type="equalTo"/>
-          </conditions>
         </modifier>
       </modifiers>
       <constraints>
@@ -10641,38 +10992,6 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="48ce-7898-2b54-5a90" type="max"/>
           </constraints>
-        </entryLink>
-        <entryLink id="00fc-0eff-9b08-ca86" name="Warlord Traits (Specialist Detachment)" hidden="false" collective="false" import="true" targetId="dfb7-cadc-995d-bf1b" type="selectionEntryGroup">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ef48-d628-49b4-e897" type="max"/>
-          </constraints>
-          <selectionEntries>
-            <selectionEntry id="39d0-a2e9-03b5-197f" name="Saga of the Savage" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="dd4b-7b0a-b95e-8073" type="equalTo"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="182f-cdbd-1d38-03d8" type="max"/>
-                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="07a0-f666-b6d2-99b8" type="max"/>
-              </constraints>
-              <profiles>
-                <profile id="7e65-2e3c-fc04-4ecf" name="Saga of the Savage" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-                  <characteristics>
-                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to the Attacks characteristics [of] all models in a unit affected by this saga if it made a charge move in the same turn. Deed of Legend: Enemy models lose at least 5 wounds as a result of attacks made by your Warlord’s melee weapons in a single phase.</characteristic>
-                  </characteristics>
-                </profile>
-              </profiles>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
         </entryLink>
         <entryLink id="4218-98c3-56e4-376d" name="Warlord Traits (Vanguard)" hidden="false" collective="false" import="true" targetId="5284-5a04-b3c5-765a" type="selectionEntryGroup">
           <constraints>
@@ -10767,7 +11086,7 @@ Litany of Hate:If this litany is inspiring, you can re-roll hit rolls for attack
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="01cf-00c7-c4af-701b" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ee33-18fd-7317-1171" type="equalTo"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d043-3847-e963-fb5d" type="equalTo"/>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5efd-6285-c9f7-2a5a" type="equalTo"/>
                   </conditions>
