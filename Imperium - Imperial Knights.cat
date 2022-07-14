@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="100" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Fital Shell" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="220" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="101" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Fital Shell" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="221" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>Imperial Knights are a unique faction within Warhammer 40,000, for their armies typically comprise just a handful of models. Where other players’ forces contain infantry, battle tanks, monstrous beasts and the like, an Imperial Knights army is made up solely of towering, heavily armed and armoured bipedal war  engines. Even the least of these is more than a match for whole regiments of the foe. Piloted by highly trained Nobles whose minds are saturated with concepts of chivalry, honour and fealty, these ironclad giants shatter battle lines with ease, devastating the enemy’s forces with bombardments of searing energy and explosive shells. Those who somehow survive this fusillade – and are not subsequently trampled underfoot – are sent scattering before the Knights like leaves on a gale.</readme>
   <publications>
     <publication id="82cd-d24f-pubN65537" name="Codex: Imperial Knights" shortName="Codex: IK" publisher="Codex: Imperial Knights" publicationDate="May 2022" publisherUrl="https://www.games-workshop.com/en-US/codex-imperial-knights-2022-eng"/>
@@ -11993,14 +11993,21 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="notEqualTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="notEqualTo"/>
               </conditions>
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
                     <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9630-827b-a78d-63b7" type="equalTo"/>
                   </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="or">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9630-827b-a78d-63b7" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
             </conditionGroup>
@@ -12840,6 +12847,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
               </conditions>
             </modifier>
           </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="af4f-c714-3b31-cf06" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4816-d44a-b017-a267" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b782-716e-9c86-6633" type="max"/>
+          </constraints>
         </entryLink>
         <entryLink id="57ae-9837-c1b8-c57f" name="Martial Tradition: Fealty to the Cog" hidden="true" collective="false" import="true" targetId="1933-8da9-6cf9-576b" type="selectionEntry">
           <modifiers>
@@ -13121,9 +13133,15 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         <entryLink id="1a07-2cca-088e-0f36" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4e27-4545-87b5-ae20" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9630-827b-a78d-63b7" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
         </entryLink>
