@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="221" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="222" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -6716,7 +6716,24 @@ Remaining Wounds | Aura Range
       </constraints>
       <rules>
         <rule id="cc45-f368-4c00-9b2d" name="Shared Faction Bonus" publicationId="977a-446b-737a-b571" page="4" hidden="false">
-          <description>If your army includes one or more Super-Heavy Auxiliary Detachments, y ou can change the Command Benefits of one of them to: &apos;+2 Command points if the unit in this Detachment is not your Warlod, but it is from the same Faction as your Warlord&apos;s Detachment, and that faction is not CHAOS, IMPERIUM, AELDARI , YNNARI or TYRANIDS.&apos;</description>
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <description>If your army includes one or more Super-Heavy Auxiliary Detachments, you can change the Command Benefits of one of them to: &apos;+2 Command points if the unit in this Detachment is not your WARLORD, but it is from the same Faction as your WARLORD&apos;s Detachment, and that faction is not CHAOS, IMPERIUM, AELDARI , YNNARI or TYRANIDS.&apos;</description>
+        </rule>
+        <rule id="be6f-af81-c87c-b42b" name="Shared Faction Bonus" publicationId="977a-446b-737a-b571" page="4" hidden="false">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <description>If a player&apos;s army includes one or more Super-Heavy Auxiliary Detachments, you can change the Command Benefits of one of them to: &apos;+3 Command points if the unit in this Detachment is not your WARLORD, but it is from the same Faction as your WARLORD&apos;s Detachment, and that faction is not CHAOS, IMPERIUM, AELDARI , YNNARI or TYRANIDS.&apos;</description>
         </rule>
       </rules>
       <costs>
