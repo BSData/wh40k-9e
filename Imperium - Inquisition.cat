@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Inquisition" revision="78" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="212" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Inquisition" revision="79" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="222" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <categoryEntries>
     <categoryEntry id="78cc-daf7-1448-610f" name="Faction: Inquisition" hidden="false"/>
     <categoryEntry id="6f95-3a9f-9235-519a" name="Inquisitor" hidden="false">
@@ -337,21 +337,7 @@
       <infoLinks>
         <infoLink id="e9af-ddb6-eabf-9207" name="Authority of the Inquisition" hidden="false" targetId="260d-3221-8e7c-9ebc" type="profile"/>
         <infoLink id="1b53-dfd9-a2c7-4185" name="Quarry - Malleus" hidden="false" targetId="5086-d3c4-7238-d42f" type="profile"/>
-        <infoLink id="6b57-de5f-04b8-8c96" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
-        <infoLink id="2e84-7893-da7f-64d5" name="Psychic Mastery" hidden="false" targetId="ee2b-d88b-2464-2aec" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="81d1-1b5f-e97c-35ba" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                    <condition field="selections" scope="81d1-1b5f-e97c-35ba" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
+        <infoLink id="6b57-de5f-04b8-8c96" name="Unquestionable Wisdom (Aura)" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
         <infoLink id="f496-6a91-a38c-e0f2" name="Refractor Field" hidden="false" targetId="f74d-e89a-68d5-81d8" type="profile"/>
       </infoLinks>
       <categoryLinks>
@@ -443,7 +429,37 @@
           </constraints>
         </entryLink>
         <entryLink id="780e-9b39-8711-c82d" name="Warlord" hidden="false" collective="false" import="true" targetId="a4e2-fd07-0e14-f13b" type="selectionEntry"/>
-        <entryLink id="f8a2-1759-afad-a564" name="Stratagem: Inquisitorial Mandate" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="f8a2-1759-afad-a564" name="Stratagem: Arbiter of the Emperor&apos;s Will" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="fabc-1179-62fe-2d8f" name="Psychic Mastery - Malleus" hidden="true" collective="false" import="true" targetId="d4e0-ee9a-ae47-d8be" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="81d1-1b5f-e97c-35ba" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                    <condition field="selections" scope="81d1-1b5f-e97c-35ba" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="81d1-1b5f-e97c-35ba" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="f3cc-897e-c81a-b2e3" value="1.0"/>
+                <modifier type="set" field="hidden" value="false"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="f3cc-897e-c81a-b2e3" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="a321-8ba8-2e6f-f883" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="95.0"/>
@@ -489,20 +505,6 @@
         <infoLink id="224a-f7fa-57e5-73fd" name="Quarry - Hereticus" hidden="false" targetId="3dec-967b-c8fd-af29" type="profile"/>
         <infoLink id="70c5-3548-0730-3e97" name="Authority of the Inquisition" hidden="false" targetId="260d-3221-8e7c-9ebc" type="profile"/>
         <infoLink id="a5c6-57fb-a789-3dec" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
-        <infoLink id="2966-dfda-389f-3912" name="Formidable Resolve" hidden="false" targetId="8a9b-a11a-ed4a-cd40" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="59d5-160c-f21d-6e49" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                    <condition field="selections" scope="59d5-160c-f21d-6e49" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="25dd-e9e7-15ed-417f" name="New CategoryLink" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
@@ -576,6 +578,36 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ca61-7f1c-dba1-1988" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="94d9-8605-a4d3-ee9c" name="Formidable Resolve" hidden="true" collective="false" import="true" targetId="6465-67be-3031-1cd4" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="35e7-c7f2-f73a-97f7" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="35e7-c7f2-f73a-97f7" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="6aa1-80d5-94e0-f204" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="125.0"/>
@@ -717,7 +749,7 @@
                     <conditionGroup type="or">
                       <conditions>
                         <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eab9-a014-74ae-86fa" type="equalTo"/>
-                        <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                        <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
                         <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1194-4206-55cd-626c" type="equalTo"/>
                       </conditions>
                     </conditionGroup>
@@ -735,12 +767,12 @@
                 </modifier>
                 <modifier type="increment" field="5afb-9914-904b-d3b3" value="1">
                   <conditions>
-                    <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                    <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
                   </conditions>
                 </modifier>
                 <modifier type="increment" field="b5ac-9c20-5d5a-6f9b" value="1">
                   <conditions>
-                    <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                    <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
                   </conditions>
                 </modifier>
                 <modifier type="set" field="69d7-b45e-00a2-7e46" value="Smite &amp; 4 powers from the Telethesia discipline">
@@ -749,7 +781,7 @@
                       <conditions>
                         <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1194-4206-55cd-626c" type="equalTo"/>
                         <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eab9-a014-74ae-86fa" type="equalTo"/>
-                        <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                        <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
                       </conditions>
                     </conditionGroup>
                   </conditionGroups>
@@ -765,14 +797,14 @@
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                            <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
                             <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="eab9-a014-74ae-86fa" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
                             <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="1194-4206-55cd-626c" type="equalTo"/>
-                            <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                            <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
                           </conditions>
                         </conditionGroup>
                         <conditionGroup type="and">
@@ -878,7 +910,7 @@
             </modifier>
             <modifier type="increment" field="0ed5-4c65-cdf4-4782" value="1.0">
               <conditions>
-                <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -887,6 +919,8 @@
           </constraints>
         </entryLink>
         <entryLink id="4d1c-930a-57d8-4e5a" name="Alpha-Class Psyker" hidden="false" collective="false" import="true" targetId="1194-4206-55cd-626c" type="selectionEntry"/>
+        <entryLink id="bfe6-3c17-e81d-a7d4" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
+        <entryLink id="dc26-bad2-3aea-1c85" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="60.0"/>
@@ -1236,20 +1270,6 @@ D6 Result
         <infoLink id="c0b4-2712-b80b-f3d6" name="Quarry - Hereticus" hidden="false" targetId="3dec-967b-c8fd-af29" type="profile"/>
         <infoLink id="b777-54b2-ccb0-3db1" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
         <infoLink id="3b21-0a08-b419-1cfb" name="Refractor Field" hidden="false" targetId="f74d-e89a-68d5-81d8" type="profile"/>
-        <infoLink id="bd1c-5e90-ffc6-03f2" name="No Escape" hidden="false" targetId="bb4f-1507-e24d-271e" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="f62e-4435-c6f2-eeac" name="New CategoryLink" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
@@ -1296,35 +1316,6 @@ D6 Result
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="70ea-13bf-611f-0a24" name="Hereticus - No Escape" hidden="false" collective="false" import="true" type="upgrade">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5def-fe4b-ab02-5ed1" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="5bcc-2d0d-aa8a-facc" name="Hereticus - No Escape" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord can perform a Heroic Intervention if there any enemy units within 6” of them instead of 3”, and when doing so can move up to 6” instead of 3”. When an enemy unit within 1” of this Warlord is chosen to Fall Back, you can roll one D6; unless any models in that unit have a minimum move characteristic, on a 4+ that unit cannot Fall Back this turn.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
       </selectionEntries>
       <entryLinks>
         <entryLink id="44d0-0eda-7f7f-af5c" name="Psyk-out grenades" hidden="false" collective="false" import="true" targetId="7f2c-0b15-35dd-8305" type="selectionEntry">
@@ -1351,13 +1342,43 @@ D6 Result
           </constraints>
         </entryLink>
         <entryLink id="a19c-28d7-e0e5-1383" name="Warlord" hidden="false" collective="false" import="true" targetId="a4e2-fd07-0e14-f13b" type="selectionEntry"/>
-        <entryLink id="dac6-b290-f8b6-1311" name="Stratagem: Inquisitorial Mandate" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="dac6-b290-f8b6-1311" name="Stratagem: Arbiter of the Emperor&apos;s Will" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
         <entryLink id="58ca-ced7-b3b7-8f8c" name="Master-crafted power sword" hidden="false" collective="false" import="true" targetId="eef1-81a2-94cd-c5b6" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cd43-7f7f-1509-2485" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7814-6ec6-6ab4-21a1" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="0750-e624-1bdb-6f8c" name="No Escape - Hereticus" hidden="true" collective="false" import="true" targetId="cbf7-3e36-3db0-880c" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="5ed6-67a1-bd16-e22f" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5ed6-67a1-bd16-e22f" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="b5ef-321f-f30c-dd0c" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="90.0"/>
@@ -1554,7 +1575,7 @@ D6 Result
             </modifier>
             <modifier type="increment" field="3f0e-8219-d327-ad39" value="1.0">
               <conditions>
-                <condition field="selections" scope="ba53-1df7-404e-e9c9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                <condition field="selections" scope="ba53-1df7-404e-e9c9" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1569,8 +1590,10 @@ D6 Result
           </constraints>
         </entryLink>
         <entryLink id="6fc2-dfb5-20d8-d91d" name="Relics of the Inquisition" hidden="false" collective="false" import="true" targetId="6d56-cc13-9294-4021" type="selectionEntryGroup"/>
-        <entryLink id="057d-b969-0108-f92d" name="Stratagem: Inquisitorial Mandate" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="057d-b969-0108-f92d" name="Stratagem: Arbiter of the Emperor&apos;s Will" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
         <entryLink id="b2a6-2ca5-d798-40cc" name="Alpha-Class Psyker" hidden="false" collective="false" import="true" targetId="1194-4206-55cd-626c" type="selectionEntry"/>
+        <entryLink id="c971-cea5-58eb-2c9c" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
+        <entryLink id="5326-b7c1-f2c0-2180" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="95.0"/>
@@ -1624,20 +1647,6 @@ D6 Result
         <infoLink id="c915-d753-61b8-94e0" name="Authority of the Inquisition" hidden="false" targetId="260d-3221-8e7c-9ebc" type="profile"/>
         <infoLink id="58e3-3f5b-2a4c-024b" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
         <infoLink id="141f-d755-1c09-f44e" name="Quarry - Malleus" hidden="false" targetId="5086-d3c4-7238-d42f" type="profile"/>
-        <infoLink id="3e85-2f1a-ef2a-82dd" name="Inspiring Leader (Aura)" hidden="false" targetId="f457-a366-e21d-196f" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="f34a-e3be-53b1-d783" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                    <condition field="selections" scope="f34a-e3be-53b1-d783" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="4a13-718f-4af3-8db3" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
@@ -1705,7 +1714,7 @@ D6 Result
           <modifiers>
             <modifier type="increment" field="003d-1e65-0a4a-0fce" value="1.0">
               <conditions>
-                <condition field="selections" scope="f34a-e3be-53b1-d783" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="95a3-3a66-87cd-9ae1" type="equalTo"/>
+                <condition field="selections" scope="f34a-e3be-53b1-d783" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d4e0-ee9a-ae47-d8be" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -1714,6 +1723,36 @@ D6 Result
           </constraints>
         </entryLink>
         <entryLink id="e619-2079-5c82-0584" name="Stratagem: Arbiter of the Emperor&apos;s Will" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="a60c-f3ea-24d1-3ca0" name="Inspiring Leader" hidden="true" collective="false" import="true" targetId="bad4-7cc1-6b79-0e18" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="1873-257c-0a45-90f2" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1873-257c-0a45-90f2" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="780a-d005-8f15-6f2f" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -1744,20 +1783,6 @@ D6 Result
         <infoLink id="7ce2-9fd2-39c6-1a8d" name="Authority of the Inquisition" hidden="false" targetId="260d-3221-8e7c-9ebc" type="profile"/>
         <infoLink id="5efe-5b88-fc07-9244" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
         <infoLink id="ba18-d725-4758-7878" name="Quarry - Xenos" hidden="false" targetId="25d5-4784-1a05-e93c" type="profile"/>
-        <infoLink id="0245-e811-7910-137e" name="Inspiring Leader (Aura)" hidden="false" targetId="f457-a366-e21d-196f" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="027b-c552-db2c-f5f0" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                    <condition field="selections" scope="027b-c552-db2c-f5f0" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="892f-04a8-2b87-cd7d" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
@@ -1820,6 +1845,35 @@ D6 Result
       <entryLinks>
         <entryLink id="6f71-76d3-e5fc-5006" name="Warlord" hidden="false" collective="false" import="true" targetId="a4e2-fd07-0e14-f13b" type="selectionEntry"/>
         <entryLink id="8336-c4f4-df9c-8cd9" name="Stratagem: Inquisitorial Mandate" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="a6d9-024f-a8a2-92d4" name="Inspiring Leader" hidden="true" collective="false" import="true" targetId="bad4-7cc1-6b79-0e18" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="2b6c-06ac-a6fa-9488" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2b6c-06ac-a6fa-9488" type="min"/>
+          </constraints>
+        </entryLink>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -1997,20 +2051,6 @@ Note: The above additions have already been included in the profile for the Malu
         <infoLink id="43f2-d0f5-972b-f74c" name="Authority of the Inquisition" hidden="false" targetId="260d-3221-8e7c-9ebc" type="profile"/>
         <infoLink id="4f37-29a7-6778-e388" name="Quarry - Xenos" hidden="false" targetId="25d5-4784-1a05-e93c" type="profile"/>
         <infoLink id="80af-97bb-6e4b-56b0" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
-        <infoLink id="1df8-e02f-fa92-4fff" name="Radical" hidden="false" targetId="7a9e-9b75-ff92-24ee" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="17aa-356b-0a1d-9de9" name="New CategoryLink" hidden="false" targetId="f7a7-9d79-d2f8-4a17" primary="false"/>
@@ -2211,6 +2251,36 @@ Note: The above additions have already been included in the profile for the Malu
           </constraints>
         </entryLink>
         <entryLink id="11c8-6aa0-2cae-a933" name="Stratagem: Inquisitorial Mandate" hidden="false" collective="false" import="true" targetId="3dcc-fcb4-e9aa-2f41" type="selectionEntry"/>
+        <entryLink id="7ee6-3e23-0c94-507b" name="Radical" hidden="true" collective="false" import="true" targetId="6838-343a-4216-699f" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="367a-0557-1677-8e7c" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="367a-0557-1677-8e7c" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="6c65-4ded-806b-65a1" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -2221,9 +2291,14 @@ Note: The above additions have already been included in the profile for the Malu
     <selectionEntry id="3dcc-fcb4-e9aa-2f41" name="Stratagem: Arbiter of the Emperor&apos;s Will" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="e79d-0a83-3ea1-9097" value="0.0">
-          <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -2416,20 +2491,6 @@ Note: The above additions have already been included in the profile for the Malu
         <infoLink id="b359-6c5d-7f52-1e50" name="Quarry - Xenos" hidden="false" targetId="25d5-4784-1a05-e93c" type="profile"/>
         <infoLink id="93a0-590d-1e1a-932b" name="Refractor Field" hidden="false" targetId="f74d-e89a-68d5-81d8" type="profile"/>
         <infoLink id="32d7-0704-1aa2-48fb" name="Unquestionable Wisdom" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
-        <infoLink id="4158-cbc9-a0a5-27ba" name="Radical" hidden="false" targetId="7a9e-9b75-ff92-24ee" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="132c-a00e-3b0b-5795" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                    <condition field="selections" scope="132c-a00e-3b0b-5795" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="35f6-52a6-4460-4f8d" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
@@ -2487,6 +2548,36 @@ Note: The above additions have already been included in the profile for the Malu
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="adfa-6201-7f6e-2285" type="max"/>
           </constraints>
         </entryLink>
+        <entryLink id="bc7b-4927-8c06-130d" name="Radical" hidden="true" collective="false" import="true" targetId="6838-343a-4216-699f" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="b6b1-e475-1f80-606d" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b6b1-e475-1f80-606d" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="14e0-51e4-712e-24c6" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
@@ -2573,20 +2664,6 @@ Note: The above additions have already been included in the profile for the Malu
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="c23b-b1f4-442b-addd" name="Formidable Resolve" hidden="false" targetId="8a9b-a11a-ed4a-cd40" type="profile">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="and">
-                  <conditions>
-                    <condition field="selections" scope="ce43-b08c-e166-ca0c" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                    <condition field="selections" scope="ce43-b08c-e166-ca0c" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-        </infoLink>
         <infoLink id="b883-6338-204f-f513" name="Authority of the Inquisition" hidden="false" targetId="260d-3221-8e7c-9ebc" type="profile"/>
         <infoLink id="6cf8-1aba-e7d8-aa38" name="Quarry - Malleus" hidden="false" targetId="5086-d3c4-7238-d42f" type="profile"/>
         <infoLink id="59e0-2b83-97af-799b" name="Unquestionable Wisdom (Aura)" hidden="false" targetId="e3d9-9e3d-758b-26b8" type="profile"/>
@@ -2660,11 +2737,179 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4f75-32c6-fb2a-5763" type="min"/>
           </constraints>
         </entryLink>
+        <entryLink id="7aa6-6ddc-f543-6853" name="Formidable Resolve" hidden="true" collective="false" import="true" targetId="6465-67be-3031-1cd4" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
+                  </conditions>
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+              <modifiers>
+                <modifier type="set" field="hidden" value="false"/>
+                <modifier type="set" field="ee77-a709-4053-654b" value="1.0"/>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ee77-a709-4053-654b" type="min"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="23b7-f2fc-a7b6-d46b" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="pts" typeId="points" value="80.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="6838-343a-4216-699f" name="Radical" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bc6e-ccf1-c605-6d9a" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="c56f-a50e-9f1e-ac5b" name="Radical" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle round, you can re-roll one hit roll, wound roll, damage roll, saving throw, Psychic test or Deny the Witch test made for this WARLORD.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="cf86-4230-8b55-7c4e" name="Puritan" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="40de-40f9-bca9-286f" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="7f30-5d22-8fd2-ee00" name="Puritan" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Improve this WARLORD’s invulnerable save by 1 (to a maximum of 3+).</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="cbf7-3e36-3db0-880c" name="No Escape - Hereticus" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9d23-57b8-72c2-d750" type="equalTo"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9d23-57b8-72c2-d750" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c4e3-f366-cf7f-4f91" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="c830-0b4f-1811-69ec" name="No Escape" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This WARLORD can perform a Heroic Intervention if there any enemy units within 6” of them instead of 3”, and when doing so can move up to 6” instead of 3”. When an enemy unit within 1” of this WARLORD is chosen to Fall Back, you can roll one D6; unless any models in that unit have a minimum move characteristic, on a 4+ that unit cannot Fall Back this turn.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="d4e0-ee9a-ae47-d8be" name="Psychic Mastery - Malleus" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6370-55c4-5013-14f8" type="equalTo"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6370-55c4-5013-14f8" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0386-1188-bdbf-5c90" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="f2d7-5eb0-f326-e0b3" name="Psychic Mastery" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This WARLORD knows one additional psychic power from the Telethesia discipline, and can attempt to manifest one additional psychic power in your Psychic phase and attempt to deny one additional psychic power in your opponent’s Psychic phase.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="6465-67be-3031-1cd4" name="Formidable Resolve" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="21d5-92f7-83e7-dc4e" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="ae50-ce2d-6800-7dc9" name="Formidable Resolve" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to this WARLORD’s Leadership characteristic and increase the range of this WARLORD’s Unquestionable Wisdom ability by 6”.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="eb16-3581-5812-9829" name="Esoteric Lore - Xenos" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7a7-9d79-d2f8-4a17" type="notInstanceOf"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7a7-9d79-d2f8-4a17" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5d77-3f6b-8cbf-6083" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="3e26-1cd7-c1b2-a54a" name="Esoteric Lore" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst this WARLORD is on the battlefield, roll one D6 each time your opponent uses a Stratagem; on a 5+ you gain 1 Command Point.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -3284,15 +3529,23 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
-    <selectionEntryGroup id="f11e-0d59-608e-07e4" name="Warlord Traits" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="f11e-0d59-608e-07e4" name="Warlord Traits" hidden="true" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
+        <modifier type="set" field="hidden" value="false">
           <conditionGroups>
-            <conditionGroup type="and">
+            <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -3306,137 +3559,37 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6910-c149-2cc0-db4d" type="max"/>
             <constraint field="selections" scope="roster" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="bc2b-4130-223f-1b6d" type="max"/>
           </constraints>
-          <selectionEntries>
-            <selectionEntry id="b994-0007-cf62-0c0c" name="Radical" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="25a2-c492-e875-f55f" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="b4ac-0a95-ccde-2315" name="Radical" hidden="false" targetId="7a9e-9b75-ff92-24ee" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="e002-0fcd-bccf-ebe4" name="Puritan" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="68eb-b185-9438-1292" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="ca40-ac92-a88e-147f" name="Puritan" hidden="false" targetId="6dfd-e9a4-1cf8-809c" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="8416-1c43-0bbf-8e44" name="Formidable Resolve" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c705-04ef-30df-89a5" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="9448-54a5-8a42-0468" name="Formidable Resolve" hidden="false" targetId="8a9b-a11a-ed4a-cd40" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="e39e-c184-84e8-ff0c" name="Hereticus - No Escape" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9d23-57b8-72c2-d750" type="equalTo"/>
-                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9d23-57b8-72c2-d750" type="notInstanceOf"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="90b5-191f-1ccc-9dbc" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="def9-90ab-736e-432d" name="Hereticus - No Escape" hidden="false" targetId="bb4f-1507-e24d-271e" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="fbfd-7e06-2382-0cef" name="Xenos - Esoteric Lore" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7a7-9d79-d2f8-4a17" type="notInstanceOf"/>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="f7a7-9d79-d2f8-4a17" type="equalTo"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6302-c77f-9b93-b6c0" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="ed2b-21f1-2734-6c3e" name="Xenos - Esoteric Lore" hidden="false" targetId="e04d-0aae-8400-3241" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-            <selectionEntry id="95a3-3a66-87cd-9ae1" name="Malleus - Psychic Mastery" hidden="false" collective="false" import="true" type="upgrade">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditionGroups>
-                    <conditionGroup type="and">
-                      <conditions>
-                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6370-55c4-5013-14f8" type="equalTo"/>
-                        <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6370-55c4-5013-14f8" type="notInstanceOf"/>
-                      </conditions>
-                    </conditionGroup>
-                  </conditionGroups>
-                </modifier>
-              </modifiers>
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aa74-90b6-2410-7bba" type="max"/>
-              </constraints>
-              <infoLinks>
-                <infoLink id="8290-a1c3-e35e-57e7" name="Malleus - Psychic Mastery" hidden="false" targetId="ee2b-d88b-2464-2aec" type="profile"/>
-              </infoLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                <cost name="pts" typeId="points" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
+          <entryLinks>
+            <entryLink id="c258-6f5e-5029-22bc" name="Radical" hidden="false" collective="false" import="true" targetId="6838-343a-4216-699f" type="selectionEntry"/>
+            <entryLink id="cc5f-9af7-2bae-0a76" name="Puritan" hidden="false" collective="false" import="true" targetId="cf86-4230-8b55-7c4e" type="selectionEntry"/>
+            <entryLink id="9936-a8a3-d44c-cf97" name="Hereticus - No Escape" hidden="false" collective="false" import="true" targetId="cbf7-3e36-3db0-880c" type="selectionEntry"/>
+            <entryLink id="6d49-421e-f22b-b722" name="Malleus - Psychic Mastery" hidden="false" collective="false" import="true" targetId="d4e0-ee9a-ae47-d8be" type="selectionEntry"/>
+            <entryLink id="5459-5e6f-5a47-e358" name="Formidable Resolve" hidden="false" collective="false" import="true" targetId="6465-67be-3031-1cd4" type="selectionEntry"/>
+            <entryLink id="62df-a731-06d0-0fd1" name="Xenos - Esoteric Lore" hidden="false" collective="false" import="true" targetId="eb16-3581-5812-9829" type="selectionEntry"/>
+          </entryLinks>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="1e60-3912-9baf-1265" name="Warlord Traits (BRB)" hidden="false" collective="false" import="true" targetId="d442-1f03-d9da-e77f" type="selectionEntryGroup"/>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="6d56-cc13-9294-4021" name="Relics of the Inquisition" hidden="false" collective="false" import="true">
+    <selectionEntryGroup id="6d56-cc13-9294-4021" name="Relics of the Inquisition" hidden="true" collective="false" import="true">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
+        <modifier type="set" field="hidden" value="false">
           <conditionGroups>
-            <conditionGroup type="and">
+            <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="3dcc-fcb4-e9aa-2f41" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a4e2-fd07-0e14-f13b" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -3556,36 +3709,6 @@ You can include one AGENT OF THE IMPERIUM unit in each IMPERIUM (excluding FALLE
       </modifiers>
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made by a model in this unit against a unit that is not CHAOS, IMPERIUM, or UNALIGNED, you can re-roll the hit roll and you can re-roll the wound roll.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="bb4f-1507-e24d-271e" name="No Escape" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord can perform a Heroic Intervention if there any enemy units within 6” of them instead of 3”, and when doing so can move up to 6” instead of 3”. When an enemy unit within 1” of this Warlord is chosen to Fall Back, you can roll one D6; unless any models in that unit have a minimum move characteristic, on a 4+ that unit cannot Fall Back this turn.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="ee2b-d88b-2464-2aec" name="Psychic Mastery" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This Warlord knows one additional psychic power from the Telethesia discipline, and can attempt to manifest one additional psychic power in your Psychic phase and attempt to deny one additional psychic power in your opponent’s Psychic phase.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="7a9e-9b75-ff92-24ee" name="Radical" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Once per battle round, you can re-roll one hit roll, wound roll, damage roll, saving throw, Psychic test or Deny the Witch test made for this Warlord.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="e04d-0aae-8400-3241" name="Xenos - Esoteric Lore" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Whilst this Warlord is on the battlefield, roll one D6 each time your opponent uses a Stratagem; on a 5+ you gain 1 Command Point.</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="6dfd-e9a4-1cf8-809c" name="Puritan" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Improve this Warlord’s invulnerable save by 1 (to a maximum of 3+).</characteristic>
-      </characteristics>
-    </profile>
-    <profile id="8a9b-a11a-ed4a-cd40" name="Formidable Resolve" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-      <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Add 1 to this Warlord’s Leadership characteristic and increase the range of this Warlord’s Unquestionable Wisdom ability by 6”.</characteristic>
       </characteristics>
     </profile>
     <profile id="f74d-e89a-68d5-81d8" name="Refractor Field" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
