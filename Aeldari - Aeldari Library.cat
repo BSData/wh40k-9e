@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Aeldari Library" revision="142" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="223" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="2f0e-dd91-7676-722d" name="Aeldari - Aeldari Library" revision="143" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@FarseerV" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="223" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <comment>This library will now be an Aeldari library - all space elf stuff now lives here</comment>
   <readme>This library will now be an Aeldari library - all space elf stuff now lives here</readme>
   <publications>
@@ -6839,7 +6839,7 @@ Until the end of the phase, subtract 2 from charge rolls made for any unit that 
                       <costs>
                         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
                         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                        <cost name="pts" typeId="points" value="0.0"/>
+                        <cost name="pts" typeId="points" value="5.0"/>
                       </costs>
                     </selectionEntry>
                     <selectionEntry id="25ee-75f2-1638-0edd" name="Shuriken Pistol &amp; The Avenging Blade (Shrine Relic)" publicationId="1f62-db93-63f4-4dc7" page="118" hidden="true" collective="false" import="true" type="upgrade">
@@ -15274,6 +15274,11 @@ Make sure to obtain opponent consent before using this option, as it is no longe
               </conditions>
             </conditionGroup>
           </conditionGroups>
+        </modifier>
+        <modifier type="add" field="category" value="ef18-746a-369f-43a4">
+          <conditions>
+            <condition field="selections" scope="3178-49b4-4fff-c4a7" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2fae-24f9-28d4-3bb1" type="equalTo"/>
+          </conditions>
         </modifier>
       </modifiers>
       <modifierGroups>
@@ -28561,6 +28566,7 @@ Until the start or your next Psychic phase, subtract 2 from the Leadership chara
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="greaterThan"/>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b67d-da32-6a5f-0e22" type="greaterThan"/>
               </conditions>
               <conditionGroups>
                 <conditionGroup type="and">
@@ -31942,11 +31948,6 @@ D6
     <selectionEntryGroup id="2f43-12f4-58bb-7802" name="Treasures of the Aeldari (Ynnari)" hidden="true" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="false">
-          <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5af8-e7c8-e3bf-6d52" type="lessThan"/>
-          </conditions>
-        </modifier>
-        <modifier type="set" field="hidden" value="false">
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
@@ -31969,6 +31970,11 @@ D6
               </conditionGroups>
             </conditionGroup>
           </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="false">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ebb3-4f37-6e57-7a8e" type="instanceOf"/>
+          </conditions>
         </modifier>
       </modifiers>
       <selectionEntries>
