@@ -6889,7 +6889,7 @@ Remaining Wounds | Aura Range
       <modifiers>
         <modifier type="set" field="fcd3-40dd-8c3c-3456" value="1.0">
           <conditions>
-            <condition field="points" scope="roster" value="22.0" percentValue="true" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a5a-f894-9070-d236" type="atMost"/>
+            <condition field="points" scope="roster" value="19.0" percentValue="true" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a5a-f894-9070-d236" type="atMost"/>
           </conditions>
         </modifier>
       </modifiers>
