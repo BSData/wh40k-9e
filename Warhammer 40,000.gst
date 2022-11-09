@@ -6073,8 +6073,9 @@ Remaining Wounds | Aura Range
                         </conditionGroup>
                         <conditionGroup type="and">
                           <conditions>
-                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
+                            <condition field="selections" scope="force" value="6.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="lessThan"/>
                             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bdda-36f0-4f32-1639" type="equalTo"/>
+                            <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="5583-2a3e-2095-6450" type="atLeast"/>
                           </conditions>
                         </conditionGroup>
                       </conditionGroups>
