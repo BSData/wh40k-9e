@@ -5602,7 +5602,7 @@ Whilst your army is Dishonoured, the Honoured and Virtuous Chivalric abilities f
             <categoryLink id="9811-fe28-58cc-646a" name="Titanic Warlord" hidden="false" targetId="6c1d-32d6-b16c-3b0c" primary="false"/>
           </categoryLinks>
         </entryLink>
-        <entryLink id="47a6-55a6-bb0c-8117" name="Stratagems" hidden="false" collective="false" import="true" targetId="3212-5aa9-77a4-e173" type="selectionEntryGroup"/>
+        <entryLink id="47a6-55a6-bb0c-8117" name=" Stratagems" hidden="false" collective="false" import="true" targetId="3212-5aa9-77a4-e173" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
@@ -11333,16 +11333,6 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
     </selectionEntryGroup>
     <selectionEntryGroup id="b41b-99f7-d7c3-66ee" name="Heirlooms of the Noble Houses" hidden="true" collective="false" import="true">
       <modifiers>
-        <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-          <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9630-827b-a78d-63b7" repeats="1" roundUp="false"/>
-          </repeats>
-        </modifier>
-        <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-          <conditions>
-            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="atLeast"/>
-          </conditions>
-        </modifier>
         <modifier type="set" field="hidden" value="false">
           <conditionGroups>
             <conditionGroup type="or">
@@ -11359,21 +11349,6 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
             <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="equalTo"/>
           </conditions>
         </modifier>
-        <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="atLeast"/>
-          </conditions>
-        </modifier>
-        <modifier type="decrement" field="136b-91e1-d600-60e3" value="1.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
-          </conditions>
-        </modifier>
-        <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" type="greaterThan"/>
-          </conditions>
-        </modifier>
         <modifier type="set" field="hidden" value="true">
           <conditionGroups>
             <conditionGroup type="or">
@@ -11383,7 +11358,53 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="increment" field="136b-91e1-d600-60e3" value="2.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="atLeast"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <modifierGroups>
+        <modifierGroup>
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+          </conditions>
+          <modifiers>
+            <modifier type="set" field="136b-91e1-d600-60e3" value="1.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9630-827b-a78d-63b7" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="atLeast"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </modifierGroup>
+        <modifierGroup>
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
+          </conditions>
+          <modifiers>
+            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
+              <repeats>
+                <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9630-827b-a78d-63b7" repeats="1" roundUp="false"/>
+              </repeats>
+            </modifier>
+          </modifiers>
+        </modifierGroup>
+      </modifierGroups>
       <constraints>
         <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="12ba-0b2a-dd9c-13f6" type="max"/>
         <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="136b-91e1-d600-60e3" type="max"/>
