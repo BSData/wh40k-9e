@@ -26,7 +26,7 @@
         <characteristicType id="923d-2d0f-feb3-fead" name="BS"/>
       </characteristicTypes>
     </profileType>
-    <profileType id="5c3a-03e3-c48d-726c" name="Astra Militarum Orders">
+    <profileType id="5c3a-03e3-c48d-726c" name="Prefectus Orders">
       <characteristicTypes>
         <characteristicType id="e15a-5346-1d34-3504" name="Effect"/>
       </characteristicTypes>
@@ -34,6 +34,16 @@
     <profileType id="7bf1-f257-0dfd-89c4" name="Lethal Ambush">
       <characteristicTypes>
         <characteristicType id="7b99-9b3e-d21d-c1d9" name="Effect"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="fcfa-c540-5b10-e87c" name="Mechanised Orders">
+      <characteristicTypes>
+        <characteristicType id="1cde-2209-d79a-53fc" name="Effect"/>
+      </characteristicTypes>
+    </profileType>
+    <profileType id="2380-dc1e-b6ea-a1e2" name="Regimental Orders">
+      <characteristicTypes>
+        <characteristicType id="9886-dd92-1098-f92f" name="Effect"/>
       </characteristicTypes>
     </profileType>
   </profileTypes>
@@ -218,7 +228,11 @@
     <categoryEntry id="b154-f59d-8ff1-88b7" name="Smoke" hidden="false"/>
     <categoryEntry id="6de0-6e7a-52cf-17b3" name="Armoured" hidden="false"/>
     <categoryEntry id="4520-cc21-fc02-4a7e" name="Regimental" hidden="false"/>
+    <categoryEntry id="2fd6-867a-e7b1-1e3a" name="Squadron" hidden="false"/>
   </categoryEntries>
+  <entryLinks>
+    <entryLink id="5b32-f004-3c95-9c08" name="[Reference] Orders" hidden="false" collective="false" import="true" targetId="3b5d-094c-15fd-8d37" type="selectionEntry"/>
+  </entryLinks>
   <rules>
     <rule id="431d-d055-dd6e-d714" name="Defenders of Humanity" hidden="false">
       <description>If your army is Battle-forged, all Troops units in ASTRA MILITARUM Detachments and all LEMAN RUSS units in Spearhead Detachments gain this ability. Such a unit that is within range of an objective marker (as specified in the mission) controls the objective marker even if there are more enemy models within range of it. If an enemy unit within range of the same objective marker has a similar ability, then the objective marker is controlled by the player who has the most models in range as normal.</description>
@@ -410,7 +424,7 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="6e2c-4f30-b09d-c637" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="6e2c-4f30-b09d-c637" name="Stat Damage (Baneblade Transport)" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="452c-ac53-bc0c-5638" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f191-8832-e2ea-6cf8" type="min"/>
@@ -418,7 +432,7 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
       <profiles>
         <profile id="d6a5-deab-71b1-1880" name="Baneblade 1" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
           <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">14-26+</characteristic>
+            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">15+</characteristic>
             <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">10&quot;</characteristic>
             <characteristic name="BS" typeId="8010-b879-355a-c137">4+</characteristic>
             <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">9</characteristic>
@@ -426,16 +440,16 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
         </profile>
         <profile id="33b2-a1b5-ddef-62a5" name="Baneblade 2" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
           <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">7-13</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">7&quot;</characteristic>
+            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">8-14</characteristic>
+            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">8&quot;</characteristic>
             <characteristic name="BS" typeId="8010-b879-355a-c137">5+</characteristic>
             <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">6</characteristic>
           </characteristics>
         </profile>
         <profile id="2d93-8a12-ec00-a46e" name="Baneblade 3" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
           <characteristics>
-            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">1-6</characteristic>
-            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">4&quot;</characteristic>
+            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">1-7</characteristic>
+            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">6&quot;</characteristic>
             <characteristic name="BS" typeId="8010-b879-355a-c137">6+</characteristic>
             <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">3</characteristic>
           </characteristics>
@@ -556,157 +570,6 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-      </costs>
-    </selectionEntry>
-    <selectionEntry id="3447-95ac-4721-2e48" name="Valkyries" hidden="false" collective="false" import="true" type="unit">
-      <categoryLinks>
-        <categoryLink id="67cd-1f5a-19c7-99ff" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
-        <categoryLink id="7f89-a473-ab12-f66a" name="Faction: Aeronautica Imperialis" hidden="false" targetId="2135-9abb-5c57-5391" primary="false"/>
-        <categoryLink id="890f-f871-7311-e203" name="Fly" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
-        <categoryLink id="e2ba-6eb6-8038-869d" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
-        <categoryLink id="7003-ae11-0bfc-0f06" name="Valkyries" hidden="false" targetId="286e-aab4-a764-0451" primary="false"/>
-        <categoryLink id="6c1e-34f1-14a5-4147" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
-      </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="f731-f77b-45cd-e16c" name="Valkyrie" page="0" hidden="false" collective="false" import="true" type="model">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5290-7b6f-276a-08bf" type="min"/>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e49-aedb-66c4-2865" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="8ab5-979f-8c0b-d5c6" name="Valkyrie" publicationId="53e9d88f--pubN88319" page="48" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
-              <characteristics>
-                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
-                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
-                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
-                <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
-                <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
-                <characteristic name="W" typeId="f330-5e6e-4110-0978">14</characteristic>
-                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
-                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
-                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
-              </characteristics>
-            </profile>
-            <profile id="ac59-4e4a-922c-584b" name="Valkyrie" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f77e-c60e-d970-289a" type="instanceOf"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <characteristics>
-                <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 12 ASTRA MiLITARUM INFANTRY models. Each Heavy Weapons Team or Veteran Heavy Weapons Team takes the place of two other models and each OGRYN takes the space of three other models.</characteristic>
-              </characteristics>
-            </profile>
-            <profile id="bc9b-8754-8465-048d" name="Valkyrie" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
-              <modifiers>
-                <modifier type="set" field="hidden" value="true">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f77e-c60e-d970-289a" type="notInstanceOf"/>
-                  </conditions>
-                </modifier>
-              </modifiers>
-              <characteristics>
-                <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 12 RENEGADES AND HERETICS INFANTRY models. Each Heavy Weapons Team takes the place of two other models and each OGRYN takes the space of three other models.</characteristic>
-              </characteristics>
-            </profile>
-            <profile id="e4a3-4278-02a0-506b" name="Roving Gunship" publicationId="53e9d88f--pubN88319" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
-              <characteristics>
-                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If this model hovers in its Movement phase, add 1 to all hit rolls made for it in the following Shooting phase.</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-          <infoLinks>
-            <infoLink id="d94d-5b42-c18b-106b" name="Roving Gunship" hidden="false" targetId="681d-8707-d8ee-8034" type="rule"/>
-            <infoLink id="080c-7f08-9d8d-5c51" name="Airborne" hidden="false" targetId="ed3d-c2e2-be6e-332d" type="profile"/>
-            <infoLink id="b81c-c3d0-f0ac-6010" name="Crash and Burn" hidden="false" targetId="d677-7f53-691e-ac88" type="profile"/>
-            <infoLink id="342e-55c5-2da6-7a4a" name="Supersonic" hidden="false" targetId="2268-18ce-3bf2-b68d" type="profile"/>
-            <infoLink id="cc00-2daf-9d94-796e" name="Hard to Hit" hidden="false" targetId="7e37-7d16-4da6-97c8" type="profile"/>
-            <infoLink id="f721-d16c-757d-99b5" name="Hover Jet" hidden="false" targetId="5c2d-ef21-5078-d479" type="profile"/>
-            <infoLink id="ae4a-7b1a-9928-02bd" name="Grav Chute Insertion" hidden="false" targetId="c4f9-48e3-4bdc-737f" type="profile"/>
-            <infoLink id="ccbd-b718-748e-a755" name="Vehicle Squadron" hidden="false" targetId="ed79-bdf5-75ca-f019" type="profile"/>
-            <infoLink id="1a13-8398-11cd-b6d7" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
-          </infoLinks>
-          <categoryLinks>
-            <categoryLink id="c9c1-3609-faee-86e5" name="Aircraft" hidden="false" targetId="d569-3d56-cd24-6a31" primary="false"/>
-          </categoryLinks>
-          <selectionEntries>
-            <selectionEntry id="ae5d-643d-b521-f4aa" name="2x Heavy Bolters" hidden="false" collective="false" import="true" type="upgrade">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fde9-0d94-1b64-1488" type="max"/>
-              </constraints>
-              <entryLinks>
-                <entryLink id="e3d0-d982-3853-45cd" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c0b6-04cd-f69e-356c" type="min"/>
-                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0ec7-b265-c12b-a3be" type="max"/>
-                  </constraints>
-                </entryLink>
-              </entryLinks>
-              <costs>
-                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                <cost name="pts" typeId="points" value="10.0"/>
-                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-              </costs>
-            </selectionEntry>
-          </selectionEntries>
-          <selectionEntryGroups>
-            <selectionEntryGroup id="cf89-6138-23de-169b" name="Hull weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="a0a3-2c88-392b-ec22">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e965-06b1-7144-ca4c" type="max"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="51b2-a164-3210-3c53" type="min"/>
-              </constraints>
-              <selectionEntries>
-                <selectionEntry id="a0a3-2c88-392b-ec22" name="Multi-laser" page="0" hidden="false" collective="false" import="true" type="upgrade">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="1a3e-0899-5eae-8e9f" type="max"/>
-                  </constraints>
-                  <infoLinks>
-                    <infoLink id="d8c3-7652-4241-f32e" name="Multi-laser" hidden="false" targetId="92be-1bfc-f355-f214" type="profile"/>
-                  </infoLinks>
-                  <costs>
-                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-                    <cost name="pts" typeId="points" value="0.0"/>
-                  </costs>
-                </selectionEntry>
-              </selectionEntries>
-              <entryLinks>
-                <entryLink id="da07-381c-200f-59e6" name="Lascannon" hidden="false" collective="false" import="true" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1aed-4544-ddf9-54ae" type="max"/>
-                  </constraints>
-                  <costs>
-                    <cost name="pts" typeId="points" value="5.0"/>
-                  </costs>
-                </entryLink>
-              </entryLinks>
-            </selectionEntryGroup>
-          </selectionEntryGroups>
-          <entryLinks>
-            <entryLink id="71f7-fcd2-dbf0-58f3" name="Wing-mounted Weapons" hidden="false" collective="false" import="true" targetId="ebca-14a1-f915-8f33" type="selectionEntryGroup"/>
-            <entryLink id="ae2c-c3ae-cfc9-df3c" name="Stat Damage (Gunships)" hidden="false" collective="false" import="true" targetId="eeba-99b4-1642-534d" type="selectionEntry">
-              <constraints>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4bf9-e461-329e-e5d7" type="min"/>
-                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="47b0-6639-2122-26fb" type="max"/>
-              </constraints>
-            </entryLink>
-            <entryLink id="095a-fb52-6022-e2da" name="Has Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-            <entryLink id="de17-981d-4356-3ba1" name="Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
-            <entryLink id="1fb8-4353-3043-1ad3" name="Advanced Countermeasures" hidden="false" collective="false" import="true" targetId="98ef-33e0-c9ec-a8ac" type="selectionEntry"/>
-          </entryLinks>
-          <costs>
-            <cost name="pts" typeId="points" value="140.0"/>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
-      <costs>
-        <cost name="pts" typeId="points" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="5901-34d7-fb83-0e4a" name="Turret-mounted Vanquisher Battle Cannon" page="0" hidden="false" collective="false" import="true" type="upgrade">
@@ -921,7 +784,6 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="1d22-4421-d9a0-9c0c" name="Steel Behemoth" hidden="false" targetId="62e4-243e-c188-2d88" type="profile"/>
         <infoLink id="4c51-fd3a-0e7e-f44e" name="Explodes (6+/2D6&quot;/D6)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
         <infoLink id="f4fb-1670-1896-eb01" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
         <infoLink id="b205-bd39-c20d-5686" name="Armoured Tracks" hidden="false" targetId="e5af-a2b4-1ebd-d89c" type="profile"/>
@@ -975,7 +837,7 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4f9c-fcbf-594e-ce93" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="094d-bddd-bb8b-1a91" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="094d-bddd-bb8b-1a91" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="ff6a-f8e2-4388-5114" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6564-1182-18c5-770c" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="92a5-1d16-6946-42e8" type="max"/>
@@ -1111,7 +973,7 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c224-91fb-3da4-0ae7" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="75ec-e51a-e1b0-81d6" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="75ec-e51a-e1b0-81d6" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="ff6a-f8e2-4388-5114" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="228f-38aa-abbb-6c59" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1e6e-e27a-7c76-87e3" type="max"/>
@@ -1585,8 +1447,8 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">9</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">26</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">9</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">30</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
@@ -1594,16 +1456,21 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="f41d-1a49-d220-cad1" name="Steel Behemoth" hidden="false" targetId="62e4-243e-c188-2d88" type="profile"/>
-        <infoLink id="593a-6e6e-25c7-74f5" name="New InfoLink" hidden="false" targetId="c883-3078-1367-cc2c" type="profile"/>
         <infoLink id="69ec-b200-8e35-2ecd" name="Explodes (6+/2D6&quot;/D6)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
-        <infoLink id="9bf2-3efb-7b18-7a57" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
+        <infoLink id="4ca5-33b5-c814-a7fe" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
+        <infoLink id="62ba-2266-219b-d7a8" name="Turret Weapon" hidden="false" targetId="9631-9f76-7ef9-a2e8" type="rule"/>
+        <infoLink id="481c-7a4b-5bf1-0e41" name="Armoured Tracks" hidden="false" targetId="e5af-a2b4-1ebd-d89c" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="995d-696e-e4e1-55d7" name="Baneblade" hidden="false" targetId="60e9-5690-bdb9-21cd" primary="false"/>
         <categoryLink id="a7de-ba08-a822-ce4d" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false"/>
         <categoryLink id="e066-359a-6935-3986" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="df08-d070-94c7-35ca" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="980a-3c54-ddb0-5d0a" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
+        <categoryLink id="c1be-ae87-7ebd-58c2" name="Armoured" hidden="false" targetId="6de0-6e7a-52cf-17b3" primary="false"/>
+        <categoryLink id="6959-5f32-6daa-cca0" name="Smoke" hidden="false" targetId="b154-f59d-8ff1-88b7" primary="false"/>
+        <categoryLink id="7ae6-06eb-6438-598a" name="Super-Heavy" hidden="false" targetId="ccf2-6ae7-844b-dcd4" primary="false"/>
+        <categoryLink id="dd11-7c26-640b-f98c" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="b79c-9c88-256e-dcdc" name="Baneblade Cannon" page="0" hidden="false" collective="false" import="true" type="upgrade">
@@ -1619,7 +1486,7 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">9</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Turret weapon.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -1639,12 +1506,6 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7188-16d4-dc4c-0027" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="48c6-07fe-38cd-4405" name="Autocannon" hidden="false" collective="false" import="true" targetId="5210-8cb2-b5a2-a04f" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3517-0620-944a-528b" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0a75-0b66-5267-3170" type="max"/>
-          </constraints>
-        </entryLink>
         <entryLink id="4df9-d522-69fa-e2e1" name="Demolisher cannon" hidden="false" collective="false" import="true" targetId="1f7e-32c4-61af-510f" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b8d3-c21f-ef81-9660" type="min"/>
@@ -1652,6 +1513,22 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
           </constraints>
         </entryLink>
         <entryLink id="437b-2a51-c113-2848" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <modifiers>
+                <modifier type="increment" field="cd23-63c2-62f9-71cc" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="64a3-3ed6-8987-0a20" type="equalTo"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" field="cd23-63c2-62f9-71cc" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5915-dee0-5a61-66f8" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8673-5b53-8d35-d2f8" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cd23-63c2-62f9-71cc" type="max"/>
@@ -1663,7 +1540,7 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f4ef-7acf-26ca-4daf" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="c785-4bac-6508-dc77" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="c785-4bac-6508-dc77" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="ff6a-f8e2-4388-5114" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="54f9-a43f-ea97-7dd9" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c6de-c462-b8ed-f7fd" type="max"/>
@@ -1683,14 +1560,22 @@ Designer’s Note: MILITARUM TEMPESTUS units will benefit from this rule if they
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink id="49af-922a-2fa6-dc86" name="Pintle Mount" hidden="false" collective="false" import="true" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
-        <entryLink id="bf26-3580-fc48-8c5b" name="Unit has battle honors?" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="b4ed-7c73-cd56-cf1d" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="c505-4d4c-156d-a541" name="Tank Aces" hidden="false" collective="false" import="true" targetId="998b-b53a-603f-6c5b" type="selectionEntryGroup"/>
+        <entryLink id="f6b6-a08f-cbc1-4963" name="Heavy Flamer or Heavy Bolter" hidden="false" collective="false" import="true" targetId="0dd5-4cca-3b63-9c0d" type="selectionEntryGroup"/>
+        <entryLink id="900e-499b-0d46-baab" name="Lascannon" hidden="false" collective="false" import="true" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="29c6-953f-3304-0c0a" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a965-3719-e8c4-3c8d" type="max"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="20.0"/>
+          </costs>
+        </entryLink>
+        <entryLink id="5e4e-82df-1749-75ac" name="Co-axial Autocannon" hidden="false" collective="false" import="true" targetId="d204-c398-0d43-5fb4" type="selectionEntry"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="410.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="26.0"/>
+        <cost name="pts" typeId="points" value="430.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="25.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -7242,7 +7127,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
       <profiles>
         <profile id="2fa9-9041-dc92-dfff" name="Transport: Banehammer" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 25 ASTRA MILITARUM INFANTRY models.  Each Heavy Weapons Team or Veteran Heavy Weapons Team takes the place of two other models and each OGRYN takes the space of three other models.</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 25 ASTRA MILITARUM INFANTRY models. Each Heavy Weapons Team and Veteran Heavy Weapons Team takes up the space of 2 models. Each OGRYN and BULLGRYN takes up the space of 3 models.</characteristic>
           </characteristics>
         </profile>
         <profile id="4c24-2ae4-9a95-9131" name="Banehammer" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -7251,8 +7136,8 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">9</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">26</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">9</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">28</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
@@ -7260,20 +7145,23 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="c28b-5ea6-3305-7bfb" name="Steel Behemoth" hidden="false" targetId="62e4-243e-c188-2d88" type="profile"/>
-        <infoLink id="c787-2de7-8f81-7dfc" name="New InfoLink" hidden="false" targetId="c883-3078-1367-cc2c" type="profile"/>
         <infoLink id="0c80-f4d9-ab4e-c671" name="Explodes (Super-heavy)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
-        <infoLink id="8223-df33-c87a-e87b" name="New InfoLink" hidden="false" targetId="9981-5fb9-57f6-7930" type="profile"/>
+        <infoLink id="8223-df33-c87a-e87b" name="Firing Deck" hidden="false" targetId="9981-5fb9-57f6-7930" type="profile"/>
         <infoLink id="b154-5203-9ee7-7de8" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
+        <infoLink id="9f17-bf2d-3f73-bd18" name="Armoured Tracks" hidden="false" targetId="e5af-a2b4-1ebd-d89c" type="profile"/>
+        <infoLink id="4359-9a5b-8d97-4058" name="Turret Weapon" hidden="false" targetId="9631-9f76-7ef9-a2e8" type="rule"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="021c-05ee-9c68-74db" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false"/>
         <categoryLink id="550b-dc79-9caf-44db" name="Banehammer" hidden="false" targetId="8152-8a8e-f1ab-87d3" primary="false"/>
-        <categoryLink id="c0ec-df0a-0132-b2be" name="Faction: &lt;REGIMENT&gt;" hidden="false" targetId="3e01-e6cf-1353-96f4" primary="false"/>
         <categoryLink id="288d-421d-06bc-43a2" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="27a1-8e1b-9ba8-a716" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
         <categoryLink id="af45-c7c2-f578-1877" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="f9b6-a681-3618-add5" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="ccef-cd92-94e7-6eda" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
+        <categoryLink id="86ee-8c5d-9ec4-d70c" name="Armoured" hidden="false" targetId="6de0-6e7a-52cf-17b3" primary="false"/>
+        <categoryLink id="577a-7ba3-8fe9-4aff" name="Super-Heavy" hidden="false" targetId="ccf2-6ae7-844b-dcd4" primary="false"/>
+        <categoryLink id="1150-1338-cf57-af1c" name="Smoke" hidden="false" targetId="b154-f59d-8ff1-88b7" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="c60c-73e6-1b75-9ae5" name="Tremor Cannon" page="0" hidden="false" collective="false" import="true" type="upgrade">
@@ -7284,12 +7172,12 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
           <profiles>
             <profile id="f296-9a7a-0d14-23f7" name="Tremor Cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">60&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 3D6</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6+3</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">10</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. If a unit is hit by this weapon, in their following Movement phase they must halve their Move characteristic and cannot Advance.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Turret Weapon.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -7307,6 +7195,22 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
           </constraints>
         </entryLink>
         <entryLink id="e266-a3b5-e8a3-fa26" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <modifiers>
+                <modifier type="increment" field="4adf-c47b-70b3-3209" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="64a3-3ed6-8987-0a20" type="equalTo"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" field="4adf-c47b-70b3-3209" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5915-dee0-5a61-66f8" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="bb5d-53a4-2919-443f" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4adf-c47b-70b3-3209" type="max"/>
@@ -7318,21 +7222,28 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="de00-420e-7b6b-d222" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="0d96-0f86-1725-ba48" name="New EntryLink" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="0d96-0f86-1725-ba48" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="21cb-91c3-b445-bc8c" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b17e-11dc-89ad-919a" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="062c-7a99-733f-a234" name="Baneblade Sponsons" hidden="false" collective="false" import="true" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup"/>
-        <entryLink id="bc85-831b-10c7-d7ae" name="New EntryLink" hidden="false" collective="false" import="true" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
-        <entryLink id="41df-eb7a-1b64-94d3" name="Unit has battle honors?" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="9cdd-ccbd-dd08-8ada" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
         <entryLink id="07cd-3ebe-b630-2741" name="Tank Aces" hidden="false" collective="false" import="true" targetId="998b-b53a-603f-6c5b" type="selectionEntryGroup"/>
+        <entryLink id="39a2-65a2-2c44-0ebe" name="Heavy Flamer or Heavy Bolter" hidden="false" collective="false" import="true" targetId="0dd5-4cca-3b63-9c0d" type="selectionEntryGroup"/>
+        <entryLink id="2be3-7e90-962d-bf7e" name="Lascannon" hidden="false" collective="false" import="true" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ec22-bd0e-8f52-feee" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fab8-941f-5a8a-8ba4" type="max"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="20.0"/>
+          </costs>
+        </entryLink>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="370.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="24.0"/>
+        <cost name="pts" typeId="points" value="400.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="23.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -7344,8 +7255,8 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">9</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">26</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">9</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">30</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
@@ -7353,18 +7264,21 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="cb21-3bba-bcc9-6a2d" name="Steel Behemoth" hidden="false" targetId="62e4-243e-c188-2d88" type="profile"/>
-        <infoLink id="dc4a-1f34-8024-2cd9" name="New InfoLink" hidden="false" targetId="c883-3078-1367-cc2c" type="profile"/>
-        <infoLink id="ff57-13c4-5d40-f68d" name="Explodes (Super-heavy)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
+        <infoLink id="ff57-13c4-5d40-f68d" name="Explodes (6+/2D6&quot;/D6)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
         <infoLink id="ea44-a22b-7d43-6c75" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
+        <infoLink id="399b-e2ba-9891-dbe0" name="Turret Weapon" hidden="false" targetId="9631-9f76-7ef9-a2e8" type="rule"/>
+        <infoLink id="e242-5dac-fbb3-fb33" name="Armoured Tracks" hidden="false" targetId="e5af-a2b4-1ebd-d89c" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="3c39-5946-cb66-4a51" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false"/>
         <categoryLink id="8b8b-5420-ff32-b398" name="Banesword" hidden="false" targetId="a829-4945-0f1b-3e07" primary="false"/>
-        <categoryLink id="3962-42e4-6dcc-b796" name="Faction: &lt;REGIMENT&gt;" hidden="false" targetId="3e01-e6cf-1353-96f4" primary="false"/>
         <categoryLink id="ec77-3b5f-73dc-ff86" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="6c57-d83f-869e-f962" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="8980-43b0-6684-f131" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="f8c9-5b4b-4aff-4f80" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
+        <categoryLink id="ac02-864e-9a41-1332" name="Armoured" hidden="false" targetId="6de0-6e7a-52cf-17b3" primary="false"/>
+        <categoryLink id="2ff6-ddaa-0527-9ea7" name="Smoke" hidden="false" targetId="b154-f59d-8ff1-88b7" primary="false"/>
+        <categoryLink id="04bb-8300-b981-47ec" name="Super-Heavy" hidden="false" targetId="ccf2-6ae7-844b-dcd4" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="b944-9ada-51b5-c35d" name="Quake Cannon" page="0" hidden="false" collective="false" import="true" type="upgrade">
@@ -7375,12 +7289,12 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
           <profiles>
             <profile id="286d-f5d6-b9b9-0abb" name="Quake Cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">140&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">96&quot;</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6+6</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">14</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. When rolling for this weapon&apos;s damage, treat any rolls of 1 or 2 as 3 instead.</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">4</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Turret Weapon.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -7398,6 +7312,22 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
           </constraints>
         </entryLink>
         <entryLink id="9ad3-f92f-8ae9-6580" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <modifiers>
+                <modifier type="increment" field="090b-701d-4c39-2186" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="64a3-3ed6-8987-0a20" type="equalTo"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" field="090b-701d-4c39-2186" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5915-dee0-5a61-66f8" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e2ce-005e-187b-8590" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="090b-701d-4c39-2186" type="max"/>
@@ -7409,20 +7339,27 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5580-04c7-9c14-e074" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="dca0-781d-3f70-b189" name="New EntryLink" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="dca0-781d-3f70-b189" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="ff6a-f8e2-4388-5114" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5cc4-6fc1-9f1b-ef71" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="727a-9908-4a78-2744" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="526d-db01-4af2-57ee" name="New EntryLink" hidden="false" collective="false" import="true" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup"/>
-        <entryLink id="89b8-6062-a4ef-b43c" name="New EntryLink" hidden="false" collective="false" import="true" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
-        <entryLink id="d1e1-e6b6-5c6c-f55b" name="Unit has battle honors?" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="f8b4-bee6-b52f-753c" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="526d-db01-4af2-57ee" name="Baneblade Sponsons" hidden="false" collective="false" import="true" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup"/>
         <entryLink id="6fb2-f0e1-dfff-d7d2" name="Tank Aces" hidden="false" collective="false" import="true" targetId="998b-b53a-603f-6c5b" type="selectionEntryGroup"/>
+        <entryLink id="a040-b7d0-5133-a9d9" name="Lascannon" hidden="false" collective="false" import="true" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a719-d191-824b-3504" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="382d-bd0f-3c95-c631" type="max"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="20.0"/>
+          </costs>
+        </entryLink>
+        <entryLink id="a196-edf2-7bfe-0ade" name="Heavy Flamer or Heavy Bolter" hidden="false" collective="false" import="true" targetId="0dd5-4cca-3b63-9c0d" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="370.0"/>
+        <cost name="pts" typeId="points" value="390.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="24.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
@@ -7933,7 +7870,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             </modifier>
           </modifiers>
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 12 ASTRA MILITARUM INFANTRY models. Each Heavy Weapons Team or Veteran Heavy Weapons Team takes the place of two other models and each OGRYN takes the space of three other models.</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 12 ASTRA MILITARUM INFANTRY models. Each Heavy Weapons Team and Veteran Heavy Weapons Team takes up the space of 2 models. Each OGRYN and BULLGRYN takes up the space of 3 models.</characteristic>
           </characteristics>
         </profile>
         <profile id="df0d-7277-8d33-9471" name="Chimera" publicationId="53e9d88f--pubN88319" page="40" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -7943,13 +7880,13 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">6</characteristic>
             <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">10</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">11</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
           </characteristics>
         </profile>
-        <profile id="ef85-9e45-1934-aa74" name="Transport: Chimera" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+        <profile id="ef85-9e45-1934-aa74" name="Transport: Chimera" hidden="true" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditions>
@@ -7972,22 +7909,26 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
         <categoryLink id="f164-e98a-1ff3-ac71" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
         <categoryLink id="f71a-1cb7-aed2-6eeb" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="148c-8b59-56b4-be40" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="5892-3206-41ec-b0de" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="52c4-0d44-f262-070e" name="Smoke" hidden="false" targetId="b154-f59d-8ff1-88b7" primary="false"/>
+        <categoryLink id="eefe-dca3-a6cd-2a86" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
+        <categoryLink id="549f-2eff-852d-afd5" name="Squadron" hidden="false" targetId="2fd6-867a-e7b1-1e3a" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="e3a4-7c3d-53cf-391f" name="Lasgun Arrays" page="0" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="5957-71d4-0e8e-48cb" type="min"/>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="9e66-26b7-787d-9e69" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="5957-71d4-0e8e-48cb" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="9e66-26b7-787d-9e69" type="max"/>
           </constraints>
           <profiles>
             <profile id="785b-4e82-7555-1ed0" name="Lasgun Array" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 3</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 6</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">3</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
                 <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">This weapon can only be fired if a unit is embarked upon the vehicle equipped with it.</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
               </characteristics>
             </profile>
           </profiles>
@@ -8006,11 +7947,6 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
           </constraints>
         </entryLink>
         <entryLink id="595b-cb10-98b4-e8aa" name="Pintle Mount" hidden="false" collective="false" import="true" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
-        <entryLink id="a10d-2d3a-bcc7-8e42" name="Turret Weapon" hidden="false" collective="false" import="true" targetId="5aa3-59d1-a7d0-8041" type="selectionEntryGroup"/>
-        <entryLink id="6d06-29a4-1c38-05c5" name="Hull Weapon" hidden="false" collective="false" import="true" targetId="846f-095f-3967-92af" type="selectionEntryGroup"/>
-        <entryLink id="2294-2bcf-6b58-50ea" name="Vehicle Equipment List" hidden="false" collective="false" import="true" targetId="d9f1-0505-984e-c749" type="selectionEntryGroup"/>
-        <entryLink id="91a8-d59c-ee46-939c" name="Has Battle Honours (Chapter Approved 2018)" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="3216-7e35-6ee4-72bd" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="65.0"/>
@@ -9007,7 +8943,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
       <profiles>
         <profile id="91fd-c3ab-639d-7d04" name="Transport: Doomhammer" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 25 ASTRA MILITARUM INFANTRY models.  Each Heavy Weapons Team or Veteran Heavy Weapons Team takes the place of two other models and each OGRYN takes the space of three other models.</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 25 ASTRA MILITARUM INFANTRY models. Each Heavy Weapons Team and Veteran Heavy Weapons Team takes up the space of 2 models. Each OGRYN and BULLGRYN takes up the space of 3 models.</characteristic>
           </characteristics>
         </profile>
         <profile id="4c73-7a56-4e38-87c4" name="Doomhammer" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -9016,8 +8952,8 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <characteristic name="WS" typeId="e7f0-1278-0250-df0c">5+</characteristic>
             <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
             <characteristic name="S" typeId="2218-aa3c-265f-2939">9</characteristic>
-            <characteristic name="T" typeId="9c9f-9774-a358-3a39">8</characteristic>
-            <characteristic name="W" typeId="f330-5e6e-4110-0978">26</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">9</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">28</characteristic>
             <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">*</characteristic>
             <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
             <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">2+</characteristic>
@@ -9025,20 +8961,23 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
         </profile>
       </profiles>
       <infoLinks>
-        <infoLink id="612f-1594-bf90-9cf7" name="Steel Behemoth" hidden="false" targetId="62e4-243e-c188-2d88" type="profile"/>
-        <infoLink id="8179-719e-4d2c-ca39" name="New InfoLink" hidden="false" targetId="c883-3078-1367-cc2c" type="profile"/>
-        <infoLink id="f9c6-1480-00bf-f0d7" name="Explodes (Super-heavy)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
-        <infoLink id="cc6f-6dc0-85b7-7327" name="New InfoLink" hidden="false" targetId="9981-5fb9-57f6-7930" type="profile"/>
+        <infoLink id="f9c6-1480-00bf-f0d7" name="Explodes (6+/2D6&quot;/D6)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
+        <infoLink id="cc6f-6dc0-85b7-7327" name="Firing Deck" hidden="false" targetId="9981-5fb9-57f6-7930" type="profile"/>
         <infoLink id="2369-bfcd-88e4-1c04" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
+        <infoLink id="af41-4771-57fe-1362" name="Turret Weapon" hidden="false" targetId="9631-9f76-7ef9-a2e8" type="rule"/>
+        <infoLink id="8658-1099-e96a-7a4a" name="Armoured Tracks" hidden="false" targetId="e5af-a2b4-1ebd-d89c" type="profile"/>
       </infoLinks>
       <categoryLinks>
         <categoryLink id="6692-2ef6-1cc3-867c" name="Titanic" hidden="false" targetId="bdda-36f0-4f32-1639" primary="false"/>
         <categoryLink id="32b8-f141-fb1a-9d1d" name="Doomhammer" hidden="false" targetId="eb0a-0ae9-3f49-5679" primary="false"/>
-        <categoryLink id="4afd-8fe1-0e3e-abe0" name="Faction: &lt;REGIMENT&gt;" hidden="false" targetId="3e01-e6cf-1353-96f4" primary="false"/>
         <categoryLink id="f25d-03d5-6be0-e594" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="9aa9-f0f0-ae39-24bd" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
         <categoryLink id="b4e8-2297-a663-df89" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="d09f-acbb-32ac-0c6b" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="eef7-40f2-b897-e6be" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
+        <categoryLink id="dfd9-9f3f-7c13-7ea4" name="Armoured" hidden="false" targetId="6de0-6e7a-52cf-17b3" primary="false"/>
+        <categoryLink id="297b-2343-ac39-406e" name="Smoke" hidden="false" targetId="b154-f59d-8ff1-88b7" primary="false"/>
+        <categoryLink id="771b-cfe7-1c1a-9464" name="Super-Heavy" hidden="false" targetId="ccf2-6ae7-844b-dcd4" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="b13f-48b7-e222-31e1" name="Magma Cannon" page="0" hidden="false" collective="false" import="true" type="upgrade">
@@ -9050,11 +8989,11 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <profile id="1ac9-a92f-b30f-0b86" name="Magma Cannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
               <characteristics>
                 <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">60&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2D6</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy D6+3</characteristic>
                 <characteristic name="S" typeId="59b1-319e-ec13-d466">10</characteristic>
                 <characteristic name="AP" typeId="75aa-a838-b675-6484">-5</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. If the target is within half range of this weapon, roll two dice when inflicting damage with it and discard the lowest result.</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6+2</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Turret Weapon. Each time an attack is made with this weapon that targets a unit within half range, that attack has a damage characteristic of D6+4</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -9072,6 +9011,22 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
           </constraints>
         </entryLink>
         <entryLink id="6352-ce71-c245-960c" name="Twin heavy bolter" hidden="false" collective="false" import="true" targetId="09d8-7790-ed3f-4d6d" type="selectionEntry">
+          <modifierGroups>
+            <modifierGroup>
+              <modifiers>
+                <modifier type="increment" field="4806-dffb-ebee-1e68" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="64a3-3ed6-8987-0a20" type="equalTo"/>
+                  </conditions>
+                </modifier>
+                <modifier type="increment" field="4806-dffb-ebee-1e68" value="2.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="5915-dee0-5a61-66f8" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+            </modifierGroup>
+          </modifierGroups>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="778d-b058-c88d-b14b" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4806-dffb-ebee-1e68" type="max"/>
@@ -9083,21 +9038,28 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aff8-8532-0432-073e" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="12ac-d3d9-4eeb-0583" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="12ac-d3d9-4eeb-0583" name="Stat Damage (Baneblade Transport)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="871c-04b9-b8a8-d2d0" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5153-75b4-98af-7b57" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="1b7f-da2c-3558-f3bb" name="New EntryLink" hidden="false" collective="false" import="true" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup"/>
-        <entryLink id="77ed-0740-db08-bc86" name="New EntryLink" hidden="false" collective="false" import="true" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
-        <entryLink id="853b-aeb3-cce5-ba71" name="Unit has battle honors?" hidden="false" collective="false" import="true" targetId="4763-757f-499f-d998" type="selectionEntry"/>
-        <entryLink id="0b0d-a5e0-1f6b-2148" name="Battle Honors" hidden="false" collective="false" import="true" targetId="5518-d0f5-a880-d71c" type="selectionEntryGroup"/>
+        <entryLink id="1b7f-da2c-3558-f3bb" name="Baneblade Sponsons" hidden="false" collective="false" import="true" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup"/>
         <entryLink id="ff42-b8fa-3a3b-cd70" name="Tank Aces" hidden="false" collective="false" import="true" targetId="998b-b53a-603f-6c5b" type="selectionEntryGroup"/>
+        <entryLink id="adf8-c8bd-b443-1f0f" name="Lascannon" hidden="false" collective="false" import="true" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5998-54aa-cd6c-e9a4" type="min"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a837-094e-fb10-47c6" type="max"/>
+          </constraints>
+          <costs>
+            <cost name="pts" typeId="points" value="20.0"/>
+          </costs>
+        </entryLink>
+        <entryLink id="6a2f-4737-17bc-c1e4" name="Heavy Flamer or Heavy Bolter" hidden="false" collective="false" import="true" targetId="0dd5-4cca-3b63-9c0d" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="380.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="25.0"/>
+        <cost name="pts" typeId="points" value="420.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="24.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -9518,24 +9480,6 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="7dff-84ae-55ed-8355" name="Co-axial Autocannon" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="7d5e-753a-219c-8a46" type="min"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="a1b3-6048-6137-2e6e" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="ba1b-0f67-d2bd-e48c" name="Co-axial Autocannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-              <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Turret Weapon</characteristic>
-              </characteristics>
-            </profile>
-          </profiles>
-        </selectionEntry>
       </selectionEntries>
       <entryLinks>
         <entryLink id="d5b6-f9fa-ccfb-1a12" name="Hunter-killer missile" hidden="false" collective="false" import="true" targetId="32bf-b117-4ecf-5165" type="selectionEntry">
@@ -9549,7 +9493,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="54ca-b704-a957-9950" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="d941-76fd-efed-0e0d" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="d941-76fd-efed-0e0d" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="ff6a-f8e2-4388-5114" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a408-7898-6ed6-bf2f" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea63-e5df-1937-e077" type="max"/>
@@ -9601,6 +9545,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <cost name="pts" typeId="points" value="20.0"/>
           </costs>
         </entryLink>
+        <entryLink id="592d-f78e-338e-4782" name="Co-axial Autocannon" hidden="false" collective="false" import="true" targetId="d204-c398-0d43-5fb4" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="450.0"/>
@@ -13172,7 +13117,6 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
       </profiles>
       <infoLinks>
         <infoLink id="3040-6f14-fa4c-de56" name="Explodes (6+/2D6&quot;/D6)" hidden="false" targetId="f505-bfe1-b238-0c41" type="profile"/>
-        <infoLink id="b928-1c16-5e67-9f59" name="Steel Behemoth" hidden="false" targetId="62e4-243e-c188-2d88" type="profile"/>
         <infoLink id="f86c-9432-00eb-7432" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
         <infoLink id="c6c0-f8cf-bed6-27c1" name="Firing Deck" hidden="false" targetId="9981-5fb9-57f6-7930" type="profile"/>
         <infoLink id="00ec-003b-5c6c-1ec5" name="Armoured Tracks" hidden="false" targetId="e5af-a2b4-1ebd-d89c" type="profile"/>
@@ -13227,7 +13171,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="603b-467f-4c94-0592" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="fd5f-f241-4dd2-700a" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
+        <entryLink id="fd5f-f241-4dd2-700a" name="Stat Damage (Baneblade Transport)" hidden="false" collective="false" import="true" targetId="6e2c-4f30-b09d-c637" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e621-d20c-ee5b-3e9b" type="min"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c30b-2723-5757-27ef" type="max"/>
@@ -13284,7 +13228,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
       <profiles>
         <profile id="b49b-5726-0305-df5c" name="Transport: Taurox" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
           <characteristics>
-            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 10 ASTRA MILITARUM INFANTRY models.  Each Heavy Weapons Team or Veteran Heavy Weapons Team takes the place of two other models and each OGRYN takes the space of three other models.</characteristic>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 10 ASTRA MILITARUM INFANTRY models.  Each Heavy Weapons Team and Veteran Heavy Weapons Team takes up the space of 2 models. Each OGRYN and BULLGRYN takes up the space of 3 models.</characteristic>
           </characteristics>
         </profile>
         <profile id="42d7-db5b-f560-8851" name="Taurox" publicationId="53e9d88f--pubN88319" page="41" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
@@ -13306,12 +13250,14 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
         <infoLink id="d2c1-74b1-a42f-aa5b" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
       </infoLinks>
       <categoryLinks>
-        <categoryLink id="17a2-d958-6ee7-ae03" name="Faction: &lt;REGIMENT&gt;" hidden="false" targetId="3e01-e6cf-1353-96f4" primary="false"/>
         <categoryLink id="db9f-46e4-a4f6-42c5" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="8de8-5f3d-9465-6eab" name="Tauros" hidden="false" targetId="e087-6de0-cf46-62a5" primary="false"/>
         <categoryLink id="fc12-f340-f37a-61fa" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
         <categoryLink id="4d83-3afa-0785-9771" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
         <categoryLink id="6aa1-1401-8228-f83d" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="4818-248c-4584-7a58" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
+        <categoryLink id="c975-6d81-3e58-17b5" name="Armoured" hidden="false" targetId="6de0-6e7a-52cf-17b3" primary="false"/>
+        <categoryLink id="65ed-b29d-4bc9-8928" name="Squadron" hidden="false" targetId="2fd6-867a-e7b1-1e3a" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="6598-590e-2120-9b84" name="Stat Damage (Taurox)" hidden="false" collective="false" import="true" type="upgrade">
@@ -13362,8 +13308,8 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
         <entryLink id="f342-349c-2766-cc97" name="Pintle Mount" hidden="false" collective="false" import="true" targetId="ebb9-dadc-c98d-9b62" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
-        <cost name="pts" typeId="points" value="90.0"/>
-        <cost name=" PL" typeId="e356-c769-5920-6e14" value="5.0"/>
+        <cost name="pts" typeId="points" value="70.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
@@ -14985,7 +14931,7 @@ OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is wit
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="cff6-a8e7-27ea-0776" name="Brood Brothers" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="cff6-a8e7-27ea-0776" name="Brood Brothers" hidden="true" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ed27-40dc-46c8-f3cc" type="max"/>
       </constraints>
@@ -15536,6 +15482,384 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="d204-c398-0d43-5fb4" name="Co-axial Autocannon" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ca8e-e4db-fb8e-eea0" type="min"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="ac74-3e22-10fc-9ce5" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="31b3-2508-ee64-4b38" name="Co-axial Autocannon" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">48&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 2</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">7</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Turret Weapon</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="ff6a-f8e2-4388-5114" name="Stat Damage (Baneblade)" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ad70-2e2d-b60b-2d13" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="808f-e5e9-b6fb-827f" type="min"/>
+      </constraints>
+      <profiles>
+        <profile id="13f1-f0f0-2960-fbbf" name="Baneblade 1" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">16+</characteristic>
+            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">10&quot;</characteristic>
+            <characteristic name="BS" typeId="8010-b879-355a-c137">4+</characteristic>
+            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">9</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="e5a3-3da0-db58-ea23" name="Baneblade 2" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">8-15</characteristic>
+            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">8&quot;</characteristic>
+            <characteristic name="BS" typeId="8010-b879-355a-c137">5+</characteristic>
+            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">6</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="84a7-2d65-88da-386f" name="Baneblade 3" hidden="false" typeId="e6d5-85c5-7b01-a3c4" typeName="Stat Damage - M/BS/A">
+          <characteristics>
+            <characteristic name="Remaining W" typeId="233c-fa78-4641-68d9">1-7</characteristic>
+            <characteristic name="Movement" typeId="fc73-9b3f-5e4b-86b9">6&quot;</characteristic>
+            <characteristic name="BS" typeId="8010-b879-355a-c137">6+</characteristic>
+            <characteristic name="Attacks" typeId="2e64-2e5c-f4d1-52d3">3</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="34b5-c9b7-72d1-5a21" name="Aegis Defence Line" page="" hidden="false" collective="false" import="true" type="unit">
+      <profiles>
+        <profile id="5774-e89d-1be9-0dad" name="Terrain Feature (Shield Sections)" publicationId="53e9d88f--pubN88319" page="114" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">After this model is set up, it is treated as an Area Terrain feature with the following terrain traits, as described in the Warhammer 40,000 Core Book:
+- Defence Line
+- Light Cover
+- Heavy Cover
+- Defensible</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="b187-f5e7-c5b2-4e7a" name="Reinforced Construction" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a ranged attack is allocated to a model while it is receiving the benefits of cover from this terrain feature, worsen the Armour Penetration characterstic of that attack by 1 (to a minimum of 0).</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <categoryLinks>
+        <categoryLink id="0cbf-4b9b-c6e4-5a52" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="3a83-bef0-a323-11ba" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="6767-0df1-f9cf-c772" name="Terrain" hidden="false" targetId="c901-fe8a-a156-f3fa" primary="false"/>
+        <categoryLink id="ec8f-0871-498b-7749" name="Obstacle" hidden="false" targetId="7d4c-822b-b174-1e96" primary="false"/>
+        <categoryLink id="e348-c8ae-c536-0392" name="Aegis Defence Line" hidden="false" targetId="2c69-bba7-d2ac-2698" primary="false"/>
+      </categoryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="40.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="2.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b6a5-c91b-960b-917b" name="Valkyrie" page="0" hidden="false" collective="false" import="true" type="model">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a31b-bbf4-f58c-c804" type="min"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2bd5-a084-664e-1872" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="1dfd-6939-91d6-86b4" name="Valkyrie" publicationId="53e9d88f--pubN88319" page="48" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">*</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">6+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">*</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">7</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">7</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">14</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">7</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="1e3a-6800-f2d7-f0d5" name="Valkyrie" hidden="false" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f77e-c60e-d970-289a" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 12 ASTRA MILITARUM INFANTRY models. Each Heavy Weapons Team and Veteran Heavy Weapons Team takes up the space of 2 models. Each OGRYN and BULLGRYN takes up the space of 3 models.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="dabd-3e3f-40f9-bcb0" name="Valkyrie" hidden="true" typeId="b3a8-0452-7436-44d1" typeName="Transport">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f77e-c60e-d970-289a" type="notInstanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Capacity" typeId="15aa-1916-a38b-d223">This model can transport 12 RENEGADES AND HERETICS INFANTRY models. Each Heavy Weapons Team takes the place of two other models and each OGRYN takes the space of three other models.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <rules>
+        <rule id="1743-54ae-9830-c663" name="Airborn Assault" hidden="false">
+          <description>During deployment, you can set up this unit high in the skies instead of setting it up on the battlefield. If you do so, then in the Reinforcements step of one of your Movement phases you can set up this unit anywhere on the battlefieled that is more than 9&quot; away from any enemy models.</description>
+        </rule>
+      </rules>
+      <infoLinks>
+        <infoLink id="7010-a71b-a3ef-f2b0" name="Supersonic" hidden="false" targetId="2268-18ce-3bf2-b68d" type="profile"/>
+        <infoLink id="0a6c-62bc-9419-45ae" name="Hard to Hit" hidden="false" targetId="7e37-7d16-4da6-97c8" type="profile"/>
+        <infoLink id="bbf3-480c-c5a0-6d59" name="Hover Jet" hidden="false" targetId="5c2d-ef21-5078-d479" type="profile"/>
+        <infoLink id="1eaf-742b-2ae2-9af0" name="Grav Chute Insertion" hidden="false" targetId="c4f9-48e3-4bdc-737f" type="profile"/>
+        <infoLink id="680d-10f6-089c-088f" name="Armour of Contempt" hidden="false" targetId="ab12-fdad-19bf-29d7" type="rule"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="e7a1-6595-eaa7-7c8f" name="Aircraft" hidden="false" targetId="d569-3d56-cd24-6a31" primary="false"/>
+        <categoryLink id="b0c7-ed22-3d6f-bb7b" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="e5fe-f77c-a5eb-a206" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
+        <categoryLink id="1bf5-d6e5-a026-1601" name="Faction: Aeronautica Imperialis" hidden="false" targetId="2135-9abb-5c57-5391" primary="false"/>
+        <categoryLink id="07f7-88f7-f86e-c82f" name="Faction: Militarum Tempestus" hidden="false" targetId="3984-854b-4603-be64" primary="false"/>
+        <categoryLink id="9a0d-a1bd-ce2d-babd" name="Vehicle" hidden="false" targetId="c8fd-783f-3230-493e" primary="false"/>
+        <categoryLink id="46c4-fafd-dcae-d262" name="Transport" hidden="false" targetId="6cc4-1b62-8e8a-05cd" primary="false"/>
+        <categoryLink id="54a9-cde4-c856-9cd2" name="Fly" hidden="false" targetId="3117-16d8-fcef-4f56" primary="false"/>
+        <categoryLink id="082d-5b41-3e14-aac0" name="Valkyries" hidden="false" targetId="286e-aab4-a764-0451" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="b94c-7cc6-7e5d-0d0e" name="2x Heavy Bolters" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7dc5-bcbb-31fa-cbc8" type="max"/>
+          </constraints>
+          <entryLinks>
+            <entryLink id="9685-292d-0450-8e33" name="Heavy bolter" hidden="false" collective="false" import="true" targetId="05ab-e7cc-e856-c36f" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4eff-1b03-60d2-7605" type="min"/>
+                <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9377-ba2c-bafe-d310" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="10.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="1b60-06db-f28b-a72a" name="Hull weapon" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8ff5-ac9d-144c-df7a" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2a2c-1ef8-c0c6-3c19" type="min"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="b4b9-a76d-abd8-fccc" name="Militarum Multi-laser" page="0" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="f256-93e0-c495-3013" value="0.0">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1b60-06db-f28b-a72a" type="equalTo"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="c483-97c3-f6b3-713b" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f256-93e0-c495-3013" type="min"/>
+              </constraints>
+              <profiles>
+                <profile id="6432-5c8a-8c31-04ad" name="Militarum Multi-laser" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 4</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+          <entryLinks>
+            <entryLink id="a1fd-c38c-f9e4-c0b8" name="Lascannon" hidden="false" collective="false" import="true" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8b6d-33da-9b9d-14a3" type="max"/>
+              </constraints>
+              <costs>
+                <cost name="pts" typeId="points" value="5.0"/>
+              </costs>
+            </entryLink>
+          </entryLinks>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="fd08-8990-5cdf-dc72" name="Wing-mounted Weapons" hidden="false" collective="false" import="true" targetId="ebca-14a1-f915-8f33" type="selectionEntryGroup"/>
+        <entryLink id="421e-3223-7341-450c" name="Stat Damage (Gunships)" hidden="false" collective="false" import="true" targetId="eeba-99b4-1642-534d" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1152-671a-7608-591f" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c3e0-9068-c1ca-3e62" type="max"/>
+          </constraints>
+        </entryLink>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="140.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="7.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="3b5d-094c-15fd-8d37" name="[Reference] Orders" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8ae3-462b-4b2b-7aaf" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="1f8f-426c-7e43-e6cb" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="1c2c-0e79-1656-2134" name="Mechanised Orders" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f57b-1e29-716a-f3df" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="e02f-5710-ad04-45b5" name="Shock and Awe!" publicationId="53e9d88f--pubN88319" page="78" hidden="false" typeId="fcfa-c540-5b10-e87c" typeName="Mechanised Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="1cde-2209-d79a-53fc">Until the end of your next Command phase, this unit games the Objective Secured ability</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="9afa-5900-e4d9-bbaa" name="Gunners, Kill on Sight!" publicationId="53e9d88f--pubN88319" page="78" hidden="false" typeId="fcfa-c540-5b10-e87c" typeName="Mechanised Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="1cde-2209-d79a-53fc">Until the end of your next Shooting phase, each time a model in this unit makes a ranged attack, re-roll a hit roll of 1.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="e15a-91c8-8e4f-d817" name="Full Throttle!" publicationId="53e9d88f--pubN88319" page="78" hidden="false" typeId="fcfa-c540-5b10-e87c" typeName="Mechanised Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="1cde-2209-d79a-53fc">- Until the end of your next Movement phase, add 2” to the Move characteristic of models in this unit.
+- Until the end of your next Shooting phase, when this unit is selected to shoot, if it Advanced during your previous Movement phase, then until the end of the phase it counts as having Remained Stationary.
+</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="ca67-3d36-41cc-a3e4" name="Pound Them to Dust!" publicationId="53e9d88f--pubN88319" page="78" hidden="false" typeId="fcfa-c540-5b10-e87c" typeName="Mechanised Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="1cde-2209-d79a-53fc">Until the end of your next Shooting phase, each time this unit is selected to shoot, for the purposes of determining how many attacks are made by Blast weapons models in this unit are equipped with, double the number of models in the target unit.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="407f-75b8-8b85-f05a" name="Blitz Them!" publicationId="53e9d88f--pubN88319" page="78" hidden="false" typeId="fcfa-c540-5b10-e87c" typeName="Mechanised Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="1cde-2209-d79a-53fc">Until the end of your next Charge phase:
+- Add 1 to charge rolls made for this unit.
+- If this unit makes a charge move this turn, select one enemy unit within Engagement Range of this unit and roll one D6, adding 1 if this unit has the Dozer Blade keyword: on a 4+, that enemy unit suffers D3 mortal wounds.
+</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="824a-7fbd-eef2-2217" name="Pinning Fire!" publicationId="53e9d88f--pubN88319" page="78" hidden="false" typeId="fcfa-c540-5b10-e87c" typeName="Mechanised Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="1cde-2209-d79a-53fc">In your next Shooting Phase, the first time this unit is selected to shoot, you can select one enemy Infantry unit that is visible to it. If you do so:
+- Models in this unit can only make attacks against that enemy unit that phase (and only if that enemy unit is an eligible target for those attacks).
+- If this unit scores 5 or more hits against that unit, then until the end of your opponent’s next turn, that enemy unit is pinned. While a unit is pinned, each time a model in that unit makes an attack, subtract 2” from the Move characteristic of models in that unit
+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="927f-9d7a-b907-657d" name="Prefectus Orders" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="30dc-039c-e504-862a" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="ca2f-9ad8-5e5a-08ee" name="Get Back in the Fight!" publicationId="53e9d88f--pubN88319" page="77" hidden="false" typeId="5c3a-03e3-c48d-726c" typeName="Prefectus Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="e15a-5346-1d34-3504">Until the start of your next command phase, this unit is eligible to shoot or charge (but not both) in a turn in which it Fell Back</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="c160-8b9a-bc34-31b8" name="Forwards, for the Emperor!" publicationId="53e9d88f--pubN88319" page="77" hidden="false" typeId="5c3a-03e3-c48d-726c" typeName="Prefectus Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="e15a-5346-1d34-3504">Until the end of your next Shooting phase, when this unit is selected to shoot, if it made a Normal Move or Advanced in your previous movement phase, then until the end of that Shooting phase it counts as having Remained Stationary.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="6e6a-a95e-20a2-17f9" name="Show Them Setel, Show Them Contempt" publicationId="53e9d88f--pubN88319" page="77" hidden="false" typeId="5c3a-03e3-c48d-726c" typeName="Prefectus Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="e15a-5346-1d34-3504">Until the start of your next Command phase:
+-Add 1 to the Leadership characteristic of models in this unit.
+-Each time a model in this unit would lose a wound as a result of a mortal wound, roll one D6: on a 5+, that wound is not lost.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="3c40-8ffc-e2b1-1386" name="Duty and Honour" publicationId="53e9d88f--pubN88319" page="77" hidden="false" typeId="5c3a-03e3-c48d-726c" typeName="Prefectus Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="e15a-5346-1d34-3504">Until the start of your next command phase, this unit can still perform actions in a turn in which it Fell back or Advanced, and it can shoot without any actions it is performing failing.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="da1b-176c-d001-9564" name="At All Costs!" publicationId="53e9d88f--pubN88319" page="77" hidden="false" typeId="5c3a-03e3-c48d-726c" typeName="Prefectus Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="e15a-5346-1d34-3504">Until the end of your next command phase, this unit gains the Objective Secured ability. If this unit already had this ability, until the end of your next Command phase, models in this unit count as on additional model when determining control of an objective marker.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="91e0-ef89-1bf9-d1f6" name="Remain Vigilant!" publicationId="53e9d88f--pubN88319" page="77" hidden="false" typeId="5c3a-03e3-c48d-726c" typeName="Prefectus Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="e15a-5346-1d34-3504">Until the start of your next Command phase:
+-Enemy units that are set up as Reinforcements cannot be set up within 12” of this unit.
+-If an enemy unit declares a charge against this unit and this unit is not within Engagement Range of any other enemy units, it can Hold steady. If it does so, then until the end of the phase, any Overwatch attacks made by models in this unit score hits on unmodified rolls of 5+ instead of 6.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+        <selectionEntry id="7a3a-16ac-00bc-9899" name="Regimental Orders" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="823f-204b-ecf3-de7a" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="bc08-25f3-2131-2315" name="Take Aim!" publicationId="53e9d88f--pubN88319" page="76" hidden="false" typeId="2380-dc1e-b6ea-a1e2" typeName="Regimental Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="9886-dd92-1098-f92f">Until the end of your next Shooting phase, each time a model in this unit makes a ranged attack, add 1 to that attack’s hit roll and improve the Armour Penetration of that attack by 1.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="f5c5-d9d1-64fa-2355" name="First Rank, Fire! Second Rank, Fire!" publicationId="53e9d88f--pubN88319" page="76" hidden="false" typeId="2380-dc1e-b6ea-a1e2" typeName="Regimental Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="9886-dd92-1098-f92f">Until the end of your next Shooting Phase, change the Type of all lasguns and hot-shot lasguns i this unit are equipped with to Heavy 3</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="a3ff-aff7-0df5-b7f9" name="Move! Move! Move!" publicationId="53e9d88f--pubN88319" page="76" hidden="false" typeId="2380-dc1e-b6ea-a1e2" typeName="Regimental Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="9886-dd92-1098-f92f">Until the end of your next Movement phase, if this unit makes a normal move, add 2” to the Move characteristic of models in this unit
+Until the end of your next Movement phase, if this unit advances, do not make an Advance roll. Instead until the end of the phase, add 6” to the Move characteristic of models in this unit.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="85ea-efdc-c84d-1c29" name="Suppression Fire!" publicationId="53e9d88f--pubN88319" page="76" hidden="false" typeId="2380-dc1e-b6ea-a1e2" typeName="Regimental Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="9886-dd92-1098-f92f">In your next Shooting Phase, the first time this unit is selected to shoot, you can select an enemy Infantry unit that is visible to it. If you do so:
+-Models in this unit can only make attacks against that enemy unit that phase (and only if that enemy unit is an eligible target for those attacks).
+-If this unit scores 5 or more hits against that unit, then until the end of your opponent’s next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from that attack’s hit roll.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="d444-cb6d-3da4-c4ef" name="Take Cover!" publicationId="53e9d88f--pubN88319" page="76" hidden="false" typeId="2380-dc1e-b6ea-a1e2" typeName="Regimental Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="9886-dd92-1098-f92f">Until the start of your next Command phase, each time an attack is allocated to a model in this unit, models in this unit receive the benefit of Light Cover against that attack. If a unit affected by this Order is already receiving the benefits of Light Cover, it additionally receives the benefits of Dense Cover against that attack.</characteristic>
+              </characteristics>
+            </profile>
+            <profile id="668f-39c6-fc9c-f12f" name="Fix Bayonets!" publicationId="53e9d88f--pubN88319" page="76" hidden="false" typeId="2380-dc1e-b6ea-a1e2" typeName="Regimental Orders">
+              <characteristics>
+                <characteristic name="Effect" typeId="9886-dd92-1098-f92f">Until the end of your next Fight phase, each time a model in this unit makes a melee attack, add 1 to that attack’s hit roll and improve the Armour Penetration of that attack by 1.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="9ef3-0f17-2aeb-436e" name="Astra Militarum Ranged Weapons" hidden="false" collective="false" import="true">
@@ -15901,6 +16225,7 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="f1cf-0a07-31f2-dd3d" name="Storm Bolter" hidden="false" collective="false" import="true" type="upgrade">
@@ -15916,13 +16241,15 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b439-8001-2ee7-35a9" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c00b-3ffa-0dbc-5154" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ec80-f655-6595-2558" type="instanceOf"/>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9db7-2732-6040-c8cd" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a43f-9725-6c01-4668" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7ea2-f323-15c7-6a32" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="baa9-dbdb-8fa4-6149" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e035-adc9-4e15-cfc6" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6c14-3b59-de8c-6c93" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c745-9d1a-097d-c949" type="instanceOf"/>
                     <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f58d-3f0a-4334-829a" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9db7-2732-6040-c8cd" type="instanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0ed3-ca73-4800-91a7" type="instanceOf"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -15950,6 +16277,7 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -16357,16 +16685,21 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
     </selectionEntryGroup>
     <selectionEntryGroup id="13fd-f96b-049d-7216" name="Psykana Discipline" publicationId="53e9d88f--pubN88319" page="137" hidden="false" collective="false" import="true">
       <selectionEntries>
-        <selectionEntry id="0651-aad7-b7a1-ce88" name="Terrifying Visions" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="0651-aad7-b7a1-ce88" name="1. Terrifying Visions" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fb5f-7151-5fcf-e410" type="max"/>
           </constraints>
           <profiles>
-            <profile id="219d-8366-48e2-924c" name="1) Terrifying Visions" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+            <profile id="219d-8366-48e2-924c" name="1. Terrifying Visions" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
               <characteristics>
-                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">7</characteristic>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
                 <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
-                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Choose an enemy unit within 18&quot; of the psyker. That unit subtracts 2 from its Leadership until the start of your next turn.</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Malediction: If manifested, select one enemy unit within 18&quot; of this Psyker. Until the end of your next Command phase:
+
+-Subtract 2 from the Leadership characteristic of models in that unit.
+-Your opponent cannot select that unit for the Insane Bravery Stratagem, nor can they use any rule that would enable them to re-roll a Morale test taken for that unit.
+
+In addition, roll 2D6: if the result is ewual to or greater than that unit&apos;s Leadership characteristic (after applying the modifier above), any action that unit is currently performing immediately fails and, until the start of your next Psychic phase, that unit cannot perform actions</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -16376,16 +16709,16 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="93ea-a2e3-a9a2-6011" name="Gaze of the Emperor" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="93ea-a2e3-a9a2-6011" name="2. Gaze of the Emperor" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e6af-cda7-7e1f-218a" type="max"/>
           </constraints>
           <profiles>
-            <profile id="2b66-8522-3990-32ce" name="2) Gaze of the Emperor" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+            <profile id="2b66-8522-3990-32ce" name="2. Gaze of the Emperor" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
               <characteristics>
                 <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
-                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">2D6&quot;</characteristic>
-                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Draw a straight line 2D6&quot; long directly away from the psyker. Roll a die for each model the center of the line passes over. On a 4+ that model&apos;s unit suffers a mortal wound.</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Witchfire: If manifested, select one enemy model within 12&quot; of and visible to this Psyker. Draw a straight line between any part of that model&apos;s base (or hull) and this Psyker&apos;s base. Rolle one D6 for that enemy model&apos;s unit, and one D6 for each unit that this line passes over: on a 1-5, the unit being rolled for suffers 1 mortal wound; on a 6, the unit being rolled for suffers D3 mortal wounds.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -16395,16 +16728,16 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="61af-de3b-8140-b86a" name="Psychic Barrier" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="61af-de3b-8140-b86a" name="3. Psychic Barrier" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="149b-a84e-00e2-b7f6" type="max"/>
           </constraints>
           <profiles>
-            <profile id="b3e0-5aa8-b516-87a8" name="3) Psychic Barrier" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+            <profile id="b3e0-5aa8-b516-87a8" name="3. Psychic Barrier" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
               <characteristics>
                 <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
                 <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
-                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Select a friendly ASTRA MILITARUM unit within 12&quot; of the psyker. Until the start of your next Psychic phase, add 1 to that unit&apos;s saving throws.</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Blessing: If manifested, select one friendly ASTRA MILITARUM unit within 12&quot; of this PSYKER. Until the start of your next Psychic phase, models in that unit have a 5+ invulnerable save.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -16414,16 +16747,16 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="cf09-e106-2aa2-f7b6" name="Nightshroud" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="cf09-e106-2aa2-f7b6" name="4. Nightshroud" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0de9-bf01-df4c-ebd6" type="max"/>
           </constraints>
           <profiles>
-            <profile id="4e0d-546e-4f72-2bee" name="4) Nightshroud" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+            <profile id="4e0d-546e-4f72-2bee" name="4. Nightshroud" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
               <characteristics>
                 <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
                 <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
-                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Choose a friendly ASTRA MILITARUM unit within 12&quot; of the psyker. Until the start of your next turn, any enemy unit that targets the chosen unit with a ranged weapon suffers a -1 penalty to its hit rolls.</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Blessing: If manifested, select one friendly ASTRA MILITARUM unit within 12&quot; of this PSYKER. You cannot select a TITANIC unit unless the result of the Psychic test was an unmodified 11+. Until the start of your next Psychic phase, each time an attack is made against that unit, an unmodified hit roll of 1-3 always fails, irrespective of any abilities that the weapon or model have.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -16433,16 +16766,19 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="d361-0e8e-7a6e-980c" name="Mental Fortitude" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="d361-0e8e-7a6e-980c" name="5. Mental Shackles" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1314-fbc0-86b4-7b7e" type="max"/>
           </constraints>
           <profiles>
-            <profile id="cd33-8078-8da3-64f9" name="5) Mental Fortitude" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+            <profile id="cd33-8078-8da3-64f9" name="5. Mental Shackles" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
               <characteristics>
-                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">4</characteristic>
-                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">12&quot;</characteristic>
-                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Select a friendly ASTRA MILITARUM unit within 12&quot; of the psyker. Until the start of your next Psychic phase, that unit automatically passes Morale tests.</characteristic>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
+                <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Malediction: If manifested, select one enemy unit within 18&quot; of this PSYKER. Until the start of your next Psychic phase:
+
+-Subtract 2&quot; from the Move characteristc of models in that unit.
+-Subtract 2 from Advance and Charge rolls made for that unit.</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -16452,16 +16788,16 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="955c-74a1-10db-8822" name="Psychic Maelstrom" hidden="false" collective="false" import="true" type="upgrade">
+        <selectionEntry id="955c-74a1-10db-8822" name="6. Psychic Maelstrom" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e705-5461-604e-ddb6" type="max"/>
           </constraints>
           <profiles>
-            <profile id="fda9-251b-b3cc-6f39" name="6) Psychic Maelstrom" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
+            <profile id="fda9-251b-b3cc-6f39" name="6. Psychic Maelstrom" hidden="false" typeId="ae70-4738-0161-bec0" typeName="Psychic Power">
               <characteristics>
-                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">7</characteristic>
+                <characteristic name="Warp Charge" typeId="5ffd-b800-c317-532a">6</characteristic>
                 <characteristic name="Range" typeId="fd64-cbc4-94de-24cc">18&quot;</characteristic>
-                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Select an enemy unit within 18&quot; of the psyker. Roll a D6. On a 2+, that unit suffers a mortal wound. Unless this mortal wound is negated, you can ten roll another die. On a 3+ that enemy unit suffers another mortal wound. Continue this process, adding 1 to the die roll required each time (so the next roll would need a 4+, than 5+, etc.) until you fail to cause a mortal wound, or the enemy unit is destroyed.</characteristic>
+                <characteristic name="Details" typeId="ad96-dfa4-b4ed-656d">Witchfire: If manifested, roll a number of D6 equal to the result of the Psychic test: for each 5+, the closest enemy unit that is within 18&quot; of and visible to this PSYKER suffers 1 mortal wound (to a maximimum of 6 wounds).</characteristic>
               </characteristics>
             </profile>
           </profiles>
@@ -16651,6 +16987,7 @@ You can only use this Stratagem once, unless you are playing a Strike Force batt
       <constraints>
         <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3059-4ae3-e9e5-7267" type="max"/>
         <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e384-da68-18b7-7c13" type="min"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9736-c45b-d82b-7d4f" type="max"/>
       </constraints>
       <categoryLinks>
         <categoryLink id="1d0d-7b74-fd50-b7d0" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
@@ -16679,6 +17016,11 @@ Each time a model with this doctrine makes arranged attack, an unmodified it rol
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="eea9-e9df-4336-03ed" name="Mechanised Infantry" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16694,6 +17036,11 @@ Units with this doctrine can disembark from a Transport model (excluding after A
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="19f7-22dc-7c0c-e067" name="Parade drill" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16706,6 +17053,11 @@ Units with this doctrine can disembark from a Transport model (excluding after A
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="4442-cdaa-334a-ca1e" name="Armoured Superiority" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16724,6 +17076,11 @@ All other Vehicle models with this doctrine count as 5 models each when determin
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="780f-521f-7aaa-6ddb" name="Blitz Division" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16738,6 +17095,11 @@ In the second battle round, each time you set up a Vehicle unit (excluding Senti
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="df8f-b6b9-45de-5b5e" name="Expert Bombardiers" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16753,6 +17115,11 @@ Each time an Artillery model with this doctrine makes a ranged attack, if the ta
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="731c-ddde-5528-3042" name="Heirloom Weapons" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16765,6 +17132,11 @@ Each time an Artillery model with this doctrine makes a ranged attack, if the ta
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="97d5-811a-bdd7-7479" name="Recon Operators" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16777,6 +17149,11 @@ Each time an Artillery model with this doctrine makes a ranged attack, if the ta
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="e3da-a873-946c-0e6d" name="Trophy Hunters" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16789,6 +17166,11 @@ Each time an Artillery model with this doctrine makes a ranged attack, if the ta
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="5dea-1275-26d8-8510" name="Grim Demeanour" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16803,6 +17185,11 @@ Each time a Combat Attrition test is taken for a unit with this doctrine, you ca
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="39c3-ffe2-c007-2e55" name="Brutal Strength" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16817,6 +17204,11 @@ Each time an Infantry unit with this doctrine fights, if it made a charge move, 
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="7d9b-959f-e938-36f1" name="Veteran Guerrillas" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16831,6 +17223,11 @@ Each time an Infantry or Sentinel model with this doctrine makes an attack that 
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="e292-e077-bce3-4402" name="Elite Sharpshooters" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16845,6 +17242,11 @@ Each time a unit with this doctrine is selected to shoot you can re-roll one hit
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="be63-747f-089b-09bd" name="Cult of Sacrifice" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16859,6 +17261,11 @@ Each time a model with this doctrine makes an attack, if that models unit was be
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="2cc4-7127-2740-d982" name="Industrial Efficiency" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16871,6 +17278,11 @@ Each time a model with this doctrine makes an attack, if that models unit was be
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="6c0b-b406-55b7-4854" name="Swift as the Wind" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -16885,6 +17297,11 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </characteristics>
             </profile>
           </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -17177,6 +17594,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <costs>
             <cost name="pts" typeId="points" value="15.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="a4b2-66af-adb7-3063" name="Meticulous Calibrator" page="" hidden="false" collective="false" import="true" type="upgrade">
@@ -17207,6 +17625,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
             <cost name="pts" typeId="points" value="20.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="9107-361a-ad9a-bfe9" name="Mechanical Pack Rat" hidden="false" collective="false" import="true" type="upgrade">
@@ -17236,6 +17655,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <costs>
             <cost name="pts" typeId="points" value="20.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="90aa-0ace-9398-5fe3" name="Veteran Commandeer" hidden="false" collective="false" import="true" type="upgrade">
@@ -17265,6 +17685,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <costs>
             <cost name="pts" typeId="points" value="20.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="037d-e606-4205-2308" name="Knight of Piety" hidden="false" collective="false" import="true" type="upgrade">
@@ -17296,6 +17717,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <costs>
             <cost name="pts" typeId="points" value="25.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="b7c4-7433-886e-53aa" name="Master of Camouflage" hidden="false" collective="false" import="true" type="upgrade">
@@ -17325,6 +17747,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <costs>
             <cost name="pts" typeId="points" value="25.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="d8f5-16a3-ae05-63dc" name="Steel Commissar" hidden="false" collective="false" import="true" type="upgrade">
@@ -17345,6 +17768,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <costs>
             <cost name="pts" typeId="points" value="25.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -17890,6 +18314,11 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </constraints>
             </entryLink>
           </entryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
         <selectionEntry id="64a3-3ed6-8987-0a20" name="2 Twin Heavy Bolters" hidden="false" collective="false" import="true" type="upgrade">
           <constraints>
@@ -17903,6 +18332,11 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </constraints>
             </entryLink>
           </entryLinks>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
@@ -18112,17 +18546,21 @@ Each time a &lt;Regiment&gt; unit with the Voice of Command ability issues one o
     </profile>
     <profile id="c4f9-48e3-4bdc-737f" name="Grav Chute Insertion" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Models may disembark from this vehicle at any point during its move, but if they do they cannot move further during this phase; if the vehicle moves 20&quot; or more, you must roll a D6 for each model disembarking. On a 1, that model is slain. Models that disembark in this manner must be set up more than 9&quot; from any enemy models.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Movement phase, when this Transport model makes a Normal Move, one or more units embarked within it can disembark at any point during that move. If they do so:
+
+- Models in those units must be set up more than 9&quot; away from any enemey models. Militarum Tempestus models in those units must be set up more than 6&quot; away from any enemy models.
+- If this Transport model moves 20&quot; or more this phase, roll one D6 for each model that disembarks using this ability (excluding Militarum Tempestus models( before setting that model up. On a 1, that model is destroyed.
+- Models in those units count as having made a Normal Move this phasel they cannon move further this phase and can never use rules that would allow them to count as Remained Stationary this turn. In addition, those units cannot declare a charge this turn, but can otherwise asct normally (shoot, fight, etc) this turn.</characteristic>
       </characteristics>
     </profile>
     <profile id="7e37-7d16-4da6-97c8" name="Hard to Hit" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Your Opponent must subtract 1 from hit rolls for attacks that target this model in the shooting phase.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a ranged attack is made against this model, subtract 1 from the hit roll.</characteristic>
       </characteristics>
     </profile>
     <profile id="5c2d-ef21-5078-d479" name="Hover Jet" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Before this model moves in your Movement phase, you can declare it will hover. It&apos;s Move characteristic becomes 20&quot; until the end of the phase, and it loses the Airborne, Hard to Hit and Supersonic abilities until the beginning of your next Movement phase.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, this model can hover. If it does so, then until the start of your next Command phase, its Move characteristic becomes 20&quot; and it loses the Supersonic and Hard to Hit abilities</characteristic>
       </characteristics>
     </profile>
     <profile id="16e3-4e72-d831-8647" name="Strafing Run" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -18132,7 +18570,7 @@ Each time a &lt;Regiment&gt; unit with the Voice of Command ability issues one o
     </profile>
     <profile id="2268-18ce-3bf2-b68d" name="Supersonic" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model moves, first pivot it on the spot up to 90&quot; (this does not contribute to how far the model moves), and then move the model straight forwards. Note that it cannot pivot again after the initial pivot. When this model Advances,  increase its Move characteristic by 20&quot; until the end of the phase - do not roll a dice.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time this model makes a Normal Move, Advances or Falls Back, first pivot it on the spot up to 90° (this does not contribute to how far the model moves), then move this model straight forwards. It cannot pivot again after the initial pivot.</characteristic>
       </characteristics>
     </profile>
     <profile id="390d-68dd-fa2b-5eb1" name="Hellstrike Missile" publicationId="53e9d88f--pubN88319" page="0" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
@@ -18140,9 +18578,9 @@ Each time a &lt;Regiment&gt; unit with the Voice of Command ability issues one o
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">72&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Heavy 1</characteristic>
         <characteristic name="S" typeId="59b1-319e-ec13-d466">8</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
-        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D6</characteristic>
-        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Roll two dice when inflicting damage with this weapon and discard the lowest result.</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon against an Aircraft unit, add 1 to that attack&apos;s hit roll. Each time an attack made with this weapon is allocated to an Aircraft model, that attack has a Damage characteristic of D3+3</characteristic>
       </characteristics>
     </profile>
     <profile id="3287-e0de-5e63-b84e" name="Tactical Bombs" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
@@ -18174,8 +18612,8 @@ Each time a &lt;Regiment&gt; unit with the Voice of Command ability issues one o
       <characteristics>
         <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
         <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
-        <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
-        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast.</characteristic>
       </characteristics>
@@ -18314,7 +18752,7 @@ can shoot its turret weapon twice in the following Shooting phase (the turret we
     </profile>
     <profile id="e5af-a2b4-1ebd-d89c" name="Armoured Tracks" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
-        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a ranged attack with a Damage characteristic of 1 is allocated to this model, add 1 to hthe armour saving throw made against the attack.</characteristic>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a ranged attack with a Damage characteristic of 1 is allocated to this model, add 1 to the armour saving throw made against the attack.</characteristic>
       </characteristics>
     </profile>
     <profile id="9981-5fb9-57f6-7930" name="Firing Deck" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
