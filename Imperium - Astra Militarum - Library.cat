@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="a2d9-e3b7-13cc-6f15" name="Imperium - Astra Militarum - Library" revision="107" battleScribeVersion="2.03" authorName="Jon K, Joe B, Wil" authorContact="Discord: @Alphalas, @CrusherJoe, @GenWilhelm | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="227" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="a2d9-e3b7-13cc-6f15" name="Imperium - Astra Militarum - Library" revision="107" battleScribeVersion="2.03" authorName="Jon K, Joe B, Wil" authorContact="Discord: @Alphalas, @CrusherJoe, @GenWilhelm | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="225" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>...but is it enough to stop the suck?
 </readme>
   <publications>
@@ -416,6 +416,7 @@
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="6e2c-4f30-b09d-c637" name="Stat Damage (Baneblade Transport)" hidden="false" collective="false" import="true" type="upgrade">
@@ -1211,20 +1212,7 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c6de-c462-b8ed-f7fd" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="a6f8-9e3c-56f1-2b22" name="Baneblade Sponsons" hidden="false" collective="false" import="true" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup">
-          <modifiers>
-            <modifier type="set" field="b972-7a3a-62db-eb4f" value="2.0">
-              <conditions>
-                <condition field="selections" scope="3ac6-8d6e-850e-6aee" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a908-4664-11cd-f8b2" type="atLeast"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" field="b972-7a3a-62db-eb4f" value="4.0">
-              <conditions>
-                <condition field="selections" scope="3ac6-8d6e-850e-6aee" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a908-4664-11cd-f8b2" type="atLeast"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </entryLink>
+        <entryLink id="a6f8-9e3c-56f1-2b22" name="Baneblade Sponsons" hidden="false" collective="false" import="true" targetId="be51-49ae-9966-cfc5" type="selectionEntryGroup"/>
         <entryLink id="c505-4d4c-156d-a541" name="Tank Aces" hidden="false" collective="false" import="true" targetId="998b-b53a-603f-6c5b" type="selectionEntryGroup"/>
         <entryLink id="f6b6-a08f-cbc1-4963" name="Heavy Flamer or Heavy Bolter" hidden="false" collective="false" import="true" targetId="846f-095f-3967-92af" type="selectionEntryGroup"/>
         <entryLink id="900e-499b-0d46-baab" name="Lascannon" hidden="false" collective="false" import="true" targetId="a908-4664-11cd-f8b2" type="selectionEntry">
@@ -5300,6 +5288,18 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="25d0-9bd6-7b74-98f4" name="Relic: The Emperor&apos;s Benediction" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa52-8fb7-1c87-80e6" type="notInstanceOf"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c0f8-adfe-cbbd-2ab3" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f38c-e29f-a7c7-02be" type="max"/>
       </constraints>
@@ -5343,7 +5343,14 @@
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="ac59-27a4-14ff-220f" name="Relic: The Laurels of Command" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="ac59-27a4-14ff-220f" name="Relic: Laurels of Command" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9fb3-52d5-9edd-f85b" type="max"/>
       </constraints>
@@ -5361,6 +5368,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="b317-c165-a7d5-0388" name="Relic: Legacy of Kalladius" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0dd1-2e2b-7dd1-5495" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c72e-bfdc-96a4-3d0a" type="max"/>
       </constraints>
@@ -5388,6 +5402,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="8802-85b0-d3d3-6158" name="Relic: Death Mask of Ollanius" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="74ca-f911-7447-e981" type="max"/>
       </constraints>
@@ -5405,6 +5426,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="1a31-5371-2f9a-9234" name="Relic: Clarion Proclamatus" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9ce2-5815-93dd-2918" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d875-2ca1-faff-f9fe" type="max"/>
       </constraints>
@@ -5442,12 +5470,13 @@
     <selectionEntry id="019d-682c-d76f-346f" name="Relic: Null Coat" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa52-8fb7-1c87-80e6" type="notInstanceOf"/>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="12bf-5b84-a1bc-6989" type="notInstanceOf"/>
-          </conditions>
           <conditionGroups>
-            <conditionGroup type="or"/>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa52-8fb7-1c87-80e6" type="notInstanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2aba-e4e7-1d91-1a77" type="notInstanceOf"/>
+              </conditions>
+            </conditionGroup>
           </conditionGroups>
         </modifier>
       </modifiers>
@@ -5470,6 +5499,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="efab-7f02-a7a0-223f" name="Relic: Finial of the Nemrodesh 1st" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2c0a-77bd-09a1-feaf" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4f30-baf4-36f0-d128" type="max"/>
       </constraints>
@@ -5533,6 +5569,13 @@ FINIAL OF THE NEMRODESH 1ST (Aura): While a friendly ASTRA MILITARUM CORE unit i
       </costs>
     </selectionEntry>
     <selectionEntry id="eb13-2076-18e2-e4e7" name="Relic: The Emperor&apos;s Fury" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="83be-1ba9-c326-4760" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5ad0-369e-d230-357e" type="max"/>
       </constraints>
@@ -5560,6 +5603,13 @@ FINIAL OF THE NEMRODESH 1ST (Aura): While a friendly ASTRA MILITARUM CORE unit i
       </costs>
     </selectionEntry>
     <selectionEntry id="00cb-7dec-59f8-acfc" name="Relic: Refractor Field Generator" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2aba-e4e7-1d91-1a77" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7a49-25fc-ba8a-abc4" type="max"/>
       </constraints>
@@ -5578,6 +5628,18 @@ REFRACTOR FIELD GENERATOR (Aura): While a friendly MILITARUM TEMPESTUS INFANTRY 
       </costs>
     </selectionEntry>
     <selectionEntry id="0a30-6d27-4709-ca86" name="Relic: Claw of the Desert Tigers" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="67e3-0d6c-7374-39c4" type="lessThan"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="bc9e-551d-9afb-78d5" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f36e-d1cd-5b3a-0c24" type="max"/>
       </constraints>
@@ -5605,6 +5667,13 @@ REFRACTOR FIELD GENERATOR (Aura): While a friendly MILITARUM TEMPESTUS INFANTRY 
       </costs>
     </selectionEntry>
     <selectionEntry id="316a-1dbd-2185-a82f" name="Relic: Psy-Sigil of Sanction" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e691-aad7-d21c-1023" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a11a-48d1-5113-4a78" type="max"/>
       </constraints>
@@ -5624,6 +5693,13 @@ REFRACTOR FIELD GENERATOR (Aura): While a friendly MILITARUM TEMPESTUS INFANTRY 
       </costs>
     </selectionEntry>
     <selectionEntry id="5ae2-c4d2-05bc-a16f" name="Relic: Tactical Auto-Reliquary of Tyberius" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="eacc-c754-a998-7367" type="max"/>
       </constraints>
@@ -5641,6 +5717,13 @@ REFRACTOR FIELD GENERATOR (Aura): While a friendly MILITARUM TEMPESTUS INFANTRY 
       </costs>
     </selectionEntry>
     <selectionEntry id="0cbc-fba4-2e32-1813" name="Relic: Relic of Lost Cadia" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b332-b046-7171-5059" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b7e8-a0ef-e384-7802" type="max"/>
       </constraints>
@@ -5658,7 +5741,14 @@ RELIC OF LOST CADIA (Aura): While a friendly CADIAN INFANTRY unit is within 6&qu
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="0bb8-8323-a997-109a" name="Relic : The Barbicant&apos;s Key" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="0bb8-8323-a997-109a" name="Relic: The Barbicant&apos;s Key" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="63d7-e309-4b91-1073" type="max"/>
       </constraints>
@@ -6950,7 +7040,7 @@ Divination (Psychic Action -Warp Charge 7):In your Psychic phase, one ASTROPATH 
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-        <cost name="pts" typeId="points" value="0.0"/>
+        <cost name="pts" typeId="points" value="5.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="c5b7-cf00-7c5c-c77b" name="Bullgryns" publicationId="53e9d88f--pubN88319" page="44" hidden="false" collective="false" import="true" type="unit">
@@ -7896,6 +7986,8 @@ Divination (Psychic Action -Warp Charge 7):In your Psychic phase, one ASTROPATH 
           </entryLinks>
           <costs>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
       </selectionEntries>
@@ -11040,11 +11132,7 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
           </constraints>
           <entryLinks>
             <entryLink id="165d-bb7b-fbec-ad59" name="Ripper Gun" hidden="false" collective="false" import="true" targetId="31b4-8af0-ea13-0d29" type="selectionEntry"/>
-            <entryLink id="9ed9-547e-aacf-2321" name="Grenadier gauntlet" hidden="false" collective="false" import="true" targetId="66ec-54e7-6ab4-7bf8" type="selectionEntry">
-              <costs>
-                <cost name="pts" typeId="points" value="5.0"/>
-              </costs>
-            </entryLink>
+            <entryLink id="9ed9-547e-aacf-2321" name="Grenadier gauntlet" hidden="false" collective="false" import="true" targetId="66ec-54e7-6ab4-7bf8" type="selectionEntry"/>
             <entryLink id="0678-cbb7-bbd2-0e38" name="Bullgryn Maul" hidden="false" collective="false" import="true" targetId="e40a-3e73-1b00-701a" type="selectionEntry">
               <costs>
                 <cost name="pts" typeId="points" value="5.0"/>
@@ -14067,7 +14155,7 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
         <categoryLink id="ce3f-d9f0-54f5-fdde" name="Tempestus Command Squad" hidden="false" targetId="f0fa-71b1-5ec2-e534" primary="false"/>
       </categoryLinks>
       <selectionEntries>
-        <selectionEntry id="12bf-5b84-a1bc-6989" name="Tempestor Priime" hidden="false" collective="false" import="true" type="model">
+        <selectionEntry id="12bf-5b84-a1bc-6989" name="Tempestor Prime" hidden="false" collective="false" import="true" type="model">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a540-f11b-354f-594c" type="max"/>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="35f6-5a18-177e-f5b5" type="min"/>
@@ -15146,6 +15234,18 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
       </costs>
     </selectionEntry>
     <selectionEntry id="c723-aa80-a8e0-6a8d" name="Relic: Gatekeeper" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="935b-1502-0bb5-6fb7" type="notInstanceOf"/>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="09b4-66a4-ffc7-6b9d" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ea9d-eb8d-3ffe-66b4" type="max"/>
       </constraints>
@@ -16851,7 +16951,7 @@ Until the end of your next Movement phase, if this unit advances, do not make an
     </selectionEntry>
     <selectionEntry id="9bc2-f515-33e5-38e8" name="Commanding Authority" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
-        <profile id="b312-7f44-749a-5191" name="Commanding Authority (Lord Solar Leontus)" hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="b312-7f44-749a-5191" name="Commanding Authority " hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <modifiers>
             <modifier type="set" field="hidden" value="false">
               <conditions>
@@ -16864,7 +16964,7 @@ Until the end of your next Movement phase, if this unit advances, do not make an
 friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
           </characteristics>
         </profile>
-        <profile id="5023-0820-4bba-3d1d" name="Commanding Authority (Ursula Creed)" hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+        <profile id="5023-0820-4bba-3d1d" name="Commanding Authority" hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
           <modifiers>
             <modifier type="set" field="hidden" value="false">
               <conditions>
@@ -16873,7 +16973,79 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             </modifier>
           </modifiers>
           <characteristics>
-            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228"/>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows Regimental Orders. In your Command phase,it can issue up to three Orders.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="a0f7-d281-8e16-34a2" name="Commanding Authority " hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="33c0-8496-22d0-08e9" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The COMMANDER model knows Regimental Orders. In your Command phase, it can issue one Order.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="b555-4bd3-e96e-ad35" name="Commanding Authority" hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0c1b-0eb2-acae-6255" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows Prefectus Orders. In your Command phase, it can issue one Order. In addition to the normal units that can be selected for Prefectus Orders, this model can issue Prefectus Orders to friendly INFANTRY OFFICER and ABHUMAN units, but when doing so,the Regimental Tactics ability does not apply.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="4e5d-7ace-e2ad-4132" name="Commanding Authority" hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="0c1b-0eb2-acae-6255" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The COMMANDER model knows Regimental Orders. In your Command phase, it can issue up to two Orders.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="f730-ff48-0709-ea2c" name="Commanding Authority " hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9145-1d3b-9057-7a17" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows Regimental Orders. In your Command phase, it can issue up to two Orders.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="1304-7b71-7fb4-31f7" name="Commanding Authority" hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1c3-8543-eb68-4413" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The COLONEL-COMMISSAR IBRAM GAUNT model knows Regimental and Prefectus Orders. In your Command phase, it can issue up to two Orders.</characteristic>
+          </characteristics>
+        </profile>
+        <profile id="4f26-1b90-8128-52c8" name="Commanding Authority" hidden="true" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <modifiers>
+            <modifier type="set" field="hidden" value="false">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7014-e6c3-eb98-a590" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">This model knows Regimental Orders.In your Command phase, it can issue one Order. This model can only issue Orders to CATACHAN JUNGLE FIGHTERS units; when doing so, for the purposes of the Regimental Tactics ability, you can only select other friendly CATACHAN JUNGLE FIGHTERS units within 6“ of the unit originally selected for that Order to also be affected by that Order. </characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -17358,6 +17530,7 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
         <categoryLink id="ddd7-c7cf-311f-678e" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="bf43-a6ea-d1c9-a6d3" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
         <categoryLink id="3ef2-00f9-19d1-4f73" name="Faction: Cadian" hidden="false" targetId="b332-b046-7171-5059" primary="false"/>
+        <categoryLink id="d5f1-b9ea-b9af-796c" name="Officer" hidden="false" targetId="dd6e-7055-ca6b-b711" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="02fc-c1cf-4cdb-07ed" name="Cadian Commander" publicationId="53e9d88f--pubN88319" page="84" hidden="false" collective="false" import="true" type="model">
@@ -17378,7 +17551,7 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7eaa-bcb1-5a4a-5aed" type="min"/>
           </constraints>
           <profiles>
-            <profile id="6e7b-9f86-a0f4-4cb7" name="Platoon Commander" publicationId="28ec-711c-pubN77581" page="14" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+            <profile id="6e7b-9f86-a0f4-4cb7" name="Cadian Commander" publicationId="53e9d88f--pubN88319" page="83" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
               <characteristics>
                 <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
                 <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
@@ -17393,7 +17566,6 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             </profile>
           </profiles>
           <infoLinks>
-            <infoLink id="cd8d-439c-9a1b-6bb3" name="Refractor Field" hidden="false" targetId="783d-d067-2d7f-d2a1" type="profile"/>
             <infoLink id="6d9b-d7cc-72f8-b699" name="Voice of Command" hidden="false" targetId="2ff26b94-8048-d15d-c541-fd4da0f49571" type="profile"/>
             <infoLink id="ad77-c3b6-09c5-4fe1" name="Refractor Field" hidden="false" targetId="783d-d067-2d7f-d2a1" type="profile"/>
           </infoLinks>
@@ -17465,17 +17637,17 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4300-817a-2eb1-1e7a" type="min"/>
               </constraints>
             </entryLink>
-            <entryLink id="a474-c8ad-2c2b-b683" name="Heirlooms of Conquest" hidden="false" collective="false" import="true" targetId="8ed7-7588-0f06-9b0d" type="selectionEntryGroup"/>
             <entryLink id="8d54-046e-833e-a262" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4196-0adc-c388-db40" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="62e1-0288-7528-44e7" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup"/>
-            <entryLink id="803e-e5e5-8d32-9ffb" name="Character Stratagems" hidden="false" collective="false" import="true" targetId="2527-4b0c-1e18-38b3" type="selectionEntryGroup"/>
+            <entryLink id="e4b3-7975-707a-7e67" name="Commanding Authority" hidden="false" collective="false" import="true" targetId="9bc2-f515-33e5-38e8" type="selectionEntry"/>
           </entryLinks>
           <costs>
             <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
           </costs>
         </selectionEntry>
         <selectionEntry id="2a9a-c24e-3a0a-40dc" name="Cadian Veteran w/ Regimental Standard" page="0" hidden="false" collective="false" import="true" type="upgrade">
@@ -17742,7 +17914,15 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
       </selectionEntries>
       <entryLinks>
         <entryLink id="46f9-f7ce-092e-aa83" name="Attachés and Bodyguards" hidden="false" collective="false" import="true" targetId="f35b-d9d5-ef7d-c817" type="selectionEntryGroup"/>
-        <entryLink id="b8f5-c5fd-b256-c789" name="Commanding Authority" hidden="false" collective="false" import="true" targetId="9bc2-f515-33e5-38e8" type="selectionEntry"/>
+        <entryLink id="b8f5-c5fd-b256-c789" name="Commanding Authority" hidden="false" collective="false" import="true" targetId="9bc2-f515-33e5-38e8" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c8c5-1056-7d5e-39d3" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2651-898c-f286-5b38" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="ac25-c62c-4b33-d837" name="Stratagems" hidden="false" collective="false" import="true" targetId="2527-4b0c-1e18-38b3" type="selectionEntryGroup"/>
+        <entryLink id="af98-fc86-be5f-13e0" name="Relics" hidden="false" collective="false" import="true" targetId="8ed7-7588-0f06-9b0d" type="selectionEntryGroup"/>
+        <entryLink id="aaf7-264a-bc43-4410" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="4.0"/>
@@ -18490,30 +18670,13 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             </profile>
           </profiles>
           <selectionEntryGroups>
-            <selectionEntryGroup id="c984-dc2b-9b25-d0d5" name="Attilan Rough Rider Lance" hidden="false" collective="false" import="true">
+            <selectionEntryGroup id="c984-dc2b-9b25-d0d5" name="Attilan Rough Rider Lance" hidden="false" collective="false" import="true" defaultSelectionEntryId="3bb5-aa81-4161-f9b0">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3c2a-f600-edc6-fb3c" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c787-1285-92d1-e51a" type="min"/>
               </constraints>
               <entryLinks>
-                <entryLink id="62a7-7497-0102-290a" name="Goading Lance" hidden="false" collective="false" import="true" targetId="2017-54cd-70a1-72c8" type="selectionEntry">
-                  <modifiers>
-                    <modifier type="increment" field="348a-6a3f-2f5e-d65e" value="1.0">
-                      <repeats>
-                        <repeat field="selections" scope="082c-7b0e-f889-4ec3" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" repeats="1" roundUp="false"/>
-                      </repeats>
-                    </modifier>
-                    <modifier type="increment" field="ca36-4396-14d0-7fbc" value="1.0">
-                      <repeats>
-                        <repeat field="selections" scope="082c-7b0e-f889-4ec3" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" repeats="1" roundUp="false"/>
-                      </repeats>
-                    </modifier>
-                  </modifiers>
-                  <constraints>
-                    <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ca36-4396-14d0-7fbc" type="max"/>
-                    <constraint field="selections" scope="082c-7b0e-f889-4ec3" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="348a-6a3f-2f5e-d65e" type="max"/>
-                  </constraints>
-                </entryLink>
+                <entryLink id="62a7-7497-0102-290a" name="Goad Lance" hidden="false" collective="false" import="true" targetId="2017-54cd-70a1-72c8" type="selectionEntry"/>
                 <entryLink id="3bb5-aa81-4161-f9b0" name="Hunting Lance" hidden="false" collective="false" import="true" targetId="b8e6-7ba3-ba5e-c82c" type="selectionEntry">
                   <constraints>
                     <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9683-e340-f6a8-a04a" type="max"/>
@@ -18541,7 +18704,13 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
               </constraints>
             </entryLink>
             <entryLink id="1df5-6b6d-7def-aeca" name="Stratagems" hidden="false" collective="false" import="true" targetId="2527-4b0c-1e18-38b3" type="selectionEntryGroup"/>
-            <entryLink id="1200-af25-8ad5-ad5f" name="Battlefield Request Relics" hidden="false" collective="false" import="true" targetId="5346-757a-7d0b-7871" type="selectionEntryGroup"/>
+            <entryLink id="1200-af25-8ad5-ad5f" name="Battlefield Bequest Relics" hidden="false" collective="false" import="true" targetId="5346-757a-7d0b-7871" type="selectionEntryGroup"/>
+            <entryLink id="8069-cdee-414e-6039" name="Frag grenades" hidden="false" collective="false" import="true" targetId="f68e-9984-71fe-6bca" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b0e4-4914-d43f-0946" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1c80-2127-1e73-2582" type="max"/>
+              </constraints>
+            </entryLink>
           </entryLinks>
           <costs>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -18582,22 +18751,28 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             </profile>
           </profiles>
           <entryLinks>
-            <entryLink id="374f-55d1-1b5f-7c33" name="Lasgun" hidden="false" collective="false" import="true" targetId="fd87-854b-d284-184a" type="selectionEntry">
+            <entryLink id="374f-55d1-1b5f-7c33" name="Lasgun" hidden="false" collective="true" import="true" targetId="fd87-854b-d284-184a" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5376-1cad-7cdf-735f" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2aa8-ba60-e511-3abb" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="22b1-8888-6750-523b" name="Laspistol" hidden="false" collective="false" import="true" targetId="c10b-e1a4-c913-ae15" type="selectionEntry">
+            <entryLink id="22b1-8888-6750-523b" name="Laspistol" hidden="false" collective="true" import="true" targetId="c10b-e1a4-c913-ae15" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="444c-dd57-4c5e-74ab" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7bb5-b678-85cf-f9a5" type="min"/>
               </constraints>
             </entryLink>
-            <entryLink id="76b2-5033-c45d-c077" name="Hunting Lance" hidden="false" collective="false" import="true" targetId="b8e6-7ba3-ba5e-c82c" type="selectionEntry">
+            <entryLink id="76b2-5033-c45d-c077" name="Hunting Lance" hidden="false" collective="true" import="true" targetId="b8e6-7ba3-ba5e-c82c" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7e7e-1996-79c4-0bd2" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8f6a-56f0-4f3a-80ef" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="feae-f5fd-a664-6fa9" name="Frag grenades" hidden="false" collective="false" import="true" targetId="f68e-9984-71fe-6bca" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f2d3-e0db-fdc5-82a5" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="96c5-3789-8e9d-00a6" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -18607,28 +18782,7 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             <cost name="pts" typeId="points" value="20.0"/>
           </costs>
         </selectionEntry>
-        <selectionEntry id="d2c8-4adc-e339-2cea" name="Rough Rider w/ Goading Lance" hidden="false" collective="true" import="true" type="model">
-          <modifiers>
-            <modifier type="increment" field="a831-ae9a-0ae6-76ca" value="1.0">
-              <repeats>
-                <repeat field="selections" scope="082c-7b0e-f889-4ec3" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="increment" field="59df-dedf-134b-9d70" value="1.0">
-              <repeats>
-                <repeat field="selections" scope="082c-7b0e-f889-4ec3" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="decrement" field="59df-dedf-134b-9d70" value="1.0">
-              <conditions>
-                <condition field="selections" scope="082c-7b0e-f889-4ec3" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="62a7-7497-0102-290a" type="atLeast"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="59df-dedf-134b-9d70" type="max"/>
-            <constraint field="selections" scope="082c-7b0e-f889-4ec3" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a831-ae9a-0ae6-76ca" type="max"/>
-          </constraints>
+        <selectionEntry id="d2c8-4adc-e339-2cea" name="Rough Rider w/ Goad Lance" hidden="false" collective="false" import="true" type="model">
           <profiles>
             <profile id="f936-6067-ddf2-b76b" name="Rough Rider w/ Goading Lance" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
               <characteristics>
@@ -18645,22 +18799,36 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             </profile>
           </profiles>
           <entryLinks>
-            <entryLink id="5867-3b00-46d9-8b37" name="Lasgun" hidden="false" collective="false" import="true" targetId="fd87-854b-d284-184a" type="selectionEntry">
+            <entryLink id="5867-3b00-46d9-8b37" name="Lasgun" hidden="false" collective="true" import="true" targetId="fd87-854b-d284-184a" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="df3e-5b7b-020b-b975" type="min"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6711-9fc6-5d93-c2e2" type="max"/>
               </constraints>
             </entryLink>
-            <entryLink id="74fd-226d-b2c6-3adb" name="Laspistol" hidden="false" collective="false" import="true" targetId="c10b-e1a4-c913-ae15" type="selectionEntry">
+            <entryLink id="74fd-226d-b2c6-3adb" name="Laspistol" hidden="false" collective="true" import="true" targetId="c10b-e1a4-c913-ae15" type="selectionEntry">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3315-a440-4d28-4ba9" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7855-5887-2716-225f" type="min"/>
               </constraints>
             </entryLink>
-            <entryLink id="5d27-cc8d-8adc-cca6" name="Goading Lance" hidden="false" collective="false" import="true" targetId="2017-54cd-70a1-72c8" type="selectionEntry">
+            <entryLink id="5d27-cc8d-8adc-cca6" name="Goad Lance" hidden="false" collective="true" import="true" targetId="2017-54cd-70a1-72c8" type="selectionEntry">
+              <modifiers>
+                <modifier type="increment" field="72dd-d2af-bedf-3846" value="1.0">
+                  <repeats>
+                    <repeat field="selections" scope="082c-7b0e-f889-4ec3" value="5.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="model" repeats="1" roundUp="false"/>
+                  </repeats>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="418d-5310-28e8-204f" type="max"/>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="915a-7239-e5ec-e33a" type="min"/>
+                <constraint field="selections" scope="082c-7b0e-f889-4ec3" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="72dd-d2af-bedf-3846" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="ff24-2995-0f9b-d838" name="Frag grenades" hidden="false" collective="false" import="true" targetId="f68e-9984-71fe-6bca" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cacc-462c-87ea-9f7a" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6b34-132f-c069-b5e4" type="max"/>
               </constraints>
             </entryLink>
           </entryLinks>
@@ -18677,12 +18845,12 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="2017-54cd-70a1-72c8" name="Goading Lance" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="2017-54cd-70a1-72c8" name="Goad Lance" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a4db-3a54-a89e-dbbe" type="max"/>
       </constraints>
       <profiles>
-        <profile id="0e03-808b-65d3-ed9d" name="Goading Lance" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+        <profile id="0e03-808b-65d3-ed9d" name="Goad Lance" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
           <characteristics>
             <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
             <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
@@ -19632,18 +19800,31 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
       <modifiers>
         <modifier type="increment" field="f68f-ff28-1902-6f2e" value="2.0">
           <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="atLeast"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="atLeast"/>
           </conditions>
         </modifier>
         <modifier type="increment" field="f68f-ff28-1902-6f2e" value="1.0">
           <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="atLeast"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="atLeast"/>
           </conditions>
         </modifier>
-        <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
-          </conditions>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="02fc-c1cf-4cdb-07ed" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="12bf-5b84-a1bc-6989" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ed38-bff7-6158-362a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -19652,18 +19833,38 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
       </constraints>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="59ad-e41a-5a3b-cb12" name="Stratagem: Battlefield Request" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="59ad-e41a-5a3b-cb12" name="Stratagem: Battlefield Bequest" hidden="true" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="increment" field="ca5c-50b2-644e-1b8c" value="1.0">
           <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="atLeast"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="atLeast"/>
           </conditions>
         </modifier>
         <modifier type="increment" field="ca5c-50b2-644e-1b8c" value="2.0">
           <conditions>
             <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="atLeast"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="7c48-42cf-40a1-f038" type="instanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="9e19-4e60-2e53-8758" type="instanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5574-d4e0-cbbe-530d" type="instanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="instanceOf"/>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="1f1e-d747-c329-8919" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="ca5c-50b2-644e-1b8c" value="2.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="atLeast"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -19673,23 +19874,38 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
       </constraints>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="c550-3885-37db-d442" name="Stratagem: Imperial Commander&apos;s Armoury" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="c550-3885-37db-d442" name="Stratagem: Imperial Commander&apos;s Armoury" hidden="true" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="increment" field="b1ab-9fc0-5969-08e1" value="1.0">
           <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="atLeast"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="atLeast"/>
           </conditions>
         </modifier>
-        <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
-          </conditions>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="02fc-c1cf-4cdb-07ed" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="12bf-5b84-a1bc-6989" type="equalTo"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ed38-bff7-6158-362a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="increment" field="b1ab-9fc0-5969-08e1" value="2.0">
           <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="atLeast"/>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="atLeast"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -19699,6 +19915,8 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
       </constraints>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
   </sharedSelectionEntries>
@@ -20594,6 +20812,14 @@ In addition, roll 2D6: if the result is ewual to or greater than that unit&apos;
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="99bc-0dbb-6298-35ee" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e3da-a873-946c-0e6d" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="90aa-0ace-9398-5fe3" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -20604,18 +20830,36 @@ In addition, roll 2D6: if the result is ewual to or greater than that unit&apos;
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="99bc-0dbb-6298-35ee" type="equalTo"/>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e3da-a873-946c-0e6d" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="90aa-0ace-9398-5fe3" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
         <modifier type="set" field="3059-4ae3-e9e5-7267" value="1.0">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="instanceOf"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="instanceOf"/>
+                <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="90aa-0ace-9398-5fe3" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
         <modifier type="set" field="e384-da68-18b7-7c13" value="1.0">
-          <conditions>
-            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="instanceOf"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="instanceOf"/>
+                <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="90aa-0ace-9398-5fe3" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -20631,9 +20875,14 @@ In addition, roll 2D6: if the result is ewual to or greater than that unit&apos;
               </conditions>
             </modifier>
             <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="instanceOf"/>
-              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d1fe-eed9-2bde-dde0" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="90aa-0ace-9398-5fe3" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
@@ -20750,7 +20999,7 @@ In the second battle round, each time you set up a Vehicle unit (excluding Senti
               <characteristics>
                 <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Units with this doctrine gain the Expert Bombardiers Keyword.
 
-Each time an Artillery model with this doctrine makes a ranged attack, if the target is within 23” of and visible to a friendly Vox-caster or Sentinel unit, add 2 to that attack’s hit roll.
+Each time an Artillery model with this doctrine makes a ranged attack, if the target is within 12” of and visible to a friendly Vox-caster or Sentinel unit, add 1 to that attack’s hit roll.
 </characteristic>
               </characteristics>
             </profile>
@@ -21195,7 +21444,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
-                <conditionGroup type="or">
+                <conditionGroup type="and">
                   <conditions>
                     <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="338d-f1a1-d666-3740" type="notInstanceOf"/>
                     <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ccf2-6ae7-844b-dcd4" type="notInstanceOf"/>
@@ -21220,6 +21469,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5002-273c-b8f0-9759" type="max"/>
+          </constraints>
           <profiles>
             <profile id="b474-0cd2-c0f5-e157" name="Vaunted Praetorian" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -21250,6 +21502,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5325-47e4-771d-608c" type="max"/>
+          </constraints>
           <profiles>
             <profile id="b914-1be1-b443-d6c4" name="Meticulous Calibrator" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -21281,6 +21536,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b028-bf51-e6e7-92fe" type="max"/>
+          </constraints>
           <profiles>
             <profile id="9db8-790b-ec2c-7ea5" name="Mechanical Pack Rat" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -21311,6 +21569,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7a0e-919e-3997-04c6" type="max"/>
+          </constraints>
           <profiles>
             <profile id="384f-4703-07ec-b462" name="Veteran Commandeer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -21318,6 +21579,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </characteristics>
             </profile>
           </profiles>
+          <entryLinks>
+            <entryLink id="71bf-d05c-569f-c8dd" name="Regimental Doctrine" hidden="false" collective="false" import="true" targetId="afa1-3564-cfe2-602b" type="selectionEntryGroup"/>
+          </entryLinks>
           <costs>
             <cost name="pts" typeId="points" value="20.0"/>
             <cost name=" PL" typeId="e356-c769-5920-6e14" value="1.0"/>
@@ -21341,6 +21605,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1829-e355-50da-3b73" type="max"/>
+          </constraints>
           <profiles>
             <profile id="0df1-950a-9b35-1416" name="Knight of Piety" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -21373,6 +21640,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </modifiers>
             </modifierGroup>
           </modifierGroups>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="f6ed-fd3e-6969-e046" type="max"/>
+          </constraints>
           <profiles>
             <profile id="94d6-b2a7-309b-8ada" name="Master of Camouflage" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -21394,6 +21664,9 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               </conditions>
             </modifier>
           </modifiers>
+          <constraints>
+            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2674-79e7-72a9-4b8e" type="max"/>
+          </constraints>
           <profiles>
             <profile id="0d80-de4b-e894-8bb3" name="Steel Commissar" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -21470,141 +21743,60 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
       </constraints>
       <entryLinks>
         <entryLink id="fbb7-d75f-7ef1-6c7f" name="Relic: Legacy of Kalladius" hidden="false" collective="false" import="true" targetId="b317-c165-a7d5-0388" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="f4b5-1aa8-4230-0683" type="lessThan"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5efc-dc7c-fc40-7135" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="85f5-03b7-5085-2d61" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="4f89-a01c-50fc-f27f" name="Relic: The Laurels of Command" hidden="false" collective="false" import="true" targetId="ac59-27a4-14ff-220f" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="db15-9caf-26ef-c2c0" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1b5a-414e-881d-69aa" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="5175-5813-7bb2-a2c2" name="Relic: The Deathmask of Ollanius" hidden="false" collective="false" import="true" targetId="8802-85b0-d3d3-6158" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="3d52-fccf-10c0-3fae" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="de31-b198-b743-8378" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1b61-a91b-635a-7faa" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="ec03-f299-4924-9c73" name="Relic: Clarion Proclamatus" hidden="false" collective="false" import="true" targetId="1a31-5371-2f9a-9234" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="33c0-8496-22d0-08e9" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7ee8-4a99-f3f0-de56" type="max"/>
-            <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="2944-b547-ad2d-046f" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="8f25-ef26-2a3f-afbc" name="Relic: Claw of the Desert Tigers" hidden="false" collective="false" import="true" targetId="0a30-6d27-4709-ca86" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="67e3-0d6c-7374-39c4" type="lessThan"/>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc9e-551d-9afb-78d5" type="lessThan"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="949c-d2c4-8071-e783" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="97e4-c6dd-50f8-577c" name="Relic: Relic of Lost Cadia" hidden="false" collective="false" import="true" targetId="0cbc-fba4-2e32-1813" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b332-b046-7171-5059" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fd0f-7650-e927-457e" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="2cf5-48cb-e469-142b" name="Relic (Vostroyan): The Armour of Graf Toschenko" hidden="false" collective="false" import="true" targetId="02d1-fdc2-288b-6781" type="selectionEntry">
+        <entryLink id="2cf5-48cb-e469-142b" name="Relic: Armour of Graf Toschenko" hidden="false" collective="false" import="true" targetId="02d1-fdc2-288b-6781" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3e0e-9309-3fe7-ddb9" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="97cc-82e7-e4eb-8915" name="Relic: Psy-Sigil of Sanction" hidden="false" collective="false" import="true" targetId="316a-1dbd-2185-a82f" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cf1e-a990-0a02-2496" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f91b-1134-2d02-c7bf" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="26c1-5b48-3cad-c08b" name="Relic: Tactical Auto-Reliquary of Tyberius" hidden="false" collective="false" import="true" targetId="5ae2-c4d2-05bc-a16f" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0e74-1d60-07c9-f399" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="428c-7140-b2e4-164a" name="Relic: The Emperor&apos;s Benediction" hidden="false" collective="false" import="true" targetId="25d0-9bd6-7b74-98f4" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0334-f487-8229-0c1a" type="lessThan"/>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa52-8fb7-1c87-80e6" type="notInstanceOf"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1e12-5c6f-9df3-6d43" type="max"/>
             <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4e6b-c54e-f74b-4920" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="8bc7-5b5f-4c1a-26ad" name="Relic : The Barbicant&apos;s Key" hidden="false" collective="false" import="true" targetId="0bb8-8323-a997-109a" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6cb7-9696-11ce-b801" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a349-c47d-2957-ba63" type="max"/>
           </constraints>
@@ -21616,58 +21808,21 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
           </constraints>
         </entryLink>
         <entryLink id="c16a-935a-7eff-7e8c" name="Relic: Refractor Field Generator" hidden="false" collective="false" import="true" targetId="00cb-7dec-59f8-acfc" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="12bf-5b84-a1bc-6989" type="notInstanceOf"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa52-8fb7-1c87-80e6" type="notInstanceOf"/>
-              </conditions>
-              <conditionGroups>
-                <conditionGroup type="or"/>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5903-4a5d-d4f5-9c52" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="0488-54a7-52c4-c7c9" name="Relic: The Emperor&apos;s Fury" hidden="false" collective="false" import="true" targetId="eb13-2076-18e2-e4e7" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="83be-1ba9-c326-4760" type="lessThan"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c4b9-90b6-eaec-383a" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="d428-6dc8-639e-726f" name="Relic (Cadia): Gatekeeper" hidden="false" collective="false" import="true" targetId="c723-aa80-a8e0-6a8d" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="2fcb-22c9-d86a-96e3" type="notInstanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="09b4-66a4-ffc7-6b9d" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
+        <entryLink id="d428-6dc8-639e-726f" name="Relic: Gatekeeper" hidden="false" collective="false" import="true" targetId="c723-aa80-a8e0-6a8d" type="selectionEntry">
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e0f5-f3bf-308c-48e8" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="f50b-baf6-69a2-04ad" name="Relic: Finial of the Nemrodesh 1st" hidden="false" collective="false" import="true" targetId="efab-7f02-a7a0-223f" type="selectionEntry">
-          <modifiers>
-            <modifier type="set" field="hidden" value="true">
-              <conditions>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="33c0-8496-22d0-08e9" type="notInstanceOf"/>
-              </conditions>
-            </modifier>
-          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="631d-8468-878d-5c0a" type="max"/>
           </constraints>
@@ -21757,7 +21912,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
         </entryLink>
         <entryLink id="d0d7-60a5-28b0-678a" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
         <entryLink id="1cfc-2cff-5c19-7ff9" name="Stratagem: Officer Cadre" hidden="false" collective="false" import="true" targetId="0f36-b767-fc98-6f57" type="selectionEntry"/>
-        <entryLink id="b7ef-1976-7089-e874" name="Stratagem: Battlefield Request" hidden="false" collective="false" import="true" targetId="59ad-e41a-5a3b-cb12" type="selectionEntry"/>
+        <entryLink id="b7ef-1976-7089-e874" name="Stratagem: Battlefield Bequest" hidden="false" collective="false" import="true" targetId="59ad-e41a-5a3b-cb12" type="selectionEntry"/>
         <entryLink id="7ce0-113e-5e7d-5ca5" name="Stratagem: Imperial Commander&apos;s Armoury" page="" hidden="false" collective="false" import="true" targetId="c550-3885-37db-d442" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
@@ -22245,13 +22400,16 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
-                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6cb7-9696-11ce-b801" type="notInstanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="dd6e-7055-ca6b-b711" type="notInstanceOf"/>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6cb7-9696-11ce-b801" type="notInstanceOf"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
             </modifier>
           </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e4b8-deca-cdfc-c976" type="max"/>
+          </constraints>
           <entryLinks>
             <entryLink id="b7f3-9dab-01ee-e882" name="Ogryn Bodyguard" hidden="false" collective="false" import="true" targetId="a2f0-80d5-4134-8f0f" type="selectionEntry">
               <constraints>
@@ -22276,7 +22434,7 @@ Add 1 to charge rolls made for units with this doctrine.</characteristic>
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
-    <selectionEntryGroup id="5346-757a-7d0b-7871" name="Battlefield Request Relics" hidden="true" collective="false" import="true">
+    <selectionEntryGroup id="5346-757a-7d0b-7871" name="Battlefield Bequest Relics" hidden="true" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="false">
           <conditions>
