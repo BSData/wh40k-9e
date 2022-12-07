@@ -6998,7 +6998,7 @@ Remaining Wounds | Aura Range
               <modifiers>
                 <modifier type="set" field="hidden" value="true">
                   <conditionGroups>
-                    <conditionGroup type="and">
+                    <conditionGroup type="or">
                       <conditions>
                         <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
                         <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3b77-decb-d468-6bcc" type="instanceOf"/>
@@ -7809,6 +7809,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="0ff0-09d7-4766-bbb0" name="Laurels of Victory" hidden="false" collective="false" import="true" type="upgrade">
                   <constraints>
@@ -7822,6 +7827,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="9d5b-ebed-d479-f4a1" name="Frenzon Injector" hidden="false" collective="false" import="true" type="upgrade">
                   <modifiers>
@@ -7849,6 +7859,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="b403-253b-0392-aa8f" name="Conversion Field" hidden="false" collective="false" import="true" type="upgrade">
                   <modifiers>
@@ -7869,6 +7884,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="7f84-2273-2bb7-1a9d" name="Artificer Weapon" hidden="false" collective="false" import="true" type="upgrade">
                   <constraints>
@@ -7882,6 +7902,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="467e-a650-c84f-24d4" name="Artisan Bionics" hidden="false" collective="false" import="true" type="upgrade">
                   <modifiers>
@@ -7908,6 +7933,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -7932,6 +7962,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="83cd-50f1-d9f1-6ddb" name="Blackstone Shard Amulet" hidden="false" collective="false" import="true" type="upgrade">
                   <constraints>
@@ -7945,6 +7980,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="937d-bce3-d367-3586" name="Xenotech Digital Lasers" hidden="false" collective="false" import="true" type="upgrade">
                   <constraints>
@@ -7963,6 +8003,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="58df-8d14-636a-60fa" name="Dark Age Displacer Belt" hidden="false" collective="false" import="true" type="upgrade">
                   <modifiers>
@@ -7983,6 +8028,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -8005,6 +8055,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
                 <selectionEntry id="ebd0-c593-398a-0bde" name="Null-field Disruptor" hidden="false" collective="false" import="true" type="upgrade">
                   <constraints>
@@ -8018,6 +8073,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                       </characteristics>
                     </profile>
                   </profiles>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
             </selectionEntryGroup>
@@ -8060,6 +8120,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="eb91-45c7-f46d-b30d" name="2. Blind in One Eye" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8072,6 +8137,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="7dbd-8288-7057-218c" name="3. Deep Scars" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8084,6 +8154,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="132f-d80f-5543-fb2c" name="4. Chest Wound" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8096,6 +8171,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="7694-4acb-ca06-bc84" name="5. Deep Concussion" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8108,6 +8188,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="cb1b-cae1-3ee0-dcfd" name="6. Loss of Reputation" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8120,6 +8205,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -8143,6 +8233,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="666c-1e1b-152f-2302" name="2. Targeters Cracked" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8155,6 +8250,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="26c9-3f38-615b-8793" name="3. Weakened Armor" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8167,6 +8267,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="bfb6-416b-be36-5b88" name="4. Weapon Damaged" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8179,6 +8284,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="9528-ea1f-7b22-6920" name="5. Angered Machine Spirit" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8191,6 +8301,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="f1cc-cbd5-d05b-4028" name="6. VoxComms Destroyed" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8203,6 +8318,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -8226,6 +8346,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="6a2b-a16a-cf9b-8946" name="2. Crippled Limb" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8238,6 +8363,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="fc5b-65ff-4be0-ce71" name="3. Critical Wound" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8250,6 +8380,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="870d-b168-f660-f5ec" name="4. Tissue Damage" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8262,6 +8397,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="6d6d-7bfc-d09e-c86c" name="5. Fractured Skull" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8274,6 +8414,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="ae90-9fdc-903d-a172" name="6. Enraged and Unreasoning" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
@@ -8286,6 +8431,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -8312,6 +8462,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="8686-9e27-55a9-2d49" name="2. Fatigued" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
@@ -8321,6 +8476,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="96b7-65f0-c7e5-6f35" name="3. Battle-weary" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
@@ -8330,6 +8490,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="0f4d-04ac-f038-9589" name="4. Shell Shock" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
@@ -8339,6 +8504,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="ae81-a9e7-3775-5049" name="5. Disgraced" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
@@ -8348,6 +8518,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="68e9-4baf-7b90-6532" name="6. Mark of Shame" hidden="false" collective="false" import="true" type="upgrade">
               <profiles>
@@ -8357,6 +8532,11 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
                   </characteristics>
                 </profile>
               </profiles>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
