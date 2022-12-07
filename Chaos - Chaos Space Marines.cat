@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="203" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="227" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="cb54-c035-5759-7697" name="Chaos - Chaos Space Marines" revision="204" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Mad_Spy" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="227" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="cb54-c035-pubN125652" name="Codex: Heretic Astartes - Chaos Space Marines"/>
     <publication id="cb54-c035-pubN153092" name="Imperium Nihilus: Vigilus Ablaze"/>
@@ -30931,7 +30931,53 @@ mortal wound, roll one D6: on a 4+, that wound is not lost.</characteristic>
                         <cost name="pts" typeId="points" value="0.0"/>
                       </costs>
                     </selectionEntry>
-                    <selectionEntry id="5b47-81f6-aa47-3497" name="Supreme Creation" hidden="false" collective="false" import="true" type="upgrade">
+                    <selectionEntry id="5b47-81f6-aa47-3497" name="Shadesword" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9b8a-fb30-b445-3049" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae44-8e2e-2df1-d463" type="instanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="and">
+                              <conditions>
+                                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="bc9e-551d-9afb-78d5" type="lessThan"/>
+                                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="07e7-1f9b-4c1c-aad9" type="lessThan"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2171-d190-ed32-4128" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a70d-2e10-069b-b45e" type="max"/>
+                      </constraints>
+                      <profiles>
+                        <profile id="300f-3cc2-3d04-51e7" name="Shadesword" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                          <characteristics>
+                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                            <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time an attack is made with this weapon, on an 
+unmodified wound roll of 6, invulnerable saving throws cannot be made against that attack.</characteristic>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                    </selectionEntry>
+                    <selectionEntry id="e102-55c0-88fd-2726" name="Supreme Creation" hidden="false" collective="false" import="true" type="upgrade">
                       <modifiers>
                         <modifier type="set" field="hidden" value="true">
                           <conditions>
@@ -30949,12 +30995,212 @@ mortal wound, roll one D6: on a 4+, that wound is not lost.</characteristic>
                           </conditionGroups>
                         </modifier>
                       </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d37f-63b3-48ca-a832" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d335-bc2c-31b4-e1ea" type="max"/>
+                      </constraints>
                       <profiles>
-                        <profile id="fbac-e70a-3076-3114" name="Supreme Creation" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                        <profile id="ed43-0023-6ba5-eba9" name="Supreme Creation" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                           <characteristics>
                             <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer’s unit gains 3 Battle Traits of your choice, which do not count towards the maximum number of Battle Honours that unit can have. Increase the Crusade points total of that unit accordingly. The bearer’s unit cannot gain more than 1 experience point at the end of each battle, no matter the source. In addition, the bearer&apos;s unit cannot perform actions, use aura abilities or use abilities used in the Command phase unless a 
 friendly FABIUS BILE model is on the battlefield.  
 </characteristic>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                    </selectionEntry>
+                    <selectionEntry id="7444-69b6-e78e-5a29" name="Warpbreacher" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a1b3-96fc-29f6-d3b1" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae44-8e2e-2df1-d463" type="instanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b36f-fae2-eca4-6d1f" type="notInstanceOf"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2a0c-43b2-e78b-ce39" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="b20d-7bd5-b84b-3cdd" type="max"/>
+                      </constraints>
+                      <profiles>
+                        <profile id="c45f-3005-a379-727a" name="Warpbreacher" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                          <characteristics>
+                            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">WARPSMITH or LORD DISCORDANT model only. At the start of your Command phase, you can select one IRON WARRIORS VEHICLE model (excluding DAEMON ENGINE and TITANIC models) within 3&quot; of the bearer. Until the start of your next Command phase, that model gains the DAEMON and DAEMON ENGINE keywords, and it gains the Daemon Engine ability (pg 144). </characteristic>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                    </selectionEntry>
+                    <selectionEntry id="2d72-c98c-068c-2bc4" name="Splinters of the Ghost Razors" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a675-3934-815b-7d5e" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae44-8e2e-2df1-d463" type="instanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="36b8-cf23-7648-ece9" type="notInstanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="90de-7b01-e401-888b" type="lessThan"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="eee2-cc7a-b250-b647" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="73c1-c863-5bd3-e4ff" type="max"/>
+                      </constraints>
+                      <profiles>
+                        <profile id="8988-dbd3-fa94-e4cf" name="Splinters of the Ghost Razors" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                          <characteristics>
+                            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                            <characteristic name="S" typeId="59b1-319e-ec13-d466">+1</characteristic>
+                            <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+                            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time the bearer fights, it makes 1 additional attack with this weapon. Each time an attack is made with this weapon, you can re-roll the wound roll.
+</characteristic>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                    </selectionEntry>
+                    <selectionEntry id="720f-2d43-2bd8-6152" name="Soulsnare Sigil" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="51f6-1db1-3e75-3d4b" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae44-8e2e-2df1-d463" type="instanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a0a6-6254-9823-b47f" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="70d0-21a1-316b-59fb" type="max"/>
+                      </constraints>
+                      <profiles>
+                        <profile id="7654-aa4d-b139-9174" name="Soulsnare Sigil" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                          <characteristics>
+                            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time the bearer fights, after they have finished making their attacks, for each model destroyed by a melee attack made by the bearer this phase, the bearer regains 1 lost wound (to a maximum of 3 lost wounds per phase).</characteristic>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                    </selectionEntry>
+                    <selectionEntry id="8bf2-d4c3-e9c1-4d56" name="Curze&apos;s Orb" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="01f7-d7f1-be88-b861" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ae44-8e2e-2df1-d463" type="instanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8173-2f10-dc70-d891" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ffa5-f9be-649c-0bf0" type="max"/>
+                      </constraints>
+                      <profiles>
+                        <profile id="cf25-c12c-c951-1c4b" name="Curze&apos;s Orb" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                          <characteristics>
+                            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While the bearer is on the battlefield, each time your opponent spends a Command point to use a Stratagem you can roll one D6: on a 5+, you gain 1 Command point.</characteristic>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                    </selectionEntry>
+                    <selectionEntry id="a5b3-78d5-991c-aecc" name="Book of the Reviler" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2482-8e16-78b0-e9cd" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4795-007f-61fa-aca5" type="notInstanceOf"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0965-85a9-74af-6b66" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3245-c5ae-1cd3-009e" type="max"/>
+                      </constraints>
+                      <profiles>
+                        <profile id="8db4-b08a-d098-80de" name="Book of the Reviler" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                          <characteristics>
+                            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Ifa Priest model has this Relic, it knows the following prayers in addition to any others it knows: Benediction of Darkness, Litany of Despair, Omen of Potency, Warp-sight Plea, Soultearer Portent, Illusory Supplication (pg 121).</characteristic>
+                          </characteristics>
+                        </profile>
+                      </profiles>
+                    </selectionEntry>
+                    <selectionEntry id="14eb-0b7a-8805-7c13" name="Book of the Reviler (non-Priest)" hidden="false" collective="false" import="true" type="upgrade">
+                      <modifiers>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditions>
+                            <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2482-8e16-78b0-e9cd" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                        <modifier type="set" field="hidden" value="true">
+                          <conditionGroups>
+                            <conditionGroup type="or">
+                              <conditions>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="4795-007f-61fa-aca5" type="instanceOf"/>
+                              </conditions>
+                            </conditionGroup>
+                          </conditionGroups>
+                        </modifier>
+                        <modifier type="add" field="category" value="4795-007f-61fa-aca5"/>
+                      </modifiers>
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="999d-32c8-653a-c94d" type="max"/>
+                        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a1a7-d306-e1b6-b9a3" type="max"/>
+                      </constraints>
+                      <profiles>
+                        <profile id="862f-5685-09df-eb20" name="Book of the Reviler (non-Priest)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                          <characteristics>
+                            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Ifanon-Priest model has this Relic, it gains the RIEST 
+keyword. In your Command phase, it can attempt to chant one prayer it knows that has not already been attempted by a friendly model that battle round. Roll one D6: on a 3+, the prayer is heard. The bearer knows Dark Zealotry and one other prayer from the Prayers to the Dark Gods (pg 120-121). </characteristic>
+                          </characteristics>
+                        </profile>
+                        <profile id="51d1-7bcf-6793-bbdc" name="Book of the Reviler (non-Priest)" hidden="false" typeId="7c26-78e8-b63d-70a2" typeName="Prayers">
+                          <characteristics>
+                            <characteristic name="Effect" typeId="f486-147a-28c3-ad93">Dark Zealotry and one other prayer from the Prayers to the Dark Gods (pg 120-121). </characteristic>
                           </characteristics>
                         </profile>
                       </profiles>
