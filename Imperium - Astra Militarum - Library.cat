@@ -273,6 +273,9 @@
 
 - Troops units in ASTRA MILITARUM Detachments gain the Objective Secured ability (this ability is described in the Warhammer 40,000 Core Book).</description>
     </rule>
+    <rule id="4746-d96f-18e7-11d8" name="Disembarking Officers" publicationId="53e9d88f--pubN88319" hidden="false">
+      <description>If, in your movement phase, an OFFICER from your army disembarks from a TRANSPORT model, after that OFFICER&apos;s unit has been set up it can issue Orders as if it were your Command phase. However, when doing so, the Regimental Tactics ability does not apply, even if evcery model from your army has the ASTRA MILITARUM keyword. Note that an OFFICER model cannot issue Orders in this when when disembarking from a destroyed TRANSPORT model.</description>
+    </rule>
   </rules>
   <sharedSelectionEntries>
     <selectionEntry id="3d6b-fb42-442f-cd3f" name="Master of Ordnance" page="0" hidden="false" collective="false" import="true" type="upgrade">
@@ -10146,10 +10149,10 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
           <conditionGroups>
             <conditionGroup type="or">
               <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b074-58dd-2921-aee0" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3957-e16d-efd1-19a2" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="aac3-97bb-a9e4-c755" type="equalTo"/>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="aac3-97bb-a9e4-c755" type="equalTo"/>
+                <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2ec9-4d33-08af-cd6c" type="atLeast"/>
+                <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="aac3-97bb-a9e4-c755" type="atLeast"/>
+                <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3957-e16d-efd1-19a2" type="atLeast"/>
+                <condition field="selections" scope="self" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b074-58dd-2921-aee0" type="atLeast"/>
               </conditions>
             </conditionGroup>
           </conditionGroups>
@@ -11663,7 +11666,15 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
           </constraints>
         </entryLink>
         <entryLink id="eea1-c373-cd56-6f09" name="Heirlooms of Conquest" hidden="false" collective="false" import="true" targetId="8ed7-7588-0f06-9b0d" type="selectionEntryGroup"/>
-        <entryLink id="5ee3-7d64-9e15-ace3" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry"/>
+        <entryLink id="5ee3-7d64-9e15-ace3" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="000a-cf6d-4c86-a749" value="0.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="dd6e-7055-ca6b-b711" type="atLeast"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="5ac6-c705-5ebb-c547" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup">
           <modifiers>
             <modifier type="set" field="bed7-65c6-5ef5-566f" value="0.0">
@@ -13367,7 +13378,15 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
           </constraints>
         </entryLink>
         <entryLink id="83c8-3dc5-d50d-45ce" name="Heirlooms of Conquest" hidden="false" collective="false" import="true" targetId="8ed7-7588-0f06-9b0d" type="selectionEntryGroup"/>
-        <entryLink id="a95f-1cf4-59db-1116" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry"/>
+        <entryLink id="a95f-1cf4-59db-1116" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="000a-cf6d-4c86-a749" value="0.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="dd6e-7055-ca6b-b711" type="atLeast"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="9eda-1833-79e0-9fbb" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup"/>
         <entryLink id="0302-2e9f-5a92-c213" name="Character Stratagems" hidden="false" collective="false" import="true" targetId="2527-4b0c-1e18-38b3" type="selectionEntryGroup"/>
       </entryLinks>
@@ -17285,6 +17304,7 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
         <categoryLink id="3738-be38-547f-c868" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
         <categoryLink id="48ba-26d9-9597-9cfb" name="Platoon" hidden="false" targetId="3957-e376-ba3a-83b9" primary="false"/>
         <categoryLink id="8e35-7d32-65b4-f24f" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
+        <categoryLink id="f588-e713-af31-2062" name="Shock Troops" hidden="false" targetId="da4c-a32d-7fdc-a736" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="525b-2b2d-9a8c-2f19" name="Shock Trooper Sergeant" page="0" hidden="false" collective="false" import="true" type="model">
@@ -17988,7 +18008,7 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
             <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
             <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
             <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
           </characteristics>
         </profile>
       </profiles>
@@ -18307,8 +18327,8 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
                     </entryLink>
                     <entryLink id="f3dc-6744-3029-b2f8" name="Plasma gun" hidden="false" collective="false" import="true" targetId="8c14-22cc-93ce-b85a" type="selectionEntry">
                       <constraints>
-                        <constraint field="selections" scope="2c48-d222-fbe2-9697" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a84f-743b-18fe-7030" type="max"/>
-                        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc2b-c002-5361-367b" type="max"/>
+                        <constraint field="selections" scope="2c48-d222-fbe2-9697" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a84f-743b-18fe-7030" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="fc2b-c002-5361-367b" type="max"/>
                       </constraints>
                     </entryLink>
                   </entryLinks>
@@ -19898,7 +19918,15 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
         </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
-        <entryLink id="8c23-9d4a-b495-af25" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry"/>
+        <entryLink id="8c23-9d4a-b495-af25" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="000a-cf6d-4c86-a749" value="0.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="dd6e-7055-ca6b-b711" type="atLeast"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="f774-eaa7-b0d7-7144" name="Character Stratagems" hidden="false" collective="false" import="true" targetId="2527-4b0c-1e18-38b3" type="selectionEntryGroup"/>
         <entryLink id="4417-9014-b8df-2af3" name="Relics" hidden="false" collective="false" import="true" targetId="8ed7-7588-0f06-9b0d" type="selectionEntryGroup"/>
         <entryLink id="1a05-5502-9db5-0393" name="Warlord Traits" hidden="false" collective="false" import="true" targetId="d6e2-a400-a8db-d4f2" type="selectionEntryGroup"/>
@@ -20122,42 +20150,15 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2e84-73b4-e388-d729" type="max"/>
       </constraints>
-      <selectionEntries>
-        <selectionEntry id="9fa0-e23a-2c31-24f7" name="Grenade launcher" hidden="false" collective="false" import="true" type="upgrade">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6104-d104-f279-91bf" type="max"/>
-          </constraints>
-          <profiles>
-            <profile id="c61d-09a3-3b74-0836" name="Grenade launcher (Frag)" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-              <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D6</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">3</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast.</characteristic>
-              </characteristics>
-            </profile>
-            <profile id="54be-e8dc-2331-1ef8" name="Grenade launcher (Krak)" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
-              <characteristics>
-                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
-                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
-                <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
-                <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
-                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">D3</characteristic>
-                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410"/>
-              </characteristics>
-            </profile>
-          </profiles>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
       <entryLinks>
         <entryLink id="d22e-d425-c46b-4874" name="Sniper Rifle" hidden="false" collective="false" import="true" targetId="d4fd-c131-723b-350b" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="da4c-a32d-7fdc-a736" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e464-f3f8-0f5c-27d3" type="max"/>
           </constraints>
@@ -20178,18 +20179,44 @@ friendly VEHICLE OFFICER and SUPER-HEAVY units.</characteristic>
           </constraints>
         </entryLink>
         <entryLink id="c88c-3d3f-f18b-31ea" name="Breacher Charge [Legends]" hidden="false" collective="false" import="true" targetId="a8cf-9401-5518-9dc6" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="da4c-a32d-7fdc-a736" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9614-cf44-60cb-a8dd" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="a145-1b64-4cb2-9c76" name="Lascutter [Legends]" hidden="false" collective="false" import="true" targetId="1607-440f-5a68-0472" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="da4c-a32d-7fdc-a736" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c6bd-1904-84c2-f602" type="max"/>
           </constraints>
         </entryLink>
         <entryLink id="1ef0-751e-c6fd-cf2f" name="Heavy flamer" hidden="false" collective="false" import="true" targetId="18bc-b335-29c2-2ae2" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="da4c-a32d-7fdc-a736" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="aa8a-941d-6b98-3354" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="51df-5f80-d076-074d" name="Grenade launcher" hidden="false" collective="false" import="true" targetId="a75e-512d-c808-3057" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f084-e98c-28e9-cd48" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>
