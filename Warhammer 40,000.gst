@@ -8098,7 +8098,7 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
           <modifiers>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
-                <conditionGroup type="and">
+                <conditionGroup type="or">
                   <conditions>
                     <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
                     <condition field="selections" scope="ancestor" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="3b77-decb-d468-6bcc" type="instanceOf"/>
@@ -8455,6 +8455,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
           </modifiers>
           <selectionEntries>
             <selectionEntry id="3b5d-d211-d790-d83b" name="1. Walking Wounded" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6d2a-1d61-5040-9a64" type="max"/>
+              </constraints>
               <profiles>
                 <profile id="761e-bad9-0551-8739" name="1. Walking Wounded" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
@@ -8469,6 +8472,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
               </costs>
             </selectionEntry>
             <selectionEntry id="8686-9e27-55a9-2d49" name="2. Fatigued" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0f8d-c2b7-299e-97a0" type="max"/>
+              </constraints>
               <profiles>
                 <profile id="8da4-8ea5-0e62-1bb7" name="2. Fatigued" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
@@ -8483,6 +8489,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
               </costs>
             </selectionEntry>
             <selectionEntry id="96b7-65f0-c7e5-6f35" name="3. Battle-weary" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9592-7443-e5ae-f464" type="max"/>
+              </constraints>
               <profiles>
                 <profile id="626e-461b-3423-9b8b" name="3. Battle-weary" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
@@ -8497,6 +8506,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
               </costs>
             </selectionEntry>
             <selectionEntry id="0f4d-04ac-f038-9589" name="4. Shell Shock" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="acd6-7a0e-1bed-d65c" type="max"/>
+              </constraints>
               <profiles>
                 <profile id="9da8-fe55-964c-2db8" name="4. Shell Shock" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
@@ -8511,6 +8523,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
               </costs>
             </selectionEntry>
             <selectionEntry id="ae81-a9e7-3775-5049" name="5. Disgraced" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f002-391f-1f27-df9e" type="max"/>
+              </constraints>
               <profiles>
                 <profile id="bbab-202f-dae6-4f9f" name="5. Disgraced" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
@@ -8525,6 +8540,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
               </costs>
             </selectionEntry>
             <selectionEntry id="68e9-4baf-7b90-6532" name="6. Mark of Shame" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6ed7-ef8d-2dfe-7238" type="max"/>
+              </constraints>
               <profiles>
                 <profile id="ec12-51de-b5a4-9f85" name="6. Mark of Shame" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
                   <characteristics>
