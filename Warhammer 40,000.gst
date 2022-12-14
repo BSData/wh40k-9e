@@ -205,6 +205,11 @@
             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5baf-eed5-bb85-7325" type="instanceOf"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="a991-ad91-7d5f-92d1" value="-1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2aee-51b0-2b2b-218d" type="atLeast"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="a991-ad91-7d5f-92d1" type="max"/>
@@ -1820,7 +1825,7 @@
         <categoryLink id="c48d-e8d1-ecce-c4b9" name="New CategoryLink" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="4bcc-b0f4-b425-f38e" name="Gametype" hidden="false" collective="false" import="true" targetId="bf09-85b2-c097-1071" type="selectionEntry">
+    <entryLink id="4bcc-b0f4-b425-f38e" name="Game Type" hidden="false" collective="false" import="true" targetId="bf09-85b2-c097-1071" type="selectionEntry">
       <categoryLinks>
         <categoryLink id="0c5c-0d15-790d-6f8c" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
