@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="228" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="229" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -2088,7 +2088,7 @@
     </entryLink>
     <entryLink id="5983-ab4f-26d3-37bf" name="Heroic Support" hidden="false" collective="false" import="true" targetId="cbd4-34fb-6ba6-9593" type="selectionEntry">
       <categoryLinks>
-        <categoryLink id="3477-486a-9bdb-6760" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+        <categoryLink id="771f-7f97-7ddb-75c7" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -7214,7 +7214,8 @@ Remaining Wounds | Aura Range
       </modifierGroups>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6842-ca7c-8ed1-a566" type="max"/>
-        <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="31d5-8022-4c57-6b9b" type="min"/>
+        <constraint field="selections" scope="force" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="31d5-8022-4c57-6b9b" type="min"/>
+        <constraint field="selections" scope="force" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7948-6631-5ec8-770d" type="max"/>
       </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="ae30-a387-29d5-7e5c" name="Compulsory Unit Type" hidden="false" collective="false" import="true" defaultSelectionEntryId="8fe4-6466-fb24-5a1e">
@@ -7286,9 +7287,6 @@ Remaining Wounds | Aura Range
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d2e7-cac2-2e04-9f7f" type="max"/>
       </constraints>
-      <categoryLinks>
-        <categoryLink id="46b1-f99e-efdf-efa8" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
-      </categoryLinks>
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
