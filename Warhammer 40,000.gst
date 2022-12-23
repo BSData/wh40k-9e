@@ -2086,11 +2086,6 @@
         <categoryLink id="5791-c279-0277-7e5d" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="5983-ab4f-26d3-37bf" name="Heroic Support" hidden="false" collective="false" import="true" targetId="cbd4-34fb-6ba6-9593" type="selectionEntry">
-      <categoryLinks>
-        <categoryLink id="771f-7f97-7ddb-75c7" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
-      </categoryLinks>
-    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defence Line" page="" hidden="false" collective="false" import="true" type="unit">
