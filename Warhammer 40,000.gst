@@ -2086,6 +2086,11 @@
         <categoryLink id="5791-c279-0277-7e5d" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="5983-ab4f-26d3-37bf" name="Heroic Support" hidden="false" collective="false" import="true" targetId="cbd4-34fb-6ba6-9593" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="3477-486a-9bdb-6760" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="a505-05af-bd44-56b6" name="Aegis Defence Line" page="" hidden="false" collective="false" import="true" type="unit">
@@ -7202,14 +7207,14 @@ Remaining Wounds | Aura Range
             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa51-993c-2f8b-9be4" type="instanceOf"/>
           </conditions>
           <modifiers>
-            <modifier type="set" field="3fb4-b4f4-18c4-4292" value="1.0"/>
             <modifier type="set" field="hidden" value="false"/>
+            <modifier type="set" field="28cd-f411-d7d3-89ad" value="1.0"/>
           </modifiers>
         </modifierGroup>
       </modifierGroups>
       <constraints>
-        <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3fb4-b4f4-18c4-4292" type="min"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6842-ca7c-8ed1-a566" type="max"/>
+        <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="28cd-f411-d7d3-89ad" type="min"/>
       </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="ae30-a387-29d5-7e5c" name="Compulsory Unit Type" hidden="false" collective="false" import="true" defaultSelectionEntryId="8fe4-6466-fb24-5a1e">
@@ -7274,6 +7279,19 @@ Remaining Wounds | Aura Range
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="cbd4-34fb-6ba6-9593" name="Heroic Support" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d2e7-cac2-2e04-9f7f" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="46b1-f99e-efdf-efa8" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
