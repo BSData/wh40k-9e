@@ -7214,7 +7214,7 @@ Remaining Wounds | Aura Range
       </modifierGroups>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6842-ca7c-8ed1-a566" type="max"/>
-        <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="31d5-8022-4c57-6b9b" type="min"/>
+        <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="31d5-8022-4c57-6b9b" type="min"/>
       </constraints>
       <selectionEntryGroups>
         <selectionEntryGroup id="ae30-a387-29d5-7e5c" name="Compulsory Unit Type" hidden="false" collective="false" import="true" defaultSelectionEntryId="8fe4-6466-fb24-5a1e">
