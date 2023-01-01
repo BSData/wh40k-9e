@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="109" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Fital Shell" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="230" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="82cd-d24f-9f22-11f3" name="Imperium - Imperial Knights" revision="110" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Fital Shell" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="231" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>Imperial Knights are a unique faction within Warhammer 40,000, for their armies typically comprise just a handful of models. Where other players’ forces contain infantry, battle tanks, monstrous beasts and the like, an Imperial Knights army is made up solely of towering, heavily armed and armoured bipedal war  engines. Even the least of these is more than a match for whole regiments of the foe. Piloted by highly trained Nobles whose minds are saturated with concepts of chivalry, honour and fealty, these ironclad giants shatter battle lines with ease, devastating the enemy’s forces with bombardments of searing energy and explosive shells. Those who somehow survive this fusillade – and are not subsequently trampled underfoot – are sent scattering before the Knights like leaves on a gale.</readme>
   <publications>
     <publication id="82cd-d24f-pubN65537" name="Codex: Imperial Knights" shortName="Codex: IK" publisher="Codex: Imperial Knights" publicationDate="May 2022" publisherUrl="https://www.games-workshop.com/en-US/codex-imperial-knights-2022-eng"/>
@@ -10453,9 +10453,16 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
                 <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="af70-08c1-1c6f-0770" type="lessThan"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d513-cbf5-9bfc-7270" type="notInstanceOf"/>
+                    <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa51-993c-2f8b-9be4" type="notInstanceOf"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -11293,6 +11300,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9135-116e-86e9-d609" type="max"/>
       </constraints>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -11348,13 +11360,21 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
     <selectionEntryGroup id="b41b-99f7-d7c3-66ee" name="Heirlooms of the Noble Houses" hidden="true" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="false">
+          <comment>For nothing past nephilim</comment>
           <conditionGroups>
-            <conditionGroup type="or">
+            <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c470-54ac-0863-8848" type="atLeast"/>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9630-827b-a78d-63b7" type="atLeast"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="instanceOf"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9630-827b-a78d-63b7" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -11363,62 +11383,50 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
             <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="equalTo"/>
           </conditions>
         </modifier>
-        <modifier type="set" field="hidden" value="true">
-          <conditionGroups>
-            <conditionGroup type="or">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="lessThan"/>
-              </conditions>
-            </conditionGroup>
-          </conditionGroups>
-        </modifier>
         <modifier type="increment" field="136b-91e1-d600-60e3" value="2.0">
           <conditions>
             <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="atLeast"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="136b-91e1-d600-60e3" value="1.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="false">
+          <comment>For anything past and including Nephilim</comment>
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
+                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="atLeast"/>
+                    <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="9630-827b-a78d-63b7" type="atLeast"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+        <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
+          <repeats>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c470-54ac-0863-8848" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9630-827b-a78d-63b7" repeats="1" roundUp="false"/>
+          </repeats>
+        </modifier>
       </modifiers>
-      <modifierGroups>
-        <modifierGroup>
-          <conditions>
-            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
-          </conditions>
-          <modifiers>
-            <modifier type="set" field="136b-91e1-d600-60e3" value="1.0">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="96f2-3321-e974-f12a" type="atLeast"/>
-              </conditions>
-            </modifier>
-            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-              <repeats>
-                <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9630-827b-a78d-63b7" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d2ac-2e68-c89e-0ea7" type="atLeast"/>
-              </conditions>
-            </modifier>
-          </modifiers>
-        </modifierGroup>
-        <modifierGroup>
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
-          </conditions>
-          <modifiers>
-            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c470-54ac-0863-8848" type="atLeast"/>
-              </conditions>
-            </modifier>
-            <modifier type="increment" field="136b-91e1-d600-60e3" value="1.0">
-              <repeats>
-                <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="9630-827b-a78d-63b7" repeats="1" roundUp="false"/>
-              </repeats>
-            </modifier>
-          </modifiers>
-        </modifierGroup>
-      </modifierGroups>
       <constraints>
         <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="12ba-0b2a-dd9c-13f6" type="max"/>
         <constraint field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="136b-91e1-d600-60e3" type="max"/>
@@ -11569,8 +11577,15 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                     <conditionGroup type="and">
                       <conditions>
                         <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="96f2-3321-e974-f12a" type="greaterThan"/>
-                        <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
                       </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </conditionGroup>
                   </conditionGroups>
                 </conditionGroup>
@@ -11599,9 +11614,6 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
           </repeats>
         </modifier>
       </modifiers>
-      <modifierGroups>
-        <modifierGroup/>
-      </modifierGroups>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d98-669b-a954-7689" type="min"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e9f4-c993-e2c8-5e97" type="max"/>
@@ -12081,16 +12093,16 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         </selectionEntry>
       </selectionEntries>
       <selectionEntryGroups>
-        <selectionEntryGroup id="3f44-9c48-0760-3316" name="Paragons of Honour" hidden="true" collective="false" import="true">
+        <selectionEntryGroup id="3f44-9c48-0760-3316" name="Paragons of Honour" hidden="false" collective="false" import="true">
           <modifiers>
-            <modifier type="set" field="hidden" value="false">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ea48-602e-1fd0-605e" type="equalTo"/>
-              </conditions>
-            </modifier>
             <modifier type="set" field="0b95-62b3-197a-3194" value="0.0">
               <conditions>
-                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ea48-602e-1fd0-605e" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ea48-602e-1fd0-605e" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ea48-602e-1fd0-605e" type="equalTo"/>
               </conditions>
             </modifier>
           </modifiers>
@@ -12537,12 +12549,17 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
         </selectionEntry>
       </selectionEntries>
     </selectionEntryGroup>
-    <selectionEntryGroup id="929a-6392-7e02-2a3a" name="War Zone Nephilim Strats" hidden="true" collective="false" import="true">
+    <selectionEntryGroup id="929a-6392-7e02-2a3a" name="Warzone Nephilim/Arks of Omen" hidden="true" collective="false" import="true">
       <modifiers>
         <modifier type="set" field="hidden" value="false">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="atLeast"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <entryLinks>
@@ -12609,6 +12626,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                           </characteristics>
                         </profile>
                       </profiles>
+                      <costs>
+                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                        <cost name="pts" typeId="points" value="0.0"/>
+                      </costs>
                     </selectionEntry>
                     <selectionEntry id="3f5a-1028-d9a9-9a3d" name="The Equerry&apos;s Vox" hidden="false" collective="false" import="true" type="upgrade">
                       <modifiers>
@@ -12628,6 +12650,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                           </characteristics>
                         </profile>
                       </profiles>
+                      <costs>
+                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                        <cost name="pts" typeId="points" value="0.0"/>
+                      </costs>
                     </selectionEntry>
                     <selectionEntry id="18f1-01c2-4595-d48b" name="Oathbreaker Guidance System" hidden="false" collective="false" import="true" type="upgrade">
                       <constraints>
@@ -12640,6 +12667,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                           </characteristics>
                         </profile>
                       </profiles>
+                      <costs>
+                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                        <cost name="pts" typeId="points" value="0.0"/>
+                      </costs>
                     </selectionEntry>
                   </selectionEntries>
                 </selectionEntryGroup>
@@ -12680,6 +12712,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                           </characteristics>
                         </profile>
                       </profiles>
+                      <costs>
+                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                        <cost name="pts" typeId="points" value="0.0"/>
+                      </costs>
                     </selectionEntry>
                   </selectionEntries>
                 </selectionEntryGroup>
@@ -12707,6 +12744,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                           </characteristics>
                         </profile>
                       </profiles>
+                      <costs>
+                        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                        <cost name="pts" typeId="points" value="0.0"/>
+                      </costs>
                     </selectionEntry>
                   </selectionEntries>
                 </selectionEntryGroup>
@@ -12733,6 +12775,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="6e51-dea0-180d-b4ae" name="5-6 Run Them Through" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12746,6 +12793,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="fd8d-ae6d-632f-b572" name="3-4 Tireless Duty" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12759,6 +12811,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                       </selectionEntries>
                     </selectionEntryGroup>
@@ -12779,6 +12836,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="9a10-fc53-8468-52d8" name="3-4 Resolute and Defiant" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12792,6 +12854,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="e15a-f620-1eb7-1d9d" name="5-6 Death before Dishonour" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12805,6 +12872,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                       </selectionEntries>
                     </selectionEntryGroup>
@@ -12825,6 +12897,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="17c9-5f72-b89a-3e7c" name="3-4 Superior Duelist" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12838,6 +12915,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="255f-c0e2-21f4-6d65" name="5-6 The Marksman&apos;s Pride" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12851,6 +12933,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                       </selectionEntries>
                     </selectionEntryGroup>
@@ -12874,6 +12961,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="214c-61e8-f221-4059" name="3-4 Haunted by Failure " hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12886,6 +12978,11 @@ If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it know
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="f753-da56-df16-b346" name="5-6 Oathbound to the Dead" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12902,6 +12999,11 @@ attack&apos;s hit roll. </characteristic>
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                       </selectionEntries>
                     </selectionEntryGroup>
@@ -12921,6 +13023,11 @@ attack&apos;s hit roll. </characteristic>
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="8276-b7b2-8c98-b8d9" name="3-4 Crippling Damage " hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12933,6 +13040,11 @@ attack&apos;s hit roll. </characteristic>
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="2d59-8bac-32bc-60ac" name="1-2 Battle Fatigue" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12945,6 +13057,11 @@ attack&apos;s hit roll. </characteristic>
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                       </selectionEntries>
                     </selectionEntryGroup>
@@ -12964,6 +13081,11 @@ attack&apos;s hit roll. </characteristic>
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="f92b-9190-fe81-7ba6" name="3-4 Driven to Slaughter" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12976,6 +13098,11 @@ attack&apos;s hit roll. </characteristic>
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                         <selectionEntry id="24be-f9d0-9fed-cd67" name="5-6 Obsessed With Vengeance" hidden="false" collective="false" import="true" type="upgrade">
                           <constraints>
@@ -12990,6 +13117,11 @@ attack&apos;s hit roll. </characteristic>
                               </characteristics>
                             </profile>
                           </profiles>
+                          <costs>
+                            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                            <cost name="pts" typeId="points" value="0.0"/>
+                          </costs>
                         </selectionEntry>
                       </selectionEntries>
                     </selectionEntryGroup>
