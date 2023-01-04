@@ -7269,7 +7269,7 @@ Remaining Wounds | Aura Range
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="cbd4-34fb-6ba6-9593" name="Heroic Support" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="cbd4-34fb-6ba6-9593" name="Stratagem: Heroic Support" hidden="false" collective="false" import="true" type="upgrade">
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="d2e7-cac2-2e04-9f7f" type="max"/>
       </constraints>
