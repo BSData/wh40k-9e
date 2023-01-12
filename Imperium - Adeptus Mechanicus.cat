@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="198" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="234" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="198" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="237" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="ebe8-544e-pubN65537" name="Codex: Adeptus Mechanicus"/>
     <publication id="ebe8-544e-pubN79295" name="Forgeworld Datasheet"/>
@@ -1266,6 +1266,7 @@
         <categoryLink id="c5dd-f9c6-96d8-ba3e" name="New CategoryLink" hidden="false" targetId="6bb8-fe7f-7918-bf8f" primary="false"/>
         <categoryLink id="4d4c-7d55-7ac2-7306" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="1d9a-e6f6-fd07-acc3" name="Doctrina Assembler" hidden="false" targetId="6511-1923-6cd1-231e" primary="false"/>
+        <categoryLink id="d6c9-6ee1-bb47-ea13" name="Elite Character" hidden="false" targetId="62d3-9871-9675-a63b" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="42f7-bf0b-37bd-24cf" name="Arcana Mechanicum" hidden="false" collective="false" import="true" targetId="231f-7ac6-90ea-0f52" type="selectionEntryGroup"/>
@@ -8720,12 +8721,20 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b93-acb8-1089-3fcf" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="153f-5b7f-76cd-79b1" name="Arc Maul" hidden="false" collective="false" import="true" targetId="7136-aaf5-5b4c-8b76" type="selectionEntry">
+        <entryLink id="153f-5b7f-76cd-79b1" name="Taser Goad" hidden="false" collective="false" import="true" targetId="e5ae-672d-bfaa-998f" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="0.0"/>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="90a7-c182-f696-b5fa" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="5290-f3e6-6f48-1a9b" name="Arc Maul" hidden="false" collective="false" import="true" targetId="7136-aaf5-5b4c-8b76" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b19b-7cde-2015-fdca" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>
@@ -8919,9 +8928,16 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
                     <conditionGroup type="and">
                       <conditions>
                         <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
-                        <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
                         <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1e2c-1226-9ac6-458b" type="equalTo"/>
                       </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </conditionGroup>
                   </conditionGroups>
                 </conditionGroup>
