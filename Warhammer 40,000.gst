@@ -9162,13 +9162,6 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
     <rule id="e07e-8dbf-0b15-7485" name="Objective Secured" publicationId="28ec-711c-pubN72690" page="237" hidden="false">
       <description>A player controls an objective marker if they have any models with this ability within range of that objective marker, even if there are more enemy models within range of that objective marker. If an enemy model within range of an objective marker also has this ability (or a similar ability), then the objective marker is controlled by the player who has the most models within range of that objective marker as normal.</description>
     </rule>
-    <rule id="ab12-fdad-19bf-29d7" name="Armour of Contempt" publicationId="db16-1a92-fdd3-95a9" page="1" hidden="false">
-      <description>Each time an attack is allocated to an ASTRA MILITARUM VEHICLE, ADEPTUS ASTARTES, SANCTIC ASTARTES, HERETIC ASTARTES or ADEPTA SORORITAS model, worsen the Armour Penetration characteristic of that attack by 1.
-This rule does not apply to any of the following:
-• Models equipped with a storm shield, a relic shield or a combat shield (or a Relic that replaces one of these shields).
-• Models with either the Sacresant Shield or Force Shielding ability (Celestian Sacresant and Nemesis Dreadknight units).
-• Models that are under the effects of any other rule that worsens or reduces the Armour Penetration characteristic of an attack.</description>
-    </rule>
   </sharedRules>
   <sharedProfiles>
     <profile id="fcde-3e6a-e240-1157" name="Autogun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
