@@ -7179,7 +7179,6 @@ Remaining Wounds | Aura Range
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
                 <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="instanceOf"/>
               </conditions>
               <conditionGroups>
@@ -7187,6 +7186,12 @@ Remaining Wounds | Aura Range
                   <conditions>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef18-746a-369f-43a4" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
