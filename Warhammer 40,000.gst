@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="235" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="237" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -6998,6 +6998,13 @@ Remaining Wounds | Aura Range
       </costs>
     </selectionEntry>
     <selectionEntry id="38ee-6dae-3cb1-7f84" name="Army of Renown - Mechanicus Defence Cohort" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="58c5-1d35-3869-613f" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b1a7-5990-d618-b5ed" type="max"/>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1e22-0cee-2bea-58a1" type="max"/>
@@ -7083,6 +7090,13 @@ Remaining Wounds | Aura Range
       </costs>
     </selectionEntry>
     <selectionEntry id="ac03-d781-0c3b-b4be" name="Army of Renown - Skitarii Veteran Cohort" page="" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="58c5-1d35-3869-613f" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f1aa-fda5-d566-5fcc" type="max"/>
         <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5d7d-03e0-3fbe-ffd6" type="max"/>
@@ -7165,13 +7179,19 @@ Remaining Wounds | Aura Range
             <conditionGroup type="or">
               <conditions>
                 <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
-                <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="instanceOf"/>
               </conditions>
               <conditionGroups>
                 <conditionGroup type="and">
                   <conditions>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
                     <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                  </conditions>
+                </conditionGroup>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="ef18-746a-369f-43a4" type="notInstanceOf"/>
+                    <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ef18-746a-369f-43a4" type="equalTo"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -7209,6 +7229,7 @@ Remaining Wounds | Aura Range
               <conditions>
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
                 <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="instanceOf"/>
               </conditions>
               <conditionGroups>
                 <conditionGroup type="and">
@@ -7243,7 +7264,7 @@ Remaining Wounds | Aura Range
       <modifiers>
         <modifier type="set" field="fcd3-40dd-8c3c-3456" value="1.0">
           <conditions>
-            <condition field="points" scope="roster" value="19.0" percentValue="true" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a5a-f894-9070-d236" type="atMost"/>
+            <condition field="e356-c769-5920-6e14" scope="roster" value="25.0" percentValue="true" shared="true" includeChildSelections="true" includeChildForces="true" childId="2a5a-f894-9070-d236" type="atMost"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -8975,6 +8996,109 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
+    <selectionEntryGroup id="4c50-9343-b5fb-872d" name="Boarding Action Enhancements" hidden="true" collective="false" import="true" defaultSelectionEntryId="848c-ae22-09ee-f4ef">
+      <modifiers>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="ae09-117e-a6fa-316b" type="equalTo"/>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="instanceOf"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="99cd-31f4-8f41-fdd5" type="max"/>
+      </constraints>
+      <selectionEntries>
+        <selectionEntry id="848c-ae22-09ee-f4ef" name="Superior Boarding Tactics" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="0a82-160e-63b4-fdc1" name="Superior Boarding Tactics" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Before the battle, in the Generate Starting Command Points step, you start with 2 additional Command points.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="5a97-6862-1d9f-73bd" name="Close-quarters Killer" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="1c05-0930-7d2b-4eb8" name="Close-quarters Killer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time the bearer makes a melee attack, you can re-roll the wound roll.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="c4eb-d498-1994-a4b5" name="Defensive Lynchpin" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="82aa-ca29-ddb3-d591" name="Defensive Lynchpin (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">While a friendly unit is within 6&quot; of the bearer, each time a model in that unit fires Overwatch, its unit can Hold Steady.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="a75d-0e21-f383-e63f" name="Expert Breacher" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="ac76-47a5-5644-c4ab" name="Expert Breacher" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">The bearer can perform the Operate Hatchway action when they are selected to make a Normal Move. If they do so, that action is completed immediately and they cannot perform that action again this turn. Note that if there are enemy units within 1&quot; of that Hatchway, that enemy unit can attempt to prevent the action from completing as normal (regardless of the outcome, the bearer still cannot perorm the Operate Hatchway action again this turn).</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="4f03-ef75-783a-5024" name="Personal Teleporter" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="3296-cb7d-d606-2947" name="Personal Teleporter" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When the bearer arrives from Strategic Reserves, you can set it up either wholly within one of your Entry Zones, or anywhere on the battlefield that is more than 9&quot; away from any enemy models.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+        <selectionEntry id="b967-2534-2585-2ecd" name="Trademark Weapon" hidden="false" collective="false" import="true" type="upgrade">
+          <profiles>
+            <profile id="84db-5fa5-ec3b-f40a" name="Trademark Weapon" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+              <characteristics>
+                <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When you select this Enhancement, select one weapon that the bearer is equipped with and make a note of this on your army roster. Increase the Strength and Damage characteristics of that weapon by 1. That weapon is considered to be a Relic for all rules purposes.</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <costs>
+            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+            <cost name="pts" typeId="points" value="0.0"/>
+          </costs>
+        </selectionEntry>
+      </selectionEntries>
+    </selectionEntryGroup>
   </sharedSelectionEntryGroups>
   <sharedRules>
     <rule id="d784-9fdb-622e-32a5" name="Deathblow" hidden="false">
@@ -9042,13 +9166,6 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
     </rule>
     <rule id="e07e-8dbf-0b15-7485" name="Objective Secured" publicationId="28ec-711c-pubN72690" page="237" hidden="false">
       <description>A player controls an objective marker if they have any models with this ability within range of that objective marker, even if there are more enemy models within range of that objective marker. If an enemy model within range of an objective marker also has this ability (or a similar ability), then the objective marker is controlled by the player who has the most models within range of that objective marker as normal.</description>
-    </rule>
-    <rule id="ab12-fdad-19bf-29d7" name="Armour of Contempt" publicationId="db16-1a92-fdd3-95a9" page="1" hidden="false">
-      <description>Each time an attack is allocated to an ASTRA MILITARUM VEHICLE, ADEPTUS ASTARTES, SANCTIC ASTARTES, HERETIC ASTARTES or ADEPTA SORORITAS model, worsen the Armour Penetration characteristic of that attack by 1.
-This rule does not apply to any of the following:
-• Models equipped with a storm shield, a relic shield or a combat shield (or a Relic that replaces one of these shields).
-• Models with either the Sacresant Shield or Force Shielding ability (Celestian Sacresant and Nemesis Dreadknight units).
-• Models that are under the effects of any other rule that worsens or reduces the Armour Penetration characteristic of an attack.</description>
     </rule>
   </sharedRules>
   <sharedProfiles>

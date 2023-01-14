@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="198" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="234" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="198" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="237" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="ebe8-544e-pubN65537" name="Codex: Adeptus Mechanicus"/>
     <publication id="ebe8-544e-pubN79295" name="Forgeworld Datasheet"/>
@@ -279,11 +279,6 @@
       </modifiers>
     </entryLink>
     <entryLink id="4fdc-b9a7-3fe7-9e84" name="Forge World Choice" hidden="false" collective="false" import="true" targetId="0dbb-e7cd-4b8e-92aa" type="selectionEntry"/>
-    <entryLink id="362e-5743-7bb5-8ab5" name="Stratagem: Archeotech Specialist" hidden="false" collective="false" import="true" targetId="1e2c-1226-9ac6-458b" type="selectionEntry">
-      <categoryLinks>
-        <categoryLink id="f926-280c-702b-23d1" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
-      </categoryLinks>
-    </entryLink>
     <entryLink id="63fa-410e-9635-70b2" name="Terrax-Pattern Termite" hidden="false" collective="false" import="true" targetId="732b-967e-1bca-5846" type="selectionEntry">
       <modifiers>
         <modifier type="add" field="category" value="cdee-83f1-5387-56cc"/>
@@ -644,23 +639,95 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="82e9-5852-f69b-05c6" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="d60f-ab8c-88e7-4096" name="Warlord Trait (Codex 2): Masterwork Bionics" hidden="false" collective="false" import="true" targetId="6166-4643-5e1a-9cf2" type="selectionEntry">
+        <entryLink id="d60f-ab8c-88e7-4096" name="Warlord Trait (Codex 2): Masterwork Bionics" hidden="true" collective="false" import="true" targetId="6166-4643-5e1a-9cf2" type="selectionEntry">
           <modifiers>
-            <modifier type="increment" field="4a52-6ee7-b306-0d24" value="1.0">
-              <conditions>
-                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6124-14bb-514c-4349" type="equalTo"/>
-              </conditions>
+            <modifier type="increment" field="cae1-c46d-2e12-8258" value="1.0">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82f3-69c6-8ebf-a266" type="greaterThan"/>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="greaterThan"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82f3-69c6-8ebf-a266" type="greaterThan"/>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d4fa-d036-f5dd-f91d" type="greaterThan"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
+            </modifier>
+            <modifier type="set" field="hidden" value="false">
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="greaterThan"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82f3-69c6-8ebf-a266" type="greaterThan"/>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="6771-6ab3-1672-6a39" type="greaterThan"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                    <conditionGroup type="and">
+                      <conditionGroups>
+                        <conditionGroup type="and">
+                          <conditions>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
+                            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="82f3-69c6-8ebf-a266" type="greaterThan"/>
+                            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="d4fa-d036-f5dd-f91d" type="greaterThan"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
+                    </conditionGroup>
+                  </conditionGroups>
+                </conditionGroup>
+              </conditionGroups>
             </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4a52-6ee7-b306-0d24" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="cae1-c46d-2e12-8258" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0180-8cb2-ed3e-1a07" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="6124-14bb-514c-4349" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b7a9-86bb-0e38-43fd" type="max"/>
-          </constraints>
-        </entryLink>
+        <entryLink id="50e1-3742-4401-a74f" name="Character Stratagems" hidden="false" collective="false" import="true" targetId="a53c-cde9-df16-ca1c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
         <cost name="pts" typeId="points" value="160.0"/>
@@ -772,7 +839,6 @@
         </entryLink>
         <entryLink id="8361-ee72-267a-865d" name="Tech-Priest Warlord Traits" hidden="false" collective="false" import="true" targetId="fd91-ec78-9e06-df45" type="selectionEntryGroup"/>
         <entryLink id="c51b-59e1-5c2f-4776" name="Holy Orders" hidden="false" collective="false" import="true" targetId="5aaf-7a8b-92b4-6202" type="selectionEntryGroup"/>
-        <entryLink id="9749-c458-c860-28ab" name="Mechanicus Locum" hidden="false" collective="false" import="true" targetId="82f3-69c6-8ebf-a266" type="selectionEntry"/>
         <entryLink id="749f-6730-f430-d184" name="Character Stragagems" hidden="false" collective="false" import="true" targetId="a53c-cde9-df16-ca1c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -860,7 +926,6 @@
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="65c3-82cb-15b8-960a" type="min"/>
           </constraints>
         </entryLink>
-        <entryLink id="4ded-b17f-1662-ae4f" name="Mechanicus Locum" hidden="false" collective="false" import="true" targetId="82f3-69c6-8ebf-a266" type="selectionEntry"/>
         <entryLink id="d471-ab51-9cae-abe3" name="Character Stragagems" hidden="false" collective="false" import="true" targetId="a53c-cde9-df16-ca1c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -1266,6 +1331,7 @@
         <categoryLink id="c5dd-f9c6-96d8-ba3e" name="New CategoryLink" hidden="false" targetId="6bb8-fe7f-7918-bf8f" primary="false"/>
         <categoryLink id="4d4c-7d55-7ac2-7306" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="1d9a-e6f6-fd07-acc3" name="Doctrina Assembler" hidden="false" targetId="6511-1923-6cd1-231e" primary="false"/>
+        <categoryLink id="d6c9-6ee1-bb47-ea13" name="Elite Character" hidden="false" targetId="62d3-9871-9675-a63b" primary="false"/>
       </categoryLinks>
       <entryLinks>
         <entryLink id="42f7-bf0b-37bd-24cf" name="Arcana Mechanicum" hidden="false" collective="false" import="true" targetId="231f-7ac6-90ea-0f52" type="selectionEntryGroup"/>
@@ -1284,7 +1350,6 @@
         </entryLink>
         <entryLink id="5389-0c78-c9c6-76c3" name="Tech-Priest Warlord Traits" hidden="false" collective="false" import="true" targetId="fd91-ec78-9e06-df45" type="selectionEntryGroup"/>
         <entryLink id="f47d-e996-2a95-5a84" name="Holy Orders" hidden="false" collective="false" import="true" targetId="5aaf-7a8b-92b4-6202" type="selectionEntryGroup"/>
-        <entryLink id="68d8-57bb-2d46-2960" name="Mechanicus Locum" hidden="false" collective="false" import="true" targetId="82f3-69c6-8ebf-a266" type="selectionEntry"/>
         <entryLink id="6e3d-6210-d485-ef7e" name="Character Stragagems" hidden="false" collective="false" import="true" targetId="a53c-cde9-df16-ca1c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -2771,9 +2836,6 @@ This weapon replaces the bearer&apos;s Omnissian Axe.</characteristic>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0426-7952-b113-afe0" type="max"/>
       </constraints>
-      <categoryLinks>
-        <categoryLink id="bf78-6fc4-34b2-c503" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
-      </categoryLinks>
       <selectionEntries>
         <selectionEntry id="1288-93ce-67fa-d737" name="Archeotech Specialist" hidden="false" collective="false" import="true" type="upgrade">
           <modifiers>
@@ -5529,7 +5591,6 @@ Each time an attack is made with this weapon, the target does not receive the be
         <entryLink id="8738-965f-37cf-c3e1" name="Arcana Mechanicum" hidden="false" collective="false" import="true" targetId="231f-7ac6-90ea-0f52" type="selectionEntryGroup"/>
         <entryLink id="e3af-72a0-7fdb-6a02" name="Tech-Priest Warlord Traits" hidden="false" collective="false" import="true" targetId="fd91-ec78-9e06-df45" type="selectionEntryGroup"/>
         <entryLink id="7f19-773d-256e-a0a3" name="Holy Orders" hidden="false" collective="false" import="true" targetId="5aaf-7a8b-92b4-6202" type="selectionEntryGroup"/>
-        <entryLink id="faa3-c0ab-2719-a157" name="Mechanicus Locum" hidden="false" collective="false" import="true" targetId="82f3-69c6-8ebf-a266" type="selectionEntry"/>
         <entryLink id="60e5-0758-af45-736e" name="Character Stragagems" hidden="false" collective="false" import="true" targetId="a53c-cde9-df16-ca1c" type="selectionEntryGroup"/>
       </entryLinks>
       <costs>
@@ -7773,7 +7834,6 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="72f5-f7e5-69d5-4889" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="b076-f28a-7405-d4c7" name="Mechanicus Locum" hidden="false" collective="false" import="true" targetId="82f3-69c6-8ebf-a266" type="selectionEntry"/>
         <entryLink id="5d8d-5557-77ed-896d" name="Arcana Mechanicum" hidden="false" collective="false" import="true" targetId="231f-7ac6-90ea-0f52" type="selectionEntryGroup"/>
         <entryLink id="1e8e-c1b2-75aa-f993" name="Character Stragagems" hidden="false" collective="false" import="true" targetId="a53c-cde9-df16-ca1c" type="selectionEntryGroup"/>
       </entryLinks>
@@ -7849,7 +7909,6 @@ Use this Stratagem in your Movement phase when a SKITARII VETERAN COHORT CORE un
             </modifier>
           </modifiers>
         </entryLink>
-        <entryLink id="52e4-8d11-a931-5d0a" name="Mechanicus Locum" hidden="false" collective="false" import="true" targetId="82f3-69c6-8ebf-a266" type="selectionEntry"/>
         <entryLink id="6ac7-2910-d950-bc8d" name="Tech-Priest Warlord Traits" hidden="false" collective="false" import="true" targetId="fd91-ec78-9e06-df45" type="selectionEntryGroup"/>
         <entryLink id="7d6d-c598-c15a-823c" name="Character Stragagems" hidden="false" collective="false" import="true" targetId="a53c-cde9-df16-ca1c" type="selectionEntryGroup"/>
       </entryLinks>
@@ -8508,7 +8567,7 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="82f3-69c6-8ebf-a266" name="Mechanicus Locum" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="82f3-69c6-8ebf-a266" name="Stratagem: Mechanicus Locum" hidden="false" collective="false" import="true" type="upgrade">
       <modifiers>
         <modifier type="set" field="hidden" value="true">
           <conditions>
@@ -8720,12 +8779,20 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9b93-acb8-1089-3fcf" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="153f-5b7f-76cd-79b1" name="Arc Maul" hidden="false" collective="false" import="true" targetId="7136-aaf5-5b4c-8b76" type="selectionEntry">
+        <entryLink id="153f-5b7f-76cd-79b1" name="Taser Goad" hidden="false" collective="false" import="true" targetId="e5ae-672d-bfaa-998f" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="points" value="0.0"/>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="90a7-c182-f696-b5fa" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="5290-f3e6-6f48-1a9b" name="Arc Maul" hidden="false" collective="false" import="true" targetId="7136-aaf5-5b4c-8b76" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="points" value="0.0"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b19b-7cde-2015-fdca" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>
@@ -8919,9 +8986,16 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
                     <conditionGroup type="and">
                       <conditions>
                         <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="c470-54ac-0863-8848" type="equalTo"/>
-                        <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
                         <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="1e2c-1226-9ac6-458b" type="equalTo"/>
                       </conditions>
+                      <conditionGroups>
+                        <conditionGroup type="or">
+                          <conditions>
+                            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="equalTo"/>
+                            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="76d2-6e71-243f-ad3d" type="equalTo"/>
+                          </conditions>
+                        </conditionGroup>
+                      </conditionGroups>
                     </conditionGroup>
                   </conditionGroups>
                 </conditionGroup>
@@ -9408,17 +9482,7 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
         </entryLink>
       </entryLinks>
     </selectionEntryGroup>
-    <selectionEntryGroup id="a53c-cde9-df16-ca1c" name="Character Stratagems" hidden="true" collective="false" import="true">
-      <modifiers>
-        <modifier type="set" field="hidden" value="false">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e77a-cc54-efcf-a09a" type="atLeast"/>
-          </conditions>
-        </modifier>
-      </modifiers>
-      <constraints>
-        <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8a31-635b-04d5-4f30" type="max"/>
-      </constraints>
+    <selectionEntryGroup id="a53c-cde9-df16-ca1c" name="Character Stratagems" hidden="false" collective="false" import="true">
       <entryLinks>
         <entryLink id="232a-5dae-554e-1b65" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry">
           <constraints>
@@ -9426,8 +9490,32 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
           </constraints>
         </entryLink>
         <entryLink id="33d0-ae45-f0d2-7893" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cbfd-4970-f914-ac9a" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="34b6-aaed-9322-8f1a" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="6bb0-a54c-f4ce-2321" name="Stratagem: Mechanicus Locum" hidden="false" collective="false" import="true" targetId="82f3-69c6-8ebf-a266" type="selectionEntry">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="cb74-3f17-dcd7-780a" type="max"/>
+          </constraints>
+        </entryLink>
+        <entryLink id="3b0a-0b13-ffae-734b" name="Stratagem: Archeotech Specialist" hidden="false" collective="false" import="true" targetId="1e2c-1226-9ac6-458b" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="cbfd-4970-f914-ac9a" type="instanceOf"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="false" includeChildSelections="false" includeChildForces="false" id="0ff2-d8ee-0325-619e" type="max"/>
           </constraints>
         </entryLink>
       </entryLinks>
