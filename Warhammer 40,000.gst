@@ -1718,11 +1718,18 @@
               </conditions>
             </modifier>
             <modifier type="increment" field="7107-2aa8-69e9-8e6e" value="1.0">
-              <repeats>
-                <repeat field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="62d3-9871-9675-a63b" repeats="1" roundUp="false"/>
-              </repeats>
               <conditions>
-                <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="62d3-9871-9675-a63b" type="atMost"/>
+                <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="62d3-9871-9675-a63b" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="7107-2aa8-69e9-8e6e" value="1.0">
+              <conditions>
+                <condition field="selections" scope="force" value="3.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="62d3-9871-9675-a63b" type="atLeast"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="7107-2aa8-69e9-8e6e" value="1.0">
+              <conditions>
+                <condition field="selections" scope="force" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="62d3-9871-9675-a63b" type="atLeast"/>
               </conditions>
             </modifier>
           </modifiers>
