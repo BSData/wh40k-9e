@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="a2d9-e3b7-13cc-6f15" name="Imperium - Astra Militarum - Library" revision="111" battleScribeVersion="2.03" authorName="Jon K, Joe B, Wil" authorContact="Discord: @Alphalas, @CrusherJoe, @GenWilhelm | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="237" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="a2d9-e3b7-13cc-6f15" name="Imperium - Astra Militarum - Library" revision="112" battleScribeVersion="2.03" authorName="Jon K, Joe B, Wil" authorContact="Discord: @Alphalas, @CrusherJoe, @GenWilhelm | Twitter: @kingoverlord, @theawesomesauce" authorUrl="https://www.bsdata.net/contact" library="true" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="238" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <readme>...but is it enough to stop the suck?
 </readme>
   <publications>
@@ -6202,11 +6202,11 @@ REFRACTOR FIELD GENERATOR (Aura): While a friendly MILITARUM TEMPESTUS INFANTRY 
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
-    <selectionEntry id="316a-1dbd-2185-a82f" name="Relic: Psy-Sigil of Sanction" hidden="false" collective="false" import="true" type="upgrade">
+    <selectionEntry id="316a-1dbd-2185-a82f" name="Relic: Psy-Sigil of Sanction" hidden="true" collective="false" import="true" type="upgrade">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
+        <modifier type="set" field="hidden" value="false">
           <conditions>
-            <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e691-aad7-d21c-1023" type="notInstanceOf"/>
+            <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e691-aad7-d21c-1023" type="instanceOf"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -12917,6 +12917,7 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
         <categoryLink id="b858-7699-35cd-f53a" name="Primaris Psyker" hidden="false" targetId="75a7-e5c7-78de-739b" primary="false"/>
         <categoryLink id="5bb7-659e-25ad-a7b9" name="Faction: Astra Militarum" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
         <categoryLink id="bfbc-023d-b5ef-a06d" name="Militarum Auxila" hidden="false" targetId="94e7-b510-ffa1-bdc7" primary="false"/>
+        <categoryLink id="9c86-7e80-32e5-b48f" name="Psyker" hidden="false" targetId="e691-aad7-d21c-1023" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="97a3-138b-4ad0-7253" name="Force Stave" publicationId="53e9d88f--pubN88319" page="92" hidden="false" collective="false" import="true" type="upgrade">
@@ -12959,11 +12960,18 @@ Align Target (Action):In your Command phase, any number of DEATHSTRIKE models fr
       </selectionEntries>
       <entryLinks>
         <entryLink id="b579-b3ed-80bf-61a3" name="Psykana Discipline" hidden="false" collective="false" import="true" targetId="13fd-f96b-049d-7216" type="selectionEntryGroup">
+          <modifiers>
+            <modifier type="increment" field="036b-c983-40d1-0cb6" value="1.0">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="316a-1dbd-2185-a82f" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="036b-c983-40d1-0cb6" type="max"/>
           </constraints>
         </entryLink>
-        <entryLink id="eea1-c373-cd56-6f09" name="Heirlooms of Conquest" hidden="false" collective="false" import="true" targetId="8ed7-7588-0f06-9b0d" type="selectionEntryGroup"/>
+        <entryLink id="eea1-c373-cd56-6f09" name="Relics" hidden="false" collective="false" import="true" targetId="8ed7-7588-0f06-9b0d" type="selectionEntryGroup"/>
         <entryLink id="5ee3-7d64-9e15-ace3" name="Warlord" hidden="false" collective="false" import="true" targetId="1f07-a468-bda8-fd3f" type="selectionEntry">
           <modifiers>
             <modifier type="set" field="000a-cf6d-4c86-a749" value="0.0">
