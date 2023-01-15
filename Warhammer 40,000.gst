@@ -1571,6 +1571,11 @@
             <repeat field="selections" scope="8a87-f0e3-f2f2-ad1a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c845-c72c-6afe-3fc2" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
+        <modifier type="set" field="name" value="Auxiliary Support Detachment 0CP">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa51-993c-2f8b-9be4" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="8a87-f0e3-f2f2-ad1a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0d7c-f6da-32e9-53aa" type="max"/>
@@ -6380,6 +6385,7 @@ Remaining Wounds | Aura Range
                     <conditionGroup type="or">
                       <conditions>
                         <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a0c7-2a71-bae0-215d" type="instanceOf"/>
+                        <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="8a87-f0e3-f2f2-ad1a" type="instanceOf"/>
                         <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="224b-1070-218f-fdf4" type="instanceOf"/>
                       </conditions>
                     </conditionGroup>
