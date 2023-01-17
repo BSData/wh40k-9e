@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="239" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="240" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -388,7 +388,32 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="8d63-1269-0ec7-c389" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="8d63-1269-0ec7-c389" value="0.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="224b-1070-218f-fdf4" type="greaterThan"/>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8a87-f0e3-f2f2-ad1a" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8d63-1269-0ec7-c389" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="22fe-e36f-71e2-b796" name="Patrol Detachment" hidden="false">
           <categoryLinks>
@@ -553,7 +578,15 @@
             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="notEqualTo"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="68fc-dcb4-a0b7-29b1" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="68fc-dcb4-a0b7-29b1" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="c7fc-1172-cd53-2dae" name="Battalion Detachment" hidden="false">
           <categoryLinks>
@@ -718,7 +751,15 @@
             <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="ae09-117e-a6fa-316b" type="notEqualTo"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="4d1d-066b-f531-8f06" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4d1d-066b-f531-8f06" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="daea-75d3-1073-2ba0" name="Brigade Detachment" hidden="false">
           <categoryLinks>
@@ -894,6 +935,16 @@
       </categoryLinks>
     </forceEntry>
     <forceEntry id="41af-75ce-79d2-ddff" name="Vanguard Detachment -3CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="6e37-cedb-bf66-3745" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6e37-cedb-bf66-3745" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="780c-2ab9-34f4-7c30" name="Vanguard Detachment" hidden="false">
           <categoryLinks>
@@ -1036,6 +1087,16 @@
       </categoryLinks>
     </forceEntry>
     <forceEntry id="120c-9e15-1d3f-637e" name="Spearhead Detachment -3CP" hidden="false">
+      <modifiers>
+        <modifier type="set" field="b978-2837-6c67-c4af" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b978-2837-6c67-c4af" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="c50f-184b-1482-8ce7" name="Spearhead Detachment" hidden="false">
           <categoryLinks>
@@ -1172,7 +1233,15 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="72b0-d136-8216-70da" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="72b0-d136-8216-70da" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="6fb7-031b-0276-59c9" name="Outrider Detachment" hidden="false">
           <categoryLinks>
@@ -1339,6 +1408,11 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="3ad2-51f5-4783-3c57" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3ad2-51f5-4783-3c57" type="max"/>
@@ -1449,7 +1523,15 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="2674-c205-8101-4454" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2674-c205-8101-4454" type="max"/>
+      </constraints>
       <forceEntries>
         <forceEntry id="6576-b25c-8ce9-8860" name="Super-Heavy Detachment" hidden="false">
           <categoryLinks>
@@ -1516,7 +1598,32 @@
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="7811-d59e-41e6-e586" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="7811-d59e-41e6-e586" value="0.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="224b-1070-218f-fdf4" type="greaterThan"/>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8a87-f0e3-f2f2-ad1a" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
       </modifiers>
+      <constraints>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7811-d59e-41e6-e586" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="d42a-fc02-778b-3118" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="dcbb-53c2-a989-ae08" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
@@ -1534,6 +1641,11 @@
         <modifier type="set" field="name" value="Fortification Network 0CP">
           <conditions>
             <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d224-ab2b-e79e-5491" type="atLeast"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="8909-9568-d709-4fc8" value="0.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -1576,9 +1688,32 @@
             <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fa51-993c-2f8b-9be4" type="greaterThan"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="0b53-8c6f-5c43-bf9f" value="1.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="0b53-8c6f-5c43-bf9f" value="0.0">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="76d2-6e71-243f-ad3d" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="224b-1070-218f-fdf4" type="greaterThan"/>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8a87-f0e3-f2f2-ad1a" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
       </modifiers>
       <constraints>
         <constraint field="selections" scope="8a87-f0e3-f2f2-ad1a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="0d7c-f6da-32e9-53aa" type="max"/>
+        <constraint field="forces" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="0b53-8c6f-5c43-bf9f" type="max"/>
       </constraints>
       <rules>
         <rule id="72fc-64c3-a228-2ca0" name="Understrength Units" publicationId="28ec-711c-pubN72690" hidden="false">
@@ -1652,6 +1787,9 @@
       </categoryLinks>
     </forceEntry>
     <forceEntry id="fa51-993c-2f8b-9be4" name="Arks of Omen Detachment" hidden="false">
+      <constraints>
+        <constraint field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="true" id="3d0a-58dd-48de-7f30" type="max"/>
+      </constraints>
       <categoryLinks>
         <categoryLink id="4727-f71d-f0bd-28b7" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="dce9-815f-c978-f78d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
