@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="199" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="238" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="ebe8-544e-1fe8-fcde" name="Imperium - Adeptus Mechanicus" revision="200" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="243" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="ebe8-544e-pubN65537" name="Codex: Adeptus Mechanicus"/>
     <publication id="ebe8-544e-pubN79295" name="Forgeworld Datasheet"/>
@@ -4443,7 +4443,7 @@ Each time an attack is made with this weapon, the target does not receive the be
         <entryLink id="3aa3-8846-a83a-24e3" name="Host of the Intermediary" hidden="false" collective="false" import="true" targetId="6769-ec64-c38f-74c1" type="selectionEntry"/>
         <entryLink id="4da8-790e-f5cc-68be" name="Skitarii Warlord Traits" hidden="false" collective="false" import="true" targetId="a1ff-f5e5-adc9-81e1" type="selectionEntryGroup"/>
         <entryLink id="a6ed-0a86-11d2-ae73" name="Arcana Mechanicum (Artefactorum)" hidden="false" collective="false" import="true" targetId="d38f-2002-95d8-5440" type="selectionEntryGroup"/>
-        <entryLink id="35c1-9da5-3094-75e3" name="Artefactorum" hidden="false" collective="false" import="true" targetId="04ab-a832-7eb2-bf44" type="selectionEntry"/>
+        <entryLink id="35c1-9da5-3094-75e3" name="Artefactotum" hidden="false" collective="false" import="true" targetId="04ab-a832-7eb2-bf44" type="selectionEntry"/>
       </entryLinks>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
@@ -8636,9 +8636,14 @@ Each time an attack is made with this weapon against a VEHICLE unit, that attack
           </conditions>
         </modifier>
         <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d4fa-d036-f5dd-f91d" type="equalTo"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d4fa-d036-f5dd-f91d" type="equalTo"/>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="d4fa-d036-f5dd-f91d" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
