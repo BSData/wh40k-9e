@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="244" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="245" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -1705,7 +1705,7 @@
                 <conditionGroup type="or">
                   <conditions>
                     <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="224b-1070-218f-fdf4" type="greaterThan"/>
-                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="8a87-f0e3-f2f2-ad1a" type="greaterThan"/>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a0c7-2a71-bae0-215d" type="greaterThan"/>
                   </conditions>
                 </conditionGroup>
               </conditionGroups>
@@ -6599,20 +6599,14 @@ Remaining Wounds | Aura Range
       </costs>
     </selectionEntry>
     <selectionEntry id="f29d-8a5d-18b6-a071" name="Battle Size" hidden="false" collective="false" import="true" type="upgrade">
-      <modifiers>
-        <modifier type="set" field="ba25-d308-d6f1-5649" value="1.0">
-          <conditions>
-            <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="lessThan"/>
-          </conditions>
-        </modifier>
-      </modifiers>
       <modifierGroups>
         <modifierGroup>
           <conditions>
             <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="44da-9aaf-181b-5ece" type="atLeast"/>
           </conditions>
           <modifiers>
-            <modifier type="set" field="1a29-fbbf-01a7-1c91" value="0.0"/>
+            <modifier type="set" field="1a29-fbbf-01a7-1c91" value="-1.0"/>
+            <modifier type="set" field="ba25-d308-d6f1-5649" value="0.0"/>
           </modifiers>
         </modifierGroup>
       </modifierGroups>
