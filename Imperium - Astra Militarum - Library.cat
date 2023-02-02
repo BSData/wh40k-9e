@@ -346,7 +346,6 @@
       </profiles>
       <categoryLinks>
         <categoryLink id="66ac-40c3-35e1-2718" name="New CategoryLink" hidden="false" targetId="3263-4233-4344-6228" primary="false"/>
-        <categoryLink id="654f-5841-3e75-5326" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
         <categoryLink id="6fe6-dcc3-f9ea-2d49" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
         <categoryLink id="ad40-1eef-89c1-37ab" name="Officer of the Fleet" hidden="false" targetId="8d2c-36a7-e1b9-a6e9" primary="false"/>
         <categoryLink id="3d1e-d1aa-895a-95e6" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
@@ -10445,7 +10444,6 @@ Divination (Psychic Action -Warp Charge 7):In your Psychic phase, one ASTROPATH 
         <categoryLink id="f70d-6e61-81ef-730e" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
         <categoryLink id="e51e-27e1-2735-8a0c" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
         <categoryLink id="c86e-bad6-acfc-62f4" name="Officer" hidden="false" targetId="dd6e-7055-ca6b-b711" primary="false"/>
-        <categoryLink id="98fa-0707-faad-01d4" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="ed38-bff7-6158-362a" name="Platoon Commander" publicationId="53e9d88f--pubN88319" page="83" hidden="false" collective="false" import="true" type="model">
@@ -10485,11 +10483,11 @@ Divination (Psychic Action -Warp Charge 7):In your Psychic phase, one ASTROPATH 
             <infoLink id="3d0c-c395-bd46-bb64" name="Voice of Command" hidden="false" targetId="2ff26b94-8048-d15d-c541-fd4da0f49571" type="profile"/>
           </infoLinks>
           <categoryLinks>
-            <categoryLink id="ab09-70de-6a10-afea" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
             <categoryLink id="68d7-c8b5-0cad-c9f5" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
             <categoryLink id="f4be-57de-31bf-38c4" name="Officer" hidden="false" targetId="dd6e-7055-ca6b-b711" primary="false"/>
             <categoryLink id="1712-f200-4bf5-d8c9" name="Regimental" hidden="false" targetId="4520-cc21-fc02-4a7e" primary="false"/>
             <categoryLink id="7e0c-a1b0-3aa1-6fbb" name="Commander" hidden="false" targetId="0f10-bb4b-74be-f202" primary="false"/>
+            <categoryLink id="2082-0a94-f8a7-9abc" name="Character" hidden="false" targetId="ef18-746a-369f-43a4" primary="false"/>
           </categoryLinks>
           <selectionEntryGroups>
             <selectionEntryGroup id="3022-cd4d-7b04-afa2" name="Chainsword" hidden="false" collective="false" import="true">
@@ -26641,6 +26639,11 @@ Each time a model with this doctrine makes arranged attack, an unmodified it rol
             </conditionGroup>
           </conditionGroups>
         </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <entryLinks>
         <entryLink id="3f13-48f6-efc1-cf44" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
@@ -27313,7 +27316,15 @@ Each time a model with this doctrine makes arranged attack, an unmodified it rol
                 <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="33c0-8496-22d0-08e9" type="notInstanceOf"/>
               </conditions>
             </modifier>
+            <modifier type="set" field="1a73-90b7-71b8-9b8d" value="1.0">
+              <conditions>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+              </conditions>
+            </modifier>
           </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="-1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="1a73-90b7-71b8-9b8d" type="max"/>
+          </constraints>
           <entryLinks>
             <entryLink id="4d5c-ed27-7d98-5237" name="Astropath" hidden="false" collective="false" import="true" targetId="2f6d-033d-665f-6ca4" type="selectionEntry">
               <constraints>
@@ -28310,6 +28321,11 @@ Skull Mask of Acheron (Aura): While an enemy unit is within 6&quot; of this mode
               </conditionGroups>
             </conditionGroup>
           </conditionGroups>
+        </modifier>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
         </modifier>
       </modifiers>
       <entryLinks>
