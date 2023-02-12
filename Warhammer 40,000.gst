@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="246" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="247" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -1821,6 +1821,23 @@
       <constraints>
         <constraint field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="true" id="3d0a-58dd-48de-7f30" type="max"/>
       </constraints>
+      <forceEntries>
+        <forceEntry id="e77a-619b-d7b3-7bde" name="Ark of Omen Detachment" hidden="false">
+          <categoryLinks>
+            <categoryLink id="b54d-f9db-5e25-7a44" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
+            <categoryLink id="5ea0-9740-3fe4-311c" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false"/>
+            <categoryLink id="1ac9-62c0-a216-5501" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false"/>
+            <categoryLink id="6cab-3900-aa99-6896" name="Fast Attack" hidden="false" targetId="c274d0b0-5866-44bc-9810-91c136ae7438" primary="false"/>
+            <categoryLink id="138d-c8da-7e2d-7ca7" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false"/>
+            <categoryLink id="2da6-8a41-d2ac-ccd9" name="Heavy Support" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="false"/>
+            <categoryLink id="fb2b-b45c-1337-c738" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false"/>
+            <categoryLink id="fb10-64ea-cae8-47fb" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+            <categoryLink id="d8a6-96ab-a390-7e91" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
+            <categoryLink id="15ad-7276-d6f4-9a28" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false"/>
+            <categoryLink id="bf1c-fe16-a302-1290" name="Lord of War" hidden="false" targetId="c888f08a-6cea-4a01-8126-d374a9231554" primary="false"/>
+          </categoryLinks>
+        </forceEntry>
+      </forceEntries>
       <categoryLinks>
         <categoryLink id="4727-f71d-f0bd-28b7" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="dce9-815f-c978-f78d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
@@ -1854,8 +1871,8 @@
             </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7375-9d91-ef97-4b44" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e01d-5642-c549-c651" type="min"/>
+            <constraint field="selections" scope="parent" value="4.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7375-9d91-ef97-4b44" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e01d-5642-c549-c651" type="min"/>
           </constraints>
         </categoryLink>
         <categoryLink id="a4fd-bbfc-55ee-fa3e" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="false">
@@ -1880,8 +1897,8 @@
             </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c534-0c76-76fb-bcdf" type="min"/>
-            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e577-f99a-408e-2b64" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c534-0c76-76fb-bcdf" type="min"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="e577-f99a-408e-2b64" type="max"/>
           </constraints>
         </categoryLink>
         <categoryLink id="43bd-f748-e61c-5b87" name="Elites" hidden="false" targetId="638d74c6-bd97-4de5-b65a-6aaa24e9f4b2" primary="false">
@@ -1913,8 +1930,8 @@
             </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="66dd-05c1-56df-b85d" type="min"/>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7107-2aa8-69e9-8e6e" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="66dd-05c1-56df-b85d" type="min"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="7107-2aa8-69e9-8e6e" type="max"/>
           </constraints>
         </categoryLink>
         <categoryLink id="11d1-dbcd-7e04-fcf9" name="Fast Attack" hidden="false" targetId="c274d0b0-5866-44bc-9810-91c136ae7438" primary="false">
@@ -1939,8 +1956,8 @@
             </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c31f-53b8-9891-9328" type="min"/>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5128-ad64-1656-90b3" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="c31f-53b8-9891-9328" type="min"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="5128-ad64-1656-90b3" type="max"/>
           </constraints>
         </categoryLink>
         <categoryLink id="d959-06ae-1427-d205" name="Heavy Support" hidden="false" targetId="abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6" primary="false">
@@ -1957,13 +1974,13 @@
             </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="1b63-3cdd-6634-5d18" type="min"/>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="047f-4019-3779-07cc" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1b63-3cdd-6634-5d18" type="min"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="047f-4019-3779-07cc" type="max"/>
           </constraints>
         </categoryLink>
         <categoryLink id="38dc-2602-c166-01db" name="Flyer" hidden="false" targetId="e888-1504-aa61-95ff" primary="false">
           <constraints>
-            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3bdf-b81c-d51e-3ad8" type="max"/>
+            <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3bdf-b81c-d51e-3ad8" type="max"/>
           </constraints>
         </categoryLink>
         <categoryLink id="202b-77d6-2c65-443c" name="Dedicated Transport" hidden="false" targetId="1b66-3f5f-6705-079a" primary="false">
@@ -1992,13 +2009,13 @@
             </modifier>
           </modifiers>
           <constraints>
-            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="1c2c-a38e-16cb-7e8d" type="min"/>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ca8a-7da7-b39a-18aa" type="max"/>
+            <constraint field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="1c2c-a38e-16cb-7e8d" type="min"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="ca8a-7da7-b39a-18aa" type="max"/>
           </constraints>
         </categoryLink>
         <categoryLink id="e501-4794-aea3-cabf" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false">
           <constraints>
-            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9a38-5d05-919e-2745" type="max"/>
+            <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a38-5d05-919e-2745" type="max"/>
           </constraints>
         </categoryLink>
       </categoryLinks>
