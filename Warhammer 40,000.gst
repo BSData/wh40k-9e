@@ -2018,6 +2018,7 @@
             <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a38-5d05-919e-2745" type="max"/>
           </constraints>
         </categoryLink>
+        <categoryLink id="a5ea-ab04-8d58-41bc" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="a207-a133-6adb-25f3" name="Boarding Patrol" hidden="false">
