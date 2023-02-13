@@ -377,6 +377,7 @@
     <categoryEntry id="7cda-87a1-fd4a-0fb4" name="Solitaire - Boarding Patrol" hidden="false">
       <comment>This category is here just to make the Harlequins boarding patrol work</comment>
     </categoryEntry>
+    <categoryEntry id="092d-5ca1-cd0b-eb8c" name="Faction: Agents of the Imperium" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -617,14 +618,8 @@
         <categoryLink id="fc4c-e6c8-3a50-af1d" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="a3a4-d443-2ded-f82f" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="0e1f-72c2-388e-0869" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
-        <categoryLink id="d71e-4848-690e-49dd" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
+        <categoryLink id="d71e-4848-690e-49dd" name="Faction: Agents of the Imperium" hidden="false" targetId="092d-5ca1-cd0b-eb8c" primary="false">
           <modifiers>
-            <modifier type="set" field="name" value="Agents of the Imperium"/>
-            <modifier type="set" field="bf5a-85cb-693e-4239" value="2.0">
-              <conditions>
-                <condition field="selections" scope="primary-catalogue" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="e373-3c0a-1185-46ea" type="instanceOf"/>
-              </conditions>
-            </modifier>
             <modifier type="set" field="hidden" value="true">
               <conditionGroups>
                 <conditionGroup type="or">
@@ -1842,6 +1837,14 @@
         <categoryLink id="4727-f71d-f0bd-28b7" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="dce9-815f-c978-f78d" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="9011-4fa5-8d1f-49b9" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
+        <categoryLink id="a5ea-ab04-8d58-41bc" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
+          <modifiers>
+            <modifier type="set" field="name" value="Agents of the Imperium"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6c81-8575-babd-3bc3" type="max"/>
+          </constraints>
+        </categoryLink>
         <categoryLink id="459d-955e-29fa-d333" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <modifiers>
             <modifier type="increment" field="7375-9d91-ef97-4b44" value="1.0">
@@ -2018,7 +2021,6 @@
             <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a38-5d05-919e-2745" type="max"/>
           </constraints>
         </categoryLink>
-        <categoryLink id="a5ea-ab04-8d58-41bc" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false"/>
       </categoryLinks>
     </forceEntry>
     <forceEntry id="a207-a133-6adb-25f3" name="Boarding Patrol" hidden="false">
@@ -2026,7 +2028,7 @@
         <categoryLink id="a6d3-7eab-102f-b4d6" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="d322-45e9-c017-05ca" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="eceb-51a8-d024-7c45" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
-        <categoryLink id="68e5-8fa8-4118-6c94" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false"/>
+        <categoryLink id="68e5-8fa8-4118-6c94" name="Faction: Agents of the Imperium" hidden="false" targetId="092d-5ca1-cd0b-eb8c" primary="false"/>
         <categoryLink id="a024-8e22-eaec-4b21" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <modifiers>
             <modifier type="set" field="ea4b-ae8e-da30-38d1" value="2.0">
@@ -2097,6 +2099,14 @@
         <categoryLink id="9de4-246a-ef4d-8ead" name="Solitaire - Boarding Patrol" hidden="false" targetId="7cda-87a1-fd4a-0fb4" primary="false">
           <constraints>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d4a0-7268-1c94-818e" type="max"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink id="acb3-6f7c-08c2-d0e1" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
+          <modifiers>
+            <modifier type="set" field="name" value="Agents of the Imperium"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="fb05-a32d-334c-44b1" type="max"/>
           </constraints>
         </categoryLink>
       </categoryLinks>
@@ -11096,6 +11106,13 @@ For the purposes of this ability, a Rapid Fire bolt weapon is any bolt weapon (s
     <profile id="0f50-2ea2-b251-a213" name="Automated Weapons (Icarus)" page="" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Unless a friendly unit is embarked aboard this model, this model&apos;s weapons can only target the closest visible enemy unit. Attacks made with the Icarus Lascannon can instead target the closest visible enemy unit that can FLY. In either case, if two or more units are equally close, you may choose which is targeted.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="ad04-95ac-4694-2183" name="Agents of the Imperium" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">If your army is Battle-forged, you can include one Agent of the Imperium unit in each Imperium (excluding Fallen units) Patrol, Boarding Patrol, Battalion, Brigade and Arks of Omen Detachment in your army without those units taking up Battlefield Role slots in those Detachments. The inclusion of an Agent of the Imperium unit does not prevent other units from their Detachment benefiting from Detachment abilities (e.g. Chapter Tactics), and it does not prevent other units from your army benefiting from abilities that require every model in your army to have that ability (e.g. Combat Doctrines). An Agent of the Imperium unit included in a Patrol, Boarding Patrol, Battalion, Brigade or Arks of Omen Detachment in this manner is ignored for any rules that state all units from that Detachment must have at least one Faction keyword in common (e.g. in a matched play game), and when determining your Army Faction. 
+
+An Agent of the Imperium unit can never be included in a Brood Brothers Detachment</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
