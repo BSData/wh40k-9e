@@ -2023,7 +2023,14 @@
         <categoryLink id="a6d3-7eab-102f-b4d6" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="false"/>
         <categoryLink id="d322-45e9-c017-05ca" name="Stratagems" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="false"/>
         <categoryLink id="eceb-51a8-d024-7c45" name="No Force Org Slot" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
-        <categoryLink id="68e5-8fa8-4118-6c94" name="Faction: Agents of the Imperium" hidden="false" targetId="092d-5ca1-cd0b-eb8c" primary="false"/>
+        <categoryLink id="acb3-6f7c-08c2-d0e1" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
+          <modifiers>
+            <modifier type="set" field="name" value="Agents of the Imperium"/>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="fb05-a32d-334c-44b1" type="max"/>
+          </constraints>
+        </categoryLink>
         <categoryLink id="a024-8e22-eaec-4b21" name="HQ" hidden="false" targetId="848a6ff2-0def-4c72-8433-ff7da70e6bc7" primary="false">
           <modifiers>
             <modifier type="set" field="ea4b-ae8e-da30-38d1" value="2.0">
@@ -2094,14 +2101,6 @@
         <categoryLink id="9de4-246a-ef4d-8ead" name="Solitaire - Boarding Patrol" hidden="false" targetId="7cda-87a1-fd4a-0fb4" primary="false">
           <constraints>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d4a0-7268-1c94-818e" type="max"/>
-          </constraints>
-        </categoryLink>
-        <categoryLink id="acb3-6f7c-08c2-d0e1" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
-          <modifiers>
-            <modifier type="set" field="name" value="Agents of the Imperium"/>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="fb05-a32d-334c-44b1" type="max"/>
           </constraints>
         </categoryLink>
       </categoryLinks>
