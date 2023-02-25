@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Agents of the Imperium" revision="86" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="247" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Agents of the Imperium" revision="86" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="248" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <categoryEntries>
     <categoryEntry id="78cc-daf7-1448-610f" name="Faction: Inquisition" hidden="false"/>
     <categoryEntry id="6f95-3a9f-9235-519a" name="Inquisitor" hidden="false">
       <modifiers>
         <modifier type="set" field="343f-5362-9036-f2e6" value="1.0">
-          <conditions>
-            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="77b7-26d1-2364-7c13" type="greaterThan"/>
-          </conditions>
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="77b7-26d1-2364-7c13" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6f95-3a9f-9235-519a" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
       <constraints>
@@ -35,6 +47,91 @@
     <categoryEntry id="7cb1-1f1f-631b-c793" name="Erasmus Cartavolnus" hidden="false"/>
     <categoryEntry id="695d-57bb-42cc-01de" name="Daemon" hidden="false"/>
   </categoryEntries>
+  <selectionEntries>
+    <selectionEntry id="b198-e7aa-8469-700d" name="Ordo Selection" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="set" field="4434-818b-1b17-e6da" value="1.0">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="c27c-1154-b615-0f0b" value="1.0">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <constraints>
+        <constraint field="selections" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c27c-1154-b615-0f0b" type="max"/>
+        <constraint field="selections" scope="roster" value="-1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4434-818b-1b17-e6da" type="min"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="8a7a-0869-b950-aa50" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="9f7a-fb47-c1ac-321d" name="Ordo" hidden="false" collective="false" import="true">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a4bd-f386-2def-7b32" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="3827-68bf-7aaf-e232" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="e021-f2d3-f971-2d75" name="Ordo Xenos" hidden="false" collective="false" import="true" type="upgrade">
+              <infoLinks>
+                <infoLink id="1b70-d862-a04f-baf3" name="Quarry - Xenos" hidden="false" targetId="25d5-4784-1a05-e93c" type="profile"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink id="4c04-787a-1898-f455" name="New CategoryLink" hidden="false" targetId="f7a7-9d79-d2f8-4a17" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="3543-2d42-04c3-4ec8" name="Ordo Minoris" hidden="false" collective="false" import="true" type="upgrade">
+              <infoLinks>
+                <infoLink id="83a0-45c8-7ed0-dca5" name="Quarry - Minoris" hidden="false" targetId="c506-0e36-0178-25bc" type="profile"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink id="3559-f6fd-5612-3e50" name="Faction: Ordo Minoris" hidden="false" targetId="4c83-c5fc-6f26-4e79" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="80ea-bb99-b608-5cb1" name="Ordo Malleus" hidden="false" collective="false" import="true" type="upgrade">
+              <infoLinks>
+                <infoLink id="4dcf-a02a-71c2-3c1e" name="Quarry - Malleus" hidden="false" targetId="5086-d3c4-7238-d42f" type="profile"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink id="a52f-c8a4-f8b2-b8f2" name="New CategoryLink" hidden="false" targetId="6370-55c4-5013-14f8" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+            <selectionEntry id="e30a-f71d-f4d2-999a" name="Ordo Hereticus" hidden="false" collective="false" import="true" type="upgrade">
+              <infoLinks>
+                <infoLink id="72ea-a49b-2efe-f2d5" name="Quarry - Hereticus" hidden="false" targetId="3dec-967b-c8fd-af29" type="profile"/>
+              </infoLinks>
+              <categoryLinks>
+                <categoryLink id="a606-fd1a-b7a9-e468" name="New CategoryLink" hidden="false" targetId="9d23-57b8-72c2-d750" primary="false"/>
+              </categoryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+              </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+    </selectionEntry>
+  </selectionEntries>
   <entryLinks>
     <entryLink id="cf6b-b328-5a4c-9fb0" name="Inquisitor Coteaz" hidden="false" collective="false" import="false" targetId="81d1-1b5f-e97c-35ba" type="selectionEntry">
       <modifiers>
@@ -116,12 +213,24 @@
         <categoryLink id="e9d7-4204-6028-cd47" name="New CategoryLink" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="c793-cf81-8b06-2a97" name="Daemonhost" hidden="false" collective="false" import="false" targetId="a522-1144-e50e-f57f" type="selectionEntry">
+    <entryLink id="c793-cf81-8b06-2a97" name="Daemonhost" hidden="true" collective="false" import="false" targetId="a522-1144-e50e-f57f" type="selectionEntry">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
-          <conditions>
-            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="77b7-26d1-2364-7c13" type="lessThan"/>
-          </conditions>
+        <modifier type="set" field="hidden" value="false">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="77b7-26d1-2364-7c13" type="greaterThan"/>
+              </conditions>
+              <conditionGroups>
+                <conditionGroup type="and">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="equalTo"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="6f95-3a9f-9235-519a" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
+            </conditionGroup>
+          </conditionGroups>
         </modifier>
       </modifiers>
     </entryLink>
@@ -408,15 +517,22 @@
         <categoryLink id="e71d-61b9-c810-a47c" name="New CategoryLink" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="dd3e-ccf5-478f-ab8f" name="Acolytes" hidden="false" collective="false" import="false" targetId="4191-e705-8519-a90c" type="selectionEntry">
+    <entryLink id="dd3e-ccf5-478f-ab8f" name="Acolytes" hidden="true" collective="false" import="false" targetId="4191-e705-8519-a90c" type="selectionEntry">
       <modifiers>
-        <modifier type="set" field="hidden" value="true">
+        <modifier type="set" field="hidden" value="false">
           <conditionGroups>
             <conditionGroup type="and">
               <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c3c4-45e2-71ba-477e" type="lessThan"/>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="77b7-26d1-2364-7c13" type="lessThan"/>
+                <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="lessThan"/>
               </conditions>
+              <conditionGroups>
+                <conditionGroup type="or">
+                  <conditions>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c3c4-45e2-71ba-477e" type="greaterThan"/>
+                    <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="77b7-26d1-2364-7c13" type="greaterThan"/>
+                  </conditions>
+                </conditionGroup>
+              </conditionGroups>
             </conditionGroup>
           </conditionGroups>
         </modifier>
@@ -644,9 +760,33 @@
         <categoryLink id="6be5-21c5-aa10-1018" name="New CategoryLink" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="true"/>
       </categoryLinks>
     </entryLink>
+    <entryLink id="bc78-94ab-152d-fca4" name="Acolytes" hidden="false" collective="false" import="true" targetId="4191-e705-8519-a90c" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditionGroups>
+            <conditionGroup type="and">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6f95-3a9f-9235-519a" type="lessThan"/>
+                <condition field="forces" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="a207-a133-6adb-25f3" type="lessThan"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink id="eb48-eb98-073d-9ccd" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="81d1-1b5f-e97c-35ba" name="Inquisitor Coteaz" page="0" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" id="c570-6ec4-75aa-f263" type="max"/>
       </constraints>
@@ -852,6 +992,13 @@
       </costs>
     </selectionEntry>
     <selectionEntry id="59d5-160c-f21d-6e49" name="Inquisitor Karamazov" page="0" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="false" includeChildSelections="true" includeChildForces="false" id="6ef4-d3ea-dee1-e2d8" type="max"/>
       </constraints>
@@ -1032,6 +1179,11 @@
         <modifier type="set" field="name" value="Inquisitor [Legends]">
           <conditions>
             <condition field="selections" scope="0b13-8c12-cbea-300f" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="54e0-48cc-9182-ae3a" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
           </conditions>
         </modifier>
       </modifiers>
@@ -1228,6 +1380,13 @@
       </categoryLinks>
       <selectionEntries>
         <selectionEntry id="767e-ca8d-5822-7bf8" name="Acolyte" hidden="false" collective="false" import="true" type="upgrade">
+          <modifiers>
+            <modifier type="set" field="65f9-5a55-0706-c9af" value="5.0">
+              <conditions>
+                <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e671-1656-91d9-253e" type="min"/>
             <constraint field="selections" scope="parent" value="6.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="65f9-5a55-0706-c9af" type="max"/>
@@ -1493,6 +1652,13 @@ D6 Result
       </costs>
     </selectionEntry>
     <selectionEntry id="9d0c-6df4-8f5d-5a34" name="Inquisitor Greyfax" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b28b-0c01-1c42-0c0d" type="max"/>
       </constraints>
@@ -1899,6 +2065,13 @@ D6 Result
       </costs>
     </selectionEntry>
     <selectionEntry id="f34a-e3be-53b1-d783" name="Lord Inquisitor Hector Rex" hidden="false" collective="false" import="true" type="upgrade">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b987-87ce-53d9-eb7d" type="max"/>
       </constraints>
@@ -2058,6 +2231,13 @@ D6 Result
       </costs>
     </selectionEntry>
     <selectionEntry id="027b-c552-db2c-f5f0" name="Inquisitor Solomon Lok" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9e4b-2750-9aa0-c849" type="max"/>
       </constraints>
@@ -2299,6 +2479,13 @@ D6 Result
       </costs>
     </selectionEntry>
     <selectionEntry id="86b2-7c8b-a051-60ca" name="Inquisitor Eisenhorn" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="cbfe-4308-cc23-b59c" type="max"/>
       </constraints>
@@ -2776,6 +2963,13 @@ Note: The above additions have already been included in the profile for the Malu
       </costs>
     </selectionEntry>
     <selectionEntry id="132c-a00e-3b0b-5795" name="Lord Inquisitor Kyria Draxus" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <profiles>
         <profile id="d99a-0ebb-3776-4a2e" name="Lord Inquisitor Kyria Draxus" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
           <characteristics>
@@ -2978,6 +3172,13 @@ Note: The above additions have already been included in the profile for the Malu
       </costs>
     </selectionEntry>
     <selectionEntry id="ce43-b08c-e166-ca0c" name="Inquisitor Erasmus Cartavolnus [Legends]" hidden="false" collective="false" import="true" type="model">
+      <modifiers>
+        <modifier type="add" field="category" value="d203-a22b-9241-82d7">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="2988-ba01-aa85-b6ac" type="max"/>
       </constraints>
@@ -3277,6 +3478,13 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
           </constraints>
           <selectionEntries>
             <selectionEntry id="bc05-e9bc-e13e-504c" name="Navis Imperialis" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3216-0068-2851-e25d" type="max"/>
               </constraints>
@@ -3287,6 +3495,13 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
               </costs>
             </selectionEntry>
             <selectionEntry id="77b7-26d1-2364-7c13" name="Inquisition" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="3a32-0ffc-2f84-a61c" type="max"/>
               </constraints>
@@ -3874,6 +4089,13 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="5138-d14c-0a57-646b" name="Ordo" hidden="false" collective="false" import="true">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="forces" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="a207-a133-6adb-25f3" type="greaterThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
       <constraints>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="20f9-a84f-5359-f4bc" type="max"/>
         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b368-0ae7-9000-638c" type="min"/>

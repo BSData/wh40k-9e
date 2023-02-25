@@ -378,6 +378,8 @@
       <comment>This category is here just to make the Harlequins boarding patrol work</comment>
     </categoryEntry>
     <categoryEntry id="092d-5ca1-cd0b-eb8c" name="Faction: Agents of the Imperium" hidden="false"/>
+    <categoryEntry id="7cf8-5f19-b49c-5224" name="Officio Assassinorum - Boarding Patrol" hidden="false"/>
+    <categoryEntry id="d203-a22b-9241-82d7" name="Inquisitor - Boarding Patrol" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry id="a0c7-2a71-bae0-215d" name="Patrol Detachment -2CP" hidden="false">
@@ -2091,6 +2093,16 @@
                   </conditionGroups>
                 </conditionGroup>
               </conditionGroups>
+            </modifier>
+            <modifier type="increment" field="dfa0-22d2-00ec-c87d" value="1.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="7cf8-5f19-b49c-5224" type="equalTo"/>
+              </conditions>
+            </modifier>
+            <modifier type="increment" field="dfa0-22d2-00ec-c87d" value="3.0">
+              <conditions>
+                <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="d203-a22b-9241-82d7" type="greaterThan"/>
+              </conditions>
             </modifier>
           </modifiers>
           <constraints>
