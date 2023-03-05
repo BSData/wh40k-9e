@@ -1837,6 +1837,11 @@
         <categoryLink id="a5ea-ab04-8d58-41bc" name="Agent of the Imperium" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="false">
           <modifiers>
             <modifier type="set" field="name" value="Agents of the Imperium"/>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0735-ed55-e421-7b73" type="greaterThan"/>
+              </conditions>
+            </modifier>
           </modifiers>
           <constraints>
             <constraint field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6c81-8575-babd-3bc3" type="max"/>
@@ -2014,6 +2019,13 @@
           </constraints>
         </categoryLink>
         <categoryLink id="e501-4794-aea3-cabf" name="Fortification" hidden="false" targetId="d713cda3-5d0f-40d8-b621-69233263ec2a" primary="false">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="0735-ed55-e421-7b73" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
           <constraints>
             <constraint field="selections" scope="parent" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="9a38-5d05-919e-2745" type="max"/>
           </constraints>
@@ -7669,6 +7681,19 @@ Remaining Wounds | Aura Range
       <costs>
         <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0735-ed55-e421-7b73" name="Militarum Tempestus Detachment" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="76db-5da5-62a9-9727" type="max"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink id="c3ce-57bb-c4c9-cf35" name="New CategoryLink" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
+      </categoryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
