@@ -6767,7 +6767,7 @@ This ability cannot be used with a Relic which replaces any of these weapons. </
                         </conditionGroup>
                       </conditionGroups>
                     </modifier>
-                    <modifier type="increment" field="9d52-475a-6312-33fc" value="1">
+                    <modifier type="increment" field="9d52-475a-6312-33fc" value="1.0">
                       <conditionGroups>
                         <conditionGroup type="and">
                           <conditions>
@@ -6779,16 +6779,15 @@ This ability cannot be used with a Relic which replaces any of these weapons. </
                     </modifier>
                   </modifiers>
                   <constraints>
-                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="9d52-475a-6312-33fc" type="min"/>
+                    <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9d52-475a-6312-33fc" type="min"/>
                     <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4964-0419-9b96-83e2" type="max"/>
                   </constraints>
                   <selectionEntries>
-                    <selectionEntry id="fc95-b292-be25-a73d" name="Bolt pistol/Chainsword" hidden="false" collective="false" import="true" type="upgrade">
+                    <selectionEntry id="fc95-b292-be25-a73d" name="Chainsword" hidden="false" collective="false" import="true" type="upgrade">
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="5b52-46b4-3359-1027" type="max"/>
                       </constraints>
                       <infoLinks>
-                        <infoLink id="7915-c69a-439d-6e5b" name="Bolt pistol" hidden="false" targetId="e6d5-677a-d8ed-f6a5" type="profile"/>
                         <infoLink id="290b-aaba-4562-ec89" name="Astartes Chainsword" hidden="false" targetId="9155-5815-056b-9fd9" type="profile"/>
                       </infoLinks>
                       <costs>
@@ -6798,15 +6797,30 @@ This ability cannot be used with a Relic which replaces any of these weapons. </
                       </costs>
                     </selectionEntry>
                   </selectionEntries>
+                  <selectionEntryGroups>
+                    <selectionEntryGroup id="652e-ab22-3127-459c" name="Pistols" hidden="false" collective="false" import="true" defaultSelectionEntryId="5ec0-80c3-f1d6-b820">
+                      <constraints>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="66e1-adde-0c4d-64d9" type="max"/>
+                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="96a6-abd7-2037-a6aa" type="min"/>
+                      </constraints>
+                      <selectionEntries>
+                        <selectionEntry id="2272-7335-7669-74c6" name="Plasma Pistol" hidden="false" collective="false" import="true" type="upgrade">
+                          <infoLinks>
+                            <infoLink id="ce2c-a50f-b61a-f70c" name="Plasma pistol, Standard" hidden="false" targetId="ff12-161a-ca85-339f" type="profile"/>
+                            <infoLink id="9fb1-bfff-b667-40a7" name="Plasma pistol, Supercharge" hidden="false" targetId="5779-2931-fe17-2b27" type="profile"/>
+                          </infoLinks>
+                        </selectionEntry>
+                      </selectionEntries>
+                      <entryLinks>
+                        <entryLink id="5ec0-80c3-f1d6-b820" name="Bolt pistol" hidden="false" collective="false" import="true" targetId="de35-9da4-047c-a147" type="selectionEntry"/>
+                        <entryLink id="7ced-c62d-c008-17e9" name="Grav-pistol" hidden="false" collective="false" import="true" targetId="7b66-cac7-e582-a518" type="selectionEntry"/>
+                      </entryLinks>
+                    </selectionEntryGroup>
+                  </selectionEntryGroups>
                   <entryLinks>
                     <entryLink id="ae12-57c1-6915-a8c5" name="Melee Weapons" hidden="false" collective="false" import="true" targetId="ce40-8190-5033-a0c1" type="selectionEntryGroup">
                       <constraints>
                         <constraint field="selections" scope="parent" value="2.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6836-0977-492b-0b1b" type="max"/>
-                      </constraints>
-                    </entryLink>
-                    <entryLink id="f136-168f-f04e-6401" name="Pistols" hidden="false" collective="false" import="true" targetId="fb38-f29c-b8de-3ba6" type="selectionEntryGroup">
-                      <constraints>
-                        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="d647-6d47-155b-2c80" type="max"/>
                       </constraints>
                     </entryLink>
                     <entryLink id="dcfc-46b0-baa1-2b41" name="Eviscerator" hidden="false" collective="false" import="true" targetId="b993-57b7-93c6-9acb" type="selectionEntry">
@@ -6984,6 +6998,13 @@ This ability cannot be used with a Relic which replaces any of these weapons. </
                       </constraints>
                     </entryLink>
                     <entryLink id="54b4-e6cf-2e62-f039" name="Plasma pistol" hidden="false" collective="false" import="true" targetId="83be-1ba9-c326-4760" type="selectionEntry">
+                      <modifiers>
+                        <modifier type="increment" field="052c-67b9-e81b-bca4" value="1.0">
+                          <conditions>
+                            <condition field="selections" scope="7c16-1429-b6d5-e6f1" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="c8f6-e9ec-3fdc-9126" type="equalTo"/>
+                          </conditions>
+                        </modifier>
+                      </modifiers>
                       <constraints>
                         <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="b1c2-7e3a-f09f-f1c0" type="max"/>
                         <constraint field="selections" scope="7c16-1429-b6d5-e6f1" value="2.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="052c-67b9-e81b-bca4" type="max"/>
@@ -16248,9 +16269,6 @@ Weapon: Purgatorus</characteristic>
                   </conditions>
                 </modifier>
               </modifiers>
-              <costs>
-                <cost name="pts" typeId="points" value="5.0"/>
-              </costs>
             </entryLink>
           </entryLinks>
         </selectionEntryGroup>
@@ -32010,6 +32028,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="d492-3107-dcb1-27ae" name="2 Brutalis Talons" hidden="false" collective="false" import="true" type="upgrade">
               <entryLinks>
@@ -32020,6 +32043,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -32038,6 +32066,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
                   </constraints>
                 </entryLink>
               </entryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
             <selectionEntry id="f71c-0d6e-7f30-ad65" name="2 Multi-melta" hidden="false" collective="false" import="true" type="upgrade">
               <entryLinks>
@@ -32051,6 +32084,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
                   </costs>
                 </entryLink>
               </entryLinks>
+              <costs>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                <cost name="pts" typeId="points" value="0.0"/>
+              </costs>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
@@ -32067,6 +32105,7 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
       <costs>
         <cost name="pts" typeId="points" value="170.0"/>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="10.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="119d-d699-830f-1c6d" name="Brutalis Fist" hidden="false" collective="false" import="true" type="upgrade">
@@ -32082,6 +32121,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="6971-f780-cb78-090c" name="Brutalis Talon" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
@@ -32111,6 +32155,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="782f-931f-1303-e2c9" name="Desolation Squad" hidden="false" collective="false" import="true" type="unit">
       <modifiers>
@@ -32186,6 +32235,8 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
               </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="35.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="f27d-2ff7-372e-3936" name="Desolation Sgt" hidden="false" collective="false" import="true" type="upgrade">
@@ -32218,6 +32269,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
                       </constraints>
                     </entryLink>
                   </entryLinks>
+                  <costs>
+                    <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                    <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+                    <cost name="pts" typeId="points" value="0.0"/>
+                  </costs>
                 </selectionEntry>
               </selectionEntries>
               <entryLinks>
@@ -32236,6 +32292,8 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
               </entryLinks>
               <costs>
                 <cost name="pts" typeId="points" value="35.0"/>
+                <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+                <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
               </costs>
             </selectionEntry>
           </selectionEntries>
@@ -32253,6 +32311,8 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
       </selectionEntryGroups>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="8.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="607a-e195-135e-e543" name="Superfrag Rocket Launcher" hidden="false" collective="false" import="true" type="upgrade">
@@ -32268,6 +32328,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="7066-49ea-e3e8-e013" name="Superkrak Rocket Launcher" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
@@ -32282,6 +32347,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="3cfc-5b00-024c-80bf" name="Castellan Launcher" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
@@ -32296,6 +32366,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="49b6-b08d-76f4-9c60" name="Vengor Launcher" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
@@ -32310,6 +32385,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
     <selectionEntry id="6dde-3a97-4d4b-6306" name="Targeter Optics" hidden="false" collective="false" import="true" type="upgrade">
       <profiles>
@@ -32319,6 +32399,11 @@ This model also has a transport capacity of two &lt;CHAPTER&gt; VEHICLE models f
           </characteristics>
         </profile>
       </profiles>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="pts" typeId="points" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
