@@ -3,30 +3,60 @@ name: Monthly Release Thread
 
 on:
   schedule:
-   - cron: 0 0 1 * *  # Every 1st day of the month at 0000 – https://crontab.guru
+    - cron: 0 0 1 * * # Every 1st day of the month at 0000 – https://crontab.guru
 
 jobs:
   monthly_release:
     runs-on: ubuntu-latest
     steps:
+      # Get current month for issue title
+      - name: get-date
+        id: date
+        run: echo "date=$(date +'%B %Y')" >> $GITHUB_OUTPUT
 
-# Repo code checkout required if `template` is used
-    - name: Checkout
-      uses: actions/checkout@v2
+      # Create, pin, label, and assign release issue
+      - name: create-issue
+        id: issue
+        uses: imjohnbo/issue-bot@v3
+        with:
+          pinned: true
+          close-previous: true
+          labels: "Type: Release Thread"
+          title: "RELEASE THREAD: ${{ steps.date.outputs.date }}"
+          body: |
+            Data Developers - Please use this issue to push new releases if doing so via comment.
 
-# Get current month for issue title
-    - name: get-date
-      id: date
-      run: echo "::set-output name=date::$(date +'%B %Y')"
+            # Explainer
 
-# Create, pin, label, and assign release issue
-    - name: create-issue
-      id: issue
-      uses: imjohnbo/issue-bot@v2
-      with:
-        pinned: true
-        close-previous: true
-        title: "RELEASE THREAD: ${{ steps.date.outputs.date }}"
-        template: ".github/RELEASE_TEMPLATE.md"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - Create an issue comment that starts with `/release` on the first line.
+            - Second (non-empty) line will be used as a release title/name.
+            - All following lines will be interpreted as a release description/body.
+            - Description (even if empty) will always be appended with a comparison link to the previous release, unless there is no previous release.
+
+            # How to
+
+            Add a comment with one of the following to push a release:
+
+            ### For a standard release:
+
+            *given latest release v2.2.2, will create a release v2.2.3 (increases patch)*
+            > /release
+            >
+            > This is title of v2.2.3
+
+            ### For a Chapter Approved/Big FAQ initial releases (game-wide updates):
+
+            *given latest release v2.2.2, will create a release v2.3.0 (increases minor, resets patch)*
+            > /release bump=minor
+            >
+            > This is title of v2.3.0
+
+            ### For a new game edition:
+
+            *given latest release v2.2.2, will create a release v3.0.0 (increases major, resets minor and patch)*
+            > /release bump=major
+            >
+            > This is title of v3.0.0
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
