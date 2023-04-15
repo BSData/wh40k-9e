@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Agents of the Imperium" revision="90" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Alphalas, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="248" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="e373-3c0a-1185-46ea" name="Imperium - Agents of the Imperium" revision="91" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="Discord: @Fital Shell, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="248" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <categoryEntries>
     <categoryEntry id="78cc-daf7-1448-610f" name="Faction: Inquisition" hidden="false"/>
     <categoryEntry id="6f95-3a9f-9235-519a" name="Inquisitor" hidden="false">
@@ -46,6 +46,8 @@
     <categoryEntry id="04b2-68c7-14dd-c570" name="Machine Spirit" hidden="false"/>
     <categoryEntry id="7cb1-1f1f-631b-c793" name="Erasmus Cartavolnus" hidden="false"/>
     <categoryEntry id="695d-57bb-42cc-01de" name="Daemon" hidden="false"/>
+    <categoryEntry id="6a41-dd30-bd2a-9daf" name="Faction: Adeptus Arbites" hidden="false"/>
+    <categoryEntry id="9ca9-0197-e9b7-609e" name="Vigilant Squad" hidden="false"/>
   </categoryEntries>
   <selectionEntries>
     <selectionEntry id="b198-e7aa-8469-700d" name="Ordo Selection" hidden="true" collective="false" import="true" type="upgrade">
@@ -793,6 +795,30 @@
       </modifiers>
       <categoryLinks>
         <categoryLink id="eb48-eb98-073d-9ccd" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="88cb-e0b9-1c28-5fc7" name="Vigilant Squad" hidden="false" collective="false" import="true" targetId="bce8-c0d0-a780-4e8a" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c3c4-45e2-71ba-477e" type="lessThan"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink id="f695-0573-b3cc-e306" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="8a37-7c8d-b1c9-ff67" name="Vigilant Squad" hidden="false" collective="false" import="true" targetId="bce8-c0d0-a780-4e8a" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b734-1c2c-054d-4867" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink id="8bfa-3525-1116-cca1" name="New CategoryLink" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -3502,6 +3528,400 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
         <cost name="pts" typeId="points" value="0.0"/>
       </costs>
     </selectionEntry>
+    <selectionEntry id="bce8-c0d0-a780-4e8a" name="Vigilant Squad" hidden="false" collective="false" import="true" type="unit">
+      <categoryLinks>
+        <categoryLink id="6efe-b79b-23a8-0440" name="Faction: Agents of the Imperium" hidden="false" targetId="092d-5ca1-cd0b-eb8c" primary="false"/>
+        <categoryLink id="d4c7-e4e7-4bce-7a9e" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="2b31-707a-68be-1c74" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+        <categoryLink id="2d1c-349f-cbf9-5113" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="b9bb-b731-0b62-3898" name="Proctor-Vigilant" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6868-40d1-ed4f-b48d" type="min"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="abff-9ebb-a88f-9091" type="max"/>
+          </constraints>
+          <profiles>
+            <profile id="65e2-ec04-5767-dd38" name="Proctor-Vigilant" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <entryLinks>
+            <entryLink id="21dc-e87b-8af9-2c9e" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b505-8e5d-8530-14a4" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7186-62c7-12e1-97c6" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e11b-79a5-d5d6-682e" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="fa81-4e21-bd3e-a7a5" name="Arbites Combat Shotgun" hidden="false" collective="false" import="true" targetId="b633-1226-1ee9-4817" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="fcc2-b8a6-e794-27a4" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="01a4-d0cd-576f-efc4" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="7779-d8d5-f9e8-b36c" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e04a-b7f7-d0de-7356" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="f7f6-7628-c75b-644b" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="9549-927d-b2b3-6ecd" name="Nuncio Aquila" hidden="false" collective="false" import="true" targetId="be26-71a4-61f9-d3d1" type="selectionEntry"/>
+          </entryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <selectionEntryGroups>
+        <selectionEntryGroup id="219e-de04-aefc-1c6f" name="Vigilant" hidden="false" collective="false" import="true" defaultSelectionEntryId="7572-028c-39ad-ef61">
+          <constraints>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="87b1-a35a-b0a9-c264" type="min"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a55a-25ff-710a-c5d6" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="2f52-d945-5e5d-4c9b" name="Vigilant (Executioner Shotgun)" hidden="false" collective="false" import="true" type="model">
+              <constraints>
+                <constraint field="selections" scope="bce8-c0d0-a780-4e8a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2e2b-2d84-e1b9-b2ec" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="6223-ed33-dfb2-396b" name="Vigilant" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="0181-6400-2a67-6120" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b400-2f0f-b307-7e27" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="a448-69ae-d426-6eac" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0572-dc56-a0af-e85a" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="30a1-94fe-3bd8-9a50" name="Executioner Shotgun" hidden="false" collective="false" import="true" targetId="c735-4845-f872-9fe3" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2328-6c8b-4774-c8af" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="9371-57a7-4e64-7dba" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="185b-258b-e506-4ad7" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e35c-c704-8154-077c" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="85ad-8438-831d-c887" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry id="5aae-c8f8-5b3c-5cd9" name="Vigilant (Webber)" hidden="false" collective="false" import="true" type="model">
+              <constraints>
+                <constraint field="selections" scope="bce8-c0d0-a780-4e8a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="b4a8-32c4-6443-d8c6" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="d429-4f2d-e455-d71e" name="Vigilant" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="8dd3-1780-063d-d46b" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b400-2f0f-b307-7e27" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c5de-c0b8-f507-90ae" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ffa7-babb-2975-7a94" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="9560-af50-ca6f-e64c" name="Webber" hidden="false" collective="false" import="true" targetId="ab47-0cd7-60be-064d" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="50d8-3ef4-e631-4439" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="81e3-5597-478c-8b71" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="e2da-7016-5968-0546" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6b6a-378d-9b29-dc21" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="4afd-6578-52cd-eb00" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry id="b884-9ad1-9251-0076" name="Vigilant (Heavy Stubber)" hidden="false" collective="false" import="true" type="model">
+              <constraints>
+                <constraint field="selections" scope="bce8-c0d0-a780-4e8a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="61dc-5a21-dc7a-93c3" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="6aeb-81f0-f7b6-4bd5" name="Vigilant" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="7945-cc67-76e0-f861" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b400-2f0f-b307-7e27" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="dc75-fcca-aaa9-17fe" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="55e7-15e4-7abd-868c" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="bfb9-e8ca-3726-3ed0" name="Heavy Stubber" hidden="false" collective="false" import="true" targetId="be71-570b-8ddd-e0a9" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8a18-42a1-392d-8b46" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="fe79-1ed0-d68a-c733" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="8563-0356-d3c8-0795" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="14e5-18cf-79fe-2577" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6ec9-756a-256a-2fa5" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry id="587a-0176-7349-80da" name="Vigilant (Arbites Grenade Launcher)" hidden="false" collective="false" import="true" type="model">
+              <constraints>
+                <constraint field="selections" scope="bce8-c0d0-a780-4e8a" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="51ec-d7fe-a909-d97d" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="87e7-2fce-af14-5f29" name="Vigilant" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="34d6-4d8a-e2aa-594f" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b400-2f0f-b307-7e27" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2f85-26cf-6db0-e011" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ee6c-1315-32ca-3d78" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="cf99-5dba-4384-f9d4" name="Arbites Grenade Launcher" hidden="false" collective="false" import="true" targetId="0f71-a7ab-e831-d86c" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="03a2-b9be-4df0-bb39" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="f207-b7ad-369f-3140" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="dd7c-4f26-a5cf-ee66" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="3ca9-7c5d-e429-3bb8" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5644-0637-ebd9-5df2" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+            <selectionEntry id="7572-028c-39ad-ef61" name="Vigilant (Combat Shotgun)" hidden="false" collective="false" import="true" type="model">
+              <profiles>
+                <profile id="03b4-5bf2-7872-ffe2" name="Vigilant" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+                  <characteristics>
+                    <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                    <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                    <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                    <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                    <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                    <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                    <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                    <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+                    <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+              <entryLinks>
+                <entryLink id="0675-b39f-762f-bd8e" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b400-2f0f-b307-7e27" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="bfc8-9cf2-6006-8df9" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ce64-e019-3300-36d6" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="1165-0ea6-b90f-3181" name="Arbites Combat Shotgun" hidden="false" collective="false" import="true" targetId="d6ef-4eb2-a15e-0f09" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="7061-36f3-b2ef-e645" type="max"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="23bc-f069-5451-9752" type="min"/>
+                  </constraints>
+                </entryLink>
+                <entryLink id="802a-2b8d-bbc1-5010" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+                  <constraints>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="77c5-567e-5e15-60fe" type="min"/>
+                    <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="bbac-c9dd-7497-fb9f" type="max"/>
+                  </constraints>
+                </entryLink>
+              </entryLinks>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <entryLinks>
+        <entryLink id="6fff-2104-2c91-90e8" name="Cyber-mastiff" hidden="false" collective="false" import="true" targetId="c991-161f-5081-d35d" type="selectionEntry"/>
+      </entryLinks>
+      <costs>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
+        <cost name="pts" typeId="points" value="110.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="b633-1226-1ee9-4817" name="Arbites Combat Shotgun" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="272c-2c97-dd24-1a0f" name="Arbites Combat Shotgun" hidden="false" targetId="3f81-91e9-a87c-ab19" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="d6ef-4eb2-a15e-0f09" name="Arbites Combat Shotgun" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="9b2c-f050-bcc0-ac81" name="Arbites Combat Shotgun" hidden="false" targetId="3f81-91e9-a87c-ab19" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="b505-8e5d-8530-14a4" name="Arbites Shotpistol" hidden="false" collective="false" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="6fbc-d3c2-cb87-4d30" name="Arbites Shotpistol" hidden="false" targetId="788e-fe21-1d87-db62" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="b400-2f0f-b307-7e27" name="Arbites Shotpistol" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="ef79-e459-7892-425b" name="Arbites Shotpistol" hidden="false" targetId="788e-fe21-1d87-db62" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="c991-161f-5081-d35d" name="Cyber-mastiff" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="6d55-f1dd-d226-70ee" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="2e43-2b4d-4a54-b338" name="Cyber-mastiff" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+          <characteristics>
+            <characteristic name="M" typeId="0bdf-a96e-9e38-7779">8&quot;</characteristic>
+            <characteristic name="WS" typeId="e7f0-1278-0250-df0c">3+</characteristic>
+            <characteristic name="BS" typeId="381b-eb28-74c3-df5f">-</characteristic>
+            <characteristic name="S" typeId="2218-aa3c-265f-2939">5</characteristic>
+            <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+            <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+            <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+            <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">5</characteristic>
+            <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">4+</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <selectionEntries>
+        <selectionEntry id="e671-30c1-80ed-4cd0" name="Mechanical Bite" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="14d0-79bf-17d6-e405" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="1b2f-0980-c7d0-18df" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="b60a-2f33-e95e-c6db" name="Mechanical Bite" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+              <characteristics>
+                <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                <characteristic name="S" typeId="59b1-319e-ec13-d466">User</characteristic>
+                <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+                <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+        </selectionEntry>
+      </selectionEntries>
+      <costs>
+        <cost name="pts" typeId="points" value="10.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="0f71-a7ab-e831-d86c" name="Arbites Grenade Launcher" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="b97f-f630-28f3-3dd7" name="Arbites Grenade Launcher" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="c735-4845-f872-9fe3" name="Executioner Shotgun" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="13c1-b9f6-4c8c-56a5" name="Executioner Shotgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">24&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 1</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">2</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Each time you select a target for this weapon, you can ignore the Look Out, Sir rule. Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="5.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="be71-570b-8ddd-e0a9" name="Heavy Stubber" hidden="false" collective="true" import="true" type="upgrade">
+      <infoLinks>
+        <infoLink id="4ca8-de14-1395-ac5c" name="Heavy stubber" hidden="false" targetId="0031-0314-5b36-a220" type="profile"/>
+      </infoLinks>
+    </selectionEntry>
+    <selectionEntry id="ab47-0cd7-60be-064d" name="Webber" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="22ce-9cfa-415b-2e5b" name="Webber" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault D3</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">1</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">0</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">Blast. Each time an attack is made with this weapon, do not make a hit roll. Instead, roll one D6 and the attack sequence ends: if the result is greater than the highest Strength characteristic in the target unit, that unit suffers 1 mortal wound.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+    </selectionEntry>
+    <selectionEntry id="be26-71a4-61f9-d3d1" name="Nuncio Aquila" hidden="false" collective="false" import="true" type="upgrade">
+      <constraints>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="c458-6764-e786-c34d" type="max"/>
+      </constraints>
+      <profiles>
+        <profile id="dd9a-c6ab-ba5d-d71f" name="Nuncio Aquila" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Morale phase, you can select one enemy Infantry, Cavalry or Biker unit that is not sanctioned and is within 9&quot; of and visible to the bearer. If you do so, roll 2D6: if the result is greater than or equal to that unit’s Leadership characteristic, then until the start of your next Morale phase that unit is sanctioned. While a unit is sanctioned, each time a model in that unit makes an attack, subtract 1 from that attack’s hit roll.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <costs>
+        <cost name="pts" typeId="points" value="10.0"/>
+      </costs>
+    </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
     <selectionEntryGroup id="8714-82ac-6b59-5cde" name="Acolyte Weapon" hidden="false" collective="false" import="true" defaultSelectionEntryId="fcae-95f7-ed55-947f">
@@ -4327,6 +4747,31 @@ If your army is Battle-forged, no more than one Inquisitor unit can be included 
       </modifiers>
       <characteristics>
         <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">When resolving an attack made by a model in this unit that targets a Character unit, you can re-roll the hit roll and you can re-roll the wound roll.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="427e-5497-9e95-038b" name="Brutal Judgement" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Each time a model in this unit makes an attack that targets a unit within half range, an unmodified hit roll of 6 automatically wounds the target.</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="3f81-91e9-a87c-ab19" name="Arbites Combat Shotgun" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">18&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Assault 2</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="788e-fe21-1d87-db62" name="Arbites Shotpistol" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+      <characteristics>
+        <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+        <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 1</characteristic>
+        <characteristic name="S" typeId="59b1-319e-ec13-d466">4</characteristic>
+        <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+        <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+        <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
