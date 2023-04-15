@@ -48,6 +48,7 @@
     <categoryEntry id="695d-57bb-42cc-01de" name="Daemon" hidden="false"/>
     <categoryEntry id="6a41-dd30-bd2a-9daf" name="Faction: Adeptus Arbites" hidden="false"/>
     <categoryEntry id="9ca9-0197-e9b7-609e" name="Vigilant Squad" hidden="false"/>
+    <categoryEntry id="cd71-9c2a-5ab6-1360" name="Subductor Squad" hidden="false"/>
   </categoryEntries>
   <selectionEntries>
     <selectionEntry id="b198-e7aa-8469-700d" name="Ordo Selection" hidden="true" collective="false" import="true" type="upgrade">
@@ -804,9 +805,14 @@
             <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c3c4-45e2-71ba-477e" type="lessThan"/>
           </conditions>
         </modifier>
+        <modifier type="add" field="category" value="a476-685a-4747-1980">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b668-3b85-10a7-5dcd" type="equalTo"/>
+          </conditions>
+        </modifier>
       </modifiers>
       <categoryLinks>
-        <categoryLink id="f695-0573-b3cc-e306" name="New CategoryLink" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
+        <categoryLink id="ec89-5933-48e1-e95d" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
       </categoryLinks>
     </entryLink>
     <entryLink id="8a37-7c8d-b1c9-ff67" name="Vigilant Squad" hidden="false" collective="false" import="true" targetId="bce8-c0d0-a780-4e8a" type="selectionEntry">
@@ -819,6 +825,35 @@
       </modifiers>
       <categoryLinks>
         <categoryLink id="8bfa-3525-1116-cca1" name="New CategoryLink" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="1a46-3f1a-aacf-9903" name="Subductor Squad" hidden="false" collective="false" import="true" targetId="d1b7-9177-ebbd-ffc8" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="c3c4-45e2-71ba-477e" type="lessThan"/>
+          </conditions>
+        </modifier>
+        <modifier type="add" field="category" value="a476-685a-4747-1980">
+          <conditions>
+            <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="b668-3b85-10a7-5dcd" type="equalTo"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink id="bba7-b310-5789-f166" name="Troops" hidden="false" targetId="5d76b6f5-20ae-4d70-8f59-ade72a2add3a" primary="true"/>
+      </categoryLinks>
+    </entryLink>
+    <entryLink id="9bf7-d8bf-1a8d-2711" name="Subductor Squad" hidden="false" collective="false" import="true" targetId="d1b7-9177-ebbd-ffc8" type="selectionEntry">
+      <modifiers>
+        <modifier type="set" field="hidden" value="true">
+          <conditions>
+            <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="b734-1c2c-054d-4867" type="atLeast"/>
+          </conditions>
+        </modifier>
+      </modifiers>
+      <categoryLinks>
+        <categoryLink id="04ed-e522-8515-217f" name="New CategoryLink" hidden="false" targetId="0f35-2c34-ba6a-8105" primary="true"/>
       </categoryLinks>
     </entryLink>
   </entryLinks>
@@ -3519,6 +3554,11 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
                 <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
+            <selectionEntry id="b668-3b85-10a7-5dcd" name="Adeptus Arbites" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="751b-7f8b-70cc-8be6" type="max"/>
+              </constraints>
+            </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
       </selectionEntryGroups>
@@ -3529,6 +3569,11 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
       </costs>
     </selectionEntry>
     <selectionEntry id="bce8-c0d0-a780-4e8a" name="Vigilant Squad" hidden="false" collective="false" import="true" type="unit">
+      <infoLinks>
+        <infoLink id="9062-17a1-665a-e278" name="Agents of the Imperium" hidden="false" targetId="ad04-95ac-4694-2183" type="profile"/>
+        <infoLink id="7a83-87c7-7562-d5fa" name="Instrument of Repression" hidden="false" targetId="ca64-6e4b-adf7-5140" type="profile"/>
+        <infoLink id="cf97-c06f-5247-15cb" name="Brutal Judgement" hidden="false" targetId="427e-5497-9e95-038b" type="profile"/>
+      </infoLinks>
       <categoryLinks>
         <categoryLink id="6efe-b79b-23a8-0440" name="Faction: Agents of the Imperium" hidden="false" targetId="092d-5ca1-cd0b-eb8c" primary="false"/>
         <categoryLink id="d4c7-e4e7-4bce-7a9e" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
@@ -3921,6 +3966,134 @@ If the result of the psychic test was 10 or more, you can select one enemy unit 
       <costs>
         <cost name="pts" typeId="points" value="10.0"/>
       </costs>
+    </selectionEntry>
+    <selectionEntry id="d1b7-9177-ebbd-ffc8" name="Subductor Squad" hidden="false" collective="false" import="true" type="unit">
+      <profiles>
+        <profile id="cde8-0543-4780-fc4c" name="Shield Line" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+          <characteristics>
+            <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Shield Line: Models in this unit have a 5+ invulnerable save. In addition, each time an enemy unit declares a charge against this unit, if this unit is not within Engagement Range of any enemy units, it can Set to Defend.</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
+      <infoLinks>
+        <infoLink id="9eeb-54dc-95b3-5662" name="Brutal Judgement" hidden="false" targetId="427e-5497-9e95-038b" type="profile"/>
+        <infoLink id="ad5e-f3d6-adbe-cbcd" name="Agents of the Imperium" hidden="false" targetId="ad04-95ac-4694-2183" type="profile"/>
+        <infoLink id="41bc-34de-98dd-345d" name="Instrument of Repression" hidden="false" targetId="ca64-6e4b-adf7-5140" type="profile"/>
+      </infoLinks>
+      <categoryLinks>
+        <categoryLink id="82a6-1321-2350-0c7d" name="Faction: Adeptus Arbites" hidden="false" targetId="6a41-dd30-bd2a-9daf" primary="false"/>
+        <categoryLink id="7060-6478-83d5-a871" name="Faction: Agents of the Imperium" hidden="false" targetId="092d-5ca1-cd0b-eb8c" primary="false"/>
+        <categoryLink id="52f2-293b-acee-15c7" name="Faction: Imperium" hidden="false" targetId="84e2-9fa9-ebe6-1d18" primary="false"/>
+        <categoryLink id="d382-0627-fbb1-1d8b" name="Infantry" hidden="false" targetId="3d52-fccf-10c0-3fae" primary="false"/>
+        <categoryLink id="1594-7990-7de9-19da" name="Core" hidden="false" targetId="08f1-d244-eb44-7e01" primary="false"/>
+        <categoryLink id="ba8b-a97b-271a-3801" name="Subductor Squad" hidden="false" targetId="cd71-9c2a-5ab6-1360" primary="false"/>
+      </categoryLinks>
+      <selectionEntries>
+        <selectionEntry id="7549-6390-93e2-1395" name="Proctor-Subductor" hidden="false" collective="false" import="true" type="model">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e3b9-ea31-2d2b-824c" type="max"/>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="bc58-bc4e-e72b-dbf2" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="d73c-6b48-eda4-1f8b" name="Proctor-Subductor" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">3</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">9</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <entryLinks>
+            <entryLink id="a055-516d-931f-7528" name="Shock Maul" hidden="false" collective="false" import="true" targetId="cfe7-2f8c-3cb9-431c" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="2d23-c525-788a-dba0" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="685f-3e6f-5d6c-fb46" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="bf5b-7e13-be29-0e1a" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b505-8e5d-8530-14a4" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="78bb-142b-6fd1-6861" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="0500-eb9e-c861-dbb3" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="a61c-a60d-5e34-af0f" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="5ef8-ad44-13cc-8d86" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="df4e-9a78-3fe3-f086" type="max"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="9d9d-f24c-bfed-a66c" name="Nuncio Aquila" hidden="false" collective="false" import="true" targetId="be26-71a4-61f9-d3d1" type="selectionEntry"/>
+          </entryLinks>
+        </selectionEntry>
+        <selectionEntry id="d367-d964-184b-c185" name="Subductor" hidden="false" collective="false" import="true" type="model">
+          <constraints>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="fc2d-f73c-914f-bd19" type="max"/>
+            <constraint field="selections" scope="parent" value="9.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="e0bb-4e56-5841-6ba8" type="min"/>
+          </constraints>
+          <profiles>
+            <profile id="27e1-35ae-23d9-8c7d" name="Subductor" hidden="false" typeId="800f-21d0-4387-c943" typeName="Unit">
+              <characteristics>
+                <characteristic name="M" typeId="0bdf-a96e-9e38-7779">6&quot;</characteristic>
+                <characteristic name="WS" typeId="e7f0-1278-0250-df0c">4+</characteristic>
+                <characteristic name="BS" typeId="381b-eb28-74c3-df5f">4+</characteristic>
+                <characteristic name="S" typeId="2218-aa3c-265f-2939">3</characteristic>
+                <characteristic name="T" typeId="9c9f-9774-a358-3a39">3</characteristic>
+                <characteristic name="W" typeId="f330-5e6e-4110-0978">1</characteristic>
+                <characteristic name="A" typeId="13fc-b29b-31f2-ab9f">2</characteristic>
+                <characteristic name="Ld" typeId="00ca-f8b8-876d-b705">8</characteristic>
+                <characteristic name="Save" typeId="c0df-df94-abd7-e8d3">3+</characteristic>
+              </characteristics>
+            </profile>
+          </profiles>
+          <entryLinks>
+            <entryLink id="4459-ce54-e21d-241e" name="Shock Maul" hidden="false" collective="false" import="true" targetId="cfe7-2f8c-3cb9-431c" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ede7-1b80-a138-461d" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8547-0fa0-3ae6-6ad3" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="87b2-d657-171a-7189" name="Arbites Shotpistol" hidden="false" collective="false" import="true" targetId="b400-2f0f-b307-7e27" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="8c4a-91a4-1f93-a44e" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="db2a-540d-391f-b84e" type="min"/>
+              </constraints>
+            </entryLink>
+            <entryLink id="2c59-ead9-3377-8628" name="Frag &amp; Krak grenades" hidden="false" collective="false" import="true" targetId="cddf-945e-1335-e681" type="selectionEntry">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="819f-5e32-7d61-2007" type="min"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" id="ea93-41fc-1b28-b0d0" type="max"/>
+              </constraints>
+            </entryLink>
+          </entryLinks>
+        </selectionEntry>
+      </selectionEntries>
+      <entryLinks>
+        <entryLink id="8360-5239-f954-ea72" name="Cyber-mastiff" hidden="false" collective="false" import="true" targetId="c991-161f-5081-d35d" type="selectionEntry"/>
+      </entryLinks>
+      <costs>
+        <cost name="pts" typeId="points" value="120.0"/>
+        <cost name=" PL" typeId="e356-c769-5920-6e14" value="6.0"/>
+      </costs>
+    </selectionEntry>
+    <selectionEntry id="cfe7-2f8c-3cb9-431c" name="Shock Maul" hidden="false" collective="true" import="true" type="upgrade">
+      <profiles>
+        <profile id="8765-c0b1-ca77-7c66" name="Shock Maul" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+          <characteristics>
+            <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+            <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+            <characteristic name="S" typeId="59b1-319e-ec13-d466">+2</characteristic>
+            <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
+            <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+            <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+          </characteristics>
+        </profile>
+      </profiles>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -4772,6 +4945,11 @@ If your army is Battle-forged, no more than one Inquisitor unit can be included 
         <characteristic name="AP" typeId="75aa-a838-b675-6484">-1</characteristic>
         <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
         <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+      </characteristics>
+    </profile>
+    <profile id="ca64-6e4b-adf7-5140" name="Instrument of Repression" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+      <characteristics>
+        <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">Instruments of Repression: If your army is Battle-forged, this unit cannot be used as a compulsory selection in a Detachment (e.g. as the only Troops unit in a Patrol Detachment), unless that Detachment is an Adeptus Arbites Detachment.</characteristic>
       </characteristics>
     </profile>
   </sharedProfiles>
