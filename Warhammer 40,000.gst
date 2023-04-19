@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="248" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="28ec-711c-d87f-3aeb" name="Warhammer 40,000 9th Edition" revision="249" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@WH40k Data Dev" authorUrl="https://www.bsdata.net/contact" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <readme>This is the game system file for Warhammer 40,000, supporting the 9th edition of the game.  It is required for all other catalogues to function.</readme>
   <publications>
     <publication id="28ec-711c-pubN72690" name="Warhammer 40,000 Core Book" shortName="BRB" publisher="Games Workshop" publicationDate="2020-07-25" publisherUrl="https://www.games-workshop.com/Warhammer-40000-9th-Rulebook-EN-2020"/>
@@ -9254,7 +9254,7 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
         </selectionEntryGroup>
       </selectionEntryGroups>
     </selectionEntryGroup>
-    <selectionEntryGroup id="4c50-9343-b5fb-872d" name="Boarding Action Enhancements" hidden="true" collective="false" import="true" defaultSelectionEntryId="848c-ae22-09ee-f4ef">
+    <selectionEntryGroup id="4c50-9343-b5fb-872d" name="Boarding Action Enhancements - Common" hidden="true" collective="false" import="true" defaultSelectionEntryId="848c-ae22-09ee-f4ef">
       <modifiers>
         <modifier type="set" field="hidden" value="false">
           <conditionGroups>
@@ -9272,6 +9272,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
       </constraints>
       <selectionEntries>
         <selectionEntry id="848c-ae22-09ee-f4ef" name="Superior Boarding Tactics" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="edb0-69c8-78fa-dc95" type="max"/>
+          </constraints>
           <profiles>
             <profile id="0a82-160e-63b4-fdc1" name="Superior Boarding Tactics" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -9286,6 +9289,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
           </costs>
         </selectionEntry>
         <selectionEntry id="5a97-6862-1d9f-73bd" name="Close-quarters Killer" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="a8f6-a520-fe2d-01ef" type="max"/>
+          </constraints>
           <profiles>
             <profile id="1c05-0930-7d2b-4eb8" name="Close-quarters Killer" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -9300,6 +9306,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
           </costs>
         </selectionEntry>
         <selectionEntry id="c4eb-d498-1994-a4b5" name="Defensive Lynchpin" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7fd4-0477-9c9f-17ab" type="max"/>
+          </constraints>
           <profiles>
             <profile id="82aa-ca29-ddb3-d591" name="Defensive Lynchpin (Aura)" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -9314,6 +9323,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
           </costs>
         </selectionEntry>
         <selectionEntry id="a75d-0e21-f383-e63f" name="Expert Breacher" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ea41-fba4-38b5-ce92" type="max"/>
+          </constraints>
           <profiles>
             <profile id="ac76-47a5-5644-c4ab" name="Expert Breacher" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -9328,6 +9340,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
           </costs>
         </selectionEntry>
         <selectionEntry id="4f03-ef75-783a-5024" name="Personal Teleporter" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="c2e1-2f5d-45e9-61b9" type="max"/>
+          </constraints>
           <profiles>
             <profile id="3296-cb7d-d606-2947" name="Personal Teleporter" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
@@ -9342,6 +9357,9 @@ their charge, this unit can fire Dverwatch [and will score hits on unmodified ro
           </costs>
         </selectionEntry>
         <selectionEntry id="b967-2534-2585-2ecd" name="Trademark Weapon" hidden="false" collective="false" import="true" type="upgrade">
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="4780-1d4b-f8ae-2b18" type="max"/>
+          </constraints>
           <profiles>
             <profile id="84db-5fa5-ec3b-f40a" name="Trademark Weapon" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
               <characteristics>
