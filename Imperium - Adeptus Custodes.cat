@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="0fb8-6813-9c29-a03d" name="Imperium - Adeptus Custodes" revision="124" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="249" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="0fb8-6813-9c29-a03d" name="Imperium - Adeptus Custodes" revision="125" battleScribeVersion="2.03" authorName="BSData Developers" authorContact="@Thairne" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="249" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <publications>
     <publication id="1f0f-230b-a715-7d27" name="Codex: Adeptus Custodes" shortName="" publisher=""/>
   </publications>
@@ -484,7 +484,6 @@
         <categoryLink id="2e21-2741-737f-1c8f" name="Configuration" hidden="false" targetId="fcff-0f21-93e6-1ddc" primary="true"/>
       </categoryLinks>
     </entryLink>
-    <entryLink id="6032-f26f-7efc-7d0e" name="Stratagem: Open the Vaults" hidden="false" collective="false" import="true" targetId="e6d6-de23-88d5-a477" type="selectionEntry"/>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="ca9b-e195-defb-380a" name="Custodian Guard Squad" hidden="false" collective="false" import="true" type="unit">
@@ -4615,9 +4614,25 @@ You can only use this Stratagem once.</characteristic>
             <condition field="selections" scope="roster" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="2471-0b95-738c-edd9" type="equalTo"/>
           </conditions>
         </modifier>
+        <modifier type="set" field="4e6e-fd41-28d5-61fc" value="2.0">
+          <conditions>
+            <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="equalTo"/>
+          </conditions>
+        </modifier>
+        <modifier type="set" field="4e6e-fd41-28d5-61fc" value="3.0">
+          <conditionGroups>
+            <conditionGroup type="or">
+              <conditions>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="equalTo"/>
+                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e6c7-87a2-73a3-a475" type="equalTo"/>
+              </conditions>
+            </conditionGroup>
+          </conditionGroups>
+        </modifier>
       </modifiers>
       <constraints>
-        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8fa8-0fd4-dadd-e380" type="max"/>
+        <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8fa8-0fd4-dadd-e380" type="max"/>
+        <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4e6e-fd41-28d5-61fc" type="max"/>
       </constraints>
       <infoLinks>
         <infoLink id="6f7f-8075-dd6f-8666" name="Stratagem: Open the Vaults" hidden="false" targetId="ea25-7f77-8f2c-6fd9" type="profile"/>
@@ -4625,43 +4640,10 @@ You can only use this Stratagem once.</characteristic>
       <categoryLinks>
         <categoryLink id="0762-9c03-d63c-8885" name="New CategoryLink" hidden="false" targetId="c845-c72c-6afe-3fc2" primary="true"/>
       </categoryLinks>
-      <selectionEntries>
-        <selectionEntry id="2767-4f72-ccee-3030" name="Additional Relics" hidden="false" collective="false" import="true" type="upgrade">
-          <modifiers>
-            <modifier type="set" field="8906-27e2-ca47-e05c" value="2.0">
-              <conditions>
-                <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="09f9-b586-8d63-7635" type="equalTo"/>
-              </conditions>
-            </modifier>
-            <modifier type="set" field="8906-27e2-ca47-e05c" value="3.0">
-              <conditionGroups>
-                <conditionGroup type="or">
-                  <conditions>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fad2-035f-88a7-60c0" type="equalTo"/>
-                    <condition field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e6c7-87a2-73a3-a475" type="equalTo"/>
-                  </conditions>
-                </conditionGroup>
-              </conditionGroups>
-            </modifier>
-          </modifiers>
-          <constraints>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="8906-27e2-ca47-e05c" type="max"/>
-            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="237f-8aad-15cb-aecc" type="min"/>
-          </constraints>
-          <categoryLinks>
-            <categoryLink id="d18b-8998-5a6e-ac17" name="New CategoryLink" hidden="false" targetId="ff36a6f3-19bf-4f48-8956-adacfd28fe74" primary="false"/>
-          </categoryLinks>
-          <costs>
-            <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
-            <cost name="pts" typeId="points" value="0.0"/>
-            <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
-          </costs>
-        </selectionEntry>
-      </selectionEntries>
       <costs>
         <cost name=" PL" typeId="e356-c769-5920-6e14" value="0.0"/>
         <cost name="pts" typeId="points" value="0.0"/>
-        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
+        <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="-1.0"/>
       </costs>
     </selectionEntry>
     <selectionEntry id="8d82-6144-c9e6-0d75" name="Stratagem: The Emperor&apos;s Heroes" hidden="false" collective="false" import="true" type="upgrade">
@@ -5416,7 +5398,7 @@ You can only use this Stratagem once.</characteristic>
         </modifier>
         <modifier type="increment" field="e1a6-c6e2-f56c-e1ab" value="1.0">
           <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2767-4f72-ccee-3030" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e6d6-de23-88d5-a477" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
         <modifier type="decrement" field="e1a6-c6e2-f56c-e1ab" value="1.0">
@@ -6255,7 +6237,7 @@ You can only use this Stratagem once.</characteristic>
         </modifier>
         <modifier type="increment" field="4f19-699c-9288-f8f2" value="1.0">
           <repeats>
-            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="2767-4f72-ccee-3030" repeats="1" roundUp="false"/>
+            <repeat field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="e6d6-de23-88d5-a477" repeats="1" roundUp="false"/>
           </repeats>
         </modifier>
         <modifier type="decrement" field="4f19-699c-9288-f8f2" value="1.0">
@@ -6344,9 +6326,18 @@ You can only use this Stratagem once.</characteristic>
       </modifiers>
       <entryLinks>
         <entryLink id="24ac-eb08-5a5f-edfb" name="Stratagem: Warlord Trait" hidden="false" collective="false" import="true" targetId="6771-6ab3-1672-6a39" type="selectionEntry"/>
-        <entryLink id="69e4-2590-323f-5a9b" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry"/>
+        <entryLink id="69e4-2590-323f-5a9b" name="Stratagem: Relic" hidden="false" collective="false" import="true" targetId="c470-54ac-0863-8848" type="selectionEntry">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="false" childId="e6d6-de23-88d5-a477" type="greaterThan"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+        </entryLink>
         <entryLink id="0255-2278-4b01-e6d9" name="Stratagem: The Emperor&apos;s Heroes" hidden="false" collective="false" import="true" targetId="8d82-6144-c9e6-0d75" type="selectionEntry"/>
         <entryLink id="69ec-2d86-24fb-ae36" name="Stratagem: Victor of the Blood Games" hidden="false" collective="false" import="true" targetId="82c4-95e5-e492-ba66" type="selectionEntry"/>
+        <entryLink id="f36b-2474-0483-a4d3" name="Stratagem: Open the Vaults" hidden="false" collective="false" import="true" targetId="e6d6-de23-88d5-a477" type="selectionEntry"/>
       </entryLinks>
     </selectionEntryGroup>
     <selectionEntryGroup id="cd1d-be4f-e619-00bc" name="Character Stratagems (Named)" hidden="false" collective="false" import="true">
