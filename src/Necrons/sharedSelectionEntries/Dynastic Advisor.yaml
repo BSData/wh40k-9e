@@ -1,0 +1,189 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+selectionEntryGroups:
+  - defaultSelectionEntryId: 8a23-eacc-7d10-d483
+    exported: true
+    entryLinks:
+      - targetId: fcaa-e4d5-ee5b-de74
+        type: selectionEntry
+        exported: true
+        categoryLinks:
+          - targetId: 598f-6101-1273-9dfb
+            id: a791-305f-a6af-73f5
+            name: Dynastic Advisor
+        constraints:
+          - id: 18c0-cb63-0bff-dd7c
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+        id: 5a66-c749-54d4-644b
+        name: Plasmancer
+      - targetId: 9a67-e60b-d442-edb9
+        type: selectionEntry
+        exported: true
+        categoryLinks:
+          - targetId: 598f-6101-1273-9dfb
+            id: 76d0-8079-e456-afe3
+            name: Dynastic Advisor
+        constraints:
+          - id: d1ff-4de5-3f54-c9d5
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+        id: 47ef-c7e0-2dc5-b5a6
+        name: Psychomancer
+      - targetId: e5d8-d5a6-55bf-e6fa
+        type: selectionEntry
+        exported: true
+        categoryLinks:
+          - targetId: 598f-6101-1273-9dfb
+            id: c157-3697-2669-454f
+            name: Dynastic Advisor
+        constraints:
+          - id: d3e4-0c7d-0f19-7adb
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+        id: 8a23-eacc-7d10-d483
+        name: Technomancer
+      - targetId: e4d8-225b-cae1-1f20
+        type: selectionEntry
+        exported: true
+        categoryLinks:
+          - targetId: 598f-6101-1273-9dfb
+            id: 9f59-fe2b-f3f8-2930
+            name: Dynastic Advisor
+        constraints:
+          - id: e228-a29c-d0b3-cede
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+        id: 630f-b996-f491-a863
+        name: Chronomancer
+      - targetId: f40d-d7dc-c067-37bf
+        type: selectionEntry
+        exported: true
+        categoryLinks:
+          - targetId: 598f-6101-1273-9dfb
+            id: fb13-f3e8-7b4b-2041
+            name: Dynastic Advisor
+        constraints:
+          - id: b5be-01cb-854c-2c0b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+        id: b4d5-f684-cc8c-40e4
+        name: Toholk the Blinded [Legends]
+        modifiers:
+          - type: set
+            field: hidden
+            value: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: greaterThan
+                    childId: f40d-d7dc-c067-37bf
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                conditionGroups:
+                  - type: and
+                    conditions:
+                      - type: lessThan
+                        childId: f40d-d7dc-c067-37bf
+                        field: selections
+                        scope: 7482-b4b9-3bae-6e7e
+                        value: 1.0
+                        shared: true
+                        includeChildSelections: true
+                      - type: greaterThan
+                        childId: f40d-d7dc-c067-37bf
+                        field: selections
+                        scope: roster
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+    constraints:
+      - id: 475b-8c55-b6d5-d9a8
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: f6d7-d356-686c-1fa0
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 9bc0-eb32-ca8f-dcc1
+    name: Cryptek Choice
+constraints:
+  - id: afa3-5cc0-78dc-24df
+    type: maximum
+    field: selections
+    scope: force
+    shared: true
+    includeChildForces: true
+id: 7482-b4b9-3bae-6e7e
+name: Dynastic Advisor
+modifiers:
+  - type: decrement
+    field: afa3-5cc0-78dc-24df
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 598f-6101-1273-9dfb
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: 092a-b667-f7aa-1b33
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: lessThan
+            childId: 60f3-194a-d96a-689c
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: increment
+    field: afa3-5cc0-78dc-24df
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 092a-b667-f7aa-1b33
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildForces: true

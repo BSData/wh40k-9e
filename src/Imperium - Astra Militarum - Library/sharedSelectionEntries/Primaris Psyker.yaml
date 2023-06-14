@@ -1,0 +1,270 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 60.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 18d1-8445-cb76-6875
+    name: Character
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 10ae-7bcc-7184-6ae7
+    name: 'Faction: Imperium'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 2b94-00a6-d92d-cf26
+    name: Infantry
+  - targetId: 75a7-e5c7-78de-739b
+    id: b858-7699-35cd-f53a
+    name: Primaris Psyker
+  - targetId: 3263-4233-4344-6228
+    id: 5bb7-659e-25ad-a7b9
+    name: 'Faction: Astra Militarum'
+  - targetId: 94e7-b510-ffa1-bdc7
+    id: bfbc-023d-b5ef-a06d
+    name: Militarum Auxila
+  - targetId: e691-aad7-d21c-1023
+    id: 9c86-7e80-32e5-b48f
+    name: Psyker
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 3b98-7f3c-4e76-3302
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 7fa9-1a7f-a772-35f9
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +3
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -1
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: D3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: 0cb8-94a4-c190-7da1
+        name: Force Stave
+    id: 97a3-138b-4ad0-7253
+    name: Force Stave
+    publicationId: 53e9d88f--pubN88319
+    page: 92
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 09e6-f786-57c5-9c6d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c7a2-f5f4-87c4-d262
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    infoLinks:
+      - targetId: f2b7-768f-a270-de64
+        type: profile
+        id: ec43-42ae-fd87-ab27
+        name: Laspistol
+    id: 3ba4-dcce-a4ad-9b0e
+    name: Laspistol
+entryLinks:
+  - targetId: 13fd-f96b-049d-7216
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 036b-c983-40d1-0cb6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: b579-b3ed-80bf-61a3
+    name: Psykana Discipline
+    modifiers:
+      - type: increment
+        field: 036b-c983-40d1-0cb6
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 316a-1dbd-2185-a82f
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 8ed7-7588-0f06-9b0d
+    type: selectionEntryGroup
+    exported: true
+    id: eea1-c373-cd56-6f09
+    name: Relics
+  - targetId: 1f07-a468-bda8-fd3f
+    type: selectionEntry
+    exported: true
+    id: 5ee3-7d64-9e15-ace3
+    name: Warlord
+    modifiers:
+      - type: set
+        field: 000a-cf6d-4c86-a749
+        value: 0.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: atLeast
+                childId: 3534-5273-62b4-3e73
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: atLeast
+                childId: 6b6b-26f3-0044-995e
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: atLeast
+                childId: dd6e-7055-ca6b-b711
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+  - targetId: d6e2-a400-a8db-d4f2
+    type: selectionEntryGroup
+    exported: true
+    id: 5ac6-c705-5ebb-c547
+    name: Warlord Traits
+  - targetId: 2527-4b0c-1e18-38b3
+    type: selectionEntryGroup
+    exported: true
+    id: 77bf-ac48-a0cf-e946
+    name: Character Stratagems
+  - targetId: 1774-8223-7530-5ad5
+    type: selectionEntryGroup
+    exported: true
+    id: fb1e-5784-0684-b0f1
+    name: Battle Honours
+  - targetId: cec4-9abd-dcdb-c9c2
+    type: selectionEntryGroup
+    exported: true
+    id: c94f-882a-e1a6-7d74
+    name: Battle Scars
+  - targetId: 4772-f04c-cfdc-8c37
+    type: selectionEntryGroup
+    exported: true
+    id: c351-66b9-dbe5-3230
+    name: Enhancements
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 4
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 5+
+    id: fcc3-4b64-37cf-c1a8
+    name: Primaris Psyker
+    publicationId: 53e9d88f--pubN88319
+    page: 85
+  - typeId: bc97-dea9-9e88-bb7d
+    typeName: Psyker
+    characteristics:
+      - name: Cast
+        typeId: 5afb-9914-904b-d3b3
+        value: 2
+      - name: Deny
+        typeId: b5ac-9c20-5d5a-6f9b
+        value: 1
+      - name: Powers Known
+        typeId: 69d7-b45e-00a2-7e46
+        value: Smite & 2 Psykana
+      - name: Other
+        typeId: c2e2-f115-0003-5d7b
+    id: 6a8a-2497-ef32-e21e
+    name: Psyker
+id: 6e3f-b42f-0740-448e
+name: Primaris Psyker
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: cff6-a8e7-27ea-0776
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,66 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: fc25-fab2-eada-593d
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 48"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Heavy 2D6
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 8
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -4
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 3
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Blast
+    id: 3db6-4f89-b0e1-f6b6
+    name: Cawl's Wrath
+    publicationId: 82cd-d24f-pubN65537
+    page: 116
+id: 0e72-6ebb-f135-d7e1
+name: "Heirloom: Cawl's Wrath"
+publicationId: 82cd-d24f-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: 220d-0abf-a055-91d7
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 5360-3011-a42b-faf2
+            field: selections
+            scope: parent
+            shared: true

@@ -1,0 +1,48 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ae09-117e-a6fa-316b
+    id: 7b8b-0700-04fe-65c6
+    name: New CategoryLink
+constraints:
+  - id: 06a4-83c0-66a5-df11
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: c488-0afe-c67e-2606
+name: Warlord
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: 6027-cb64-caf7-6a46
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: instanceOf
+            childId: eb72-b7a9-1df1-04db
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: equalTo
+            childId: c93a-b1ce-64a2-9caf
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

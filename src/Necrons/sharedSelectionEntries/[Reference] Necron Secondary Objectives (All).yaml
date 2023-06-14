@@ -1,0 +1,200 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 70bc-62aa-d3af-bd2a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 52a4-0113-5a7f-6535
+    typeName: Reference
+    characteristics:
+      - name: Description
+        typeId: 8848-2b4b-4502-a86a
+        value: Necron Secondary Objectives are shown in summary at the bottom of the list output.
+    id: fd0f-d7da-1be2-abc1
+    name: Necron Secondary Objectives
+    publicationId: 61c6-c8c5-pubN65537
+    page: 69
+rules:
+  - description: >2-
+
+      Shadow Operations Objective: If you selected this secondary objective, then after both sides have finished deploying, starting with your opponent, the players
+
+      alternate selecting objective markers that are not within any player’s deployment zone to be Ancient Machinery objective markers, until three objective markers have been selected (if there are only one or two such objective markers, then only those objective markers are Ancient Machinery objective markers).
+
+
+      NECRONS CORE or NECRONS CANOPTEK units from your army can attempt the following action:
+
+
+      Awaken Ancient Machinery (Action): At the end of your Movement phase, one or more NECRONS CORE or NECRONS CANOPTEK units from your army can start to perform this action. Each unit from your army that starts to perform this action must be in range of a different Ancient Machinery objective marker. A unit cannot start this action while there are any enemy units (excluding AIRCRAFT) in range of the same objective marker. The action is completed at the end of your next Command phase, provided the unit attempting the action is still within range of that Ancient Machinery objective marker.
+
+
+      Score 3 victory points each time a unit from your army completes the Awaken Ancient Machinery action.
+    id: 54f0-a651-b805-deda
+    name: Secondary Objective - Ancient Machineries
+    publicationId: 61c6-c8c5-pubN65537
+    page: 69(e)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: Codex Version
+  - description: >2-
+
+      No Mercy, No Respite Objective: Score 3 victory points at the end of the battle for each enemy unit that was destroyed by a NECRONS NOBLE unit from your army.
+    id: 23be-c6c2-5eab-9d04
+    name: Secondary Objective - Code of Combat
+    publicationId: 61c6-c8c5-pubN65537
+    page: 69
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: Codex Version
+  - description: >2-
+
+      Battlefield Supremacy Objective: Score 2 victory points at the end of your turn for each table quarter that does not have any enemy units (excluding AIRCRAFT units) wholly within it. This objective cannot be scored in the first battle round.
+    id: 7e46-dda2-e9dd-f305
+    name: Secondary Objective - Purge the Vermin
+    publicationId: 61c6-c8c5-pubN65537
+    page: 69
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: Codex Version
+  - description: >2-
+
+      No Mercy, No Respite Objective: If you selected this secondary objective, then after both sides have finished deploying, your opponent selects 3 objective markers on the battlefield. Score a number of victory points at the end of your turn if you control one or more of those objective markers, as shown in the table below:
+
+
+      1 Marker(s): 2 Points
+
+      2 Marker(s): 3 Points
+
+      3 Marker(s): 5 Points
+    id: 41b7-d73c-e844-4b7c
+    name: Secondary Objective - The Treasures of Aeons
+    publicationId: 61c6-c8c5-pubN65537
+    page: 69
+  - description: >2-
+
+      Shadow Operations Objective:If you select this secondary objective, NECRONS CORE and NECRONS CANOPTEK units from your army can attempt the following action:
+
+
+      Awaken Ancient Machinery (Action): At the end of your Movement phase, one NECRONS CORE or NECRONS CANOPTEK unit from your army can start to perform this action if it is within range of an objective marker you control that is not within your deployment zone and which has not already been awakened by your army (see below). If the unit performing this action has the Objective Secured ability, the action is completed at the end of your turn; otherwise, it is completed at the start of your next Command phase or at the end of the battle (whichever comes first). In any case, the action is only completed if the unit performing it is still within range of the same objective marker. If completed, that objective marker is said to have been awakened by your army.
+
+
+      Score 4 victory points each time a unit from your army completes this action.
+    id: 4a9c-d893-036a-0e22
+    name: Secondary Objective - Ancient Machineries
+    publicationId: 09f4-6657-ccd5-6e61
+    page: 51
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: lessThan
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: Nephilim Version
+  - description: >2-
+
+      Battlefield Supremacy Objective: At the end of your turn:
+
+      -Score 1 victory point for each table quarter that has no enemy units (excluding AIRCRAFT units) wholly within it.
+
+      -Score 1 victory point if there are no enemy units (excluding AIRCRAFT units) wholly within your deployment zone.
+    id: 198f-91d3-6544-4877
+    name: Secondary Objective - Purge the Vermin
+    publicationId: 09f4-6657-ccd5-6e61
+    page: 51
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: lessThan
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: Nephilim Version
+  - description: >2-
+
+      Purge the Enemy Objective: At the end of the battle:
+
+      Score 3 victory points for each enemy unit that was destroyed by a ranged attack made by a NECRONS NOBLE unit from your army during the battle.
+
+      Score 4 victory points for each enemy unit that was destroyed by a melee attack made by a NECRONS NOBLE unit from your army during the battle.
+
+      In addition, each time an enemy CHARACTER unit is destroyed by a melee attack made by a NECRONS NOBLE unit from your army, gain 1 Command point.
+    id: c25e-51dc-65ac-955b
+    name: Secondary Objective - Code of Combat
+    publicationId: 09f4-6657-ccd5-6e61
+    page: 51
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: lessThan
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: Nephilim Version
+id: bd3c-6d2c-f917-ebaa
+name: '[Reference] Necron Secondary Objectives (All)'
+publicationId: 61c6-c8c5-pubN65537

@@ -1,0 +1,153 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 7316-aaec-c13a-f805
+    id: 2ea7-e910-d1ed-644b
+    name: 'PC: DA'
+selectionEntryGroups:
+  - defaultSelectionEntryId: 674a-f4d5-5f59-c3cf
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        id: 674a-f4d5-5f59-c3cf
+        name: Dark Angels
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 5469-2c43-ddab-51da
+            id: 0d86-5d4a-0b0e-e6a1
+            name: 'PC: DA Successor'
+        id: 3bbe-6a24-2bcb-d019
+        name: Dark Angels Successor
+    constraints:
+      - id: 7e60-1253-4b6c-9da7
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2128-526a-0e58-5c82
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: b74a-27e4-7531-ce70
+    name: Chapter
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: e4e4-9efc-8061-f229
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 8a5f-a7fd-b1a4-bd3a
+        name: Custom Chapter
+    entryLinks:
+      - targetId: 3700-470e-f75d-6cba
+        type: selectionEntryGroup
+        exported: true
+        id: 057d-aa57-78db-9849
+        name: Forge World Chapters
+    constraints:
+      - id: 0763-3be1-7ae1-8612
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: b9cc-6886-e240-ba51
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: e517-dd25-8db2-04de
+    name: Successor Chapters
+    modifiers:
+      - type: set
+        field: b9cc-6886-e240-ba51
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 3bbe-6a24-2bcb-d019
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: lessThan
+            childId: 3bbe-6a24-2bcb-d019
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+entryLinks:
+  - targetId: a7a4-4d2d-81c8-5bd1
+    type: selectionEntryGroup
+    exported: true
+    id: a86b-2dfc-96bd-1352
+    name: Tactics
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 8a5f-a7fd-b1a4-bd3a
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+constraints:
+  - id: abdd-d0c3-9731-c08c
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: edca-c928-4452-6341
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: e5fe-509c-4730-5b20
+name: '**Chapter Selector**'

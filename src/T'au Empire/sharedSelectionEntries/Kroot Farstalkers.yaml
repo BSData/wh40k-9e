@@ -1,0 +1,839 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+    value: 80.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    primary: true
+    id: 8fe6-670c-9926-d1e4
+    name: Elites
+  - targetId: 77ee-b03b-d244-d535
+    id: de63-972d-b5ac-f504
+    name: "Faction: T'au Empire"
+  - targetId: 2d20-c12b-e8b0-b738
+    id: 76ab-fcb3-7890-d62c
+    name: 'Faction: Kroot'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: f428-15f0-2556-f0d9
+    name: Infantry
+  - targetId: 5c82-d63a-38fd-8570
+    id: 6b25-043d-b241-ae8c
+    name: T'au Auxiliary
+  - targetId: 0995-725e-f2bb-4e1f
+    id: 7158-e931-f4a1-f82b
+    name: Kroot Farstalkers
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    selectionEntryGroups:
+      - exported: true
+        entryLinks:
+          - targetId: b20d-cc79-c825-fca8
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 88d9-fd1b-217b-715f
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 2166-f8e5-0a39-c19b
+            name: Kroot Rifle
+          - targetId: 838d-b4b3-2a3b-84ce
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 0840-19d4-a6ad-459e
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: cfeb-3dcb-73f1-1b55
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 1b04-5c6e-62d6-b4ff
+            name: Pulse Rifle
+            modifiers:
+              - type: set
+                field: cfeb-3dcb-73f1-1b55
+                value: 0.0
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: atLeast
+                        childId: b20d-cc79-c825-fca8
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - type: atLeast
+                        childId: a8e7-503c-b96d-3927
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+          - targetId: a8e7-503c-b96d-3927
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 8f22-e474-e3f8-3061
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 8a28-fd70-67aa-498b
+            name: Pulse Carbine
+        constraints:
+          - id: b778-ce91-ed3b-6a83
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: af06-8186-69c7-5bf5
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 5f88-8e18-f315-3ad5
+        name: Kill-broker arms
+    entryLinks:
+      - targetId: bb55-5bf8-5df0-605b
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: ee8d-4b74-e672-ae52
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 4e00-74a8-a800-afe8
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: fa91-3c8b-a56a-74cb
+        name: Kroot Pistol
+      - targetId: 9cba-21cc-00e8-9af6
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: ab52-c285-1de7-da8a
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 6314-5ddc-380b-2e3f
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 45bb-700d-5c69-af18
+        name: Quill Grenades
+      - targetId: 7347-e9c1-8bf1-0833
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 9941-3989-5493-b2b1
+            type: minimum
+            field: selections
+            scope: parent
+            shared: true
+          - id: 9cd7-6bb6-bcc6-f421
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 2889-2364-6005-2a74
+        name: Ritual Blade
+        modifierGroups:
+          - modifiers:
+              - type: set
+                field: 9941-3989-5493-b2b1
+                value: 1.0
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: atLeast
+                        childId: 838d-b4b3-2a3b-84ce
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+              - type: set
+                field: 9cd7-6bb6-bcc6-f421
+                value: 0.0
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: atLeast
+                        childId: a8e7-503c-b96d-3927
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - type: atLeast
+                        childId: 2166-f8e5-0a39-c19b
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+              - type: set
+                field: hidden
+                value: true
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: atLeast
+                        childId: a8e7-503c-b96d-3927
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - type: atLeast
+                        childId: 2166-f8e5-0a39-c19b
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+              - type: set
+                field: 9941-3989-5493-b2b1
+                value: 0.0
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: atLeast
+                        childId: a8e7-503c-b96d-3927
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - type: atLeast
+                        childId: 2166-f8e5-0a39-c19b
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+    constraints:
+      - id: b62f-8012-db22-7ddf
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 43c7-e28e-ca57-87e9
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 7"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 3+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 4+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 4
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 1
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 3
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 7
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: e007-55b7-a82c-c40c
+        name: Kroot Kill-broker
+    id: c96d-608a-1e1d-4768
+    name: Kroot Kill-broker
+selectionEntryGroups:
+  - exported: true
+    selectionEntryGroups:
+      - exported: true
+        selectionEntries:
+          - type: model
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            exported: true
+            constraints:
+              - id: 8233-afc2-5886-f651
+                type: maximum
+                field: selections
+                scope: parent
+                value: 2.0
+                shared: true
+            profiles:
+              - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+                typeName: Weapon
+                characteristics:
+                  - name: Range
+                    typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                    value: 18"
+                  - name: Type
+                    typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                    value: Assault 2
+                  - name: S
+                    typeId: 59b1-319e-ec13-d466
+                    value: 4
+                  - name: AP
+                    typeId: 75aa-a838-b675-6484
+                    value: 0
+                  - name: D
+                    typeId: ae8a-3137-d65b-4ca7
+                    value: 1
+                  - name: Abilities
+                    typeId: 837d-5e63-aeb7-1410
+                    value: '-'
+                id: b408-58cc-dfb2-e2b6
+                name: Kroot Scattergun
+              - typeId: 800f-21d0-4387-c943
+                typeName: Unit
+                characteristics:
+                  - name: M
+                    typeId: 0bdf-a96e-9e38-7779
+                    value: 7"
+                  - name: WS
+                    typeId: e7f0-1278-0250-df0c
+                    value: 3+
+                  - name: BS
+                    typeId: 381b-eb28-74c3-df5f
+                    value: 4+
+                  - name: S
+                    typeId: 2218-aa3c-265f-2939
+                    value: 4
+                  - name: T
+                    typeId: 9c9f-9774-a358-3a39
+                    value: 3
+                  - name: W
+                    typeId: f330-5e6e-4110-0978
+                    value: 1
+                  - name: A
+                    typeId: 13fc-b29b-31f2-ab9f
+                    value: 2
+                  - name: Ld
+                    typeId: 00ca-f8b8-876d-b705
+                    value: 6
+                  - name: Save
+                    typeId: c0df-df94-abd7-e8d3
+                    value: 6+
+                id: bfc2-7a0a-f7a1-fc7a
+                name: Kroot Farstalker
+            id: dade-df06-b922-6e2e
+            name: Kroot Farstalker w/ Kroot Scattergun
+          - type: model
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            exported: true
+            constraints:
+              - id: 9208-56c6-6ce8-8324
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            profiles:
+              - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+                typeName: Weapon
+                characteristics:
+                  - name: Range
+                    typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                    value: 36"
+                  - name: Type
+                    typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                    value: Heavy 1
+                  - name: S
+                    typeId: 59b1-319e-ec13-d466
+                    value: 6
+                  - name: AP
+                    typeId: 75aa-a838-b675-6484
+                    value: -1
+                  - name: D
+                    typeId: ae8a-3137-d65b-4ca7
+                    value: 2
+                  - name: Abilities
+                    typeId: 837d-5e63-aeb7-1410
+                    value: Each time you select a target for this weapon, you can ignore the Look Out, Sir rule. Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.
+                id: bc16-46bf-03da-5d29
+                name: Kroot Hunting Rifle
+              - typeId: 800f-21d0-4387-c943
+                typeName: Unit
+                characteristics:
+                  - name: M
+                    typeId: 0bdf-a96e-9e38-7779
+                    value: 7"
+                  - name: WS
+                    typeId: e7f0-1278-0250-df0c
+                    value: 3+
+                  - name: BS
+                    typeId: 381b-eb28-74c3-df5f
+                    value: 4+
+                  - name: S
+                    typeId: 2218-aa3c-265f-2939
+                    value: 4
+                  - name: T
+                    typeId: 9c9f-9774-a358-3a39
+                    value: 3
+                  - name: W
+                    typeId: f330-5e6e-4110-0978
+                    value: 1
+                  - name: A
+                    typeId: 13fc-b29b-31f2-ab9f
+                    value: 2
+                  - name: Ld
+                    typeId: 00ca-f8b8-876d-b705
+                    value: 6
+                  - name: Save
+                    typeId: c0df-df94-abd7-e8d3
+                    value: 6+
+                id: e03f-2784-4b04-50e1
+                name: Kroot Farstalker
+            id: 028f-e057-29ac-9e6b
+            name: Kroot Farstalker w/ Kroot Hunting Rifle
+          - type: model
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            exported: true
+            constraints:
+              - id: 93bf-1a10-6a2a-4555
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            profiles:
+              - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+                typeName: Weapon
+                characteristics:
+                  - name: Range
+                    typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                    value: 18"
+                  - name: Type
+                    typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                    value: Assault 1
+                  - name: S
+                    typeId: 59b1-319e-ec13-d466
+                    value: 6
+                  - name: AP
+                    typeId: 75aa-a838-b675-6484
+                    value: -2
+                  - name: D
+                    typeId: ae8a-3137-d65b-4ca7
+                    value: 1
+                  - name: Abilities
+                    typeId: 837d-5e63-aeb7-1410
+                    value: Each time an attack is made with this weapon, you can re-roll the wound roll
+                id: 2763-dde0-5822-8fac
+                name: Accelerator Bow
+              - typeId: 800f-21d0-4387-c943
+                typeName: Unit
+                characteristics:
+                  - name: M
+                    typeId: 0bdf-a96e-9e38-7779
+                    value: 7"
+                  - name: WS
+                    typeId: e7f0-1278-0250-df0c
+                    value: 3+
+                  - name: BS
+                    typeId: 381b-eb28-74c3-df5f
+                    value: 4+
+                  - name: S
+                    typeId: 2218-aa3c-265f-2939
+                    value: 4
+                  - name: T
+                    typeId: 9c9f-9774-a358-3a39
+                    value: 3
+                  - name: W
+                    typeId: f330-5e6e-4110-0978
+                    value: 1
+                  - name: A
+                    typeId: 13fc-b29b-31f2-ab9f
+                    value: 2
+                  - name: Ld
+                    typeId: 00ca-f8b8-876d-b705
+                    value: 6
+                  - name: Save
+                    typeId: c0df-df94-abd7-e8d3
+                    value: 6+
+                id: aa58-7f86-d7d6-f1cb
+                name: Kroot Farstalker
+            id: 75d6-5cd0-769a-588e
+            name: Kroot Farstalker w/ Accelerator Bow
+          - type: model
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            exported: true
+            selectionEntries:
+              - type: upgrade
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 10.0
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                exported: true
+                constraints:
+                  - id: e7e1-0690-a84b-e921
+                    type: minimum
+                    field: selections
+                    scope: parent
+                    shared: true
+                  - id: 231d-f67d-bbf6-9bd3
+                    type: maximum
+                    field: selections
+                    scope: a5d6-167f-809c-4443
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - id: 8756-5044-cda7-f3f3
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                profiles:
+                  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+                    typeName: Abilities
+                    characteristics:
+                      - name: Description
+                        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                        value: Each time a model in the bearer’s unit makes a ranged attack, the target does not receive the benefits of cover against that attack.
+                    id: f3ac-d82f-59d9-1054
+                    name: Pech’ra
+                id: c1ed-73db-9d1b-1fb9
+                name: Pech’ra
+            entryLinks:
+              - targetId: b20d-cc79-c825-fca8
+                type: selectionEntry
+                exported: true
+                constraints:
+                  - id: c010-c6df-82e9-fcac
+                    type: minimum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - id: 1d4b-8268-d0b3-ac60
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 46f8-887d-ad03-5402
+                name: Kroot Rifle
+            constraints:
+              - id: 1d5b-4e0f-58d1-c89a
+                type: maximum
+                field: selections
+                scope: parent
+                value: 9.0
+                shared: true
+            profiles:
+              - typeId: 800f-21d0-4387-c943
+                typeName: Unit
+                characteristics:
+                  - name: M
+                    typeId: 0bdf-a96e-9e38-7779
+                    value: 7"
+                  - name: WS
+                    typeId: e7f0-1278-0250-df0c
+                    value: 3+
+                  - name: BS
+                    typeId: 381b-eb28-74c3-df5f
+                    value: 4+
+                  - name: S
+                    typeId: 2218-aa3c-265f-2939
+                    value: 4
+                  - name: T
+                    typeId: 9c9f-9774-a358-3a39
+                    value: 3
+                  - name: W
+                    typeId: f330-5e6e-4110-0978
+                    value: 1
+                  - name: A
+                    typeId: 13fc-b29b-31f2-ab9f
+                    value: 2
+                  - name: Ld
+                    typeId: 00ca-f8b8-876d-b705
+                    value: 6
+                  - name: Save
+                    typeId: c0df-df94-abd7-e8d3
+                    value: 6+
+                id: bf16-82f3-33cd-fb7b
+                name: Kroot Farstalker
+            id: 6ba9-8c2d-5b5e-b402
+            name: Kroot Farstalker w/ Kroot Rifle
+        selectionEntryGroups:
+          - exported: true
+            selectionEntries:
+              - type: model
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 10.0
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                exported: true
+                constraints:
+                  - id: edc5-5902-cd8a-d9ae
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                profiles:
+                  - typeId: 800f-21d0-4387-c943
+                    typeName: Unit
+                    characteristics:
+                      - name: M
+                        typeId: 0bdf-a96e-9e38-7779
+                        value: 7"
+                      - name: WS
+                        typeId: e7f0-1278-0250-df0c
+                        value: 3+
+                      - name: BS
+                        typeId: 381b-eb28-74c3-df5f
+                        value: 4+
+                      - name: S
+                        typeId: 2218-aa3c-265f-2939
+                        value: 4
+                      - name: T
+                        typeId: 9c9f-9774-a358-3a39
+                        value: 3
+                      - name: W
+                        typeId: f330-5e6e-4110-0978
+                        value: 1
+                      - name: A
+                        typeId: 13fc-b29b-31f2-ab9f
+                        value: 2
+                      - name: Ld
+                        typeId: 00ca-f8b8-876d-b705
+                        value: 6
+                      - name: Save
+                        typeId: c0df-df94-abd7-e8d3
+                        value: 6+
+                    id: a807-7c2f-2c0b-656f
+                    name: Kroot Farstalker
+                  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+                    typeName: Weapon
+                    characteristics:
+                      - name: Range
+                        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                        value: 12"
+                      - name: Type
+                        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                        value: Assault D6
+                      - name: S
+                        typeId: 59b1-319e-ec13-d466
+                        value: 4
+                      - name: AP
+                        typeId: 75aa-a838-b675-6484
+                        value: -1
+                      - name: D
+                        typeId: ae8a-3137-d65b-4ca7
+                        value: 1
+                      - name: Abilities
+                        typeId: 837d-5e63-aeb7-1410
+                        value: Each time an attack is made with this weapon, that attack automatically hits the target.
+                    id: 60a0-6813-2e6e-21df
+                    name: Dvorgite Skinner
+                id: e81a-5dad-6bd5-9756
+                name: Kroot Farstalker w/ Dvorgite Skinner
+                modifiers:
+                  - type: set
+                    field: edc5-5902-cd8a-d9ae
+                    value: 0.0
+                    conditions:
+                      - type: atLeast
+                        childId: b36d-5758-0763-8705
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                        includeChildSelections: true
+              - type: model
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 10.0
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                exported: true
+                constraints:
+                  - id: 22cb-140b-bf7f-cfb1
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                profiles:
+                  - typeId: 800f-21d0-4387-c943
+                    typeName: Unit
+                    characteristics:
+                      - name: M
+                        typeId: 0bdf-a96e-9e38-7779
+                        value: 7"
+                      - name: WS
+                        typeId: e7f0-1278-0250-df0c
+                        value: 3+
+                      - name: BS
+                        typeId: 381b-eb28-74c3-df5f
+                        value: 4+
+                      - name: S
+                        typeId: 2218-aa3c-265f-2939
+                        value: 4
+                      - name: T
+                        typeId: 9c9f-9774-a358-3a39
+                        value: 3
+                      - name: W
+                        typeId: f330-5e6e-4110-0978
+                        value: 1
+                      - name: A
+                        typeId: 13fc-b29b-31f2-ab9f
+                        value: 2
+                      - name: Ld
+                        typeId: 00ca-f8b8-876d-b705
+                        value: 6
+                      - name: Save
+                        typeId: c0df-df94-abd7-e8d3
+                        value: 6+
+                    id: 0c35-f826-6180-d2ff
+                    name: Kroot Farstalker
+                  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+                    typeName: Weapon
+                    characteristics:
+                      - name: Range
+                        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                        value: 18"
+                      - name: Type
+                        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                        value: Heavy 3
+                      - name: S
+                        typeId: 59b1-319e-ec13-d466
+                        value: 7
+                      - name: AP
+                        typeId: 75aa-a838-b675-6484
+                        value: -1
+                      - name: D
+                        typeId: ae8a-3137-d65b-4ca7
+                        value: 1
+                      - name: Abilities
+                        typeId: 837d-5e63-aeb7-1410
+                        value: Each time an attack made with this weapon is allocated to a Vehicle model, that attack has a Damage characteristic of 3.
+                    id: f73d-1d64-1525-8f76
+                    name: Londaxi Tribalest
+                id: b36d-5758-0763-8705
+                name: Kroot Farstalker w/ Londaxi Tribalest
+                modifiers:
+                  - type: set
+                    field: 22cb-140b-bf7f-cfb1
+                    value: 0.0
+                    conditions:
+                      - type: atLeast
+                        childId: e81a-5dad-6bd5-9756
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                        includeChildSelections: true
+            id: 998c-d88f-75a4-1c99
+            name: Weapon Selection
+        constraints:
+          - id: 34da-8f23-c170-3ce7
+            type: maximum
+            field: selections
+            scope: parent
+            value: 9.0
+            shared: true
+          - id: b75d-15fa-51e9-31a0
+            type: minimum
+            field: selections
+            scope: parent
+            value: 9.0
+            shared: true
+        id: b186-aaaf-1d72-22da
+        name: Weapon Choices
+    id: 25e8-3e4c-736a-bced
+    name: Kroot Farstalker
+rules:
+  - description: At the start of the first battle round, select one enemy unit to be this unit’s bounty. Each time a model in this unit makes an attack against its bounty, you can re-roll the hit roll.
+    id: 960b-eae2-1e55-3fd5
+    name: Bounty Hunters
+  - description: Each time a ranged attack is allocated to a model in this unit while it is receiving the benefits of cover, add an additional 1 to any armour saving throw made against that attack.
+    id: c9db-3ff0-c710-e979
+    name: Stealthy Hunters
+infoLinks:
+  - targetId: 663b-0751-9b7e-060b
+    type: rule
+    id: 74e1-f95c-b479-b0c4
+    name: Ambushing Predators
+id: a5d6-167f-809c-4443
+name: Kroot Farstalkers

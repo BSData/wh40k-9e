@@ -1,0 +1,66 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 9155-bea7-093f-3a05
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Until the end of the battle, for each model in that unit, if that model is equipped with a weapon that has the 'Poisoned Weapon (4+)' ability, the weapon is treated as having the 'Poisned Weapon (3+)' ability instead.
+    id: 1a6c-854c-0555-0097
+    name: 'Stratagem: Art of Poisonry'
+id: 260e-1388-087f-b2b2
+name: 'Stratagem: Art of Poisonry'
+modifiers:
+  - type: set
+    field: 9155-bea7-093f-3a05
+    value: 3.0
+    conditions:
+      - type: equalTo
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: 53a8-b0ea-cf82-5870
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 9155-bea7-093f-3a05
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

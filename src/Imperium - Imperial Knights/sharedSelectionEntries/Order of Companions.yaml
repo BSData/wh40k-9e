@@ -1,0 +1,98 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: fca1-baeb-33ba-0551
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: fe1c-5a9c-b60d-d082
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time this model is selected to shoot or fight, you can re-roll one hit roll, one wound roll or one damage roll when resolving that model's attacks.
+    id: c445-20eb-798d-055c
+    name: Order of Companions
+id: 72f4-872d-e016-0a96
+name: Order of Companions
+modifiers:
+  - type: set
+    field: fe1c-5a9c-b60d-d082
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: fe1c-5a9c-b60d-d082
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 82b5-25ac-1710-de0e
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: 0006-1319-18bf-0939
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: d451-70df-eeef-7915
+            field: selections
+            scope: parent
+            shared: true

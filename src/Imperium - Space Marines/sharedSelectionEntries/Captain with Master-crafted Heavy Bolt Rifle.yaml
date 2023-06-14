@@ -1,0 +1,245 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: pts
+    typeId: points
+    value: 95.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 5079-4916-f458-126c
+    name: Infantry
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: ba6a-f6bf-eaeb-0ea6
+    name: 'Faction: Imperium'
+  - targetId: c7b7-edbc-bc14-6238
+    id: 7939-a36f-aff5-5687
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: 0d19-90ea-adc9-07b3
+    name: Primaris
+  - targetId: 82df-13db-9e7b-15a3
+    id: da40-f742-f88a-3f76
+    name: Mk X Gravis
+  - targetId: 8352-7f67-7e2b-3b4f
+    id: b2b5-2669-646b-56ef
+    name: Captain
+  - targetId: ef18-746a-369f-43a4
+    id: f01c-f954-10e2-120d
+    name: Character
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: bd73-ea51-1f7f-a39a
+        type: selectionEntry
+        exported: true
+        id: 07ca-0d60-92fa-7b79
+        name: 'Chapter Command:  Chapter Master'
+      - targetId: 4ad6-eb88-f4b3-590e
+        type: selectionEntry
+        exported: true
+        id: 9802-5001-31ff-2f50
+        name: Death Company Captain
+    constraints:
+      - id: 0c46-35da-20de-5e7a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: dfe1-c574-a666-e4e5
+    name: Command Options
+entryLinks:
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 8edf-13ce-efbf-1832
+    name: Warlord
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d7c1-ffc4-bea1-a8b6
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9ef6-0f18-4530-c2dc
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: cc3b-7b03-f9c5-b778
+    name: Frag & Krak grenades
+  - targetId: 2500-aed6-f77e-88f9
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: a0d7-be47-9476-8c71
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: f4ed-bee1-eb8f-c01e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 90aa-72e1-f82c-904c
+    name: Master-crafted power sword
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: fb50-f8b0-cdb0-0d4f
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 21fe-aab4-f86d-70a9
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a869-6a4d-8723-0a5c
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: f267-1454-2a45-c7ea
+    name: Master-crafted heavy bolt rifle
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: df5e-4258-a4f5-fa93
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 5"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 7
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: fec9-55ca-1810-120f
+    name: Captain with Master-crafted Heavy Bolt Rifle
+infoLinks:
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: 368d-80c5-18c9-bc06
+    name: Rites of Battle
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: 4ad6-eb88-f4b3-590e
+            field: selections
+            scope: 5b8c-c359-235c-866b
+            shared: true
+            includeChildSelections: true
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: 4a1d-fcb7-d5db-b12b
+    name: Iron Halo
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 4224-17fe-3bf3-fd9e
+    name: Angels of Death
+  - targetId: ac1e-8a4b-aaa1-f41a
+    type: infoGroup
+    id: 55ed-ba19-dcd3-5f3d
+    name: Death Visions
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 4ad6-eb88-f4b3-590e
+            field: selections
+            scope: 5b8c-c359-235c-866b
+            shared: true
+            includeChildSelections: true
+id: 5b8c-c359-235c-866b
+name: Captain with Master-crafted Heavy Bolt Rifle
+modifiers:
+  - type: set
+    field: name
+    value: Chapter Master with Master-crafted Heavy Bolt Rifle
+    conditions:
+      - type: equalTo
+        childId: bd73-ea51-1f7f-a39a
+        field: selections
+        scope: 5b8c-c359-235c-866b
+        value: 1.0
+        shared: true
+  - type: set
+    field: name
+    value: Death Company Captain with Master-crafted Heavy Bolt Rifle
+    conditions:
+      - type: equalTo
+        childId: 4ad6-eb88-f4b3-590e
+        field: selections
+        scope: 5b8c-c359-235c-866b
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

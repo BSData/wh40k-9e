@@ -1,0 +1,47 @@
+targetId: 4739-10df-55b8-6330
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: 4b83-ce07-7a6a-7899
+    name: No Force Org Slot
+entryLinks:
+  - targetId: 3c14-f2aa-db72-c3c9
+    type: selectionEntryGroup
+    exported: true
+    id: 08a3-cb9f-ad66-a3c3
+    name: Chapter Relics
+  - targetId: e92c-a3a4-ffdf-8777
+    type: selectionEntryGroup
+    exported: true
+    id: 97ff-727c-0982-ebd0
+    name: Warlord Traits
+constraints:
+  - id: 2600-fd4d-28e8-9b83
+    type: maximum
+    field: selections
+    scope: parent
+    shared: true
+id: 2e3a-f3a7-20d9-4dc0
+name: Apothecary
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 339f-3bb9-0c10-034b
+        field: selections
+        scope: force
+        shared: true
+  - type: increment
+    field: 2600-fd4d-28e8-9b83
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 339f-3bb9-0c10-034b
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

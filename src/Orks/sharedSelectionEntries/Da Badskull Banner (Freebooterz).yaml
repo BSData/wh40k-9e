@@ -1,0 +1,50 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+constraints:
+  - id: 167f-d726-6d96-1cd8
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: FREEBOOTERZ model only.  This Relic may be taken by a VEHICLE model.  While an enemy unit is within 6" of the bearer, it loses the Objective Secured ability.
+    id: a752-894d-ac1a-c9b1
+    name: Da Badskull Banner
+id: b97d-0b61-91c3-bd9a
+name: Da Badskull Banner (Freebooterz)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 22bd-c413-33e8-277b
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: e4b7-e547-fc0d-25bc
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

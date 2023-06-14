@@ -1,0 +1,78 @@
+forceEntries:
+  - categoryLinks:
+      - targetId: fcff-0f21-93e6-1ddc
+        id: 317b-ae75-8706-48d2
+        name: Configuration
+      - targetId: c845-c72c-6afe-3fc2
+        id: 1384-e000-fa6a-3aa9
+        name: Stratagems
+      - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+        id: 460d-2811-ab00-a30a
+        name: No Force Org Slot
+      - targetId: d713cda3-5d0f-40d8-b621-69233263ec2a
+        id: 5cfe-bc29-4cc8-a694
+        name: Fortification
+    id: a39c-5420-c141-262c
+    name: Fortification Network
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    id: 41e1-846b-92e3-4764
+    name: Configuration
+  - targetId: c845-c72c-6afe-3fc2
+    id: cafb-dc6b-1907-0ae3
+    name: Stratagems
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    id: 4cf2-55de-1de3-bdfd
+    name: No Force Org Slot
+  - targetId: d713cda3-5d0f-40d8-b621-69233263ec2a
+    constraints:
+      - id: 26f5-481b-d941-b4ca
+        type: minimum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: 0214-a689-7537-aafa
+        type: maximum
+        field: selections
+        scope: force
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 4fb0-8ba2-1ea6-973e
+    name: Fortification
+constraints:
+  - id: 8909-9568-d709-4fc8
+    type: maximum
+    field: forces
+    scope: roster
+    value: 1.0
+    shared: true
+id: dcee-07fa-ec14-7dec
+name: Fortification Network -1CP
+modifiers:
+  - type: set
+    field: name
+    value: Fortification Network 0CP
+    conditions:
+      - type: atLeast
+        childId: d224-ab2b-e79e-5491
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: 8909-9568-d709-4fc8
+    value: 0.0
+    conditions:
+      - type: greaterThan
+        childId: 76d2-6e71-243f-ad3d
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true

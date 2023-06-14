@@ -1,0 +1,126 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+    value: 70.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    primary: true
+    id: 1ec6-9dbb-3b3e-a1cf
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 2c14-07ee-8aab-1c16
+    name: 'Faction: Chaos'
+  - targetId: 012f-abfc-397b-3519
+    id: 49b7-5084-6f31-a54d
+    name: 'Faction: Tzeentch'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 0f31-22bf-cf96-190f
+    name: Infantry
+  - targetId: b603-5fea-c225-4d53
+    id: 2f0c-669f-3d7f-7d6c
+    name: Daemon
+  - targetId: 08f1-d244-eb44-7e01
+    id: a3b5-2127-6c40-80fa
+    name: Core
+  - targetId: 4407-2aa1-2a62-c1dc
+    id: 821e-fa98-4163-c177
+    name: Horrors
+  - targetId: 2a5a-f894-9070-d236
+    id: 7ccc-9f7b-7b47-dbcd
+    name: 'Faction: Legiones Daemonica'
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    entryLinks:
+      - targetId: f7a5-7785-19dc-b33a
+        type: selectionEntry
+        exported: true
+        id: 73ec-4de0-64c6-a8a9
+        name: Coruscating flames
+    constraints:
+      - id: 37f0-ebb3-d70c-e5d8
+        type: minimum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+      - id: b3e8-3db2-d497-a31c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+    infoLinks:
+      - targetId: 782d-5917-151a-45cb
+        type: profile
+        id: 2ffa-da0a-ab8c-6a69
+        name: Blue Horror
+    id: f937-9c4c-cad2-7ac8
+    name: Blue Horror
+entryLinks:
+  - targetId: e21d-5a52-e47a-49b9
+    type: selectionEntryGroup
+    exported: true
+    id: c95f-bedf-2b39-3128
+    name: Battle Honours
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - This unit cannot perform actions.
+
+          - This unit can never gain the Objective Secured ability.
+    id: 4384-dc15-ed23-ea77
+    name: Capering Horrors
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'Each time an enemy unit shoots or fights, after resolving those attacks, if any Blue Horror models in this unit were destroyed as a result of those attacks but this unit was not destroyed, make a Split roll for each destroyed model. To make a Split roll, roll one D6: on a 4+, that model splits and you can add 1 Brimstone Horror model to this unit. When doing so, that Brimstone Horror model cannot be set up within Engagement Range of any enemy units unless those enemy units are already within Engagement Range of its unit.'
+    id: 733f-0739-a633-78d2
+    name: Split
+infoLinks:
+  - targetId: 3326-dd72-0e2b-a16c
+    type: infoGroup
+    id: 7cd6-bb42-9396-0c16
+    name: Daemonic
+  - targetId: 857b-bc79-b651-02eb
+    type: profile
+    id: fde1-27fc-655f-468e
+    name: Brimstone Horror
+id: 7885-9b27-5534-21da
+name: Blue Horrors
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: de28-5389-b988-eadf
+      - type: add
+        field: category
+        value: 6955-807b-c7a9-84c4
+    conditions:
+      - type: atLeast
+        childId: 88b1-c697-e840-2850
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true

@@ -1,0 +1,103 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: 2.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 7848-330c-45b1-5f59
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 7b5c-aa54-b980-a302
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+rules:
+  - description: "If your army includes one or more Super-Heavy Auxiliary Detachments, you can change the Command Benefits of one of them to: '+2 Command points if the unit in this Detachment is not your WARLORD, but it is from the same Faction as your WARLORD's Detachment, and that faction is not CHAOS, IMPERIUM, AELDARI , YNNARI or TYRANIDS.'"
+    id: cc45-f368-4c00-9b2d
+    name: Shared Faction Bonus
+    publicationId: 977a-446b-737a-b571
+    page: 4
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - description: "If a player's army includes one or more Super-Heavy Auxiliary Detachments, you can change the Command Benefits of one of them to: '+3 Command points if the unit in this Detachment is not your WARLORD, but it is from the same Faction as your WARLORD's Detachment, and that faction is not CHAOS, IMPERIUM, AELDARI , YNNARI or TYRANIDS.'"
+    id: be6f-af81-c87c-b42b
+    name: Shared Faction Bonus
+    publicationId: 977a-446b-737a-b571
+    page: 4
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+id: 8129-3536-b511-b045
+name: Shared Faction Bonus
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 224b-1070-218f-fdf4
+            field: selections
+            scope: force
+            shared: true
+          - type: lessThan
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 3.0
+    conditions:
+      - type: greaterThan
+        childId: e77a-cc54-efcf-a09a
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

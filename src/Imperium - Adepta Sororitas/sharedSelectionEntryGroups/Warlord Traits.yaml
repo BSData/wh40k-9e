@@ -1,0 +1,107 @@
+exported: true
+entryLinks:
+  - targetId: d442-1f03-d9da-e77f
+    type: selectionEntryGroup
+    exported: true
+    id: df64-3857-1b44-fc64
+    name: Warlord Traits (BRB)
+  - targetId: 0c6b-8719-faad-e330
+    type: selectionEntryGroup
+    exported: true
+    id: 6e95-0903-aebb-fd36
+    name: Warlord Traits Adepta Sororitas
+  - targetId: 923c-c629-db2d-f122
+    type: selectionEntryGroup
+    exported: true
+    id: cbcf-af41-032a-9202
+    name: Warlord Traits - Our Martyred Lady
+  - targetId: c68f-f06a-5d77-5061
+    type: selectionEntryGroup
+    exported: true
+    id: 86a9-5f5f-2174-589f
+    name: Warlord Traits - Bloody Rose
+constraints:
+  - id: 7fe8-5711-d235-b766
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 1a07-5b23-c2c5-15fd
+name: Warlord Traits
+modifiers:
+  - type: increment
+    field: 7fe8-5711-d235-b766
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 67a0-b77c-67fd-ddf5
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: c3c4-b7c8-f63a-f43e
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 6771-6ab3-1672-6a39
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: cc31-44af-22df-f291
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: cc31-44af-22df-f291
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: greaterThan
+                        childId: e77a-cc54-efcf-a09a
+                        field: selections
+                        scope: roster
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+                      - type: greaterThan
+                        childId: 76d2-6e71-243f-ad3d
+                        field: selections
+                        scope: roster
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+  - type: set
+    field: hidden
+    value: false
+    conditions:
+      - type: greaterThan
+        childId: 2ff7-1043-5f75-f600
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true

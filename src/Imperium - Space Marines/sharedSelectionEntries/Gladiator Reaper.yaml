@@ -1,0 +1,292 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 10.0
+  - name: pts
+    typeId: points
+    value: 150.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c8fd-783f-3230-493e
+    id: b279-f36f-5871-92dc
+    name: Vehicle
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: d697-eeb8-56f7-c6dc
+    name: 'Faction: Imperium'
+  - targetId: c7b7-edbc-bc14-6238
+    id: 47cc-9e2a-4078-29ea
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 04e6-7e40-25a1-4d06
+    id: 3da2-ec73-b9b2-2bbb
+    name: Repulsor Field
+  - targetId: d2e8-8063-b688-f484
+    id: efeb-e25d-799a-7077
+    name: Gladiator
+  - targetId: eca5-0963-ed48-4b7d
+    id: 87ac-1714-ca74-8290
+    name: Gladiator Reaper
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: 8670-6bbb-f6c7-3e8a
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 85d4-6701-e2d5-3310
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 313e-c5b4-6b3f-010e
+        name: Auto Launchers
+      - targetId: 9f8e-eea5-42fb-44d5
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: ed72-67b4-ccb8-1f2b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 2c17-3a76-3eb8-9f5f
+        name: Icarus Rocket Pod
+      - targetId: e8c2-5a34-bfab-1472
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 8bb6-3952-797e-bf19
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: c1cd-c523-ff53-2bc8
+        name: Ironhail Heavy Stubber
+      - targetId: 2b37-65ee-9443-b4ef
+        type: selectionEntry
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+            value: 1.0
+        exported: true
+        constraints:
+          - id: c9e4-b16f-0558-e576
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: cb54-0e4f-af29-453c
+        name: Multi-melta
+        modifiers:
+          - type: set
+            field: c9e4-b16f-0558-e576
+            value: 0.0
+            conditions:
+              - type: equalTo
+                childId: e8c2-5a34-bfab-1472
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: equalTo
+                childId: 4cb6-1c83-e837-f928
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+    id: a99f-a78e-26b2-a5fa
+    name: Options
+entryLinks:
+  - targetId: 254d-e79c-5402-88e6
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: bb2e-5790-c1c8-dbf7
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: 2b24-86b2-fe1e-3ae0
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 58bb-ebff-e076-f18a
+    name: Tempest bolter
+  - targetId: caa2-9896-2870-45f6
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 9cbe-cba1-e2aa-873c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2c49-32e2-7e68-b895
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 5cbd-8cae-7e29-8862
+    name: Twin heavy onslaught gatling cannon
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 10"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 6+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 7
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 8
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 12
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 0cbb-a08f-0047-3ee4
+    name: Gladiator Reaper [1] (7+ wounds remaning)
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 5"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 6+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 4+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 7
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 8
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: N/A
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: D3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 219d-2586-b406-28a9
+    name: Gladiator Reaper [2] (4-6 wounds remaning)
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 3"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 6+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 5+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 7
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 8
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: N/A
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 1
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 96b7-5c39-9ab0-5201
+    name: Gladiator Reaper [3] (1-3 wounds remaning)
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 1667-225d-6850-e34f
+    name: Angels of Death
+  - targetId: aa9c-2dc1-9778-945a
+    type: profile
+    id: 77ee-474c-4aa9-6823
+    name: Hover Tank
+  - targetId: e115-d729-ce93-fcb7
+    type: rule
+    id: f8bf-2515-ad57-78a6
+    name: Explodes (6"/D3)
+id: de9a-7ea4-0cfe-87ad
+name: Gladiator Reaper
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

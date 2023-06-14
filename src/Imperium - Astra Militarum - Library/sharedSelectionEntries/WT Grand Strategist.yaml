@@ -1,0 +1,43 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: e165-9f8e-cf45-fbe3
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 4fc2-b2ce-503b-ce3d
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'While this WARLORD is on the battlefield, each time you spend a Command point to use a Stratagem, roll one D6: on a 5+, that Command point is refunded.'
+    id: 5592-c8d2-3288-10be
+    name: Grand Strategist
+id: 9f7a-4c34-8d0c-e3c7
+name: 'WT: Grand Strategist'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: dd6e-7055-ca6b-b711
+        field: selections
+        scope: ancestor
+        shared: true

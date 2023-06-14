@@ -1,0 +1,40 @@
+typeId: dfe7-9b0a-ece9-9141
+typeName: Household Tradition
+characteristics:
+  - name: Description
+    typeId: 9271-9853-fe95-0c04
+    value: >-
+      - Each time a melee attack is made against a model with this Martial Tradition, an unmodified hit roll of 1-3 always fails, irrespective of any abilities that weapon or model making the attack may have.
+
+      - Each time a melee attack with an Armour Penetration characteristic of -1 is allocated to a model with this Martial Tradition, that attack has an Armour penetration characteristic of 0 instead.
+id: 88cc-48fb-5fef-0eb5
+name: Strike and Shield
+publicationId: 82cd-d24f-pubN65537
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: model
+            field: selections
+            scope: force
+            value: 3.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: 224b-1070-218f-fdf4
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: atLeast
+            childId: dfcb-7e82-5b5e-e379
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

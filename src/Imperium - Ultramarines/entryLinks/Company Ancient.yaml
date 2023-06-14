@@ -1,0 +1,47 @@
+targetId: 0e51-de2e-2557-b79e
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: cbbc-6c3d-86cf-9d20
+    name: New CategoryLink
+entryLinks:
+  - targetId: 8db4-4a27-1367-cfa5
+    type: selectionEntryGroup
+    exported: true
+    id: aef0-097e-af81-9376
+    name: Chapter Relics
+  - targetId: 231c-4f17-29d9-43a0
+    type: selectionEntryGroup
+    exported: true
+    id: cd75-79f3-4d84-fcfc
+    name: Warlord Traits
+constraints:
+  - id: 736b-0fd4-a142-1825
+    type: maximum
+    field: selections
+    scope: parent
+    shared: true
+id: 53f7-b8f7-4ccc-9380
+name: Company Ancient
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        shared: true
+  - type: increment
+    field: 736b-0fd4-a142-1825
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

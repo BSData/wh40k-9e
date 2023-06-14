@@ -1,0 +1,89 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 12"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Pistol 3
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 2
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 1
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Poisoned Weapon (2+). Each time an attack is made with this weapon, invulnerable saves cannot be taken against that attack.
+    id: 7e55-097b-16e1-d8ae
+    name: Spirit-Sting
+id: a2eb-f466-c406-9d7d
+name: Spirit-Sting
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: instanceOf
+            childId: 65d3-140a-2185-ef41
+            field: selections
+            scope: ancestor
+            shared: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 7537-2f60-1fa3-9fbc
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: 1286-d92f-3751-cfa7
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: 6953-5b59-c75b-7429
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 5fc1-0bf5-caf9-3702
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: greaterThan
+                childId: 14f0-0551-bac9-92c3
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

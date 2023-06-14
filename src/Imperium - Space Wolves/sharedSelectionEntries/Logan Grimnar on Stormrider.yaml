@@ -1,0 +1,334 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 9.0
+  - name: pts
+    typeId: points
+    value: 160.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 92b0-3a15-ace4-51a4
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 3b29-99ba-551f-2562
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: e531-6b7c-92e2-113d
+    name: New CategoryLink
+  - targetId: 277e-0e4e-e93e-53bf
+    id: e1cd-3117-7e7d-5644
+    name: New CategoryLink
+  - targetId: f093-e031-3131-7b82
+    id: e689-5757-2296-874d
+    name: New CategoryLink
+  - targetId: 39ba-82a5-a309-f73f
+    id: b410-2218-d186-a3ff
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 594b-b4f0-ca09-3a2a
+    name: New CategoryLink
+  - targetId: a089-247f-b684-db1c
+    id: f670-aaa0-7120-b182
+    name: Chariot
+  - targetId: 0fcf-9239-bfb9-d89d
+    id: 7e85-29dd-e461-50ca
+    name: Chapter Master
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: d031-4e7a-395a-da24
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 8c57-8635-52ad-49b8
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +1
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time the bearer fights, it makes 6 additional attacks with this weapon.
+        id: eeb6-ad60-de33-083c
+        name: Flurry of teeth and claws
+    id: 4aac-821e-b33b-a4af
+    name: Tyrnak and Fenrir
+entryLinks:
+  - targetId: 2b03-8d64-3711-f300
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d1b4-1b84-d749-0900
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6628-efa2-1ae1-007b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 8ca2-d233-caa6-3ebd
+    name: Storm bolter
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: 4beb-c2ca-88d4-acaf
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: edde-789c-7f66-2923
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 7f5b-504a-7614-50c1
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 6e0f-a8e3-8abc-49b3
+    name: The Axe Morkai
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: ce34-26b9-2bfa-2756
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: f448-7bcf-0b74-3e4e
+    name: Warlord
+  - targetId: c568-018b-d7c3-d699
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 6d67-aeba-7cd8-9fe6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: b63d-bcab-a720-f6f6
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 51a4-63f1-260b-0766
+    name: Aura of Majesty
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: b63d-bcab-a720-f6f6
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: ee33-18fd-7317-1171
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 4c5f-2866-3b86-e600
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: 7afa-d7ea-b00f-59d0
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 6657-e5fe-e020-4f89
+    typeName: Stat Damage - M/AddAttks
+    characteristics:
+      - name: Remaining W
+        typeId: 0641-3c3f-006e-9ec6
+        value: 7+
+      - name: Movement
+        typeId: 68fd-6915-4039-fc51
+        value: 10"
+    id: e15a-6807-4d70-957a
+    name: Stormrider Wound Track 1
+  - typeId: 6657-e5fe-e020-4f89
+    typeName: Stat Damage - M/AddAttks
+    characteristics:
+      - name: Remaining W
+        typeId: 0641-3c3f-006e-9ec6
+        value: 4-6
+      - name: Movement
+        typeId: 68fd-6915-4039-fc51
+        value: 7"
+    id: 0a17-9b45-3442-647f
+    name: Stormrider Wound Track 2
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: '*'
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 6
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 14
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: d0bd-9e47-c960-aa39
+    name: Logan Grimnar on Stormrider
+  - typeId: 6657-e5fe-e020-4f89
+    typeName: Stat Damage - M/AddAttks
+    characteristics:
+      - name: Remaining W
+        typeId: 0641-3c3f-006e-9ec6
+        value: 1-3
+      - name: Movement
+        typeId: 68fd-6915-4039-fc51
+        value: 4"
+    id: c8ce-5cf5-8bfa-f040
+    name: Stormrider Wound Track 3
+infoLinks:
+  - targetId: 18d0-7cd5-e05c-698f
+    type: profile
+    id: 340c-f805-5391-0638
+    name: Belt of Russ
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 0393-7f49-24ea-b27d
+    name: Angels of Death
+  - targetId: 50dd-5312-6550-d7e0
+    type: profile
+    id: 67d4-fd1f-b6a0-235e
+    name: Savage Fury
+  - targetId: 1640-a9e3-5c03-ac7b
+    type: profile
+    id: 958a-bde1-b464-5d3f
+    name: Swift Hunters
+  - targetId: c525-6f7a-7c5b-887f
+    type: profile
+    id: 0320-d056-5cc7-dc35
+    name: Chapter Master
+  - targetId: 9396-ba74-a305-56ff
+    type: profile
+    id: f638-1ed3-418e-3bb1
+    name: Rites of Battle (Aura)
+  - targetId: 9275-1446-85cf-c6c1
+    type: profile
+    id: 8736-9097-dbbf-cef5
+    name: High King of Fenris
+id: 793e-fa9d-b5ad-3b8e
+name: Logan Grimnar on Stormrider
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

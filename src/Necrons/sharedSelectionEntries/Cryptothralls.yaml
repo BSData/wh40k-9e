@@ -1,0 +1,115 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+    value: 40.0
+exported: true
+categoryLinks:
+  - targetId: 4aa1-01cf-3c41-def2
+    id: 070b-6dcb-5d54-db90
+    name: Cryptothralls
+  - targetId: 6a37-4c9f-a323-a8f2
+    id: abaa-7bd9-578b-c57a
+    name: 'Faction: <Dynasty>'
+  - targetId: accb-e3d8-1193-10cc
+    id: d045-ac03-af75-4027
+    name: 'Faction: Canoptek'
+  - targetId: 876e-ea78-1fdf-f250
+    id: ce9d-47f1-a709-3f44
+    name: 'Faction: Necrons'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: dea6-e0e4-013b-64c6
+    name: Infantry
+entryLinks:
+  - targetId: e2b0-3354-c78f-297a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: b47f-c84f-cc1c-ff7b
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: 3293-7910-b0d4-9194
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: c780-b589-de84-7cef
+    name: Cryptothrall
+  - targetId: 20a7-2e42-4c73-9844
+    type: selectionEntryGroup
+    exported: true
+    id: 6f54-cd37-f081-9364
+    name: Battle Honours
+constraints:
+  - id: aed3-525c-3a65-baba
+    type: maximum
+    field: selections
+    scope: force
+    shared: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: If your army is Battle-forged, then for each CRYPTEK unit included in a Detachment, one CRYPTOTHRALLS unit can be included in that Detachment without taking up a Battlefield Role slot [Located in No Force Org].
+    id: 82d3-a9a6-e07c-cbd0
+    name: Bound Creation
+    publicationId: 61c6-c8c5-pubN65537
+    page: 95
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly CRYPTEK unit is within 3" of this unit, that CRYPTEK unit can use the Look Out, Sir rule even if this unit contains fewer than 3 models.
+    id: 7428-83dd-47b5-2107
+    name: Protectors (Aura)
+    publicationId: 61c6-c8c5-pubN65537
+    page: 95
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While this unit is within 6" of any friendly CRYPTEK units, models in this unit have a Weapon Skill and Ballistic Skill of 3+ and an Attacks characteristic of 6.
+    id: 0306-fbc4-b7d4-dedc
+    name: Systematic Vigour
+    publicationId: 61c6-c8c5-pubN65537
+    page: 95
+infoLinks:
+  - targetId: 601f-ad02-3e1f-fcc4
+    type: rule
+    id: 9b3c-a73e-9c13-eeea
+    name: Living Metal
+  - targetId: cba7-3427-625e-eb99
+    type: rule
+    id: dc71-7a2f-8b6b-f1ae
+    name: Reanimation Protocols
+  - targetId: aa07-b2de-6de0-3dd9
+    type: rule
+    id: dda2-651e-6a32-f110
+    name: Command Protocols
+id: 2368-8890-e2af-f17f
+name: Cryptothralls
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: aed3-525c-3a65-baba
+    value: -1.0
+    conditions:
+      - type: notInstanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

@@ -1,0 +1,115 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 77ec-d44c-d158-a8f0
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 5a0c-9c35-3f99-05aa
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Use this Stratagem before the battle, when you are mustering your army, if your WARLORD has the GENESTEALER CULTS keyword. Select one GENESTEALER CULTS CHARCTER model from your army and give them one Sacred Relic of the Cult (this must be a Relic they could have). Each Relic in your army must be unique, and you cannot give a model two Relics. You can only use this Stratagem once, unless you are playing a Strike Force battle (in which case, you can use this Stratagem twice) or an Onslaught battle (in which case, you can use this Stratagem three times).
+    id: 50c8-35e0-1587-6e94
+    name: Gene-sire's Gifts
+    publicationId: 83b2-e602-pubN65537
+    page: 66
+id: 641c-6606-1585-4ea0
+name: "Stratagem: Gene-sire's Gifts"
+modifiers:
+  - type: set
+    field: 77ec-d44c-d158-a8f0
+    value: 0.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 5dd1-b39c-2a62-6eb1
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: afad-6465-5489-7fb9
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 224b-1070-218f-fdf4
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: 8a87-f0e3-f2f2-ad1a
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: dcee-07fa-ec14-7dec
+            field: selections
+            scope: ancestor
+            shared: true
+  - type: set
+    field: 77ec-d44c-d158-a8f0
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: 77ec-d44c-d158-a8f0
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

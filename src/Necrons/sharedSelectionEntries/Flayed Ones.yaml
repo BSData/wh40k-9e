@@ -1,0 +1,194 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 6a37-4c9f-a323-a8f2
+    id: cf0c-5169-6154-cfef
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 876e-ea78-1fdf-f250
+    id: e955-b987-31f6-af58
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: b8dc-c00a-7d30-f4ce
+    id: 0f80-8bc4-e423-9066
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 9946-423f-3490-acc4
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 08f1-d244-eb44-7e01
+    id: bb7b-afab-06bb-3f0e
+    name: Core
+entryLinks:
+  - targetId: 8d81-d6ab-e943-b42e
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 3f1f-2ad9-84d0-3063
+        type: maximum
+        field: selections
+        scope: parent
+        value: 20.0
+        shared: true
+      - id: 4443-5c0a-4a3c-1a4b
+        type: minimum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+    id: 937c-b295-75bf-2a71
+    name: Flayed One
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 20a7-2e42-4c73-9844
+    type: selectionEntryGroup
+    exported: true
+    id: 73c9-8426-cc37-55c3
+    name: Battle Honours
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While an enemy unit is within 3" of this unit, subtract 2 from the Leadership characteristic of models in that unit.
+    id: f002-a8cd-246b-2d7d
+    name: Terrifying Foes (Aura)
+    publicationId: 61c6-c8c5-pubN65537
+    page: 95
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a model in this unit makes a melee attack against an enemy non-VEHICLE unit, an unmodified hit roll of 6 scores 1 additional hit.
+    id: 5a6f-c8fa-fa98-bd2d
+    name: Flesh Hunger
+    publicationId: 61c6-c8c5-pubN65537
+    page: 95
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time an attack is made against this unit, subtract 1 from that attack's hit roll.
+    id: c42d-abff-9b16-94a7
+    name: Lurking Horrors
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: notInstanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+infoLinks:
+  - targetId: aa07-b2de-6de0-3dd9
+    type: rule
+    id: e4c6-5699-2b23-c6a4
+    name: Command Protocols
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: cba7-3427-625e-eb99
+    type: rule
+    id: f847-cde8-834c-ae1a
+    name: Reanimation Protocols
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 3a36-ee53-2240-4170
+    type: rule
+    id: 6bf7-a882-b803-9054
+    name: Dimensional Translocation
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: e07e-8dbf-0b15-7485
+    type: rule
+    id: 39a9-9cf2-bde4-7b29
+    name: Objective Secured
+    publicationId: 61c6-c8c5-pubN65537
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: lessThan
+                childId: 8d81-d6ab-e943-b42e
+                field: selections
+                scope: 96eb-eb3c-9a92-930f
+                value: 10.0
+                shared: true
+              - type: lessThan
+                childId: 551a-4ae2-77ec-3f08
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+id: 96eb-eb3c-9a92-930f
+name: Flayed Ones
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 4.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 96eb-eb3c-9a92-930f
+        value: 5.0
+        shared: true
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 6.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 96eb-eb3c-9a92-930f
+        value: 10.0
+        shared: true
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 8.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 96eb-eb3c-9a92-930f
+        value: 15.0
+        shared: true
+  - type: add
+    field: category
+    value: eb9c-d79f-00bb-6d4a
+    conditions:
+      - type: atLeast
+        childId: 551a-4ae2-77ec-3f08
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 7fcd-553a-a403-3e5d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,64 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: a8cc-540e-9179-7283
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time the bearer finishes a Charge move, select one enemy unit within Engagement Range of it and roll one D6; on a 2-3, that enemy units suffers D3 mortal wounds; on a 4-5, that enemy unit suffers 3 mortal wounds, and on a 6, that enemy units suffers D3+3 mortal wounds
+    id: 1b56-cdeb-e42e-32d4
+    name: Mark of the Lance
+    publicationId: 82cd-d24f-pubN65537
+    page: 116
+id: ca68-d22c-bfe1-555c
+name: 'Heirloom (Griffith): Mark of the Lance'
+publicationId: 82cd-d24f-pubN65537
+page: 68
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: 82b5-25ac-1710-de0e
+        field: selections
+        scope: parent
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: dfcb-7e82-5b5e-e379
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 5c2d-66bf-4479-2608
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

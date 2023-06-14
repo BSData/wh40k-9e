@@ -1,0 +1,131 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 9ef5-0fde-2e47-62c1
+    id: 99a5-7b88-04f3-e3dc
+    name: Leviathan
+constraints:
+  - id: b714-3348-5a64-563a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: After both players have deployed their armies, but before the first battle round begins, select up to two LEVIATHAN units from your army that are in your deployment zone and redeploy them (you cannot select this WARLORD). If the mission uses the Strategic Reserves rules (see the Warhammer 40,000 Core Book), any of those units can be placed into Strategic Reserves without having to spend any additional CPs, regardless of how many units are already in Strategic Reserves. If both players have abilities that redeploy units, roll off; the winner chooses who redeploys their units first.
+    id: 7473-b35f-5303-b9cf
+    name: Strategic Adaptation
+    publicationId: e056-7215-247f-0a20
+    page: 88
+id: 88fa-12f2-d8ec-fcf2
+name: 'Leviathan: Strategic Adaptation'
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: 1e74-63b9-9478-0dc8
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: fce9-099b-a913-2dc8
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: name
+    value: 'Warlord Trait: Strategic Adaptation'
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: d83b-acf3-2677-40e1
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: 0e09-72a3-df36-ebd8
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: 5a85-738f-f138-2640
+            field: selections
+            scope: ancestor
+            shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 4932-395b-e69e-42be
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 869d-de02-7f5d-0d73
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 2941-952d-26cb-eb7b
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 602b-c61d-0440-e326
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: aca5-f796-568d-1cd7
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 63fb-9f89-4c21-bd60
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

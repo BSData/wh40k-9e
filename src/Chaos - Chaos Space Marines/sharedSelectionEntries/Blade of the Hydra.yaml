@@ -1,0 +1,88 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 04be-ac26-066a-973a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: e4c9-a34a-e564-1758
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: +1
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -2
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 1
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time the bearer fights, it makes D3+3 additional attacks with this weapon (if there are 6 or more enemy models within 3" of the bearer when it is selected to fight, it makes 6 additional attacks with this weapon instead).
+    id: 2ca7-efb3-10ee-fa09
+    name: Blade of the Hydra
+id: 1baa-b61b-3dcb-92f2
+name: Blade of the Hydra
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 72cd-9017-77e3-abfc
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 1e3f-0a7b-0c8f-84db
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 6dba-99ea-aa7d-40a5
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 72cd-9017-77e3-abfc
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true

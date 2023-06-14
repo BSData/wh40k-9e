@@ -1,0 +1,59 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+    value: 30.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 2ec3-3106-e25f-bba5
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: f4ae-0d7d-5509-efbb
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: "CHRONOMANCER model only: At the stat of your opponent's Movement phase, you can select one enemy unit within 12\" of the bearer and roll one D6: on a 4+, until the end of the phase, that enemy unit cannot be selected to Fall Back"
+    id: 4a49-ab82-87a0-761b
+    name: 'Arkana: Entropic Chronoshackle'
+id: 8ba6-95f4-b9ff-f29b
+name: 'Arkana: Entropic Chronoshackle'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: e4d8-225b-cae1-1f20
+        field: selections
+        scope: ancestor
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: 7fcd-553a-a403-3e5d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

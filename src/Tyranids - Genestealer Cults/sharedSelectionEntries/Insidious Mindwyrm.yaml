@@ -1,0 +1,69 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 2058-a445-030f-8fa5
+    type: minimum
+    field: selections
+    scope: parent
+    shared: true
+  - id: 8d21-e1d0-ca97-bfdb
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to charge rolls for your Warlord and friendly ANOINTED THRONG units that are within 6" of your Warlord when the roll is made.
+    id: 552c-8172-cd25-737d
+    name: Insidious Mindwyrm
+    publicationId: 28ec-711c-pubN98266
+    page: 186
+id: 6fba-a8d4-5ef4-06c1
+name: Insidious Mindwyrm
+modifiers:
+  - type: set
+    field: name
+    value: 'Warlord Trait: Insidious Mindwyrm'
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 8dc3-df9e-5176-b4a8
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: equalTo
+            childId: e2b7-0466-6972-e284
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: 2058-a445-030f-8fa5
+    value: 1
+    conditions:
+      - type: atLeast
+        childId: d043-3847-e963-fb5d
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

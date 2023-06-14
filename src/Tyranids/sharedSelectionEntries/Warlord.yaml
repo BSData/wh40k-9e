@@ -1,0 +1,81 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ae09-117e-a6fa-316b
+    id: 7c55-02bd-f4c7-f11a
+    name: New CategoryLink
+constraints:
+  - id: f3a9-90e3-49a9-c280
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+  - id: 222c-c6d4-d4dc-50a0
+    type: minimum
+    field: selections
+    scope: roster
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: c832-2f4e-ee51-f481
+name: Warlord
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: 9c32-eba0-ea9e-1e0d
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 9c32-eba0-ea9e-1e0d
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 58c5-1d35-3869-613f
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: 222c-c6d4-d4dc-50a0
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: 58c5-1d35-3869-613f
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 9c32-eba0-ea9e-1e0d
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

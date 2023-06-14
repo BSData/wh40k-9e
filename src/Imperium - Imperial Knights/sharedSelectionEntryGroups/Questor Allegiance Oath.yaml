@@ -1,0 +1,79 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: c506-1aa4-53ac-f869
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 7d35-1cbf-0fad-71ed
+    name: Questor Mechanicus
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: fa5b-0ec0-bc99-03d6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 6086-2f7e-5e35-e33b
+    name: 'Questor Imperialis '
+constraints:
+  - id: a563-0f17-f62d-1244
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: aa35-3893-d341-e7c0
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: c2ef-1dc3-29e6-d673
+name: Questor Allegiance Oath
+modifiers:
+  - type: set
+    field: aa35-3893-d341-e7c0
+    value: 0.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 7d35-1cbf-0fad-71ed
+            field: selections
+            scope: self
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: atLeast
+            childId: 6086-2f7e-5e35-e33b
+            field: selections
+            scope: self
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+comment: Specificly for freeblades

@@ -1,0 +1,279 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 140.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: a367-fb78-5192-96eb
+    id: e591-8eab-e558-25e6
+    name: 'Faction: Tyranids'
+  - targetId: bf74-61c4-1502-ad4d
+    id: f297-e0d6-87fc-1e15
+    name: 'Faction: Genestealer Cults'
+  - targetId: ef18-746a-369f-43a4
+    id: 8df0-2ddd-feea-11a2
+    name: New CategoryLink
+  - targetId: e691-aad7-d21c-1023
+    id: 6bc2-0b66-a5c1-1a39
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 9417-c839-b63d-7c60
+    name: New CategoryLink
+  - targetId: df7c-355d-38a6-261f
+    id: b0d9-4879-4689-a076
+    name: New CategoryLink
+  - targetId: 1117-30a3-a004-bdbd
+    id: 1871-6168-34a0-e6a2
+    name: 'Faction: <Cult>'
+  - targetId: 59cb-8cf3-b7df-4c14
+    id: d370-9d9c-6156-a01c
+    name: Patriarch
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: ae09-117e-a6fa-316b
+            id: 7ea1-8360-323e-3062
+            name: Warlord
+        id: 5dd1-b39c-2a62-6eb1
+        name: Warlord
+    entryLinks:
+      - targetId: 4a01-6e58-8f64-57a0
+        type: selectionEntry
+        exported: true
+        id: 67f0-57f0-007b-c6d9
+        name: Leader of the Cult
+    constraints:
+      - id: 1526-6741-2394-2e30
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 8f25-7bcf-d9f2-60b8
+    name: Warlord
+entryLinks:
+  - targetId: 6853-2b48-35ef-d45c
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5c9d-ecc6-de36-0655
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c0e9-0081-4142-3849
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 7569-58c4-6372-6c51
+    name: Patriarch's Claws
+  - targetId: c927-bf87-e0fa-9891
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: a014-9920-6870-76c9
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 301e-21df-97d3-8399
+    name: Psychic Familiar
+  - targetId: 3160-b9d2-66a2-3a30
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: f805-9671-abe9-a1c5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 1774-5854-fb0b-3925
+    name: Broodmind Discipline
+    modifiers:
+      - type: increment
+        field: f805-9671-abe9-a1c5
+        value: 1.0
+        conditions:
+          - type: atLeast
+            childId: 2cae-bbb8-2406-90f9
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: f805-9671-abe9-a1c5
+        value: 1.0
+        conditions:
+          - type: atLeast
+            childId: 65c0-dd0d-1700-337a
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: ccd1-3759-0432-5c59
+    type: selectionEntryGroup
+    exported: true
+    id: 8731-55a2-316c-dc24
+    name: Sacred Relics of the Cult
+  - targetId: 3c5c-af51-2d54-8cbf
+    type: selectionEntryGroup
+    exported: true
+    id: 3fb9-222e-69bd-7b72
+    name: Warlord Traits
+  - targetId: 51e2-45c9-9b0b-495c
+    type: selectionEntryGroup
+    exported: true
+    id: e1c8-e872-1f9d-ab87
+    name: Proficient Planning
+  - targetId: ff80-a0d2-1b45-18ce
+    type: selectionEntryGroup
+    exported: true
+    id: 87cf-fada-fa15-f0f1
+    name: Cult Psychic Powers
+  - targetId: 827c-e688-d2e6-d427
+    type: selectionEntryGroup
+    exported: true
+    id: 00c1-f812-69df-185d
+    name: Character Stratagems
+constraints:
+  - id: 39d0-adf0-5257-dc7a
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 4+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 5
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 7
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 6
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 10
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 4+
+    id: a23e-883f-338e-daba
+    name: Patriarch
+    publicationId: 83b2-e602-pubN65537
+    page: 90
+  - typeId: bc97-dea9-9e88-bb7d
+    typeName: Psyker
+    characteristics:
+      - name: Cast
+        typeId: 5afb-9914-904b-d3b3
+        value: 2
+      - name: Deny
+        typeId: b5ac-9c20-5d5a-6f9b
+        value: 1
+      - name: Powers Known
+        typeId: 69d7-b45e-00a2-7e46
+        value: Smite + 2 Broodmind
+      - name: Other
+        typeId: c2e2-f115-0003-5d7b
+        value: '-'
+    id: 5851-ba40-e2d6-0a73
+    name: Patriarch
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly <CULT> unit is within 6" of this model, each time a Combat Attrition test is taken for that unit, you can ignore any or all modifiers.
+    id: 29ee-79d3-646f-83b8
+    name: Living Idol (Aura)
+    publicationId: 83b2-e602-pubN65537
+    page: 90
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model has a 4+ invulnerable save.
+    id: 68b0-0051-93fc-d007
+    name: Preternatural Reflexes
+    publicationId: 83b2-e602-pubN65537
+    page: 90
+infoLinks:
+  - targetId: e624-3023-b8b4-18fa
+    type: rule
+    id: 3a9c-be37-5044-5d2b
+    name: Conceal
+  - targetId: f7e7-e08f-beb4-d58c
+    type: profile
+    id: bb09-7922-bf5a-7f49
+    name: Swift and Deadly
+    page: ''
+    modifiers:
+      - type: set
+        field: page
+        value: 90
+id: ea83-2ffa-61cf-7347
+name: Patriarch
+modifiers:
+  - type: set
+    field: 39d0-adf0-5257-dc7a
+    value: -1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: bf09-85b2-c097-1071
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 58c5-1d35-3869-613f
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

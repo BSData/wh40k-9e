@@ -1,0 +1,101 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 5068-183b-6654-cdfa
+    name: Character
+constraints:
+  - id: 7bad-258e-6487-0d9f
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: b939-3e2b-d1e7-330c
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 5f95-2d49-2a64-4f9b
+name: 'Stratagem: Corrupted Heirlooms'
+modifiers:
+  - type: increment
+    field: b939-3e2b-d1e7-330c
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: b939-3e2b-d1e7-330c
+    value: 2.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: 7986-68a6-9e59-faac
+            field: selections
+            scope: force
+            shared: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: c50f-9cc4-a751-6707
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: b64a-6b3c-e424-afb3
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 0.0
+    conditions:
+      - type: atLeast
+        childId: 2aee-51b0-2b2b-218d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

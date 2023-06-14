@@ -1,0 +1,135 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: ad01-caec-17d9-cb8d
+    id: 785a-b236-daee-0359
+    name: Cavalry
+  - targetId: 8fdd-f2cf-07cf-791a
+    id: 1372-3e6b-2520-1b14
+    name: Serberys Raiders
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: ebad-d6b7-6a2f-01e0
+    name: 'Faction: Imperium'
+  - targetId: dfde-d915-6e58-09af
+    id: f0ba-19e3-e4ac-fb3d
+    name: 'Faction: <Forge World>'
+  - targetId: ca27-5069-1c2c-a28b
+    id: 7dd1-aec7-2131-8aea
+    name: 'Faction: Adeptus Mechanicus'
+  - targetId: cdee-83f1-5387-56cc
+    id: 2fc8-dbbb-ef5c-ac68
+    name: 'Faction: Skitarii'
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: d815-9a8e-92ec-b0f5
+    name: New CategoryLink
+  - targetId: 08f1-d244-eb44-7e01
+    id: 1ef5-fece-d758-6647
+    name: Core
+  - targetId: 435e-54b0-0d08-0a51
+    id: f953-e1c7-409f-b276
+    name: Serberys
+entryLinks:
+  - targetId: d7c6-731a-8101-bd77
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0acf-8f80-ffae-2faf
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+      - id: 46c0-cb45-f6bb-3d54
+        type: maximum
+        field: selections
+        scope: parent
+        value: 8.0
+    id: 00e4-92ad-efd0-c4ec
+    name: Serberys Raider
+  - targetId: 3a1e-24b9-848e-e42b
+    type: selectionEntry
+    exported: true
+    id: 73de-9ad2-91a8-daaa
+    name: Serberys Raider Alpha
+  - targetId: 401e-aa61-401d-f921
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d3eb-ff6c-2759-9d5a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 246d-f65f-2397-d8f5
+    name: Enhanced Data-Tether
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the start of the first battle round, models in this unit can make a Normal Move. They cannot end this move within 9" of any enemy models.
+    id: d4d0-9db3-119f-9f8f
+    name: Skirmishing Line
+infoLinks:
+  - targetId: a583-edfb-a583-6596
+    type: profile
+    id: 6188-7515-bd6e-7740
+    name: Skirmishing Line
+  - targetId: 0752-791d-541f-2a2c
+    type: profile
+    id: 8138-9584-a25c-7037
+    name: Eye of Serberys
+  - targetId: 36ba-2b6e-86fe-943b
+    type: rule
+    id: d8bd-7fc8-ae88-8fe3
+    name: Doctrina Imperatives
+  - targetId: d060-09ec-5fdb-2f06
+    type: profile
+    id: b0bb-455d-d124-0b2c
+    name: Enhanced Bionics
+id: 0b7b-1ed0-3629-81ac
+name: Serberys Raiders
+publicationId: ecea-8b62-fefb-9f8e
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 3.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 0b7b-1ed0-3629-81ac
+        value: 6.0
+        shared: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 3.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 0b7b-1ed0-3629-81ac
+        value: 3.0
+        shared: true
+  - type: add
+    field: category
+    value: ad5e-c5a6-d40a-5c5f
+    conditions:
+      - type: equalTo
+        childId: 7967-3985-9e3c-e265
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,65 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 4a3f-90de-589e-b5bd
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: fee2-14f3-eb5c-9495
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          While a friendly DEATH GUARD CORE unit is within 6" of this WARLORD:
+
+          - Each time a model in that unit makes a melee attack with a plague weapon, you can re-roll the wound roll.
+
+          - Each time a model in that unit makes a ranged attack with a plague weapon that targets a unit within 12", you can re-roll the wound roll.
+    id: d38a-7ef3-b4ac-ba39
+    name: Arch-Contaminator (Aura)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: notInstanceOf
+            childId: c940-6653-e034-772f
+            field: selections
+            scope: ancestor
+            shared: true
+infoLinks:
+  - targetId: 7b62-4576-6ae3-ffb1
+    type: profile
+    id: 7274-0a98-cad1-44e5
+    name: Arch-Contaminator (Aura)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: instanceOf
+            childId: c940-6653-e034-772f
+            field: selections
+            scope: ancestor
+            shared: true
+id: 5bb7-0be9-d174-3e26
+name: 4. Arch-Contaminator

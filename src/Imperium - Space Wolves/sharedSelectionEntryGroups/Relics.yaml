@@ -1,0 +1,178 @@
+exported: true
+entryLinks:
+  - targetId: 852c-a667-c934-d436
+    type: selectionEntryGroup
+    exported: true
+    id: 2468-1531-c82d-80d5
+    name: Relics of The Fang
+  - targetId: ca5d-2c86-709d-1f85
+    type: selectionEntryGroup
+    exported: true
+    id: 2714-824d-1a02-adcd
+    name: Master of the Forge Relics
+  - targetId: d8d4-ab92-f035-3606
+    type: selectionEntryGroup
+    exported: true
+    id: 3cf4-cfd6-658b-0067
+    name: Master of Sanctity Relics
+  - targetId: 6d7d-10f1-04bd-65f4
+    type: selectionEntryGroup
+    exported: true
+    id: bb00-2390-8dce-0d5b
+    name: Codex Relics
+  - targetId: 62dd-3f4b-d716-0f1e
+    type: selectionEntryGroup
+    exported: true
+    id: 73cd-e4bb-e104-ffdf
+    name: Chief Librarian Relics
+  - targetId: 47f9-30b5-6284-8102
+    type: selectionEntryGroup
+    exported: true
+    id: 34f3-1310-808b-7f57
+    name: Chief Apothecary Relics
+  - targetId: 1cc9-1bee-bcfe-60c9
+    type: selectionEntryGroup
+    exported: true
+    id: 7261-a637-8166-32df
+    name: Chapter Champion Relics
+  - targetId: d324-98f1-ecad-c28a
+    type: selectionEntryGroup
+    exported: true
+    id: e232-c4bc-b8ed-8e64
+    name: Chapter Ancient Relics
+  - targetId: 81fa-73cf-0cea-37a0
+    type: selectionEntryGroup
+    exported: true
+    id: 468d-8e1b-af40-1ab1
+    name: Special-Issue Wargear
+  - targetId: 65f9-e6ba-7666-0267
+    type: selectionEntryGroup
+    exported: true
+    id: 655d-e95f-3f0f-8a9b
+    name: Chapter Master Relics
+  - targetId: df8e-477b-aa1f-0a6b
+    type: selectionEntryGroup
+    exported: true
+    id: 7f30-cdac-6148-15b3
+    name: Relics - Wolf Spears
+  - targetId: cbc1-a58a-26f2-b91d
+    type: selectionEntryGroup
+    exported: true
+    id: c747-d22b-630f-03da
+    name: Vanguard Spearhead Relics
+constraints:
+  - id: b519-58a5-0500-80ad
+    type: maximum
+    field: selections
+    scope: roster
+    shared: true
+    includeChildSelections: true
+  - id: 40e0-e898-463d-45eb
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: e6ae-603c-ac42-ff8a
+name: Relics
+modifiers:
+  - type: increment
+    field: b519-58a5-0500-80ad
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: ee33-18fd-7317-1171
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: b519-58a5-0500-80ad
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: cd40-9145-360f-5b41
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+      - repeatCount: 1
+        childId: df42-2969-318c-54b2
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: cd40-9145-360f-5b41
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: c470-54ac-0863-8848
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: greaterThan
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: c470-54ac-0863-8848
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: cd40-9145-360f-5b41
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: lessThan
+                childId: ee33-18fd-7317-1171
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+  - type: increment
+    field: b519-58a5-0500-80ad
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: c470-54ac-0863-8848
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true

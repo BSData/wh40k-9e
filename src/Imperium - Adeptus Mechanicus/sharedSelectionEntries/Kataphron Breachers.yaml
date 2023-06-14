@@ -1,0 +1,115 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: a3da-ecbe-6212-d255
+    name: 'Faction: Imperium'
+  - targetId: dfde-d915-6e58-09af
+    id: 6878-0c0f-f325-bf98
+    name: 'Faction: <Forge World>'
+  - targetId: ca27-5069-1c2c-a28b
+    id: b2a5-8415-8f91-4945
+    name: 'Faction: Adeptus Mechanicus'
+  - targetId: 6bb8-fe7f-7918-bf8f
+    id: c4f7-f126-f47b-f7e3
+    name: 'Faction: Cult Mechanicus'
+  - targetId: 3966-1076-64dc-9148
+    id: 93d6-c7e1-c284-572a
+    name: Kataphron Breachers
+  - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    primary: true
+    id: 68e1-15b7-1928-5640
+    name: New CategoryLink
+  - targetId: 1c6f-0311-3eba-3180
+    id: b92c-9612-904f-a82f
+    name: Biker
+  - targetId: 30ba-4cc5-24da-cca1
+    id: 3bfd-9626-6249-6152
+    name: Kataphron Servitors
+entryLinks:
+  - targetId: 48ad-2df6-55b4-2e80
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 994e-b57e-397f-40ce
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+      - id: 1798-11b8-7b13-ef57
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+    id: 5e15-df07-339a-11aa
+    name: Kataphron Breacher
+  - targetId: 5922-664b-f549-7a05
+    type: selectionEntry
+    exported: true
+    infoLinks:
+      - targetId: f588-0a2e-5fb3-33a4
+        type: profile
+        id: 9b2f-dcbc-852e-292b
+        name: Kataphron Breacher (indentured)
+    id: 4c39-ca42-9894-a8a4
+    name: Indentured Machines
+infoLinks:
+  - targetId: edf0-6bc2-d76e-6004
+    type: profile
+    id: 3b78-5947-c815-9a58
+    name: Bionics
+  - targetId: 25f1-761d-2f64-7f0e
+    type: rule
+    id: d1fd-4229-33d9-c611
+    name: Canticles of the Omnissiah
+  - targetId: 062a-b738-7cc3-2e66
+    type: profile
+    id: 8017-29e6-a45b-933a
+    name: Kataphron Breacher
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: 5922-664b-f549-7a05
+            field: selections
+            scope: 462e-7d8f-4ff3-6330
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+id: 462e-7d8f-4ff3-6330
+name: Kataphron Breachers
+publicationId: ebe8-544e-pubN65537
+page: 76
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 6.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 462e-7d8f-4ff3-6330
+        value: 3.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: ac03-d781-0c3b-b4be
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

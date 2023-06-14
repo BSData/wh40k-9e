@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: bf56-85ab-45f3-3497
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 08b5-77d1-a88f-95e2
+    type: minimum
+    field: selections
+    scope: parent
+    shared: true
+  - id: 922f-6c74-6781-ee95
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+infoLinks:
+  - targetId: 9d5a-db33-0d56-9bbe
+    type: profile
+    id: 0278-3d5a-e50d-65c6
+    name: Honourable Combatant
+id: b1d5-c871-a5b6-b03a
+name: 'Warlord Trait (Codex 6): Honourable Combatant'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: 08b5-77d1-a88f-95e2
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: 8056-ce75-9ad4-f269
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - type: instanceOf
+            childId: 6f14-943d-c02e-c562
+            field: selections
+            scope: ancestor
+            shared: true

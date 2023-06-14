@@ -1,0 +1,78 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 8b2c-c03c-e62a-198c
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: d29c-f084-8627-78c2
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly SZAREKHAN CORE unit is within 9" of the bearer, that unit benefits from both directives of your army's active command protocol, instead of just the selected one.
+    id: 4006-1213-6e1b-ce56
+    name: Synthetic Cortex Enhancer (Aura)
+    publicationId: 61c6-c8c5-pubN65537
+    page: 67
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly SZAREKHAN unit is within 9" of the bearer, that unit benefits from the selected directive of your army's active command protocol while it is within 9" of a friendly NECRONS CHARACTER model (excluding C'TAN SHARD models), instead of 6".
+    id: 7fa5-81e7-c9df-2211
+    name: Command-wave Amplifier (Aura)
+    publicationId: 61c6-c8c5-pubN65537
+    page: 67
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'The bearer has the following abilities: "Command-wave Amplifier (Aura)" and "Synthetic Cortex Enhancer (Aura)".'
+    id: 2509-5ba3-c912-0c41
+    name: The Sovereign Coronal
+    publicationId: 61c6-c8c5-pubN65537
+    page: 67
+id: 1330-4a41-9071-7d8b
+name: 'Relic (Szarekhan): The Sovereign Coronal'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: dac7-360f-5fb2-5092
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: 60f3-194a-d96a-689c
+            field: selections
+            scope: ancestor
+            shared: true

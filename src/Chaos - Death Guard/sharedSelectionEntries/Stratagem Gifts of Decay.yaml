@@ -1,0 +1,90 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: 81a4-8180-4ba2-fa9d
+    name: New CategoryLink
+constraints:
+  - id: e574-f1a8-8ab0-d5a0
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: fb60-a9ff-9a24-6b86
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 7906-7754-69cd-1c2c
+name: 'Stratagem: Gifts of Decay'
+modifiers:
+  - type: set
+    field: e574-f1a8-8ab0-d5a0
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: e574-f1a8-8ab0-d5a0
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: fb60-a9ff-9a24-6b86
+    value: 0.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: c470-54ac-0863-8848
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - type: equalTo
+            childId: a840-f0b3-abac-6d1c
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

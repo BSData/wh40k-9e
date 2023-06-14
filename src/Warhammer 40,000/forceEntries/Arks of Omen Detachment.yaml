@@ -1,0 +1,467 @@
+forceEntries:
+  - categoryLinks:
+      - targetId: fcff-0f21-93e6-1ddc
+        id: b54d-f9db-5e25-7a44
+        name: Configuration
+      - targetId: 1b66-3f5f-6705-079a
+        id: 5ea0-9740-3fe4-311c
+        name: Dedicated Transport
+      - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+        id: 1ac9-62c0-a216-5501
+        name: Elites
+      - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+        id: 6cab-3900-aa99-6896
+        name: Fast Attack
+      - targetId: e888-1504-aa61-95ff
+        id: 138d-c8da-7e2d-7ca7
+        name: Flyer
+      - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+        id: 2da6-8a41-d2ac-ccd9
+        name: Heavy Support
+      - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+        id: fb2b-b45c-1337-c738
+        name: HQ
+      - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+        id: fb10-64ea-cae8-47fb
+        name: No Force Org Slot
+      - targetId: c845-c72c-6afe-3fc2
+        id: d8a6-96ab-a390-7e91
+        name: Stratagems
+      - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+        id: 15ad-7276-d6f4-9a28
+        name: Troops
+      - targetId: c888f08a-6cea-4a01-8126-d374a9231554
+        id: bf1c-fe16-a302-1290
+        name: Lord of War
+    id: e77a-619b-d7b3-7bde
+    name: Ark of Omen Detachment
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    id: 4727-f71d-f0bd-28b7
+    name: Configuration
+  - targetId: c845-c72c-6afe-3fc2
+    id: dce9-815f-c978-f78d
+    name: Stratagems
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    id: 9011-4fa5-8d1f-49b9
+    name: No Force Org Slot
+  - targetId: 0f35-2c34-ba6a-8105
+    constraints:
+      - id: 6c81-8575-babd-3bc3
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: a5ea-ab04-8d58-41bc
+    name: Agent of the Imperium
+    modifiers:
+      - type: set
+        field: name
+        value: Agents of the Imperium
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    constraints:
+      - id: 7375-9d91-ef97-4b44
+        type: maximum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: e01d-5642-c549-c651
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 459d-955e-29fa-d333
+    name: HQ
+    modifiers:
+      - type: increment
+        field: 7375-9d91-ef97-4b44
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 0d49-8b06-7815-8e97
+            field: selections
+            scope: force
+            value: 2.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: set
+        field: 7375-9d91-ef97-4b44
+        value: 0.0
+        conditions:
+          - type: instanceOf
+            childId: 82cd-d24f-9f22-11f3
+            field: selections
+            scope: primary-catalogue
+            shared: true
+      - type: set
+        field: e01d-5642-c549-c651
+        value: 0.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 82cd-d24f-9f22-11f3
+                field: selections
+                scope: primary-catalogue
+                shared: true
+              - type: instanceOf
+                childId: 5d84-5102-f22c-14d4
+                field: selections
+                scope: primary-catalogue
+                shared: true
+      - type: increment
+        field: e01d-5642-c549-c651
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 309f-172d-3564-b70d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    constraints:
+      - id: c534-0c76-76fb-bcdf
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: e577-f99a-408e-2b64
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: a4fd-bbfc-55ee-fa3e
+    name: Troops
+    modifiers:
+      - type: set
+        field: c534-0c76-76fb-bcdf
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 8fe4-6466-fb24-5a1e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: e577-f99a-408e-2b64
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 8fe4-6466-fb24-5a1e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: c534-0c76-76fb-bcdf
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: a476-685a-4747-1980
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditions:
+          - type: atLeast
+            childId: 8fe4-6466-fb24-5a1e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    constraints:
+      - id: 66dd-05c1-56df-b85d
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: 7107-2aa8-69e9-8e6e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 43bd-f748-e61c-5b87
+    name: Elites
+    modifiers:
+      - type: set
+        field: 66dd-05c1-56df-b85d
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 1124-19b7-b2cd-170c
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 7107-2aa8-69e9-8e6e
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 1124-19b7-b2cd-170c
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 7107-2aa8-69e9-8e6e
+        value: 1.0
+        conditions:
+          - type: atLeast
+            childId: 62d3-9871-9675-a63b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+      - type: increment
+        field: 7107-2aa8-69e9-8e6e
+        value: 1.0
+        conditions:
+          - type: atLeast
+            childId: 62d3-9871-9675-a63b
+            field: selections
+            scope: force
+            value: 3.0
+            shared: true
+      - type: increment
+        field: 7107-2aa8-69e9-8e6e
+        value: 1.0
+        conditions:
+          - type: atLeast
+            childId: 62d3-9871-9675-a63b
+            field: selections
+            scope: force
+            value: 2.0
+            shared: true
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    constraints:
+      - id: c31f-53b8-9891-9328
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: 5128-ad64-1656-90b3
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 11d1-dbcd-7e04-fcf9
+    name: Fast Attack
+    modifiers:
+      - type: set
+        field: c31f-53b8-9891-9328
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 8a99-1c34-1774-16ab
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 5128-ad64-1656-90b3
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 8a99-1c34-1774-16ab
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: c31f-53b8-9891-9328
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 3783-191d-0db9-0704
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditions:
+          - type: atLeast
+            childId: 8a99-1c34-1774-16ab
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    constraints:
+      - id: 1b63-3cdd-6634-5d18
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: 047f-4019-3779-07cc
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: d959-06ae-1427-d205
+    name: Heavy Support
+    modifiers:
+      - type: set
+        field: 1b63-3cdd-6634-5d18
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: a803-96ce-51fb-5ff1
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 047f-4019-3779-07cc
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: a803-96ce-51fb-5ff1
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: e888-1504-aa61-95ff
+    constraints:
+      - id: 3bdf-b81c-d51e-3ad8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 38dc-2602-c166-01db
+    name: Flyer
+  - targetId: 1b66-3f5f-6705-079a
+    constraints:
+      - id: 5326-0786-af5f-854c
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 202b-77d6-2c65-443c
+    name: Dedicated Transport
+    modifiers:
+      - type: increment
+        field: 5326-0786-af5f-854c
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 3d52-fccf-10c0-3fae
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - targetId: c888f08a-6cea-4a01-8126-d374a9231554
+    constraints:
+      - id: 1c2c-a38e-16cb-7e8d
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: ca8a-7da7-b39a-18aa
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 0e27-a7de-0464-f9e8
+    name: Lord of War
+    modifiers:
+      - type: set
+        field: 1c2c-a38e-16cb-7e8d
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 9a19-101d-2b3f-dd3f
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: ca8a-7da7-b39a-18aa
+        value: 3.0
+        conditions:
+          - type: atLeast
+            childId: 9a19-101d-2b3f-dd3f
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: d713cda3-5d0f-40d8-b621-69233263ec2a
+    constraints:
+      - id: 9a38-5d05-919e-2745
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: e501-4794-aea3-cabf
+    name: Fortification
+constraints:
+  - id: 3d0a-58dd-48de-7f30
+    type: maximum
+    field: forces
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildForces: true
+id: fa51-993c-2f8b-9be4
+name: Arks of Omen Detachment

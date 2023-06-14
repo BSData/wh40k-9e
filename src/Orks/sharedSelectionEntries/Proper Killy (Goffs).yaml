@@ -1,0 +1,51 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+constraints:
+  - id: 9a1f-53fb-340b-f45b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: b700-33a4-57fc-72f3
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+infoLinks:
+  - targetId: 5acd-6c6c-9f1a-bdc4
+    type: profile
+    id: 3bb8-3e34-2577-e132
+    name: Proper Killy
+id: f816-d517-7b97-ee2a
+name: Proper Killy (Goffs)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: 19e5-b299-9323-b1c4
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 5602-29aa-24d5-612d
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true

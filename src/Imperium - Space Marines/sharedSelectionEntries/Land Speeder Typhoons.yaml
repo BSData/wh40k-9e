@@ -1,0 +1,201 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 0277-b4fd-90de-c1a1
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: 9585-fe55-e8f9-f043
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 979c-f356-44d7-c29e
+    name: New CategoryLink
+  - targetId: 0d26-14c7-a20d-f9db
+    id: 5c65-a257-e4fb-d7ff
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: 8cb8-2b79-4386-fc4c
+    name: New CategoryLink
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 6.0
+      - name: pts
+        typeId: points
+        value: 100.0
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    categoryLinks:
+      - targetId: aad8-81a4-a26d-7370
+        id: 0eb9-264d-4102-5deb
+        name: Land Speeder Typhoons
+    selectionEntryGroups:
+      - defaultSelectionEntryId: 457b-17f0-eac0-b900
+        exported: true
+        entryLinks:
+          - targetId: 05ab-e7cc-e856-c36f
+            type: selectionEntry
+            exported: true
+            id: 457b-17f0-eac0-b900
+            name: Heavy bolter
+            modifiers:
+              - type: set
+                field: points
+                value: 0.0
+          - targetId: 2b37-65ee-9443-b4ef
+            type: selectionEntry
+            exported: true
+            id: 73b0-fcff-de49-98ed
+            name: Multi-melta
+        constraints:
+          - id: ae79-6052-38f3-70d7
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - id: f46b-e31f-9038-26ab
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        id: 589a-44f1-9996-363b
+        name: Weapon Options
+    entryLinks:
+      - targetId: 7341-63db-e8e0-8848
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 3a71-b766-6c89-4601
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: cf13-103b-afea-0fc9
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: ecc5-5960-3b9a-867d
+        name: Typhoon missile launcher
+    constraints:
+      - id: c0e5-8164-88db-a51c
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a2ac-b90f-fa6b-b52d
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 16"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 3+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 3+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 4
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 6
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 6
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 2
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 7
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 3+
+        id: cff5-a42d-86fc-d186
+        name: Land Speeder Typhoon
+    id: 2350-e3d1-21f2-eccd
+    name: Land Speeder Typhoon
+infoLinks:
+  - targetId: ed48-ff69-f33b-792f
+    type: rule
+    id: d79b-d8ec-e665-6918
+    name: Explodes (3"/1)
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: cdf7-80fc-14c9-a3f2
+    name: Angels of Death
+id: 7471-0ab4-c1b0-0e0a
+name: Land Speeder Typhoons
+modifiers:
+  - type: add
+    field: category
+    value: ea77-8550-8b7d-7a29
+    conditions:
+      - type: greaterThan
+        childId: 7316-aaec-c13a-f805
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

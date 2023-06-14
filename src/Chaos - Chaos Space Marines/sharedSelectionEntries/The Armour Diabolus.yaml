@@ -1,0 +1,74 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 468e-44ec-48a1-b87f
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 4966-83fd-4ae1-bb23
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - The bearer has a Save characteristic of 2+.
+
+          - Each time an enemy unit shoots or fights and the bearer was selected as the target of any of that unit's attacks, after that unti has finished making its attacks:
+          	- Roll one D6 for each wound the bearer lost as a result of those attacks: for each 4+ the attacking unit suffers 1 mortal wound.
+          	- If the bearer was destroyed by those attacks, before removing it from play, roll one D6: on a 4+, the attacking unit suffers D3 wounds.
+    id: 840a-88d9-6810-eda2
+    name: The Armour Diabolus
+id: f665-d11f-ec4f-acc5
+name: The Armour Diabolus
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 38e4-b91c-a673-9c76
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 1247-6183-24cc-cba0
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 59f5-b2e1-0a7e-6790
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: c44e-208c-55c4-8b4b
+            field: selections
+            scope: parent
+            shared: true

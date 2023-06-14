@@ -1,0 +1,68 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 4eff-0934-2a28-525a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 34a1-92bd-a7f0-ddd7
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Use this Stratagem before the battle, after a Warlord Trait is determined for an ADEPTUS CUSTODES CHARACTER model from your army (excluding named characters). You can generate one additional Warlord Trait for them. Each Warlord Trait from your army must be unique (if randomly generated, re-roll duplicate results). You can only use this Stratagem once.
+    id: 521e-51bf-34b0-3a6a
+    name: 'Stratagem: Victor of the Blood Games'
+    publicationId: 1f0f-230b-a715-7d27
+    page: 62
+id: 82c4-95e5-e492-ba66
+name: 'Stratagem: Victor of the Blood Games'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 2471-0b95-738c-edd9
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 8d82-6144-c9e6-0d75
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 2471-0b95-738c-edd9
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

@@ -1,0 +1,146 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+    value: 50.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 1cdb-b008-25f3-3302
+    name: 'Faction: Imperium'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 92c1-fb27-9801-8721
+    name: Infantry
+  - targetId: cb37-8069-8985-01b7
+    id: d14b-7d59-0646-1f9d
+    name: Ratlings
+  - targetId: 3263-4233-4344-6228
+    id: 0f7e-1360-5304-59e4
+    name: 'Faction: Astra Militarum'
+  - targetId: 94e7-b510-ffa1-bdc7
+    id: d035-5c6d-23cb-ad13
+    name: Militarum Auxila
+  - targetId: f71c-7b6d-33b3-e437
+    id: b192-772b-ac3b-129f
+    name: Abhuman
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    entryLinks:
+      - targetId: 3370-f2d7-fbc3-b5e3
+        type: selectionEntry
+        exported: true
+        id: 840b-b87f-5171-22c3
+        name: Sniper Rifle
+    constraints:
+      - id: bc7d-7248-276f-650c
+        type: minimum
+        field: selections
+        scope: parent
+        value: 5.0
+      - id: 4281-a784-f066-ba6f
+        type: maximum
+        field: selections
+        scope: parent
+        value: 5.0
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 5"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 5+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 3+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 2
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 2
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 1
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 1
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 5
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: 1f27-1132-933b-49cb
+        name: Ratling
+        publicationId: 53e9d88f--pubN88319
+        page: 98
+    id: 2712-835a-d234-fd22
+    name: Ratling
+    page: ''
+entryLinks:
+  - targetId: 1774-8223-7530-5ad5
+    type: selectionEntryGroup
+    exported: true
+    id: e525-83c6-da8f-d0c9
+    name: Battle Honours
+  - targetId: cec4-9abd-dcdb-c9c2
+    type: selectionEntryGroup
+    exported: true
+    id: f201-3647-bf09-4000
+    name: Battle Scars
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: During deployment, when you set up this unit, it can be set up anywhere on the battlefield that is more than 9" away from the enemy deployment zone and any enemy models.
+    id: 5844-552a-84de-7e0e
+    name: Find the Best Spot
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a ranged attack is made against this unit, subtract 1 from the hit roll. Each time a ranged attack is allocated to a model in this unit while it is receiving the benefits of cover, add an additional 1 to any armour saving throws made against that attack.
+    id: 38be-8dbc-3366-a377
+    name: Naturally Stealthy
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: One per turn, after this unit has shot, it can make a Normal Move. If it does so after resolving Overwatch, your opponent can select new targets for that charge.
+    id: 2e6c-ebba-8ab5-4c32
+    name: Shoot Sharp and Scarper
+id: 07db-6dd0-c6bf-13c2
+name: Ratlings
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: cff6-a8e7-27ea-0776
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,106 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+    value: 35.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: a480-fd09-ecbe-0f5b
+    id: f85d-b628-ab4e-a8e9
+    name: Exalted Court
+constraints:
+  - id: b170-9f47-72d3-3e50
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: dd7a-3f18-28cd-2000
+    typeName: Exalted Court
+    characteristics:
+      - name: Ability
+        typeId: ae8b-ffea-6d0e-8bc6
+        value: While this model is wholly within your deployment zone, each time an attack is made against this model, and unmodified wound roll of 1-3 for that attack fails, irrespective of any abilities that the weapon or the model making the attack may have
+      - name: Noble Exemplar ability
+        typeId: 712b-eaec-1af0-e425
+        value: While an ARMIGER-CLASS model is under the effects of this model's Bondsman ability, while that ARMIGER-CLASS model is in range of an objective marker, add 1 to that model's Toughness characteristic
+      - name: Crusade Duty
+        typeId: bcbb-2bc1-7507-3852
+        value: If this unit is part of your Crusade force and you are the Defender, then you start the battle with 1 additional Command point
+    id: 7a9a-aa5d-71a2-32bd
+    name: 'Exalted Court: Gatekeeper'
+infoLinks:
+  - targetId: cf81-0eb8-d727-7cf6
+    type: rule
+    id: 80ce-f8a5-a748-2d17
+    name: Exalted Court
+id: 5132-58c6-3e02-6e7b
+name: 'Exalted Court: Gatekeeper'
+hidden: true
+modifierGroups:
+  - modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: or
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: atLeast
+                    childId: fbcf-4219-e609-ff3b
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: instanceOf
+                    childId: 254d-83b9-c46e-84aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+              - type: and
+                conditions:
+                  - type: instanceOf
+                    childId: 254d-83b9-c46e-84aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: notInstanceOf
+                    childId: d451-70df-eeef-7915
+                    field: selections
+                    scope: parent
+                    shared: true
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e739-6296-9046-12b7
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: instanceOf
+                childId: 4e27-4545-87b5-ae20
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

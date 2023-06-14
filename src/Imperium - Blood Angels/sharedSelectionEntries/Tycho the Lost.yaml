@@ -1,0 +1,331 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: pts
+    typeId: points
+    value: 95.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 5dc8-d684-b033-fece
+    name: New CategoryLink
+  - targetId: 6fd7-9e10-d37c-5056
+    id: f87b-3639-9ca9-0c0e
+    name: New CategoryLink
+  - targetId: 2c4a-3ec9-a1f6-a1ee
+    id: 2e60-eb4d-d93a-6081
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: ee3c-5eff-239e-dea3
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: ceb9-c56f-15cc-4b60
+    name: New CategoryLink
+  - targetId: b011-7906-1d21-91b1
+    id: 8283-85ec-0bed-21d0
+    name: New CategoryLink
+  - targetId: 94e1-25fe-8b2d-64dd
+    id: b4c9-c29d-5a2d-54c5
+    name: New CategoryLink
+  - targetId: c7b7-edbc-bc14-6238
+    id: 6124-358e-db38-62b7
+    name: 'Faction: Adeptus Astartes'
+entryLinks:
+  - targetId: 37d3-7098-d596-9948
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: f96b-0e37-eefd-b9e3
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 691e-d5d1-8cf7-0e2d
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: c80f-e270-1f4b-34c2
+    name: Bolt pistol
+    modifiers:
+      - type: set
+        field: points
+        value: 0
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 9c82-da34-ed32-1b87
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c802-2eab-d466-c0be
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 4443-337e-828e-c481
+    name: Frag & Krak grenades
+    modifiers:
+      - type: set
+        field: points
+        value: 0
+  - targetId: 9637-a28b-ff2e-9950
+    type: selectionEntry
+    exported: true
+    id: 0bd3-ed0e-a588-152f
+    name: Blood Song
+  - targetId: 7bbe-60a3-a00f-c929
+    type: selectionEntry
+    exported: true
+    id: 08bf-b619-4a5f-b12a
+    name: Dead Man's Hand
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: b350-b4bb-65ba-3023
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 1817-85b1-5122-6423
+    name: Warlord
+  - targetId: 41ba-2ea2-4eb9-2f79
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: cf61-1e0c-7029-4b1d
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+      - id: 59b8-b5d7-6af2-f050
+        type: maximum
+        field: selections
+        scope: parent
+        shared: true
+    id: 9ecc-09b1-8568-be31
+    name: 6. Selfless Valour
+    modifiers:
+      - type: set
+        field: cf61-1e0c-7029-4b1d
+        value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ee33-18fd-7317-1171
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+      - type: set
+        field: 59b8-b5d7-6af2-f050
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: c90a-efa5-476d-0910
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+constraints:
+  - id: 89fc-2b4e-a3fb-34bc
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly BLOOD ANGELS DEATH COMPANY CORE unit is within 9" of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1.
+    id: cef3-5b69-0fe9-dc81
+    name: Forlorn Hero (Aura)
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 72ac-e16a-cf40-e842
+    name: Tycho the Lost
+infoLinks:
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: 76c7-5be7-f1ea-1915
+    name: Iron Halo
+  - targetId: 7609-c5ba-3a3b-94ec
+    type: profile
+    id: 870a-0d69-40cf-d8e2
+    name: Abhor the Beast
+  - targetId: 3006-d1b9-c324-c9be
+    type: rule
+    id: 9858-d566-2738-2456
+    name: Savage Echoes
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 0c3c-a98f-0e17-0c1e
+    name: Angels of Death
+  - targetId: 2deb-254e-c616-78b9
+    type: rule
+    id: 6a2f-ec45-7c87-11c8
+    name: The Red Thirst
+  - targetId: ac1e-8a4b-aaa1-f41a
+    type: infoGroup
+    id: 1052-7feb-4f32-e5c4
+    name: Death Company Rules
+id: 7dcf-85dd-4c49-df66
+name: Tycho the Lost
+modifiers:
+  - type: set
+    field: 89fc-2b4e-a3fb-34bc
+    value: 0.0
+    conditions:
+      - type: atLeast
+        childId: 3f18-fc9e-d689-3131
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 67dc-2347-1d81-d320
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 8a3b-5c79-60b9-deaf
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 3fc0-7b45-650a-d384
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

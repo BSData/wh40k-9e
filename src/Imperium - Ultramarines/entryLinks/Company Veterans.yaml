@@ -1,0 +1,43 @@
+targetId: 339f-3bb9-0c10-034b
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: a336-e252-d79b-46f6
+    name: New CategoryLink
+constraints:
+  - id: c863-ab65-3ddf-df24
+    type: maximum
+    field: selections
+    scope: parent
+    shared: true
+id: 3181-6c6d-5ef8-baa9
+name: Company Veterans
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 8352-7f67-7e2b-3b4f
+            field: selections
+            scope: force
+            shared: true
+          - type: equalTo
+            childId: 8352-7f67-7e2b-3b4f
+            field: selections
+            scope: force
+            shared: true
+  - type: increment
+    field: c863-ab65-3ddf-df24
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 8352-7f67-7e2b-3b4f
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

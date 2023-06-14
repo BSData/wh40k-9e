@@ -1,0 +1,76 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: 2490-9110-9217-5654
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: fcba-928b-824e-75a5
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to the bearer's Strength, Toughness and Attacks characteristics.
+    id: a30d-47bb-36f1-3c45
+    name: Exalted Mutation
+id: 8f7c-b621-f0af-c82d
+name: Exalted Mutation
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 5238-c8b8-b432-482e
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ed5e-9843-6dd4-0ac1
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+          - type: or
+            conditions:
+              - type: notInstanceOf
+                childId: dd7f-ad0e-4942-79a3
+                field: selections
+                scope: ancestor
+                shared: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: notInstanceOf
+                    childId: fae6-3177-ed6c-cb8d
+                    field: selections
+                    scope: ancestor
+                    shared: true
+                  - type: notInstanceOf
+                    childId: 68f9-33bb-bd2b-c777
+                    field: selections
+                    scope: ancestor
+                    shared: true

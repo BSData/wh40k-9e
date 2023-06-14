@@ -1,0 +1,42 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 138d-cd89-0b02-7e80
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: a8ab-483c-34d6-7474
+name: 'Stratagem: Arch-Tyrant'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: c50f-9cc4-a751-6707
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 0.0
+    conditions:
+      - type: atLeast
+        childId: 2aee-51b0-2b2b-218d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

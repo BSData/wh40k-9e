@@ -1,0 +1,58 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: f260-d402-3569-55a5
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 63ff-368f-5811-999b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to the Attacks characteristic of this WARLORD. This WARLORD is eligible to charge in a turn in which it Advanced.
+    id: 52bc-1bd4-203c-c428
+    name: 'Warlord Trait: Blazing Ire'
+    publicationId: d124-b283-pubN72234
+    page: 60
+id: 6b9c-02eb-735b-15a2
+name: 'Warlord Trait: Blazing Ire'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: a0eb-0820-f4dd-c243
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: atLeast
+            childId: 8607-5fd4-6ff6-4ef8
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true

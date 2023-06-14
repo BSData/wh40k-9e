@@ -1,0 +1,184 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+selectionEntryGroups:
+  - defaultSelectionEntryId: 8b55-7240-e3b9-d642
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+            value: 35.0
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntries:
+          - type: upgrade
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            collective: true
+            exported: true
+            constraints:
+              - id: b05b-32df-faba-a281
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 9845-f4a9-8e09-0665
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            profiles:
+              - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+                typeName: Weapon
+                characteristics:
+                  - name: Range
+                    typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                    value: Melee
+                  - name: Type
+                    typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                    value: Melee
+                  - name: S
+                    typeId: 59b1-319e-ec13-d466
+                    value: +1
+                  - name: AP
+                    typeId: 75aa-a838-b675-6484
+                    value: -1
+                  - name: D
+                    typeId: ae8a-3137-d65b-4ca7
+                    value: 2
+                  - name: Abilities
+                    typeId: 837d-5e63-aeb7-1410
+                    value: Each time an attack is made with this weapon, re-roll a wound roll of 1.
+                id: 11b4-54a8-46f5-1f01
+                name: Ogryn plague claws
+            id: 74ff-2983-44d7-9617
+            name: Ogryn plague claws
+        constraints:
+          - id: 66a2-7b54-da6c-ff54
+            type: minimum
+            field: selections
+            scope: parent
+            value: 3.0
+            shared: true
+          - id: 3903-9407-24d8-8a4e
+            type: maximum
+            field: selections
+            scope: parent
+            value: 9.0
+            shared: true
+        profiles:
+          - typeId: 800f-21d0-4387-c943
+            typeName: Unit
+            characteristics:
+              - name: M
+                typeId: 0bdf-a96e-9e38-7779
+                value: 6"
+              - name: WS
+                typeId: e7f0-1278-0250-df0c
+                value: 3+
+              - name: BS
+                typeId: 381b-eb28-74c3-df5f
+                value: 4+
+              - name: S
+                typeId: 2218-aa3c-265f-2939
+                value: 5
+              - name: T
+                typeId: 9c9f-9774-a358-3a39
+                value: 5
+              - name: W
+                typeId: f330-5e6e-4110-0978
+                value: 3
+              - name: A
+                typeId: 13fc-b29b-31f2-ab9f
+                value: 3
+              - name: Ld
+                typeId: 00ca-f8b8-876d-b705
+                value: 7
+              - name: Save
+                typeId: c0df-df94-abd7-e8d3
+                value: 5+
+            id: 1fac-36d9-9023-910c
+            name: Plague Ogryn
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: Each time this unit fights, if it made a charge move this turn, then until that fight is resolved, add 1 to the Attacks characteristic of models in this unit.
+            id: ec86-757e-ee62-1117
+            name: Avalanche of Muscle
+        id: 8b55-7240-e3b9-d642
+        name: Plague Ogryn
+    constraints:
+      - id: e442-9daf-681a-67fb
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: 7634-78fe-788a-02d7
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+        shared: true
+    id: 95b6-5dc3-19b0-3ce5
+    name: 3 - 9 Plague Ogryns
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a model in this unit would lose a wound, roll one D6; on a 6, that wound is not lost.
+    id: c60c-8373-c68f-b012
+    name: Covenant of Nurgle
+infoLinks:
+  - targetId: dfbb-346d-f8f4-b5aa
+    type: profile
+    id: 0bf4-567f-9959-390e
+    name: Combat Stimms
+id: 4b6f-1875-54be-c4f5
+name: Renegade Plague Ogryns
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 5.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 4b6f-1875-54be-c4f5
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 5.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 4b6f-1875-54be-c4f5
+        value: 6.0
+        shared: true
+        includeChildSelections: true

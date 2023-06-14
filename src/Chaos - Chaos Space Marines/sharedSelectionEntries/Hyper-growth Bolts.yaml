@@ -1,0 +1,116 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 54ab-5eda-2db9-761f
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 5bfa-e703-1c85-ea10
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          Model with a bolt weapon only. When you give a model this Relic, select one bolt weapon that the bearer is equipped with:
+
+          - That weapon is considered to be a Relic for all rules purposes.
+
+          - Each time the bearer is selected to shoot, you can choose for that weapon to fire a hyper-growth bolt. If you do so, the bearer can only make one attack with that weapon this phase, but if that attack scores a hit, unless the target is a VEHICLE unit, it automatically wounds the target, has an Armour Penetration characteristic of -1, and has a Damage characteristic of D3+3.
+    id: 4e11-6503-110c-b40f
+    name: Hyper-growth Bolts
+id: 1079-c5b6-6239-ef4a
+name: Hyper-growth Bolts
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: e0db-3bff-98cd-1a60
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 2692-cb00-633e-5db0
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: eba0-9fc6-5334-a390
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: b61f-a3c1-827d-c5b6
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 0334-f487-8229-0c1a
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: c6a1-e0c4-c1b1-dce1
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: fdce-cdf7-21a9-f9ac
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: c445-e211-f316-5d83
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 59f5-b2e1-0a7e-6790
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: c44e-208c-55c4-8b4b
+            field: selections
+            scope: parent
+            shared: true

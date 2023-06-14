@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 1.0
+  - name: pts
+    typeId: points
+    value: 15.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 46b3-3337-f1a7-4bf3
+    id: 58c8-56b8-7c71-1418
+    name: Aquila
+constraints:
+  - id: 9830-1f55-459a-5c23
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 1176-9b8e-0fa8-fdb2
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+infoLinks:
+  - targetId: c280-ead1-f9bc-d266
+    type: profile
+    id: f0ce-25f7-a95c-690b
+    name: Aquila
+id: f734-a22a-28c9-226d
+name: Aquila
+modifiers:
+  - type: increment
+    field: 1176-9b8e-0fa8-fdb2
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: a584-5a1f-45c1-a117
+            field: selections
+            scope: roster
+            shared: true
+          - type: greaterThan
+            childId: 2a8e-f55f-1f63-12e4
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

@@ -1,0 +1,62 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: 9552-3aa7-e482-46aa
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: bdb8-81c4-ad5f-54cf
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: In your Command phase, select one CULT OF PROPHECY CORE or CULT OF PROPHECY CHARACTER unit within 6" of the bearer. Until the start of your next Command phase, each time that unit is selected to shoot or fight, you can re-roll one hit roll, one wound roll and one damage roll when resolving that unit's attacks.
+    id: dbe9-4a41-9aab-50bb
+    name: Oraculae Brazier
+id: 7700-0dd4-b2a9-0de7
+name: Oraculae Brazier
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 4105-0114-5fb8-f7d6
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 2d61-ae5d-7069-f11c
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ed5e-9843-6dd4-0ac1
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true

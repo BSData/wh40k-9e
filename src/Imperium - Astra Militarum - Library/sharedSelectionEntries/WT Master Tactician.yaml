@@ -1,0 +1,43 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 3240-6a2f-a56d-1f72
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 34e5-532e-f167-cee0
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the start of the first battle round, you can select up to three friendly ASTRA MILITARUM units (excluding TITANIC units). Remove these units from the battlefield, then set them up anywhere on the battlefield that is wholly within your deployment zone. If the mission you are playing using the Strategic Reserve rules, you can place any of those units into Strategic Reserves instead.
+    id: cd3c-5d13-88a9-3013
+    name: Master Tactician
+id: 4935-363e-6a5d-adb7
+name: 'WT: Master Tactician'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: dd6e-7055-ca6b-b711
+        field: selections
+        scope: ancestor
+        shared: true

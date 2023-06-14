@@ -1,0 +1,49 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: ab27-2547-b400-edf0
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 864f-919d-14e0-e43d
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - The bearer has a Save characteristic of 2+.
+
+          - In the Fight phase, each time an enemy model within Engagement Range of the bearer selects targets for its attacks, it can only allocate up to half of its close combat attacks against the bearer (rounding up).
+    id: 251e-308a-b37b-da8c
+    name: Conniving Plate
+id: 1172-3cde-89f6-3319
+name: Conniving Plate
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: f2f5-9b65-6c31-f63b
+        field: selections
+        scope: ancestor
+        shared: true

@@ -1,0 +1,119 @@
+gamesystemId: 28ec-711c-d87f-3aeb
+gamesystemRevision: 249
+catalogueLinks:
+  - id: 6ea9-78fc-359a-2a0f
+    name: Imperium - Officio Assassinorum
+    targetId: f731-6aa6-c141-8937
+    type: catalogue
+    importRootEntries: true
+  - id: 363d-357f-779e-629b
+    name: Imperium - Imperial Navy
+    targetId: 8245-63be-d7bd-d042
+    type: catalogue
+    importRootEntries: true
+id: e373-3c0a-1185-46ea
+name: Imperium - Agents of the Imperium
+revision: 92
+battleScribeVersion: 2.03
+authorName: BSData Developers
+authorContact: 'Discord: @Fital Shell, @CrusherJoe | Twitter: @kingoverlord, @TheAwesomesauce'
+authorUrl: https://www.bsdata.net/contact
+categoryEntries:
+  - id: 78cc-daf7-1448-610f
+    name: 'Faction: Inquisition'
+  - constraints:
+      - id: 343f-5362-9036-f2e6
+        type: maximum
+        field: selections
+        scope: force
+        value: -1.0
+        shared: true
+        includeChildForces: true
+    id: 6f95-3a9f-9235-519a
+    name: Inquisitor
+    modifiers:
+      - type: set
+        field: 343f-5362-9036-f2e6
+        value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 77b7-26d1-2364-7c13
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: a207-a133-6adb-25f3
+                    field: forces
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 6f95-3a9f-9235-519a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - id: 5478-ea9e-9696-d171
+    name: Greyfax
+  - id: 9d23-57b8-72c2-d750
+    name: 'Faction: Ordo Hereticus'
+  - id: 6370-55c4-5013-14f8
+    name: 'Faction: Ordo Malleus'
+  - id: f7a7-9d79-d2f8-4a17
+    name: 'Faction: Ordo Xenos'
+  - id: 0606-2840-9c31-9aaf
+    name: Acolytes
+  - id: cd64-e197-0dbf-cf1f
+    name: Jokaero
+  - id: 88e0-27a5-dc9a-4c23
+    name: Daemonhost
+  - id: a09a-b22c-750f-ccf7
+    name: Terminator
+  - id: 8405-19dd-bf6a-0304
+    name: Karamazov
+  - id: 5059-cde9-f8e3-3b01
+    name: Coteaz
+  - id: cfef-0cbd-9242-5acf
+    name: Solomon Lok
+  - id: 7abd-0494-f73b-486b
+    name: Hector Rex
+  - id: f111-90f0-f12c-a4af
+    name: Inquisitorial Land Raider Prometheus
+  - id: c256-1e41-ad9e-ce7d
+    name: Land Raider
+  - id: 4c83-c5fc-6f26-4e79
+    name: 'Faction: Ordo Minoris'
+  - id: 456e-a764-f50c-cb04
+    name: Kyria Draxus
+  - id: e0e2-edca-4196-7d52
+    name: Assault Launchers
+  - id: 04b2-68c7-14dd-c570
+    name: Machine Spirit
+  - id: 7cb1-1f1f-631b-c793
+    name: Erasmus Cartavolnus
+  - id: 695d-57bb-42cc-01de
+    name: Daemon
+  - id: 6a41-dd30-bd2a-9daf
+    name: 'Faction: Adeptus Arbites'
+  - id: 9ca9-0197-e9b7-609e
+    name: Vigilant Squad
+  - id: cd71-9c2a-5ab6-1360
+    name: Subductor Squad
+selectionEntries:
+  $ref: ./selectionEntries/*.yaml
+entryLinks:
+  $ref: ./entryLinks/*.yaml
+sharedSelectionEntries:
+  $ref: ./sharedSelectionEntries/*.yaml
+sharedSelectionEntryGroups:
+  $ref: ./sharedSelectionEntryGroups/*.yaml
+sharedProfiles:
+  $ref: ./sharedProfiles/*.yaml

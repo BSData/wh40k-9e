@@ -1,0 +1,394 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+    value: 85.0
+exported: true
+categoryLinks:
+  - targetId: ad01-caec-17d9-cb8d
+    id: c70d-66d5-6ced-c4bd
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 432a-0e7b-ca87-5a8f
+    name: New CategoryLink
+  - targetId: 3263-4233-4344-6228
+    id: b754-c901-ec94-c3fb
+    name: Astra Militarum
+  - targetId: 17c5-215d-db2b-e61e
+    id: 550a-8acf-8545-96bb
+    name: Command Squadron
+  - targetId: 6498-54d5-3ba0-eedb
+    id: 8ed7-6ed1-b0f3-245a
+    name: Death Riders
+  - targetId: 4520-cc21-fc02-4a7e
+    id: bc33-4bd0-d419-5249
+    name: Regimental
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    entryLinks:
+      - targetId: 572e-bce9-d5dc-4bf8
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 58dc-5ac5-5377-bbec
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: f0e9-4833-5e79-d033
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: b536-2965-cee6-047d
+        name: Death Rider Hunting Lance
+      - targetId: 9c74-d181-d2ec-0ba6
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: da49-130e-2b59-ad89
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: eb2d-9fd6-4d79-a9d6
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 1f18-efeb-a8c2-a735
+        name: Laspistol
+      - targetId: 6d68-427b-eaa0-0b04
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 536a-2bdf-38e0-45fb
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: d104-0531-1ed2-4606
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: d0dc-7934-821a-e0fa
+        name: Krieg Steed
+    constraints:
+      - id: 90ca-727d-960a-7c84
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+      - id: 7e7c-c763-c1ef-9471
+        type: maximum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+    infoLinks:
+      - targetId: 293c-951a-190e-6ea8
+        type: profile
+        id: dcee-0f32-e7e6-bbe5
+        name: Death Rider Veteran
+    id: 3848-9225-0a79-5d4f
+    name: Death Rider Veterans
+entryLinks:
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 94c7-81b8-eaf7-02a6
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: b0f4-ed88-c062-a821
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 82c9-1a89-3605-6bc3
+    name: Frag & Krak grenades
+infoLinks:
+  - targetId: 9a6d-4b71-af76-d004
+    type: profile
+    id: d6ea-d55f-fdab-0482
+    name: Augmented Mount
+  - targetId: a931-8ad1-c9d2-8497
+    type: profile
+    id: 21ff-8d29-dbcd-a0fc
+    name: Flanking Manoeuvres
+  - targetId: 58a9-37c2-a929-db47
+    type: profile
+    id: 3685-8782-d646-0a76
+    name: Command Squadron
+id: 004d-cec4-23b9-8c2a
+name: Death Rider Command Squadron
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 19cd-c205-e020-76d7
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: eea9-e9df-4336-03ed
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: add
+        field: category
+        value: ebf0-6612-ba54-fcac
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: 99bc-0dbb-6298-35ee
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: add
+        field: category
+        value: 0897-c52d-bffb-debe
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: 4442-cdaa-334a-ca1e
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: add
+        field: category
+        value: d3a9-69f0-0bb5-6a25
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: df8f-b6b9-45de-5b5e
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: add
+        field: category
+        value: e367-d84a-5545-facb
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: 7d9b-959f-e938-36f1
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: add
+        field: category
+        value: d1d2-5e35-a818-e25e
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: 5dea-1275-26d8-8510
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: add
+        field: category
+        value: 6098-673d-8c92-0f98
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: e292-e077-bce3-4402
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: add
+        field: category
+        value: f1c2-3526-b6cc-d3ae
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: be63-747f-089b-09bd
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 4520-cc21-fc02-4a7e
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: equalTo
+                childId: cff6-a8e7-27ea-0776
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+    comment: Regimental & tank
+  - modifiers:
+      - type: remove
+        field: category
+        value: 3263-4233-4344-6228
+        conditions:
+          - type: greaterThan
+            childId: cff6-a8e7-27ea-0776
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: remove
+        field: category
+        value: 4520-cc21-fc02-4a7e
+        conditions:
+          - type: greaterThan
+            childId: cff6-a8e7-27ea-0776
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: add
+        field: category
+        value: 20d3-d77c-5dd8-a6e0
+        conditions:
+          - type: greaterThan
+            childId: cff6-a8e7-27ea-0776
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

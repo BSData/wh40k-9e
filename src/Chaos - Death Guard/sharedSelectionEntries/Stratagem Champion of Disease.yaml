@@ -1,0 +1,67 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 6c12-39c9-adcb-e060
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 2316-a185-2d3d-700f
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: cdeb-e8ca-c7f1-2f97
+name: 'Stratagem: Champion of Disease'
+modifiers:
+  - type: set
+    field: 2316-a185-2d3d-700f
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 2316-a185-2d3d-700f
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

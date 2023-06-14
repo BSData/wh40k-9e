@@ -1,0 +1,79 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 1b79-48fc-bb32-7544
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 500a-1f28-e839-ca79
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: +2
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -2
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 3
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon, excess damage it inflicts is not lost, instead keep allocating excess damage to another model in the target unit until either all the excess damage has been allocated or the target unit is destroyed.
+    id: cbea-4af2-a1a1-a4fe
+    name: The Black Mace
+id: 7b70-3124-ac94-5695
+name: The Black Mace
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 1bfa-c3d6-b168-c326
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 44ca-bff0-2ab8-567b
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 70e4-e337-c20e-c619
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 6ea7-1195-7144-438e
+            field: selections
+            scope: parent
+            shared: true

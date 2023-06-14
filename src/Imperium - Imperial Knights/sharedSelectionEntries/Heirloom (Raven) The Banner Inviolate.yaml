@@ -1,0 +1,63 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 3cc0-ad49-3573-3dab
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'BANNER INVIOLATE (AURA): While a friendly HOUSE RAVEN ARMIGER-CLASS model is within 6" of this model, each time that ARMIGER-CLASS model makes an attack, re-roll a hit roll of 1'
+    id: 4810-4188-2548-dc0d
+    name: The Banner Inviolate
+    publicationId: 82cd-d24f-pubN65537
+    page: 117
+id: 37a4-bf45-ecf4-d33a
+name: 'Heirloom (Raven): The Banner Inviolate'
+publicationId: 82cd-d24f-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: 82b5-25ac-1710-de0e
+        field: selections
+        scope: parent
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: dfcb-7e82-5b5e-e379
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 0006-1319-18bf-0939
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

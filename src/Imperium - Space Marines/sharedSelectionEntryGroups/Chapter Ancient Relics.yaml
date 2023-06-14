@@ -1,0 +1,56 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: Each time a friendly model is destroyed and makes attacks as a result of the bearer's Astartes Banner ability, that model can  make 2 attacks with one of its melee weapons instead of 1
+        id: 3612-13c4-e7c4-7627
+        name: Pennant of the Fallen
+    id: 0140-7780-a654-5423
+    name: Pennant of the Fallen
+constraints:
+  - id: be1c-d968-d55b-4027
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: 5465-c04d-0407-1183
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: d324-98f1-ecad-c28a
+name: Chapter Ancient Relics
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: c791-b2fc-df48-1834
+            field: selections
+            scope: parent
+            shared: true
+          - type: notInstanceOf
+            childId: 1b89-4aed-3b44-8d0c
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

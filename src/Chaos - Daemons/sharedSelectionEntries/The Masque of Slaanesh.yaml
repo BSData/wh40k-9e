@@ -1,0 +1,228 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 90.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 7812-238e-4a94-67ea
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: e3b8-b2bd-b57c-448e
+    name: New CategoryLink
+  - targetId: 1da2-76db-f76f-6b6c
+    id: a9c7-f034-a302-e6ef
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 5c13-dc18-fb00-439b
+    name: New CategoryLink
+  - targetId: 31eb-b14e-89a2-73d1
+    id: d734-5b9e-8313-1d58
+    name: New CategoryLink
+  - targetId: eb72-b7a9-1df1-04db
+    id: 0cf0-2299-2249-baa7
+    name: New CategoryLink
+  - targetId: b603-5fea-c225-4d53
+    id: 84aa-6242-aeaa-014b
+    name: Daemon
+  - targetId: 2a5a-f894-9070-d236
+    id: 0a92-b22f-7a04-18ef
+    name: 'Faction: Legiones Daemonica'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: f8a3-1ffb-0652-838b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6e01-184e-54d7-9ecc
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: ed9e-b000-2c1c-7d9a
+        name: Serrated claws
+    id: 9702-1359-882f-4d0d
+    name: Serrated claws
+entryLinks:
+  - targetId: c488-0afe-c67e-2606
+    type: selectionEntry
+    exported: true
+    id: 50bd-2519-bb0b-c24f
+    name: Warlord
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 73c1-b8be-77c6-c1f4
+    name: 'Stratagem: Warlord Trait'
+  - targetId: 227a-9259-97df-97cb
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5694-e6ca-d98a-c09c
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 0240-b685-f270-a827
+    name: The Murderdance
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: 5694-e6ca-d98a-c09c
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: c488-0afe-c67e-2606
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+constraints:
+  - id: a522-0459-5373-2ae4
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 10"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 4
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 6
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 4+/4+
+    id: aaac-c33b-fff2-3e1f
+    name: The Masque of Slaanesh
+    page: ''
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - Each time this model makes a Normal Move, Advances, Falls Back or makes a charge move, until that move is finished, this model can move horizontally through models and terrain features (it cannot finish a move on top of another model, or its base).
+
+          - This model is eligible to charge in a turn in which it Fell Back.
+    id: fa8c-97e2-aa30-3b8a
+    name: Dazzling Acrobatics
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          At the start of the Fight phase, select one enemy unit within Engagement Range of this model. Then select one of the following effects:
+
+          - Until the end of the phase, each time a friendly LEGIONES DAEMONICA SLAANESH model makes a melee attack against that unit, add 1 to that attack's hit roll.
+
+          - Until the end of the phase, each time a model in that unit makes a melee attack, subtract 1 from that attack's hit roll.
+
+          - Until the end of the phase, each time a model in that unit makes a melee attack, subtract 1 from that attack's wound roll.
+    id: bb2b-8c79-d1dd-03fa
+    name: The Eternal Dance
+infoLinks:
+  - targetId: 3326-dd72-0e2b-a16c
+    type: infoGroup
+    id: a8ac-f056-ee9d-97ff
+    name: Daemonic
+  - targetId: d0e6-b9ec-bab1-894b
+    type: profile
+    id: 1c45-bff2-00d4-ff4d
+    name: Herald of Slaanesh (Aura)
+id: 1cf7-c768-d3f1-7908
+name: The Masque of Slaanesh
+page: 0

@@ -1,0 +1,305 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 120.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 8.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 8352-7f67-7e2b-3b4f
+    id: ec37-e32a-18e2-219f
+    name: Captain
+  - targetId: c7b7-edbc-bc14-6238
+    id: 8556-1db0-9ada-a423
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 84f9-5e8e-41e1-e8a1
+    name: 'Faction: Imperium'
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 9fb8-baae-58d0-b468
+    name: HQ
+  - targetId: 6b7c-3d51-f050-7398
+    id: 21a5-a50b-ec83-63ac
+    name: Imperial Fists
+  - targetId: 82df-13db-9e7b-15a3
+    id: 5ea8-6d2e-c234-21e5
+    name: Mk X Gravis
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: d85f-a5ec-b7c5-1414
+    name: Primaris
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3c5f-fb55-bad6-0036
+    name: Infantry
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 52ac-00e7-c7ff-eeb4
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 0278-6e4a-6865-63bc
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: X3
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: When resolving an attack with this weapon, subtract 1 from the hit roll
+        id: cd27-f3cd-bce4-c320
+        name: Hand of Defiance
+    id: a003-6426-7b8a-328f
+    name: Hand of Defiance
+entryLinks:
+  - targetId: b6ce-39c2-2200-2cc3
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: bb01-496c-c26e-2362
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a43c-7f68-38ce-f40b
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 070b-61e6-ca9f-0d34
+    name: Grav-gun
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: b423-85b5-b8a5-8849
+    name: Warlord
+  - targetId: f1ef-3b20-d984-42f3
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 722e-bf7b-8657-aaa5
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: d1b7-5654-d771-2a13
+    name: Siege Master
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 3f9f-1d3f-5029-6a34
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 722e-bf7b-8657-aaa5
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 3f9f-1d3f-5029-6a34
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 8e01-744f-5ff3-a71f
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: f67c-93cd-a9d2-4222
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: 8e01-744f-5ff3-a71f
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 3f9f-1d3f-5029-6a34
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 5"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 7
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: ca95-6be3-f0dd-6105
+    name: Tor Garadon
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: In your Command phase, select one friendly IMPERIAL FISTS unit within 3" of this model. Until the start of your next Command phase, each time a model in that unit makes a ranged attack, add 1 to that attack’s hit roll.
+    id: 8680-52d6-fc26-a1d0
+    name: Signum Array
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'When resolving an attack made by this model against a VEHICLE or BUILDING unit, add 1 to the Damage characteristic of the weapon being used for that attack. '
+    id: ce74-f027-8ad7-4d0f
+    name: Siege Captain
+infoLinks:
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: ff1a-978a-ae7a-3e2a
+    name: Iron Halo
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: 515c-0fc7-5d19-75c6
+    name: Rites of Battle
+id: 3f9f-1d3f-5029-6a34
+name: Tor Garadon
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: a018-bc2a-eea4-a553
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

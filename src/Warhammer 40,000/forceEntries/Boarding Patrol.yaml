@@ -1,0 +1,186 @@
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    id: a6d3-7eab-102f-b4d6
+    name: Configuration
+  - targetId: c845-c72c-6afe-3fc2
+    id: d322-45e9-c017-05ca
+    name: Stratagems
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    id: eceb-51a8-d024-7c45
+    name: No Force Org Slot
+  - targetId: 0f35-2c34-ba6a-8105
+    constraints:
+      - id: fb05-a32d-334c-44b1
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: acb3-6f7c-08c2-d0e1
+    name: Agent of the Imperium
+    modifiers:
+      - type: set
+        field: name
+        value: Agents of the Imperium
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    constraints:
+      - id: ea4b-ae8e-da30-38d1
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: a024-8e22-eaec-4b21
+    name: HQ
+    modifiers:
+      - type: set
+        field: ea4b-ae8e-da30-38d1
+        value: 2.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 61c6-c8c5-a304-ff5f
+                field: selections
+                scope: primary-catalogue
+                shared: true
+              - type: instanceOf
+                childId: cb54-c035-5759-7697
+                field: selections
+                scope: primary-catalogue
+                shared: true
+              - type: instanceOf
+                childId: 7d24-b92f-c5d5-3bf0
+                field: selections
+                scope: primary-catalogue
+                shared: true
+  - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    constraints:
+      - id: bbaf-a617-911f-7943
+        type: maximum
+        field: selections
+        scope: force
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+    id: c27f-d1ac-b4df-c9b1
+    name: Troops
+  - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    constraints:
+      - id: aabc-60db-d84e-9034
+        type: maximum
+        field: selections
+        scope: force
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+    id: 75ba-09bc-d3a6-15fa
+    name: Elites
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    id: f65f-91cd-fe1f-2ce1
+    name: Fast Attack
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    id: 1aa4-f94e-1c7f-adac
+    name: Heavy Support
+  - targetId: ef18-746a-369f-43a4
+    constraints:
+      - id: dfa0-22d2-00ec-c87d
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: cf60-3df8-12c2-4432
+    name: Character
+    modifiers:
+      - type: set
+        field: dfa0-22d2-00ec-c87d
+        value: 3.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 53e9d88f-7463-8c27-fe67-e1a0d1ed0287
+                field: selections
+                scope: primary-catalogue
+                shared: true
+              - type: instanceOf
+                childId: d124-b283-2ff7-beae
+                field: selections
+                scope: primary-catalogue
+                shared: true
+      - type: set
+        field: dfa0-22d2-00ec-c87d
+        value: 2.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: cb54-c035-5759-7697
+                field: selections
+                scope: primary-catalogue
+                shared: true
+              - type: instanceOf
+                childId: ce57-cc1c-37cb-cb71
+                field: selections
+                scope: primary-catalogue
+                shared: true
+              - type: instanceOf
+                childId: 61c6-c8c5-a304-ff5f
+                field: selections
+                scope: primary-catalogue
+                shared: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: instanceOf
+                    childId: 7d24-b92f-c5d5-3bf0
+                    field: selections
+                    scope: primary-catalogue
+                    shared: true
+                  - type: equalTo
+                    childId: 7cda-87a1-fd4a-0fb4
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+      - type: increment
+        field: dfa0-22d2-00ec-c87d
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 7cf8-5f19-b49c-5224
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: dfa0-22d2-00ec-c87d
+        value: 3.0
+        conditions:
+          - type: greaterThan
+            childId: d203-a22b-9241-82d7
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - targetId: 26b0-4bb9-73aa-d3d7
+    id: fef3-235b-f2e4-3fc6
+    name: Primarch | Daemon Primarch | Supreme Commander
+  - targetId: 7cda-87a1-fd4a-0fb4
+    constraints:
+      - id: d4a0-7268-1c94-818e
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+    id: 9de4-246a-ef4d-8ead
+    name: Solitaire - Boarding Patrol
+id: a207-a133-6adb-25f3
+name: Boarding Patrol

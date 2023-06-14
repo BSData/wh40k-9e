@@ -1,0 +1,78 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -2.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: 2abe-5886-2b50-fff3
+    name: New CategoryLink
+constraints:
+  - id: 6b94-5ac0-ec9a-424b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Use this Stratagem before the battle begins. If your army includes exactly 1 OFFICIO ASSASSINORUM unit, remove that unit from your army and then add 1 OFFICIO ASSASSINORUM unit of your choice to your army. The unit that is removed does not count as being destroyed for any rules purposes. Unlike other units that are added to your army,  his new unit does not cost any reinforcement points, even in a matched play game.
+    id: 504b-fc17-56ce-c8b8
+    name: Shadow Assignment
+id: 0b7d-bfe1-b63e-ecb6
+name: 'Stratagem: Shadow Assignment'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 4ad1-1315-97ea-dd25
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 4c9f-f934-ed79-84fe
+            field: selections
+            scope: roster
+            value: 1.0
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: ac03-d781-0c3b-b4be
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: b734-1c2c-054d-4867
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 38ee-6dae-3cb1-7f84
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

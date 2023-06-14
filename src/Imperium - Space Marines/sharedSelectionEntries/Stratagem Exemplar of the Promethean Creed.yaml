@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: ca9e-e13e-9ad9-936f
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 0d61-194b-2772-f49d
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: 9edb-b7f5-9254-9406
+name: 'Stratagem: Exemplar of the Promethean Creed'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 0704-95d8-ed39-cb46
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,41 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: d875-2ca1-faff-f9fe
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: COMMAND SQUAD model equipped with master vox only. Each time an OFFICER in the bearer's unit issues an Order, when selecting a target for that Order, you can ignore the range restriction for that type of Order, but if you do so, you can only select a unit with the VOX-CASTER keyword as the target for that Order (all other rules for issuing Orders still apply).
+    id: 7c8d-1cb2-dbb7-2137
+    name: Clarion Proclamatus
+id: 1a31-5371-2f9a-9234
+name: 'Relic: Clarion Proclamatus'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 9ce2-5815-93dd-2918
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

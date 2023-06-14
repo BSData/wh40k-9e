@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 2834-6160-ccac-65c3
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: dae6-d2ef-3b58-0b57
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+infoLinks:
+  - targetId: ae83-a45a-20a7-e3f9
+    type: profile
+    id: 0488-6d11-a0ed-efde
+    name: The Triarch's Will
+id: 190b-890d-034d-7843
+name: "Warlord Trait (Szarekhan): The Triarch's Will"
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: dac7-360f-5fb2-5092
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: 4ed9-4e6f-9116-0b00
+            field: selections
+            scope: ancestor
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

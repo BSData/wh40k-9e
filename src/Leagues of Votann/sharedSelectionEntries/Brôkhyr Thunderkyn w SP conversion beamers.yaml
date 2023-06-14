@@ -1,0 +1,212 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    primary: true
+    id: 0477-f1f8-ca1c-d23b
+    name: New CategoryLink
+  - targetId: d6df-3d52-c2ca-4ee6
+    id: cc20-b3d2-4d74-0326
+    name: 'Faction: Votann'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 4589-5f66-4e7a-52c6
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: be44-64ee-2b38-53ed
+    name: Core
+  - targetId: eecb-87ae-b98e-aa4f
+    id: 2074-eb36-e3f8-45d9
+    name: Exo-frame
+  - targetId: de49-6cb2-cc3e-a7ec
+    id: 4d01-46da-8291-1d32
+    name: Brôkhyr
+  - targetId: e899-7b40-9d45-0686
+    id: ad4a-7041-6e9a-438d
+    name: Thunderkyn
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 35.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        collective: true
+        exported: true
+        constraints:
+          - id: 1494-c5cd-f2e8-1410
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 715f-3ab4-e5f0-d362
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+            typeName: Weapon
+            characteristics:
+              - name: Range
+                typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                value: 30"
+              - name: Type
+                typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                value: HunTR 1
+              - name: S
+                typeId: 59b1-319e-ec13-d466
+                value: 7
+              - name: AP
+                typeId: 75aa-a838-b675-6484
+                value: -2
+              - name: D
+                typeId: ae8a-3137-d65b-4ca7
+                value: 3
+              - name: Abilities
+                typeId: 837d-5e63-aeb7-1410
+                value: Beam. Each time an attack is made with this weapon hits a unit, if the unit that was hit is wholly more than 15" away from the firing model, one additional hit is scored against that unit.
+            id: dca3-07ad-135f-afe9
+            name: SP conversion beamer
+        infoLinks:
+          - targetId: 827d-1453-ee1b-6f49
+            type: rule
+            id: 10ee-d1d0-27c0-12df
+            name: Beam weapons
+        id: dfd9-652d-421b-1c71
+        name: SP conversion beamer
+    constraints:
+      - id: 46cb-7e0d-6dfc-69b6
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: 7e1f-a17f-af16-f0bf
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+        shared: true
+    infoLinks:
+      - targetId: 1840-8ede-01ce-d40e
+        type: profile
+        id: ad5f-8c5e-2428-faee
+        name: Brôkhyr Thunderkyn
+    id: bee8-12e4-1322-b28e
+    name: Brôkhyr Thunderkyn
+infoLinks:
+  - targetId: 639f-3242-2aff-6d3d
+    type: infoGroup
+    id: 9880-f8e3-113c-c094
+    name: Shared Rules
+  - targetId: 6ba3-dd4f-6c95-58d6
+    type: profile
+    id: a70e-2761-ea63-4689
+    name: Omni-visors
+id: e629-69db-c112-806b
+name: Brôkhyr Thunderkyn w/ SP conversion beamers
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 10.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: e629-69db-c112-806b
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 8302-e3ed-4a77-6919
+        conditions:
+          - type: equalTo
+            childId: f14f-b5b7-e683-4a2d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5c58-cce2-32c5-540d
+        conditions:
+          - type: equalTo
+            childId: b46a-6e31-2df9-bfe3
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 9f31-4812-5041-10aa
+        conditions:
+          - type: equalTo
+            childId: 4263-acb0-ccf7-67ec
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 3574-371b-d06b-2e18
+        conditions:
+          - type: equalTo
+            childId: 2ad3-c319-de13-42a9
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5092-2bb1-b294-479c
+        conditions:
+          - type: equalTo
+            childId: b1ea-25da-7a52-8057
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: a76d-e840-3522-199a
+        conditions:
+          - type: equalTo
+            childId: 8757-2a3f-0cba-6319
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    comment: League keywords

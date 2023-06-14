@@ -1,0 +1,78 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: b91b-b998-19f9-160c
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 2f3b-e56c-3a34-793d
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: x2
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 3
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: '-'
+    id: 864f-fbf7-e642-78e6
+    name: Wrath of the Abyss
+id: 3a75-a672-00da-19c1
+name: Wrath of the Abyss
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 0e57-eaf5-763f-9c45
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 1f29-4695-dfe7-e893
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: f095-c6cc-5aab-9bd8
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

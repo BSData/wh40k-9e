@@ -1,0 +1,370 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: pts
+    typeId: points
+    value: 115.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 1b51-dbf7-99f4-9cad
+    name: New CategoryLink
+  - targetId: 6fd7-9e10-d37c-5056
+    id: 2038-e261-abf1-4bcb
+    name: New CategoryLink
+  - targetId: 2c4a-3ec9-a1f6-a1ee
+    id: 3259-ca6b-da6b-315a
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 7140-472a-5dff-8a72
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3676-0f87-a733-cb69
+    name: New CategoryLink
+  - targetId: 874b-2038-95c6-ae40
+    id: dcc6-fa49-70c1-ddb5
+    name: New CategoryLink
+  - targetId: b8f1-f3fa-0273-9bb9
+    id: 5148-350f-f485-209e
+    name: Chief Apothecary
+  - targetId: c7b7-edbc-bc14-6238
+    id: 46d3-cfc6-6d53-1ef3
+    name: 'Faction: Adeptus Astartes'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: f31c-6fc3-a031-78d9
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 3695-9088-36dc-613a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +1
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: 3f31-ccfd-019a-19d7
+        name: Heaven's Teeth
+    id: eb3d-97f4-e163-3a4e
+    name: Heaven's Teeth
+entryLinks:
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 44aa-f5db-3321-ed61
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 343f-b063-a18f-05a7
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 1fd0-85e1-965e-c180
+    name: Bolt pistol
+    modifiers:
+      - type: set
+        field: points
+        value: 0
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: e483-7047-1cd8-b8f1
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 5632-9964-7780-4c90
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 616e-60c7-3703-dc65
+    name: Frag & Krak grenades
+    modifiers:
+      - type: set
+        field: points
+        value: 0
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 834f-c181-3e4d-9e20
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: ca19-2976-efd5-3d85
+    name: Warlord
+  - targetId: 4eaf-66ad-349d-087f
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1afc-8f0f-247d-76b3
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+      - id: d0e9-483e-23f5-0261
+        type: maximum
+        field: selections
+        scope: parent
+        shared: true
+    id: ff70-43a0-47bd-bed9
+    name: 5. Gift of Foresight
+    modifiers:
+      - type: set
+        field: d0e9-483e-23f5-0261
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+      - type: set
+        field: 1afc-8f0f-247d-76b3
+        value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ee33-18fd-7317-1171
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 2fa3-286f-b909-590a
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+constraints:
+  - id: 9056-2232-1d27-ed48
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly BLOOD ANGELS CORE or BLOOD ANGELS CHARACTER unit (excluding VEHICLE units) is within 6" of this model, if the Tactical Doctrine or Devastator Doctrine is active for your army, then each time a model in that unit makes an attack, the Assault Doctrine is considered to be active for that attack instead.
+    id: b09f-2f5b-8679-69b1
+    name: The Red Grail (Aura)
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the end of your Movement phase, this model can use its Combat Restoratives ability twice instead of once.
+    id: 97a7-5b63-76ca-75b5
+    name: Sanguinary High Priest
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 448d-914b-c028-49e3
+    name: Brother Corbulo
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the end of your Movement phase, this model can heal one friendly Blood Angels Infantry or Blood Angels Biker model whose unit is within 3" of it. That model regains up to D3 lost wounds. Each model can only be healed once per turn.
+    id: fec9-4c80-9f51-099a
+    name: Combat Restoratives
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'While a friendly BLOOD ANGELS INFANTRY or BLOOD ANGELS BIKER unit is within 3" of this model, each time a model in that unit would lose a wound, roll one D6: on a 6, that wound is not lost.'
+    id: a8c2-4d3e-abff-ea44
+    name: Narthecium (Aura)
+infoLinks:
+  - targetId: 3006-d1b9-c324-c9be
+    type: rule
+    id: 12cb-7a14-c23b-e715
+    name: Savage Echoes
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: ea67-e838-1c05-5183
+    name: Angels of Death
+  - targetId: 2deb-254e-c616-78b9
+    type: rule
+    id: 6dcc-5e5a-55a3-4b1b
+    name: The Red Thirst
+id: 6c94-843b-6d57-359a
+name: Brother Corbulo
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 67dc-2347-1d81-d320
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 8a3b-5c79-60b9-deaf
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 3fc0-7b45-650a-d384
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

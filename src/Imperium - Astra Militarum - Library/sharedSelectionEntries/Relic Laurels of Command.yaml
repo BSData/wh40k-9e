@@ -1,0 +1,39 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 9fb3-52d5-9edd-f85b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: "OFFICER model only. Once per battle, at the start of any phase in your opponent's turn, the bearer can issue one Order it knows from the following list, as if it were your Command phase (this cannot be an Order it has already issued this battle round): Fix Bayonets! Take Cover!; At All Costs!; Show Them Steel, Show Them Contempt!; Remain Vigilant!; Shock and Awe!"
+    id: b67e-66cc-2315-ee62
+    name: The Laurels of Command
+id: ac59-27a4-14ff-220f
+name: 'Relic: Laurels of Command'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: dd6e-7055-ca6b-b711
+        field: selections
+        scope: ancestor
+        shared: true

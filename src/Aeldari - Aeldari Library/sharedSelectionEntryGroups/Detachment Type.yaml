@@ -1,0 +1,206 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 89fc-dd6d-464c-7af7
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 756e-8098-ce83-ad12
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 0414-a820-16d6-2b43
+    name: Mixed Detachment
+    modifiers:
+      - type: set
+        field: 756e-8098-ce83-ad12
+        value: 1.0
+        conditions:
+          - type: instanceOf
+            childId: 44da-9aaf-181b-5ece
+            field: selections
+            scope: force
+            shared: true
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: dc79-ea64-8a30-0f4e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 64c0-97fc-60e9-112c
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+    id: 5fc1-0bf5-caf9-3702
+    name: Realspace Raid
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 955e-536a-e290-5dcf
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 5af8-e7c8-e3bf-6d52
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: greaterThan
+                childId: 53a8-b0ea-cf82-5870
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+entryLinks:
+  - targetId: 2be6-8dc6-b5b9-bf00
+    type: selectionEntryGroup
+    exported: true
+    id: 8874-3258-a351-12b8
+    name: Haemonculus Coven
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 5af8-e7c8-e3bf-6d52
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 955e-536a-e290-5dcf
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+  - targetId: b510-bdc6-c883-4217
+    type: selectionEntryGroup
+    exported: true
+    id: bde3-db7b-44a7-8921
+    name: Kabal
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 955e-536a-e290-5dcf
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 5af8-e7c8-e3bf-6d52
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: greaterThan
+                childId: 53a8-b0ea-cf82-5870
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+  - targetId: e03b-b743-f081-46a1
+    type: selectionEntryGroup
+    exported: true
+    id: 8f4a-d365-bf92-c30a
+    name: Wych Cult
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 955e-536a-e290-5dcf
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 5af8-e7c8-e3bf-6d52
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: greaterThan
+                childId: 53a8-b0ea-cf82-5870
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+constraints:
+  - id: 348d-5ff4-3ab2-4449
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+  - id: 7024-4496-d5bc-fcd7
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+id: 6d53-0ef2-f778-f2e8
+name: Detachment Type
+modifiers:
+  - type: set
+    field: 7024-4496-d5bc-fcd7
+    value: 4.0
+    conditions:
+      - type: equalTo
+        childId: 5fc1-0bf5-caf9-3702
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

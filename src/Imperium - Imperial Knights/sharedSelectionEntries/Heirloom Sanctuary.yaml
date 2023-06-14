@@ -1,0 +1,56 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 3c45-60a9-3cb7-a6cd
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: QUESTORIS-CLASS or ARMIGER-CLASS only. The bearer has a 4+ invulnerable save against melee attacks.
+    id: 2225-d319-8936-c2b6
+    name: Sanctuary
+    publicationId: 82cd-d24f-pubN65537
+    page: 114
+id: 64b9-dde1-33e6-50c7
+name: 'Heirloom: Sanctuary'
+publicationId: 82cd-d24f-pubN65537
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 82b5-25ac-1710-de0e
+            field: selections
+            scope: ancestor
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: 5583-2a3e-2095-6450
+            field: selections
+            scope: ancestor
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

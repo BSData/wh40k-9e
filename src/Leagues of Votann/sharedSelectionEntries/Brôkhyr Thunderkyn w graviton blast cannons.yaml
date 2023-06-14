@@ -1,0 +1,206 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    primary: true
+    id: a70f-c2e5-bd26-7377
+    name: New CategoryLink
+  - targetId: d6df-3d52-c2ca-4ee6
+    id: 05e5-568d-57ff-af28
+    name: 'Faction: Votann'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: ae67-e2b1-0d6b-b563
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: bf9e-7436-212e-7546
+    name: Core
+  - targetId: eecb-87ae-b98e-aa4f
+    id: 7d95-cca5-5c5c-5605
+    name: Exo-frame
+  - targetId: de49-6cb2-cc3e-a7ec
+    id: f6fc-e287-71c0-ab62
+    name: Brôkhyr
+  - targetId: e899-7b40-9d45-0686
+    id: bd20-07f0-28a7-5c22
+    name: Thunderkyn
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 35.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        collective: true
+        exported: true
+        constraints:
+          - id: 591d-39bd-3b9b-a4f9
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 90de-3c2e-285c-9c60
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+            typeName: Weapon
+            characteristics:
+              - name: Range
+                typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                value: 18"
+              - name: Type
+                typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                value: HunTR D6
+              - name: S
+                typeId: 59b1-319e-ec13-d466
+                value: 5
+              - name: AP
+                typeId: 75aa-a838-b675-6484
+                value: -3
+              - name: D
+                typeId: ae8a-3137-d65b-4ca7
+                value: 2
+              - name: Abilities
+                typeId: 837d-5e63-aeb7-1410
+                value: Blast. Each time an attack made with this weapon is allocated to a model with a Save characteristic of 3+ or better, that attack has a Damage characteristic of 3.
+            id: 6555-0929-3c7f-aab5
+            name: Graviton blast cannon
+        id: 5a69-aa58-791d-f2d5
+        name: Graviton blast cannon
+    constraints:
+      - id: 3774-3023-e816-cc8c
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: 56d1-7a72-14d8-68f4
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+        shared: true
+    infoLinks:
+      - targetId: 1840-8ede-01ce-d40e
+        type: profile
+        id: 2066-4e2a-e293-429c
+        name: Brôkhyr Thunderkyn
+    id: b732-29ce-316f-ab44
+    name: Brôkhyr Thunderkyn
+infoLinks:
+  - targetId: 639f-3242-2aff-6d3d
+    type: infoGroup
+    id: 5012-98e6-f1cb-7199
+    name: Shared Rules
+  - targetId: 6ba3-dd4f-6c95-58d6
+    type: profile
+    id: 5a78-2f7e-5ea1-e372
+    name: Omni-visors
+id: 49f1-1bfe-1d1a-4fcf
+name: Brôkhyr Thunderkyn w/ graviton blast cannons
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 10.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 49f1-1bfe-1d1a-4fcf
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 8302-e3ed-4a77-6919
+        conditions:
+          - type: equalTo
+            childId: f14f-b5b7-e683-4a2d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5c58-cce2-32c5-540d
+        conditions:
+          - type: equalTo
+            childId: b46a-6e31-2df9-bfe3
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 9f31-4812-5041-10aa
+        conditions:
+          - type: equalTo
+            childId: 4263-acb0-ccf7-67ec
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 3574-371b-d06b-2e18
+        conditions:
+          - type: equalTo
+            childId: 2ad3-c319-de13-42a9
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5092-2bb1-b294-479c
+        conditions:
+          - type: equalTo
+            childId: b1ea-25da-7a52-8057
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: a76d-e840-3522-199a
+        conditions:
+          - type: equalTo
+            childId: 8757-2a3f-0cba-6319
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    comment: League keywords

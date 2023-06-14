@@ -1,0 +1,143 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 10.0
+exported: true
+categoryLinks:
+  - targetId: dfde-d915-6e58-09af
+    id: 1715-67bf-dd03-f2ab
+    name: New CategoryLink
+  - targetId: ca27-5069-1c2c-a28b
+    id: e144-25c2-158f-c5b2
+    name: New CategoryLink
+  - targetId: 6bb8-fe7f-7918-bf8f
+    id: d8f6-5c35-ff6f-f30e
+    name: New CategoryLink
+  - targetId: 82c2-bcf2-c8fd-5a38
+    id: 4847-776e-5137-d078
+    name: Kastelan Robots
+  - targetId: c8fd-783f-3230-493e
+    id: 1b77-ee61-312c-e3d8
+    name: Vehicle
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 106b-f571-25e6-fe53
+    name: 'Faction: Imperium'
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    primary: true
+    id: a4c7-d095-36e5-37cb
+    name: New CategoryLink
+entryLinks:
+  - targetId: 800c-8672-fd46-dc38
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 6882-4150-7d26-916c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+        shared: true
+      - id: 6213-dc6d-5750-7f7d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+        includeChildSelections: true
+    id: 21e7-1513-d95b-04e2
+    name: Kastelan Robot
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This unit receives a bonus depending on which protocol is active for it. At the start of the battle, the Aegis Protocol is active for this unit. To change that unit's active protocol, see the Cybernetica Datasmith datasheet.
+    id: f847-eec4-b8b8-1cfb
+    name: Battle Protocols
+    publicationId: ebe8-544e-pubN65537
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Models in this unit have a 5+ invulnerable save against ranged attacks. Each time an invulnerable saving throw is made for a model in this unit against a ranged attack, on an unmodified saving roll of 6, the attacking model's unit suffers 1 mortal wound.
+    id: a1e3-941c-7235-5f5c
+    name: Repulsor Grid
+    publicationId: ebe8-544e-pubN65537
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While this protocol is active for this unit, it cannot move (except to pile in or consolidate) and models in this unit have a BS characteristic of 3+.
+    id: 7a01-c204-b1cf-4ab5
+    name: 'Battle Protocols: Protector'
+    publicationId: ebe8-544e-pubN65537
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While this protocol is active for this unit, you can re-roll charge rolls made for it and models in this unit have a WS characteristic of 2+.
+    id: c5a9-c7bd-25ce-8013
+    name: 'Battle Protocols: Conqueror'
+    publicationId: ebe8-544e-pubN65537
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While this protocol is active for this unit, models in this unit have a Sv characteristic of 2+.
+    id: ec05-6187-5619-7930
+    name: 'Battle Protocols: Aegis'
+    publicationId: ebe8-544e-pubN65537
+infoLinks:
+  - targetId: 00d1-0722-554a-b4c9
+    type: profile
+    id: ed41-48d6-df8c-10e1
+    name: Explodes (Kastelan)
+  - targetId: 25f1-761d-2f64-7f0e
+    type: rule
+    id: b328-27c4-2dd6-1342
+    name: Canticles of the Omnissiah
+id: 1922-eaab-6f88-d609
+name: Kastelan Robots
+publicationId: ebe8-544e-pubN65537
+page: 82
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 10.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 1922-eaab-6f88-d609
+        value: 4.0
+        shared: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 10.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 1922-eaab-6f88-d609
+        value: 2.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: ac03-d781-0c3b-b4be
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

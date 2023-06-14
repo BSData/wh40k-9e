@@ -1,0 +1,498 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: pts
+    typeId: points
+    value: 85.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 2a6e-0a4b-f8e7-e7ee
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: acfa-07d8-7bbe-c284
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 0a2b-f9eb-ce6b-7f1e
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: a9f3-f834-4bdf-16d0
+    name: New CategoryLink
+  - targetId: 8352-7f67-7e2b-3b4f
+    id: 7100-6d5d-2096-b512
+    name: New CategoryLink
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 07f6-170d-5451-3952
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+            typeName: Weapon
+            characteristics:
+              - name: Range
+                typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                value: Melee
+              - name: Type
+                typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                value: Melee
+              - name: S
+                typeId: 59b1-319e-ec13-d466
+                value: +1
+              - name: AP
+                typeId: 75aa-a838-b675-6484
+                value: -4
+              - name: D
+                typeId: ae8a-3137-d65b-4ca7
+                value: 1
+              - name: Abilities
+                typeId: 837d-5e63-aeb7-1410
+                value: Each time an attack is made with this weapon, invulnerable saving throws cannot be made against this attack
+            id: d6ec-761d-7d10-6f9e
+            name: Xenophase blade
+        id: 5737-0fbc-8d2d-cde3
+        name: Xenophase blade
+        modifiers:
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: equalTo
+                childId: 13a6-f183-3eb6-1c34
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+          - type: set
+            field: 07f6-170d-5451-3952
+            value: 0.0
+            conditions:
+              - type: greaterThan
+                childId: c5f0-76db-2a6c-403e
+                field: selections
+                scope: a0b8-6a5c-ea09-44f9
+                shared: true
+                includeChildSelections: true
+    selectionEntryGroups:
+      - exported: true
+        entryLinks:
+          - targetId: 0140-c9f2-0524-34cc
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: bda0-6ea2-e452-2b4d
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: c947-c424-da63-401c
+            name: Relic blade
+          - targetId: 38b5-ef30-f87f-5275
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 9628-7ebd-487a-fcd6
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 9704-ab57-f2db-5845
+            name: Storm shield
+        constraints:
+          - id: 1b46-16c0-2b21-3009
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: b2f8-cce0-bb3f-2b03
+        name: 'Captain Specific:'
+    entryLinks:
+      - targetId: c215-aaf9-77ef-27fb
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 6769-6e67-fefc-976c
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 4624-123c-14aa-f6f4
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 85c9-56b4-cc8f-e096
+        name: Master-crafted boltgun
+        modifiers:
+          - type: set
+            field: 6769-6e67-fefc-976c
+            value: 0.0
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: atLeast
+                    childId: 37ef-f6fa-fe1f-306c
+                    field: selections
+                    scope: a0b8-6a5c-ea09-44f9
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: atLeast
+                    childId: fb38-f29c-b8de-3ba6
+                    field: selections
+                    scope: a0b8-6a5c-ea09-44f9
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+          - type: set
+            field: 4624-123c-14aa-f6f4
+            value: 0.0
+          - type: set
+            field: points
+            value: 0.0
+      - targetId: 37ef-f6fa-fe1f-306c
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 38d0-b487-16b2-4661
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        id: 2899-688e-ce62-e855
+        name: Combi-Weapons
+        modifiers:
+          - type: set
+            field: 38d0-b487-16b2-4661
+            value: 0.0
+            conditions:
+              - type: atLeast
+                childId: 9b5a-c420-e443-038d
+                field: selections
+                scope: a0b8-6a5c-ea09-44f9
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - targetId: fb38-f29c-b8de-3ba6
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 4116-1519-bfec-0ce9
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 9b5a-c420-e443-038d
+        name: Pistols
+        modifiers:
+          - type: set
+            field: 4116-1519-bfec-0ce9
+            value: 0.0
+            conditions:
+              - type: atLeast
+                childId: 2899-688e-ce62-e855
+                field: selections
+                scope: a0b8-6a5c-ea09-44f9
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - targetId: ce40-8190-5033-a0c1
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 0e3a-3528-8d34-11cc
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+            includeChildSelections: true
+        id: 1089-cf97-88c1-09e9
+        name: Melee Weapons
+    constraints:
+      - id: 9db3-8f13-6455-c017
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: 362f-30de-46cc-9fdf
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 88a9-3155-eb57-9b03
+    name: Weapon Options
+    modifiers:
+      - type: set
+        field: 9db3-8f13-6455-c017
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: b050-572b-911b-d51c
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+      - type: set
+        field: 362f-30de-46cc-9fdf
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: b050-572b-911b-d51c
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+  - exported: true
+    entryLinks:
+      - targetId: bd73-ea51-1f7f-a39a
+        type: selectionEntry
+        exported: true
+        id: 4574-59c3-f877-0522
+        name: 'Chapter Command:  Chapter Master'
+      - targetId: 4ad6-eb88-f4b3-590e
+        type: selectionEntry
+        exported: true
+        id: 4315-8d89-cec2-0d76
+        name: Death Company Captain
+    constraints:
+      - id: 5247-daa0-4d43-55b3
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 8df9-6add-b0ae-c714
+    name: Command Options
+entryLinks:
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 8d0e-68ea-4c38-8b5b
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 91b8-0c43-a13c-0239
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 9757-e85c-de75-5683
+    name: Frag & Krak grenades
+  - targetId: 181e-0718-160e-2e75
+    type: selectionEntry
+    exported: true
+    id: d295-fef3-2f94-e992
+    name: Jump Pack
+    modifiers:
+      - type: increment
+        field: points
+        value: 25.0
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: b002-5d95-0884-c540
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6279-d79e-8e01-963c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+    id: 6c61-d837-ae55-d7f4
+    name: Bolt pistol
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 5962-5287-7834-c903
+    name: Warlord
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: 08dd-55a9-3185-6e06
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: c060-35a8-5b21-e965
+    name: Captain
+    modifiers:
+      - type: set
+        field: 0bdf-a96e-9e38-7779
+        value: 12"
+        conditions:
+          - type: equalTo
+            childId: d295-fef3-2f94-e992
+            field: selections
+            scope: a0b8-6a5c-ea09-44f9
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: b977-9858-9a44-cbdf
+    name: Angels of Death
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: 1974-ced4-be88-3117
+    name: Iron Halo
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: 6434-0692-ffa1-e0e9
+    name: Rites of Battle
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: 4ad6-eb88-f4b3-590e
+            field: selections
+            scope: a0b8-6a5c-ea09-44f9
+            shared: true
+            includeChildSelections: true
+  - targetId: ac1e-8a4b-aaa1-f41a
+    type: infoGroup
+    id: b323-21f2-e644-704b
+    name: Death Visions
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 4ad6-eb88-f4b3-590e
+            field: selections
+            scope: a0b8-6a5c-ea09-44f9
+            shared: true
+            includeChildSelections: true
+id: a0b8-6a5c-ea09-44f9
+name: Captain
+modifiers:
+  - type: set
+    field: name
+    value: Death Company Captain
+    conditions:
+      - type: equalTo
+        childId: 4ad6-eb88-f4b3-590e
+        field: selections
+        scope: a0b8-6a5c-ea09-44f9
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: name
+    value: Chapter Master
+    conditions:
+      - type: equalTo
+        childId: bd73-ea51-1f7f-a39a
+        field: selections
+        scope: a0b8-6a5c-ea09-44f9
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

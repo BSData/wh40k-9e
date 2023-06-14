@@ -1,0 +1,82 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: 258d-a432-cbfe-d49a
+    name: New CategoryLink
+constraints:
+  - id: be1a-f944-9e0b-0076
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 91e2-f332-df8f-49ab
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+infoLinks:
+  - targetId: 89de-5396-ff91-3e8a
+    type: profile
+    id: 6109-7ae1-085c-fa4d
+    name: 'Stratagem: Emergency Dispensation'
+id: 16f4-2631-b65d-e79a
+name: 'Stratagem: Emergency Dispensation'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 7db5-63ac-e907-c20f
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: be1a-f944-9e0b-0076
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: be1a-f944-9e0b-0076
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

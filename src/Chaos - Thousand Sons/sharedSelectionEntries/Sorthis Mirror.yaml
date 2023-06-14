@@ -1,0 +1,62 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: f9e1-92bb-3bbf-79e6
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: b2ee-88d2-0879-70c9
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time the bearer is selected to fight, instead of fighting, you can select one enemy INFANTRY model with a Leadership characteristic of 9 or less that is within Engagement Range of it. If you do, the selected enemy model immediately makes close combat attacks against its own unit; until it has resolved these attacks it is treated as being a model from your army for all rules purposes. If, as a result of these attacks, the enemy model destroys its own unit, the bearer counts as having destroyed that unit for all rules purposes.
+    id: 58e7-9f33-998b-4a9b
+    name: Sorthis' Mirror
+id: 6ec9-0432-7b2e-a8ef
+name: Sorthis' Mirror
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 31e2-18f1-44f5-332b
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: d56e-4160-1b68-22ad
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ed5e-9843-6dd4-0ac1
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true

@@ -1,0 +1,37 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the start of your Shooting phase, pick a friendly DEVASTATION BATTERY unit within 6" of the bearer. Enemy units do not receive the benefit of cover against that unit's weapons this phase.
+    id: 40ea-7ad2-2212-38f9
+    name: The Daemon's Eye
+id: 0fe3-28bc-4b67-12ec
+name: The Daemon's Eye
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: eb55-bd6b-3e75-d505
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: notInstanceOf
+            childId: b36f-fae2-eca4-6d1f
+            field: selections
+            scope: ancestor
+            shared: true

@@ -1,0 +1,77 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: b7a6-b483-12c4-8341
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: a80a-aa5c-508d-432c
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 77cb-2eca-58ad-5616
+name: 'Stratagem: Shield of Humanity'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: 2516-dd30-d80e-f79a
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 2516-dd30-d80e-f79a
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+  - type: increment
+    field: b7a6-b483-12c4-8341
+    value: 2.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: increment
+    field: b7a6-b483-12c4-8341
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

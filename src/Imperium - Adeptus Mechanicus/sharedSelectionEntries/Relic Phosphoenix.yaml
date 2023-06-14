@@ -1,0 +1,67 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 76a1-b447-e193-5828
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 18"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Assault 3
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 5
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon, the target does not receive the benefits of Dense Cover against that attack. Each time an attack is made with this weapon against an enemy unit, if a hit is scored, until the end of the phase, that enemy unit is exposed and the bearer gains the Target Exposure (Aura) ability.
+    id: b6ce-16be-2579-7112
+    name: Phosphoenix
+    publicationId: ebe8-544e-pubN65537
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly <FORGE WORLD> CORE unit is within 6" of this model, each time a  model in that unit makes a ranged attack against an exposed unit, the target does not receive the benefits of Dense Cover against that attack.
+    id: 6338-acdd-022c-60df
+    name: Target Exposure (Aura)
+id: 145a-da77-303d-34f7
+name: 'Relic: Phosphoenix'
+publicationId: ebe8-544e-pubN65537
+page: 69
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: 1eff-f397-51b4-476b
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

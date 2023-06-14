@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: a7df-80b3-db48-af4c
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: a3ea-2df0-3cbf-ce8a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: c146-e947-0f2c-40e9
+name: 'Stratagem: Paragon of Iron'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: dcb4-ce02-cda6-6f1d
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true

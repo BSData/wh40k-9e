@@ -1,0 +1,129 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 1c6f-0311-3eba-3180
+    id: 4d67-4dcf-6c59-18a0
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 6a37-4c9f-a323-a8f2
+    id: f124-4e5d-4ca2-b99f
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 876e-ea78-1fdf-f250
+    id: 52bc-6362-5e87-bf60
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 3117-16d8-fcef-4f56
+    id: ed89-f760-f4a6-b12c
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: c0ef-6b06-22f9-220b
+    id: dada-36d9-33a5-d2fb
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 08f1-d244-eb44-7e01
+    id: 6933-06de-75c1-fb0e
+    name: Core
+entryLinks:
+  - targetId: ff80-1682-a708-e772
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d01c-1da0-778f-5afe
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+        shared: true
+      - id: 1a4a-451a-0037-98e0
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+    id: c017-13ff-ad36-09fd
+    name: Tomb Blade
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 20a7-2e42-4c73-9844
+    type: selectionEntryGroup
+    exported: true
+    id: a005-7489-2198-a6f1
+    name: Battle Honours
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a ranged attack is made against this unit, subtract 1 from that attack's hit roll.
+    id: 042a-9a99-54f4-96ee
+    name: Evasion Engrams
+    publicationId: 61c6-c8c5-pubN65537
+    page: 102
+infoLinks:
+  - targetId: 601f-ad02-3e1f-fcc4
+    type: rule
+    id: 9554-36e5-8b07-6db9
+    name: Living Metal
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: aa07-b2de-6de0-3dd9
+    type: rule
+    id: ba0e-d402-1b89-0eea
+    name: Command Protocols
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: cba7-3427-625e-eb99
+    type: rule
+    id: e3cb-6aae-abb2-423e
+    name: Reanimation Protocols
+    publicationId: 61c6-c8c5-pubN65537
+id: 86e5-0d3d-cacc-2c2c
+name: Tomb Blades
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 8.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 86e5-0d3d-cacc-2c2c
+        value: 3.0
+        shared: true
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 12.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 86e5-0d3d-cacc-2c2c
+        value: 6.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 7fcd-553a-a403-3e5d
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true

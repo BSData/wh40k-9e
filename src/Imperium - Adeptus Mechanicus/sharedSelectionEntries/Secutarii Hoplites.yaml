@@ -1,0 +1,124 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ca27-5069-1c2c-a28b
+    id: d9f8-814c-540d-228a
+    name: 'Faction: Adeptus Mechanicus'
+  - targetId: 3ee7-025b-11e8-b1bd
+    id: 57ad-6413-3c26-3862
+    name: 'Faction: Secutarii'
+  - targetId: cdee-83f1-5387-56cc
+    id: 1ed9-f580-7b36-1041
+    name: 'Faction: Skitarii'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 2fe4-ed26-d522-e31f
+    name: Infantry
+  - targetId: 638c-19da-89bd-1382
+    id: 4adc-c690-7a61-0ed4
+    name: Secutarii Hoplites
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: bab8-458f-994b-7d37
+    name: 'Faction: Imperium'
+  - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    primary: true
+    id: 330d-66cc-1923-faa3
+    name: New CategoryLink
+entryLinks:
+  - targetId: 1d6c-b335-25cd-4706
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 6bb6-aa38-6704-7692
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: fc17-82f1-8fb2-6e35
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 8d7b-486b-db9e-4eee
+    name: Hoplite Alpha
+  - targetId: 6e86-fb6e-7fe5-10ba
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 7589-4040-6f8d-d198
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+      - id: aff8-d719-8376-e626
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+        shared: true
+    id: 0f69-0b50-95c7-26ab
+    name: Secutarii Hoplite
+infoLinks:
+  - targetId: 4658-3b27-6160-c91d
+    type: profile
+    id: 33d4-a0f6-8592-a660
+    name: Kryptopatris Field Generator
+  - targetId: 0d4c-edf0-a3ac-5a96
+    type: profile
+    id: 21eb-1f43-75c0-74c0
+    name: Secutarii
+  - targetId: bf06-9568-c658-1644
+    type: profile
+    id: 5766-036b-c463-f830
+    name: Titan Guard
+  - targetId: 36ba-2b6e-86fe-943b
+    type: rule
+    id: 555f-02ab-0804-4a3c
+    name: Doctrina Imperatives
+id: 622d-d6fb-7fe4-2064
+name: Secutarii Hoplites
+publicationId: 7573-8d1b-acdf-2de8
+page: 93
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 622d-d6fb-7fe4-2064
+        value: 5.0
+        shared: true
+  - type: add
+    field: category
+    value: ad5e-c5a6-d40a-5c5f
+    conditions:
+      - type: equalTo
+        childId: 7967-3985-9e3c-e265
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: ac03-d781-0c3b-b4be
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

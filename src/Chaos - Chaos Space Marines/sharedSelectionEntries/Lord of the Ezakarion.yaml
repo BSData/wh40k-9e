@@ -1,0 +1,63 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 4a05-f6df-5e2f-63d8
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 993e-ec34-aad7-ec43
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 9302-33d5-1089-4316
+name: Lord of the Ezakarion
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 37cd-2830-725b-a321
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 398a-c8da-c8bd-da58
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 0.0
+    conditions:
+      - type: atLeast
+        childId: 2aee-51b0-2b2b-218d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

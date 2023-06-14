@@ -1,0 +1,96 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: 4545-9018-7bc5-6dd3
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 0666-526e-c569-3278
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: abbd-9c4e-522b-4cd1
+name: 'Stratagem: High Acolytes'
+modifiers:
+  - type: set
+    field: 4545-9018-7bc5-6dd3
+    value: 0.0
+    conditions:
+      - type: equalTo
+        childId: ae09-117e-a6fa-316b
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 0666-526e-c569-3278
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 0666-526e-c569-3278
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 0666-526e-c569-3278
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: e6c7-87a2-73a3-a475
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 9aed-5e2d-8d51-5f31
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 9aed-5e2d-8d51-5f31
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true

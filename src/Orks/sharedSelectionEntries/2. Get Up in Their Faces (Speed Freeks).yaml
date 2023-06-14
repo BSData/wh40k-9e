@@ -1,0 +1,48 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+constraints:
+  - id: c13c-223a-63d7-88fe
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 9c51-511a-fa51-b7be
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This WARLORD is eligible to shoot in a turn in which they Fell Back.
+    id: 588e-1c80-7f6a-8887
+    name: Get Up in Their Faces
+    publicationId: 11b5-77b9-pubN65537
+    page: 132
+id: f041-10fc-9040-8aa3
+name: 2. Get Up in Their Faces (Speed Freeks)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: 258d-e4cb-6f35-fe20
+        field: selections
+        scope: parent
+        shared: true

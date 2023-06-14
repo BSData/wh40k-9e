@@ -1,0 +1,46 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: 8be3-ed17-1aee-67d8
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 040d-9bcd-4079-d01b
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Once per battle, in your Psychic phase, when the bearer is selected to manifest psychic powers, it can read from the Athenaean Scrolls. If it does, select one psychic power the bearer knows from the Discipline of Change or the Discipline of Vengeance. For the rest of the battle, each time the bearer attempts to manifest that power, roll one additional D6 and discard one D6 for that power's Psychic test.
+    id: 7ff3-ad85-2452-5388
+    name: Athenaean Scrolls
+id: 9b79-c33f-e501-04f1
+name: Athenaean Scrolls
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: 009b-907d-77fd-74b7
+        field: selections
+        scope: ancestor
+        shared: true

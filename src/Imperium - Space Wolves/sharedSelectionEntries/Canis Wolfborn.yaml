@@ -1,0 +1,332 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 100.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: b1a0-9377-aa3d-53fa
+    name: New CategoryLink
+  - targetId: ad01-caec-17d9-cb8d
+    id: 96bd-7831-1e54-eac7
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 8f8c-4fb0-ff5e-494d
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 938b-469b-13d9-88ca
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 8622-2ffa-2c30-5a93
+    name: New CategoryLink
+  - targetId: f093-e031-3131-7b82
+    id: 117d-2c15-a993-f337
+    name: New CategoryLink
+  - targetId: 051a-d40e-0909-aea2
+    id: 8a0b-d15d-12dc-97b6
+    name: New CategoryLink
+  - targetId: 3895-fe56-9c6d-e818
+    id: ec6b-08ce-7ca1-2317
+    name: New CategoryLink
+  - targetId: b3fb-e3f1-a92e-0bc3
+    id: a221-ebe7-e029-1ffd
+    name: Company Champion
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 47e0-970e-8b44-1cf9
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 4625-29a6-888f-2230
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +1
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, you can re-roll the wound roll.
+        id: 633d-89b6-2c56-9e20
+        name: Canis' Wolf claws
+    id: 0b7b-5313-1c93-ad1d
+    name: Canis' Wolf Claws
+entryLinks:
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 6c94-c27c-4d03-1093
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: af04-cab5-6e81-d9bc
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 6e68-2d9c-446b-749f
+    name: Bolt pistol
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 3eb1-a269-1332-e42d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: dd6b-89ea-89a6-18d3
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: e92f-e8c9-69f1-d1e5
+    name: Frag & Krak grenades
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: b31a-fdb3-e841-8855
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 75e2-012e-d503-f571
+    name: Warlord
+  - targetId: 796e-b9d3-6b6f-998b
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 8e72-b4ab-8cb0-7cab
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 984f-d766-62ae-cc95
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: daba-9a8f-695c-e1e2
+    name: Wolfkin
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: 984f-d766-62ae-cc95
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: ee33-18fd-7317-1171
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - targetId: a26b-d11c-4d82-76d3
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 144c-a3d4-41f9-90e3
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: b80e-6f7f-8ee9-4327
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: cee3-32a2-8dd1-3f45
+    name: Crushing teeth and claws
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 2af5-599e-5546-de3d
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: f712-3fc9-4b84-1d23
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model is eligible to perform a Heroic Intervention if it is within 6" horizontally and 5" vertically of any enemy unit, instead of 3" horizontally and 5" vertically. Each time this model makes a Heroic Intervention move, so long as it ends that move either closer to the closest enemy model or within Engagement Range of an enemy CHARACTER unit, it can move up to 6". All other rules for Heroic Interventions still apply.
+    id: 6646-e3d7-c3ed-3c3a
+    name: Honour or Death
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly SPACE WOLVES CAVALRY, SPACE WOLVES BEAST or SPACE WOLVES CHARIOT unit is within 6" of this model, each time that unit fights, until that fight is resolved, each model in that unit can make 1 additional attack with its teeth and claws or crushing teeth and claws, or 2 additional attacks with its flurry of teeth and claws.
+    id: d8ee-8400-1d8e-568d
+    name: Born of Wolves (Aura)
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: ' At the start of the Fight phase, if this model is within Engagement Range of any enemy CHARACTER units, it can fight first that phase.'
+    id: 1caf-2be7-a0ae-68da
+    name: Martial Superiority
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 10"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 5+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 6
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: e23a-5741-7111-0d66
+    name: Canis Wolfborn
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: b395-0c79-e1c6-1849
+    name: Angels of Death
+  - targetId: 50dd-5312-6550-d7e0
+    type: profile
+    id: 94d5-79b5-89c9-ec79
+    name: Savage Fury
+  - targetId: 1640-a9e3-5c03-ac7b
+    type: profile
+    id: 8c1d-baaf-5b33-bd5d
+    name: Swift Hunters
+id: 94f4-0878-c4c9-4436
+name: Canis Wolfborn
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

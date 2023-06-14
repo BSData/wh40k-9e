@@ -1,0 +1,284 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 90.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    primary: true
+    id: 22e0-ae86-31cd-e3f2
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 793c-5151-b946-bf9c
+    name: 'Faction: Imperium'
+  - targetId: c7b7-edbc-bc14-6238
+    id: 6491-f8a3-3844-154c
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 8158-9b4f-8dca-1173
+    id: ba9a-d6ec-0897-9a6a
+    name: 'Faction: Tome Keepers'
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: 266e-83ac-788a-de94
+    name: Primaris
+  - targetId: ef18-746a-369f-43a4
+    id: a636-ae6d-add3-a96b
+    name: Character
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3ecf-4df8-c987-00a7
+    name: Infantry
+  - targetId: 4a50-11f0-9ab2-9c8a
+    id: 4c52-e780-1e6c-0133
+    name: Ancient
+  - targetId: aae4-a60f-7a83-f0f0
+    id: 1a2c-d084-bf0c-0791
+    name: Kae
+entryLinks:
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: f3a1-af81-ff4b-fd29
+    name: Warlord
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 73d5-ee96-e47b-0382
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: fc6b-1f7d-59bb-1e8b
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 1af5-e448-df08-44bd
+    name: Frag & Krak grenades
+  - targetId: 7b16-ad34-1b60-0dd8
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5dc0-46ec-2c9e-ed4e
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 2b53-39af-838d-f82a
+    name: Nobility Made Manifest
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 5dc0-46ec-2c9e-ed4e
+        value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: ee33-18fd-7317-1171
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+  - targetId: caae-f721-310b-3798
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 929d-eec9-9adf-8cc0
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9833-751c-8c34-2361
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 3a6a-20fc-d46f-a437
+    name: Power fist
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1769-ce4a-2d10-9f80
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 10ee-fbf3-d9da-03b0
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 96fa-e2db-884f-26cb
+    name: Bolt pistol
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: bd6f-bc23-b519-b50f
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 9904-94ae-711d-f586
+    name: Ancient Kae
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the start of the first battle round, before the first turn begins, select one enemy unit. While a friendly TOME KEEPERS unit is within 6" of this model, each time an attack is made by that unit that targets the selected enemy unit you can re-roll the hit roll and the wound roll
+    id: 7c2a-3ef8-e966-c820
+    name: Seal of Oath
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 32e9-9fd1-2cf0-e040
+    name: Angels of Death
+  - targetId: 6586-5d43-b320-83cf
+    type: profile
+    id: da8d-ff3a-fef3-ca03
+    name: Astartes Banner [Aura]
+id: edd3-7cfc-5669-8a51
+name: Ancient Kae
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: dc3a-979d-38a3-be1b
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

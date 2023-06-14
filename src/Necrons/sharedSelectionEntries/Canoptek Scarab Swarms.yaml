@@ -1,0 +1,180 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c276-12d8-a188-16a2
+    id: e838-6f4f-712d-c54d
+    name: New CategoryLink
+  - targetId: accb-e3d8-1193-10cc
+    id: 5ab2-236d-96fe-9a6f
+    name: New CategoryLink
+  - targetId: 6a37-4c9f-a323-a8f2
+    id: f3a3-e761-8517-4c22
+    name: New CategoryLink
+  - targetId: 876e-ea78-1fdf-f250
+    id: d663-78ba-7a7b-84b3
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: 8edb-52c3-652a-5a1b
+    name: New CategoryLink
+  - targetId: 7a53-eedc-8dbb-8505
+    id: bfdc-95c0-8a21-2dcc
+    name: New CategoryLink
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+        value: -1.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: b607-4411-a45e-e09a
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+      - id: eb0c-67a7-affc-4206
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    infoLinks:
+      - targetId: 3a36-ee53-2240-4170
+        type: rule
+        id: 8a51-b395-d46e-6b3a
+        name: Dimensional Translocation
+    id: 72af-703a-fc3d-8971
+    name: 'Stratagem: The Swarm Descends'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: lessThan
+            childId: 7fcd-553a-a403-3e5d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+entryLinks:
+  - targetId: a5ff-8f22-fa9b-15b5
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1455-f602-2a9d-0d71
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: 1044-5c61-4d81-b5a8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+        shared: true
+    id: 72be-e00a-0560-118c
+    name: Canoptek Scarab Swarm
+  - targetId: 20a7-2e42-4c73-9844
+    type: selectionEntryGroup
+    exported: true
+    id: 5f73-c25d-4816-3901
+    name: Battle Honours
+constraints:
+  - id: 27e6-1768-f457-ca63
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildForces: true
+infoLinks:
+  - targetId: cba7-3427-625e-eb99
+    type: rule
+    id: cc6f-7a54-d794-bf3c
+    name: Reanimation Protocols
+  - targetId: aa07-b2de-6de0-3dd9
+    type: rule
+    id: f642-1c60-3e65-3b9e
+    name: Command Protocols
+  - targetId: 601f-ad02-3e1f-fcc4
+    type: rule
+    id: 6408-39d7-30e2-c21b
+    name: Living Metal
+id: 544d-10ba-7176-4360
+name: Canoptek Scarab Swarms
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 4.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 544d-10ba-7176-4360
+        value: 3.0
+        shared: true
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 6.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 544d-10ba-7176-4360
+        value: 6.0
+        shared: true
+  - type: remove
+    field: category
+    value: 3117-16d8-fcef-4f56
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true
+  - type: decrement
+    field: 27e6-1768-f457-ca63
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+          - type: atLeast
+            childId: c274d0b0-5866-44bc-9810-91c136ae7438
+            field: selections
+            scope: force
+            value: 2.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: 27e6-1768-f457-ca63
+    value: -1.0
+    conditions:
+      - type: notInstanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

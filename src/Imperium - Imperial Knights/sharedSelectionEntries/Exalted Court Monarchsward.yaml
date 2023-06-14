@@ -1,0 +1,108 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+    value: 35.0
+exported: true
+categoryLinks:
+  - targetId: a480-fd09-ecbe-0f5b
+    id: 4699-9ab8-1d71-3056
+    name: Exalted Court
+constraints:
+  - id: 1aa6-0a4a-a62e-9cba
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: dd7a-3f18-28cd-2000
+    typeName: Exalted Court
+    characteristics:
+      - name: Ability
+        typeId: ae8b-ffea-6d0e-8bc6
+        value: >
+          While another friendly <NOBLE HOUSEHOLD> CHARACTER model is within 3" of this unit, enemy models cannot target that CHARACTER model with ranged attacks unless it is the closest eligible target to the attacking model
+      - name: Noble Exemplar ability
+        typeId: 712b-eaec-1af0-e425
+        value: >
+          While an ARMIGER-CLASS model is under the effects of this model's Bondsman ability, at the start of the Fight phase, if that ARMIGER-CLASS model is within Engagement Range of any enemy units, it can fight first that phase
+      - name: Crusade Duty
+        typeId: bcbb-2bc1-7507-3852
+        value: If this model is part of your Crusade force, and if it was not destroyed during the battle, then at the end of the battle you can ignore one failed Out of Action test taken for one <NOBLE HOUSEHOLD> model from your Crusade force - that test is treated as having been passed instead
+    id: d4bc-bc58-be76-ed33
+    name: 'Exalted Court: Monarchsward'
+infoLinks:
+  - targetId: cf81-0eb8-d727-7cf6
+    type: rule
+    id: c9ef-c48b-8b16-1eba
+    name: Exalted Court
+id: d226-1df3-7d9f-ab25
+name: 'Exalted Court: Monarchsward'
+hidden: true
+modifierGroups:
+  - modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: or
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: atLeast
+                    childId: fbcf-4219-e609-ff3b
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: instanceOf
+                    childId: 254d-83b9-c46e-84aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+              - type: and
+                conditions:
+                  - type: instanceOf
+                    childId: 254d-83b9-c46e-84aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: notInstanceOf
+                    childId: d451-70df-eeef-7915
+                    field: selections
+                    scope: parent
+                    shared: true
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e739-6296-9046-12b7
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: instanceOf
+                childId: 4e27-4545-87b5-ae20
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

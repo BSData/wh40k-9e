@@ -1,0 +1,73 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: f38c-e29f-a7c7-02be
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'COMMISSAR equipped with a bolt pistol only. This Relic replaces a bolt pistol and has the following profile:'
+    id: 4585-7d45-f0fc-3a60
+    name: The Emperor's Benediction
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 18"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Pistol 3
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 4
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -1
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time you select a target for this weapon, you can ignore the Look Out, Sir rule. Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.
+    id: 8020-9343-770a-cf92
+    name: The Emperor's Benediction
+id: 25d0-9bd6-7b74-98f4
+name: "Relic: The Emperor's Benediction"
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: fa52-8fb7-1c87-80e6
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: lessThan
+            childId: 0334-f487-8229-0c1a
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true

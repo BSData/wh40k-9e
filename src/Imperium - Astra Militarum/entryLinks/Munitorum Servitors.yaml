@@ -1,0 +1,66 @@
+targetId: ec52-2db0-03fc-7786
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: 664e-5121-7463-a3eb
+    name: New CategoryLink
+constraints:
+  - id: f040-c61f-6379-cf00
+    type: maximum
+    field: selections
+    scope: force
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: f16c-0dd1-ec28-fdf2
+name: Munitorum Servitors
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditions:
+      - type: atLeast
+        childId: 8b96-79e4-bc59-f782
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+  - type: increment
+    field: f040-c61f-6379-cf00
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 8b96-79e4-bc59-f782
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    conditions:
+      - type: equalTo
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+  - type: set
+    field: f040-c61f-6379-cf00
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 8b96-79e4-bc59-f782
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true

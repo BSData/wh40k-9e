@@ -1,0 +1,276 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+    value: 90.0
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: dbab-bedb-d6e2-2818
+    name: HQ
+  - targetId: 18e9-ca9c-c85d-ac42
+    id: 42c8-e942-1458-dc66
+    name: Priest
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: b1d4-8ad1-b6e5-47fb
+    name: Primaris
+  - targetId: c7a9-7b15-c0b7-01a7
+    id: cb51-ee9a-00b7-4e03
+    name: Sephax
+  - targetId: ef18-746a-369f-43a4
+    id: 44b1-f2d4-ab2c-2b34
+    name: Character
+  - targetId: 3d52-fccf-10c0-3fae
+    id: f5ba-cfb5-3eba-56d6
+    name: Infantry
+  - targetId: c7b7-edbc-bc14-6238
+    id: 126f-13c1-5ab7-75d0
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: b2f6-15f9-a140-5374
+    name: 'Faction: Imperium'
+  - targetId: 8158-9b4f-8dca-1173
+    id: 7a69-448b-4eb2-b471
+    name: Tome Keepers
+entryLinks:
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 95a7-8868-97cc-116d
+    name: Warlord
+  - targetId: 90a6-7b5a-61db-ed0f
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: b864-0b1f-7d68-d865
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 1792-d0af-cb3d-1c32
+    name: Iron Resolve
+    modifiers:
+      - type: set
+        field: b864-0b1f-7d68-d865
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+  - targetId: 86bc-37a9-6bd0-3637
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 566e-6844-0071-5c3d
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 02ce-1179-450a-227e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: ce86-0926-1a7c-8246
+    name: Absolver Bolt pistol
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: acc0-7f16-6772-a7d8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: e89a-d154-35ec-c7d6
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 66c0-a3d0-4fcf-9d50
+    name: Frag & Krak grenades
+  - targetId: dd32-2090-4cf4-620a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: e044-a888-c240-ddb6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 3f5a-7dd0-5bee-928d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: e064-53d4-212e-97e1
+    name: Benediction of Fury
+  - targetId: edab-e2c4-01f5-63cc
+    type: selectionEntryGroup
+    exported: true
+    id: 8b51-8f52-29fe-c0f1
+    name: Litanies
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: e1b0-5af1-cf62-15e5
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 3dd2-6a1f-eefe-a85d
+    name: Orator Sephax
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: d6e5-38c6-07df-87dd
+    name: Angels of Death
+  - targetId: 3f26-e8cb-ea53-e656
+    type: profile
+    id: 40d5-42be-4134-daac
+    name: Spiritual Leaders
+  - targetId: b355-bd49-c5a5-805f
+    type: profile
+    id: bba6-79c9-ae0b-35b4
+    name: Rosarius
+id: 9a04-1f70-d99f-39c0
+name: Orator Sephax
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: dc3a-979d-38a3-be1b
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

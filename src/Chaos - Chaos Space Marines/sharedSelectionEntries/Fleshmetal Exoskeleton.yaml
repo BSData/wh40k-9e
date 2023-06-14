@@ -1,0 +1,81 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 1237-1650-ac39-eac6
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 72d4-f53b-a92b-4147
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - Each time an attack is allocated to the bearer, subtract 1 from the Damage characteristic of that attack ( to a minimum of 1).
+
+          - Each time an enemy unit shoots or fights, after it finishes making its attacks, if the bearer lost any wounds as a result of those attacks but was not destroyed, roll one D6: on a 4+, the bearer regains up to D3 wounds lost as a result of those attacks.
+    id: b088-420f-45ed-6efb
+    name: Fleshmetal Exoskeleton
+id: 3831-0037-831e-3ffe
+name: Fleshmetal Exoskeleton
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 87da-018e-ea9b-f5c4
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: bb17-4692-b1ad-a620
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: 3d52-fccf-10c0-3fae
+        field: selections
+        scope: ancestor
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 59f5-b2e1-0a7e-6790
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: c44e-208c-55c4-8b4b
+            field: selections
+            scope: parent
+            shared: true

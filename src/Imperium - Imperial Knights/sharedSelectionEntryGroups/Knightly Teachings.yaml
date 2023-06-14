@@ -1,0 +1,128 @@
+exported: true
+entryLinks:
+  - targetId: e03a-00da-b798-4aa2
+    type: selectionEntry
+    exported: true
+    id: 3dc4-7cc8-09e3-fd22
+    name: 'Knightly Teaching: The Virtue of Courage'
+  - targetId: 5f9e-1142-da8e-1031
+    type: selectionEntry
+    exported: true
+    id: 749f-0948-d894-66e6
+    name: 'Knightly Teaching: Random'
+  - targetId: d8e1-a468-335a-fa7b
+    type: selectionEntry
+    exported: true
+    id: 5fa3-ba82-f9fc-2368
+    name: "Knightly Teaching: The Knight's Faith"
+  - targetId: 6bc1-068f-4ac3-e962
+    type: selectionEntry
+    exported: true
+    id: 1a7e-23b1-dffd-488b
+    name: 'Knightly Teaching: The Oath of Justice'
+  - targetId: a8aa-ae9f-996c-a7b2
+    type: selectionEntry
+    exported: true
+    id: 86f2-69cd-d1e7-9521
+    name: "Knightly Teaching: The Warrior's Hope"
+  - targetId: 51f8-8765-52f2-7784
+    type: selectionEntry
+    exported: true
+    id: e1d0-a2bc-ebec-da66
+    name: 'Knightly Teaching: The Wisdom of Nobility'
+  - targetId: 38f0-0ce3-c949-86fa
+    type: selectionEntry
+    exported: true
+    id: b00a-f1e7-d6b3-915b
+    name: 'Knightly Teaching: The Folly of Mercy'
+constraints:
+  - id: 08ea-6d0f-2293-69aa
+    type: maximum
+    field: selections
+    scope: parent
+    value: 3.0
+    shared: true
+  - id: 0499-fd08-0618-85b0
+    type: minimum
+    field: selections
+    scope: parent
+    value: 3.0
+    shared: true
+id: 6fef-fb1a-019d-36c5
+name: Knightly Teachings
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 28fe-b789-cbd6-ba3f
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: dd94-b1c1-7cb4-6002
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+modifierGroups:
+  - modifiers:
+      - type: set
+        field: 08ea-6d0f-2293-69aa
+        value: 1.0
+      - type: set
+        field: 0499-fd08-0618-85b0
+        value: 1.0
+    conditions:
+      - type: atLeast
+        childId: 5f9e-1142-da8e-1031
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+  - modifiers:
+      - type: set
+        field: 0499-fd08-0618-85b0
+        value: 4.0
+      - type: set
+        field: 08ea-6d0f-2293-69aa
+        value: 4.0
+    conditions:
+      - type: atLeast
+        childId: d81e-ca71-90e1-87f4
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+  - modifiers:
+      - type: set
+        field: 0499-fd08-0618-85b0
+        value: 1.0
+      - type: set
+        field: 08ea-6d0f-2293-69aa
+        value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: 28fe-b789-cbd6-ba3f
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: dd94-b1c1-7cb4-6002
+            field: selections
+            scope: parent
+            shared: true

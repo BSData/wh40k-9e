@@ -1,0 +1,47 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: c4e3-f366-cf7f-4f91
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This WARLORD can perform a Heroic Intervention if there any enemy units within 6” of them instead of 3”, and when doing so can move up to 6” instead of 3”. When an enemy unit within 1” of this WARLORD is chosen to Fall Back, you can roll one D6; unless any models in that unit have a minimum move characteristic, on a 4+ that unit cannot Fall Back this turn.
+    id: c830-0b4f-1811-69ec
+    name: No Escape
+id: cbf7-3e36-3db0-880c
+name: No Escape - Hereticus
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 9d23-57b8-72c2-d750
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 9d23-57b8-72c2-d750
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true

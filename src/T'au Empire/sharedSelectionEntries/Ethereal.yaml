@@ -1,0 +1,171 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 90.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 8cc3-4e99-e01d-fed8
+    id: 7ebf-5dba-7a13-8daf
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 1138-0415-b217-f3e5
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: d605-e92b-3722-2c5c
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 6529-e9e9-8838-9d9e
+    name: New CategoryLink
+  - targetId: 77ee-b03b-d244-d535
+    id: e527-6d82-e3a5-d3dd
+    name: New CategoryLink
+  - targetId: 05f0-8653-4515-8349
+    id: 4568-cc31-de2f-f974
+    name: New CategoryLink
+entryLinks:
+  - targetId: a3aa-ea32-ab42-aad5
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: addb-fab4-49cb-2cb5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 1246-ff67-4467-b3fa
+    name: Drones
+    modifiers:
+      - type: append
+        field: name
+        value: ' (0-2)'
+  - targetId: c099-97cd-b44e-633a
+    type: selectionEntry
+    costs:
+      - name: pts
+        typeId: points
+        value: 5.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 1.0
+    exported: true
+    id: 2c53-c14a-e8ff-d763
+    name: Hover Drone
+  - targetId: 7db5-63ac-e907-c20f
+    type: selectionEntry
+    exported: true
+    id: e8db-be61-b4a5-9ae9
+    name: Warlord
+  - targetId: 0564-905a-e896-f5ab
+    type: selectionEntryGroup
+    exported: true
+    id: c1b5-101c-9254-90a1
+    name: Relics & Signature Systems
+  - targetId: 0b62-f560-227b-02a9
+    type: selectionEntryGroup
+    exported: true
+    id: 831e-0468-f4c2-7dda
+    name: Warlord Traits
+  - targetId: 8b78-5c86-cc97-57ee
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: ffca-57b6-a59a-4f91
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: ba47-2928-9a62-7760
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 83af-f095-0388-3645
+    name: Honour Blade
+  - targetId: 781c-f068-0343-beb8
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: e567-7996-25dc-ea23
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: ff55-904f-3027-c745
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 607f-edcd-b0d5-0a15
+    name: Invocations of the Ethereals
+  - targetId: edca-3dfb-47b4-ce25
+    type: selectionEntryGroup
+    exported: true
+    id: 4b53-5ecd-6755-f5a1
+    name: Character Stratagems
+infoLinks:
+  - targetId: c40c-4ee4-7184-d483
+    type: profile
+    id: e2fe-3444-c959-316d
+    name: Failure Is Not An Option (Aura)
+  - targetId: cc06-c994-7dd8-17a7
+    type: profile
+    id: 1244-8abe-c5fd-751d
+    name: Embodiments of the Empire
+  - targetId: c301-1174-2501-d7e4
+    type: profile
+    id: 7092-9275-53cd-5aa7
+    name: Ethereal
+    modifiers:
+      - type: set
+        field: 0bdf-a96e-9e38-7779
+        value: 10"
+        conditions:
+          - type: equalTo
+            childId: c099-97cd-b44e-633a
+            field: selections
+            scope: ca18-6d3e-222c-cf95
+            value: 1.0
+            shared: true
+  - targetId: 9138-595d-4656-39d8
+    type: rule
+    id: 3dee-a6bc-2124-4660
+    name: Inspired to Greatness
+  - targetId: f18e-a10a-50d4-a21b
+    type: profile
+    id: 26ce-7bdd-71b1-ef18
+    name: Serene Unifier (Ethereal)
+id: ca18-6d3e-222c-cf95
+name: Ethereal
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 1.0
+    conditions:
+      - type: atLeast
+        childId: a3aa-ea32-ab42-aad5
+        field: selections
+        scope: self
+        value: 1.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: 1742-90e4-26f1-d1d2
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true

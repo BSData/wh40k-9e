@@ -1,0 +1,44 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 7a49-25fc-ba8a-abc4
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          TEMPESTOR PRIME model only. The bearer gains the following ability:
+
+          REFRACTOR FIELD GENERATOR (Aura): While a friendly MILITARUM TEMPESTUS INFANTRY unit is within 6" of this model, models in that units have a 5+ invulnerable save.
+    id: f755-eac3-3799-5361
+    name: 'Relic: Refractor Field Generator'
+id: 00cb-7dec-59f8-acfc
+name: 'Relic: Refractor Field Generator'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: 12bf-5b84-a1bc-6989
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

@@ -1,0 +1,98 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: a4f4-3cb7-6272-d10e
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 317f-3fb9-4a77-b1be
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: +3
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon, on an unmodified wound roll of 6, the target suffers 1 mortal wound in addition to any normal damage (if the target is a VEHICLE unit, it suffers 3 mortal wounds in addition to any normal damage instead).
+    id: 1e0c-843b-b4fc-1ba1
+    name: Axe of the Forgemaster
+id: c11f-65ba-aee8-e737
+name: Axe of the Forgemaster
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 87da-018e-ea9b-f5c4
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: bb17-4692-b1ad-a620
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 2c9b-e9ab-0b26-1a74
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: d368-a1bb-72eb-8826
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 4cc1-e7e0-a70a-336f
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 3292-34e6-f679-d5b9
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true

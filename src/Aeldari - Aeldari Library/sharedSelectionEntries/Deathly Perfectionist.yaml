@@ -1,0 +1,58 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to the Strength characteristic of weapons this WARLORD is equipped with (excluding Relics).
+    id: 0dc0-83f6-c7ec-fff5
+    name: Deathly Perfectionist
+id: e322-8466-e106-e97b
+name: Deathly Perfectionist
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: instanceOf
+            childId: 0fa5-c739-c66f-3d88
+            field: selections
+            scope: ancestor
+            shared: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 9c6b-c47c-ab1b-5048
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: 1800-8e18-43c8-770e
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: fa66-1b74-39b7-2422
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true

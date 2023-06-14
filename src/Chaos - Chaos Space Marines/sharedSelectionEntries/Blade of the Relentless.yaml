@@ -1,0 +1,80 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 7e07-0748-415f-41a6
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 0d1b-d46f-9398-f9b9
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: +1
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -4
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time the bearer fights, it can make one additional attack with this weapon. Each time an attack is made with this weapon, on an unmodified hit roll of 6, the target suffers 2 mortal wounds and the attack sequence ends.
+    id: a517-f22d-6bc7-0696
+    name: Blade of the Relentless
+id: 23c8-1df3-c4f0-ca12
+name: Blade of the Relentless
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: f250-4f97-aaa8-f875
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: bc9e-551d-9afb-78d5
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 70e4-e337-c20e-c619
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 44ca-bff0-2ab8-567b
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true

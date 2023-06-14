@@ -1,0 +1,95 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 276a-fee4-b890-5e53
+    name: Character
+constraints:
+  - id: 2c08-5301-1c8e-1cc4
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 113b-13bd-0c23-6633
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 6a6f-6b25-8347-4c3e
+name: Character (Tyrannical Court)
+modifiers:
+  - type: increment
+    field: 113b-13bd-0c23-6633
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 113b-13bd-0c23-6633
+    value: 2.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: c50f-9cc4-a751-6707
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: c50f-9cc4-a751-6707
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 0.0
+    conditions:
+      - type: atLeast
+        childId: 2aee-51b0-2b2b-218d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

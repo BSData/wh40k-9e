@@ -1,0 +1,251 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: pts
+    typeId: points
+    value: 120.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: c07a-61b3-0fef-214f
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 6f0e-4674-89cb-0c08
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: a7b7-2c9b-7a48-3e60
+    name: New CategoryLink
+  - targetId: ca10-a5dd-f54f-0ed5
+    id: f8e1-8102-3e63-b8f7
+    name: New CategoryLink
+  - targetId: eb55-bd6b-3e75-d505
+    id: b312-6ad7-f1b4-7e96
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: a0ec-410a-87ea-6b13
+    name: New CategoryLink
+  - targetId: 1e3f-0a7b-0c8f-84db
+    id: b051-f46e-f5b5-3e81
+    name: New CategoryLink
+  - targetId: 860d-2aae-803c-0164
+    id: a4b7-a637-726a-215d
+    name: New CategoryLink
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: dcb3-c298-3b73-555d
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6a18-769b-d931-d0c7
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon against a unit (excluding VEHICLE units), add 1 to that attack's wound roll.
+        id: 3024-ce93-793f-15f9
+        name: Black Blade of Venom
+    id: 536e-0046-f234-00bf
+    name: Black Blade of Venom
+entryLinks:
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: bd20-459e-1738-551b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: cd61-8468-9046-ff3a
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: b757-41b0-4519-d35a
+    name: Frag & Krak grenades
+  - targetId: c445-e211-f316-5d83
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 12d4-ca16-1c30-74bf
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c1d3-e740-7abe-9ece
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 8615-bf80-cb66-9a34
+    name: Combi-melta
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: bad4-7cc1-6b79-0e18
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 7ba2-e906-3387-59ed
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: fea6-73d5-9b34-5882
+    name: Inspiring Leader
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: 7ba2-e906-3387-59ed
+            value: 1.0
+        conditions:
+          - type: greaterThan
+            childId: 398a-c8da-c8bd-da58
+            field: selections
+            scope: 59a1-57e1-044a-8ac3
+            shared: true
+            includeChildSelections: true
+  - targetId: 398a-c8da-c8bd-da58
+    type: selectionEntry
+    costs:
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+        value: 1.0
+    exported: true
+    id: f918-a255-4779-494a
+    name: Warlord
+constraints:
+  - id: e184-3dfb-f0e6-1c64
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 6
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 8494-930a-1d91-1d88
+    name: Lord Arkos
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly ALPHA LEGION unit is within 6" of this model, add 1 to Advance and charge rolls made for that unit.
+    id: cb29-afcf-81f6-5a81
+    name: Lord of the Faithless (Aura)
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: If your army is Battle-forged, you receive 1 additional Command point if LORD ARKOS is your WARLORD.
+    id: 9599-a369-4e87-9430
+    name: Arch-villain
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: During deployment, when you set up this model, it can be set up anywhere on the battlefield that is more than 9" away from the enemy deployment zone and any enemy models.
+    id: ff44-fda3-5a2b-6453
+    name: Infiltrator
+infoLinks:
+  - targetId: a6a1-5807-9079-918d
+    type: profile
+    id: 855d-c5d7-260d-6073
+    name: Aura of Dark Majesty
+  - targetId: 69a2-f63e-3d27-5c09
+    type: profile
+    id: 500b-01df-71ba-f857
+    name: Lord of Chaos
+id: 59a1-57e1-044a-8ac3
+name: Lord Arkos [LEGENDS]
+page: ''
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: 88b1-c697-e840-2850
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true

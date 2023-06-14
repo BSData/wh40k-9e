@@ -1,0 +1,42 @@
+typeId: dfe7-9b0a-ece9-9141
+typeName: Household Tradition
+characteristics:
+  - name: Description
+    typeId: 9271-9853-fe95-0c04
+    value: >-
+      - Add 6" to the Range characteristic of ranged weapons models with this Martial Tradition are equipped with.
+
+      - If a model has this Martial Tradition, the Type of every Cognis Heavy stubber it is equipped with is changed to Assault 6.
+
+      - If a model has this Martial Tradition, the Armour Penetration characteristic of every Cognis Heavy stubber it is equipped with is improved by 1.
+id: 56a8-f73d-77c8-b99e
+name: Blessed Arms
+publicationId: 82cd-d24f-pubN65537
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: model
+            field: selections
+            scope: force
+            value: 3.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: 224b-1070-218f-fdf4
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: atLeast
+            childId: dfcb-7e82-5b5e-e379
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

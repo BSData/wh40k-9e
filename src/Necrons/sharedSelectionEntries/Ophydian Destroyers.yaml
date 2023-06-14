@@ -1,0 +1,194 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 6a37-4c9f-a323-a8f2
+    id: a3d6-3939-cfea-c78b
+    name: 'Faction: <Dynasty>'
+  - targetId: 876e-ea78-1fdf-f250
+    id: 084d-bbc9-3fff-6e45
+    name: 'Faction: Necrons'
+  - targetId: 0ad7-1f84-c52c-ff8c
+    id: 9b47-946e-8ac2-e3a3
+    name: 'Faction: Destroyer Cult'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 2c9a-d298-2b89-b9ed
+    name: Infantry
+  - targetId: f813-a616-fa73-3827
+    id: c069-c7d9-0851-d7b2
+    name: Ophydian Destroyers
+  - targetId: 08f1-d244-eb44-7e01
+    id: f059-1e21-a9a8-f782
+    name: Core
+entryLinks:
+  - targetId: 05d8-d830-9a21-f570
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 99be-055c-37a6-cd9d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 8824-d01d-422f-a473
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 73d8-ebff-87a1-f4b1
+    name: Ophydian Destroyer (Reap-Blade)
+  - targetId: fe8e-bab6-1aab-5034
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 7eee-ed56-f36f-5110
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: 62ce-2f9f-6d22-fddf
+        type: maximum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+    id: 328f-a691-b4cd-055f
+    name: Ophydian Destroyer (Thresher)
+  - targetId: 20a7-2e42-4c73-9844
+    type: selectionEntryGroup
+    exported: true
+    id: 5f60-acb5-b0ff-3934
+    name: Battle Honours
+constraints:
+  - id: 9c2a-8b17-fd67-94e1
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a melee attack is made against this unit, subtract 1 from that attack's hit roll.
+    id: 2bc7-15e1-6256-a545
+    name: Whipcoil Bodies
+    publicationId: 61c6-c8c5-pubN65537
+    page: 102
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: During deployment, you can set up this unit underground instead of setting it up on the battlefield. If you do, then during the Reinforcements step of one of your Movement phases, you can set up this unit anywhere on the battlefield that is more than 9" away from any enemy models.
+    id: bea9-2b1a-7fdc-f97f
+    name: Tunnelling Horrors
+    publicationId: 61c6-c8c5-pubN65537
+    page: 102
+infoLinks:
+  - targetId: 8fc2-276b-299f-abb4
+    type: profile
+    id: 2e64-c0e7-7010-a2e9
+    name: Hardwired for Destruction
+  - targetId: 601f-ad02-3e1f-fcc4
+    type: rule
+    id: 9a97-36f3-c246-616a
+    name: Living Metal
+  - targetId: aa07-b2de-6de0-3dd9
+    type: rule
+    id: 3614-716d-9ea3-cae5
+    name: Command Protocols
+  - targetId: cba7-3427-625e-eb99
+    type: rule
+    id: 4701-b8f3-fc84-f0c1
+    name: Reanimation Protocols
+  - targetId: c452-ea78-7019-5d25
+    type: rule
+    id: e3d9-da59-c97c-2d77
+    name: Cult of Annihilation
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 0e66-022c-dd8e-94e2
+    type: rule
+    id: 048c-0ceb-ff55-f9fa
+    name: Annihilation Protocols
+    publicationId: 61c6-c8c5-pubN65537
+id: 538c-cd82-87a4-5147
+name: Ophydian Destroyers
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 8.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: 538c-cd82-87a4-5147
+        value: 4.0
+        shared: true
+        includeChildSelections: true
+  - type: add
+    field: category
+    value: eb9c-d79f-00bb-6d4a
+    conditions:
+      - type: atLeast
+        childId: 551a-4ae2-77ec-3f08
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 7fcd-553a-a403-3e5d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: decrement
+    field: 9c2a-8b17-fd67-94e1
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+          - type: atLeast
+            childId: c274d0b0-5866-44bc-9810-91c136ae7438
+            field: selections
+            scope: force
+            value: 2.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: 9c2a-8b17-fd67-94e1
+    value: -1.0
+    conditions:
+      - type: notInstanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

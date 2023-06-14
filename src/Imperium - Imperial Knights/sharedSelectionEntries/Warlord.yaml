@@ -1,0 +1,124 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ae09-117e-a6fa-316b
+    id: d480-117a-6a11-9630
+    name: New CategoryLink
+constraints:
+  - id: ea90-438f-dd4e-168d
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 6201-99e3-099b-b699
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: fc10-328d-ec35-77e9
+    type: minimum
+    field: selections
+    scope: parent
+    shared: true
+id: 96f2-3321-e974-f12a
+name: Warlord
+publicationId: 28ec-711c-pubN72690
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: fb63-ae57-d575-b6bb
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: atLeast
+            childId: 6044-0696-3d0e-d025
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: atLeast
+            childId: 187c-66fe-9a65-9ff4
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: instanceOf
+            childId: ef18-746a-369f-43a4
+            field: selections
+            scope: parent
+            shared: true
+  - type: add
+    field: category
+    value: 12e5-8d1f-5527-6f40
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: fb63-ae57-d575-b6bb
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 6044-0696-3d0e-d025
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: fc10-328d-ec35-77e9
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 12e5-8d1f-5527-6f40
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: atLeast
+                childId: fb63-ae57-d575-b6bb
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: atLeast
+                childId: 6044-0696-3d0e-d025
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

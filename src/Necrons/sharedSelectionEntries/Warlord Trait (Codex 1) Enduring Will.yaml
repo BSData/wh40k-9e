@@ -1,0 +1,70 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 094f-2245-505d-393c
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: c634-02ea-cb24-e1d0
+    type: minimum
+    field: selections
+    scope: parent
+    shared: true
+  - id: 305e-ba78-5409-a0ac
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+infoLinks:
+  - targetId: 378c-afb0-e1b5-dc3d
+    type: profile
+    id: 9f58-d817-7c4c-e9a1
+    name: Enduring Will
+id: 1f52-8365-63ed-7a0e
+name: 'Warlord Trait (Codex 1): Enduring Will'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: c634-02ea-cb24-e1d0
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: 8056-ce75-9ad4-f269
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: instanceOf
+                childId: 00c8-26f8-e8b4-b58c
+                field: selections
+                scope: ancestor
+                shared: true
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: 8056-ce75-9ad4-f269
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: instanceOf
+                childId: 2b74-5621-5b41-730f
+                field: selections
+                scope: ancestor
+                shared: true

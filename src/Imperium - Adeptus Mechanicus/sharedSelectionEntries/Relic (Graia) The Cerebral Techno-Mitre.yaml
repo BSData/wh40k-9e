@@ -1,0 +1,65 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 2dbf-dfb3-21f7-e453
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 3" to the range of the bearer's aura abilities (to a maximum of 9"). Each time the bearer uses an ability in your Command phase that specifies a range, you can add 3" to the range of that ability (to a maximum of 9").
+    id: 3bac-4a50-c061-7f0e
+    name: The Cerebral Techno-Mitre
+    publicationId: ebe8-544e-pubN65537
+id: 5d3f-2ee9-8d9c-919f
+name: 'Relic (Graia): The Cerebral Techno-Mitre'
+publicationId: ebe8-544e-pubN65537
+page: 54
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 6743-7925-6ec5-6b91
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: lessThan
+                childId: ac50-58f2-fbb8-af14
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: lessThan
+                childId: 19b8-cad7-7fc3-f6af
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

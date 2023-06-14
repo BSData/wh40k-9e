@@ -1,0 +1,216 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 4b42-1559-a849-323f
+    name: New CategoryLink
+  - targetId: 1a09-5a34-4d13-acd3
+    id: bbaf-888b-50fc-b7d1
+    name: New CategoryLink
+  - targetId: 1c6f-0311-3eba-3180
+    id: 1898-7347-6b3b-d692
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 69c4-6db1-6775-8071
+    name: New CategoryLink
+  - targetId: 08f1-d244-eb44-7e01
+    id: 3da5-4772-416e-9060
+    name: Core
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 50.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 2.0
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    selectionEntryGroups:
+      - defaultSelectionEntryId: 7365-c0bd-b50c-6a13
+        exported: true
+        entryLinks:
+          - targetId: 05ab-e7cc-e856-c36f
+            type: selectionEntry
+            exported: true
+            id: 7365-c0bd-b50c-6a13
+            name: Heavy bolter
+            modifiers:
+              - type: set
+                field: points
+                value: 0.0
+          - targetId: 4572-20b8-fea6-4041
+            type: selectionEntry
+            exported: true
+            id: 836f-86c4-261b-8f7d
+            name: Multi-melta
+        constraints:
+          - id: 8a3e-10c9-f53a-a147
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - id: bf4e-2139-c775-07c9
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        id: 371d-bc94-8b7e-b59a
+        name: Weapon Options
+    entryLinks:
+      - targetId: 37d3-7098-d596-9948
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 0ea0-c9da-907b-ee8e
+            type: minimum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+          - id: efbe-ea75-85db-46a7
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: 521c-71b7-7ddd-9dff
+        name: Bolt pistol
+      - targetId: cddf-945e-1335-e681
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: ba6d-5c50-3155-1b57
+            type: minimum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+          - id: 9781-9d24-2864-a9b3
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: c535-910a-ab44-9de8
+        name: Frag & Krak grenades
+      - targetId: a11f-8f20-5d2c-079a
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: d711-9eb7-b9a2-0a6f
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: d66d-7597-cd1b-1a9a
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 7286-b734-2b0a-5487
+        name: Twin boltgun
+    constraints:
+      - id: 0fb3-f2af-53e9-a092
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: dcbf-84b1-af82-d121
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    infoLinks:
+      - targetId: a59d-dcf2-38a7-c570
+        type: profile
+        id: 5cb9-5fa8-effb-eb5d
+        name: Attack Bike
+    id: 168b-66dd-2d74-d60b
+    name: Attack Bike
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 5789-fb0a-c3d2-5f0c
+    name: Angels of Death
+  - targetId: c027-2e84-7468-0607
+    type: profile
+    id: 11b9-0a87-4b87-7f4b
+    name: Turbo-boost
+id: 0b99-2404-285f-99db
+name: Attack Bike Squad
+modifiers:
+  - type: add
+    field: category
+    value: ea77-8550-8b7d-7a29
+    conditions:
+      - type: greaterThan
+        childId: 7316-aaec-c13a-f805
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: add
+    field: category
+    value: f474-9908-18d8-b720
+    conditions:
+      - type: greaterThan
+        childId: b94e-1480-56dc-b77a
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

@@ -1,0 +1,224 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 110.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 5280-7fb9-d4da-d2ff
+    id: 645e-ae97-beec-2243
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 276c-0a29-7477-17ba
+    name: New CategoryLink
+  - targetId: dfc5-aa04-9546-1b4c
+    id: a2bc-10c1-22dd-9208
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 002b-e5c1-a0a6-e814
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 347d-c144-cc2a-9750
+    name: New CategoryLink
+  - targetId: eb72-b7a9-1df1-04db
+    id: b416-8d0c-d543-d16b
+    name: New CategoryLink
+  - targetId: ab11-5a98-293c-f588
+    id: bc88-dbc0-22cb-be43
+    name: Skulltaker
+  - targetId: b603-5fea-c225-4d53
+    id: cbd2-e9d7-5d30-a237
+    name: Daemon
+  - targetId: 2a5a-f894-9070-d236
+    id: 2e75-b823-9961-3a57
+    name: 'Faction: Legiones Daemonica'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: c6a6-44b9-b4d7-a814
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2018-7786-e429-38e2
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, invulnerable saving throws cannot be made against that attack.
+        id: d347-84d5-cb0a-f6a5
+        name: The Slayer Sword
+    id: 8a83-0dfc-c0ac-982b
+    name: The Slayer Sword
+entryLinks:
+  - targetId: c488-0afe-c67e-2606
+    type: selectionEntry
+    exported: true
+    id: f70e-20d8-d497-df2f
+    name: Warlord
+  - targetId: dbf2-7f02-29ad-ceaa
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: f6f3-861c-a714-1448
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: f802-5332-22c0-162a
+    name: Devastating Blow
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: f6f3-861c-a714-1448
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: c488-0afe-c67e-2606
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 72d4-712e-e462-c7e7
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: b0a6-d583-d5ca-83b1
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 6
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 6
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 6
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 4+/4+
+    id: b5ca-97ed-3df3-6371
+    name: Skulltaker
+    page: 0
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - Each time this model makes an attack against an enemy CHARACTER unit, you can re-roll the hit roll and you can re-roll the wound roll.
+
+          - Each time an enemy CHARACTER unit is destroyed by this model, increase the range of this model's Herald of Khorne and Locus of Decapitation abilities by 3" (to a maximum of 12").
+    id: e93f-efc0-fd1d-82b0
+    name: Skulls for Khorne
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: In your Command phase, select one friendly BLOODLETTERS CORE unit within 6" of this model. Until the start of your next Command phase, each time a model in that unit makes a melee attack, add 1 to that attack's hit roll.
+    id: c461-0a35-acb2-5f1d
+    name: Lord of Decapitations
+infoLinks:
+  - targetId: 3326-dd72-0e2b-a16c
+    type: infoGroup
+    id: 0738-0ed9-66d5-e29f
+    name: Daemonic
+  - targetId: 0527-c532-60d5-8ab5
+    type: profile
+    id: a9ab-6912-2331-49dd
+    name: Herald of Khorne (Aura)
+id: 09e4-fd54-3f3a-418e
+name: Skulltaker
+page: 0

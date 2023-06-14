@@ -1,0 +1,308 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: pts
+    typeId: points
+    value: 100.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 1c0b-8fa3-2ef0-2099
+    name: New CategoryLink
+  - targetId: ebb3-4f37-6e57-7a8e
+    id: 749a-35fe-7a77-90d4
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 61c0-53d1-1108-ec42
+    name: New CategoryLink
+  - targetId: 48e7-cfd4-1ea3-5847
+    id: b45e-f802-c5d6-3923
+    name: New CategoryLink
+  - targetId: 20fc-5c6e-4a04-320f
+    id: 614e-692f-d3cd-840c
+    name: 'Faction: Asuryani'
+  - targetId: 1114-7875-d463-df17
+    id: e8c3-d46f-3cc8-50eb
+    name: 'Faction: Aeldari'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 1b00-c1d4-f064-60fb
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: afc4-0c9c-3ee3-470e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +2
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -4
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, on a wound roll of 4+, invulnerable saving throws cannot be made against that attack.
+        id: 135d-2ecb-7a9b-e18c
+        name: Asu-var, the Sword of Silent Screams
+        publicationId: 1f62-db93-63f4-4dc7
+        page: 188
+    id: 9396-32a4-db13-c3fe
+    name: Asu-var, the Sword of Silent Screams
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: d665-0275-3566-12c0
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 3476-a854-6f04-4827
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: This model has a 4+ invulnerable save.
+        id: b540-5d3e-aa2d-c6f0
+        name: Forceshield
+    id: 15a4-e55f-941a-5fd0
+    name: Forceshield
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 188
+entryLinks:
+  - targetId: 2ce0-03a1-ec03-76aa
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 739a-7104-5199-9de0
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 2248-3aec-27f8-6a74
+    name: Warlord
+    modifiers:
+      - type: add
+        field: category
+        value: 858e-1bd9-61c9-6dcf
+        conditions:
+          - type: greaterThan
+            childId: 2ce0-03a1-ec03-76aa
+            field: selections
+            scope: 6c95-9f0a-0951-30ab
+            shared: true
+            includeChildSelections: true
+  - targetId: 48b5-c3fb-b457-2b91
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: de4b-81c6-a2bb-9796
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: bbce-bda1-ee40-a519
+    name: '2: Walker of Many Paths'
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: de4b-81c6-a2bb-9796
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 7753-561b-04d0-7e40
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 2ce0-03a1-ec03-76aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+  - targetId: 7753-561b-04d0-7e40
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0af6-1492-b9a1-4e9a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 550c-544b-a973-e52e
+    name: 'Stratagem: Champion of the Aeldari'
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 348b-71a4-4954-4527
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: df9b-4713-c4b2-7daa
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 4445-476f-04fc-b2fd
+    name: The Visarch
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 188
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: "Each time another AELDARI model within 6\" of this model is destroyed, roll one D6: on a 4+, this model regains 1 lost wound and, if that other AELDARI model was a CHARACTER, until the end of the battle, add 1 to this model's Attacks characteristic."
+    id: a7b3-cd2a-56f9-35ad
+    name: Champion of Ynnead
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 188
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: If you army is Battle-forged, if a Detachment in your army includes an YVRAINE model, this model can be included in that Detachment without taking up a Battlefield Role slot. While a friendly YVRAINE model is within 3" of this model, that YVRAINE model cannot be selected as the target of ranged attacks.
+    id: 19da-2fb1-1fd5-99bf
+    name: Warden of Yvraine
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 188
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly YNNARI CORE unit is within 6" of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1.
+    id: 5965-8868-6650-4885
+    name: Way of the Blade (Aura)
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 188
+infoLinks:
+  - targetId: d861-e9f8-5a9c-7595
+    type: rule
+    id: 2fb6-b42c-4890-0901
+    name: Battle Focus
+  - targetId: f5cf-ac08-7c58-c76d
+    type: rule
+    id: bb51-f3c0-1807-7bda
+    name: Strands of Fate
+id: 6c95-9f0a-0951-30ab
+name: The Visarch
+publicationId: 1f62-db93-63f4-4dc7
+page: 188
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 2f8b-50ed-d793-6411
+    conditions:
+      - type: equalTo
+        childId: 5af8-e7c8-e3bf-6d52
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

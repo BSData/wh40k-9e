@@ -1,0 +1,64 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 36"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Heavy 3
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 6
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -2
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.
+    id: b086-f01d-0946-df20
+    name: Forgefire
+id: 5cdd-8ebd-d727-7179
+name: 'Relic (Mechanicus Defence Cohort): Forgefire'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: 21a4-e229-0433-5454
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: lessThan
+            childId: 0a8a-2f6d-2507-f330
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: lessThan
+            childId: 38ee-6dae-3cb1-7f84
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

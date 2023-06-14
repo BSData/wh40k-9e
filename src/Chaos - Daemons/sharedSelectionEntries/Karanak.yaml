@@ -1,0 +1,235 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 90.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 7892-58f7-e769-4d87
+    id: e980-e39d-4b33-89d5
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 2652-68a1-fc29-e225
+    name: New CategoryLink
+  - targetId: 0dbe-cdf5-8fa1-36da
+    id: 6798-1d02-c7c4-7cfe
+    name: New CategoryLink
+  - targetId: dfc5-aa04-9546-1b4c
+    id: e395-c949-11e6-bebb
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: c6d9-f194-3aae-f4d1
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 8106-4142-de65-3061
+    name: New CategoryLink
+  - targetId: b603-5fea-c225-4d53
+    id: c9d5-a82a-b23c-e5ca
+    name: Daemon
+  - targetId: 2a5a-f894-9070-d236
+    id: dcd1-3f19-709a-ba61
+    name: 'Faction: Legiones Daemonica'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 0fe0-162d-84a5-46fe
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 7514-8c10-4469-3534
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: ee0e-ce36-0dbe-5381
+        name: Soul-rending fangs
+    id: 6488-ef08-d86b-29ac
+    name: Soul-rending fangs
+entryLinks:
+  - targetId: c488-0afe-c67e-2606
+    type: selectionEntry
+    exported: true
+    id: ca86-644f-cb91-953a
+    name: Warlord
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: 6027-cb64-caf7-6a46
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 4d96-7080-e781-d931
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0d83-39dc-54a3-6099
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 8d3a-91b5-e078-8f15
+    name: Aspect of Death
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: 0d83-39dc-54a3-6099
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: c488-0afe-c67e-2606
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 3baa-2394-5cb8-199b
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: f858-0818-a784-0c95
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 12"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: '-'
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 6
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 6
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 5+/4+
+    id: c67a-7a80-45fb-13b2
+    name: Karanak
+    page: 0
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: In your opponent's Psychic phase, this model can attempt to deny two psychic powers as if it were a PSYKER.
+    id: 9fda-bcb7-e944-5913
+    name: Brass Collar of Bloody Vengeance
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: In your first Command phase, select one enemy CHARACTER unit. Each time this model makes an attack against that CHARACTER unit, a successful wound roll inflicts 2 mortal wounds on the target and the attack sequence ends.
+    id: b3a4-1138-6b4f-3a39
+    name: Prey of the Blood God
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly FLESH HOUNDS CORE unit is within 6" of this model, each time a model in that unit makes an attack, re-roll a wound roll of 1. If the target is a PSYKER unit, you can re-roll the wound roll instead.
+    id: cd0b-dde3-3166-6df7
+    name: Pack Leader (Aura)
+infoLinks:
+  - targetId: 3326-dd72-0e2b-a16c
+    type: infoGroup
+    id: 2cad-c25e-97e7-add3
+    name: Daemonic
+id: b91e-a5fc-d9d4-bf08
+name: Karanak
+page: 0

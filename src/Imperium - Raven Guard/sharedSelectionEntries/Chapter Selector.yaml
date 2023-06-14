@@ -1,0 +1,191 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 4195-8f70-04fc-eef9
+    id: 3fb0-a7d2-7c37-6baf
+    name: 'PC: RG'
+selectionEntryGroups:
+  - defaultSelectionEntryId: 8bff-f667-c272-a085
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        rules:
+          - description: >-
+              - Each time a ranged attack is made against a unit with this tactic, if the attacker is more than 18" away, then the unit with this tactic is treated as having the benefits of light cover against that attack.
+
+              - Each time a ranged attack is made against an INFANTRY unit with this tactic that is entrirely on or within a terrain feature, if the attacker is more than 12" away, then the unit with this tactic is treated as having the benefits of dense cover against that attack.
+            id: f45e-1989-a043-68f8
+            name: Shadow Masters
+            modifiers:
+              - type: set
+                field: hidden
+                value: true
+                conditions:
+                  - type: atLeast
+                    childId: fff5-0cb2-3255-5678
+                    field: selections
+                    scope: force
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+        id: 8bff-f667-c272-a085
+        name: Raven Guard
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 750f-ce9e-f90b-8a5e
+            id: ea87-3f7b-867f-c433
+            name: 'PC: RG Successor'
+        id: c9e1-4b4f-ff8a-62e9
+        name: Raven Guard Successor
+    constraints:
+      - id: 8a12-748e-899a-2e42
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 19ab-7a38-5344-9c30
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 1d37-51fc-a886-6644
+    name: Chapter
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 2149-c937-945a-c5e4
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: deaf-7729-b64c-bfff
+        name: Custom Chapter
+    entryLinks:
+      - targetId: 3700-470e-f75d-6cba
+        type: selectionEntryGroup
+        exported: true
+        id: 67aa-ce9c-bd0c-bbf0
+        name: Forge World Chapters
+    constraints:
+      - id: c137-bead-ffaa-887c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 5fc2-8c7d-4313-444e
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 6f91-66ba-d3d2-cbca
+    name: Successor Chapters
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: c9e1-4b4f-ff8a-62e9
+            field: selections
+            scope: 0753-6b9c-4175-0023
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 5fc2-8c7d-4313-444e
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: c9e1-4b4f-ff8a-62e9
+            field: selections
+            scope: 0753-6b9c-4175-0023
+            value: 1.0
+            shared: true
+entryLinks:
+  - targetId: a7a4-4d2d-81c8-5bd1
+    type: selectionEntryGroup
+    exported: true
+    id: abb3-7602-48a2-b050
+    name: Tactics
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 3700-470e-f75d-6cba
+                field: selections
+                scope: 0753-6b9c-4175-0023
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: deaf-7729-b64c-bfff
+                field: selections
+                scope: 0753-6b9c-4175-0023
+                shared: true
+                includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: fff5-0cb2-3255-5678
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+constraints:
+  - id: af13-a6af-1789-ae51
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 5561-8809-e5b9-58dd
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 0753-6b9c-4175-0023
+name: '**Chapter Selector**'

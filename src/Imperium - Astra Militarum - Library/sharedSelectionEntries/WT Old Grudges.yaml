@@ -1,0 +1,47 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 98b0-d5e6-afa6-e10c
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: f900-5700-fe5b-22ab
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          At the start of the first battle round, select one enemy unit. Until the end of the battle, this WARLORD gains the following ability:
+
+
+          OLD GRUDGES (Aura): While a friendly PLATOON or BATTLE TANK SQUADRON unit is within 6" of this WARLORD, each time a model in that friendly unit makes an attack against that enemy unit, add 1 to the wound roll.
+    id: f788-b04e-7721-6bb2
+    name: Old Grudges
+id: 43d2-fba4-4e96-a8d3
+name: 'WT: Old Grudges'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: dd6e-7055-ca6b-b711
+        field: selections
+        scope: ancestor
+        shared: true

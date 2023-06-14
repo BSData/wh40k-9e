@@ -1,0 +1,209 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+    value: 70.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 4a50-11f0-9ab2-9c8a
+    id: e9a7-59e4-009a-0e20
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 6250-224e-9289-72c2
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: f4c7-486f-5a8a-1d64
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 8457-0529-e172-0af1
+    name: New CategoryLink
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: cbab-b86f-da5e-016d
+    name: New CategoryLink
+  - targetId: 62d3-9871-9675-a63b
+    id: f39c-f7a7-135b-7078
+    name: Elite Character
+selectionEntryGroups:
+  - defaultSelectionEntryId: 6b31-ba4e-e9c7-8959
+    exported: true
+    entryLinks:
+      - targetId: fbf3-4fc8-f474-e3db
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: b91c-0ffc-dd09-e6dc
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 6b31-ba4e-e9c7-8959
+        name: Bolt rifle
+      - targetId: bc9e-551d-9afb-78d5
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: d49d-f48e-5711-0676
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 5162-bd88-d05f-bb6e
+        name: Power sword
+    constraints:
+      - id: 08ec-0b76-327e-f823
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 81e6-33e0-9045-ec91
+    name: Weapon Option
+entryLinks:
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: e577-7d49-8cd1-cd00
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: cf33-62fb-b3b0-81e1
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: ee4f-c08f-bdc7-b7c1
+    name: Bolt pistol
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 3727-cb8b-3a6c-1c36
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 7252-7bf3-95d6-f81f
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 4ed8-58c6-9797-8572
+    name: Frag & Krak grenades
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 7c8b-06c7-0f7e-4e56
+    name: Warlord
+  - targetId: c791-b2fc-df48-1834
+    type: selectionEntry
+    exported: true
+    id: 1a2c-99c7-2a73-add7
+    name: 'Chapter Command: Chapter Ancient'
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: 31ab-f855-2a62-a27b
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: c550-3a2b-b012-b438
+    name: Primaris Ancient
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 2ec3-8494-f99a-2a0e
+    name: Angels of Death
+  - targetId: 6586-5d43-b320-83cf
+    type: profile
+    id: 969e-649f-15fa-e785
+    name: Astartes Banner [Aura]
+id: 58f2-f816-58f2-0b94
+name: Primaris Ancient
+modifiers:
+  - type: add
+    field: category
+    value: 1b89-4aed-3b44-8d0c
+    conditions:
+      - type: equalTo
+        childId: c791-b2fc-df48-1834
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+  - type: add
+    field: category
+    value: b95f-a56d-1ae5-7b66
+    conditions:
+      - type: greaterThan
+        childId: b94e-1480-56dc-b77a
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

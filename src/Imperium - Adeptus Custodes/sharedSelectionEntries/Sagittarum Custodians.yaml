@@ -1,0 +1,189 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: c8f7-6d2e-f4b8-f7a5
+    id: 65b9-ae17-4ac9-a3c5
+    name: 'Faction: Adeptus Custodes'
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 3865-58f5-3629-7bf6
+    name: Imperium
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 82d8-eb86-4d61-68c0
+    name: Infantry
+  - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    primary: true
+    id: e541-e073-bd6b-9674
+    name: New CategoryLink
+  - targetId: 08f1-d244-eb44-7e01
+    id: b0b1-3e45-91bd-c67e
+    name: Core
+  - targetId: 98f2-b15c-d922-d1a7
+    id: 7c3b-0537-c263-ad34
+    name: 'Faction: <Shield Host>'
+selectionEntryGroups:
+  - defaultSelectionEntryId: 23ac-551e-c6e6-707a
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+            value: 50.0
+        exported: true
+        entryLinks:
+          - targetId: f2ec-5f26-ac89-d53f
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 3153-f886-1563-de5e
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+              - id: 63bb-bbac-7645-daa0
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+            id: c717-5a2c-ee2b-774a
+            name: Adrastus Bolt Caliver
+        constraints:
+          - id: efb2-68b3-25db-19c4
+            type: maximum
+            field: selections
+            scope: parent
+            value: 5.0
+            shared: true
+        infoLinks:
+          - targetId: 0e51-b3cc-1895-b6fe
+            type: profile
+            id: f45f-7a1f-7ab1-b06b
+            name: Sagittarum Custodian
+        id: 23ac-551e-c6e6-707a
+        name: Sagittarum
+      - type: model
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+            value: 50.0
+        exported: true
+        entryLinks:
+          - targetId: f2ec-5f26-ac89-d53f
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: bde1-3096-e834-04e4
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+              - id: 81af-68da-a968-3c4a
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+            id: c8ce-6a51-5fed-0f71
+            name: Adrastus Bolt Caliver
+          - targetId: ba04-6a42-34fa-a9d0
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 1fb3-7017-3583-86a0
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+              - id: 814d-d921-a2f6-6f19
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+            id: 1c64-10a3-2abb-7de9
+            name: Misericordia
+        constraints:
+          - id: 8d8a-6caa-29d2-dd18
+            type: maximum
+            field: selections
+            scope: parent
+            value: 5.0
+            shared: true
+        infoLinks:
+          - targetId: 0e51-b3cc-1895-b6fe
+            type: profile
+            id: f22c-223f-c71a-9627
+            name: Sagittarum Custodian
+        id: 1cc4-b3f7-1cf9-aef4
+        name: Sagittarum w/ Misericordia
+    constraints:
+      - id: 4110-9fe0-ec2f-1c61
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+      - id: 554f-fdc2-668f-f441
+        type: maximum
+        field: selections
+        scope: parent
+        value: 5.0
+    id: 5e8a-d202-48b7-872c
+    name: Squad
+entryLinks:
+  - targetId: 40c0-dbc1-a807-e693
+    type: selectionEntryGroup
+    exported: true
+    id: c30e-7759-45d7-aff9
+    name: Battle Honours
+infoLinks:
+  - targetId: 71e6-fef9-c258-08e9
+    type: rule
+    id: d1d1-c8a4-1633-cb8f
+    name: Aegis of the Emperor
+  - targetId: e07e-8dbf-0b15-7485
+    type: rule
+    id: 3b6c-bca1-b939-5c82
+    name: Objective Secured
+  - targetId: bfa6-9e02-c3a2-c27e
+    type: rule
+    id: f9f3-6eb5-fedb-53bc
+    name: Martial K'atah
+id: 8b4d-4d30-e044-0b7b
+name: Sagittarum Custodians
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 6.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 8b4d-4d30-e044-0b7b
+        value: 3.0
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: e0a1-2da5-324d-35c7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

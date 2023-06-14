@@ -1,0 +1,87 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: 791c-860e-bcba-5281
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: 9440-69b6-e247-633e
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 12"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Pistol D6
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 6
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 1
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon, that attack automatically hits the target.
+    id: ba8f-45f9-5ebe-5504
+    name: Incaladion's Cry
+id: 8028-850a-63d1-d5ae
+name: Incaladion's Cry
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: c4a8-24d7-a48e-248e
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 9f16-5fb1-5b57-3571
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ed5e-9843-6dd4-0ac1
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 57f3-7a4e-b801-6be6
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true

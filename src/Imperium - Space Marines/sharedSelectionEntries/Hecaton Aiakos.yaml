@@ -1,0 +1,242 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 8.0
+  - name: pts
+    typeId: points
+    value: 160.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 9634-1741-fb92-5384
+    name: New CategoryLink
+  - targetId: a65d-93e3-9c79-edba
+    id: a193-ce72-9543-2345
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 154c-c7b1-e986-650f
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: 636e-7aa8-dab0-8f64
+    name: New CategoryLink
+  - targetId: f770-0776-f207-8ac4
+    id: a326-af1c-5f83-4c91
+    name: New CategoryLink
+  - targetId: 95b5-3f04-0a5f-94ad
+    id: ce42-bedf-5fb4-4f69
+    name: New CategoryLink
+  - targetId: d79c-fe9d-7aad-ac6d
+    id: 6a15-c3ca-e00c-e4ca
+    name: Contemptor Dreadnought
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: a511-8f8c-278c-49cb
+    name: New CategoryLink
+entryLinks:
+  - targetId: a869-5624-fe55-fe95
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 4cd5-a434-5e7c-f356
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 96d6-576b-54c6-aac2
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 09a3-0d67-b9f3-6843
+    name: Dreadnought combat weapon
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: 221a-6109-61df-015e
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5e45-01e7-fc4a-4b40
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 1d93-5b7a-ffb2-1aa4
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 0964-efe4-3453-3d64
+    name: Heavy plasma cannon
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: 2b03-8d64-3711-f300
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 63bc-7e9e-1a5d-3b23
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9ca2-63e7-d032-304c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 2b4c-fba8-1a05-c23a
+    name: Storm bolter
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: c604-e8f7-198e-2ba3
+    type: selectionEntry
+    exported: true
+    id: 54a6-87f8-a711-266c
+    name: 'Stratagem: March of the Ancients'
+constraints:
+  - id: f2f6-7b0f-4e96-e2a8
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 7
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 7
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 9
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 1025-5364-d0c3-5f22
+    name: Hecaton Aiakos
+    modifiers:
+      - type: set
+        field: 13fc-b29b-31f2-ab9f
+        value: 6
+        conditions:
+          - type: equalTo
+            childId: c604-e8f7-198e-2ba3
+            field: selections
+            scope: c42a-7105-cd0c-eb7c
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 00ca-f8b8-876d-b705
+        value: 10
+        conditions:
+          - type: equalTo
+            childId: c604-e8f7-198e-2ba3
+            field: selections
+            scope: c42a-7105-cd0c-eb7c
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'Each time this model makes a charge move, you can select one enemy unit within Engagement Range of it. Roll one D6, adding 1 to the result if that unit has the VEHICLE keyword: on a 3-5, that enemy suffers 1 mortal wound; on a 6+, that enemy suffers D3 mortal wounds'
+    id: 6d72-289e-fa3b-d57a
+    name: Stampeding Fury
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model cannot be selected to be your Warlord
+    id: 6e08-51c6-ec90-ab93
+    name: Battlesworn Warrior
+infoLinks:
+  - targetId: 22ae-b1a1-b085-0079
+    type: profile
+    id: cf65-74e6-19fa-ba35
+    name: 'Augmented Atomantic Shielding:'
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: d4f9-22a0-080a-f649
+    name: Angels of Death
+  - targetId: 0456-7995-d3d4-1044
+    type: rule
+    id: 0b89-656c-6cd0-1f1a
+    name: Explodes (3"/1)
+  - targetId: 8212-96dd-d64a-c71c
+    type: profile
+    id: 9030-cca7-7b25-6140
+    name: Duty Eternal
+id: c42a-7105-cd0c-eb7c
+name: Hecaton Aiakos
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 4150-a6bc-7e84-c77b
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,121 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: b297-daed-0ad4-100f
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: e906-c2b0-e7b5-d88e
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 24"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Rapid Fire 2
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 5
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: D3
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: If this relic replaces a combi-bolter, it uses this profile.
+    id: a4a3-4329-8bf8-d5c6
+    name: Spitespitter - combi-bolter
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 24"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Rapid Fire 1
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 5
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: D3
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: If this relic replaces the boltgun profile of a combi-weapon, it uses this profile.
+    id: 132f-05ff-3d4c-705c
+    name: Spitespitter - combi-weapon
+id: 4f8e-1932-e989-5b91
+name: Spitespitter
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: c6a1-e0c4-c1b1-dce1
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: fdce-cdf7-21a9-f9ac
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: eba0-9fc6-5334-a390
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: c445-e211-f316-5d83
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 87da-018e-ea9b-f5c4
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: bb17-4692-b1ad-a620
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

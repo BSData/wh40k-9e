@@ -1,0 +1,52 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: e8ed-599a-54ff-0eaa
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: b22a-0dd5-a13b-9fbf
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 1234-2c14-9ed3-3f03
+name: 'Stratagem: Bequeathed by the Iron Council'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: b710-870e-f021-3dd0
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

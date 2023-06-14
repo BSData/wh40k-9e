@@ -1,0 +1,266 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 90.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: f30e-a003-4b58-ea72
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: f1c2-b2b2-97e4-8185
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: e62f-addb-b3f6-5713
+    name: New CategoryLink
+  - targetId: 859a-9acf-049d-dcd9
+    id: 049e-0f79-79af-2ce5
+    name: 'Faction: Wych Cult of Strife'
+  - targetId: 3fa5-9569-a481-fdad
+    id: a11a-0d21-1f2b-d638
+    name: Master Succubus
+  - targetId: 955e-536a-e290-5dcf
+    id: 4ba2-e7d4-febd-d5aa
+    name: 'Faction: Drukhari'
+  - targetId: ef20-5196-feb6-f23d
+    id: 678e-22fd-4156-bfad
+    name: Succubus
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 3d6e-e3e6-3e4a-d468
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+      - id: 331c-b4d3-61bd-1aff
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +1
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, an unmodified hit roll of 6 scores 1 additional hit.
+        id: 9715-9bde-2f5d-58e0
+        name: Lelith's Blades
+    id: 6f86-0ee7-40e1-0b8b
+    name: Lelith's Blades
+entryLinks:
+  - targetId: 2ce0-03a1-ec03-76aa
+    type: selectionEntry
+    exported: true
+    id: a7c4-40e1-9c65-dcb0
+    name: Warlord
+  - targetId: d819-6df6-ff33-c63c
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 3106-4577-d1ef-b6bf
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+      - id: a519-a3e8-33d6-7bc2
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 9adb-0983-a44c-3b09
+    name: Blood Dancer
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: 3106-4577-d1ef-b6bf
+            value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 2ce0-03a1-ec03-76aa
+            field: selections
+            scope: 4d2d-8f34-03e5-91ca
+            value: 1.0
+            shared: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: f0fb-8f8e-c0ac-bc2c
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: 65be-8137-264b-c14b
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+  - id: 9355-7d5a-f75c-4d96
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 7
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 6+
+    id: 93d1-735f-bc69-11c2
+    name: Lelith Hesperax
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly CULT OF STRIFE CORE unit is within 6" of this model, each time a model in that unit makes a melee attack, re-roll a wound roll of 1.
+    id: fe17-c07d-c71e-f57a
+    name: Brides of Death (Aura) (Lelith)
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model has a 4+ invulnerable save. Each time a melee attack is made against this model, subtract 1 from that attack's hit roll.
+    id: 5025-8d56-aca7-3943
+    name: Quicksilver Dodge
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time this model makes a melee attack that targets a CHARACTER unit, you can re-roll the hit roll and you can re-roll the wound roll.
+    id: 8f89-13bb-7911-5bc4
+    name: At Last, a Challenge
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          In your Command phase, select one of the following:
+
+          - Thrilling Acrobatics: Until the end of the turn, this model is eligible to declare a charge in a turn in which it Fell Back or Advanced.
+
+          - Gory Spectacle: In the Fight phase of this turn, if this model destroys any enemy models, then at the end of the Fight phase, it can fight again.
+    id: 2ca0-5d03-209d-559f
+    name: Natural Perfection
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time this model makes a consolidation move, it can move an additional 3", and it does not have to finish this move closer to the closest enemy model.
+    id: e06a-b584-34fa-9354
+    name: Deadly Dance
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time an enemy unit (excluding TITANIC units) that is within Engagement Range of this model is selected to Fall Back, roll off with your opponent. If you win, that unit cannot fall back that turn.
+    id: aedd-620b-4d62-7574
+    name: No Escape (Lelith)
+infoLinks:
+  - targetId: e6c3-8502-de0a-9515
+    type: rule
+    id: 5f33-2f00-d2e2-c549
+    name: Power from Pain
+  - targetId: 5145-3061-a066-4c5c
+    type: rule
+    id: d865-2128-288e-1e2a
+    name: Blade Artists
+id: 4d2d-8f34-03e5-91ca
+name: Lelith Hesperax
+modifiers:
+  - type: add
+    field: category
+    value: ac19-fd2f-b3f8-46d4
+    conditions:
+      - type: greaterThan
+        childId: a7c4-40e1-9c65-dcb0
+        field: selections
+        scope: 4d2d-8f34-03e5-91ca
+        includeChildSelections: true
+  - type: add
+    field: category
+    value: d794-dfc2-3480-61b4
+    conditions:
+      - type: greaterThan
+        childId: a7c4-40e1-9c65-dcb0
+        field: selections
+        scope: 4d2d-8f34-03e5-91ca
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: 53a8-b0ea-cf82-5870
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true

@@ -1,0 +1,98 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 1.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: a367-fb78-5192-96eb
+    id: 175d-355b-74a7-1320
+    name: New CategoryLink
+  - targetId: dc2c-fdd5-528b-e9ad
+    id: ce49-dcb8-4b3a-07c2
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: f10a-a242-2263-a193
+    name: New CategoryLink
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 10.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 1317-52ea-0494-92ae
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: d55b-b99f-79c8-e499
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+    infoLinks:
+      - targetId: 19af-ab35-5929-e624
+        type: profile
+        id: d51e-2098-7ef5-6f62
+        name: Spore Mine
+    id: 857d-7f32-687d-353a
+    name: Spore Mine
+infoLinks:
+  - targetId: fcc8-7f26-c77a-041a
+    type: profile
+    id: 505c-b132-f2c4-3b57
+    name: Float Down
+  - targetId: b799-796a-b062-5dc6
+    type: profile
+    id: 941d-57da-42ae-83fe
+    name: Drone Bioform
+  - targetId: 339f-b2b7-bd45-91f9
+    type: profile
+    id: e81b-49f0-29e6-3303
+    name: Floating Death (Spore Mine)
+id: 0a0b-c7ca-2804-4f90
+name: Spore Mines
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 1
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: 0a0b-c7ca-2804-4f90
+        value: 4.0
+        shared: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 1.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: 0a0b-c7ca-2804-4f90
+        value: 7.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: ed98-6a58-e87d-0c0d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

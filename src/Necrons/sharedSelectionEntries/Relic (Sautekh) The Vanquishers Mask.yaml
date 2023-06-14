@@ -1,0 +1,51 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 93ab-d880-a41b-8766
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: f49c-1790-d5be-dff7
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the start of the Fight phase, you can select one enemy unit within 3" of the bearer. That unit is not eligible to fight this phase until after all eligible units from your army have done so.
+    id: 48e1-54c2-e542-1e4d
+    name: The Vanquisher's Mask
+    publicationId: 61c6-c8c5-pubN65537
+    page: 67
+id: dde2-10e6-b807-0508
+name: "Relic (Sautekh): The Vanquisher's Mask"
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: f6ea-beff-a150-f095
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

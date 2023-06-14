@@ -1,0 +1,46 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 3e41-8f67-4e74-ce48
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly WAR DOG-CLASS model is within 6" of the bearer, each time that model makes an attack, re-roll a wound roll of 1.
+    id: bf71-2e81-98c5-4ae4
+    name: Helm of Dogs (Aura)
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to the Attacks characteristic of the bearer.
+    id: 4079-6cc7-1566-f6e4
+    name: Helm of Dogs
+id: 90f4-d5a1-df1f-38ba
+name: Helm of Dogs
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: eca4-de83-1e4d-cdd6
+        field: selections
+        scope: ancestor
+        shared: true

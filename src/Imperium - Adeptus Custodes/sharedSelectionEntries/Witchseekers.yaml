@@ -1,0 +1,162 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 2f3f-d90e-71d4-730a
+    name: 'Faction: Imperium'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 7532-7036-fef0-66a9
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: 0d57-3b1a-2818-9ff1
+    name: Core
+  - targetId: 038b-7d37-407e-b585
+    id: 7596-b08f-5718-5adb
+    name: Witchseekers
+  - targetId: 5941-05b8-1e58-4eb7
+    id: b4c2-172e-798b-677f
+    name: Anathema Psykana
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 12.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    entryLinks:
+      - targetId: a512-2ef1-31a3-92bc
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: f094-a985-e2e2-c97a
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 0d47-8c23-efb2-9d98
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 2cfa-64f0-382d-aa7c
+        name: Witchseeker Flamer
+    constraints:
+      - id: 6306-760e-6eb6-0346
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+      - id: d572-2ad4-65cc-5b10
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+    infoLinks:
+      - targetId: cd8c-42f3-462b-96be
+        type: profile
+        id: 73f8-9eb2-182c-7519
+        name: Witchseeker
+    id: 7f87-2fb3-f4d7-56b5
+    name: Witchseeker
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 12.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    entryLinks:
+      - targetId: a512-2ef1-31a3-92bc
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 7603-5de5-91fe-2fb3
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 700c-dcde-9222-ec5f
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: f3cd-47ae-169f-cfe8
+        name: Witchseeker Flamer
+    constraints:
+      - id: 88ad-b081-e382-f584
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+      - id: 6349-726e-b229-0932
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    infoLinks:
+      - targetId: 804e-e30a-d63b-4fa1
+        type: profile
+        id: fd7a-ce58-5bdd-df27
+        name: Witchseeker Sister Superior
+    id: 5b1d-9fd8-9be9-5722
+    name: Witchseeker Sister Superior
+entryLinks:
+  - targetId: 40c0-dbc1-a807-e693
+    type: selectionEntryGroup
+    exported: true
+    id: 1faf-8a16-27e1-7828
+    name: Battle Honours
+infoLinks:
+  - targetId: a190-c46b-30d0-a82f
+    type: rule
+    id: 6f35-8c87-6221-d79b
+    name: Daughters of the Abyss
+  - targetId: 8d5d-63c5-e7ba-8014
+    type: profile
+    id: ec4f-7c99-54f5-8903
+    name: Seeker Cadre
+id: 7ce8-5cff-cc35-753d
+name: Witchseekers
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 3.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 7ce8-5cff-cc35-753d
+        value: 5.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 0a95-175c-4f37-736a
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

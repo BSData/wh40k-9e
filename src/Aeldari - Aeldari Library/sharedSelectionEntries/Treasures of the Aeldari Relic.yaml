@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: d069-fdc0-fbbe-0a77
+    type: maximum
+    field: selections
+    scope: roster
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 2d4b-7875-2b12-1c27
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 6e41-a361-db13-2da2
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 8ca6-6aeb-178c-207e
+name: Treasures of the Aeldari Relic
+modifiers:
+  - type: increment
+    field: d069-fdc0-fbbe-0a77
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: 2ce0-03a1-ec03-76aa
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: increment
+    field: d069-fdc0-fbbe-0a77
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: b67d-da32-6a5f-0e22
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

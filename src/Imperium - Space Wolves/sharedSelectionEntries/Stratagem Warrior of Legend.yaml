@@ -1,0 +1,45 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 1283-2217-42a4-73da
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: d35f-89f7-e48b-5d8a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+id: ad41-3ce3-001e-7a9c
+name: 'Stratagem: Warrior of Legend'
+modifiers:
+  - type: set
+    field: 1283-2217-42a4-73da
+    value: 0.0
+    conditions:
+      - type: equalTo
+        childId: ee33-18fd-7317-1171
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

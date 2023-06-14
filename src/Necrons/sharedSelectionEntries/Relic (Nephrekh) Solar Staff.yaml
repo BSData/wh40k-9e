@@ -1,0 +1,99 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 3519-a741-54cd-4bb2
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: c532-bc6e-eddf-c09b
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 24"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Assault 6
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 5
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -2
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 1
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon against an INFANTRY unit, if a hit is scored, then until the end of the turn that unit is blinded. Blinded units cannot fire Overwatch or Set to Defend. This Relic replaces a staff of light.
+    id: 96cd-7372-42f0-8ffc
+    name: Solar Staff (Ranged)
+    publicationId: 61c6-c8c5-pubN65537
+    page: 67
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: User
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -2
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 1
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon against an INFANTRY unit, if a hit is scored, then until the end of the turn that unit is blinded. Blinded units cannot fire Overwatch or Set to Defend. This Relic replaces a staff of light.
+    id: 01c0-76a5-b9df-eb46
+    name: Solar Staff (Melee)
+    publicationId: 61c6-c8c5-pubN65537
+    page: 67
+id: 727a-2d30-334e-1e1f
+name: 'Relic (Nephrekh): Solar Staff'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: c7ae-4085-11c3-5610
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - type: lessThan
+            childId: 93ce-b4b2-9433-b1e6
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

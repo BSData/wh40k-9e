@@ -1,0 +1,96 @@
+exported: true
+entryLinks:
+  - targetId: c3ff-f38b-b236-791c
+    type: selectionEntryGroup
+    exported: true
+    id: 8f59-fd43-ecfe-b77e
+    name: Warlord Traits (Codex)
+  - targetId: d442-1f03-d9da-e77f
+    type: selectionEntryGroup
+    exported: true
+    id: 4781-79a3-07c1-4218
+    name: Warlord Traits (BRB)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: instanceOf
+            childId: eca4-de83-1e4d-cdd6
+            field: selections
+            scope: ancestor
+            shared: true
+constraints:
+  - id: 4cd8-19b8-8332-7f55
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 076d-e9d1-ae0c-e60d
+name: Warlord Traits
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: ef18-746a-369f-43a4
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 6a6f-6b25-8347-4c3e
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: c50f-9cc4-a751-6707
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+  - type: set
+    field: 4cd8-19b8-8332-7f55
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: a8ab-483c-34d6-7474
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

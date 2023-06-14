@@ -1,0 +1,162 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: cd19-1daa-0bcb-8e69
+    name: 'Faction: Imperium'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: bf5f-fb67-19c7-9038
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: d0ad-2ac7-e35e-98a8
+    name: Core
+  - targetId: 5941-05b8-1e58-4eb7
+    id: c41a-cba8-992a-edf6
+    name: 'Faction: Anathema Psykana'
+  - targetId: 19e2-254c-c1fb-fd40
+    id: d69e-c552-6cf0-1448
+    name: Prosecutors
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 11.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    entryLinks:
+      - targetId: ca06-ac13-d02f-6f9a
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 7948-0b4d-2303-f5a0
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: aa46-94ae-f5c4-9671
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 2452-60bc-7b05-2639
+        name: Boltgun
+    constraints:
+      - id: 18d6-1300-536e-feca
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+      - id: b217-50d6-a479-cd02
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+    infoLinks:
+      - targetId: 329f-c284-1de4-f66d
+        type: profile
+        id: fa48-82b7-dd6e-11f0
+        name: Prosecutor
+    id: 1065-a44d-41ef-61bd
+    name: Prosecutor
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 11.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    entryLinks:
+      - targetId: b61f-a3c1-827d-c5b6
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: d70a-f2d4-8d12-5719
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 1749-7a19-f0b4-76af
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 3410-fcac-4e1f-ae0d
+        name: Boltgun
+    constraints:
+      - id: f834-4bda-247d-068f
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+      - id: 703c-df6d-d43e-5576
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    infoLinks:
+      - targetId: 19d2-5aff-01df-2caf
+        type: profile
+        id: 21dc-f003-bbdc-4a1b
+        name: Prosecutor Sister Superior
+    id: 3e04-24a0-dada-2b39
+    name: Prosecutor Sister Superior
+entryLinks:
+  - targetId: 40c0-dbc1-a807-e693
+    type: selectionEntryGroup
+    exported: true
+    id: 2aea-f207-1ea7-e3bc
+    name: Battle Honours
+infoLinks:
+  - targetId: a190-c46b-30d0-a82f
+    type: rule
+    id: 5b1e-3106-1b7d-7993
+    name: Daughters of the Abyss
+  - targetId: e07e-8dbf-0b15-7485
+    type: rule
+    id: 3355-20b1-a07d-07e9
+    name: Objective Secured
+id: 4e40-4bc6-5bbb-7b98
+name: Prosecutors
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 3.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 4e40-4bc6-5bbb-7b98
+        value: 5.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 0a95-175c-4f37-736a
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

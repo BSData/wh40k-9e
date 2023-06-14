@@ -1,0 +1,53 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+constraints:
+  - id: 156e-f952-1218-0943
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'BLOOD AXE model only. This relic may be taken by a VEHICLE model.  At the start of your Command phase, if the bearer is on the battlefield, you can roll one D6: on a 4+, you gain 1 Command point.'
+    id: c63b-9151-d660-3dc0
+    name: Morgog's Finkin' Cap
+    publicationId: 11b5-77b9-pubN65537
+    page: 131
+id: d379-60af-07a0-ad23
+name: Morgog's Finkin' Cap (Blood Axes)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: ae38-f508-d394-4a6d
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: f018-1dee-fada-f5cc
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

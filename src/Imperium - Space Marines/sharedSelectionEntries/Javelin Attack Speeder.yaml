@@ -1,0 +1,168 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: pts
+    typeId: points
+    value: 115.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 1ab5-cfde-1ef8-2859
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: c56d-5722-17d0-9281
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: ba82-d4b5-ec8c-150e
+    name: New CategoryLink
+  - targetId: 0d26-14c7-a20d-f9db
+    id: 0f7e-2504-eca4-3e47
+    name: New CategoryLink
+  - targetId: e10e-b44e-7eda-41d8
+    id: e240-0438-e9b7-139f
+    name: New CategoryLink
+  - targetId: be8f-da94-ba8a-e935
+    id: 5275-e7db-d55d-2bba
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: 6592-2410-141c-8bd7
+    name: New CategoryLink
+  - targetId: d743-4a7d-abd9-9018
+    id: 3ab4-e3f5-1949-ec67
+    name: New CategoryLink
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: eabe-8106-a480-5b48
+    name: New CategoryLink
+selectionEntryGroups:
+  - defaultSelectionEntryId: 7310-38e7-e34f-f388
+    exported: true
+    entryLinks:
+      - targetId: 9f89-ae28-2d08-a3c8
+        type: selectionEntry
+        exported: true
+        id: 7310-38e7-e34f-f388
+        name: Javelin Missile Launcher
+      - targetId: f774-0e52-9191-0dc1
+        type: selectionEntry
+        exported: true
+        id: fa1e-2107-3269-3475
+        name: 2x Lascanon
+    constraints:
+      - id: 2b39-b083-febd-4252
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 536b-0f18-dfae-20e6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 4885-e1d3-656f-3a25
+    name: Main weapon
+  - defaultSelectionEntryId: fd45-31da-2188-8013
+    exported: true
+    entryLinks:
+      - targetId: 4572-20b8-fea6-4041
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 10.0
+        exported: true
+        id: d5a2-27af-386d-4897
+        name: Multi-melta
+      - targetId: 4138-56bd-4131-f4da
+        type: selectionEntry
+        exported: true
+        id: fd45-31da-2188-8013
+        name: Heavy bolter
+    constraints:
+      - id: 25e8-4fa6-7990-d795
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9b2b-7214-f20a-8f88
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 345f-335e-da4d-504c
+    name: Secondary weapon
+entryLinks:
+  - targetId: f6ce-b334-6526-0cfe
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1bb7-c39d-466c-e256
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 53aa-a1ad-daaf-c643
+    name: Hunter-killer missile
+infoLinks:
+  - targetId: f817-33ac-7be5-25b2
+    type: profile
+    id: 0a26-0f4a-4933-e0a4
+    name: Relic Javelin
+  - targetId: 0456-7995-d3d4-1044
+    type: rule
+    id: 0090-a87f-cc31-6bd6
+    name: Explodes (3"/1)
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: bd8b-6b5a-03c7-528d
+    name: Angels of Death
+  - targetId: f0eb-0d49-174e-5186
+    type: rule
+    id: 6ddb-dd68-8898-b1f9
+    name: Martial Legacy
+id: f7e4-a2c8-e56f-771f
+name: Javelin Attack Speeder
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

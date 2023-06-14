@@ -1,0 +1,44 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: 46fb-8635-60db-48d5
+    name: New CategoryLink
+constraints:
+  - id: d2e7-cac2-2e04-9f7f
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: cbd4-34fb-6ba6-9593
+name: 'Stratagem: Heroic Support'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 76d2-6e71-243f-ad3d
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true

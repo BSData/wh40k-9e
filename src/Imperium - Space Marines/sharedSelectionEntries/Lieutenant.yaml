@@ -1,0 +1,369 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+    value: 70.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: a1bc-20a8-4a6c-3d03
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 7116-ffb2-4b31-f57e
+    name: 'Faction: Imperium'
+  - targetId: c7b7-edbc-bc14-6238
+    id: e849-acd4-92e5-8ad3
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 64e2-f77f-35d5-9ec9
+    name: Infantry
+  - targetId: 0d49-8b06-7815-8e97
+    id: 3810-4758-e087-2af1
+    name: Lieutenant
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: c215-aaf9-77ef-27fb
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 09f0-cabb-ab15-50af
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 8e0f-04b7-d133-9b15
+        name: Master-crafted boltgun
+        modifiers:
+          - type: set
+            field: 09f0-cabb-ab15-50af
+            value: 0.0
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: atLeast
+                    childId: 37ef-f6fa-fe1f-306c
+                    field: selections
+                    scope: e176-3548-2126-02c8
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: atLeast
+                    childId: fb38-f29c-b8de-3ba6
+                    field: selections
+                    scope: e176-3548-2126-02c8
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+          - type: set
+            field: points
+            value: 0.0
+      - targetId: 37ef-f6fa-fe1f-306c
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 8684-4076-24f5-307b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: ce12-c25a-29eb-a38c
+        name: Combi-Weapons
+        modifiers:
+          - type: set
+            field: 8684-4076-24f5-307b
+            value: 0.0
+            conditions:
+              - type: atLeast
+                childId: fb38-f29c-b8de-3ba6
+                field: selections
+                scope: e176-3548-2126-02c8
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - targetId: fb38-f29c-b8de-3ba6
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: b1ec-69dc-acfd-65a6
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: fa11-9aea-d539-0c10
+        name: Pistols
+        modifiers:
+          - type: set
+            field: b1ec-69dc-acfd-65a6
+            value: 0.0
+            conditions:
+              - type: atLeast
+                childId: 37ef-f6fa-fe1f-306c
+                field: selections
+                scope: e176-3548-2126-02c8
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - targetId: ce40-8190-5033-a0c1
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 80ee-38d2-41b8-bb1e
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: 2902-e91c-778f-ae27
+        name: Melee Weapons
+    constraints:
+      - id: 8d31-04ba-cd75-a817
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: 61b5-8fcb-fab0-0e83
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 2c3e-b88b-c78b-7f36
+    name: Weapon Options
+    modifiers:
+      - type: set
+        field: 8d31-04ba-cd75-a817
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: b050-572b-911b-d51c
+            field: selections
+            scope: e176-3548-2126-02c8
+            value: 1.0
+            shared: true
+      - type: set
+        field: 61b5-8fcb-fab0-0e83
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: b050-572b-911b-d51c
+            field: selections
+            scope: e176-3548-2126-02c8
+            value: 1.0
+            shared: true
+entryLinks:
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0206-9119-d7ff-d119
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a69a-a2da-3308-a749
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 9e8d-6327-8f2c-cc3e
+    name: Frag & Krak grenades
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0072-e47b-3368-f064
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+      - id: 870e-97bf-911d-e8a2
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+    id: dd6b-2567-45d3-a68d
+    name: Bolt pistol
+  - targetId: 181e-0718-160e-2e75
+    type: selectionEntry
+    costs:
+      - name: pts
+        typeId: points
+        value: 25.0
+    exported: true
+    id: a8f2-15cb-2fc5-d3fd
+    name: Jump Pack
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: a1f7-edf1-18b6-3d0e
+    name: Warlord
+  - targetId: 30c0-7a36-047b-e97d
+    type: selectionEntry
+    exported: true
+    id: 55dd-07e1-845d-04ea
+    name: Death Company Lieutenant
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: f08d-aa69-150a-aa4d
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 4
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 5931-43cc-0f2c-1586
+    name: Lieutenant
+    modifiers:
+      - type: set
+        field: 0bdf-a96e-9e38-7779
+        value: 12"
+        conditions:
+          - type: equalTo
+            childId: 181e-0718-160e-2e75
+            field: selections
+            scope: e176-3548-2126-02c8
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+infoLinks:
+  - targetId: ca86-a970-9bab-d29a
+    type: profile
+    id: 4de2-815c-fd7c-93b6
+    name: Tactical Precision
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: 30c0-7a36-047b-e97d
+            field: selections
+            scope: e176-3548-2126-02c8
+            shared: true
+            includeChildSelections: true
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 6c8e-ddf6-0952-e8a3
+    name: Angels of Death
+  - targetId: b6ba-39af-6402-3665
+    type: profile
+    id: 037a-b30e-d369-0f1d
+    name: Company Heroes
+  - targetId: ac1e-8a4b-aaa1-f41a
+    type: infoGroup
+    id: 9fdd-c22b-cc40-b8ff
+    name: Death Visions
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 30c0-7a36-047b-e97d
+            field: selections
+            scope: e176-3548-2126-02c8
+            shared: true
+            includeChildSelections: true
+id: e176-3548-2126-02c8
+name: Lieutenant
+modifiers:
+  - type: add
+    field: category
+    value: b95f-a56d-1ae5-7b66
+    conditions:
+      - type: greaterThan
+        childId: b94e-1480-56dc-b77a
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: name
+    value: Death Company Lieutenant
+    conditions:
+      - type: equalTo
+        childId: 30c0-7a36-047b-e97d
+        field: selections
+        scope: e176-3548-2126-02c8
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

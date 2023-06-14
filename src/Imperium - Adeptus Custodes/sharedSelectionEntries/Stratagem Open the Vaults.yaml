@@ -1,0 +1,84 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: 0762-9c03-d63c-8885
+    name: New CategoryLink
+constraints:
+  - id: 8fa8-0fd4-dadd-e380
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 4e6e-fd41-28d5-61fc
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+infoLinks:
+  - targetId: ea25-7f77-8f2c-6fd9
+    type: profile
+    id: 6f7f-8075-dd6f-8666
+    name: 'Stratagem: Open the Vaults'
+id: e6d6-de23-88d5-a477
+name: 'Stratagem: Open the Vaults'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 2471-0b95-738c-edd9
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 4e6e-fd41-28d5-61fc
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: 4e6e-fd41-28d5-61fc
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

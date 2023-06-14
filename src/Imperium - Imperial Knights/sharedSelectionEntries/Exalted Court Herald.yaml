@@ -1,0 +1,106 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 1.0
+  - name: pts
+    typeId: points
+    value: 20.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: a480-fd09-ecbe-0f5b
+    id: fdeb-f314-c36d-790c
+    name: Exalted Court
+constraints:
+  - id: d9e7-486b-21d9-1be2
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: dd7a-3f18-28cd-2000
+    typeName: Exalted Court
+    characteristics:
+      - name: Ability
+        typeId: ae8b-ffea-6d0e-8bc6
+        value: Each time a friendly <NOBLE HOUSEHOLD> model uses a Bondsman ability, if they are within 9" of this Herald, they can select one <NOBLE HOUSEHOLD> ARMIGER-CLASS model that is within 9" of this Herald for that Bondsman ability to apply to
+      - name: Noble Exemplar ability
+        typeId: 712b-eaec-1af0-e425
+        value: While an ARMIGER-CLASS model is under the effects of this model's Bondsman ability, that ARMIGER-CLASS model has a 4+ invulnerable save
+      - name: Crusade Duty
+        typeId: bcbb-2bc1-7507-3852
+        value: While this model is in your Crusade Force, each time you use the Specialist Reinforcement or the Warlord Trait Requisition, it costs 1 fewer Requisition points to use
+    id: 1a02-600f-40d2-94fc
+    name: 'Exalted Court: Herald'
+infoLinks:
+  - targetId: cf81-0eb8-d727-7cf6
+    type: rule
+    id: 6ab3-e1e0-888c-6ab5
+    name: Exalted Court
+id: ee2e-7aa1-f6f4-e935
+name: 'Exalted Court: Herald'
+hidden: true
+modifierGroups:
+  - modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: or
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: atLeast
+                    childId: fbcf-4219-e609-ff3b
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: instanceOf
+                    childId: 254d-83b9-c46e-84aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+              - type: and
+                conditions:
+                  - type: instanceOf
+                    childId: 254d-83b9-c46e-84aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: notInstanceOf
+                    childId: d451-70df-eeef-7915
+                    field: selections
+                    scope: parent
+                    shared: true
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e739-6296-9046-12b7
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: instanceOf
+                childId: 4e27-4545-87b5-ae20
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

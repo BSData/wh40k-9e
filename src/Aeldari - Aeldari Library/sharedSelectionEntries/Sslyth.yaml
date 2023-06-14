@@ -1,0 +1,173 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 18.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+exported: true
+categoryLinks:
+  - targetId: 3d52-fccf-10c0-3fae
+    id: be2e-a090-3fcf-5c3c
+    name: New CategoryLink
+  - targetId: c9a9-0a9a-8be9-1474
+    id: 2111-7302-d754-9fa6
+    name: New CategoryLink
+  - targetId: 105d-2b08-1dc3-2f69
+    id: e5a2-304a-21ec-f4ce
+    name: 'Faction: <Kabal>'
+  - targetId: 955e-536a-e290-5dcf
+    id: fe7e-644a-9426-1510
+    name: 'Faction: Drukhari'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 89cb-4e54-2a72-d7c4
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: baf3-bb87-8808-23e6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: 7a7e-a0c8-ff3d-e4e0
+        name: Sslyth battle-blade
+    id: 3e11-b3a9-15eb-64cc
+    name: Sslyth battle-blade
+entryLinks:
+  - targetId: c27b-3969-cb78-62f0
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: eb41-999d-ac34-faea
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2660-0f28-9a00-75dd
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 926c-1de5-2a6c-20aa
+    name: Shardcarbine
+  - targetId: a293-6465-2a99-903f
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: c3f3-a98a-efb8-840e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 13aa-f44a-3457-f776
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: a551-ae23-0937-6583
+    name: Splinter Pistol
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 5
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 3
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 6
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 5+
+    id: c931-1616-a1a3-12f0
+    name: Sslyth
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While this unit contains any Sslyth models, while a friendly ARCHON is within 3" of this unit, enemy models cannot target that ARCHON unit with ranged attacks.
+    id: 5133-c054-8f14-ed6b
+    name: Cold-blooded Bodyguard
+infoLinks:
+  - targetId: e572-d802-9771-817c
+    type: profile
+    id: 8923-eb56-cc78-6be2
+    name: Resillient Species
+id: 0a99-77cf-5c94-2440
+name: Sslyth
+modifierGroups:
+  - modifiers:
+      - type: remove
+        field: category
+        value: 105d-2b08-1dc3-2f69
+      - type: add
+        field: category
+        value: ebb3-4f37-6e57-7a8e
+    conditions:
+      - type: equalTo
+        childId: 5af8-e7c8-e3bf-6d52
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

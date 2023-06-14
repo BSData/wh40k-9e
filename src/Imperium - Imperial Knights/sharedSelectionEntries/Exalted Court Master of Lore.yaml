@@ -1,0 +1,92 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+    value: 35.0
+exported: true
+categoryLinks:
+  - targetId: fff0-43c9-ec71-8f73
+    id: 975a-f6ae-87a1-96cc
+    name: Mentor
+  - targetId: a480-fd09-ecbe-0f5b
+    id: 63d1-2bcc-4114-265a
+    name: Exalted Court
+constraints:
+  - id: 4493-a0d0-db61-5bfe
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: dd7a-3f18-28cd-2000
+    typeName: Exalted Court
+    characteristics:
+      - name: Ability
+        typeId: ae8b-ffea-6d0e-8bc6
+        value: >-
+          If this model is a KNIGHT PRECEPTOR, in your Command phase, it can recount one additional teaching in knows that has not already been recounted by a friendly model that turn
+
+
+          If this model is not a KNIGHT PRECEPTOR, it gains the MENTOR keyword and it knows one teaching from the Knightly Teachings and, in your Command phase, if this model is on the battlefield, it can recount one teaching it knows that has not already been recounted by a friendly model this turn. Roll one D6; on a 3+, the recounted teaching is inspiring and takes effect until the start of your next Command phase
+      - name: Noble Exemplar ability
+        typeId: 712b-eaec-1af0-e425
+        value: Each time this model uses its Bondsman ability on a model that is already under the effects of a Bondsman ability, the new ability applies to it in addition to the existing one, instead of replacing it
+      - name: Crusade Duty
+        typeId: bcbb-2bc1-7507-3852
+        value: While this model is in your Crusade Force, each time you use the Arts of War Duty Requisition, it costs 0 Requisition points to use
+    id: c154-02bd-1ff8-38d0
+    name: 'Exalted Court: Master of Lore'
+infoLinks:
+  - targetId: cf81-0eb8-d727-7cf6
+    type: rule
+    id: f429-bd60-68ca-7f36
+    name: Exalted Court
+id: 28fe-b789-cbd6-ba3f
+name: 'Exalted Court: Master of Lore'
+hidden: true
+modifierGroups:
+  - modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: or
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: atLeast
+                    childId: fbcf-4219-e609-ff3b
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: instanceOf
+                    childId: 5360-3011-a42b-faf2
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+              - type: and
+                conditions:
+                  - type: instanceOf
+                    childId: 5360-3011-a42b-faf2
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: notInstanceOf
+                    childId: d451-70df-eeef-7915
+                    field: selections
+                    scope: parent
+                    shared: true

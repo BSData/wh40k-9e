@@ -1,0 +1,74 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 960b-e431-35a8-0f9b
+    name: New CategoryLink
+constraints:
+  - id: e443-6545-e4bd-a998
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 7ed0-0061-544b-5167
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 11e4-2b0f-a527-20af
+    type: minimum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 75b0-25e5-2828-0125
+name: Character (Traitoris Lance)
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: d513-cbf5-9bfc-7270
+            field: selections
+            scope: force
+            shared: true
+          - type: instanceOf
+            childId: 7986-68a6-9e59-faac
+            field: selections
+            scope: force
+            shared: true
+          - type: instanceOf
+            childId: fa51-993c-2f8b-9be4
+            field: selections
+            scope: force
+            shared: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: instanceOf
+                childId: 224b-1070-218f-fdf4
+                field: selections
+                scope: force
+                shared: true
+              - type: equalTo
+                childId: af70-08c1-1c6f-0770
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true

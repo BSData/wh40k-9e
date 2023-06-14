@@ -1,0 +1,185 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: b83f-2210-adb8-d1fb
+    id: a60b-10d4-17e2-2015
+    name: 'PC: BA'
+selectionEntryGroups:
+  - defaultSelectionEntryId: 67dc-2347-1d81-d320
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: abbb-0534-de51-a70b
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        infoLinks:
+          - targetId: 2deb-254e-c616-78b9
+            type: rule
+            id: 2a48-94cf-2041-00a1
+            name: The Red Thirst
+        id: 67dc-2347-1d81-d320
+        name: Blood Angels
+        modifiers:
+          - type: set
+            field: abbb-0534-de51-a70b
+            value: 0.0
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        id: 4a34-9aca-1549-575f
+        name: Blood Angels Successor
+    constraints:
+      - id: 0f21-8862-694f-4d0f
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9593-057f-af1a-431d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 7153-755d-3951-feca
+    name: Chapter
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: bcb8-fd06-86b3-f942
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        infoLinks:
+          - targetId: 2deb-254e-c616-78b9
+            type: rule
+            id: ff65-19a4-0873-8bf2
+            name: The Red Thirst
+        id: 698b-1cdd-fe35-12e3
+        name: Flesh Tearers
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 50fa-2516-1b28-978f
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 84cb-4b99-97ae-9823
+        name: Custom Chapter
+    entryLinks:
+      - targetId: 3700-470e-f75d-6cba
+        type: selectionEntryGroup
+        exported: true
+        id: 390c-bbd5-a37a-3ec7
+        name: Forge World Chapters
+    constraints:
+      - id: 77e1-f09d-8557-0e1e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a135-64a0-fe87-ad33
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 0abb-5e84-872c-e9a2
+    name: Successor Chapters
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 4a34-9aca-1549-575f
+            field: selections
+            scope: 9b73-1057-8abc-2615
+            shared: true
+      - type: set
+        field: a135-64a0-fe87-ad33
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 4a34-9aca-1549-575f
+            field: selections
+            scope: 9b73-1057-8abc-2615
+            value: 1.0
+            shared: true
+entryLinks:
+  - targetId: a7a4-4d2d-81c8-5bd1
+    type: selectionEntryGroup
+    exported: true
+    id: fdb5-e9ed-cd9a-4406
+    name: Tactics
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 3700-470e-f75d-6cba
+                field: selections
+                scope: 9b73-1057-8abc-2615
+                shared: true
+              - type: equalTo
+                childId: 84cb-4b99-97ae-9823
+                field: selections
+                scope: 9b73-1057-8abc-2615
+                shared: true
+constraints:
+  - id: 3758-9917-0d7f-d0c8
+    type: minimum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+id: 9b73-1057-8abc-2615
+name: '**Chapter Selector**'

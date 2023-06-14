@@ -1,0 +1,85 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 9e3d-8eb7-31b3-9ec2
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: d5d5-1be9-81ed-e7c4
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: When the bearer is selected to shoot, instead of shooting as normal, it can focus the shots of its enmitic disintegrator pistols into a single obliteration beam. If it does so, instead of making attacks with each of its enmitic disintegrator pistols, use the following profile.
+    id: 5d15-89b0-5e33-879b
+    name: Mask of Obliteration (Details)
+    publicationId: 72b8-4a28-9f58-6fa8
+    page: 88
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 12"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Pistol 1
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 9
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: D3+3
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time the bearer shoots using this profile, if a hit is scored, draw a straight line between the closest point of this model's base and the closest point of the base (or hull) of the closest model in the target unit. Make one wound roll against the target unit and make one wound roll agianst every other unit this line passes over or through.
+    id: 907f-738c-c763-0e49
+    name: Mask of Obliteration
+    publicationId: 72b8-4a28-9f58-6fa8
+    page: 88
+id: 2b37-f2a2-00f1-9deb
+name: 'Relic (Annihilation): Mask of Obliteration'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: 551a-4ae2-77ec-3f08
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: f87a-1395-2243-c2c9
+            field: selections
+            scope: ancestor
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

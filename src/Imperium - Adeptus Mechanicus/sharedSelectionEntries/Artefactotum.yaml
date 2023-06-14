@@ -1,0 +1,73 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 209e-3a10-984b-3e1a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 5f7c-0989-21ba-20e4
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: 04ab-a832-7eb2-bf44
+name: Artefactotum
+modifiers:
+  - type: increment
+    field: 5f7c-0989-21ba-20e4
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: increment
+    field: 5f7c-0989-21ba-20e4
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: d4fa-d036-f5dd-f91d
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: d4fa-d036-f5dd-f91d
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

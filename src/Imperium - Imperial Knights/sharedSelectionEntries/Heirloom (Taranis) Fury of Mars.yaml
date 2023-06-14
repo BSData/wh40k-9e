@@ -1,0 +1,87 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: d400-f950-60be-5a58
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          Select one meltagun, twin meltagun, thermal spear or thermal cannon that model is equipped with
+
+          - That weapon is now a Relic for all rules purposes
+
+          - Add 1 to that weapon's Strength characteristic
+
+          - Delete that weapon's abilities
+
+          - Add 2 to that weapon's Damage characteristic
+    id: d703-27be-20f2-860b
+    name: Fury of Mars
+    publicationId: 82cd-d24f-pubN65537
+    page: 117
+id: 9710-624d-b83a-f300
+name: 'Heirloom (Taranis): Fury of Mars'
+publicationId: 82cd-d24f-pubN65537
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: instanceOf
+            childId: db5b-bfa5-fe74-cba7
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: atLeast
+                childId: 35c4-c945-a85e-d5c6
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: atLeast
+                childId: ddc8-3adf-1dec-34e4
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: atLeast
+                childId: d06e-38f1-81eb-0ec6
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: atLeast
+                childId: ce1b-5c81-426d-ed53
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true

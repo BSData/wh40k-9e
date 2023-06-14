@@ -1,0 +1,219 @@
+exported: true
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: 2f6d-033d-665f-6ca4
+        type: selectionEntry
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+            value: 2.0
+          - name: pts
+            typeId: points
+            value: 40.0
+        exported: true
+        constraints:
+          - id: a013-ce5d-6a19-175b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 4d5c-ed27-7d98-5237
+        name: Astropath
+      - targetId: 3d6b-fb42-442f-cd3f
+        type: selectionEntry
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+            value: 2.0
+          - name: pts
+            typeId: points
+            value: 25.0
+        exported: true
+        constraints:
+          - id: 8434-891e-df84-e61c
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 7469-1acf-ca92-77ad
+        name: Master of Ordnance
+      - targetId: 2243-2f75-ea89-994a
+        type: selectionEntry
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+            value: 2.0
+          - name: pts
+            typeId: points
+            value: 25.0
+        exported: true
+        constraints:
+          - id: 1faf-4c3a-4942-8ece
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 0cd8-bc49-d7a8-7171
+        name: Officer of the Fleet
+    constraints:
+      - id: 1a73-90b7-71b8-9b8d
+        type: maximum
+        field: selections
+        scope: parent
+        value: -1.0
+        shared: true
+    id: 4ca7-5490-d8ae-515a
+    name: Attachés
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: notInstanceOf
+            childId: 33c0-8496-22d0-08e9
+            field: selections
+            scope: parent
+            shared: true
+      - type: set
+        field: 1a73-90b7-71b8-9b8d
+        value: 1.0
+        conditions:
+          - type: greaterThan
+            childId: a207-a133-6adb-25f3
+            field: forces
+            scope: roster
+            shared: true
+  - exported: true
+    entryLinks:
+      - targetId: a2f0-80d5-4134-8f0f
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 50.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+            value: 3.0
+        exported: true
+        constraints:
+          - id: 1405-16dc-7b0d-5e44
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: b7f3-9dab-01ee-e882
+        name: Ogryn Bodyguard
+      - targetId: 132a-3d6b-4c15-25d6
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 60.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+            value: 3.0
+        exported: true
+        constraints:
+          - id: a450-0d85-b67d-23db
+            type: maximum
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+          - id: 64b2-f58c-7c2b-ede0
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 55a8-e046-1d65-4340
+        name: Nork Deddog
+    constraints:
+      - id: e4b8-deca-cdfc-c976
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: e480-a5c1-a75a-37ba
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 805b-8f99-befb-fb24
+    name: Bodyguards
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: notInstanceOf
+                childId: dd6e-7055-ca6b-b711
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: notInstanceOf
+                childId: 3d52-fccf-10c0-3fae
+                field: selections
+                scope: ancestor
+                shared: true
+constraints:
+  - id: 8c30-4280-9a90-11c0
+    type: minimum
+    field: selections
+    scope: parent
+    shared: true
+id: f35b-d9d5-ef7d-c817
+name: Attachés and Bodyguards
+publicationId: 53e9d88f--pubN88319
+page: 87
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: cff6-a8e7-27ea-0776
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: 8c30-4280-9a90-11c0
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: 0735-ed55-e421-7b73
+            field: selections
+            scope: force
+            shared: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: notInstanceOf
+                childId: 41bc-10b9-66f8-7d13
+                field: selections
+                scope: parent
+                shared: true
+              - type: notInstanceOf
+                childId: 3984-854b-4603-be64
+                field: selections
+                scope: parent
+                shared: true
+              - type: notInstanceOf
+                childId: 94e7-b510-ffa1-bdc7
+                field: selections
+                scope: parent
+                shared: true

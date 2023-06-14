@@ -1,0 +1,87 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: 1d6d-aa52-6d49-75e6
+    name: New CategoryLink
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+        value: -1.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 6379-592c-9dc3-2b96
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a1ce-444b-b591-1a63
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: df30-78c6-4f1f-7a95
+    name: Additional Relics
+constraints:
+  - id: 7d4b-23cd-19b7-0730
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: 5b96-79e6-8d10-f8a8
+name: 'Stratagem: Prizes from the Dark City'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: ebb3-4f37-6e57-7a8e
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 7d4b-23cd-19b7-0730
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: 7d4b-23cd-19b7-0730
+    value: 3.0
+    conditions:
+      - type: equalTo
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

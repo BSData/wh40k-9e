@@ -1,0 +1,590 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+    value: 105.0
+exported: true
+categoryLinks:
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: ca3c-0773-7777-b66b
+    name: 'Faction: Chaos'
+  - targetId: ca10-a5dd-f54f-0ed5
+    id: 136a-eeb7-0325-05a1
+    name: 'Faction: Heretic Astartes'
+  - targetId: ef18-746a-369f-43a4
+    id: b738-cc30-0972-7d67
+    name: Character
+  - targetId: 3d52-fccf-10c0-3fae
+    id: e274-c5eb-32ad-619b
+    name: Infantry
+  - targetId: e691-aad7-d21c-1023
+    id: 4c4c-9832-c961-9f7c
+    name: Psyker
+  - targetId: 5eb2-4f76-c46f-9530
+    id: 4237-00b9-ecee-ee9e
+    name: Master of Possession
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 31df-b366-e54a-1abb
+    name: New CategoryLink
+  - targetId: 95ae-effa-c9f2-d11b
+    id: 2f3f-85ad-9f82-f160
+    name: 'Faction: Traitoris Astartes'
+  - targetId: ccd5-08d5-7752-2b0d
+    id: 0dec-fde0-bc97-616d
+    name: Warp Locus
+  - targetId: e8ca-abfb-bcd2-4897
+    id: ccaa-cbe5-bd3b-044f
+    name: Daemonkin
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 3626-9b85-4745-63f3
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2c4b-da03-ed1a-9d2c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +3
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -1
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: D3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time the bearer fights, if one or more attacks made with this weapon were allocated to a PSYKER model, after the bearer has resolved all of its attacks, that PSYKER model suffers Perils of the Warp.
+        id: 7b8b-d388-13c7-89d1
+        name: Staff of Possession
+    id: 0241-d683-4b76-b57d
+    name: Staff of Possession
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: d5b0-3c0c-7edf-913f
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 246c-decf-95e8-4010
+            type: maximum
+            field: selections
+            scope: parent
+            value: -1.0
+            shared: true
+        id: 145b-536d-a334-11bc
+        name: Malefic Discipline
+        modifiers:
+          - type: set
+            field: 246c-decf-95e8-4010
+            value: 0.0
+            conditions:
+              - type: greaterThan
+                childId: 6a58-f029-88ca-fe00
+                field: selections
+                scope: parent
+                shared: true
+      - targetId: 6a58-f029-88ca-fe00
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 903c-e4d0-2ef0-3cb0
+            type: maximum
+            field: selections
+            scope: parent
+            value: -1.0
+            shared: true
+        id: 1860-8f92-602e-52aa
+        name: Noctic Discipline
+        modifiers:
+          - type: set
+            field: 903c-e4d0-2ef0-3cb0
+            value: 0.0
+            conditions:
+              - type: greaterThan
+                childId: d5b0-3c0c-7edf-913f
+                field: selections
+                scope: parent
+                shared: true
+    constraints:
+      - id: e84c-930a-57e2-4bb0
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 770f-5511-cbb9-2e00
+    name: Psychic Powers
+    modifiers:
+      - type: increment
+        field: e84c-930a-57e2-4bb0
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 3b91-f406-154e-cba4
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+entryLinks:
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 3338-96fd-2f81-8de4
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9545-013a-0b1a-3371
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: c259-cf02-1efb-62ef
+    name: Bolt pistol
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d054-6d8b-b1e4-a6fa
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6944-62c0-ee48-20b9
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 379f-e75a-919e-d131
+    name: Frag & Krak grenades
+  - targetId: 398a-c8da-c8bd-da58
+    type: selectionEntry
+    exported: true
+    id: b081-a0b7-e8cf-1134
+    name: Warlord
+  - targetId: b34c-6c4b-d22c-25b5
+    type: selectionEntryGroup
+    exported: true
+    id: de97-566f-94e4-d6b3
+    name: Warlord Traits
+  - targetId: 5876-fcc5-8283-1aca
+    type: selectionEntryGroup
+    exported: true
+    id: 156b-c6f2-75b7-08d2
+    name: Artefacts of Chaos
+  - targetId: 45e8-d3d1-105b-90a3
+    type: selectionEntryGroup
+    exported: true
+    id: 42fb-602e-5b94-d9dc
+    name: Mark of Chaos
+  - targetId: 03fd-db47-5333-1e1f
+    type: selectionEntry
+    exported: true
+    categoryLinks:
+      - targetId: e691-aad7-d21c-1023
+        id: 523c-1c0c-72f3-e0b0
+        name: Psyker
+    constraints:
+      - id: ca46-fad6-45b0-b39f
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 4c8a-040a-9508-3244
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 5930-7d72-cb27-296d
+    name: Smite
+  - targetId: 9302-33d5-1089-4316
+    type: selectionEntry
+    exported: true
+    id: 33c2-7b97-34b8-404b
+    name: Lord of the Ezakarion
+  - targetId: 0b83-3a3f-078a-8a13
+    type: selectionEntry
+    exported: true
+    id: ba7c-707a-ac46-fb39
+    name: Gifts of Chaos
+  - targetId: 736a-c72b-1bd2-6b0a
+    type: selectionEntry
+    exported: true
+    id: 328c-e9f7-ded5-04f3
+    name: Aspiring Lord
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 7921-8d2f-a44a-5aa3
+    name: 'Stratagem: Warlord Trait'
+  - targetId: c470-54ac-0863-8848
+    type: selectionEntry
+    exported: true
+    id: 2819-0261-2fbd-159f
+    name: 'Stratagem: Relic'
+  - targetId: 1796-1441-828e-0bc9
+    type: selectionEntryGroup
+    exported: true
+    id: 8fdf-2a48-3aa5-1d31
+    name: Battle Honours
+  - targetId: cec4-9abd-dcdb-c9c2
+    type: selectionEntryGroup
+    exported: true
+    id: 168f-c269-533f-ec95
+    name: Battle Scars
+  - targetId: 4c50-9343-b5fb-872d
+    type: selectionEntryGroup
+    exported: true
+    id: 6b16-c2b3-6e8f-10a7
+    name: Boarding Action Enhancements
+constraints:
+  - id: 15e1-2c08-19ea-5d52
+    type: maximum
+    field: selections
+    scope: force
+    value: -1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model has a 5+ invulnerable save.
+    id: 87f0-d8d2-97b3-8529
+    name: Daemonkin
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While an enemy unit is within 12" of this model, each time that unit suffers Peril of the Warp, it suffers one additional mortal wound.
+    id: 41fa-500c-40df-68a3
+    name: Rites of Possession (Aura)
+  - typeId: bc97-dea9-9e88-bb7d
+    typeName: Psyker
+    characteristics:
+      - name: Cast
+        typeId: 5afb-9914-904b-d3b3
+        value: 2
+      - name: Deny
+        typeId: b5ac-9c20-5d5a-6f9b
+        value: 1
+      - name: Powers Known
+        typeId: 69d7-b45e-00a2-7e46
+        value: Smite and two powers from the Malefic Discipline
+      - name: Other
+        typeId: c2e2-f115-0003-5d7b
+        value: '-'
+    id: 2d62-b49d-f5ea-58db
+    name: Master of Possession
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 179b-6216-696f-72ff
+    name: Master of Possession
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time this model attempts to manifest a psychic power from the Malefic discipline, if it is within 3" of any friendly <LEGION> INFANTRY units (excluding DAEMONKIN and CULTISTS units), you can select one of those units and make a sacrifice. If you do so, the selected unit suffers D3 mortal wounds and you can add 2 to the psychic test taken for that psychic power.
+    id: 21de-8fa1-28bb-8813
+    name: Sacrificial Dagger
+infoLinks:
+  - targetId: 02de-f0d3-b98f-dfc6
+    type: rule
+    id: 7cf7-caa4-c6ec-8b20
+    name: Let the Galaxy Burn
+id: d286-ce84-78b1-ceb2
+name: Master of Possession
+publicationId: 3c0a-f104-07c4-3949
+page: 150
+modifiers:
+  - type: set
+    field: 15e1-2c08-19ea-5d52
+    value: 1.0
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: bb17-4692-b1ad-a620
+        conditions:
+          - type: equalTo
+            childId: a1b3-96fc-29f6-d3b1
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 0c84-90d4-b11b-d435
+        conditions:
+          - type: equalTo
+            childId: a675-3934-815b-7d5e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: f095-c6cc-5aab-9bd8
+        conditions:
+          - type: equalTo
+            childId: 37cd-2830-725b-a321
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: f4dd-1aa4-7cd2-d28d
+        conditions:
+          - type: equalTo
+            childId: 51f6-1db1-3e75-3d4b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 2692-cb00-633e-5db0
+        conditions:
+          - type: equalTo
+            childId: 8f74-81f3-7093-69e4
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1247-6183-24cc-cba0
+        conditions:
+          - type: equalTo
+            childId: 2482-8e16-78b0-e9cd
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 4592-91a6-aa96-225d
+        conditions:
+          - type: equalTo
+            childId: 01f7-d7f1-be88-b861
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 6dba-99ea-aa7d-40a5
+        conditions:
+          - type: equalTo
+            childId: 9b8a-fb30-b445-3049
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    conditions:
+      - type: equalTo
+        childId: ae09-117e-a6fa-316b
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    comment: 'Legion Warlord '
+  - modifiers:
+      - type: add
+        field: category
+        value: f8e4-d519-60bc-c1c0
+      - type: add
+        field: category
+        value: 8e80-dbb5-15b0-78a7
+    conditions:
+      - type: equalTo
+        childId: 88b1-c697-e840-2850
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    comment: DoB keywords
+  - modifiers:
+      - type: add
+        field: category
+        value: 87da-018e-ea9b-f5c4
+        conditions:
+          - type: equalTo
+            childId: a1b3-96fc-29f6-d3b1
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: dba9-7a7f-1310-3028
+        conditions:
+          - type: equalTo
+            childId: a675-3934-815b-7d5e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1f29-4695-dfe7-e893
+        conditions:
+          - type: equalTo
+            childId: 37cd-2830-725b-a321
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: e0db-3bff-98cd-1a60
+        conditions:
+          - type: equalTo
+            childId: 8f74-81f3-7093-69e4
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 38e4-b91c-a673-9c76
+        conditions:
+          - type: equalTo
+            childId: 2482-8e16-78b0-e9cd
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 2e84-a6d9-bf13-4116
+        conditions:
+          - type: equalTo
+            childId: 01f7-d7f1-be88-b861
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1e3f-0a7b-0c8f-84db
+        conditions:
+          - type: equalTo
+            childId: 9b8a-fb30-b445-3049
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    modifierGroups:
+      - modifiers:
+          - type: add
+            field: category
+            value: 649f-80f9-0d71-64c3
+          - type: add
+            field: category
+            value: 1da2-76db-f76f-6b6c
+        conditions:
+          - type: equalTo
+            childId: 51f6-1db1-3e75-3d4b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    comment: <Legion>

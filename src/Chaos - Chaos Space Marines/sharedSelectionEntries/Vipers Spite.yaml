@@ -1,0 +1,78 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 7bec-41e4-96ea-7c05
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: df42-9166-6c1f-bbed
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 18"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Pistol 6
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 4
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 1
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: '-'
+    id: 6fb9-ec31-b584-3d2a
+    name: Viper's Bite
+id: 4652-46e0-c09e-74ea
+name: Viper's Spite
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 0334-f487-8229-0c1a
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 1e3f-0a7b-0c8f-84db
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 6dba-99ea-aa7d-40a5
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

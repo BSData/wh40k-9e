@@ -1,0 +1,179 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    primary: true
+    id: 8a7a-0869-b950-aa50
+    name: New CategoryLink
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        categoryLinks:
+          - targetId: f7a7-9d79-d2f8-4a17
+            id: 4c04-787a-1898-f455
+            name: New CategoryLink
+        infoLinks:
+          - targetId: 25d5-4784-1a05-e93c
+            type: profile
+            id: 1b70-d862-a04f-baf3
+            name: Quarry - Xenos
+        id: e021-f2d3-f971-2d75
+        name: Ordo Xenos
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        categoryLinks:
+          - targetId: 4c83-c5fc-6f26-4e79
+            id: 3559-f6fd-5612-3e50
+            name: 'Faction: Ordo Minoris'
+        infoLinks:
+          - targetId: c506-0e36-0178-25bc
+            type: profile
+            id: 83a0-45c8-7ed0-dca5
+            name: Quarry - Minoris
+        id: 3543-2d42-04c3-4ec8
+        name: Ordo Minoris
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        categoryLinks:
+          - targetId: 6370-55c4-5013-14f8
+            id: a52f-c8a4-f8b2-b8f2
+            name: New CategoryLink
+        infoLinks:
+          - targetId: 5086-d3c4-7238-d42f
+            type: profile
+            id: 4dcf-a02a-71c2-3c1e
+            name: Quarry - Malleus
+        id: 80ea-bb99-b608-5cb1
+        name: Ordo Malleus
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        categoryLinks:
+          - targetId: 9d23-57b8-72c2-d750
+            id: a606-fd1a-b7a9-e468
+            name: New CategoryLink
+        infoLinks:
+          - targetId: 3dec-967b-c8fd-af29
+            type: profile
+            id: 72ea-a49b-2efe-f2d5
+            name: Quarry - Hereticus
+        id: e30a-f71d-f4d2-999a
+        name: Ordo Hereticus
+    constraints:
+      - id: a4bd-f386-2def-7b32
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 3827-68bf-7aaf-e232
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 9f7a-fb47-c1ac-321d
+    name: Ordo
+constraints:
+  - id: c27c-1154-b615-0f0b
+    type: maximum
+    field: selections
+    scope: roster
+    value: -1.0
+    shared: true
+    includeChildSelections: true
+  - id: 4434-818b-1b17-e6da
+    type: minimum
+    field: selections
+    scope: roster
+    value: -1.0
+    shared: true
+    includeChildSelections: true
+id: b198-e7aa-8469-700d
+name: Ordo Selection
+hidden: true
+modifiers:
+  - type: set
+    field: 4434-818b-1b17-e6da
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+      - type: instanceOf
+        childId: e373-3c0a-1185-46ea
+        field: selections
+        scope: primary-catalogue
+        shared: true
+    conditionGroups:
+      - type: and
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: a207-a133-6adb-25f3
+            field: forces
+            scope: roster
+            shared: true
+          - type: instanceOf
+            childId: e373-3c0a-1185-46ea
+            field: selections
+            scope: primary-catalogue
+            shared: true
+  - type: set
+    field: c27c-1154-b615-0f0b
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+      - type: instanceOf
+        childId: e373-3c0a-1185-46ea
+        field: selections
+        scope: primary-catalogue
+        shared: true
+    conditionGroups:
+      - type: and

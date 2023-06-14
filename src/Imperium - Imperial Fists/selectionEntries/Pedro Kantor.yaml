@@ -1,0 +1,323 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 8.0
+  - name: pts
+    typeId: points
+    value: 130.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: e891-3799-517c-9786
+    name: New CategoryLink
+  - targetId: 0fcf-9239-bfb9-d89d
+    id: d5bc-0e6f-bef7-568b
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 767f-20bb-4564-d166
+    name: New CategoryLink
+  - targetId: 8b34-9248-2ca6-1d29
+    id: 966a-13a0-e375-b0fa
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 4b20-0e46-b1e6-c99f
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 0e7e-7c9a-4847-afb0
+    name: New CategoryLink
+  - targetId: 4a2f-f9cf-96e3-2671
+    id: 18a6-c7db-7dfd-58f8
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: eae4-df37-ddaf-303f
+    name: New CategoryLink
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: a3f0-d98d-995e-7350
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2896-57a7-c045-ee4c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: 24"
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Assault 4
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: 4
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -1
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: 1b12-1ed0-c833-9360
+        name: Dorn's Arrow
+    id: 89b4-b3cf-aed1-bf29
+    name: Dorn's Arrow
+entryLinks:
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: daa8-76da-7b70-6eb4
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 55ec-a765-648e-a6aa
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: c53d-9087-d9e9-d1e5
+    name: Frag & Krak grenades
+  - targetId: f122-3720-fa32-4215
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 8007-4351-5beb-244d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 8876-6dc5-14b7-511b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: f144-145f-7270-ceb3
+    name: Power fist
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 2a11-3bd9-c0ea-6d87
+    name: Warlord
+  - targetId: 36f9-ee91-4e2a-4223
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 4138-cfe9-8438-90dc
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: f794-686b-0968-92f7
+    name: Stoic Defender
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 2119-b883-7c60-5e46
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 4138-cfe9-8438-90dc
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 2119-b883-7c60-5e46
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5d8c-ca71-0e58-e4f6
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 3497-768c-9cde-91d3
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: 5d8c-ca71-0e58-e4f6
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 2119-b883-7c60-5e46
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: f006-b432-08ab-6d53
+    name: Pedro Kantor
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly CRIMSON FISTS CORE unit is within 6" of this model, add 1 to the Attacks characteristic of models in that unit.
+    id: cc0a-7902-d76f-6f4c
+    name: Oath of Rynn (Aura)
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 84e9-186b-8486-0d37
+    name: Angels of Death
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: 2359-452d-0f20-878f
+    name: Iron Halo
+  - targetId: fdb4-b1a5-3c97-6400
+    type: profile
+    id: daea-e77c-a676-db00
+    name: Chapter Master
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: ff6b-0e3f-e95d-6a7e
+    name: Rites of Battle
+id: 2119-b883-7c60-5e46
+name: Pedro Kantor
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 8eaa-a144-c933-5a60
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

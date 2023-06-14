@@ -1,0 +1,60 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: ca27-5069-1c2c-a28b
+    id: 459d-dc7b-dd89-de6d
+    name: 'Faction: Adeptus Mechanicus'
+constraints:
+  - id: 217e-8175-6402-c7bc
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'This unit gains the Canticles of the Omnissiah ability (See Codex: Adeptus Mechanicus) and is considered to have the ADEPTUS MECHANICUS keyword for the purposes of this ability.'
+    id: 418b-d587-a35f-6e84
+    name: Knight of the Iron Cog
+    publicationId: 0865-ee21-d1f1-ed38
+    page: 71
+id: 0361-a80e-c55c-afde
+name: Knight of the Iron Cog
+publicationId: 0865-ee21-d1f1-ed38
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: 379d-40e9-8977-64e6
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: lessThan
+                childId: f4cc-0de6-8ebf-e95e
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true

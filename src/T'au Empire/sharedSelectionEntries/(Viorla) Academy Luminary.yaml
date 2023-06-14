@@ -1,0 +1,53 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 305e-b0ec-e627-b990
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 0ee6-5b5f-52d5-5e41
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+infoLinks:
+  - targetId: b4f2-bac5-c52e-cdc9
+    type: profile
+    id: 536f-e529-9b97-48bc
+    name: Academy Luminary
+id: 4508-0126-c4c9-c492
+name: "(Vior'la): Academy Luminary"
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: efe8-c565-f4af-e252
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 5f48-5fed-7b98-0e66
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

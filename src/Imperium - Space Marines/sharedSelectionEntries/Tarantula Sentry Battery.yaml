@@ -1,0 +1,191 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: f061-b9f5-7e93-d339
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: a1a8-659e-3adc-4d40
+    name: New CategoryLink
+  - targetId: 6bf0-99ab-68ac-fbd9
+    id: a6fd-ce35-eed8-69b2
+    name: New CategoryLink
+  - targetId: d713cda3-5d0f-40d8-b621-69233263ec2a
+    primary: true
+    id: df6c-863b-c319-eca5
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: 4e6d-cea5-3ad4-25ce
+    name: Vehicle
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 3.0
+      - name: pts
+        typeId: points
+        value: 40.0
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    selectionEntryGroups:
+      - defaultSelectionEntryId: 22f1-e938-18a2-9877
+        exported: true
+        entryLinks:
+          - targetId: c2d4-fdf7-7bae-33ad
+            type: selectionEntry
+            exported: true
+            id: 22f1-e938-18a2-9877
+            name: Twin heavy bolter
+          - targetId: b870-99d7-df15-97da
+            type: selectionEntry
+            costs:
+              - name: pts
+                typeId: points
+                value: 10.0
+            exported: true
+            id: ee7f-a415-fbd3-4d26
+            name: Twin lascannon
+          - targetId: 2b37-65ee-9443-b4ef
+            type: selectionEntry
+            exported: true
+            id: 4666-524d-e136-d94f
+            name: Multi-melta
+          - targetId: f787-a3af-72b5-60d1
+            type: selectionEntry
+            exported: true
+            id: ddcd-2517-fc13-079c
+            name: Twin assault cannon
+        constraints:
+          - id: c2e6-e0eb-ef02-b25a
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: c89c-a8f6-552b-9f25
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: b3bd-7452-98b4-c794
+        name: Weapon
+    constraints:
+      - id: 546e-384f-ebb5-05fd
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: eaf3-df47-01dd-256b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+    infoLinks:
+      - targetId: b548-09b5-d576-4528
+        type: profile
+        id: 089c-584d-e3c0-6aa6
+        name: Tarantula Sentry Gun
+    id: 4f9a-5607-6208-34f5
+    name: Tarantula Sentry Battery
+    modifiers:
+      - type: set
+        field: name
+        value: Tarantula Sentry Battery [Legends]
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: f787-a3af-72b5-60d1
+                field: selections
+                scope: 4f9a-5607-6208-34f5
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 2b37-65ee-9443-b4ef
+                field: selections
+                scope: 4f9a-5607-6208-34f5
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+infoLinks:
+  - targetId: 985b-dfbe-2c04-dc5a
+    type: profile
+    id: 4595-16e8-e953-cd3c
+    name: Automated Artillery
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 6095-eddb-e01a-fdf3
+    name: Angels of Death
+  - targetId: 0456-7995-d3d4-1044
+    type: rule
+    id: 2b99-bbf9-7107-909e
+    name: Explodes (3"/1)
+id: 3021-f871-0263-ccb1
+name: Tarantula Sentry Battery
+modifiers:
+  - type: set
+    field: name
+    value: Tarantula Sentry Battery [Legends]
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: f787-a3af-72b5-60d1
+            field: selections
+            scope: 3021-f871-0263-ccb1
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 2b37-65ee-9443-b4ef
+            field: selections
+            scope: 3021-f871-0263-ccb1
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

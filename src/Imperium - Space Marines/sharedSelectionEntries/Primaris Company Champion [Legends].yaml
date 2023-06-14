@@ -1,0 +1,160 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+    value: 70.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: b823-8808-766c-266f
+    name: 'Faction: Imperium'
+  - targetId: c7b7-edbc-bc14-6238
+    id: 3cb3-1a54-6ccf-30c6
+    name: 'Faction: Adeptus Astartes'
+  - targetId: b3fb-e3f1-a92e-0bc3
+    id: 2f4a-aa64-c5dc-8210
+    name: Company Champion
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3693-6773-f1aa-ab10
+    name: Infantry
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: e381-ed29-1847-5556
+    name: Primaris
+  - targetId: ef18-746a-369f-43a4
+    id: 00fc-5ff2-f6a9-3264
+    name: Character
+entryLinks:
+  - targetId: 2500-aed6-f77e-88f9
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d1e4-9906-77ee-1d79
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: fcce-895b-cbaa-b86e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 99e2-6f2f-d2d8-2149
+    name: Master-crafted power sword
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 6644-8890-f4da-6408
+    name: Warlord
+  - targetId: 29bc-7957-a56d-1aeb
+    type: selectionEntry
+    exported: true
+    id: ca9b-44ee-bee1-7c6b
+    name: 'Chapter Command:  Chapter Champion'
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: 4f08-affa-04f7-6bea
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 8ef6-1944-4b45-0c3c
+    name: Primaris Company Champion [Legends]
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          At the start of the Fight phase, if this model is  within Engagement range of any enemy units, select one of the following stances to apply to this model until the end of that phase
+
+
+          - Defensive Parries: Add 1 to armour saving throws made for this model and this model has a 4+ invulnerable save
+
+          - Behading Strikes: Add 1 to the strength characteristic of this model and each time this model makes a melee attack, on an umodified roll to wound of 6, the target suffers 1 mortal wound in addition to any normal damage
+
+          - Whirling Blade: Add 1 to the Attacks characteristic of this model and this model fights first this phase
+    id: d100-dcc9-d37a-ee30
+    name: Blade Stance
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: aae3-519a-b4ed-d135
+    name: Angels of Death
+  - targetId: 9324-447f-0ae6-0bc3
+    type: profile
+    id: f4cb-f6e8-c61e-5dc7
+    name: Honour or Death
+id: 9818-6bac-3e50-e194
+name: Primaris Company Champion [Legends]
+modifiers:
+  - type: add
+    field: category
+    value: b95f-a56d-1ae5-7b66
+    conditions:
+      - type: greaterThan
+        childId: b94e-1480-56dc-b77a
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: c47c-a3e1-c91e-436a
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

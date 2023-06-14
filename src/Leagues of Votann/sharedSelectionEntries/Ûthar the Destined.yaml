@@ -1,0 +1,370 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: pts
+    typeId: points
+    value: 160.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 97fd-bd39-d6cc-5c6d
+    name: New CategoryLink
+  - targetId: d6df-3d52-c2ca-4ee6
+    id: eef2-1470-e490-2dab
+    name: Votann
+  - targetId: 5c58-cce2-32c5-540d
+    id: da2b-8d08-8b12-c8ba
+    name: Greater Thurian League
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 5541-1559-b27b-e3af
+    name: Infantry
+  - targetId: ef18-746a-369f-43a4
+    id: c399-b473-8e87-3ecf
+    name: Character
+  - targetId: 9b2a-e557-0450-5da1
+    id: 4db0-3f35-b877-e4d5
+    name: Shield Crest
+  - targetId: 3ca6-32b5-c4b6-b220
+    id: 03fe-cd74-549b-aee6
+    name: High Kâhl
+  - targetId: 7272-3b6e-6c2f-042a
+    id: 0cbd-32a9-251b-b4be
+    name: Kâhl
+  - targetId: dce0-f581-edff-87a3
+    id: 444f-741f-4199-41ce
+    name: Ûthar the Destined
+  - targetId: debb-9a98-5e06-1280
+    id: cf01-b91c-8378-d0fa
+    name: Greater Thurian League High Kâhl
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: bb24-a2dd-1613-a531
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9a28-d920-12a4-63bb
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +1
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -4
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, an unmodified hit roll of 6 inflicts 2 mortal wounds on the target and the attack sequence ends (it inflicts 3 mortal wounds instead if the target has one or more Judgement tokens).
+        id: 9c5c-4325-d108-656f
+        name: Blade of the Ancestors
+    id: 051a-a1ac-fa71-cf70
+    name: Blade of the Ancestors
+entryLinks:
+  - targetId: 12b6-7578-1fff-d449
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 78c1-670a-db9d-a4a5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: f520-4e17-8043-ec24
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: c778-1da5-5ff7-d063
+    name: Volkanite disintegrator
+  - targetId: 9062-1b14-020e-a6de
+    type: selectionEntry
+    exported: true
+    id: 5330-c119-6a9c-bac6
+    name: Warlord
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: a776-be6a-78df-9ee7
+    name: 'Stratagem: Warlord Trait'
+  - targetId: 6e50-5fda-2900-ba17
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: a11e-9301-717b-d8c3
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 2200-fc12-91b7-02dd
+    name: Experienced Eye
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: a11e-9301-717b-d8c3
+            value: 1.0
+          - type: set
+            field: hidden
+            value: false
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: equalTo
+                childId: f0ee-822e-1a92-13c3
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 9062-1b14-020e-a6de
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - targetId: b53f-3b88-a48e-3a50
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0c78-d201-9ae5-e3f7
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: b082-f464-2923-f8ff
+    name: Ancestral Bearing
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: 0c78-d201-9ae5-e3f7
+            value: 1.0
+          - type: set
+            field: hidden
+            value: false
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: equalTo
+                childId: f0ee-822e-1a92-13c3
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 9062-1b14-020e-a6de
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - targetId: f0ee-822e-1a92-13c3
+    type: selectionEntry
+    exported: true
+    id: 23c1-90b2-79e8-fe3e
+    name: Legend of the League
+constraints:
+  - id: 7e65-c7a5-b819-35c7
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 5"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 5
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: a1d8-dd61-63e8-cafd
+    name: Ûthar the Destined
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+      - name: W
+        typeId: f330-5e6e-4110-0978
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+    id: 020c-1273-6c6f-1995
+    name: Ûthar the Destined
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time an attack is allocated to this model, the Damage characteristic of that attack is changed to 1.
+    id: 3451-f212-d83c-f76b
+    name: The Destined
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Once per battle round, when you make a hit roll, wound roll, damage roll or saving throw for this model, or a friendly GREATER THURIAN LEAGUE model within 6" of them, you can change the result of that roll to a 6. For any rules purposes, this counts as an unmodified 6.
+    id: db10-d856-16f4-1e14
+    name: Ancestral Fortune
+infoLinks:
+  - targetId: 639f-3242-2aff-6d3d
+    type: infoGroup
+    id: 8295-e00b-ff45-9f39
+    name: Shared Rules
+  - targetId: e994-9e89-3822-64f9
+    type: profile
+    id: cce0-9709-5fbf-210c
+    name: Bastium Void Armour
+  - targetId: 4b1f-7a2e-3232-817a
+    type: profile
+    id: 3939-9946-2899-d4cc
+    name: Kindred Hero (Aura)
+  - targetId: be87-6887-a8b8-c0fb
+    type: profile
+    id: 40f9-3ae5-fd57-303d
+    name: Grim Efficiency
+  - targetId: 4c03-237a-e337-3e79
+    type: profile
+    id: 43d8-d397-0fbf-0b2a
+    name: Rampart Shield (Aura)
+  - targetId: 9d18-0af7-0d23-d92a
+    type: profile
+    id: c2bf-6588-c400-3d28
+    name: High Kâhl
+  - targetId: 2213-be82-200c-8732
+    type: profile
+    id: 377c-7b1e-d566-8eae
+    name: Efficient Exemplar
+id: ebf9-9781-ee30-49fb
+name: Ûthar the Destined
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: b46a-6e31-2df9-bfe3
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+  - type: add
+    field: category
+    value: c5fe-199d-07fb-ab46
+    conditions:
+      - type: equalTo
+        childId: 9062-1b14-020e-a6de
+        field: selections
+        scope: ebf9-9781-ee30-49fb
+        value: 1.0
+        shared: true

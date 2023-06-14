@@ -1,0 +1,510 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+    value: 70.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 4dfd-f8ed-7f39-4699
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 070b-221d-63fd-c835
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: cd72-7d12-4868-8fe5
+    name: New CategoryLink
+  - targetId: 955e-536a-e290-5dcf
+    id: 2ba5-3be1-2f7e-1c77
+    name: 'Faction: Drukhari'
+  - targetId: 0fa5-c739-c66f-3d88
+    id: 47d0-a86d-4250-3710
+    name: Archon
+selectionEntryGroups:
+  - defaultSelectionEntryId: 1a97-ec85-4266-148e
+    exported: true
+    entryLinks:
+      - targetId: 277e-79e0-b605-ca05
+        type: selectionEntry
+        exported: true
+        id: 48c3-13f0-f4c5-02cc
+        name: Agoniser
+      - targetId: 124a-de32-6682-0bd7
+        type: selectionEntry
+        exported: true
+        id: c190-1fce-e872-e039
+        name: Huskblade
+      - targetId: bc9e-551d-9afb-78d5
+        type: selectionEntry
+        exported: true
+        id: 1a97-ec85-4266-148e
+        name: Power sword
+      - targetId: bac0-1ac3-c526-786e
+        type: selectionEntry
+        exported: true
+        id: e4fc-af41-0ece-6a05
+        name: Venom Blade
+    constraints:
+      - id: 0ea9-0185-84eb-5367
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 8d99-dcfe-a47c-924d
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: bb4c-1edf-f2f8-b3db
+    name: Melee Weapon
+  - defaultSelectionEntryId: 067e-426d-dba9-c55e
+    exported: true
+    entryLinks:
+      - targetId: 4a3b-66b2-cd71-a1b6
+        type: selectionEntry
+        exported: true
+        id: ab27-93e0-f22b-a2b0
+        name: Blast Pistol
+      - targetId: 4ef5-8bff-ffc6-1b9e
+        type: selectionEntry
+        exported: true
+        id: 5d63-3811-3f77-8f3e
+        name: Blaster
+        modifiers:
+          - type: append
+            field: name
+            value: '[Legends]'
+      - targetId: a293-6465-2a99-903f
+        type: selectionEntry
+        exported: true
+        id: 067e-426d-dba9-c55e
+        name: Splinter Pistol
+    constraints:
+      - id: 5927-c46b-a4df-9fd9
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 046b-5a31-29f6-a58a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 07fa-fe1d-38f4-c3cf
+    name: Ranged Weapon
+  - defaultSelectionEntryId: 841b-ce8e-fb91-9d5d
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 18f5-9b6a-33d0-1a04
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: While a friendly REALSPACE RAIDER CORE unit is within 6" of this model, each time an attack is made by a model in that unit, re-roll a hit roll of 1.	
+            id: a4d5-db60-6a48-612f
+            name: Raid Mastermind
+        id: d05d-0845-8ab2-de96
+        name: Raid Mastermind
+        modifiers:
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: lessThan
+                childId: 5fc1-0bf5-caf9-3702
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 0d12-ded4-5ebc-1079
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: While a friendly <KABAL> CORE or INCUBI unit is within 6" of this model, each time an attack is made by a model in that unit, re-roll a hit roll of 1.
+            id: aacc-7f10-c252-397b
+            name: Overlord (Aura)
+        id: 841b-ce8e-fb91-9d5d
+        name: Overlord
+    constraints:
+      - id: e872-16ed-bd5a-e687
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 12c2-b0b6-a75b-d1d8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 8506-e94b-779b-660e
+    name: Aura Ability
+entryLinks:
+  - targetId: e852-3a50-d3ca-9934
+    type: selectionEntryGroup
+    exported: true
+    id: 050f-a8e8-8f93-54fa
+    name: Artefacts of Cruelty
+  - targetId: 2ce0-03a1-ec03-76aa
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 6220-1e5b-94ed-2a56
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: d139-7e67-3ea5-3dd1
+    name: Warlord
+    modifiers:
+      - type: set
+        field: 6220-1e5b-94ed-2a56
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 5fc1-0bf5-caf9-3702
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - targetId: 64ad-12e1-bca2-9894
+    type: selectionEntryGroup
+    exported: true
+    id: 1f47-1968-4a41-6949
+    name: Warlord Trait
+  - targetId: 4448-243b-2379-2c73
+    type: selectionEntry
+    exported: true
+    id: 20b1-0d09-1bb2-73e8
+    name: Phantasm Grenade Launcher
+  - targetId: 07a6-420c-5429-dcfc
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 5167-8175-6333-a7d1
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 4bbf-c532-6db2-b17a
+    name: Lords of Commorragh
+  - targetId: 2d6c-4e53-385f-6d4e
+    type: selectionEntry
+    exported: true
+    id: 276a-e47f-6554-14ec
+    name: 'Stratagem: Tolerated Ambition'
+  - targetId: 3b82-0bd8-3569-8a99
+    type: selectionEntryGroup
+    exported: true
+    id: 2f31-2134-271d-36ad
+    name: Kabal Selection
+  - targetId: 2f43-12f4-58bb-7802
+    type: selectionEntryGroup
+    exported: true
+    id: 2f35-113f-6059-92fb
+    name: Treasures of the Aeldari (Ynnari)
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 4ddd-42ab-c42d-23f2
+    name: 'Stratagem: Warlord Trait'
+  - targetId: c470-54ac-0863-8848
+    type: selectionEntry
+    exported: true
+    id: ece3-ce8e-5fba-f166
+    name: 'Stratagem: Relic'
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 4+
+    id: af61-7dc7-dca7-8f38
+    name: Archon
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model has a 2+ invulnerable save. This invulnerable saving throw can never be re-rolled. The first time this invulnerable saving throw is failed, until the end of the battle, this ability has no effect.
+    id: 1df8-6382-e6e1-08a1
+    name: Shadowfield
+infoLinks:
+  - targetId: e6c3-8502-de0a-9515
+    type: rule
+    id: 6e31-6167-39c9-c557
+    name: Power from Pain
+  - targetId: 5145-3061-a066-4c5c
+    type: rule
+    id: 813d-979a-28b3-9b2d
+    name: Blade Artists
+id: 3ea9-f42c-d816-b91a
+name: Archon
+publicationId: e0a4-2172-pubN65537
+modifiers:
+  - type: append
+    field: name
+    value: '[Legends]'
+    conditions:
+      - type: equalTo
+        childId: 4448-243b-2379-2c73
+        field: selections
+        scope: 3ea9-f42c-d816-b91a
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: add
+    field: category
+    value: ac19-fd2f-b3f8-46d4
+    conditions:
+      - type: greaterThan
+        childId: d139-7e67-3ea5-3dd1
+        field: selections
+        scope: 3ea9-f42c-d816-b91a
+        includeChildSelections: true
+  - type: add
+    field: category
+    value: 4f74-e364-7cfc-784c
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: d139-7e67-3ea5-3dd1
+            field: selections
+            scope: 3ea9-f42c-d816-b91a
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 9578-d498-fba4-cd50
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: 6ed6-c5e3-6d24-6c8a
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: fa66-1b74-39b7-2422
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+  - type: add
+    field: category
+    value: 5dc3-430a-919f-77f4
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: d139-7e67-3ea5-3dd1
+            field: selections
+            scope: 3ea9-f42c-d816-b91a
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 9c6b-c47c-ab1b-5048
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: 1800-8e18-43c8-770e
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: fa66-1b74-39b7-2422
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+  - type: add
+    field: category
+    value: d614-9068-0b25-e1e9
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: d139-7e67-3ea5-3dd1
+            field: selections
+            scope: 3ea9-f42c-d816-b91a
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 6edf-c20b-0f65-505b
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: 9b1e-6d3f-89cd-c366
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: fa66-1b74-39b7-2422
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+  - type: add
+    field: category
+    value: 9d15-f29d-7830-2ae6
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: d139-7e67-3ea5-3dd1
+            field: selections
+            scope: 3ea9-f42c-d816-b91a
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: acee-8ab0-c23e-4c09
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: a648-9f1a-b826-1551
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: fa66-1b74-39b7-2422
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: 53a8-b0ea-cf82-5870
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: ebb3-4f37-6e57-7a8e
+      - type: add
+        field: category
+        value: aaa9-03ca-6071-078b
+    conditions:
+      - type: equalTo
+        childId: 5af8-e7c8-e3bf-6d52
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

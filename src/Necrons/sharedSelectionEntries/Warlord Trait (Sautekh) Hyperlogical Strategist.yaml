@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: b1e5-647f-418b-5fe8
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 010f-ea40-a76a-06d9
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+infoLinks:
+  - targetId: ac7a-37f0-54a9-956e
+    type: profile
+    id: aebd-c6dc-c4b8-ec52
+    name: Hyperlogical Strategist
+id: b916-2a56-8cab-ffe1
+name: 'Warlord Trait (Sautekh): Hyperlogical Strategist'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: f6ea-beff-a150-f095
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: ea9b-4e8a-12f5-273c
+            field: selections
+            scope: ancestor
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

@@ -1,0 +1,150 @@
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    id: a45f-e37b-224f-813a
+    name: Configuration
+  - targetId: c845-c72c-6afe-3fc2
+    id: e7ac-d434-4bd3-2dd6
+    name: Stratagems
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    id: 6fed-d770-852f-a123
+    name: No Force Org Slot
+  - targetId: 26b0-4bb9-73aa-d3d7
+    constraints:
+      - id: c0dc-5bde-d67a-9c09
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: 371a-f9e1-dee4-4cd5
+        type: minimum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 8a3d-3602-7ef5-9ab1
+    name: Primarch | Daemon Primarch | Supreme Commander
+    comment: This RSE Category can contain HQ or LOW units that have the relevant keywords.
+  - targetId: ae09-117e-a6fa-316b
+    constraints:
+      - id: ea61-c716-bc3b-0b68
+        type: minimum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 5ade-6882-9040-3989
+    name: Warlord
+constraints:
+  - id: 3ad2-51f5-4783-3c57
+    type: maximum
+    field: forces
+    scope: roster
+    value: 1.0
+    shared: true
+id: 5baf-eed5-bb85-7325
+name: Supreme Command Detachment 0CP
+modifiers:
+  - type: set
+    field: name
+    value: Supreme Command Detachment +2CP
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: cccd-3d99-d4af-d668
+            field: forces
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: a0c7-2a71-bae0-215d
+            field: forces
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 564e-55d5-79bc-a4d7
+            field: forces
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: name
+    value: Supreme Command Detachment +4CP
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: cccd-3d99-d4af-d668
+            field: forces
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: name
+    value: Supreme Command Detachment +3CP
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: cccd-3d99-d4af-d668
+            field: forces
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: 564e-55d5-79bc-a4d7
+            field: forces
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: 3ad2-51f5-4783-3c57
+    value: 0.0
+    conditions:
+      - type: greaterThan
+        childId: 76d2-6e71-243f-ad3d
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true

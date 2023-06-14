@@ -1,0 +1,162 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+categoryLinks:
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: 32bf-15d0-9390-53c5
+    name: New CategoryLink
+  - targetId: 2ab6-8d0f-494d-38e2
+    id: 9c41-b566-a7bf-2232
+    name: 'Faction: <Clan>'
+  - targetId: 1c58-037f-7b58-1223
+    id: 4d98-d5b4-8f20-e6d7
+    name: 'Faction: Orks'
+  - targetId: ad01-caec-17d9-cb8d
+    id: 6ab9-6600-3c23-cfe8
+    name: Cavalry
+  - targetId: 2dab-44c2-aa8b-df46
+    id: 9b28-99be-5271-0453
+    name: Beast Snagga
+  - targetId: a528-ad36-9ba5-c186
+    id: 7f07-6eaf-7850-545e
+    name: Squig
+  - targetId: 08f1-d244-eb44-7e01
+    id: 6c4d-2dab-d24f-ef3e
+    name: Core
+  - targetId: de0e-7d02-d08d-e4d3
+    id: 4fb9-a2cc-1355-b09d
+    name: Squighog Boyz
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 25.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: ' Scrap Points'
+        typeId: 932a-ae3d-c6c7-6938
+    exported: true
+    entryLinks:
+      - targetId: 23db-9d89-484d-1ce4
+        type: selectionEntry
+        exported: true
+        id: 3461-1566-564f-8a0e
+        name: Saddlegit Weapons
+      - targetId: 0660-c75f-fc9c-4387
+        type: selectionEntry
+        exported: true
+        id: 946a-b660-484d-2f7b
+        name: Squighog Jaws
+      - targetId: 361b-c134-6fce-cfb2
+        type: selectionEntry
+        exported: true
+        id: 52d0-eb48-81ad-cb54
+        name: Stikka
+    constraints:
+      - id: 7178-d22b-e762-254d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: 0b92-8dd4-57da-ac97
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+        shared: true
+    infoLinks:
+      - targetId: f534-3472-cc37-e62a
+        type: profile
+        id: c0a7-cf7d-f349-78b2
+        name: Squighog Boy
+    id: 8a2b-56d6-4c9a-9c21
+    name: Squighog Boy
+entryLinks:
+  - targetId: 5268-1807-2fb6-ac2d
+    type: selectionEntry
+    costs:
+      - name: pts
+        typeId: points
+        value: 5.0
+    exported: true
+    constraints:
+      - id: 7698-7263-86e6-457e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 1a08-0a21-0985-e186
+    name: Bomb Squig
+    modifiers:
+      - type: set
+        field: 7698-7263-86e6-457e
+        value: 1.0
+        conditions:
+          - type: lessThan
+            childId: model
+            field: selections
+            scope: parent
+            value: 6.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - targetId: c99c-6f81-ada0-9caa
+    type: selectionEntryGroup
+    exported: true
+    id: 8146-0b46-bac8-63d3
+    name: Specialist Mobs
+infoLinks:
+  - targetId: bdaf-b64d-6560-4498
+    type: profile
+    id: 9bdf-4e02-14fd-bf31
+    name: Beast Snagga
+  - targetId: de72-9941-3d27-44e9
+    type: rule
+    id: d318-ea97-8d1d-7f16
+    name: "'Ere We Go!"
+  - targetId: ad32-a248-a392-3d4a
+    type: rule
+    id: 603f-d58d-0afe-6eca
+    name: Mob Rule
+id: acad-91ba-c465-a145
+name: Squighog Boyz
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 4.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: acad-91ba-c465-a145
+        value: 4.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+        includeChildSelections: true

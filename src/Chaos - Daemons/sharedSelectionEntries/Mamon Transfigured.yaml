@@ -1,0 +1,250 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 130.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: b7f2-2505-c900-7341
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 7c8f-76a7-d8bb-7e26
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 0151-2a32-7839-fbaa
+    name: New CategoryLink
+  - targetId: 3b77-decb-d468-6bcc
+    id: 0a15-6cdc-50d2-e9f9
+    name: New CategoryLink
+  - targetId: 0fb6-fcaf-b180-5dda
+    id: e108-93bc-d617-a048
+    name: New CategoryLink
+  - targetId: d8d3-6bf7-9b21-8e58
+    id: e606-bae5-f9f0-1f3d
+    name: Daemon Prince
+  - targetId: 2a5a-f894-9070-d236
+    id: ff88-28da-b9a7-f418
+    name: 'Faction: Legiones Daemonica'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: be0c-6322-4f9d-3f57
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: b3b0-5822-62fd-1930
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: 12"
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Assault 3D3
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: 5
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, that attack automatically hits the target.
+        id: 1739-23dd-57a7-0a4d
+        name: Contagion spray
+    id: 021d-c18f-6fec-8c13
+    name: Contagion spray
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 3ac3-30f8-ba3d-4220
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2aad-f774-3e47-2f2e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: 340e-b282-6819-9845
+        name: Fist of decay
+    id: d203-88f4-4c4a-a8f1
+    name: Fist of decay
+entryLinks:
+  - targetId: c488-0afe-c67e-2606
+    type: selectionEntry
+    exported: true
+    id: ee51-2069-09b9-5ee2
+    name: Warlord
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: b3d7-ba3a-1955-2403
+    name: 'Stratagem: Warlord Trait'
+  - targetId: d442-1f03-d9da-e77f
+    type: selectionEntryGroup
+    exported: true
+    id: aef0-2342-03e0-3697
+    name: Warlord Traits (BRB)
+    hidden: true
+    modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: c488-0afe-c67e-2606
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+constraints:
+  - id: ee3d-1bea-643b-7d2a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 7
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 7
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 9
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 5+/4+
+    id: 9398-6832-9c10-6e01
+    name: Mamon Transfigured
+    page: ''
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly NURGLE DAEMON unit is within 6" of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1.
+    id: d309-49ef-8df6-6617
+    name: The Transfigured (Aura)
+infoLinks:
+  - targetId: 3326-dd72-0e2b-a16c
+    type: infoGroup
+    id: 6c2a-9149-eb5c-2aeb
+    name: Daemonic
+id: b36b-da1c-afe1-29fc
+name: Mamon Transfigured
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

@@ -1,0 +1,130 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 6a37-4c9f-a323-a8f2
+    id: 5eaf-b2da-7d70-ecf7
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 876e-ea78-1fdf-f250
+    id: 3b1d-67cd-3cee-293c
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 3fd5-c8ca-a541-2143
+    id: 7202-e4d5-99e7-a2e9
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3cec-868b-a519-2a1f
+    name: ''
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 08f1-d244-eb44-7e01
+    id: bb56-dea3-cd15-1507
+    name: Core
+selectionEntryGroups:
+  - defaultSelectionEntryId: e196-f5d3-21bf-1bef
+    exported: true
+    entryLinks:
+      - targetId: aa3e-6628-f176-979f
+        type: selectionEntry
+        exported: true
+        id: e22b-eda7-4bd9-52aa
+        name: Tesla Carbine
+        publicationId: 61c6-c8c5-pubN65537
+      - targetId: f8ac-cd96-8f08-c74b
+        type: selectionEntry
+        exported: true
+        id: e196-f5d3-21bf-1bef
+        name: Gauss Blaster
+        publicationId: 61c6-c8c5-pubN65537
+    constraints:
+      - id: 5944-a6d6-4c5f-1a9a
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 5409-f741-9d77-0630
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: e306-eeaf-a28e-6c78
+    name: Unit Weapon Choice
+    publicationId: 61c6-c8c5-pubN65537
+entryLinks:
+  - targetId: 1083-8dbb-68af-ebbd
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5514-20f7-bf94-d1a8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+      - id: c65f-8743-7af6-e809
+        type: minimum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+    id: a5b5-82cc-ad02-a0d9
+    name: Immortal
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 20a7-2e42-4c73-9844
+    type: selectionEntryGroup
+    exported: true
+    id: 695d-0528-9f51-e810
+    name: Battle Honours
+infoLinks:
+  - targetId: cba7-3427-625e-eb99
+    type: rule
+    id: c247-cf82-b940-2e89
+    name: Reanimation Protocols
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: e07e-8dbf-0b15-7485
+    type: rule
+    id: 2ed4-5f65-9b27-9c09
+    name: Objective Secured
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: aa07-b2de-6de0-3dd9
+    type: rule
+    id: 8ab6-d9c8-fa66-3740
+    name: Command Protocols
+    publicationId: 61c6-c8c5-pubN65537
+id: 7b8e-775e-8a0f-4455
+name: Immortals
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 8.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 7b8e-775e-8a0f-4455
+        value: 5.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 7fcd-553a-a403-3e5d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

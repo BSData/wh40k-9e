@@ -1,0 +1,296 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: pts
+    typeId: points
+    value: 120.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 5db7-7b06-45d2-94a5
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 832f-bcd7-d366-d0e1
+    name: New CategoryLink
+  - targetId: 8352-7f67-7e2b-3b4f
+    id: 0214-8243-ae2e-adeb
+    name: New CategoryLink
+  - targetId: 6b7c-3d51-f050-7398
+    id: 0552-6da8-c7fb-9af2
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 8c7c-993d-d443-5474
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: f7a4-281a-01f1-7a6d
+    name: New CategoryLink
+  - targetId: c4e4-b28f-193a-8fc3
+    id: 7ac9-f2ca-98b6-f352
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: f26d-6a2e-dc30-ddff
+    name: New CategoryLink
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 89f0-075f-0c95-67fc
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 8e7a-3104-ce1a-45d2
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +6
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: b8fe-5edb-cb72-70b1
+        name: Fist of Dorn
+    id: abfd-933e-1025-5b8e
+    name: Fist of Dorn
+entryLinks:
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: da76-1a84-28ab-5269
+    name: Warlord
+  - targetId: b0db-bfc4-8d32-6918
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 4274-db11-9376-9451
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 0342-eef8-58c4-2fe5
+    name: Indomitable
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 94ea-2b86-14a0-402f
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 4274-db11-9376-9451
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 94ea-2b86-14a0-402f
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: fc60-73e7-d000-6cf6
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 64f4-6a0e-25c0-e358
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: fc60-73e7-d000-6cf6
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: 94ea-2b86-14a0-402f
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+constraints:
+  - id: 34d0-fc41-ae1d-fbdf
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 5"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 4d4a-8643-1b1b-73a3
+    name: Captain Lysander
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly Imperial Fists unit is within 6" of this model, each time a Combat Attrition test is taken for that unit, it is automatically passed
+    id: 070d-21bc-3a42-a466
+    name: Icon of Obstinacy
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model has a 3+ invulnerable save.
+    id: fbeb-bd1b-1fc4-fac8
+    name: Walking Fortress
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: f9f9-600f-e41c-8a3e
+    name: Angels of Death
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: a440-d33b-acc0-f220
+    name: Rites of Battle
+  - targetId: 687d-8915-60b7-ac06
+    type: rule
+    id: 8160-8faa-099f-8a6b
+    name: Teleport Strike
+id: 94ea-2b86-14a0-402f
+name: Captain Lysander
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: a018-bc2a-eea4-a553
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

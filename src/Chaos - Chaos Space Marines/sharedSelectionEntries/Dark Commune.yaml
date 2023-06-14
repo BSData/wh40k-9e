@@ -1,0 +1,1112 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: pts
+    typeId: points
+    value: 100.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 1391-b3cb-72fa-d522
+    name: 'Faction: Chaos'
+  - targetId: 95ae-effa-c9f2-d11b
+    id: d287-5cfe-a770-866b
+    name: 'Faction: Traitoris Astartes'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3e66-c931-889d-715d
+    name: Infantry
+  - targetId: ae44-8e2e-2df1-d463
+    id: e537-e770-88fb-f976
+    name: Cultists
+  - targetId: 1aba-b051-5245-81aa
+    id: d3a8-858e-4c8c-774d
+    name: Dark Commune
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 0836-e5f0-e674-07c9
+    name: New CategoryLink
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    categoryLinks:
+      - targetId: 4795-007f-61fa-aca5
+        id: 2308-66e9-1ff7-15d0
+        name: Priest
+      - targetId: ef18-746a-369f-43a4
+        id: 5372-47e6-370d-2e4e
+        name: Character
+      - targetId: 208d-62e0-f18c-d765
+        id: 6150-9525-c791-723e
+        name: Cult Demagogue
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: d20f-74d9-a8a2-2eac
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: ffe4-0a8e-ddc8-8bb1
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+            typeName: Weapon
+            characteristics:
+              - name: Range
+                typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                value: Melee
+              - name: Type
+                typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                value: Melee
+              - name: S
+                typeId: 59b1-319e-ec13-d466
+                value: User
+              - name: AP
+                typeId: 75aa-a838-b675-6484
+                value: -1
+              - name: D
+                typeId: ae8a-3137-d65b-4ca7
+                value: D3
+              - name: Abilities
+                typeId: 837d-5e63-aeb7-1410
+                value: '-'
+            id: 2998-aceb-0ecf-2b84
+            name: Commune stave
+        id: e2e8-219b-2d1a-e894
+        name: Commune stave
+    entryLinks:
+      - targetId: 0507-a97d-4f7f-83b4
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: d24b-0977-a584-481c
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 1697-d001-16d9-199b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 22a3-82a9-e5a5-f526
+        name: Autopistol
+      - targetId: 72ec-40a1-26f1-a46e
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 7b38-7d79-d72d-4fa4
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 1e5c-3301-e9dc-171b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 11d0-1186-53ac-b8ea
+        name: Prayers to the Dark Gods
+        modifiers:
+          - type: set
+            field: 1e5c-3301-e9dc-171b
+            value: 2.0
+            conditions:
+              - type: equalTo
+                childId: 30f8-754b-397f-90cd
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+      - targetId: 5876-fcc5-8283-1aca
+        type: selectionEntryGroup
+        exported: true
+        id: fa55-0125-6117-72bc
+        name: Artefacts of Chaos
+      - targetId: b34c-6c4b-d22c-25b5
+        type: selectionEntryGroup
+        exported: true
+        id: 9227-5b2c-eb8a-b447
+        name: Warlord Traits
+      - targetId: 398a-c8da-c8bd-da58
+        type: selectionEntry
+        exported: true
+        id: 2b9a-873c-323e-4d87
+        name: Warlord
+        modifiers:
+          - type: set
+            field: a313-6660-dd0c-6df9
+            value: 0.0
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: greaterThan
+                    childId: eb55-bd6b-3e75-d505
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 0385-8978-4a91-7695
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: b36f-fae2-eca4-6d1f
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: a459-6417-3709-336c
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 898f-6c4c-e871-5c50
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: c59b-a4e0-238a-a32b
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 5eb2-4f76-c46f-9530
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 790e-203d-079c-ee48
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: d8d3-6bf7-9b21-8e58
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: c8ec-6733-1920-f0fc
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 4796-e195-faf7-d932
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+      - targetId: cddf-945e-1335-e681
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 5146-3dde-edec-5a31
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 86b6-ae4b-1d96-8083
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: c0d8-67e0-9fdc-72da
+        name: Frag & Krak grenades
+      - targetId: 9302-33d5-1089-4316
+        type: selectionEntry
+        exported: true
+        id: 892c-4f4d-5c02-e55b
+        name: Lord of the Ezakarion
+      - targetId: 0b83-3a3f-078a-8a13
+        type: selectionEntry
+        exported: true
+        id: 8918-65d3-9302-0e1a
+        name: Gifts of Chaos
+      - targetId: 5b7e-58f0-009c-0927
+        type: selectionEntry
+        exported: true
+        id: 5375-12d1-3936-7d2e
+        name: Apostle of the Dark Council
+      - targetId: 736a-c72b-1bd2-6b0a
+        type: selectionEntry
+        exported: true
+        id: 57c5-8f27-02cc-7389
+        name: Aspiring Lord
+      - targetId: 6771-6ab3-1672-6a39
+        type: selectionEntry
+        exported: true
+        id: 1a50-bfc8-e5d2-769e
+        name: 'Stratagem: Warlord Trait'
+      - targetId: c470-54ac-0863-8848
+        type: selectionEntry
+        exported: true
+        id: 472e-a795-7b25-7934
+        name: 'Stratagem: Relic'
+      - targetId: 4c50-9343-b5fb-872d
+        type: selectionEntryGroup
+        exported: true
+        id: 5a0f-ba36-0c21-f571
+        name: Boarding Action Enhancements
+    constraints:
+      - id: 596d-e83a-91a6-1b95
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c978-feb4-4d69-ba7b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 6"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 4+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 4+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 3
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 3
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 3
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 7
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: 95ef-dbf2-3c7e-9839
+        name: Cult Demagogue
+        modifiers:
+          - type: increment
+            field: 00ca-f8b8-876d-b705
+            value: 1
+            conditions:
+              - type: equalTo
+                childId: 5b7e-58f0-009c-0927
+                field: selections
+                scope: c44e-208c-55c4-8b4b
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: "This unit's CULT DEMAGOGUE model knows Dark Zealotry and one other prayer from the Prayers to the Dark Gods. In your Command phase, this unit's CULT DEMAGOGUE model can attempt to chant one prayer it knows that has not already been attempted by a friendly model this turn. Roll one D6: on a 3+, the prayer is heard and takes effect until the start of your next Command phase. Each time a prayer chanted by this unit's CULT DEMAGOGUE model is heard, measure distances and draw line of sight from that CULT DEMAGOGUE model."
+        id: c457-8deb-c137-f76a
+        name: Cult Demagogue
+    infoLinks:
+      - targetId: 0be0-ea10-dffa-024e
+        type: profile
+        id: 189e-0ded-d2ee-f9ea
+        name: Dark Zealotry (Aura)
+    id: c44e-208c-55c4-8b4b
+    name: Cult Demagogue
+    modifierGroups:
+      - modifiers:
+          - type: add
+            field: category
+            value: bb17-4692-b1ad-a620
+            conditions:
+              - type: equalTo
+                childId: a1b3-96fc-29f6-d3b1
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 0c84-90d4-b11b-d435
+            conditions:
+              - type: equalTo
+                childId: a675-3934-815b-7d5e
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: f095-c6cc-5aab-9bd8
+            conditions:
+              - type: equalTo
+                childId: 37cd-2830-725b-a321
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: f4dd-1aa4-7cd2-d28d
+            conditions:
+              - type: equalTo
+                childId: 51f6-1db1-3e75-3d4b
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 2692-cb00-633e-5db0
+            conditions:
+              - type: equalTo
+                childId: 8f74-81f3-7093-69e4
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 1247-6183-24cc-cba0
+            conditions:
+              - type: equalTo
+                childId: 2482-8e16-78b0-e9cd
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 4592-91a6-aa96-225d
+            conditions:
+              - type: equalTo
+                childId: 01f7-d7f1-be88-b861
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 6dba-99ea-aa7d-40a5
+            conditions:
+              - type: equalTo
+                childId: 9b8a-fb30-b445-3049
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+        conditions:
+          - type: equalTo
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        comment: 'Legion Warlord '
+      - modifiers:
+          - type: add
+            field: category
+            value: 87da-018e-ea9b-f5c4
+            conditions:
+              - type: equalTo
+                childId: a1b3-96fc-29f6-d3b1
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: dba9-7a7f-1310-3028
+            conditions:
+              - type: equalTo
+                childId: a675-3934-815b-7d5e
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 1f29-4695-dfe7-e893
+            conditions:
+              - type: equalTo
+                childId: 37cd-2830-725b-a321
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 649f-80f9-0d71-64c3
+            conditions:
+              - type: equalTo
+                childId: 51f6-1db1-3e75-3d4b
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: e0db-3bff-98cd-1a60
+            conditions:
+              - type: equalTo
+                childId: 8f74-81f3-7093-69e4
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 38e4-b91c-a673-9c76
+            conditions:
+              - type: equalTo
+                childId: 2482-8e16-78b0-e9cd
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 2e84-a6d9-bf13-4116
+            conditions:
+              - type: equalTo
+                childId: 01f7-d7f1-be88-b861
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+          - type: add
+            field: category
+            value: 1e3f-0a7b-0c8f-84db
+            conditions:
+              - type: equalTo
+                childId: 9b8a-fb30-b445-3049
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+        comment: <Legion>
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    categoryLinks:
+      - targetId: e691-aad7-d21c-1023
+        id: 9d3f-f777-2542-b116
+        name: Psyker
+      - targetId: 3c48-6f92-649c-1b2b
+        id: 3823-2c2c-050d-ca3f
+        name: Mindwitch
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        collective: true
+        exported: true
+        constraints:
+          - id: 23e6-af7b-9f91-743a
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: d61a-552f-beaa-5d4c
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+            typeName: Weapon
+            characteristics:
+              - name: Range
+                typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                value: Melee
+              - name: Type
+                typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                value: Melee
+              - name: S
+                typeId: 59b1-319e-ec13-d466
+                value: User
+              - name: AP
+                typeId: 75aa-a838-b675-6484
+                value: 0
+              - name: D
+                typeId: ae8a-3137-d65b-4ca7
+                value: 1
+              - name: Abilities
+                typeId: 837d-5e63-aeb7-1410
+                value: '-'
+            id: fc8e-bd61-a071-d505
+            name: Close combat weapon
+        id: bbd9-4691-dc0b-3b3e
+        name: Close combat weapon
+    entryLinks:
+      - targetId: 0246-3399-3b88-44aa
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: a82b-c025-0255-1b27
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: bbae-be98-9b5d-c081
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 5730-74b2-ea48-1762
+        name: Dark Hereticus discipline
+      - targetId: cddf-945e-1335-e681
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 0225-158f-5c89-abdc
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 0ca9-cdb5-79cc-897f
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: adc2-7847-5ef4-d40a
+        name: Frag & Krak grenades
+    constraints:
+      - id: 6ea5-c68b-f7b9-8036
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: bb91-ca21-4d9d-417e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 6"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 4+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 4+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 3
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 3
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 1
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 6
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: b17b-a9a8-2a37-3bff
+        name: Mindwitch
+      - typeId: bc97-dea9-9e88-bb7d
+        typeName: Psyker
+        characteristics:
+          - name: Cast
+            typeId: 5afb-9914-904b-d3b3
+            value: 1
+          - name: Deny
+            typeId: b5ac-9c20-5d5a-6f9b
+            value: 1
+          - name: Powers Known
+            typeId: 69d7-b45e-00a2-7e46
+            value: Smite and one power from the Dark Hereticus Discipline
+          - name: Other
+            typeId: c2e2-f115-0003-5d7b
+            value: Each time this unit's MINDWITCH model attempts to Deny the Witch, manifest a psychic power or perform a psychic action, measure distances and draw line of sight from this unit's MINDWITCH model. If enemy units have abilities that require measuring distance or drawing line of sight to PSYKER units, do so to this unit's MINDWITCH model.
+        id: acef-c316-4f6c-6858
+        name: Mindwitch
+    infoLinks:
+      - targetId: 5821-6c45-8572-7e0e
+        type: profile
+        id: 2657-968a-d51d-2479
+        name: Smite
+    id: ede6-10f0-da3d-017f
+    name: Mindwitch
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    categoryLinks:
+      - targetId: 5824-1c9c-d6b6-64b4
+        id: 5325-c253-5d06-fbf5
+        name: Icon
+      - targetId: ff10-1c6f-3f69-9790
+        id: 17ad-848f-f460-0533
+        name: Iconarch
+    entryLinks:
+      - targetId: 0507-a97d-4f7f-83b4
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: ee39-1f87-25c0-e856
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 9c0b-0177-759c-b811
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: be91-649d-26cc-d252
+        name: Autopistol
+      - targetId: cddf-945e-1335-e681
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 378b-75d7-f58c-0473
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 018c-ed39-1560-9a96
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: a80a-6ac7-ef22-5373
+        name: Frag & Krak grenades
+    constraints:
+      - id: 05b9-1442-bd91-e69e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 639c-6fc6-cad7-0b8f
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: While a friendly <LEGION> CULTISTS unit is within 6" of this unit's ICONARCH model, add 2 to the Leadership characteristic of models in that unit, and each time a model in that unit makes an attack, re-roll a hit roll of 1.
+        id: ae5e-b105-64a6-360d
+        name: Iconarch (Aura)
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 6"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 4+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 4+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 3
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 2
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 2
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 6
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: 6630-1e4c-857a-f48b
+        name: Iconarch
+    id: 2402-9e14-cd25-2460
+    name: Iconarch
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    categoryLinks:
+      - targetId: 5291-d4da-ea58-a4b7
+        id: da54-610d-264b-9a48
+        name: Blessed Blades
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        collective: true
+        exported: true
+        constraints:
+          - id: bf14-299d-0787-c9f9
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 879b-ea00-a2c1-94fb
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+            typeName: Weapon
+            characteristics:
+              - name: Range
+                typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+                value: Melee
+              - name: Type
+                typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+                value: Melee
+              - name: S
+                typeId: 59b1-319e-ec13-d466
+                value: User
+              - name: AP
+                typeId: 75aa-a838-b675-6484
+                value: -3
+              - name: D
+                typeId: ae8a-3137-d65b-4ca7
+                value: 2
+              - name: Abilities
+                typeId: 837d-5e63-aeb7-1410
+                value: '-'
+            id: 5736-e689-b2f8-0245
+            name: Commune blade
+        id: eeba-156b-e2f0-6998
+        name: Commune blade
+    entryLinks:
+      - targetId: cddf-945e-1335-e681
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 2419-2ec8-f37a-f851
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 596b-d28c-cab1-fc82
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 9f1d-5951-5b8e-3823
+        name: Frag & Krak grenades
+    constraints:
+      - id: 8cda-66d8-f27f-69c5
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: a29c-cd61-d20c-4007
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 6"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 4+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 4+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 4
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 1
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 2
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 6
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: fcaf-c0d9-b9b9-c356
+        name: Blessed Blade
+    id: 603c-e13e-eac7-b05c
+    name: Blessed Blade
+entryLinks:
+  - targetId: 1796-1441-828e-0bc9
+    type: selectionEntryGroup
+    exported: true
+    id: 8c21-2805-209e-fd92
+    name: Battle Honours
+  - targetId: cec4-9abd-dcdb-c9c2
+    type: selectionEntryGroup
+    exported: true
+    id: 028b-9bba-e373-b98c
+    name: Battle Scars
+constraints:
+  - id: 6427-4c68-cffb-0f23
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: cdda-0814-c791-07ec
+name: Dark Commune
+modifiers:
+  - type: increment
+    field: 6427-4c68-cffb-0f23
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: cbd4-34fb-6ba6-9593
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: lessThan
+                childId: eb55-bd6b-3e75-d505
+                field: selections
+                scope: roster
+                value: 2.0
+                shared: true
+                includeChildSelections: true
+              - type: lessThan
+                childId: d8d3-6bf7-9b21-8e58
+                field: selections
+                scope: roster
+                value: 2.0
+                shared: true
+                includeChildSelections: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 87da-018e-ea9b-f5c4
+        conditions:
+          - type: equalTo
+            childId: a1b3-96fc-29f6-d3b1
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: dba9-7a7f-1310-3028
+        conditions:
+          - type: equalTo
+            childId: a675-3934-815b-7d5e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1f29-4695-dfe7-e893
+        conditions:
+          - type: equalTo
+            childId: 37cd-2830-725b-a321
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: e0db-3bff-98cd-1a60
+        conditions:
+          - type: equalTo
+            childId: 8f74-81f3-7093-69e4
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 38e4-b91c-a673-9c76
+        conditions:
+          - type: equalTo
+            childId: 2482-8e16-78b0-e9cd
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 2e84-a6d9-bf13-4116
+        conditions:
+          - type: equalTo
+            childId: 01f7-d7f1-be88-b861
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1e3f-0a7b-0c8f-84db
+        conditions:
+          - type: equalTo
+            childId: 9b8a-fb30-b445-3049
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    modifierGroups:
+      - modifiers:
+          - type: add
+            field: category
+            value: 649f-80f9-0d71-64c3
+          - type: add
+            field: category
+            value: 1da2-76db-f76f-6b6c
+        conditions:
+          - type: equalTo
+            childId: 51f6-1db1-3e75-3d4b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    comment: <Legion>

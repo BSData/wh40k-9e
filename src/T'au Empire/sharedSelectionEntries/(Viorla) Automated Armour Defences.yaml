@@ -1,0 +1,67 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: bb1a-dc54-09aa-ed28
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 24d4-3445-a520-c38f
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+infoLinks:
+  - targetId: 6d47-e4cd-59c5-8a50
+    type: profile
+    id: e590-22a1-6f42-16d4
+    name: Automated Armour Defences
+id: 5211-a24d-7a0f-37de
+name: "(Vior'la): Automated Armour Defences"
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 5f48-5fed-7b98-0e66
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: 257e-82d7-82b7-4434
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: a267-704a-4159-80c4
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: greaterThan
+            childId: 9be6-affd-447c-c441
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

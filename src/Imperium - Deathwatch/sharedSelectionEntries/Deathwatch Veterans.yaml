@@ -1,0 +1,676 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 8.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: e192-6867-64a8-580c
+    name: Imperium
+  - targetId: c7b7-edbc-bc14-6238
+    id: b5d4-2bae-310f-3e37
+    name: Adeptus Astartes
+  - targetId: 89d9-d083-eea1-1d31
+    id: 1cbc-e4df-5ee3-e3ff
+    name: Deathwatch
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3776-0fcc-f671-e3ac
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: 1fcd-2cec-a313-3ae5
+    name: Core
+  - targetId: 6653-4e04-1c07-cfd9
+    id: a7e9-5ed0-4aa4-a35c
+    name: Veterans
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 27.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntryGroups:
+          - defaultSelectionEntryId: dd09-5cf5-d628-aa33
+            exported: true
+            selectionEntries:
+              - type: upgrade
+                costs:
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                  - name: pts
+                    typeId: points
+                exported: true
+                entryLinks:
+                  - targetId: 6b2a-d8c2-1c71-9724
+                    type: selectionEntry
+                    exported: true
+                    constraints:
+                      - id: bb0c-d0ee-9434-0a1d
+                        type: maximum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - id: 33bb-2e5f-e327-a588
+                        type: minimum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                    id: 3f37-afc5-b37d-9e8b
+                    name: Deathwatch Boltgun
+                    modifiers:
+                      - type: set
+                        field: points
+                        value: 0.0
+                  - targetId: bc9e-551d-9afb-78d5
+                    type: selectionEntry
+                    costs:
+                      - name: pts
+                        typeId: points
+                    exported: true
+                    constraints:
+                      - id: 0929-f8a5-35ab-2677
+                        type: maximum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - id: 8974-9dfb-48aa-a319
+                        type: minimum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                    id: 9b44-d578-4d58-6e75
+                    name: Power sword
+                    modifiers:
+                      - type: set
+                        field: points
+                        value: 0.0
+                constraints:
+                  - id: 3b48-5971-ce3f-3d18
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: dd09-5cf5-d628-aa33
+                name: Deathwatch Boltgun and Power Sword
+            entryLinks:
+              - targetId: aee4-a070-c730-29a8
+                type: selectionEntryGroup
+                exported: true
+                constraints:
+                  - id: adba-f57f-9154-9527
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 2.0
+                    shared: true
+                id: 4194-b247-b755-449e
+                name: Deathwatch Veteran Weapons
+                modifiers:
+                  - type: set
+                    field: adba-f57f-9154-9527
+                    value: 0.0
+                    conditions:
+                      - type: greaterThan
+                        childId: 9788-8ade-50a1-6503
+                        field: selections
+                        scope: parent
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+              - targetId: 9788-8ade-50a1-6503
+                type: selectionEntry
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 12.0
+                exported: true
+                constraints:
+                  - id: c6cc-d3ca-1199-41c2
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 5812-539c-32c0-c002
+                name: Heavy thunder hammer
+                modifiers:
+                  - type: decrement
+                    field: c6cc-d3ca-1199-41c2
+                    value: 1.0
+                    conditionGroups:
+                      - type: or
+                        conditionGroups:
+                          - type: and
+                            conditions:
+                              - type: equalTo
+                                childId: 6e7b-d11d-e390-a76b
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 2.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+                              - type: atLeast
+                                childId: 6426-8baa-6251-9ec4
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 10.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+                          - type: and
+                            conditions:
+                              - type: equalTo
+                                childId: 6e7b-d11d-e390-a76b
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 1.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+                              - type: lessThan
+                                childId: 6426-8baa-6251-9ec4
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 10.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+            constraints:
+              - id: 3939-3e10-d6ea-bc36
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 841d-25b8-f6ed-acc3
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 2399-b53e-b406-9cd9
+            name: Weapons
+            modifiers:
+              - type: set
+                field: 3939-3e10-d6ea-bc36
+                value: 2.0
+                conditionGroups:
+                  - type: and
+                    conditions:
+                      - type: equalTo
+                        childId: dd09-5cf5-d628-aa33
+                        field: selections
+                        scope: parent
+                        shared: true
+                      - type: greaterThan
+                        childId: 44e0-64a6-bc26-1b19
+                        field: selections
+                        scope: parent
+                        shared: true
+        entryLinks:
+          - targetId: cddf-945e-1335-e681
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: ee05-af46-79b7-fe34
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 93c6-b71c-615f-e2e1
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 3f65-a42a-3fa9-5f5a
+            name: Frag & Krak grenades
+        constraints:
+          - id: 178b-2a6a-6623-5ae6
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        infoLinks:
+          - targetId: 862c-90d1-53c9-3a5c
+            type: profile
+            id: 1cd0-1a81-cf37-5626
+            name: Black Shield
+          - targetId: a63d-26b2-6262-c59f
+            type: profile
+            id: 0870-67e2-98cf-e986
+            name: Black Shield
+        id: 6102-f995-de55-64b5
+        name: Black Shield
+        modifiers:
+          - type: set
+            field: 178b-2a6a-6623-5ae6
+            value: 1.0
+      - type: model
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+            value: 27.0
+        exported: true
+        selectionEntryGroups:
+          - defaultSelectionEntryId: 331d-27ec-7f3b-b030
+            exported: true
+            selectionEntries:
+              - type: upgrade
+                costs:
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                  - name: pts
+                    typeId: points
+                exported: true
+                entryLinks:
+                  - targetId: 6b2a-d8c2-1c71-9724
+                    type: selectionEntry
+                    exported: true
+                    constraints:
+                      - id: d72a-4674-428e-c1f6
+                        type: maximum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - id: 27f8-9d0f-523e-1a51
+                        type: minimum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                    id: 3b55-f171-29e0-4be3
+                    name: Deathwatch Boltgun
+                    modifiers:
+                      - type: set
+                        field: points
+                        value: 0.0
+                  - targetId: bc9e-551d-9afb-78d5
+                    type: selectionEntry
+                    exported: true
+                    constraints:
+                      - id: 5ed0-5bce-351d-960c
+                        type: maximum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                      - id: 37a8-bc3f-7fcf-d148
+                        type: minimum
+                        field: selections
+                        scope: parent
+                        value: 1.0
+                        shared: true
+                    id: b60e-8bb0-b204-a15f
+                    name: Power sword
+                    modifiers:
+                      - type: set
+                        field: points
+                        value: 0.0
+                constraints:
+                  - id: a017-e815-d7c4-96d4
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 331d-27ec-7f3b-b030
+                name: Deathwatch Boltgun and Power Sword
+            entryLinks:
+              - targetId: aee4-a070-c730-29a8
+                type: selectionEntryGroup
+                exported: true
+                id: a722-a0b4-e0f3-1fec
+                name: Deathwatch Veteran Weapons
+              - targetId: 9788-8ade-50a1-6503
+                type: selectionEntry
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 12.0
+                exported: true
+                constraints:
+                  - id: 05b6-19c6-6988-555f
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: cd94-517f-4516-bbfc
+                name: Heavy thunder hammer
+                modifiers:
+                  - type: decrement
+                    field: 05b6-19c6-6988-555f
+                    value: 1.0
+                    conditionGroups:
+                      - type: or
+                        conditionGroups:
+                          - type: and
+                            conditions:
+                              - type: greaterThan
+                                childId: 9788-8ade-50a1-6503
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 2.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+                              - type: atLeast
+                                childId: model
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 10.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+                              - type: equalTo
+                                childId: 9788-8ade-50a1-6503
+                                field: selections
+                                scope: 169e-fec1-faf2-fffe
+                                value: 1.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+                          - type: and
+                            conditions:
+                              - type: lessThan
+                                childId: 6426-8baa-6251-9ec4
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 10.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+                              - type: equalTo
+                                childId: 8a94-98b5-212e-f290
+                                field: selections
+                                scope: 327d-4ca1-5b95-ca88
+                                value: 2.0
+                                shared: true
+                                includeChildSelections: true
+                                includeChildForces: true
+            constraints:
+              - id: f86a-ae89-faa5-4ef6
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: e6d5-dc52-4b6e-9842
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: fbd8-09be-1571-ef94
+            name: Weapons
+            modifiers:
+              - type: increment
+                field: f86a-ae89-faa5-4ef6
+                value: 2.0
+                conditions:
+                  - type: greaterThan
+                    childId: ae46-8351-6394-d68c
+                    field: selections
+                    scope: 169e-fec1-faf2-fffe
+                    shared: true
+                    includeChildSelections: true
+              - type: increment
+                field: f86a-ae89-faa5-4ef6
+                value: 1.0
+                conditionGroups:
+                  - type: and
+                    conditions:
+                      - type: equalTo
+                        childId: 331d-27ec-7f3b-b030
+                        field: selections
+                        scope: 169e-fec1-faf2-fffe
+                        shared: true
+                      - type: greaterThan
+                        childId: 44e0-64a6-bc26-1b19
+                        field: selections
+                        scope: 169e-fec1-faf2-fffe
+                        shared: true
+          - exported: true
+            entryLinks:
+              - targetId: df76-b46e-5594-bc02
+                type: selectionEntry
+                exported: true
+                id: 63f5-9d85-3418-c915
+                name: 'Stratagem: Honoured Veteran of the Watch'
+              - targetId: c69b-a3c8-c573-5703
+                type: selectionEntry
+                exported: true
+                constraints:
+                  - id: 0763-bbd4-e502-08c6
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 80c0-039c-6c68-6f52
+                name: 'Stratagem: Sanction of the Black Vault'
+            id: b381-10ec-bede-a5a1
+            name: Stratagems
+        entryLinks:
+          - targetId: cddf-945e-1335-e681
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: bef8-1988-3811-7523
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: a11b-50e7-2f0d-0abf
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 44a4-154f-4eef-39a5
+            name: Frag & Krak grenades
+          - targetId: 81fa-73cf-0cea-37a0
+            type: selectionEntryGroup
+            exported: true
+            id: 0b94-a8de-6767-2efc
+            name: Special-Issue Wargear
+        constraints:
+          - id: 973f-a9bf-f629-ca49
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 8e33-0744-9610-2658
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        infoLinks:
+          - targetId: 4f39-6924-8280-aea1
+            type: profile
+            id: 09ec-2f5d-9951-eb8d
+            name: Deathwatch Watch Sergeant
+        id: 169e-fec1-faf2-fffe
+        name: Watch Sergeant
+    entryLinks:
+      - targetId: d1e3-cb9b-c22b-e720
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 7260-b47b-c66d-a000
+            type: minimum
+            field: selections
+            scope: parent
+            value: 4.0
+            shared: true
+          - id: 2e1a-a237-92a7-8a60
+            type: maximum
+            field: selections
+            scope: parent
+            value: 9.0
+            shared: true
+        id: 2db2-6246-7761-7d84
+        name: Deathwatch Veteran
+        modifiers:
+          - type: decrement
+            field: 7260-b47b-c66d-a000
+            value: 1.0
+            repeats:
+              - repeatCount: 1
+                childId: d84d-1ada-7c61-d2bc
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - repeatCount: 1
+                childId: 6102-f995-de55-64b5
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - repeatCount: 1
+                childId: 6e7b-d11d-e390-a76b
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+          - type: decrement
+            field: 2e1a-a237-92a7-8a60
+            value: 1.0
+            repeats:
+              - repeatCount: 1
+                childId: d84d-1ada-7c61-d2bc
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - repeatCount: 1
+                childId: 6e7b-d11d-e390-a76b
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - repeatCount: 1
+                childId: 6102-f995-de55-64b5
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+      - targetId: 6e7b-d11d-e390-a76b
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: cc3a-4185-0c40-887b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: 8117-b7d5-9204-ebe0
+        name: Deathwatch Veteran w/ Heavy Thunder Hammer
+        modifiers:
+          - type: decrement
+            field: cc3a-4185-0c40-887b
+            value: 1.0
+            conditions:
+              - type: lessThan
+                childId: 6426-8baa-6251-9ec4
+                field: selections
+                scope: 327d-4ca1-5b95-ca88
+                value: 5.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+          - type: decrement
+            field: cc3a-4185-0c40-887b
+            value: 1.0
+            conditions:
+              - type: lessThan
+                childId: 6426-8baa-6251-9ec4
+                field: selections
+                scope: 327d-4ca1-5b95-ca88
+                value: 10.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+      - targetId: 3f89-cfd9-229c-38ce
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: efb6-29bc-c277-763b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 4.0
+            shared: true
+        id: d84d-1ada-7c61-d2bc
+        name: Deathwatch Veteran w/ Heavy Weapon
+    constraints:
+      - id: 6edb-e95a-229f-1f46
+        type: minimum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+      - id: 15fd-3351-f2ca-05b8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+    id: 6426-8baa-6251-9ec4
+    name: Squad
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 4b4b-3f3c-dfff-0b18
+    name: Angels of Death
+  - targetId: af4f-5849-3bd3-e2fd
+    type: rule
+    id: 5fd1-f3d7-48d6-7dae
+    name: Combat Squads
+id: 327d-4ca1-5b95-ca88
+name: Deathwatch Veterans
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 8.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 327d-4ca1-5b95-ca88
+        value: 5.0
+        shared: true

@@ -1,0 +1,190 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+    value: 75.0
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 7554-20d9-47c6-cdae
+    name: 'Faction: Imperium'
+  - targetId: c7b7-edbc-bc14-6238
+    id: 8395-f6cc-8878-4681
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 5b71-4e77-0efe-bdfc
+    name: Infantry
+  - targetId: ef18-746a-369f-43a4
+    id: 2186-813b-1889-b531
+    name: Character
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: 0615-3c37-3c46-b308
+    name: Primaris
+  - targetId: a75d-f182-c709-c6de
+    id: d6c8-7ffb-ce6a-7740
+    name: Bladeguard
+  - targetId: 0069-6b06-05df-208d
+    id: 3f73-ef01-d2b4-49c8
+    name: Bladeguard Ancient
+  - targetId: 4a50-11f0-9ab2-9c8a
+    id: 5553-b8e9-77c5-1ff5
+    name: Ancient
+  - targetId: 62d3-9871-9675-a63b
+    id: 0021-8eda-24c5-fbd1
+    name: Elite Character
+entryLinks:
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 3b3f-4611-9140-3c4b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 1454-ec11-512a-96e6
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: fa3c-d1e9-ee1e-6381
+    name: Frag & Krak grenades
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 1a2e-2c9a-5179-de57
+    name: Warlord
+  - targetId: 1d61-94e5-b2d1-13ac
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 6c43-ea05-d8c7-825e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 0ce1-6e34-113e-8715
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: c00b-acd6-12c0-9745
+    name: Heavy Bolt Pistol
+  - targetId: c791-b2fc-df48-1834
+    type: selectionEntry
+    exported: true
+    id: a2e1-6bab-9dd0-a457
+    name: 'Chapter Command: Chapter Ancient'
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: 7754-69b3-7c6c-6443
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: ebcf-b8a0-b937-8b76
+    name: Bladeguard Ancient
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to hit rolls  for attacks made by friendly <CHAPTER> BLADEGUARD models whilst their unit is within 6" of this model.
+    id: 5f0a-207b-6e6e-160e
+    name: Deeds of Heroism [Aura]
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 1ad3-56f9-d43a-1387
+    name: Angels of Death
+  - targetId: 6586-5d43-b320-83cf
+    type: profile
+    id: e682-7cfe-f105-014c
+    name: Astartes Banner [Aura]
+id: 0dac-86be-d7a0-9dd8
+name: Bladeguard Ancient
+modifiers:
+  - type: add
+    field: category
+    value: 8f73-62f1-f700-5d51
+    conditions:
+      - type: greaterThan
+        childId: 7316-aaec-c13a-f805
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: add
+    field: category
+    value: b95f-a56d-1ae5-7b66
+    conditions:
+      - type: greaterThan
+        childId: b94e-1480-56dc-b77a
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

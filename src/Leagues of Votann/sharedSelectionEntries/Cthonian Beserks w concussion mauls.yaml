@@ -1,0 +1,246 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    primary: true
+    id: fc25-500e-793f-dc7b
+    name: New CategoryLink
+  - targetId: d6df-3d52-c2ca-4ee6
+    id: 22b0-736b-43dd-e490
+    name: 'Faction: Votann'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: c293-8989-a7a6-4887
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: 9a6c-7095-db14-6146
+    name: Core
+  - targetId: 8346-281a-442d-3bb1
+    id: e0ba-2a6c-be78-e889
+    name: Berserks
+selectionEntryGroups:
+  - defaultSelectionEntryId: 63de-44d0-6d80-a40a
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 33.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntries:
+          - type: upgrade
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            collective: true
+            exported: true
+            constraints:
+              - id: ae77-8daa-7358-2c13
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: a877-746b-fd1c-fed8
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            infoLinks:
+              - targetId: 7b3a-fc8d-9b9c-c72b
+                type: profile
+                id: aabb-9a0b-d079-96c4
+                name: Concussion maul
+            id: cb77-28d6-272c-dc28
+            name: Concussion maul
+        infoLinks:
+          - targetId: 456a-d502-462c-9aad
+            type: profile
+            id: 9184-c5b2-ffb8-5731
+            name: Berserk
+        id: 63de-44d0-6d80-a40a
+        name: Beserk
+    entryLinks:
+      - targetId: 5d8c-be37-43c7-6fb3
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 50ce-39c6-70a5-cbe3
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: be1a-6def-0ffb-ddd2
+        name: Berserk w/ twin concussion gauntlet
+        modifiers:
+          - type: decrement
+            field: 50ce-39c6-70a5-cbe3
+            value: 1.0
+            conditions:
+              - type: lessThan
+                childId: model
+                field: selections
+                scope: 9fc0-a532-18fc-2a90
+                value: 10.0
+                shared: true
+      - targetId: fda8-e345-665d-6415
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 7766-1c94-bb20-20ea
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: afca-da5c-c23f-970c
+        name: Berserk with mole grenade launcher
+        modifiers:
+          - type: decrement
+            field: 7766-1c94-bb20-20ea
+            value: 1.0
+            conditions:
+              - type: lessThan
+                childId: model
+                field: selections
+                scope: 9fc0-a532-18fc-2a90
+                value: 10.0
+                shared: true
+    constraints:
+      - id: a500-01a5-4f98-1af3
+        type: minimum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+      - id: 4c1e-cafd-5abc-9fba
+        type: maximum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+    id: 9c7d-b59a-5ee0-b77f
+    name: 5 - 10 Beserks
+infoLinks:
+  - targetId: 639f-3242-2aff-6d3d
+    type: infoGroup
+    id: 48fe-b1a0-a47d-ee8d
+    name: Shared Rules
+  - targetId: 5eb8-7d71-b198-b3ff
+    type: profile
+    id: b9f3-01e0-6f5c-7225
+    name: Augmented
+  - targetId: 23f9-ff63-dcc1-f91d
+    type: profile
+    id: e4df-5a20-038d-f76d
+    name: Cyberstimms
+id: 9fc0-a532-18fc-2a90
+name: Cthonian Beserks w/ concussion mauls
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 10.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 9fc0-a532-18fc-2a90
+        value: 5.0
+        shared: true
+  - type: add
+    field: category
+    value: 24bf-8f6b-1388-9456
+    conditions:
+      - type: atLeast
+        childId: fda8-e345-665d-6415
+        field: selections
+        scope: 9fc0-a532-18fc-2a90
+        value: 1.0
+        shared: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 8302-e3ed-4a77-6919
+        conditions:
+          - type: equalTo
+            childId: f14f-b5b7-e683-4a2d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5c58-cce2-32c5-540d
+        conditions:
+          - type: equalTo
+            childId: b46a-6e31-2df9-bfe3
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 9f31-4812-5041-10aa
+        conditions:
+          - type: equalTo
+            childId: 4263-acb0-ccf7-67ec
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 3574-371b-d06b-2e18
+        conditions:
+          - type: equalTo
+            childId: 2ad3-c319-de13-42a9
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5092-2bb1-b294-479c
+        conditions:
+          - type: equalTo
+            childId: b1ea-25da-7a52-8057
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: a76d-e840-3522-199a
+        conditions:
+          - type: equalTo
+            childId: 8757-2a3f-0cba-6319
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    comment: League keywords

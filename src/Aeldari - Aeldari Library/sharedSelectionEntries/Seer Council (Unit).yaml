@@ -1,0 +1,79 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: 6184-1b9c-da55-53b9
+    name: New CategoryLink
+selectionEntryGroups:
+  - defaultSelectionEntryId: 7459-63a2-bbb0-fb45
+    exported: true
+    entryLinks:
+      - targetId: 3178-49b4-4fff-c4a7
+        type: selectionEntry
+        exported: true
+        id: af59-6add-785b-4bed
+        name: Warlock Skyrunners
+      - targetId: aa25-848e-4b78-7f45
+        type: selectionEntry
+        exported: true
+        id: 7459-63a2-bbb0-fb45
+        name: Warlocks
+    constraints:
+      - id: d26b-52d0-d69a-9efe
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9945-4495-3ea0-7bea
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: ec50-6337-3e90-90dd
+    name: Seer Council
+constraints:
+  - id: f10d-e08c-e3ae-558d
+    type: maximum
+    field: selections
+    scope: force
+    shared: true
+    includeChildSelections: true
+id: 7382-18a0-fbdf-2960
+name: Seer Council (Unit)
+publicationId: 1f62-db93-63f4-4dc7
+page: 158
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditions:
+      - type: greaterThan
+        childId: 47a3-e3b2-a520-1a21
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: increment
+    field: f10d-e08c-e3ae-558d
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 47a3-e3b2-a520-1a21
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

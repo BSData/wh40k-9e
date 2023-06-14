@@ -1,0 +1,118 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: d8d8-c799-2f40-28c8
+    name: 'Faction: Imperium'
+  - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    primary: true
+    id: 5ddf-1b68-41d3-80dc
+    name: New CategoryLink
+  - targetId: 6bb8-fe7f-7918-bf8f
+    id: 7a5e-68b7-012b-6554
+    name: 'Faction: Cult Mechanicus'
+  - targetId: ca27-5069-1c2c-a28b
+    id: 8feb-d9e5-e07e-33d9
+    name: 'Faction: Adeptus Mechanicus'
+  - targetId: dfde-d915-6e58-09af
+    id: fc91-1843-f88b-5acf
+    name: 'Faction: <Forge World>'
+  - targetId: cc3b-aa01-8d8c-2556
+    id: d45f-a6c4-5b4c-d4e3
+    name: Kataphron Destroyers
+  - targetId: 30ba-4cc5-24da-cca1
+    id: b454-11c8-6e2a-b576
+    name: Kataphron Servitors
+  - targetId: 1c6f-0311-3eba-3180
+    id: 0ba1-cb1a-b2db-2f14
+    name: Biker
+entryLinks:
+  - targetId: 5693-b5f3-c487-dbc3
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: dc8c-e897-5b31-6e55
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+      - id: 27c5-97be-28f5-3f32
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+    id: b148-9d89-af88-8913
+    name: Kataphron Destroyer
+  - targetId: 5922-664b-f549-7a05
+    type: selectionEntry
+    exported: true
+    infoLinks:
+      - targetId: 2934-3d95-75ef-caa3
+        type: profile
+        id: bcd3-ebf8-493f-7788
+        name: Kataphron Destroyer (indentured)
+    id: 5acc-a95b-09ed-ef2b
+    name: Indentured Machines
+infoLinks:
+  - targetId: edf0-6bc2-d76e-6004
+    type: profile
+    id: dfef-e3d2-98cf-fa72
+    name: Bionics
+  - targetId: 25f1-761d-2f64-7f0e
+    type: rule
+    id: 3ee4-da96-cf11-349d
+    name: Canticles of the Omnissiah
+  - targetId: 9efc-6d97-5090-6c38
+    type: profile
+    id: 73bb-864a-c678-0875
+    name: Tracked Mobility
+  - targetId: 0c25-e3d3-1bd7-98f7
+    type: profile
+    id: 4ac7-d474-dd11-295a
+    name: Kataphron Destroyer
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: 5922-664b-f549-7a05
+            field: selections
+            scope: 4d05-c01f-0921-f52e
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+id: 4d05-c01f-0921-f52e
+name: Kataphron Destroyers
+publicationId: ebe8-544e-pubN65537
+page: 77
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 14.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 4d05-c01f-0921-f52e
+        value: 3.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: ac03-d781-0c3b-b4be
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

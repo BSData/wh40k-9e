@@ -1,0 +1,53 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+constraints:
+  - id: 14b1-0f34-65fa-b71a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - Add 2" to the bearer's Move characteristic.
+
+          - At the start of the Fight phase, if this WARLORD is within Engagement Range of any enemy units, those units cannot be selected to fight until all eligible units from your army have done so.
+    id: c2c5-ebb8-c128-1d59
+    name: Rezmekka's Redder Paint
+id: 42bf-879a-f1ab-3928
+name: Rezmekka's Redder Paint (Evil Sunz)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: d982-aac4-16d1-8019
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 2eb5-ccdb-f8d3-7cb4
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true

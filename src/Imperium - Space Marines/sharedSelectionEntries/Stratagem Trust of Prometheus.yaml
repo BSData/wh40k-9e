@@ -1,0 +1,63 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: 61c9-7c3f-6eaa-08e0
+    name: New CategoryLink
+constraints:
+  - id: 6f55-8ec3-2276-d80a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 27d0-fec3-8062-8afb
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: f422-7c39-2864-f15f
+name: 'Stratagem: Trust of Prometheus'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 802a-2241-094c-a274
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: d0cb-4be8-743b-a874
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

@@ -1,0 +1,52 @@
+targetId: 8d79-d7a1-6eff-431c
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: dde1-c169-0158-788b
+    name: New CategoryLink
+constraints:
+  - id: c2ff-1888-b358-c068
+    type: maximum
+    field: selections
+    scope: force
+id: e896-8299-555b-ca83
+name: Servitors
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 6743-7925-6ec5-6b91
+        field: selections
+        scope: force
+        shared: true
+  - type: increment
+    field: c2ff-1888-b358-c068
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 6743-7925-6ec5-6b91
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: f4aa-404e-0867-8f88
+      - type: add
+        field: category
+        value: 21a4-e229-0433-5454
+    conditions:
+      - type: atLeast
+        childId: 38ee-6dae-3cb1-7f84
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true

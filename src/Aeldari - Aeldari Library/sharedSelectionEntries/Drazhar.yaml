@@ -1,0 +1,290 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 8.0
+  - name: pts
+    typeId: points
+    value: 145.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: cd2a-d84b-1f55-7143
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 9d31-efe5-32d3-4d49
+    name: New CategoryLink
+  - targetId: 0dc7-1e5d-7726-d333
+    id: 8262-3a47-42d6-7db3
+    name: New CategoryLink
+  - targetId: 2081-49f0-1e15-a9f3
+    id: a8f0-fc0f-d95c-849c
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 7cf8-36da-545a-b602
+    name: Infantry
+  - targetId: f2b5-6509-4476-4fa2
+    id: e420-4dfe-d059-cdcc
+    name: Blades For Hire
+  - targetId: 955e-536a-e290-5dcf
+    id: 5ecb-74ec-29e1-c41d
+    name: 'Faction: Drukhari'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 5a0e-f8bd-2c5c-aafb
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+      - id: 9aaa-9fb1-ee7d-3615
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +2
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: 2c2e-8888-5cdb-15d3
+        name: Single blade
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +1
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time the bearer fights, if this weapon profile is selected, it makes 2 additional attacks with this weapon.
+        id: ff9a-f8cc-7dd2-1520
+        name: Dual blades
+    id: 82b0-f76c-fd1a-e7d3
+    name: The Executioner's Demiklaives
+    page: 0
+entryLinks:
+  - targetId: 2ce0-03a1-ec03-76aa
+    type: selectionEntry
+    exported: true
+    id: 810a-a7de-8d6e-58b7
+    name: Warlord
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: 53a8-b0ea-cf82-5870
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - targetId: 633e-dab2-f67f-0757
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d9a4-164a-c5c7-0679
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+      - id: 1e25-8ad7-9789-e643
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 4b3a-e694-91f9-b0ce
+    name: Hatred Eternal
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: d9a4-164a-c5c7-0679
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 2ce0-03a1-ec03-76aa
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+  - targetId: bb8f-9db0-efc6-8fc6
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 881b-1b99-52f7-be1c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 57a2-890d-1a99-7115
+    name: 'Stratagem: Rule Through Fear'
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 0d34-66d1-40cf-5c02
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: a057-1386-cf0d-e69d
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 7"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 50a0-180a-5562-1879
+    name: Drazhar
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model can be selected to fight one additional time in each Fight phase. It must be eligible to fight each time it is selected to do so.
+    id: d65e-6277-2154-684d
+    name: Murderous Assault
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'This model has a 4+ invulnerable save. '
+    id: a9a5-8f07-1ede-6abc
+    name: Eternal Warrior
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly INCUBI unit is within 6" of this model, each time a model in that unit makes a melee attack, add 1 to that attack's wound roll.
+    id: e730-7b66-f86f-439f
+    name: Master of Blades (Aura)
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack (to a minimum of 1).
+    id: 9bf4-79c4-7a4e-4ec4
+    name: Ancient Warrior
+infoLinks:
+  - targetId: e6c3-8502-de0a-9515
+    type: rule
+    id: a5f0-0309-c66e-1519
+    name: Power from Pain
+  - targetId: 27ab-fff7-9282-ccec
+    type: profile
+    id: 25a4-3adb-8dfc-fb1d
+    name: Tormentors
+  - targetId: 5145-3061-a066-4c5c
+    type: rule
+    id: 6273-55ca-abb7-8941
+    name: Blade Artists
+id: e640-d16e-aafa-7d7c
+name: Drazhar
+page: ''
+modifiers:
+  - type: add
+    field: category
+    value: ac19-fd2f-b3f8-46d4
+    conditions:
+      - type: greaterThan
+        childId: 810a-a7de-8d6e-58b7
+        field: selections
+        scope: e640-d16e-aafa-7d7c
+        includeChildSelections: true

@@ -1,0 +1,119 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: dc06-cdf1-a93c-9116
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +2
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -2
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, on an unmodified wound roll of 5+ the target suffers 1 mortal wound in addition to any normal damage.
+        id: 9ddb-f70d-872f-de31
+        name: Severer
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: 'Model with chainsword only. This Relic replaces a chainsword and has the following profile:'
+        id: 64d3-253a-31e7-86a9
+        name: Severer
+    id: 1b50-29af-3e83-2087
+    name: Severer
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: lessThan
+            childId: c5f0-76db-2a6c-403e
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 5f95-1a79-d726-6dc8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: >-
+              - Add 1" to the bearer's Move characteristic.
+
+              - The bearer is eligible to charge in a turn in which it Advanced.
+
+              - The bearer can move up to 4" when making pile-in and consolidation moves.
+        id: 9802-dc29-bc63-8a30
+        name: The Crimson Plate
+    id: 6bc5-ec5e-e5e5-ed7d
+    name: The Crimson Plate
+constraints:
+  - id: 94f8-c9a3-4c2c-aefe
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: b730-58ce-68ba-7b83
+name: Relics of Cretacia
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 698b-1cdd-fe35-12e3
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true

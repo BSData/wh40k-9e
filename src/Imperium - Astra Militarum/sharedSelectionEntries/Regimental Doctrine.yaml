@@ -1,0 +1,42 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+entryLinks:
+  - targetId: afa1-3564-cfe2-602b
+    type: selectionEntryGroup
+    exported: true
+    id: 3041-5432-850f-22dd
+    name: Regimental Doctrine
+constraints:
+  - id: 629f-f418-774e-01f9
+    type: minimum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+  - id: 530f-55a8-d1f2-ec40
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+id: 73fc-bc45-dbdd-417d
+name: Regimental Doctrine
+modifiers:
+  - type: set
+    field: 629f-f418-774e-01f9
+    value: 0.0
+    conditions:
+      - type: greaterThan
+        childId: 73fc-bc45-dbdd-417d
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: d07e-83cd-3c47-97a2
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          TEMPESTOR PRIME or COMMISSAR model only.
+
+          - In your opponent's Psychic phase, the bearer can attempt to deny one psychic power as if it were a PSYKER.
+
+          - Add 1 to the Deny the Witch tests taken for the bearer.
+    id: 56ef-0d0e-f940-5420
+    name: Null Coat
+id: 019d-682c-d76f-346f
+name: 'Relic: Null Coat'
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: fa52-8fb7-1c87-80e6
+            field: selections
+            scope: parent
+            shared: true
+          - type: atLeast
+            childId: 2aba-e4e7-1d91-1a77
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

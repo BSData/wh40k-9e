@@ -1,0 +1,194 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+categoryLinks:
+  - targetId: 2ab6-8d0f-494d-38e2
+    id: 9890-1303-75f2-89f7
+    name: New CategoryLink
+  - targetId: 1c58-037f-7b58-1223
+    id: 1e49-663e-1c62-3275
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: 87a9-7b82-09c0-5b5c
+    name: New CategoryLink
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: bc95-8be1-06d9-5858
+    name: New CategoryLink
+  - targetId: 4d7c-1d39-0e3b-719a
+    id: 89e4-b54f-1716-7f19
+    name: New CategoryLink
+  - targetId: 258d-e4cb-6f35-fe20
+    id: 06e7-ba97-0efc-430f
+    name: Speed Freeks
+selectionEntryGroups:
+  - defaultSelectionEntryId: 9e60-5bb2-a31f-a764
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 37.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: ' Scrap Points'
+            typeId: 932a-ae3d-c6c7-6938
+        exported: true
+        selectionEntries:
+          - type: upgrade
+            costs:
+              - name: pts
+                typeId: points
+                value: 15.0
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: ' Scrap Points'
+                typeId: 932a-ae3d-c6c7-6938
+            collective: true
+            exported: true
+            constraints:
+              - id: f83b-478f-903f-2387
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: a7ec-5a53-5d33-d444
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            infoLinks:
+              - targetId: 1123-0b30-9f1f-ca82
+                type: profile
+                id: 6ebf-1543-3fa8-693b
+                name: Skorcha
+            id: cfe7-0211-4582-6a3f
+            name: Skorcha
+        profiles:
+          - typeId: 800f-21d0-4387-c943
+            typeName: Unit
+            characteristics:
+              - name: M
+                typeId: 0bdf-a96e-9e38-7779
+                value: 12"
+              - name: WS
+                typeId: e7f0-1278-0250-df0c
+                value: 3+
+              - name: BS
+                typeId: 381b-eb28-74c3-df5f
+                value: 5+
+              - name: S
+                typeId: 2218-aa3c-265f-2939
+                value: 4
+              - name: T
+                typeId: 9c9f-9774-a358-3a39
+                value: 5
+              - name: W
+                typeId: f330-5e6e-4110-0978
+                value: 6
+              - name: A
+                typeId: 13fc-b29b-31f2-ab9f
+                value: 4
+              - name: Ld
+                typeId: 00ca-f8b8-876d-b705
+                value: 6
+              - name: Save
+                typeId: c0df-df94-abd7-e8d3
+                value: 4+
+            id: 7f88-fcc1-6943-e16f
+            name: Skorcha
+            publicationId: 28ec-711c-pubN118139
+            page: 33
+        id: 9e60-5bb2-a31f-a764
+        name: Skorcha
+    constraints:
+      - id: a21c-c575-da5c-d885
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: dce1-1f7e-313c-579e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+    id: 6d3d-6016-23c8-b959
+    name: 1 - 5 Skorchas
+infoLinks:
+  - targetId: ad32-a248-a392-3d4a
+    type: rule
+    id: 7712-2b2e-e243-9451
+    name: Mob Rule
+  - targetId: de72-9941-3d27-44e9
+    type: rule
+    id: 4856-0b5a-6a17-9540
+    name: "'Ere We Go!"
+  - targetId: ab25-a1f3-5bd8-de8a
+    type: profile
+    id: d041-4e64-f607-168a
+    name: Outriders
+id: d5f1-6fff-d11b-0091
+name: Skorchas [Legends]
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 6.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: d5f1-6fff-d11b-0091
+        value: 2.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 5.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: d5f1-6fff-d11b-0091
+        value: 4.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: c47c-a3e1-c91e-436a
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+        includeChildSelections: true

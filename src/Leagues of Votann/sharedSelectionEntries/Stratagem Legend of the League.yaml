@@ -1,0 +1,82 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 7969-39ac-4398-0b6a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 9d6d-9be4-0d60-bd4f
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+id: f0ee-822e-1a92-13c3
+name: 'Stratagem: Legend of the League'
+modifiers:
+  - type: set
+    field: 9d6d-9be4-0d60-bd4f
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 7969-39ac-4398-0b6a
+    value: 0.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 9062-1b14-020e-a6de
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 9062-1b14-020e-a6de
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: 9d6d-9be4-0d60-bd4f
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

@@ -1,0 +1,55 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 36ca-d6ed-4eaa-d1ee
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Once per battle, in your Movement phase, the bearer can use this Relic. If it does so, the bearer's unit and up to one friendly LUCIUS CORE unit within 3" of the bearer can be removed from the battlefield and set back up anywhere on the battlefield that is more than 9" away from any enemy models. If two units are set back up on the battlefield using this Relic, both units must be placed wholly within 6" of each other.
+    id: 0133-9681-8eb9-dda4
+    name: The Solar Flare
+    publicationId: ebe8-544e-pubN65537
+id: 66e3-838a-45fa-9c3d
+name: 'Relic (Lucius): The Solar Flare'
+publicationId: ebe8-544e-pubN65537
+page: 52
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: ac50-58f2-fbb8-af14
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: lessThan
+            childId: 7d9f-9c3f-0a41-5399
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

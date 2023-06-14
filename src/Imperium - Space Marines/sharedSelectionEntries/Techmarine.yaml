@@ -1,0 +1,449 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+    value: 70.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: c235-81cf-18b4-3b7c
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: d743-5cd1-753c-7197
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: a53e-5211-ed5b-2d51
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: faaf-928b-d305-b42e
+    name: New CategoryLink
+  - targetId: 07b1-0c2d-aa3c-9058
+    id: 35f0-c682-aaec-7cfa
+    name: New CategoryLink
+selectionEntryGroups:
+  - defaultSelectionEntryId: 56a5-5479-6bd0-2af0
+    exported: true
+    entryLinks:
+      - targetId: 61ae-3901-0a79-4ec9
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 293c-b2ba-2493-b02b
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 56a5-5479-6bd0-2af0
+        name: Servo-arm
+      - targetId: 5eb6-9cce-4e27-6252
+        type: selectionEntry
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+            value: 1.0
+        exported: true
+        constraints:
+          - id: 03dc-6554-966a-4d10
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: cddb-aba9-23ca-145f
+        name: Servo-harness
+      - targetId: fbb1-9dd6-aefc-eba2
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 0bf8-eaa8-693f-1436
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 9faf-49e4-35a2-48db
+        name: Conversion beamer
+        modifiers:
+          - type: set
+            field: name
+            value: Conversion Beamer [Legends]
+      - targetId: 181e-0718-160e-2e75
+        type: selectionEntry
+        exported: true
+        id: dd90-ffde-ebd2-e794
+        name: Jump Pack
+        modifiers:
+          - type: increment
+            field: e356-c769-5920-6e14
+            value: 1.0
+          - type: increment
+            field: points
+            value: 25.0
+          - type: set
+            field: name
+            value: Jump Pack Legends
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: equalTo
+                childId: b83f-2210-adb8-d1fb
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+    constraints:
+      - id: a5da-05ca-c05b-0497
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+      - id: 64c8-84bd-06d2-8940
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: 02d7-5735-d020-c732
+    name: Servo Options
+  - exported: true
+    selectionEntryGroups:
+      - defaultSelectionEntryId: 8a18-a9cc-524a-ed2f
+        exported: true
+        selectionEntries:
+          - type: upgrade
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            exported: true
+            entryLinks:
+              - targetId: e750-1182-66ed-0b13
+                type: selectionEntry
+                exported: true
+                constraints:
+                  - id: 3c9c-384d-b22e-f2d4
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - id: 6ceb-f010-ec23-93a8
+                    type: minimum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 78c0-edcb-727d-0619
+                name: Helfrost pistol
+              - targetId: cf9b-4769-abaf-4af2
+                type: selectionEntry
+                exported: true
+                constraints:
+                  - id: 6a8b-0f4a-5d12-1a37
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - id: ff8f-d4e5-e280-66ff
+                    type: minimum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 9b43-6957-7da5-d217
+                name: Tempest hammer
+            constraints:
+              - id: eb30-e17a-17ea-97e6
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 724b-c28e-c32b-7a11
+            name: Helfrost pistol and Tempest hammer
+            modifiers:
+              - type: set
+                field: hidden
+                value: true
+                conditions:
+                  - type: equalTo
+                    childId: b94e-1480-56dc-b77a
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+              - type: set
+                field: eb30-e17a-17ea-97e6
+                value: 0.0
+                conditions:
+                  - type: equalTo
+                    childId: 5eb6-9cce-4e27-6252
+                    field: selections
+                    scope: f8cb-6182-08e4-e22b
+                    value: 1.0
+                    shared: true
+        entryLinks:
+          - targetId: e52e-ac94-5532-5672
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 9563-2fc8-2015-d672
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 8a18-a9cc-524a-ed2f
+            name: Omnissian power axe
+          - targetId: ce40-8190-5033-a0c1
+            type: selectionEntryGroup
+            exported: true
+            constraints:
+              - id: 1dd9-f5be-90ea-fc63
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 8fcc-b921-7208-773b
+            name: Melee Weapons
+        constraints:
+          - id: ebae-ed92-8d1e-b8d2
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 5c3a-2d70-5b0e-23b9
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 1b46-632c-e2f3-2688
+        name: Melee
+      - exported: true
+        entryLinks:
+          - targetId: b61f-a3c1-827d-c5b6
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 079b-ddbe-c23f-937d
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 54fd-a778-8dad-9466
+            name: Boltgun
+          - targetId: 37ef-f6fa-fe1f-306c
+            type: selectionEntryGroup
+            exported: true
+            constraints:
+              - id: dbdb-c4de-cb6e-23f4
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            id: ce62-e3a8-607c-0c45
+            name: Combi-Weapons
+          - targetId: fb38-f29c-b8de-3ba6
+            type: selectionEntryGroup
+            exported: true
+            constraints:
+              - id: 8eb9-fa45-1ba0-0511
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            id: 9d76-91d3-fcd6-b536
+            name: Pistols
+          - targetId: 0334-f487-8229-0c1a
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: b3af-3383-1900-40f3
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 6ddd-6533-4088-fc7d
+            name: Bolt pistol
+        constraints:
+          - id: d6a3-4f58-fe00-d5a9
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 0987-bee8-3cb1-8b3b
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 4d68-d896-fc00-3eed
+        name: Ranged
+        modifiers:
+          - type: set
+            field: d6a3-4f58-fe00-d5a9
+            value: 0.0
+            conditions:
+              - type: equalTo
+                childId: 724b-c28e-c32b-7a11
+                field: selections
+                scope: f8cb-6182-08e4-e22b
+                value: 1.0
+                shared: true
+          - type: set
+            field: 0987-bee8-3cb1-8b3b
+            value: 0.0
+            conditions:
+              - type: equalTo
+                childId: 724b-c28e-c32b-7a11
+                field: selections
+                scope: f8cb-6182-08e4-e22b
+                value: 1.0
+                shared: true
+    id: 1bed-ae9d-0c8e-6d45
+    name: Weapons
+entryLinks:
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: eab3-b1fe-eb2a-5778
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 7a88-1d68-e8fc-0c60
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: fa49-0bf1-9702-44c7
+    name: Frag & Krak grenades
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: c8ff-730c-6401-86a8
+    name: Warlord
+  - targetId: 07db-61ce-b741-93a8
+    type: selectionEntry
+    exported: true
+    id: 9b89-db55-15ce-f291
+    name: 'Chapter Command:  Master of the Forge'
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: 4a15-46fa-5414-1dd6
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 4
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 9edf-82c1-3482-0d85
+    name: Techmarine
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 5eab-b959-a697-6bb4
+    name: Angels of Death
+  - targetId: 34e2-fb94-2737-3c2d
+    type: profile
+    id: 6257-ffb5-316a-5ce8
+    name: Blessing of the Omnissiah
+  - targetId: 5deb-0b6e-ad45-fd29
+    type: profile
+    id: 7f79-4017-dc32-97d3
+    name: Awaken the Machine Spirits
+id: f8cb-6182-08e4-e22b
+name: Techmarine
+modifiers:
+  - type: set
+    field: name
+    value: Techmarine [Legends]
+    conditions:
+      - type: equalTo
+        childId: fbb1-9dd6-aefc-eba2
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

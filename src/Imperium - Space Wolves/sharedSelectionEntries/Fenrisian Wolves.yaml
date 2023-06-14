@@ -1,0 +1,205 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 9b39-6f50-c2b1-970a
+    name: New CategoryLink
+  - targetId: 7892-58f7-e769-4d87
+    id: 236f-c273-d00c-8cd7
+    name: New CategoryLink
+  - targetId: dd06-3049-d027-b4fa
+    id: cb94-987a-579e-4b12
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: b559-95a0-69f7-e77c
+    name: New CategoryLink
+  - targetId: f093-e031-3131-7b82
+    id: f456-259a-fdeb-ccfb
+    name: New CategoryLink
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: 9b99-1c49-4fc9-5393
+    name: New CategoryLink
+selectionEntryGroups:
+  - defaultSelectionEntryId: b949-5749-a749-8b67
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 7.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        entryLinks:
+          - targetId: 04b5-0989-1321-6d4c
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: c5ac-a4a7-29b4-eb6e
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: d845-1b2b-24ee-4141
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 9e7c-3518-b247-6490
+            name: Teeth and claws
+        constraints:
+          - id: 79f9-5269-1a16-cadb
+            type: maximum
+            field: selections
+            scope: parent
+            value: 15.0
+            shared: true
+          - id: 80bf-968f-78e8-f550
+            type: minimum
+            field: selections
+            scope: parent
+            value: 5.0
+            shared: true
+        profiles:
+          - typeId: 800f-21d0-4387-c943
+            typeName: Unit
+            characteristics:
+              - name: M
+                typeId: 0bdf-a96e-9e38-7779
+                value: 10"
+              - name: WS
+                typeId: e7f0-1278-0250-df0c
+                value: 3+
+              - name: BS
+                typeId: 381b-eb28-74c3-df5f
+                value: '-'
+              - name: S
+                typeId: 2218-aa3c-265f-2939
+                value: 4
+              - name: T
+                typeId: 9c9f-9774-a358-3a39
+                value: 4
+              - name: W
+                typeId: f330-5e6e-4110-0978
+                value: 1
+              - name: A
+                typeId: 13fc-b29b-31f2-ab9f
+                value: 2
+              - name: Ld
+                typeId: 00ca-f8b8-876d-b705
+                value: 4
+              - name: Save
+                typeId: c0df-df94-abd7-e8d3
+                value: 6+
+            id: 47f7-ce5a-9390-44f4
+            name: Fenrisian Wolf
+        id: b949-5749-a749-8b67
+        name: Fenrisian Wolf
+        modifiers:
+          - type: set
+            field: 79f9-5269-1a16-cadb
+            value: 5.0
+            conditions:
+              - type: instanceOf
+                childId: a207-a133-6adb-25f3
+                field: selections
+                scope: force
+                shared: true
+    id: 35a7-45c3-d6d5-2a93
+    name: Fenrisian Wolves
+entryLinks:
+  - targetId: e0cd-b9cc-9f0f-278a
+    type: selectionEntry
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 1.0
+    exported: true
+    constraints:
+      - id: 9f9d-7ed1-8487-60c5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: d458-5c9f-5aa0-d893
+    name: Cyberwolf
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to this unit's Leadership if it contains 6 or more models, or add 2 instead if the unit contains 10 or more models.
+    id: 7000-521b-5718-a327
+    name: Pack Mentality
+infoLinks:
+  - targetId: 1640-a9e3-5c03-ac7b
+    type: profile
+    id: e665-fd25-cbaf-2a7a
+    name: Swift Hunters
+  - targetId: 50dd-5312-6550-d7e0
+    type: profile
+    id: 9d98-a45c-438a-6134
+    name: Savage Fury
+id: b594-c93a-5533-917c
+name: Fenrisian Wolves
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: 35a7-45c3-d6d5-2a93
+        field: selections
+        scope: b594-c93a-5533-917c
+        value: 11.0
+        shared: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: 35a7-45c3-d6d5-2a93
+        field: selections
+        scope: b594-c93a-5533-917c
+        value: 6.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

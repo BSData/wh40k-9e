@@ -1,0 +1,62 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: 84a0-11fb-c290-1406
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: d5e4-ace2-9602-4a56
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: The first time the bearer is destroyed, keep it to one side; at the end of the current phase, set the bearer back up again, placing it as close as possible to its previous position and more than 1" from any enemy models, with D3 wounds remaining.
+    id: a253-2f54-2688-282f
+    name: Hourglass of Manat
+id: 3e61-95d7-2ac9-4cae
+name: Hourglass of Manat
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: d3a4-fa42-26c0-fca2
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 3b80-bb3f-b404-6b9b
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ed5e-9843-6dd4-0ac1
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true

@@ -1,0 +1,45 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+constraints:
+  - id: 65d4-1f56-d055-3db6
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          PSYKER model only. This Relic can be taken by a PSYKER VEHICLE model.
+
+          - Each time the bearer attempts to manifest a Witchfire psychic power, add 1 to the Psychic test.
+
+          - Each time the bearer would lose a wound as a result of suffering Perils of the Warp, roll one D6: on a 4+, that wound is not lost.
+    id: 6605-1ac2-dce3-7641
+    name: Scorched Gitbonez
+id: 1f9d-944e-a2fd-9d1c
+name: Scorched Gitbonez
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: e691-aad7-d21c-1023
+        field: selections
+        scope: ancestor
+        shared: true

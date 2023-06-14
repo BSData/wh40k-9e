@@ -1,0 +1,71 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: ee77-c096-2243-0abe
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 4526-61b1-935c-4024
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - This model has a move characteristic of 8"
+
+          - You can re-roll charge rolls made for this model
+
+          - Each this model fights, if it made a charge move this turn, then until that fight is resolved add 1 to the Damage characteristic of melee weapons that model is equipped with
+    id: 28c0-6233-418f-dbe3
+    name: Charge of the Ancients
+id: cb13-f1cd-55ea-718e
+name: Charge of the Ancients
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: 1812-4aba-98d5-cd3f
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 4526-61b1-935c-4024
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

@@ -1,0 +1,182 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: pts
+    typeId: points
+    value: 75.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 211a-23c6-bd03-ce29
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: d8f0-b466-ab72-366b
+    name: New CategoryLink
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    primary: true
+    id: 7f63-bc41-652a-be96
+    name: New CategoryLink
+  - targetId: d743-4a7d-abd9-9018
+    id: 5602-602e-78a3-907c
+    name: New CategoryLink
+  - targetId: ae37-74e2-8391-d0f8
+    id: cb97-097c-b13e-59c2
+    name: Artillery
+  - targetId: 5afa-1872-7fcb-cbb7
+    id: 19c1-30ac-d7e9-2b9e
+    name: Rapier Carrier
+  - targetId: c8fd-783f-3230-493e
+    id: 67fd-eede-092d-2b70
+    name: Vehicle
+selectionEntryGroups:
+  - defaultSelectionEntryId: 66ee-d6a1-f0de-0599
+    exported: true
+    entryLinks:
+      - targetId: 5384-cbe9-534a-fe06
+        type: selectionEntry
+        exported: true
+        id: 66ee-d6a1-f0de-0599
+        name: Quad heavy bolter
+      - targetId: a4d4-1eeb-cd0a-9d14
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 35.0
+        exported: true
+        id: 88fb-14eb-1634-2df3
+        name: Laser destroyer
+      - targetId: e3a6-2fdf-2148-d391
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 35.0
+        exported: true
+        id: e274-eaaa-ac82-0142
+        name: Quad launcher
+      - targetId: a768-7d58-50b1-7d0d
+        type: selectionEntry
+        exported: true
+        id: 62cc-1d4e-8cea-3145
+        name: Graviton cannon
+    constraints:
+      - id: 2eaf-c208-19ff-55a6
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a7a2-793c-597d-77be
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 84e1-9f49-eb60-45fa
+    name: Weapon
+entryLinks:
+  - targetId: b61f-a3c1-827d-c5b6
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 9daf-ef95-f61c-c102
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 823e-0920-3eb0-2320
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 2c59-2c9d-89e4-d9a3
+    name: Boltgun
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 4"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 2
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 7
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 2d15-66a7-94cb-d737
+    name: Rapier Carrier
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each Rapier Carrier and its crew are treated as a single model for all rules purposes (crew models must remain within 1" from their Rapier carrier). This means that the crew models cannot be targeted or attacked separately  and that visibility and all ranges are measured to and from the Rapier Carrier's model, not the crew models. This unit cannot advance,  is never eligible to charge or heroically intervene, and cannot make pile in or consolidate moves
+    id: 8695-5d02-7173-ff14
+    name: Artillery and Crew
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 55c6-c135-0aab-cfba
+    name: Angels of Death
+id: 58a4-c616-2b06-62bd
+name: Rapier Carrier
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

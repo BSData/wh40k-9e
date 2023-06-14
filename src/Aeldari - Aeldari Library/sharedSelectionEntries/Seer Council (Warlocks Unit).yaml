@@ -1,0 +1,51 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: ad82-5598-c2ef-a600
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 53a5-4bce-8ed4-8fbc
+    type: minimum
+    field: selections
+    scope: roster
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          While the selected FARSEER model is within 6" of this WARLOCKS unit, add 1 to Psychic tests taken for that FARSEER model.
+
+          While the selected FARSEER model is within 3" of this WARLOCKS unit, that FARSEER model can use the Look Out Sir rule even if this unit contains fewer than 3 models.
+    id: f131-d39c-6a2b-f54e
+    name: Seer Council (Warlocks)
+id: 2eb0-d455-42dd-235d
+name: Seer Council (Warlocks Unit)
+modifiers:
+  - type: set
+    field: 53a5-4bce-8ed4-8fbc
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: a2cd-a908-87f1-5521
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

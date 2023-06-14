@@ -1,0 +1,57 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 8e29-0019-86cd-45af
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 5878-dcec-45aa-e1f9
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 187c-66fe-9a65-9ff4
+name: Character (Knight Lance)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: af70-08c1-1c6f-0770
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: notInstanceOf
+                childId: d513-cbf5-9bfc-7270
+                field: selections
+                scope: force
+                shared: true
+              - type: notInstanceOf
+                childId: fa51-993c-2f8b-9be4
+                field: selections
+                scope: force
+                shared: true
+  - type: add
+    field: category
+    value: ef18-746a-369f-43a4

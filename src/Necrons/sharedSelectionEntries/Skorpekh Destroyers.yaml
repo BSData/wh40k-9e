@@ -1,0 +1,149 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 6a37-4c9f-a323-a8f2
+    id: 28a3-ae3a-9cca-dbf8
+    name: 'Faction: <Dynasty>'
+  - targetId: 876e-ea78-1fdf-f250
+    id: 9339-9d4d-cc8e-3ef2
+    name: 'Faction: Necrons'
+  - targetId: 0ad7-1f84-c52c-ff8c
+    id: 31f4-baba-6124-2fd2
+    name: 'Faction: Destroyer Cult'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 2f7f-620c-91c8-60e7
+    name: Infantry
+  - targetId: d4f8-74ea-220c-41f6
+    id: eb51-9065-7bf8-5bf5
+    name: Skorpekh Destroyers
+  - targetId: 08f1-d244-eb44-7e01
+    id: 198e-11e3-f9e0-f878
+    name: Core
+entryLinks:
+  - targetId: cf4b-b190-c4d2-5064
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 74b3-c7dc-3e9c-f1dc
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: c5e8-4d4b-e40f-9ecf
+        type: maximum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+    id: 9d9b-6e40-e0ea-0c03
+    name: Skorpekh Destroyer (Thresher)
+  - targetId: 9ed9-5392-14a2-28b5
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: db4c-03da-5e1b-7a75
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: eea0-e17d-22c6-17e8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 7134-d8f5-af0e-42c3
+    name: Skorpekh Destroyer (Reap-Blade)
+    modifiers:
+      - type: set
+        field: eea0-e17d-22c6-17e8
+        value: 2.0
+        conditions:
+          - type: atLeast
+            childId: model
+            field: selections
+            scope: d299-f0d3-9a93-5bbc
+            value: 6.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 20a7-2e42-4c73-9844
+    type: selectionEntryGroup
+    exported: true
+    id: 7f07-5741-1a39-b527
+    name: Battle Honours
+infoLinks:
+  - targetId: 8fc2-276b-299f-abb4
+    type: profile
+    id: bef5-9155-aa7a-ce5e
+    name: Hardwired for Destruction
+  - targetId: 601f-ad02-3e1f-fcc4
+    type: rule
+    id: e517-d1fb-f3b5-2801
+    name: Living Metal
+  - targetId: aa07-b2de-6de0-3dd9
+    type: rule
+    id: 7b63-2543-37da-4b1a
+    name: Command Protocols
+  - targetId: cba7-3427-625e-eb99
+    type: rule
+    id: 1b10-a90c-75ab-c593
+    name: Reanimation Protocols
+  - targetId: c452-ea78-7019-5d25
+    type: rule
+    id: e349-2ccb-fceb-afcd
+    name: Cult of Annihilation
+    publicationId: 61c6-c8c5-pubN65537
+  - targetId: 0e66-022c-dd8e-94e2
+    type: rule
+    id: 0c3d-02c0-f3e3-f13a
+    name: Annihilation Protocols
+    publicationId: 61c6-c8c5-pubN65537
+id: d299-f0d3-9a93-5bbc
+name: Skorpekh Destroyers
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 8.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: d299-f0d3-9a93-5bbc
+        value: 4.0
+        shared: true
+        includeChildSelections: true
+  - type: add
+    field: category
+    value: eb9c-d79f-00bb-6d4a
+    conditions:
+      - type: atLeast
+        childId: 551a-4ae2-77ec-3f08
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 7fcd-553a-a403-3e5d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

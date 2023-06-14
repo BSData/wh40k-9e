@@ -1,0 +1,80 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 5fe3-e914-5b36-3003
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 24"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Heavy 3
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 7
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -2
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack is made with this weapon, on an unmodified wound roll of 6  the target suffers 2 mortal wounds in addition to any normal damage. This weapon replaces the bearer's Volkite Blaster.
+    id: 476d-190d-bec0-1e03
+    name: Weapon XCIX
+    publicationId: ebe8-544e-pubN65537
+id: 646a-757f-57dc-daf1
+name: 'Relic (Ryza): Weapon XCIX'
+publicationId: ebe8-544e-pubN65537
+page: 56
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: lessThan
+            childId: 0a8a-2f6d-2507-f330
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: lessThan
+                childId: dda9-4fa4-d7ea-041c
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: lessThan
+                childId: ac50-58f2-fbb8-af14
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

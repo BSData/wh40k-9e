@@ -1,0 +1,82 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: b6c9-1877-d6f5-23a6
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: cb55-b16a-80ae-047e
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+id: bd0b-6f98-2eba-2710
+name: 'Stratagem: In the Right Hands'
+modifiers:
+  - type: set
+    field: b6c9-1877-d6f5-23a6
+    value: 0.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: c470-54ac-0863-8848
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 9062-1b14-020e-a6de
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: cb55-b16a-80ae-047e
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: cb55-b16a-80ae-047e
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

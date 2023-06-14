@@ -1,0 +1,130 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: pts
+    typeId: points
+    value: 120.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 5151-f74f-2e30-eec7
+    name: New CategoryLink
+  - targetId: f082-89f4-1415-3707
+    id: de8f-01bf-3228-1f49
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 5e76-2413-31dc-77a9
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: b4f7-ba3e-e9bb-1037
+    name: New CategoryLink
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: c26c-c850-6214-f041
+    name: New CategoryLink
+  - targetId: 5d14-5456-2e13-3426
+    id: 79a1-6050-924c-6a97
+    name: New CategoryLink
+selectionEntryGroups:
+  - defaultSelectionEntryId: 8f75-a0cc-4142-8578
+    exported: true
+    entryLinks:
+      - targetId: bcc8-46ff-43a0-54b9
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 10.0
+        exported: true
+        id: c4de-06f4-c414-e3ea
+        name: Deathstorm missile array
+      - targetId: c795-f9d4-5e63-d983
+        type: selectionEntry
+        exported: true
+        id: 8f75-a0cc-4142-8578
+        name: Deathstorm cannon array
+    constraints:
+      - id: a2c8-c953-dfcb-fb90
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 595b-4847-834f-2bc6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: c88f-d2f2-4c3e-a06c
+    name: Weapon
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: "In your Shooting phase, each time this model is selected to shoot, it's Deathstrom cannon array or its Deathstorm missile array can target, and resolve attacks against, every eligible enemy unit. Each time this model fires overwatch, it only resolves attacks with it's weapons against the charging unit, but when doing so the Type of it's Deathstorm cannon array is changed to Heavy 12, and the type of it's Deathstorm missile array is changed to Heavy 4. "
+    id: 8ff5-38a7-f6f9-1bbc
+    name: Defensive Array
+infoLinks:
+  - targetId: f7e8-5a2d-3fb9-fdea
+    type: profile
+    id: 26fa-23c7-ddaf-7774
+    name: Deathstorm Pod
+  - targetId: bda9-0243-e0bf-58b8
+    type: profile
+    id: 0400-cef2-30e6-df73
+    name: Drop Pod Assault
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: bfa2-68ba-e1b4-d9e0
+    name: Angels of Death
+  - targetId: 8090-4211-acc4-5611
+    type: rule
+    id: 434f-9fe5-7a81-d01c
+    name: Explodes (6"/1)
+  - targetId: 5fd4-59ea-e117-1b73
+    type: profile
+    id: 692d-cfbc-255c-ec33
+    name: Death From Above
+id: 6d7b-340f-c91b-98ac
+name: Deathstorm Drop Pod
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

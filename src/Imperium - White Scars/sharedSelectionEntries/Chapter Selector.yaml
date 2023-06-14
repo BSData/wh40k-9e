@@ -1,0 +1,191 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 8a9f-2595-cfce-6d90
+    id: 9410-8752-8c54-f5b6
+    name: 'PC: WS'
+selectionEntryGroups:
+  - defaultSelectionEntryId: b1ad-e5a6-9dd8-59d6
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        rules:
+          - description: >-
+              - Units with this tactic are eligible to declare a charge with in a turn in whcih they Advanced or Fell Back.
+
+              - Models with this tactic do not suffer the penalty incurred to their hit rolls for firing Assault weapons in the same turn their unit Advanced.
+            id: a41e-3754-2acc-c358
+            name: Lightning Assault
+            modifiers:
+              - type: set
+                field: hidden
+                value: true
+                conditions:
+                  - type: atLeast
+                    childId: fff5-0cb2-3255-5678
+                    field: selections
+                    scope: force
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+        id: b1ad-e5a6-9dd8-59d6
+        name: White Scars
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 38a7-0b96-6f2a-9864
+            id: 763f-7361-f9ec-94a1
+            name: 'PC: WS Successor'
+        id: d2c1-208b-0460-a8a0
+        name: White Scars Successor
+    constraints:
+      - id: fb99-b55b-6230-aaa6
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 31d8-76d8-024b-2875
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 5400-8af6-1542-8d6c
+    name: Chapter
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: de80-0443-899d-3c5f
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 737f-1579-d2e9-4a95
+        name: Custom Chapter
+    entryLinks:
+      - targetId: 3700-470e-f75d-6cba
+        type: selectionEntryGroup
+        exported: true
+        id: 1a7f-4fcc-0131-221b
+        name: Forge World Chapters
+    constraints:
+      - id: a5b8-1341-9448-47d5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 5341-4065-116a-463d
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 9b0f-0432-75bc-ac8a
+    name: Successor Chapters
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: d2c1-208b-0460-a8a0
+            field: selections
+            scope: 570a-ae7a-c122-90fc
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 5341-4065-116a-463d
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: d2c1-208b-0460-a8a0
+            field: selections
+            scope: 570a-ae7a-c122-90fc
+            value: 1.0
+            shared: true
+entryLinks:
+  - targetId: a7a4-4d2d-81c8-5bd1
+    type: selectionEntryGroup
+    exported: true
+    id: 0123-0549-3e75-7e96
+    name: Tactics
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 3700-470e-f75d-6cba
+                field: selections
+                scope: 570a-ae7a-c122-90fc
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 737f-1579-d2e9-4a95
+                field: selections
+                scope: 570a-ae7a-c122-90fc
+                shared: true
+                includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: fff5-0cb2-3255-5678
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+constraints:
+  - id: bc72-d783-04e3-6459
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 801f-6980-2d68-297f
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 570a-ae7a-c122-90fc
+name: '**Chapter Selector**'

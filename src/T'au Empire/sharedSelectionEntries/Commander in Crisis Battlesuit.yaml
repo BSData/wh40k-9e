@@ -1,0 +1,171 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 110.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 8cc3-4e99-e01d-fed8
+    id: 2bc9-4e21-3dc1-6ce2
+    name: New CategoryLink
+  - targetId: 0caa-53ee-34da-cda1
+    id: 7fbd-013d-410e-e970
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: f2b8-733d-135d-717f
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: 5ddc-229d-0be8-d61f
+    name: New CategoryLink
+  - targetId: 092c-6125-af28-ef5d
+    id: acb0-9ae0-2177-5017
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: c55e-54c1-8576-0632
+    name: New CategoryLink
+  - targetId: 77ee-b03b-d244-d535
+    id: f3f4-0892-12b1-8c62
+    name: New CategoryLink
+  - targetId: 257e-82d7-82b7-4434
+    id: 3abc-39f6-5180-f7ed
+    name: New CategoryLink
+  - targetId: 5b12-8430-9970-fadc
+    id: d0ad-c5f1-9198-0b92
+    name: Crisis
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 500f-819e-33ad-1f8f
+    name: Infantry
+entryLinks:
+  - targetId: a3aa-ea32-ab42-aad5
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: f785-d234-a37f-6fb9
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 1bf8-c35f-caa3-1d63
+    name: Drones
+    modifiers:
+      - type: append
+        field: name
+        value: ' (0-2)'
+  - targetId: 48e5-9b07-ac9f-766f
+    type: selectionEntry
+    costs:
+      - name: pts
+        typeId: points
+        value: 10.0
+    exported: true
+    constraints:
+      - id: 06b8-4b54-92f4-3f9e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 70e4-e7b3-a5ac-dd6e
+    name: Iridium battlesuit
+  - targetId: 7db5-63ac-e907-c20f
+    type: selectionEntry
+    exported: true
+    id: b3e9-d213-f077-3443
+    name: Warlord
+  - targetId: 0564-905a-e896-f5ab
+    type: selectionEntryGroup
+    exported: true
+    id: 1f7d-c6c7-218a-434e
+    name: Signature Systems
+  - targetId: 0b62-f560-227b-02a9
+    type: selectionEntryGroup
+    exported: true
+    id: 7fca-8e0b-a2dc-f6a8
+    name: Warlord Traits
+  - targetId: 7a15-042c-c6c3-8657
+    type: selectionEntryGroup
+    exported: true
+    id: a9fb-43e9-c594-cb16
+    name: Prototype Weapons Systems
+  - targetId: d453-7a11-477a-b401
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: a61c-a20c-1fb8-9d57
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: 35f7-591a-5869-98ce
+    name: Commander Wargear - Slot 1
+  - targetId: b4c7-fdf8-20bb-b25a
+    type: selectionEntryGroup
+    exported: true
+    id: 5233-0d10-7fc2-e644
+    name: Commander Wargear - Slot 2
+  - targetId: 8c57-1e90-d421-7c13
+    type: selectionEntryGroup
+    exported: true
+    id: 4881-259c-9129-48d9
+    name: Commander Wargear - Slot 3
+  - targetId: abb7-6b2f-45f0-3e8a
+    type: selectionEntryGroup
+    exported: true
+    id: f768-0585-a437-ce02
+    name: Commander Wargear - Slot 4
+  - targetId: edca-3dfb-47b4-ce25
+    type: selectionEntryGroup
+    exported: true
+    id: e60a-d164-0acc-478c
+    name: Character Stratagems
+infoLinks:
+  - targetId: fdde-a68d-bcf1-ae0a
+    type: rule
+    id: f1a6-9f5e-b9da-4943
+    name: Manta Strike
+  - targetId: 5c1b-b8f3-9e3b-b9d2
+    type: profile
+    id: cc41-15ce-a710-91af
+    name: Master of War (Aura) (Crisis)
+  - targetId: 0f18-103c-0bf8-75a7
+    type: profile
+    id: 79f2-fea9-d532-5347
+    name: Commander in Crisis Battlesuit
+    modifiers:
+      - type: set
+        field: c0df-df94-abd7-e8d3
+        value: 2+
+        conditions:
+          - type: greaterThan
+            childId: 48e5-9b07-ac9f-766f
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+  - targetId: 130f-5e6f-532f-4b56
+    type: profile
+    id: c852-c612-4041-413b
+    name: Tactical Acumen (Crisis)
+id: 7f8e-4026-6462-8e74
+name: Commander in Crisis Battlesuit
+page: ''
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 1
+    conditions:
+      - type: atLeast
+        childId: a3aa-ea32-ab42-aad5
+        field: selections
+        scope: 7f8e-4026-6462-8e74
+        value: 1.0
+        shared: true

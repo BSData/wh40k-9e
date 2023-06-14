@@ -1,0 +1,65 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 88cf-f9ae-06ef-4d15
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 15f8-f0f6-0c3a-5cbf
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+infoLinks:
+  - targetId: 3583-6838-7c0e-3a66
+    type: profile
+    id: c0f1-1a80-cd75-9265
+    name: Ohr'tu's Lantern
+id: b6bd-dfa8-4996-0d06
+name: Ohr'tu's Lantern
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 3072-58c7-0015-129c
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ca6b-6ce9-0f0f-8c1b
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+          - type: and
+            conditions:
+              - type: notInstanceOf
+                childId: 1e6a-d4bb-b363-8f61
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: notInstanceOf
+                childId: e024-d272-0cb5-87bb
+                field: selections
+                scope: ancestor
+                shared: true

@@ -1,0 +1,50 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 0eee-f3b2-66e7-028b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: QUESTORIS-CLASS or ARMIGER-CLASS only. The bearer has a Save characteristic of 2+
+    id: 6818-f781-825e-f95a
+    name: Armour of the Sainted Ion
+    publicationId: 82cd-d24f-pubN65537
+    page: 114
+id: 62d0-5f57-75e5-5d4d
+name: 'Heirloom: Armour of the Sainted Ion'
+publicationId: 82cd-d24f-pubN65537
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 82b5-25ac-1710-de0e
+            field: selections
+            scope: parent
+            shared: true
+          - type: instanceOf
+            childId: 5583-2a3e-2095-6450
+            field: selections
+            scope: parent
+            shared: true

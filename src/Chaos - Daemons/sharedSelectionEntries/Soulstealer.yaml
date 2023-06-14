@@ -1,0 +1,64 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 6608-db8a-1d58-1348
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: +2
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -3
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 3
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: >-
+          - Each time a model is destroyed by an attack made with this weapon, the bearer regains 1 lost wound (to a maximum of 6 regained wounds per phase). 
+
+          - Each time the bearer makes an attack with this weapon against an AELDARI target, if a hit is scored, that attack automatically wounds the target.
+    id: e827-6ab9-de1e-2f31
+    name: Soulstealer
+id: 45aa-424e-ee56-341e
+name: Soulstealer
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: e51e-f5d0-c1b8-5736
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: f172-004e-0baa-662a
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true

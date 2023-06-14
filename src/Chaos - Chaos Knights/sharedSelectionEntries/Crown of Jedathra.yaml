@@ -1,0 +1,74 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 8ad5-6b7d-bdb1-8759
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a melee attack is made against the bearer, subtract 1 from that attack's hit roll. 	
+    id: 932e-4a4b-f33f-292e
+    name: Crown of Jedathra
+id: 6005-389b-3860-1823
+name: Crown of Jedathra
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: notInstanceOf
+                childId: c08d-f66a-1d47-060f
+                field: selections
+                scope: ancestor
+                shared: true
+                includeChildSelections: true
+              - type: notInstanceOf
+                childId: eca4-de83-1e4d-cdd6
+                field: selections
+                scope: ancestor
+                shared: true
+                includeChildSelections: true
+          - type: and
+            conditions:
+              - type: notInstanceOf
+                childId: 91ad-6187-7869-5d01
+                field: selections
+                scope: ancestor
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: d9c1-cf6c-bc18-30f5
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: fd3a-3c43-7c1c-6952
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+              - type: notInstanceOf
+                childId: 5d43-9fd0-e47e-ac30
+                field: selections
+                scope: ancestor
+                shared: true
+                includeChildSelections: true

@@ -1,0 +1,165 @@
+exported: true
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: 4dc5-f066-0d3b-d61c
+        type: selectionEntry
+        exported: true
+        id: ec96-c18c-645c-8b2e
+        name: 'Warlord Trait (Codex 1): Multitasking Cortex'
+      - targetId: 2562-e03f-0790-5388
+        type: selectionEntry
+        exported: true
+        id: 14fd-2aff-6ebd-74b6
+        name: 'Warlord Trait (Codex 2): Battle-Sphere Uplink'
+      - targetId: 3618-2ef9-4789-df65
+        type: selectionEntry
+        exported: true
+        id: 9d95-7ddc-012c-b3d5
+        name: 'Warlord Trait (Codex 3): Programmed Retreat'
+      - targetId: c471-a142-b01a-2593
+        type: selectionEntry
+        exported: true
+        id: a47d-9eee-bc83-7ed9
+        name: 'Warlord Trait (Codex 4): Archived Engagements'
+      - targetId: fc7a-c262-9d48-2337
+        type: selectionEntry
+        exported: true
+        id: 9e10-dd41-f6d7-7bea
+        name: 'Warlord Trait (Codex 5): Firepoint Telemetry Cache'
+      - targetId: 9618-aa77-8aea-933f
+        type: selectionEntry
+        exported: true
+        id: 8613-83ba-e945-765d
+        name: 'Warlord Trait (Codex 6): Eyes of the Omnissiah'
+    constraints:
+      - id: 12aa-7144-318b-2eb5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: edcb-aee7-ecfb-bb47
+    name: Warlord Traits (Adeptus Mechanicus)
+entryLinks:
+  - targetId: e073-aa85-1f37-8d28
+    type: selectionEntryGroup
+    exported: true
+    id: aae0-40af-73cd-0e32
+    name: Warlord Traits (Charadon)
+constraints:
+  - id: 4e92-b253-871c-590a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: a1ff-f5e5-adc9-81e1
+name: Skitarii Warlord Traits
+publicationId: ebe8-544e-pubN65537
+page: 67
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 6771-6ab3-1672-6a39
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 82f3-69c6-8ebf-a266
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 3788-be31-79f5-185d
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: d4fa-d036-f5dd-f91d
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: d4fa-d036-f5dd-f91d
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: greaterThan
+                        childId: e77a-cc54-efcf-a09a
+                        field: selections
+                        scope: roster
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+                      - type: greaterThan
+                        childId: 76d2-6e71-243f-ad3d
+                        field: selections
+                        scope: roster
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+  - type: increment
+    field: 4e92-b253-871c-590a
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 6769-ec64-c38f-74c1
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 6771-6ab3-1672-6a39
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 82f3-69c6-8ebf-a266
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: decrement
+    field: 4e92-b253-871c-590a
+    value: 1.0
+    conditions:
+      - type: atLeast
+        childId: e77a-cc54-efcf-a09a
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

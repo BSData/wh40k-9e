@@ -1,0 +1,352 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: pts
+    typeId: points
+    value: 132.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: a561-6534-2d3d-b376
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: f29a-40b1-1337-829b
+    name: New CategoryLink
+  - targetId: 4bc8-f25c-c7ca-5b6b
+    id: 1fe3-ce89-db61-e6d8
+    name: New CategoryLink
+  - targetId: 8352-7f67-7e2b-3b4f
+    id: 3550-71e0-083c-a5cf
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 9ba9-84ce-d215-dad4
+    name: New CategoryLink
+  - targetId: d5ca-2a13-4e72-72ba
+    id: 114a-d093-ed4b-4134
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 8c96-d981-0af2-170f
+    name: New CategoryLink
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: ddd9-0cba-0a08-fd7d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2c24-9689-76ad-6813
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: D3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: This weapon has Strength x2 if the target is a CHARACTER.
+        id: 4954-c968-e686-dcb3
+        name: Moonfang
+    id: 29ab-7d2f-fd1a-adab
+    name: Moonfang
+entryLinks:
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1662-bd04-f950-b15f
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2664-ef11-ee8a-6f57
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 083b-8242-c291-6cdf
+    name: Bolt pistol
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 85e0-8456-d449-7e39
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: a9a9-fc8d-1b73-f962
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 54ed-bf14-9c50-d3e5
+    name: Frag & Krak grenades
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 4fc2-d7e0-df8d-aa55
+    name: Warlord
+  - targetId: 4c54-1c89-299c-05c5
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: c168-7b06-441c-454d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 31b5-daf5-8b3b-cf76
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: ef65-e72b-3d4a-c18c
+    name: Twin boltgun
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: 2e58-768d-0861-c3fe
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: a6a8-8df1-d904-2cb1
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 3ea0-90a1-666d-4e61
+    name: Trophy Taker
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: fdb5-313d-f40b-ab1e
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: a6a8-8df1-d904-2cb1
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: fdb5-313d-f40b-ab1e
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 27b6-47c2-7113-5f61
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: a11c-a4d8-d2e5-e337
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: set
+        field: 27b6-47c2-7113-5f61
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: fdb5-313d-f40b-ab1e
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+constraints:
+  - id: 357a-2af2-0edc-f87e
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to the Strength characteristic of friendly WHITE SCARS units within 6" of Kor'sarro Khan when they attack in the Fight phase if they charged that turn.
+    id: 31e2-fb06-5ad7-2ba1
+    name: For the Khan!
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 14"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: e5ec-e8cc-686f-ee6d
+    name: Kar'sarro Khan on Moondrakkan
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 27da-323e-91a8-f608
+    name: Angels of Death
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: f295-e9d0-b812-08e0
+    name: Rites of Battle
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: af2a-f7ed-de18-b0a6
+    name: Iron Halo
+  - targetId: c027-2e84-7468-0607
+    type: profile
+    id: b8b6-7a8d-337d-efb6
+    name: Turbo-boost
+id: fdb5-313d-f40b-ab1e
+name: Kor'sarro Khan on Moondrakkan [Legends]
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: b1ad-e5a6-9dd8-59d6
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: c47c-a3e1-c91e-436a
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

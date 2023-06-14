@@ -1,0 +1,57 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: e25e-c0ea-16b8-c257
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: af63-7e21-54fb-d94b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+id: 5922-664b-f549-7a05
+name: Indentured Machines
+modifiers:
+  - type: increment
+    field: af63-7e21-54fb-d94b
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+  - type: increment
+    field: af63-7e21-54fb-d94b
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 63b1-fa0b-ec5a-ca7f
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

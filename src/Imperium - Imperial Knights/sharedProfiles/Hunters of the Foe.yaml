@@ -1,0 +1,35 @@
+typeId: dfe7-9b0a-ece9-9141
+typeName: Household Tradition
+characteristics:
+  - name: Description
+    typeId: 9271-9853-fe95-0c04
+    value: >-
+      Each time a Model with this Tradition a melee attack:
+
+      - Unless the target of that attack contains any VEHICLE or MONSTER models, re-roll a wound roll of 1.
+
+      - If the target of that attack contained 6 or more models when this model was selected to fight, you can re-roll the wound roll.
+id: 1962-f864-3a6b-7529
+name: Hunters of the Foe
+publicationId: 82cd-d24f-pubN65537
+page: 69
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: model
+            field: selections
+            scope: force
+            value: 3.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: 224b-1070-218f-fdf4
+            field: selections
+            scope: ancestor
+            shared: true

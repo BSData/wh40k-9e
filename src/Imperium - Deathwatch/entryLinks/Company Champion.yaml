@@ -1,0 +1,58 @@
+targetId: c4ab-433a-ad56-2172
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: 6d0b-16e6-5de4-fa0f
+    name: New CategoryLink
+entryLinks:
+  - targetId: f823-a5a7-2b6e-e168
+    type: selectionEntryGroup
+    exported: true
+    id: 7c52-d315-aa52-f336
+    name: Chapter Relics
+  - targetId: 022b-15bc-acf5-73c8
+    type: selectionEntryGroup
+    exported: true
+    id: 2dc6-e3ab-fb80-3c58
+    name: Warlord Traits
+constraints:
+  - id: 0967-e234-6d2c-7c83
+    type: maximum
+    field: selections
+    scope: parent
+    shared: true
+id: a6d4-4e94-faa1-3c10
+name: Company Champion
+modifiers:
+  - type: increment
+    field: 0967-e234-6d2c-7c83
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        shared: true
+  - type: add
+    field: category
+    value: 7d26-7ece-20fa-e961
+    conditions:
+      - type: greaterThan
+        childId: 2a8e-f55f-1f63-12e4
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

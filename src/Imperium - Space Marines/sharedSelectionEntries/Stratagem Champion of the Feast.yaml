@@ -1,0 +1,49 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 6bae-9b44-8327-926f
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 4b3d-87ef-df89-cecd
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: "Use this Stratagem before the battle: Select one BLACK TEMPLARS model from your army that has the word 'Sergeant' or 'Sword Brother' in their profile. Add 1 to that model's Attacks and Wounds characteristics and improve that model's Weapon Skill by 1. You can only use this Stratagem once"
+    id: 2007-f8d7-2dd9-7a13
+    name: Champion of the Feast
+id: 949b-31db-81d1-f483
+name: 'Stratagem: Champion of the Feast'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 4cb6-1c83-e837-f928
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

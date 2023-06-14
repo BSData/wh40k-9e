@@ -1,0 +1,288 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: pts
+    typeId: points
+    value: 100.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 73e6-f488-ec0f-38d2
+    name: New CategoryLink
+  - targetId: 8352-7f67-7e2b-3b4f
+    id: b141-a49a-1312-b9a9
+    name: Captain
+  - targetId: 3d52-fccf-10c0-3fae
+    id: ec15-cbf2-df7b-9654
+    name: Infantry
+  - targetId: c7b7-edbc-bc14-6238
+    id: d004-3a11-a8bd-3279
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: ca53-567d-9864-280e
+    name: 'Faction: Imperium'
+  - targetId: 8158-9b4f-8dca-1173
+    id: 712b-bea5-0a1e-b7d7
+    name: Tome Keepers
+  - targetId: ef18-746a-369f-43a4
+    id: 0550-b247-8063-1f1f
+    name: Character
+  - targetId: 5236-e2c0-4386-9bc9
+    id: c0ac-18a7-7b91-9935
+    name: Nasiem
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: 2f7a-0107-1344-0844
+    name: Primaris
+entryLinks:
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 6532-47d2-ca21-baf0
+    name: Warlord
+  - targetId: c2bb-7bf2-cf13-b502
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d99e-e29d-8f6c-d406
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: e0d3-aa45-e8c4-0b5f
+    name: Master of Strategy
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: d99e-e29d-8f6c-d406
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 876b-80bc-4805-f702
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 8a27-4f9b-72ba-e8b4
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6028-bb8f-2663-7876
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 3fad-edfb-5288-b0c4
+    name: Sunwrath Pistol
+  - targetId: 35c3-1805-7d83-be7a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 8360-27ee-5262-237a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c44e-03e7-1e09-36ec
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 0eb8-3fb5-cfeb-48a5
+    name: Master-crafted power axe
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1d70-38e7-30cf-3f96
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9887-91ab-d5d2-a79a
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: aca2-a901-021d-5797
+    name: Frag & Krak grenades
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: c360-9596-ed14-6932
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+constraints:
+  - id: ba41-0649-6f22-f23a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 6
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 6161-18c7-e55d-6997
+    name: Captain Nasiem
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'If this model is included in your Crusade army, it automatically gains the Master of the Arsenal honorific, even though it cannot normally gain battle honors. This does not increase its Crusade points. '
+    id: 082b-4c24-8798-2c2c
+    name: Captain of the Third Company
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 34b4-6eea-9857-2370
+    name: Angels of Death
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: d0e9-322e-19aa-aaca
+    name: Rites of Battle
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: a40b-a90d-b465-8ff9
+    name: Iron Halo
+id: 79cd-c8c4-23cf-118d
+name: Captain Nasiem
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: dc3a-979d-38a3-be1b
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

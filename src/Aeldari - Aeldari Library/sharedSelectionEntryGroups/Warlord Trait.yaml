@@ -1,0 +1,118 @@
+exported: true
+entryLinks:
+  - targetId: d442-1f03-d9da-e77f
+    type: selectionEntryGroup
+    exported: true
+    id: d2fc-9e2d-28f9-c543
+    name: Warlord Traits (BRB)
+  - targetId: d03e-d728-8fd8-7baf
+    type: selectionEntryGroup
+    exported: true
+    id: 3a6f-7ff1-3495-0be7
+    name: Warlord Trait (Archon)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: notInstanceOf
+            childId: 0fa5-c739-c66f-3d88
+            field: selections
+            scope: ancestor
+            shared: true
+  - targetId: 33d3-f307-ba47-b2eb
+    type: selectionEntryGroup
+    exported: true
+    id: e53f-0e91-96f0-52ef
+    name: Warlord Trait (Haemonculus)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: notInstanceOf
+            childId: 65d3-140a-2185-ef41
+            field: selections
+            scope: ancestor
+            shared: true
+  - targetId: 7771-c894-b60b-26fc
+    type: selectionEntryGroup
+    exported: true
+    id: 4aee-16c5-aab0-7916
+    name: Warlord Trait (Wych Cult)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: notInstanceOf
+                childId: 9c70-9a0a-6131-0324
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: notInstanceOf
+                childId: ef20-5196-feb6-f23d
+                field: selections
+                scope: ancestor
+                shared: true
+constraints:
+  - id: 75e2-5acb-f053-7663
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 64ad-12e1-bca2-9894
+name: Warlord Trait
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: 6771-6ab3-1672-6a39
+            field: selections
+            scope: parent
+            shared: true
+          - type: greaterThan
+            childId: 2d6c-4e53-385f-6d4e
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: 4a6d-da88-0a14-b4c6
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: greaterThan
+                childId: 2ce0-03a1-ec03-76aa
+                field: selections
+                scope: parent
+                shared: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true

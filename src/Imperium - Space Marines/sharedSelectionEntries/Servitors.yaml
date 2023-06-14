@@ -1,0 +1,196 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+    value: 30.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: e31a-f2af-4758-92c9
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: d29a-5913-e80a-6979
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: e190-2660-f2d0-5ce8
+    name: New CategoryLink
+  - targetId: 0262-aa2e-a67e-6774
+    id: 5227-4024-7f05-30a1
+    name: New CategoryLink
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: e1df-5b9b-2d43-0f9a
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+      - id: f80c-c168-fd44-d9f8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+    id: be8c-72cb-5c46-bda0
+    name: Servitor
+selectionEntryGroups:
+  - defaultSelectionEntryId: 2ae7-b937-fe84-49f5
+    exported: true
+    entryLinks:
+      - targetId: 61ae-3901-0a79-4ec9
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: d29e-c4df-a56a-beb9
+            type: minimum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: 2ae7-b937-fe84-49f5
+        name: Servo-arm
+      - targetId: 05ab-e7cc-e856-c36f
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+        exported: true
+        constraints:
+          - id: 66ad-58af-c48c-594e
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: 40ee-0fe1-a7b2-66ad
+        name: Heavy bolter
+      - targetId: eb15-db61-5d4f-b65e
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 10.0
+        exported: true
+        constraints:
+          - id: 3b63-9c61-92ab-f842
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: 0927-bd1d-c25b-97ac
+        name: Plasma cannon
+      - targetId: 2b37-65ee-9443-b4ef
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 15.0
+        exported: true
+        constraints:
+          - id: 6fda-3a4d-6004-3c61
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: c41c-51b0-30e4-c268
+        name: Multi-melta
+    constraints:
+      - id: 66de-eab6-38bb-27d8
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+      - id: a8b4-47a1-5791-6ac1
+        type: maximum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+    id: 99c8-fd51-af55-d9fd
+    name: Weapon
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While this unit is within 6" of any friendly <CHAPTER> TECHMARINE units, models in this unit have a Weapon Skill and Ballistic Skill characteristic of 4+ and Leadership of 9. In addtion, if your army is Battle-forged, then for each <CHAPTER> TECHMARINE unit included in a detachment, one <CHAPTER> SERVITORS unit can be included in that detachment without taking up a Battlefield Role slot.
+    id: d511-1a97-bfb0-2ec3
+    name: Mindlock
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 5"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 5+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 5+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 1
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 1
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 6
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 4+
+    id: 6ea8-20b0-7333-a7c7
+    name: Servitor
+id: 2449-8cca-dc0e-dcbb
+name: Servitors
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

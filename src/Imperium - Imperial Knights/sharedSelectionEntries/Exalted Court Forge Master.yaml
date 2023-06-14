@@ -1,0 +1,85 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+    value: 30.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: a480-fd09-ecbe-0f5b
+    id: 9bc8-ab65-734e-e7a1
+    name: Exalted Court
+constraints:
+  - id: 025d-7b6a-aa78-3bc8
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: dd7a-3f18-28cd-2000
+    typeName: Exalted Court
+    characteristics:
+      - name: Ability
+        typeId: ae8b-ffea-6d0e-8bc6
+        value: While this model is wholly within your deployment zone, each time a wound is allocated to it, reduce the Damage characteristic of that attack by 1 (to a minimum of 1). This is not cumulative with any other rules that reduce the Damage characteristic of an attack
+      - name: Noble Exemplar ability
+        typeId: 712b-eaec-1af0-e425
+        value: While an ARMIGER-CLASS model is under the effects of this model's Bondsman ability, each time that ARMIGER-CLASS model makes an attack against a unit is within your deployment zone, add 1 to that attack's hit roll and add 1 to that attack's wound roll
+      - name: Crusade Duty
+        typeId: bcbb-2bc1-7507-3852
+        value: While this model is in your Crusade force, each time you use the Relic or the Repair and Recuperate Requisition, it costs 1 fewer Requisition points to use
+    id: de29-94f2-a3c6-9bd9
+    name: 'Exalted Court: Forge Master'
+infoLinks:
+  - targetId: cf81-0eb8-d727-7cf6
+    type: rule
+    id: 9498-7eba-e44f-3b0f
+    name: Exalted Court
+id: bbe0-c66e-26b1-1e28
+name: 'Exalted Court: Forge Master'
+hidden: true
+modifierGroups:
+  - modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: or
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: atLeast
+                    childId: fbcf-4219-e609-ff3b
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: instanceOf
+                    childId: 5360-3011-a42b-faf2
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+              - type: and
+                conditions:
+                  - type: instanceOf
+                    childId: 5360-3011-a42b-faf2
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: notInstanceOf
+                    childId: d451-70df-eeef-7915
+                    field: selections
+                    scope: parent
+                    shared: true

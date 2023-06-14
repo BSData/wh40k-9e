@@ -1,0 +1,72 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 1856-de7c-dc52-887b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - Each time a bearer would lose a wound as a result of a mortal wound, roll on D6: on a 5+, that wound is not lost
+
+          - The bearer has the following ability: ANGEL'S GRACE (AURA): While a friendly HOUSE HAWKSHROUD ARMIGER-CLASS model is within 6" of the bearer, each time that ARMIGER-CLASS model would lose a wound as the result of a mortal wound, roll on D6: on a 5+, that wound is not lost
+    id: dc69-6856-c928-cc3b
+    name: Angel's Grace
+    publicationId: 82cd-d24f-pubN65537
+    page: 116
+id: 6c29-dcb8-b621-9c65
+name: "Heirloom (Hawkshroud): Angel's Grace"
+publicationId: 82cd-d24f-pubN65537
+page: 70
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: 5583-2a3e-2095-6450
+        field: selections
+        scope: parent
+        shared: true
+      - type: notInstanceOf
+        childId: 82b5-25ac-1710-de0e
+        field: selections
+        scope: parent
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: dfcb-7e82-5b5e-e379
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 881e-8db6-44e9-2e2c
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

@@ -1,0 +1,66 @@
+targetId: c4ab-433a-ad56-2172
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: 3fd6-0b4f-6e16-5a7b
+    id: 7541-35cd-f045-3b2c
+    name: 'Faction: Dark Angels'
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: 9368-a26d-15dc-987b
+    name: New CategoryLink
+entryLinks:
+  - targetId: e22d-9d1c-bd59-dde0
+    type: selectionEntryGroup
+    exported: true
+    id: cd5e-350e-dcb8-06c5
+    name: Relics
+  - targetId: 25ab-3c66-3dc4-0e00
+    type: selectionEntryGroup
+    exported: true
+    id: 3f86-bcf9-5c21-5e2f
+    name: Warlord Traits
+constraints:
+  - id: fcce-ef79-5d04-edb5
+    type: maximum
+    field: selections
+    scope: force
+    includeChildSelections: true
+    includeChildForces: true
+id: 22f7-9aa4-0ea8-c9dc
+name: Company Champion
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditions:
+      - type: greaterThan
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - type: equalTo
+        childId: bb40-e009-a52f-775a
+        field: selections
+        scope: force
+        shared: true
+      - type: equalTo
+        childId: 2459-1e8a-afbd-6b93
+        field: selections
+        scope: force
+        shared: true
+  - type: increment
+    field: fcce-ef79-5d04-edb5
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

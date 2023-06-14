@@ -1,0 +1,196 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    primary: true
+    id: d77b-d415-9fb7-1e2a
+    name: New CategoryLink
+  - targetId: b94e-1480-56dc-b77a
+    id: 88fa-0f04-989e-6f14
+    name: 'PC: SW'
+selectionEntryGroups:
+  - defaultSelectionEntryId: 4da8-aa69-77ec-b49e
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        rules:
+          - description: >-
+              - Each time a model with this tactic makes a melee attack, if that model’s unit made a charge move, was charged or performed a Heroic Intervention this turn, add 1 to that attack’s hit roll.
+
+              - Units with this tactic are eligible to perform Heroic Interventions as if they were CHARACTERS.
+            id: 4aa3-71c3-09cb-484f
+            name: Hunters Unleashed
+        id: 4da8-aa69-77ec-b49e
+        name: Space Wolves
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        id: 8ad9-2b2c-ebee-d37b
+        name: Space Wolves Successor
+    constraints:
+      - id: 7e30-13ab-50bf-a4b1
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 79c6-181f-a31e-6634
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 5e28-4704-32ed-fb57
+    name: Chapter
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 5efe-d4bd-7ec4-83b1
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 5a3e-1d0d-9f94-dd52
+        name: Custom Chapter
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 4f1b-2c44-37bb-4fb3
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: >-
+                  - Add 1 to Advance rolls and charge rolls made for units with this tactic.
+
+                  - Each time a ranged attack is made against a unit with this tactic by a model that is more than 18" away, the unit with this tactic is treated as having the benefits of light cover against that attack.
+            id: c3cb-6244-a7ec-37c2
+            name: Dark Terror
+        id: 1589-d669-5069-6b39
+        name: Wolf Spears
+    entryLinks:
+      - targetId: 3700-470e-f75d-6cba
+        type: selectionEntryGroup
+        exported: true
+        id: 47f3-3eb7-72ce-115b
+        name: Forge World Chapters
+    constraints:
+      - id: 80f5-66b9-a26a-08ae
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 9960-844a-ae99-6c19
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 6431-d737-ee77-8c22
+    name: Successor Chapters
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 8ad9-2b2c-ebee-d37b
+            field: selections
+            scope: 5b31-21ba-9d8f-55a1
+            shared: true
+      - type: set
+        field: 9960-844a-ae99-6c19
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 8ad9-2b2c-ebee-d37b
+            field: selections
+            scope: 5b31-21ba-9d8f-55a1
+            value: 1.0
+            shared: true
+entryLinks:
+  - targetId: a7a4-4d2d-81c8-5bd1
+    type: selectionEntryGroup
+    exported: true
+    id: 58a1-9915-9695-fd84
+    name: Tactics
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 1589-d669-5069-6b39
+                field: selections
+                scope: 5b31-21ba-9d8f-55a1
+                value: 1.0
+                shared: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 6431-d737-ee77-8c22
+                    field: selections
+                    scope: 5b31-21ba-9d8f-55a1
+                    shared: true
+                  - type: equalTo
+                    childId: 5a3e-1d0d-9f94-dd52
+                    field: selections
+                    scope: 5b31-21ba-9d8f-55a1
+                    shared: true
+constraints:
+  - id: 2219-e188-6363-1d51
+    type: minimum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+id: 5b31-21ba-9d8f-55a1
+name: '**Chapter Selector**'

@@ -1,0 +1,100 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 2989-de84-704a-42a4
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: Add 1 to the Strength, Toughness and Wounds characteristic of this WARLORD.
+        id: dbe7-90c0-5b9e-3beb
+        name: Prime Test Subject
+    id: a5d8-53a5-5bd4-bb89
+    name: 3.-4. Prime Test Subject
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 2da7-cda9-8a11-ce66
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: "Once per battle, when this WARLORD is destroyed, you can choose for them to regenerate instead of using any other rules that are triggered when this WARLORD is destroyed. If you do so, mark the WARLORD's position then remove this WARLORD from the battlefield. At the end of the phase, roll one D6: on a 2+, set this WARLORD back up on the battlefield as close as possible to the position you marked and not within Engagement Range of any enemy units, with D3 wounds remaining."
+        id: 88a1-7487-9faa-2238
+        name: Twisted Regeneration
+    id: d608-10b8-4a86-afdb
+    name: 5.-6. Twisted Regeneration
+entryLinks:
+  - targetId: faa1-86f6-ef0f-43ec
+    type: selectionEntry
+    exported: true
+    id: 8581-92cf-7d2f-93d3
+    name: 1-2. Surgical Precision
+constraints:
+  - id: f681-4126-f6f4-ff6b
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 7949-debe-5d52-e5cc
+name: Warlord Traits (Creations of Bile)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 8f74-81f3-7093-69e4
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: 2eb6-087d-4893-3167
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: 88b1-c697-e840-2850
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true

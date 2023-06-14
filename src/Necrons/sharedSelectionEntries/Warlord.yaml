@@ -1,0 +1,65 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ae09-117e-a6fa-316b
+    id: 7c15-601c-c7c2-fd52
+    name: Warlord
+constraints:
+  - id: 4917-89ce-cb2d-0349
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 559d-3aa3-2f14-9b9c
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 8056-ce75-9ad4-f269
+name: Warlord
+publicationId: 28ec-711c-pubN72690
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: d928-0c8c-e94a-da67
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 3.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: 551a-4ae2-77ec-3f08
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: 41af-75ce-79d2-ddff
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

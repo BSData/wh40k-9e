@@ -1,0 +1,314 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 90.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: ebe6-4251-0920-162f
+    name: 'Faction: Imperium'
+  - targetId: c7b7-edbc-bc14-6238
+    id: 258a-5cfb-406e-2f5d
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 4bc8-f25c-c7ca-5b6b
+    id: 76fe-a2cd-fef1-3a07
+    name: White Scars
+  - targetId: ef18-746a-369f-43a4
+    id: b22a-e28f-da27-b98a
+    name: Character
+  - targetId: 8352-7f67-7e2b-3b4f
+    id: 9146-1311-17e7-55a6
+    name: Captain
+  - targetId: d5ca-2a13-4e72-72ba
+    id: 688f-e1be-129d-e266
+    name: Kor'sarro Khan
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 2445-ba9a-0405-635b
+    name: Infantry
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: 1dd2-a990-f939-c584
+    name: Primaris
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: f6b3-34da-7873-4256
+    name: New CategoryLink
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 7310-eb45-51da-486b
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 12ab-3079-3407-e948
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +2
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: D3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: When resolving an attack made with this weapon against a CHARACTER unit, you can re-roll the wound roll and you can re-roll the damage roll.
+        id: 797b-e81c-fba6-d5fb
+        name: Moonfang
+    id: e637-0b69-07c3-9940
+    name: Moonfang
+entryLinks:
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d375-0457-8bff-9a4a
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: b701-855e-8f7b-a6c3
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: d7fa-4a5d-8314-4a62
+    name: Frag & Krak grenades
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: 4b7e-7d57-8161-0aa7
+    name: Warlord
+  - targetId: 2e58-768d-0861-c3fe
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5d5d-57b2-67c4-3896
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 313d-4eb3-14d0-ebdd
+    name: Trophy Taker
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: b9c6-4c9f-9b89-0ea4
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 5d5d-57b2-67c4-3896
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: b9c6-4c9f-9b89-0ea4
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 4851-9350-3633-9adc
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 37ea-2366-660d-c960
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: e77a-cc54-efcf-a09a
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: set
+        field: 4851-9350-3633-9adc
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: b9c6-4c9f-9b89-0ea4
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+constraints:
+  - id: 63b1-a6f1-b01c-8c39
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 804f-7184-16a3-bcdb
+    name: Kor'sarro Khan
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'Add 1 to wound rolls for attacks made with melee weapons by models in friendly WHITE SCARS units that have made a charge move or performed a Heroic Intervention this turn whilst their unit is within 6" of this model. '
+    id: 7de0-07d6-c927-e18c
+    name: For the Khan!
+infoLinks:
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: 5692-a0ae-ce80-1eb4
+    name: Rites of Battle
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: b29d-87e0-e1c4-d03e
+    name: Iron Halo
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: d4f6-9ca7-53b1-2338
+    name: Angels of Death
+id: b9c6-4c9f-9b89-0ea4
+name: Kor'sarro Khan [Legends]
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: b1ad-e5a6-9dd8-59d6
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: c47c-a3e1-c91e-436a
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

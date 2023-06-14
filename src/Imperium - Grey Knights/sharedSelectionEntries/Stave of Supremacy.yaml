@@ -1,0 +1,69 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 68c2-e0c4-a371-fc61
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 2d48-8b71-b9c5-bc79
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Model with a Nemesis warding stave only. When a Psychic test is taken for an enemy model within 18" of a model with this Relic, that enemy model suffers Perils of the Warp on any roll of a double.
+    id: 2198-254e-b88d-4c0a
+    name: Stave of Supremacy
+id: 49bb-0fa0-57ba-9a8b
+name: Stave of Supremacy
+publicationId: 5c2d-db9f-58ca-e7b2
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 0abf-b3fb-43c9-08d2
+            field: selections
+            scope: parent
+            shared: true
+          - type: instanceOf
+            childId: e15c-3096-8468-aa26
+            field: selections
+            scope: parent
+            shared: true
+          - type: instanceOf
+            childId: 0db5-e1aa-6692-1f98
+            field: selections
+            scope: parent
+            shared: true
+          - type: instanceOf
+            childId: 9790-e0f9-5343-81bc
+            field: selections
+            scope: parent
+            shared: true
+          - type: equalTo
+            childId: 9dc6-e559-0099-005a
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true

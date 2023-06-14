@@ -1,0 +1,173 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: ae7c-0b9f-917e-3bdf
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: 0
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: When resolving an attack made with this weapon, an unmodified wound roll of 4+ inflicts 1 mortal wound on the target in addition to any other damage.
+        id: 8bb4-9cee-824b-3ce7
+        name: Ul'o'cca, The Black Axe
+    rules:
+      - description: In the Fight phase, when this model is chosen to fight with for the first time that phase, roll one D6. On a 1, the model suffers 1 mortal wound and cannot use this weapon further that phase. On a 2+ the model can fight with the weapon as normal.
+        id: 5898-072b-6a27-2692
+        name: Daemon Weapon
+    id: 3f77-4d46-685c-b85c
+    name: Ul'o'cca, The Black Axe
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 4a0e-0f13-63c2-9aae
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+entryLinks:
+  - targetId: 11ab-470e-d46c-340c
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0cf5-63bd-c8c9-83a1
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: ec7b-2633-b684-4dec
+    name: Caliban Steel Blade
+  - targetId: 93d0-7e4b-6d5c-64b2
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 689f-e311-611e-e4ef
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: 30bf-8c2c-d39d-b30d
+    name: The Black Mace
+  - targetId: bce2-bf42-efc2-27d0
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1a2f-78f4-a5c8-3bae
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: e7a1-9014-9550-b013
+    name: The Murder Sword
+constraints:
+  - id: dadc-814c-8db4-b722
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 4bb1-357e-0bdf-26e1
+    type: maximum
+    field: selections
+    scope: roster
+    shared: true
+    includeChildSelections: true
+id: db42-fef2-6351-be64
+name: Artefacts of Chaos
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: c821-2625-b5eb-5ae4
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 1026-b9a8-7310-7c21
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+  - type: increment
+    field: 4bb1-357e-0bdf-26e1
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: ae09-117e-a6fa-316b
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 4bb1-357e-0bdf-26e1
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: c821-2625-b5eb-5ae4
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 4bb1-357e-0bdf-26e1
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 1026-b9a8-7310-7c21
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

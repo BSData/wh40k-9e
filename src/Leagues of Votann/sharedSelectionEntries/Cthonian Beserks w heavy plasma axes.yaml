@@ -1,0 +1,246 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    primary: true
+    id: 7862-bfa3-611f-2ae5
+    name: New CategoryLink
+  - targetId: d6df-3d52-c2ca-4ee6
+    id: 21d1-2fbe-4d4a-fc18
+    name: 'Faction: Votann'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 3daf-5799-90a0-d61f
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: 7a35-4a47-695e-73c2
+    name: Core
+  - targetId: 8346-281a-442d-3bb1
+    id: dd54-f080-8347-73c2
+    name: Berserks
+selectionEntryGroups:
+  - defaultSelectionEntryId: 35cd-7260-7124-d850
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 33.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntries:
+          - type: upgrade
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+              - name: pts
+                typeId: points
+            collective: true
+            exported: true
+            constraints:
+              - id: 69fc-0f4f-eaf1-8636
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: bc8b-5206-e33f-ceb6
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            infoLinks:
+              - targetId: 1070-d550-8070-5c72
+                type: infoGroup
+                id: 4280-55af-e37f-7521
+                name: Heavy plasma axe
+            id: 5dbe-e20c-efd6-27f4
+            name: Heavy plasma axe
+        infoLinks:
+          - targetId: 456a-d502-462c-9aad
+            type: profile
+            id: d318-bf2e-e600-3878
+            name: Berserk
+        id: 35cd-7260-7124-d850
+        name: Beserk
+    entryLinks:
+      - targetId: 5d8c-be37-43c7-6fb3
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: f28d-bcac-b642-97a5
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: a25b-5a9f-4cea-a9b5
+        name: Berserk w/ twin concussion gauntlet
+        modifiers:
+          - type: decrement
+            field: f28d-bcac-b642-97a5
+            value: 1.0
+            conditions:
+              - type: lessThan
+                childId: model
+                field: selections
+                scope: 5ebf-6a23-41fa-e353
+                value: 10.0
+                shared: true
+      - targetId: fda8-e345-665d-6415
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 94dd-3b76-79e5-c2b8
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+            shared: true
+        id: 6b0e-d6e5-b999-112c
+        name: Berserk with mole grenade launcher
+        modifiers:
+          - type: decrement
+            field: 94dd-3b76-79e5-c2b8
+            value: 1.0
+            conditions:
+              - type: lessThan
+                childId: model
+                field: selections
+                scope: 5ebf-6a23-41fa-e353
+                value: 10.0
+                shared: true
+    constraints:
+      - id: c925-f33b-2487-adec
+        type: minimum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+      - id: 62ad-8785-d10e-4535
+        type: maximum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+    id: a12f-c7e0-3dc8-44c2
+    name: 5 - 10 Beserks
+infoLinks:
+  - targetId: 639f-3242-2aff-6d3d
+    type: infoGroup
+    id: 5159-60ee-151e-bce9
+    name: Shared Rules
+  - targetId: 5eb8-7d71-b198-b3ff
+    type: profile
+    id: 90d6-3e17-4ee0-d923
+    name: Augmented
+  - targetId: 23f9-ff63-dcc1-f91d
+    type: profile
+    id: 9229-7bda-03e8-74ed
+    name: Cyberstimms
+id: 5ebf-6a23-41fa-e353
+name: Cthonian Beserks w/ heavy plasma axes
+modifiers:
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 10.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 5ebf-6a23-41fa-e353
+        value: 5.0
+        shared: true
+  - type: add
+    field: category
+    value: 24bf-8f6b-1388-9456
+    conditions:
+      - type: atLeast
+        childId: fda8-e345-665d-6415
+        field: selections
+        scope: 5ebf-6a23-41fa-e353
+        value: 1.0
+        shared: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 8302-e3ed-4a77-6919
+        conditions:
+          - type: equalTo
+            childId: f14f-b5b7-e683-4a2d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5c58-cce2-32c5-540d
+        conditions:
+          - type: equalTo
+            childId: b46a-6e31-2df9-bfe3
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 9f31-4812-5041-10aa
+        conditions:
+          - type: equalTo
+            childId: 4263-acb0-ccf7-67ec
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 3574-371b-d06b-2e18
+        conditions:
+          - type: equalTo
+            childId: 2ad3-c319-de13-42a9
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 5092-2bb1-b294-479c
+        conditions:
+          - type: equalTo
+            childId: b1ea-25da-7a52-8057
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: a76d-e840-3522-199a
+        conditions:
+          - type: equalTo
+            childId: 8757-2a3f-0cba-6319
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    comment: League keywords

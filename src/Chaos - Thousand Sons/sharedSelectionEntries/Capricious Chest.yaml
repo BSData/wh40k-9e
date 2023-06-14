@@ -1,0 +1,62 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' Cabal Points'
+    typeId: 6a06-928d-a42e-4293
+exported: true
+constraints:
+  - id: fb14-133e-a75e-3883
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: 251f-0f48-d72c-aaa6
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: "Once per battle round, when a Psychic test is taken for a model within 18\" of the bearer, after any re-rolls have been made, you can change the result of that Psychic test as follows: if that model is from your army, you can change any dice result of 1 to a roll of 6; if that model is from your opponent's army, you can change any dice result of 6 to a roll of 1."
+    id: 6ffc-8e31-bd0a-a834
+    name: Capricious Chest
+id: 465c-6d69-0795-6a99
+name: Capricious Chest
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: ca13-bc15-572d-4300
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 3a56-9f27-ad00-d97b
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ed5e-9843-6dd4-0ac1
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true

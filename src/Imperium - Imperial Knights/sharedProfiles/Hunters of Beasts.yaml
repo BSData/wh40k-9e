@@ -1,0 +1,42 @@
+typeId: dfe7-9b0a-ece9-9141
+typeName: Household Tradition
+characteristics:
+  - name: Description
+    typeId: 9271-9853-fe95-0c04
+    value: >-
+      - Each time a model with this Martial Tradition makes an attack against a MONSTER or VEHICLE unit, add 1 to that attack's hit roll.
+
+      - Each time an attack made by a model with this Martial Tradition is allocated to a TITANIC model, add 1 to that attack's Damage characteristic.
+
+      - If you have sworn the Lay Low the Tyrants Oath and one or more models with this Martial Tradition destroy a MONSTER or VEHICLE model during a battle round, then at the end of that battle round, you gain 2 Honour points from that Oath's Pledge, instead of 1.
+id: cdb4-9343-c6cc-9b24
+name: Hunters of Beasts
+publicationId: 82cd-d24f-pubN65537
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: model
+            field: selections
+            scope: force
+            value: 3.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: instanceOf
+            childId: 224b-1070-218f-fdf4
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: atLeast
+            childId: dfcb-7e82-5b5e-e379
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

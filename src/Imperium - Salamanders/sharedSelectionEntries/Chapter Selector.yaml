@@ -1,0 +1,190 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: 0704-95d8-ed39-cb46
+    id: ed2d-4bca-cfa2-b1d8
+    name: 'PC: SA'
+selectionEntryGroups:
+  - defaultSelectionEntryId: 91a5-4f66-56be-1952
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        rules:
+          - description: >2-
+               - Each time a unit with this tactic is selected to shoot or fight, you can re-roll one wound roll when resolving that unit’s attacks.
+               - Each time an attack with an Armour Penetration characteristic of -1 is allocated to a model with this tactic, that attack has an Armour Penetration characteristic of 0 instead.
+            id: b2b9-0531-970b-66a7
+            name: Forged in Battle
+            modifiers:
+              - type: set
+                field: hidden
+                value: true
+                conditions:
+                  - type: atLeast
+                    childId: fff5-0cb2-3255-5678
+                    field: selections
+                    scope: force
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+        id: 91a5-4f66-56be-1952
+        name: Salamanders
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 802a-2241-094c-a274
+            id: f11e-d38b-f4c8-8ee0
+            name: 'PC: SA Successor'
+        id: 462e-fbd8-fa11-d911
+        name: Salamanders Successor
+    constraints:
+      - id: a814-66e7-353f-5b7c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: e181-6d23-0289-ed17
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 96fd-b796-62a6-36ff
+    name: Chapter
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: a10e-2738-3936-1492
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 6420-fffa-c4bc-ee0d
+        name: Custom Chapter
+    entryLinks:
+      - targetId: 3700-470e-f75d-6cba
+        type: selectionEntryGroup
+        exported: true
+        id: bc9b-6fa9-38e0-643a
+        name: Forge World Chapters
+    constraints:
+      - id: 5892-fd03-8610-3883
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 0f94-61a4-4db2-3f60
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: f31e-3862-c1b3-b27a
+    name: Successor Chapters
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 462e-fbd8-fa11-d911
+            field: selections
+            scope: 60c9-eea4-0f26-baee
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 0f94-61a4-4db2-3f60
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 462e-fbd8-fa11-d911
+            field: selections
+            scope: 60c9-eea4-0f26-baee
+            value: 1.0
+            shared: true
+entryLinks:
+  - targetId: a7a4-4d2d-81c8-5bd1
+    type: selectionEntryGroup
+    exported: true
+    id: d58d-7ed5-967a-bbaa
+    name: Tactics
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6420-fffa-c4bc-ee0d
+                field: selections
+                scope: 60c9-eea4-0f26-baee
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 3700-470e-f75d-6cba
+                field: selections
+                scope: 60c9-eea4-0f26-baee
+                shared: true
+                includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: fff5-0cb2-3255-5678
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+constraints:
+  - id: a179-052d-1dd7-5b94
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 8112-9244-d801-442d
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 60c9-eea4-0f26-baee
+name: '**Chapter Selector**'

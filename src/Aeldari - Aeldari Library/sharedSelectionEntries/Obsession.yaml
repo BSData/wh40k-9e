@@ -1,0 +1,50 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    primary: true
+    id: 3a61-700d-452b-b0b3
+    name: New CategoryLink
+  - targetId: 955e-536a-e290-5dcf
+    id: 38a7-714c-d604-c1a9
+    name: 'Faction: Drukhari'
+entryLinks:
+  - targetId: 6d53-0ef2-f778-f2e8
+    type: selectionEntryGroup
+    exported: true
+    id: 3e5c-7e1d-943a-75d8
+    name: Detachment Type
+constraints:
+  - id: b3d5-201d-8078-7600
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+  - id: 7674-2581-161a-8aff
+    type: minimum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+id: 3663-e78f-7417-5296
+name: Obsession
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: 5af8-e7c8-e3bf-6d52
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

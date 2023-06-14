@@ -1,0 +1,141 @@
+exported: true
+entryLinks:
+  - targetId: edd9-59c0-8f74-3b36
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 84df-4eb6-d13e-dc77
+        type: maximum
+        field: selections
+        scope: parent
+        value: -1.0
+        shared: true
+    id: df7d-bf04-efac-d687
+    name: Librarius Discipline
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 5b58-36bd-930c-e8be
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: greaterThan
+                childId: 6adc-2a3e-740e-ed8c
+                field: selections
+                scope: parent
+                shared: true
+      - type: set
+        field: 84df-4eb6-d13e-dc77
+        value: 0.0
+        conditions:
+          - type: greaterThan
+            childId: 6adc-2a3e-740e-ed8c
+            field: selections
+            scope: parent
+            shared: true
+  - targetId: 6adc-2a3e-740e-ed8c
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 271e-9899-6337-23c2
+        type: maximum
+        field: selections
+        scope: parent
+        value: -1.0
+        shared: true
+    id: d2a6-7034-e1b7-bbe4
+    name: Xenopurge Discipline
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: edd9-59c0-8f74-3b36
+            field: selections
+            scope: parent
+            shared: true
+      - type: set
+        field: 271e-9899-6337-23c2
+        value: 0.0
+        conditions:
+          - type: greaterThan
+            childId: edd9-59c0-8f74-3b36
+            field: selections
+            scope: parent
+            shared: true
+  - targetId: c3ab-8b2c-2039-6f5a
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 19b1-e810-86fb-1da2
+        type: maximum
+        field: selections
+        scope: parent
+        value: -1.0
+        shared: true
+    id: 1b0e-bb7e-f532-b9b2
+    name: Obscuration Discipline
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: notInstanceOf
+                childId: 5b58-36bd-930c-e8be
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: greaterThan
+                childId: 6adc-2a3e-740e-ed8c
+                field: selections
+                scope: parent
+                shared: true
+      - type: set
+        field: 19b1-e810-86fb-1da2
+        value: 0.0
+        conditions:
+          - type: greaterThan
+            childId: 6adc-2a3e-740e-ed8c
+            field: selections
+            scope: parent
+            shared: true
+constraints:
+  - id: c4c9-7814-6064-584a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 2.0
+    shared: true
+id: 6fd3-f64a-15ea-1033
+name: Disciplines
+modifiers:
+  - type: increment
+    field: c4c9-7814-6064-584a
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: 29c0-3526-09e2-09ea
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: c4c9-7814-6064-584a
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: b1ec-173e-7346-6d6f
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

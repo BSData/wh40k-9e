@@ -1,0 +1,146 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 16.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+exported: true
+categoryLinks:
+  - targetId: 3d52-fccf-10c0-3fae
+    id: db7c-d383-28a3-3c7a
+    name: New CategoryLink
+  - targetId: ddbc-68f0-64a4-9d04
+    id: f5fe-28e6-a38e-1627
+    name: New CategoryLink
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    id: ec9f-6d42-418e-787e
+    name: New CategoryLink
+  - targetId: 105d-2b08-1dc3-2f69
+    id: 53f0-f56a-c98a-f44c
+    name: 'Faction: <Kabal>'
+  - targetId: 08f1-d244-eb44-7e01
+    id: 02ac-b82c-7545-15ef
+    name: Core
+  - targetId: 955e-536a-e290-5dcf
+    id: cef0-9503-cb74-7b37
+    name: 'Faction: Drukhari'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: afc8-ad80-3e34-579f
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 054c-f112-6e01-cc7d
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: 0
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Poisoned Weapon (2+) (pg 89). Each time an attack is made with this weapon, if the target is not a VEHICLE unit, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.
+        id: 956a-9920-48b6-72e7
+        name: Shaimeshi blade
+    id: 2432-6582-28a4-f621
+    name: Shaimeshi blade
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 3
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 2
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 5+
+    id: 39d0-0e24-4803-82be
+    name: Lhamean
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly <KABAL> ARCHON or <KABAL> KABALITE TRUEBORN unit is within 3" of this unit, if this unit contains any LHAMAEAN models, each time a model in that <KABAL ARCHON or <KABAL> KABALITE TRUEBORN units makes an attack with a poisoned weapon (pg 89) an unmodified hit roll of 6 automatically wounds the target.
+    id: cfd9-3046-ce6a-6eb9
+    name: Toxin Crafter (Aura)
+infoLinks:
+  - targetId: 5145-3061-a066-4c5c
+    type: rule
+    id: 339c-5694-68a0-b840
+    name: Blade Artists
+  - targetId: e6c3-8502-de0a-9515
+    type: rule
+    id: b990-f9ce-4698-5da1
+    name: Power From Pain
+id: 510d-bf5b-e8e9-e11e
+name: Lhamean
+modifierGroups:
+  - modifiers:
+      - type: remove
+        field: category
+        value: 105d-2b08-1dc3-2f69
+      - type: add
+        field: category
+        value: ebb3-4f37-6e57-7a8e
+    conditions:
+      - type: equalTo
+        childId: 5af8-e7c8-e3bf-6d52
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

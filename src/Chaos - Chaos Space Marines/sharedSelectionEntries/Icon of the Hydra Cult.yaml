@@ -1,0 +1,53 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 37d0-917f-f31b-1b2d
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 9ad0-3453-5e57-f04a
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly ALPHA LEGION CULTISTS unit is within 6" of the bearer, each time a ranged attack targets that unit, if the attacker is more than 12" away, the target is treated as having the benefits of Dense Cover against that attack.
+    id: 5308-522d-4ce7-c7ae
+    name: Icon of the Hydra Cult (Aura)
+id: 530b-5ffc-ad50-53a3
+name: Icon of the Hydra Cult
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 1e3f-0a7b-0c8f-84db
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 6dba-99ea-aa7d-40a5
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

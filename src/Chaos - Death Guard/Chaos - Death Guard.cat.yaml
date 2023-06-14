@@ -1,0 +1,716 @@
+gamesystemId: 28ec-711c-d87f-3aeb
+gamesystemRevision: 249
+catalogueLinks:
+  - id: 769d-751a-9765-b4da
+    name: Chaos - FW Heretic Astartes
+    targetId: 2128-f196-8f1c-b352
+    type: catalogue
+    importRootEntries: true
+  - id: 73a6-1caf-165d-b89a
+    name: Chaos - Gellerpox Infected
+    targetId: 7fe3-1c65-72de-bc5d
+    type: catalogue
+    importRootEntries: true
+id: ce57-cc1c-37cb-cb71
+name: Chaos - Death Guard
+revision: 159
+battleScribeVersion: 2.03
+authorName: BSData Developers
+authorContact: '@Mad_Spy'
+authorUrl: https://www.bsdata.net/contact
+publications:
+  - id: ce57-cc1c-pubN85391
+    name: 'Index: Chaos FAQ'
+  - id: ce57-cc1c-pubN108736
+    name: 'Codex: Heretic Astartes - Death Guard'
+    publicationDate: 23/01/2021
+profileTypes:
+  - id: df7f-89aa-8f5b-9d81
+    name: Gift of Contagion table
+    characteristicTypes:
+      - id: cd06-e404-83c7-28c2
+        name: D3 Roll
+      - id: 04da-4341-1718-541a
+        name: Effect
+  - id: 6c48-3f8e-adc6-e417
+    name: Mutated Beyond Reason
+    characteristicTypes:
+      - id: be9e-2b06-438b-d717
+        name: Effect
+  - id: 9a96-fd5d-0c94-697c
+    name: WLT Reference
+    characteristicTypes:
+      - id: 9f03-a05e-6892-f24c
+        name: Description
+categoryEntries:
+  - id: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    name: HQ
+  - id: 638d74c6-bd97-4de5-b65a-6aaa24e9f4b2
+    name: Elites
+  - id: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    name: Troops
+  - id: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    name: Heavy Support
+  - id: c274d0b0-5866-44bc-9810-91c136ae7438
+    name: Fast Attack
+  - id: c888f08a-6cea-4a01-8126-d374a9231554
+    name: Lord of War
+  - id: d713cda3-5d0f-40d8-b621-69233263ec2a
+    name: Fortification
+  - id: ca10-a5dd-f54f-0ed5
+    name: 'Faction: Heretic Astartes'
+  - id: 0fb6-fcaf-b180-5dda
+    name: 'Faction: Nurgle'
+  - id: 8308-6393-0ce1-4bf9
+    name: 'Faction: Death Guard'
+  - id: 0bc5-6451-5612-4a25
+    name: Daemon
+  - id: c35d-97e7-5b2a-0a70
+    name: Daemon Engine
+  - id: eb55-bd6b-3e75-d505
+    name: Chaos Lord
+  - id: 36b8-cf23-7648-ece9
+    name: Terminator
+  - id: ab84-97e0-111c-9ff0
+    name: Plaguebearer
+  - id: ce71-91a7-35a9-2d68
+    name: Lord of Contagion
+  - id: 7b13-7a9e-19f8-a78a
+    name: Nurglings
+  - id: 198b-9ec3-8ecd-121d
+    name: Malignant Plaguecaster
+  - id: cedd-5c01-92d2-32e5
+    name: Typhus
+  - constraints:
+      - id: 9bdc-c75e-4a9d-1a5b
+        type: maximum
+        field: selections
+        scope: force
+        value: -1.0
+        shared: true
+        includeChildSelections: true
+    id: be6b-26d4-4727-3683
+    name: Daemon Prince
+    modifiers:
+      - type: set
+        field: 9bdc-c75e-4a9d-1a5b
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: c702-d73b-dccf-5617
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 9bdc-c75e-4a9d-1a5b
+        value: 1.0
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: cbd4-34fb-6ba6-9593
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: lessThan
+                childId: 7f7e-77a5-418a-3e27
+                field: selections
+                scope: force
+                value: 2.0
+                shared: true
+                includeChildSelections: true
+  - id: fa81-3af3-dfd0-208b
+    name: Sorcerer
+  - id: a50f-7a19-7624-5793
+    name: Plague Marines
+  - constraints:
+      - id: f017-beaf-1a78-1ff5
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+    id: 7c95-4704-2fe5-93bc
+    name: Cultists
+    modifiers:
+      - type: increment
+        field: f017-beaf-1a78-1ff5
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: a50f-7a19-7624-5793
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+      - type: decrement
+        field: f017-beaf-1a78-1ff5
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 6676-37bc-5ed8-c56d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+      - type: set
+        field: f017-beaf-1a78-1ff5
+        value: -1.0
+        conditions:
+          - type: notInstanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+  - constraints:
+      - id: 3494-d583-8902-f201
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+    id: 6676-37bc-5ed8-c56d
+    name: Poxwalkers
+    modifiers:
+      - type: increment
+        field: 3494-d583-8902-f201
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 1e74-2c48-7179-152e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: 2110-97af-25b6-2eb8
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: a50f-7a19-7624-5793
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: acd7-5577-5a74-bfef
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: decrement
+        field: 3494-d583-8902-f201
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 7c95-4704-2fe5-93bc
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+  - id: 6f8e-4937-f16f-d32b
+    name: Mortarion's Anvil Warlord
+  - id: af22-997e-da42-e651
+    name: Foul Blightspawn
+  - id: ecd7-299f-e997-1548
+    name: Biologus Putrifier
+  - id: 8d6d-3d6a-dcc9-5731
+    name: Plague Surgeon
+  - id: e936-731d-fadb-a113
+    name: Tallyman
+  - id: 2110-97af-25b6-2eb8
+    name: Deathshroud Terminators
+  - id: 1e74-2c48-7179-152e
+    name: Blightlord Terminators
+  - id: 5356-a75a-02b3-49e3
+    name: Helbrute
+  - id: 1d9c-2ef0-0695-e179
+    name: Beasts of Nurgle
+  - id: acd7-5577-5a74-bfef
+    name: Death Guard Possessed
+  - id: 0472-13fb-7016-2059
+    name: Foetid Bloat-drone
+  - id: 0053-39d8-9506-8bc8
+    name: Myphitic Blight-haulers
+  - id: 8a15-9612-41c6-2e02
+    name: Chaos Spawn
+  - id: 4baf-bddb-d1d6-e66d
+    name: Plague Drones
+  - id: d86f-a7f9-e09a-3ab3
+    name: Chaos Land Raider
+  - id: b865-e6f2-4c59-ccb8
+    name: Plagueburst Crawler
+  - id: 5dbc-e607-0dce-b9f0
+    name: Defiler
+  - id: ce96-2f80-a7fa-5630
+    name: Chaos Predator Destructor
+  - id: 7627-d7ef-6d16-fc76
+    name: Chaos Rhino
+  - id: c940-6653-e034-772f
+    name: Mortarion
+  - id: 64dd-ed25-1d34-3096
+    name: 'Faction: The Tainted'
+  - id: ca3a-6923-9579-044f
+    name: Necrosius the Undying
+  - id: 1e29-8701-54ab-015d
+    name: 'Faction: Daemon'
+  - id: b39a-8668-621b-7131
+    name: 'Faction: Ferrymen'
+  - id: 231f-9884-9e9f-3e82
+    name: 'Faction: Harbingers'
+  - id: bdd0-0284-738c-045a
+    name: 'Faction: Wretched'
+  - id: aace-672a-1ca5-8b32
+    name: "Faction: Mortarion's Anvil"
+  - id: 0029-e3a8-0e30-cd7e
+    name: 'Faction: Poxmongers'
+  - id: 72ca-1f26-76c1-f988
+    name: 'Faction: Inexorable'
+  - id: f412-6209-fbf8-b1ff
+    name: "Faction: Mortarion's Chosen Sons"
+  - id: 78d7-056c-2a1f-920a
+    name: Harbingers Warlord
+  - id: 2284-5a29-a37d-bd24
+    name: Inexorable Warlord
+  - id: fe96-174b-3ed6-e2de
+    name: Poxmongers Warlord
+  - id: 378d-0ba5-499f-387c
+    name: Ferrymen Warlord
+  - id: 5fe1-af13-22d4-5d53
+    name: Mortarion's Chosen Sons Warlord
+  - id: 456b-56e1-cbcc-2534
+    name: Wretched Warlord
+  - id: 9717-89c8-8410-9045
+    name: Mortarion Warlord
+  - id: 3b65-6758-7de1-7351
+    name: Bubonic Astartes
+  - constraints:
+      - id: 29c9-d03d-9d2a-3c02
+        type: maximum
+        field: selections
+        scope: force
+        value: -1.0
+        shared: true
+        includeChildSelections: true
+    id: 7f7e-77a5-418a-3e27
+    name: Lord of the Death Guard
+    modifiers:
+      - type: set
+        field: 29c9-d03d-9d2a-3c02
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: c702-d73b-dccf-5617
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 29c9-d03d-9d2a-3c02
+        value: 1.0
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: cbd4-34fb-6ba6-9593
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - type: lessThan
+                childId: be6b-26d4-4727-3683
+                field: selections
+                scope: force
+                value: 2.0
+                shared: true
+                includeChildSelections: true
+  - id: 28ec-3541-9e3c-1c33
+    name: Lord of Virulence
+  - constraints:
+      - id: 13bb-4427-bd73-c14e
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+    id: 0312-2f4d-f840-5084
+    name: Plague Followers
+    modifiers:
+      - type: increment
+        field: 13bb-4427-bd73-c14e
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 1e74-2c48-7179-152e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: increment
+        field: 13bb-4427-bd73-c14e
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: a50f-7a19-7624-5793
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: increment
+        field: 13bb-4427-bd73-c14e
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: acd7-5577-5a74-bfef
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: increment
+        field: 13bb-4427-bd73-c14e
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: 2110-97af-25b6-2eb8
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - id: deec-19f6-0353-ee41
+    name: Foetid Virion
+  - id: b146-12cc-0a5b-7414
+    name: Chaos Predator Annihilator
+  - id: 1252-1e86-5e53-08b0
+    name: Machine Spirit
+  - id: 6b1e-ac4b-c156-b098
+    name: Miasmic Malignifier
+  - id: 2c3e-e4f0-1c6b-de04
+    name: Pox Furnace
+  - constraints:
+      - id: 6361-4715-fc23-77b0
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: df25-6e88-d1d9-c774
+    name: Foetid Virion
+    modifiers:
+      - type: increment
+        field: 6361-4715-fc23-77b0
+        value: 1.0
+        repeats:
+          - repeatCount: 2
+            childId: deec-19f6-0353-ee41
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: This Category is intended for use with the NFO entry to support the Foetid Virion rule.
+  - constraints:
+      - id: b1c6-bb6d-7a34-b2de
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 9eaf-7664-51a9-c877
+    name: Biologus Putrifier
+    modifiers:
+      - type: increment
+        field: b1c6-bb6d-7a34-b2de
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: af22-997e-da42-e651
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: 8d6d-3d6a-dcc9-5731
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: e936-731d-fadb-a113
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: ea7c-ee17-a198-eed0
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: This Category is intended for use with the NFO entry to support the Foetid Virion rule.
+  - constraints:
+      - id: a4c8-6004-ba41-f323
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 9133-0663-d0b1-ce8d
+    name: Foul Blightspawn
+    modifiers:
+      - type: increment
+        field: a4c8-6004-ba41-f323
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: ecd7-299f-e997-1548
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: ea7c-ee17-a198-eed0
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: 8d6d-3d6a-dcc9-5731
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: e936-731d-fadb-a113
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: This Category is intended for use with the NFO entry to support the Foetid Virion rule.
+  - constraints:
+      - id: aeab-3260-338b-9f16
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 56ed-a461-038f-3e12
+    name: Noxious Blightbringer
+    modifiers:
+      - type: increment
+        field: aeab-3260-338b-9f16
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: af22-997e-da42-e651
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: ecd7-299f-e997-1548
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: 8d6d-3d6a-dcc9-5731
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: e936-731d-fadb-a113
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: This Category is intended for use with the NFO entry to support the Foetid Virion rule.
+  - constraints:
+      - id: eafd-74fd-04b5-d7b9
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: a49a-f331-2aa8-8f9c
+    name: Plague Surgeon
+    modifiers:
+      - type: increment
+        field: eafd-74fd-04b5-d7b9
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: af22-997e-da42-e651
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: ecd7-299f-e997-1548
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: e936-731d-fadb-a113
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: ea7c-ee17-a198-eed0
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: This Category is intended for use with the NFO entry to support the Foetid Virion rule.
+  - constraints:
+      - id: 3d05-aec4-374a-ccd3
+        type: maximum
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: d4c3-68d5-9e0a-ccad
+    name: Tallyman
+    modifiers:
+      - type: increment
+        field: 3d05-aec4-374a-ccd3
+        value: 1.0
+        repeats:
+          - repeatCount: 1
+            childId: af22-997e-da42-e651
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: 8d6d-3d6a-dcc9-5731
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: ecd7-299f-e997-1548
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - repeatCount: 1
+            childId: ea7c-ee17-a198-eed0
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+    comment: This Category is intended for use with the NFO entry to support the Foetid Virion rule.
+  - id: ea7c-ee17-a198-eed0
+    name: Noxious Blightbringer
+  - id: 5cc5-395b-89bd-1876
+    name: Terminus Est Assault Force
+  - id: bcb9-307e-18fd-63ec
+    name: Terminus Est Warlord
+selectionEntries:
+  $ref: ./selectionEntries/*.yaml
+entryLinks:
+  $ref: ./entryLinks/*.yaml
+rules:
+  $ref: ./rules/*.yaml
+sharedSelectionEntries:
+  $ref: ./sharedSelectionEntries/*.yaml
+sharedSelectionEntryGroups:
+  $ref: ./sharedSelectionEntryGroups/*.yaml
+sharedRules:
+  $ref: ./sharedRules/*.yaml
+sharedProfiles:
+  $ref: ./sharedProfiles/*.yaml
+sharedInfoGroups:
+  $ref: ./sharedInfoGroups/*.yaml

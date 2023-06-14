@@ -1,0 +1,73 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 2cc1-2d7b-61f2-1d78
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 5e99-d115-63d3-7cc6
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 9"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Grenade 1
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: '*'
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: '*'
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: '*'
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: >-
+          The bearer can only shoot this weapon once per battle, and hit rolls made with this weapon can never generate additional hits (e.g. if the bearer is engaged in Wanton Destruction). When an attack is made with this weapon, if a hit is scored:
+
+          - The target unit suffers D3 mortal wounds and the attack sequence ends. If the target unit contains 11 or more models or if the bearer is engaged in Wanton Destruction, the target units suffers D3+3 mortal wounds and the attack sequence ends.
+
+          - Until the end of the battle, subtract 1 from the Toughness characteristic of models in the target unit.
+    id: 2b5a-c037-c89a-e571
+    name: Orb of Unlife
+id: 723a-f7bd-4726-e8c6
+name: Orb of Unlife
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 0fb6-fcaf-b180-5dda
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 0fb6-fcaf-b180-5dda
+            field: selections
+            scope: ancestor
+            shared: true

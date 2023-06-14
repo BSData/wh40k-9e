@@ -1,0 +1,51 @@
+targetId: 38e7-f3a9-b20a-90d3
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: 1e5d-f797-ba75-50b0
+    name: No Force Org Slot
+constraints:
+  - id: 72ec-a0e9-ee9a-43d2
+    type: maximum
+    field: selections
+    scope: force
+    includeChildSelections: true
+    includeChildForces: true
+id: d25d-7223-8620-3717
+name: Kroot Shaper
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: fa7c-f59e-0645-9dfb
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 1607-ad22-6a83-9cd2
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: increment
+    field: 72ec-a0e9-ee9a-43d2
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 1607-ad22-6a83-9cd2
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

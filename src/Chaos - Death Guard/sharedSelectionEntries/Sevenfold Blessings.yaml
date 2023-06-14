@@ -1,0 +1,50 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 6cf2-492a-54aa-8425
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 1d0e-1d2b-ba55-da85
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          Use this Stratagem before the battle, when you are mustering your army. Select one WRETCHED PSYKER model from your army.
+
+          - That model knows one additional psychic power from their chosen discipline.
+
+          - Once per Psychic phase, you can re-roll one Psychic test taken for that model.
+    id: a21e-8066-b73e-a522
+    name: Sevenfold Blessings
+id: 6df2-11b7-4e8f-201e
+name: Sevenfold Blessings
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: bdd0-0284-738c-045a
+        field: selections
+        scope: ancestor
+        shared: true

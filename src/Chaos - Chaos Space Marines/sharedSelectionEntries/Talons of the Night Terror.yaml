@@ -1,0 +1,73 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 97bc-18d1-dee4-0dbe
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 9d42-7cfb-34bf-e2b6
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - Each time the bearer makes a Normal Move or Advances, after the bearer has moved, select one enemy unit it has moved across this phase and roll one D6, subtracting 1 from the result if the enemy unit is a CHARACTER unit: on a 2+, that enemy unit suffers D3 mortal wounds.
+
+          - Each time the bearer finishes a charge move, select one enemy unit within Engagement Range of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds.
+    id: 6675-da3e-aa56-d5ce
+    name: Talons of the Night Terror
+id: 49d9-41b6-495b-a314
+name: Talons of the Night Terror
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 3117-16d8-fcef-4f56
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 3117-16d8-fcef-4f56
+            field: selections
+            scope: ancestor
+            shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: 2e84-a6d9-bf13-4116
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 4592-91a6-aa96-225d
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

@@ -1,0 +1,63 @@
+exported: true
+entryLinks:
+  - targetId: 5436-5e1e-93b3-da67
+    type: selectionEntryGroup
+    exported: true
+    id: ee4c-d64a-81f2-7bbc
+    name: Runes of Fate
+  - targetId: 2811-a32c-6768-4a0d
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 36a3-df6f-e6a6-c8ad
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+    id: 6db2-c5a4-1361-218f
+    name: Runes of Fortune
+    modifiers:
+      - type: increment
+        field: 36a3-df6f-e6a6-c8ad
+        value: 1.0
+        conditions:
+          - type: greaterThan
+            childId: cdcd-8c6a-cc25-6475
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+  - targetId: 7f93-a621-fdeb-0426
+    type: selectionEntryGroup
+    exported: true
+    id: 9772-ef1f-620e-a29e
+    name: Revenant Discipline
+constraints:
+  - id: df33-b629-1e31-fb9b
+    type: maximum
+    field: selections
+    scope: parent
+    value: 2.0
+    shared: true
+id: 80c5-375d-b90c-5d92
+name: Psychic Powers (Farseer)
+modifiers:
+  - type: increment
+    field: df33-b629-1e31-fb9b
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: 7c99-0497-3b9d-a1df
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: cdcd-8c6a-cc25-6475
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true

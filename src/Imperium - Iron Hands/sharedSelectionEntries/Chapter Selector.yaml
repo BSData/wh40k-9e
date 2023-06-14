@@ -1,0 +1,191 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: dcb4-ce02-cda6-6f1d
+    id: eae6-0324-2ce7-92b9
+    name: 'PC: IH'
+selectionEntryGroups:
+  - defaultSelectionEntryId: d7a7-61fa-f38c-3da8
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        rules:
+          - description: >-
+              - Each time a model with this tactic would lose a wound, roll one D6: on a 6, that wound is not lost.
+
+              - Models with this tactic whose characteristics can change as they suffer damage are considered to have double the number of wounds remaining for the purposes of determining what those characteristics are.
+            id: a981-95a6-1458-943e
+            name: The Flesh Is Weak
+            modifiers:
+              - type: set
+                field: hidden
+                value: true
+                conditions:
+                  - type: atLeast
+                    childId: fff5-0cb2-3255-5678
+                    field: selections
+                    scope: force
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+        id: d7a7-61fa-f38c-3da8
+        name: Iron Hands
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: b710-870e-f021-3dd0
+            id: 0152-38f6-8ca7-d241
+            name: 'PC: IH Successor'
+        id: e0fd-1fc9-23f5-2703
+        name: Iron Hands Successor
+    constraints:
+      - id: 3d6f-222e-ead0-29a2
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 0307-5c96-11bc-89db
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: a8dd-39ba-3212-06a9
+    name: Chapter
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 2488-2521-b296-5acb
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 7259-28f4-8145-4f22
+        name: Custom Chapter
+    entryLinks:
+      - targetId: 3700-470e-f75d-6cba
+        type: selectionEntryGroup
+        exported: true
+        id: 0817-b243-b1f9-061a
+        name: Forge World Chapters
+    constraints:
+      - id: d9e2-90bc-4d76-40a8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 1d22-4744-00a9-9197
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 7790-56dc-61fe-b797
+    name: Successor Chapters
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: e0fd-1fc9-23f5-2703
+            field: selections
+            scope: 5a7f-4c42-bda1-4d47
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 1d22-4744-00a9-9197
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: e0fd-1fc9-23f5-2703
+            field: selections
+            scope: 5a7f-4c42-bda1-4d47
+            value: 1.0
+            shared: true
+entryLinks:
+  - targetId: a7a4-4d2d-81c8-5bd1
+    type: selectionEntryGroup
+    exported: true
+    id: 5236-4b87-9c9b-edae
+    name: Tactics
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 7259-28f4-8145-4f22
+                field: selections
+                scope: 5a7f-4c42-bda1-4d47
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: 3700-470e-f75d-6cba
+                field: selections
+                scope: 5a7f-4c42-bda1-4d47
+                shared: true
+                includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: atLeast
+            childId: fff5-0cb2-3255-5678
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+constraints:
+  - id: 042f-8942-e92e-608b
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: e426-30a3-688e-d24d
+    type: minimum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 5a7f-4c42-bda1-4d47
+name: '**Chapter Selector**'

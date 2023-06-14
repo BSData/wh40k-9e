@@ -1,0 +1,98 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 0993-8e68-15d9-d612
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: Melee
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Melee
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: +2
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -5
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Each time an attack made with this weapon targets an enemy unit with a Leadership characteristic of 8 or more, add 1 to that attack's wound roll. At the end of any phase in which the bearer fought with this weapon, if it did not target any enemy units with a Leadership characteristic of 8 or more, it suffers 1 mortal wound.
+    id: 2918-08aa-cec1-f3ab
+    name: The Glaive Exquisite
+id: 3a8e-0bc8-f764-1dac
+name: The Glaive Exquisite
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: d794-dfc2-3480-61b4
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: greaterThan
+            childId: f952-9d38-85bf-13ff
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: ed5b-af8c-e567-95e7
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 0b66-4add-9ad9-2ff7
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: greaterThan
+                        childId: d75e-64da-9773-ce45
+                        field: selections
+                        scope: force
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+                      - type: greaterThan
+                        childId: 2538-0722-fa84-1db3
+                        field: selections
+                        scope: force
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true

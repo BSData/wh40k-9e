@@ -1,0 +1,81 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: 3a24-fd27-b00f-beb3
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: d8f7-2250-c295-a5ec
+    name: New CategoryLink
+  - targetId: 8cc3-4e99-e01d-fed8
+    id: fa79-3c7b-b221-55ca
+    name: New CategoryLink
+  - targetId: 4394-33d7-3b6d-537d
+    id: 3e13-ce84-9db8-1eb2
+    name: New CategoryLink
+  - targetId: 1ac5-5d95-391e-d397
+    id: 00a6-b61f-e525-a5d5
+    name: New CategoryLink
+  - targetId: 77ee-b03b-d244-d535
+    id: c150-f65a-ab2f-4484
+    name: "Faction: T'au Empire"
+entryLinks:
+  - targetId: a3aa-ea32-ab42-aad5
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 18c2-7766-7bba-50ad
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+      - id: d501-1a78-afc4-d89e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 12.0
+        shared: true
+    id: 0bb1-84bf-ebd6-4501
+    name: Drones
+    modifiers:
+      - type: append
+        field: name
+        value: ' (4-12)'
+infoLinks:
+  - targetId: fdde-a68d-bcf1-ae0a
+    type: rule
+    id: a677-62c7-5f3f-67b8
+    name: Manta Strike
+id: 94e2-9b39-4330-f8cc
+name: Tactical Drones
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2
+    conditions:
+      - type: atLeast
+        childId: a3aa-ea32-ab42-aad5
+        field: selections
+        scope: 94e2-9b39-4330-f8cc
+        value: 8.0
+        shared: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: a3aa-ea32-ab42-aad5
+        field: selections
+        scope: 94e2-9b39-4330-f8cc
+        value: 12.0
+        shared: true

@@ -1,0 +1,127 @@
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    id: d42a-fc02-778b-3118
+    name: Configuration
+  - targetId: c845-c72c-6afe-3fc2
+    id: dcbb-53c2-a989-ae08
+    name: Stratagems
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    id: a4f9-671f-1bad-73f1
+    name: No Force Org Slot
+  - targetId: c888f08a-6cea-4a01-8126-d374a9231554
+    constraints:
+      - id: 4384-497e-3b4a-d259
+        type: maximum
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: 1b8f-4518-f394-33f4
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: fd86-521c-89cd-53b4
+    name: Lord of War
+constraints:
+  - id: 7811-d59e-41e6-e586
+    type: maximum
+    field: forces
+    scope: roster
+    value: -1.0
+    shared: true
+id: 224b-1070-218f-fdf4
+name: Super-Heavy Auxiliary Detachment -3CP
+modifiers:
+  - type: set
+    field: name
+    value: Super-Heavy Auxiliary Detachment 0CP
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: fa51-993c-2f8b-9be4
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: ae09-117e-a6fa-316b
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: lessThan
+                childId: 0f35-2c34-ba6a-8105
+                field: selections
+                scope: force
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: instanceOf
+                    childId: 5d84-5102-f22c-14d4
+                    field: selections
+                    scope: primary-catalogue
+                    shared: true
+                  - type: instanceOf
+                    childId: 82cd-d24f-9f22-11f3
+                    field: selections
+                    scope: primary-catalogue
+                    shared: true
+  - type: set
+    field: 7811-d59e-41e6-e586
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: 76d2-6e71-243f-ad3d
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 7811-d59e-41e6-e586
+    value: 0.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: 76d2-6e71-243f-ad3d
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 88b1-c697-e840-2850
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: a0c7-2a71-bae0-215d
+                field: forces
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: greaterThan
+                childId: 8a87-f0e3-f2f2-ad1a
+                field: forces
+                scope: roster
+                shared: true
+                includeChildSelections: true

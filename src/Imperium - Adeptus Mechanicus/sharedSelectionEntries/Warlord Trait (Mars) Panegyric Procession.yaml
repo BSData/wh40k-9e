@@ -1,0 +1,53 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: e428-de13-7c5c-b453
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+infoLinks:
+  - targetId: c943-2e72-aa1f-81d2
+    type: profile
+    id: b513-ac7a-65d2-dcad
+    name: Panegyric Procession
+id: 6f2d-1a32-1d51-9a21
+name: 'Warlord Trait (Mars): Panegyric Procession'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: bde4-e5f7-024d-78a4
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: notInstanceOf
+            childId: 5c61-1217-fbe3-402f
+            field: selections
+            scope: parent
+            shared: true
+          - type: lessThan
+            childId: ac50-58f2-fbb8-af14
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

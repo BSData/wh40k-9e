@@ -1,0 +1,60 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: dbe0-812e-8b8b-9972
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the start of each of your Command phases, this model is repaired and regains up to D3 lost wounds. Each model can only be repaired once per turn. Note that if this model has the Sacristan Pledge Questor Allegiance Oath, it means at the start of each of your Command phases it will regain D3+1 wounds.
+    id: b326-2a34-5d04-6bd7
+    name: Mark of the Omnissiah
+    publicationId: 82cd-d24f-pubN65537
+    page: 92
+id: 77d6-1309-b603-b6fa
+name: 'Heirloom: Mark of the Omnissiah'
+publicationId: 82cd-d24f-pubN65537
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: instanceOf
+            childId: 5360-3011-a42b-faf2
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 5583-2a3e-2095-6450
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: instanceOf
+                childId: 82b5-25ac-1710-de0e
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true

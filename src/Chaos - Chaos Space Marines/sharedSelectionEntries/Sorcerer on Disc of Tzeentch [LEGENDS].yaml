@@ -1,0 +1,744 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 125.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 7.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 0ae8-47f3-aadf-bddd
+  - targetId: ad01-caec-17d9-cb8d
+    id: fbd2-50fd-3eaa-d8a4
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: fc78-b9db-96bc-2d2f
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: efbe-908f-fee6-5830
+    name: New CategoryLink
+  - targetId: 0bc5-6451-5612-4a25
+    id: f006-dc23-933f-f7c1
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: e7dc-fd8b-8e8f-14d2
+    name: New CategoryLink
+  - targetId: ca10-a5dd-f54f-0ed5
+    id: 4895-2ef0-ef6b-826f
+    name: New CategoryLink
+  - targetId: 012f-abfc-397b-3519
+    id: a5c8-15a1-7dc5-1a92
+    name: New CategoryLink
+  - targetId: 0385-8978-4a91-7695
+    id: 0453-6651-6e1a-8f25
+    name: Sorcerer
+  - targetId: 95ae-effa-c9f2-d11b
+    id: 7c75-b1d6-fcff-2daf
+    name: 'Faction: Traitoris Astartes'
+  - targetId: 4d5d-f871-856d-84cc
+    id: 73fb-cc78-fc0d-6718
+    name: Mark of Chaos
+  - targetId: e691-aad7-d21c-1023
+    id: 61cf-0952-556d-ccc5
+    name: Psyker
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    categoryLinks:
+      - targetId: 012f-abfc-397b-3519
+        id: e61e-2544-1661-f90a
+        name: New CategoryLink
+    constraints:
+      - id: 20f9-8a9e-bffa-4b7c
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: f185-bc08-5721-5463
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: 4
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: 0
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: 'When the bearer fights, it makes 1 additional attack with this weapon and no more than 1 attack can be made with this weapon. '
+        id: c5ff-519d-7aa4-df50
+        name: Disc's blades
+    id: 8d37-e0c0-672b-9ec8
+    name: Disc's blades
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: 0246-3399-3b88-44aa
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: cafa-75c8-b8ea-d076
+            type: maximum
+            field: selections
+            scope: parent
+            value: -1.0
+            shared: true
+        id: 071e-35f0-2651-56c1
+        name: Dark Hereticus discipline
+        modifiers:
+          - type: set
+            field: cafa-75c8-b8ea-d076
+            value: 0.0
+            conditions:
+              - type: greaterThan
+                childId: 6a58-f029-88ca-fe00
+                field: selections
+                scope: parent
+                shared: true
+      - targetId: 6a58-f029-88ca-fe00
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: b436-b4a4-4539-d061
+            type: maximum
+            field: selections
+            scope: parent
+            value: -1.0
+            shared: true
+        id: 6ee4-307c-5f4c-a75e
+        name: Noctic Discipline
+        modifiers:
+          - type: set
+            field: b436-b4a4-4539-d061
+            value: 0.0
+            conditions:
+              - type: greaterThan
+                childId: 0246-3399-3b88-44aa
+                field: selections
+                scope: parent
+                shared: true
+    constraints:
+      - id: 22aa-dedf-bf47-70da
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: b638-da59-3f89-b21c
+    name: Psychic powers
+    modifiers:
+      - type: increment
+        field: 22aa-dedf-bf47-70da
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 3b91-f406-154e-cba4
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - defaultSelectionEntryId: 1931-5dab-93fb-3149
+    exported: true
+    entryLinks:
+      - targetId: 0334-f487-8229-0c1a
+        type: selectionEntry
+        exported: true
+        id: 1931-5dab-93fb-3149
+        name: Bolt pistol
+      - targetId: eba0-9fc6-5334-a390
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+        exported: true
+        id: 120c-085d-c6ad-8895
+        name: Combi-bolter
+      - targetId: c6a1-e0c4-c1b1-dce1
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 10.0
+        exported: true
+        id: 4c50-7d72-2f01-274f
+        name: Combi-flamer
+      - targetId: c445-e211-f316-5d83
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 10.0
+        exported: true
+        id: 1b9e-aa79-6a05-2c73
+        name: Combi-melta
+      - targetId: fdce-cdf7-21a9-f9ac
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 10.0
+        exported: true
+        id: e107-dd12-9f2f-b9fb
+        name: Combi-plasma
+      - targetId: 72cd-9017-77e3-abfc
+        type: selectionEntry
+        exported: true
+        id: b018-4858-0399-61d3
+        name: Astartes chainsword
+      - targetId: 7fcc-12e5-77b4-6cfa
+        type: selectionEntry
+        exported: true
+        id: 791a-fa5b-e1b6-b310
+        name: Tainted chainaxe
+      - targetId: 3292-34e6-f679-d5b9
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+        exported: true
+        id: ed63-2a79-96f8-e35d
+        name: Power axe
+      - targetId: f122-3720-fa32-4215
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 10.0
+        exported: true
+        id: 5080-a80b-5512-440e
+        name: Power fist
+      - targetId: 6ea7-1195-7144-438e
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+        exported: true
+        id: a8be-5bff-65bd-56fa
+        name: Power maul
+      - targetId: bc9e-551d-9afb-78d5
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+        exported: true
+        id: ee8f-b289-f36f-020e
+        name: Power sword
+      - targetId: 90de-7b01-e401-888b
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+        exported: true
+        id: 13ca-29ff-408c-a919
+        name: Lightning Claw
+      - targetId: 83be-1ba9-c326-4760
+        type: selectionEntry
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+        exported: true
+        id: d4c6-a35c-e69e-3841
+        name: Plasma pistol
+    constraints:
+      - id: 836c-2c03-eb0b-2e02
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: f9dc-c969-4443-4ed7
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: d2a0-45f5-9693-dad9
+    name: Replace bolt pistol
+  - defaultSelectionEntryId: 4851-ac7c-99f8-56df
+    exported: true
+    entryLinks:
+      - targetId: 6f9a-c4fe-3132-d011
+        type: selectionEntry
+        exported: true
+        id: f13b-2799-1bcb-7a02
+        name: Force stave
+      - targetId: 4a0e-0f13-63c2-9aae
+        type: selectionEntry
+        exported: true
+        id: a574-a3e2-f671-e8dc
+        name: Force axe
+      - targetId: 07e7-1f9b-4c1c-aad9
+        type: selectionEntry
+        exported: true
+        id: 4851-ac7c-99f8-56df
+        name: Force sword
+    constraints:
+      - id: 6fa5-009c-a8ee-1811
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c873-a362-b6b0-fc95
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 0590-be59-6927-470d
+    name: Replace force sword
+entryLinks:
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 709a-1ee4-6a93-6450
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 7e22-2cbe-623d-fdc9
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 43bf-aa98-f675-338a
+    name: Frag & Krak grenades
+  - targetId: 03fd-db47-5333-1e1f
+    type: selectionEntry
+    exported: true
+    categoryLinks:
+      - targetId: e691-aad7-d21c-1023
+        id: 8843-6d8d-893d-7085
+        name: New CategoryLink
+    constraints:
+      - id: 994c-072d-aad8-6036
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 54dd-9601-dad5-cadb
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 8222-3e99-b292-752a
+    name: Smite
+  - targetId: 5876-fcc5-8283-1aca
+    type: selectionEntryGroup
+    exported: true
+    id: d06b-7a5f-d167-90f1
+    name: Artefacts of Chaos
+  - targetId: 398a-c8da-c8bd-da58
+    type: selectionEntry
+    exported: true
+    id: 55a2-6d6f-15b6-c03d
+    name: Warlord
+  - targetId: b34c-6c4b-d22c-25b5
+    type: selectionEntryGroup
+    exported: true
+    id: 456f-276e-5611-e12b
+    name: Warlord Traits
+  - targetId: 736a-c72b-1bd2-6b0a
+    type: selectionEntry
+    exported: true
+    id: 6431-a927-b4c5-7795
+    name: Aspiring Lord
+  - targetId: 0b83-3a3f-078a-8a13
+    type: selectionEntry
+    exported: true
+    id: 1a62-faaa-10bd-dccd
+    name: Gifts of Chaos
+  - targetId: 9302-33d5-1089-4316
+    type: selectionEntry
+    exported: true
+    id: 81c5-cc26-986d-0843
+    name: Lord of the Ezakarion
+  - targetId: c470-54ac-0863-8848
+    type: selectionEntry
+    exported: true
+    id: 15e9-2516-5061-0b60
+    name: 'Stratagem: Relic'
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 54b6-f032-da08-f516
+    name: 'Stratagem: Warlord Trait'
+  - targetId: 1796-1441-828e-0bc9
+    type: selectionEntryGroup
+    exported: true
+    id: 59f9-8f6e-2edf-ac1d
+    name: Battle Honours
+  - targetId: cec4-9abd-dcdb-c9c2
+    type: selectionEntryGroup
+    exported: true
+    id: efb9-4919-fab9-fed3
+    name: Battle Scars
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 12"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: fa68-cda6-0423-d2e4
+    name: Sorcerer on Disc of Tzeentch
+    modifierGroups:
+      - modifiers:
+          - type: increment
+            field: 2218-aa3c-265f-2939
+            value: 1
+          - type: increment
+            field: f330-5e6e-4110-0978
+            value: 1
+          - type: increment
+            field: 13fc-b29b-31f2-ab9f
+            value: 1
+          - type: set
+            field: 0bdf-a96e-9e38-7779
+            value: 14"
+        conditions:
+          - type: atLeast
+            childId: 9e2c-98af-45bb-9799
+            field: selections
+            scope: 83f5-f457-c6b3-8f8b
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - typeId: bc97-dea9-9e88-bb7d
+    typeName: Psyker
+    characteristics:
+      - name: Cast
+        typeId: 5afb-9914-904b-d3b3
+        value: 2
+      - name: Deny
+        typeId: b5ac-9c20-5d5a-6f9b
+        value: 2
+      - name: Powers Known
+        typeId: 69d7-b45e-00a2-7e46
+        value: Smite and 2 powers from the Dark Hereticus discipline
+      - name: Other
+        typeId: c2e2-f115-0003-5d7b
+        value: '-'
+    id: ba89-37d9-fe9f-9271
+    name: Sorcerer on Disc of Tzeentch
+    modifiers:
+      - type: set
+        field: 69d7-b45e-00a2-7e46
+        value: Smite and 3 powers from the Dark Hereticus discipline
+        conditions:
+          - type: equalTo
+            childId: 3b91-f406-154e-cba4
+            field: selections
+            scope: b855-577a-d427-2e12
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 5afb-9914-904b-d3b3
+        value: 1
+        conditions:
+          - type: equalTo
+            childId: 2c61-905c-486f-b756
+            field: selections
+            scope: b855-577a-d427-2e12
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+infoLinks:
+  - targetId: 8620-607a-f257-d7d5
+    type: profile
+    id: 2f56-d69f-158c-e315
+    name: Skeins of Fate
+  - targetId: 02de-f0d3-b98f-dfc6
+    type: rule
+    id: 974c-8315-f3a3-8af7
+    name: Let the Galaxy Burn
+id: b855-577a-d427-2e12
+name: Sorcerer on Disc of Tzeentch [LEGENDS]
+publicationId: ef58-6fca-70d8-3908
+page: 9
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true
+modifierGroups:
+  - modifiers:
+      - type: add
+        field: category
+        value: 87da-018e-ea9b-f5c4
+        conditions:
+          - type: equalTo
+            childId: a1b3-96fc-29f6-d3b1
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: dba9-7a7f-1310-3028
+        conditions:
+          - type: equalTo
+            childId: a675-3934-815b-7d5e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1f29-4695-dfe7-e893
+        conditions:
+          - type: equalTo
+            childId: 37cd-2830-725b-a321
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: e0db-3bff-98cd-1a60
+        conditions:
+          - type: equalTo
+            childId: 8f74-81f3-7093-69e4
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 38e4-b91c-a673-9c76
+        conditions:
+          - type: equalTo
+            childId: 2482-8e16-78b0-e9cd
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 2e84-a6d9-bf13-4116
+        conditions:
+          - type: equalTo
+            childId: 01f7-d7f1-be88-b861
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1e3f-0a7b-0c8f-84db
+        conditions:
+          - type: equalTo
+            childId: 9b8a-fb30-b445-3049
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    modifierGroups:
+      - modifiers:
+          - type: add
+            field: category
+            value: 649f-80f9-0d71-64c3
+          - type: add
+            field: category
+            value: 1da2-76db-f76f-6b6c
+        conditions:
+          - type: equalTo
+            childId: 51f6-1db1-3e75-3d4b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    comment: <Legion>
+  - modifiers:
+      - type: add
+        field: category
+        value: bb17-4692-b1ad-a620
+        conditions:
+          - type: equalTo
+            childId: a1b3-96fc-29f6-d3b1
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 0c84-90d4-b11b-d435
+        conditions:
+          - type: equalTo
+            childId: a675-3934-815b-7d5e
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: f095-c6cc-5aab-9bd8
+        conditions:
+          - type: equalTo
+            childId: 37cd-2830-725b-a321
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: f4dd-1aa4-7cd2-d28d
+        conditions:
+          - type: equalTo
+            childId: 51f6-1db1-3e75-3d4b
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 2692-cb00-633e-5db0
+        conditions:
+          - type: equalTo
+            childId: 8f74-81f3-7093-69e4
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 1247-6183-24cc-cba0
+        conditions:
+          - type: equalTo
+            childId: 2482-8e16-78b0-e9cd
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 4592-91a6-aa96-225d
+        conditions:
+          - type: equalTo
+            childId: 01f7-d7f1-be88-b861
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: add
+        field: category
+        value: 6dba-99ea-aa7d-40a5
+        conditions:
+          - type: equalTo
+            childId: 9b8a-fb30-b445-3049
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+    conditions:
+      - type: equalTo
+        childId: ae09-117e-a6fa-316b
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    comment: 'Legion Warlord '
+  - modifiers:
+      - type: add
+        field: category
+        value: f8e4-d519-60bc-c1c0
+      - type: add
+        field: category
+        value: 8e80-dbb5-15b0-78a7
+    conditions:
+      - type: equalTo
+        childId: 88b1-c697-e840-2850
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    comment: DoB keywords

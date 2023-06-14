@@ -1,0 +1,59 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: bc2b-60d5-56cd-c6ec
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: a7df-edab-7687-1591
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - This model is eligible to perform a Heroic Intervention if it is within 6" horizontally and 5" vertically of any enemy unit, instead of 3" horizontally and 5" vertically. Each time this model makes a Heroic Intervention move, so long as it ends that move either closer to the closest enemy model or within Engagement Range of an enemy CHARACTER unit, it can move up to 6". All other rules for Heroic Interventions still apply.
+
+          - Add 1 to the bearer's Attacks characteristic.
+
+          - Each time the bearer makes a melee attack that destroys an enemy unit, until the end of the battle, add 1 to the bearer's Attacks characteristic.
+    id: fafb-ab3c-afa8-b137
+    name: Talisman of Burning Blood
+id: f572-cccf-a2cf-32be
+name: Talisman of Burning Blood
+publicationId: cb54-c035-pubN125652
+page: 162
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: dfc5-aa04-9546-1b4c
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: equalTo
+            childId: dfc5-aa04-9546-1b4c
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true

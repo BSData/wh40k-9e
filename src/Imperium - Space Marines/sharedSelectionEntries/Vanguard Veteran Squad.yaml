@@ -1,0 +1,626 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: 9d3c-ee1d-4446-88ae
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: f6a8-43a2-eecf-f6bd
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: ee6f-6be5-3674-e041
+    name: New CategoryLink
+  - targetId: 783d-89c9-433b-098a
+    id: c946-ca84-0bfb-2bf0
+    name: New CategoryLink
+  - targetId: 08f1-d244-eb44-7e01
+    id: 0b3e-03d6-dd94-85f1
+    name: Core
+  - targetId: 9205-6ea5-f0b1-9131
+    id: 97bd-617e-0278-7dfa
+    name: Melta Bombs
+selectionEntryGroups:
+  - defaultSelectionEntryId: 6cbc-2560-e6bb-ceaf
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 20.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntryGroups:
+          - defaultSelectionEntryId: f0d6-d8c4-f73f-dd09
+            exported: true
+            selectionEntries:
+              - type: upgrade
+                costs:
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                  - name: pts
+                    typeId: points
+                exported: true
+                constraints:
+                  - id: e74c-ed12-151f-05bf
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                infoLinks:
+                  - targetId: e6d5-677a-d8ed-f6a5
+                    type: profile
+                    id: 21a0-db08-bda3-6f56
+                    name: Bolt pistol
+                  - targetId: 9155-5815-056b-9fd9
+                    type: profile
+                    id: f59e-b92a-1de5-c492
+                    name: Astartes Chainsword
+                id: f0d6-d8c4-f73f-dd09
+                name: Bolt pistol and Chainsword
+            entryLinks:
+              - targetId: 38b5-ef30-f87f-5275
+                type: selectionEntry
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 5.0
+                exported: true
+                constraints:
+                  - id: c3ef-bb1d-d8b8-1ecf
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 05f1-c557-ee62-dc60
+                name: Storm shield
+              - targetId: fb38-f29c-b8de-3ba6
+                type: selectionEntryGroup
+                exported: true
+                constraints:
+                  - id: 8cac-a609-38ea-0da9
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 2.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                id: 6ebc-95be-a22f-b9b7
+                name: Pistols
+              - targetId: ce40-8190-5033-a0c1
+                type: selectionEntryGroup
+                exported: true
+                constraints:
+                  - id: 5597-d7d1-7b3d-f133
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 2.0
+                    shared: true
+                id: 9bb8-b615-ba5b-3ab7
+                name: Melee Weapons
+              - targetId: 9788-8ade-50a1-6503
+                type: selectionEntry
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 12.0
+                exported: true
+                constraints:
+                  - id: d70c-5097-91fc-0d3a
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 62ed-7cb4-3193-74d3
+                name: Heavy thunder hammer
+                modifiers:
+                  - type: set
+                    field: hidden
+                    value: true
+                    conditions:
+                      - type: equalTo
+                        childId: 13a6-f183-3eb6-1c34
+                        field: selections
+                        scope: force
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+            constraints:
+              - id: c184-60ac-1e44-2325
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - id: 0e98-3fa2-6779-b46f
+                type: maximum
+                field: selections
+                scope: parent
+                value: 2.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            id: 5bbd-c79f-bcca-396a
+            name: Weapon Options
+            modifiers:
+              - type: set
+                field: c184-60ac-1e44-2325
+                value: 2.0
+                conditionGroups:
+                  - type: and
+                    conditions:
+                      - type: equalTo
+                        childId: f0d6-d8c4-f73f-dd09
+                        field: selections
+                        scope: 6cbc-2560-e6bb-ceaf
+                        shared: true
+                      - type: equalTo
+                        childId: 9788-8ade-50a1-6503
+                        field: selections
+                        scope: 6cbc-2560-e6bb-ceaf
+                        shared: true
+              - type: set
+                field: 0e98-3fa2-6779-b46f
+                value: 1.0
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: equalTo
+                        childId: f0d6-d8c4-f73f-dd09
+                        field: selections
+                        scope: 6cbc-2560-e6bb-ceaf
+                        value: 1.0
+                        shared: true
+                      - type: equalTo
+                        childId: 9788-8ade-50a1-6503
+                        field: selections
+                        scope: 6cbc-2560-e6bb-ceaf
+                        value: 1.0
+                        shared: true
+        entryLinks:
+          - targetId: cddf-945e-1335-e681
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 7e5e-7b0d-2d16-d0b2
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 9bb9-af00-54be-7644
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 27de-0395-7a9e-dd64
+            name: New EntryLink
+        profiles:
+          - typeId: 800f-21d0-4387-c943
+            typeName: Unit
+            characteristics:
+              - name: M
+                typeId: 0bdf-a96e-9e38-7779
+                value: 6"
+              - name: WS
+                typeId: e7f0-1278-0250-df0c
+                value: 3+
+              - name: BS
+                typeId: 381b-eb28-74c3-df5f
+                value: 3+
+              - name: S
+                typeId: 2218-aa3c-265f-2939
+                value: 4
+              - name: T
+                typeId: 9c9f-9774-a358-3a39
+                value: 4
+              - name: W
+                typeId: f330-5e6e-4110-0978
+                value: 2
+              - name: A
+                typeId: 13fc-b29b-31f2-ab9f
+                value: 2
+              - name: Ld
+                typeId: 00ca-f8b8-876d-b705
+                value: 8
+              - name: Save
+                typeId: c0df-df94-abd7-e8d3
+                value: 3+
+            id: bc90-4079-9fb8-18d3
+            name: Vanguard Veteran
+            modifiers:
+              - type: set
+                field: 0bdf-a96e-9e38-7779
+                value: 12"
+                conditions:
+                  - type: equalTo
+                    childId: b8ea-ba1c-a2c8-d189
+                    field: selections
+                    scope: f09f-9a11-0bd0-40a3
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+        id: 6cbc-2560-e6bb-ceaf
+        name: Vanguard Veteran
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 20.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntryGroups:
+          - defaultSelectionEntryId: 8cd6-8f30-b6f2-f71c
+            exported: true
+            selectionEntries:
+              - type: upgrade
+                costs:
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                  - name: pts
+                    typeId: points
+                exported: true
+                constraints:
+                  - id: 0f2b-9dc5-e6eb-31e4
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                infoLinks:
+                  - targetId: e6d5-677a-d8ed-f6a5
+                    type: profile
+                    id: ae79-ed07-3c8e-95c6
+                    name: Bolt pistol
+                  - targetId: 9155-5815-056b-9fd9
+                    type: profile
+                    id: 51e3-98d8-f877-d307
+                    name: Astartes Chainsword
+                id: 8cd6-8f30-b6f2-f71c
+                name: Bolt pistol and Chainsword
+            entryLinks:
+              - targetId: 38b5-ef30-f87f-5275
+                type: selectionEntry
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 5.0
+                exported: true
+                constraints:
+                  - id: b3a1-8baa-d9d9-2cd6
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: b29a-cae0-e601-f178
+                name: Storm shield
+              - targetId: 0140-c9f2-0524-34cc
+                type: selectionEntry
+                exported: true
+                constraints:
+                  - id: 3c01-3ba5-a1d0-40af
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 58e0-611d-1ec6-b522
+                name: Relic blade
+              - targetId: fb38-f29c-b8de-3ba6
+                type: selectionEntryGroup
+                exported: true
+                constraints:
+                  - id: 9cd7-ae79-5471-4926
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 2.0
+                    shared: true
+                id: 0754-3a95-e076-c5f6
+                name: Pistols
+              - targetId: ce40-8190-5033-a0c1
+                type: selectionEntryGroup
+                exported: true
+                constraints:
+                  - id: 5fba-774f-fdb4-408c
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 2.0
+                    shared: true
+                id: d818-5672-e0ab-e9f9
+                name: Melee Weapons
+              - targetId: 9788-8ade-50a1-6503
+                type: selectionEntry
+                costs:
+                  - name: pts
+                    typeId: points
+                    value: 12.0
+                exported: true
+                constraints:
+                  - id: c431-9c66-93f4-d629
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 5154-b633-2eb6-eca8
+                name: Heavy thunder hammer
+                modifiers:
+                  - type: set
+                    field: hidden
+                    value: true
+                    conditions:
+                      - type: equalTo
+                        childId: 13a6-f183-3eb6-1c34
+                        field: selections
+                        scope: force
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+            constraints:
+              - id: 5bb0-3792-c3d2-4ade
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: cc08-e79f-c552-32ca
+                type: maximum
+                field: selections
+                scope: parent
+                value: 2.0
+                shared: true
+            id: 45e9-ac77-7ddf-f7f7
+            name: Weapon Options
+            modifiers:
+              - type: set
+                field: 5bb0-3792-c3d2-4ade
+                value: 2.0
+                conditionGroups:
+                  - type: and
+                    conditions:
+                      - type: equalTo
+                        childId: 8cd6-8f30-b6f2-f71c
+                        field: selections
+                        scope: 71d7-db80-9e5a-787d
+                        shared: true
+                      - type: equalTo
+                        childId: 9788-8ade-50a1-6503
+                        field: selections
+                        scope: 71d7-db80-9e5a-787d
+                        shared: true
+              - type: set
+                field: cc08-e79f-c552-32ca
+                value: 1.0
+                conditionGroups:
+                  - type: or
+                    conditions:
+                      - type: equalTo
+                        childId: 8cd6-8f30-b6f2-f71c
+                        field: selections
+                        scope: 71d7-db80-9e5a-787d
+                        value: 1.0
+                        shared: true
+                      - type: equalTo
+                        childId: 9788-8ade-50a1-6503
+                        field: selections
+                        scope: 71d7-db80-9e5a-787d
+                        value: 1.0
+                        shared: true
+        entryLinks:
+          - targetId: cddf-945e-1335-e681
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 2858-2292-f2a1-419b
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: fa1e-bbe8-19ed-6033
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 82d5-b0e0-a3c4-e664
+            name: Frag & Krak grenades
+          - targetId: 81fa-73cf-0cea-37a0
+            type: selectionEntryGroup
+            exported: true
+            id: 5be5-bf5a-e10f-3747
+            name: Special-Issue Wargear
+          - targetId: 27f3-077c-577d-0b65
+            type: selectionEntryGroup
+            exported: true
+            id: af53-d9f7-3cfe-18f2
+            name: Sgt Stratagems
+        constraints:
+          - id: f996-dcd0-572a-6d10
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: cffa-b549-1832-9601
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: 800f-21d0-4387-c943
+            typeName: Unit
+            characteristics:
+              - name: M
+                typeId: 0bdf-a96e-9e38-7779
+                value: 6"
+              - name: WS
+                typeId: e7f0-1278-0250-df0c
+                value: 3+
+              - name: BS
+                typeId: 381b-eb28-74c3-df5f
+                value: 3+
+              - name: S
+                typeId: 2218-aa3c-265f-2939
+                value: 4
+              - name: T
+                typeId: 9c9f-9774-a358-3a39
+                value: 4
+              - name: W
+                typeId: f330-5e6e-4110-0978
+                value: 2
+              - name: A
+                typeId: 13fc-b29b-31f2-ab9f
+                value: 3
+              - name: Ld
+                typeId: 00ca-f8b8-876d-b705
+                value: 9
+              - name: Save
+                typeId: c0df-df94-abd7-e8d3
+                value: 3+
+            id: 6105-9619-feb1-7198
+            name: Vanguard Veteran Sergeant
+            modifiers:
+              - type: set
+                field: 0bdf-a96e-9e38-7779
+                value: 12"
+                conditions:
+                  - type: equalTo
+                    childId: b8ea-ba1c-a2c8-d189
+                    field: selections
+                    scope: f09f-9a11-0bd0-40a3
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+        id: 71d7-db80-9e5a-787d
+        name: Vanguard Veteran Sergeant
+    constraints:
+      - id: 9299-a357-0c6e-021e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: 5ec8-7715-6c3a-b4e8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: a1a9-cd85-3cac-3b15
+    name: Vanguard Veterans
+entryLinks:
+  - targetId: 181e-0718-160e-2e75
+    type: selectionEntry
+    exported: true
+    id: b8ea-ba1c-a2c8-d189
+    name: Jump Pack
+    modifiers:
+      - type: increment
+        field: e356-c769-5920-6e14
+        value: 1.0
+        conditions:
+          - type: atLeast
+            childId: a1a9-cd85-3cac-3b15
+            field: selections
+            scope: f09f-9a11-0bd0-40a3
+            value: 6.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+      - type: increment
+        field: points
+        value: 3.0
+        repeats:
+          - repeatCount: 1
+            childId: a1a9-cd85-3cac-3b15
+            field: selections
+            scope: f09f-9a11-0bd0-40a3
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 2dbf-b099-df5c-2ab4
+    name: Angels of Death
+  - targetId: af4f-5849-3bd3-e2fd
+    type: rule
+    id: 99aa-378e-9733-9108
+    name: Combat Squads
+id: f09f-9a11-0bd0-40a3
+name: Vanguard Veteran Squad
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 6.0
+    conditions:
+      - type: atLeast
+        childId: a1a9-cd85-3cac-3b15
+        field: selections
+        scope: f09f-9a11-0bd0-40a3
+        value: 6.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

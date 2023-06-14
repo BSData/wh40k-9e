@@ -1,0 +1,58 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 429b-f355-1b6c-58db
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: e79d-0a83-3ea1-9097
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Use this stratagem before the battle, Select one INQUISITOR model from your army that is not your Warlord and determine one Warlord Trait for it. It is regarded as your Warlord for the purposes of that Warlord Trait. If the model is not a named character or VEHICLE, you can then give one Relic of the Inquisition to that model. All of the Relics your army includes must be different and given to different models. You can only use this stratagem once per battle.
+    id: f305-dced-792a-59a8
+    name: "Stratagem: Arbiter of the Emperor's Will"
+id: 3dcc-fcb4-e9aa-2f41
+name: "Stratagem: Arbiter of the Emperor's Will"
+hidden: true
+modifiers:
+  - type: set
+    field: e79d-0a83-3ea1-9097
+    value: 0.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: a4e2-fd07-0e14-f13b
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: ae09-117e-a6fa-316b
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

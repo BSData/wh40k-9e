@@ -1,0 +1,280 @@
+type: model
+costs:
+  - name: pts
+    typeId: points
+    value: 100.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 17dd-8fbb-c6e8-4515
+    name: New CategoryLink
+  - targetId: eb72-b7a9-1df1-04db
+    id: e1b3-0aec-024d-2fba
+    name: New CategoryLink
+  - targetId: 4407-2aa1-2a62-c1dc
+    id: 34fd-fb05-18c0-8ccd
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 10fe-b23a-8518-3185
+    name: New CategoryLink
+  - targetId: 012f-abfc-397b-3519
+    id: 6168-3ec7-62b4-ddf0
+    name: New CategoryLink
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 810a-ec5f-d033-8e0c
+    name: New CategoryLink
+  - targetId: 2a5a-f894-9070-d236
+    id: c322-680f-6d75-7227
+    name: 'Faction: Legiones Daemonica'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: 990a-895b-a287-8eb8
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+      - id: 489b-ab92-1815-f965
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: 0
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 1
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time the bearer is selected to fight, you can select one melee weapon an enemy INFANTRY model within Engagement Range of this model is equipped with. Until that fight is resolved, this weapon has the same profile as the selected weapon.
+        id: 3cab-aac3-28d9-5762
+        name: Trickster's staff
+    id: 9e22-8250-f0ea-5558
+    name: The Trickster's Staff
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: ff95-3e69-8fd3-2c86
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: b7e0-e484-f4c9-8624
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 399e-e09e-af99-b723
+        name: Noctic Discipline
+      - targetId: 4cf2-ae18-9576-c59b
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 6af5-b536-75ba-7280
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: beec-6de0-296d-8dbf
+        name: Pandaemoniac Discipline
+    constraints:
+      - id: c958-0584-b896-8b28
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 0c72-2b24-a481-a004
+    name: Psychic Powers
+entryLinks:
+  - targetId: 03fd-db47-5333-1e1f
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 1e05-96df-c3a1-1c65
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 40f9-a19b-368a-5bc7
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 38eb-d3d5-4019-da1c
+    name: Smite
+  - targetId: c488-0afe-c67e-2606
+    type: selectionEntry
+    exported: true
+    id: 56af-22d8-d9cb-ccce
+    name: Warlord
+  - targetId: e523-4b28-8b72-75a3
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: ab30-aa31-fd28-6d4e
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: ed13-f348-e736-faa9
+    name: Warp Tether
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: ab30-aa31-fd28-6d4e
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: c488-0afe-c67e-2606
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 6bec-2dc7-6496-9413
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: c149-5ab5-f820-ace9
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 4+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 2
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 5+/3+
+    id: 2dee-3925-645a-ec5d
+    name: The Changeling
+    page: 0
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time this model is selected to fight, you can select one enemy INFANTRY model within Engagement Range of this model. Until that fight is resolved, this model has the same Weapon Skill, Strength and Attacks characteristics as the selected model.
+    id: 3a25-fb37-ecfb-a0ef
+    name: Formless Horror
+  - typeId: bc97-dea9-9e88-bb7d
+    typeName: Psyker
+    characteristics:
+      - name: Cast
+        typeId: 5afb-9914-904b-d3b3
+        value: 1
+      - name: Deny
+        typeId: b5ac-9c20-5d5a-6f9b
+        value: 1
+      - name: Powers Known
+        typeId: 69d7-b45e-00a2-7e46
+        value: Smite and 1 power from the Tzeentch discipline.
+      - name: Other
+        typeId: c2e2-f115-0003-5d7b
+        value: '-'
+    id: d214-0883-1e5a-0c0e
+    name: The Changeling
+infoLinks:
+  - targetId: 3326-dd72-0e2b-a16c
+    type: infoGroup
+    id: 8752-202a-a1b9-9495
+    name: Daemonic
+  - targetId: ee64-7cdc-55c5-c552
+    type: profile
+    id: 3d39-b76d-fd28-b3cb
+    name: Herald of Tzeentch (Aura)
+id: d7b3-4646-66cb-e39e
+name: The Changeling
+page: 0

@@ -1,0 +1,174 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+categoryLinks:
+  - targetId: 2ab6-8d0f-494d-38e2
+    id: 6092-210b-fa07-3903
+    name: New CategoryLink
+  - targetId: 1c58-037f-7b58-1223
+    id: deba-30fd-43bb-9692
+    name: New CategoryLink
+  - targetId: 0b2c-1505-90c2-24ed
+    id: 958a-1404-4947-6ed1
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 7712-19e5-cdf9-7175
+    name: New CategoryLink
+  - targetId: 5d76b6f5-20ae-4d70-8f59-ade72a2add3a
+    primary: true
+    id: 0cb6-66dc-3904-2f9d
+    name: New CategoryLink
+  - targetId: 08f1-d244-eb44-7e01
+    id: dd18-6127-5b5e-ffd5
+    name: Core
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 4.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: ' Scrap Points'
+        typeId: 932a-ae3d-c6c7-6938
+    exported: true
+    entryLinks:
+      - targetId: a8f4-732e-fc64-3577
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: e087-c991-7429-a2f5
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 792a-6f2d-cb4d-1c0f
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 4ee0-b208-fa2c-55d0
+        name: Grot Blaster
+    constraints:
+      - id: 8a79-e37a-dd18-86ae
+        type: maximum
+        field: selections
+        scope: parent
+        value: 30.0
+        shared: true
+      - id: adc9-bcac-d5ef-fc33
+        type: minimum
+        field: selections
+        scope: parent
+        value: 10.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 5"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 5+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 4+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 2
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 1
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 1
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 4
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 7+
+        id: 9298-c5d7-8747-cadd
+        name: Gretchin
+        publicationId: 11b5-77b9-pubN65537
+        page: 91
+    id: 0e9e-6361-b40f-7feb
+    name: Gretchin
+    modifiers:
+      - type: set
+        field: 8a79-e37a-dd18-86ae
+        value: 10.0
+        conditions:
+          - type: greaterThan
+            childId: a207-a133-6adb-25f3
+            field: forces
+            scope: roster
+            shared: true
+            includeChildSelections: true
+entryLinks:
+  - targetId: c99c-6f81-ada0-9caa
+    type: selectionEntryGroup
+    exported: true
+    id: e460-4d51-3d6b-a89c
+    name: Specialist Mobs
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Unless a friendly RUNTHERD model is within 6" of this unit, each time a model in this unit makes a Combat Attrition test, subtract 1 from the result.
+    id: a63f-1e9d-1e36-b55e
+    name: Cowardly
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a ranged attack is allocated to a model in this unit while it is receiving the benefits of cover, add an additional 1 to any armour saving throw made against that attack.
+    id: 900f-4193-7be7-19dd
+    name: Diminutive
+    publicationId: 11b5-77b9-pubN65537
+id: 96ec-51fe-cd61-b2c1
+name: Gretchin
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 96ec-51fe-cd61-b2c1
+        value: 10.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 96ec-51fe-cd61-b2c1
+        value: 20.0
+        shared: true
+        includeChildSelections: true

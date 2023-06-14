@@ -1,0 +1,50 @@
+type: upgrade
+costs:
+  - name: pts
+    typeId: points
+    value: 15.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 1.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: de67-c361-48f3-e266
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 341e-46db-3846-34a1
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Once per battle, when the bearer uses its Rites of Reanimation ability, you can select one friendly <DYNASTY> CANOPTEK, <DYNASTY> DESTROYER CULT or TRIARCH PRAETORIAN unit to be affected by that ability instead of one friendly <DYNASTY> CORE unit.
+    id: f6da-f79a-bcba-6422
+    name: Phylacterine Hive
+    publicationId: 61c6-c8c5-pubN65537
+    page: 63
+id: 85fe-6482-d8a4-c7d7
+name: 'Arkana: Phylacterine Hive'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: e5d8-d5a6-55bf-e6fa
+        field: selections
+        scope: ancestor
+        shared: true

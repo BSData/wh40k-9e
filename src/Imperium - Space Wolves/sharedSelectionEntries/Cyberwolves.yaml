@@ -1,0 +1,83 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 1.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: ed11-7a54-f4d4-d87a
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 68c4-8cf6-5e93-1773
+    name: Imperium
+  - targetId: c7b7-edbc-bc14-6238
+    id: 1dfc-2b2c-708e-95fb
+    name: Adeptus Astartes
+  - targetId: f093-e031-3131-7b82
+    id: f04e-881f-40d9-fdee
+    name: 'Faction: Space Wolves'
+  - targetId: 7892-58f7-e769-4d87
+    id: f066-5534-0b63-e917
+    name: Beast
+  - targetId: b0f0-5b86-e789-b98d
+    id: 348e-4b3f-116c-7dea
+    name: Cyberwolves
+entryLinks:
+  - targetId: e0cd-b9cc-9f0f-278a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: e7b0-8c18-6569-6d7f
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: d9fc-1e79-73f6-bc92
+        type: maximum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+    id: 1cc1-f446-1cd0-bced
+    name: Cyberwolf
+id: 288f-735a-9852-5222
+name: Cyberwolves
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: model
+        field: selections
+        scope: 288f-735a-9852-5222
+        value: 2.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

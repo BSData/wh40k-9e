@@ -1,0 +1,49 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: c60c-f7c0-6caa-5876
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 7700-2944-938c-8989
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This relic replaces a resurrection orb.  Once per battle, in your Command phase, the bearer can use this Relic. If it does, select one friendly <DYNASTY> unit within 6" of the bearer that is not at its Starting Strength and has not had its reanimation protocols enacted this phase. That unit's reanimation protocols are enacted, and every destroyed model in that unit begins to reassemble. Each time a Reanimation Protocol roll is made for those reanimation protocols, add 1 to the result.
+    id: c3fa-bcf9-4087-87c7
+    name: Orb of Eternity
+    publicationId: 61c6-c8c5-pubN65537
+    page: 66
+id: 0e6e-ffcb-dea9-93f1
+name: 'Relic: Orb of Eternity'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: 5805-778a-2219-fd63
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true

@@ -1,0 +1,56 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: fcff-0f21-93e6-1ddc
+    primary: true
+    id: 443b-41a2-8514-7538
+    name: New CategoryLink
+constraints:
+  - id: 4064-c01f-3f1d-1049
+    type: maximum
+    field: selections
+    scope: force
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 7583-7f12-0e87-8894
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+rules:
+  - description: See rules on p78 of The Book of Rust
+    id: f0df-d1fb-f841-80cb
+    name: Outbreak Assault
+    publicationId: 0865-ee21-d1f1-ed38
+    page: 78
+id: 558f-7252-492e-efac
+name: Terminus Est Assault Force
+publicationId: 0865-ee21-d1f1-ed38
+modifiers:
+  - type: set
+    field: 4064-c01f-3f1d-1049
+    value: 0.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: c8fd-783f-3230-493e
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: c940-6653-e034-772f
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

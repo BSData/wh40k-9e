@@ -1,0 +1,66 @@
+targetId: 13fa-cbe0-ef6c-a134
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: 3fd6-0b4f-6e16-5a7b
+    id: df01-bcd0-f3ed-3266
+    name: 'Faction: Dark Angels'
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: d1dc-3821-dfc6-fe37
+    name: New CategoryLink
+entryLinks:
+  - targetId: e22d-9d1c-bd59-dde0
+    type: selectionEntryGroup
+    exported: true
+    id: 5d3b-d8f0-1be0-606b
+    name: Relics
+  - targetId: 25ab-3c66-3dc4-0e00
+    type: selectionEntryGroup
+    exported: true
+    id: 765b-d32e-64fe-4037
+    name: Warlord Traits
+  - targetId: e28e-39b0-aec5-0b09
+    type: selectionEntry
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 1.0
+      - name: pts
+        typeId: points
+        value: 10.0
+    exported: true
+    constraints:
+      - id: 001c-4a8c-db8f-80ca
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 55c7-cd98-d1da-c0c7
+    name: Rites of Initiation
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 15cc-ce97-b5f6-b535
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+id: 690a-0b5a-f60a-5c91
+name: Primaris Lieutenant
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 2459-1e8a-afbd-6b93
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true

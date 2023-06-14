@@ -1,0 +1,51 @@
+exported: true
+entryLinks:
+  - targetId: 664a-6aeb-4aa0-bc40
+    type: selectionEntry
+    exported: true
+    id: 482e-e87f-734b-5850
+    name: "Warlord Trait: 3. Martyr's Strength"
+  - targetId: 417d-a60a-70e0-ece5
+    type: selectionEntry
+    exported: true
+    id: 307b-1804-10b6-4084
+    name: 'Warlord Trait: 1. Saintly Example'
+  - targetId: 212e-857b-eebd-f6f7
+    type: selectionEntry
+    exported: true
+    id: a333-57ec-2931-7e8e
+    name: "Warlord Trait: 2. Saint Katherine's Legacy"
+constraints:
+  - id: d32c-f597-ddd6-408c
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: 923c-c629-db2d-f122
+name: Warlord Traits - Our Martyred Lady
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: lessThan
+        childId: f65b-46de-9d3f-dc59
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: d32c-f597-ddd6-408c
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: 67a0-b77c-67fd-ddf5
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

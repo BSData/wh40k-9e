@@ -1,0 +1,284 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 8.0
+  - name: pts
+    typeId: points
+    value: 160.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: be83-3d5c-b1de-345b
+    name: HQ
+  - targetId: 5cf1-acf2-ca3b-c2e5
+    id: 20ac-dbb5-c631-51a7
+    name: 'Faction: Chaos'
+  - targetId: f096-f6b1-0904-2985
+    id: 8306-d8af-f2e9-c7d0
+    name: 'Faction: Butcher Astartes'
+  - targetId: ad01-caec-17d9-cb8d
+    id: c8c4-7a3e-05eb-8f5d
+    name: Cavalry
+  - targetId: ef18-746a-369f-43a4
+    id: 63d8-a3e8-fbe8-e5b9
+    name: Character
+  - targetId: 3117-16d8-fcef-4f56
+    id: 3065-0b3e-3d3a-677d
+    name: Fly
+  - targetId: bf74-355d-6bc8-abe5
+    id: c9de-4896-08d1-b40e
+    name: Lord Invocatus
+  - targetId: ea5c-26b3-aa78-7253
+    id: e7b1-2b88-4cd4-affd
+    name: 'Faction: Heretic Astartes'
+  - targetId: fe84-0aa8-259f-b94d
+    id: d6a2-d1bd-546c-c248
+    name: 'Faction: Khorne'
+  - targetId: 37db-2713-c0e0-df20
+    id: 3cfa-2653-4a6d-77c2
+    name: Daemon
+  - targetId: e12a-408e-574b-4a6c
+    id: d813-a672-89eb-abd1
+    name: 'Faction: World Eaters'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: f6a6-4c12-48c5-431d
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: cef0-36b2-8cc7-ce85
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: User
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, invulnerable saving throws cannot be made against that attack.
+        id: 6cf3-18eb-9460-9fa2
+        name: Coward's Bane
+    id: 0acb-5640-a760-6834
+    name: Coward's Bane
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: a7c1-677f-8da4-0977
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: afba-648d-bd8f-eca5
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: At the start of the first battle round, before the first turn begins, you can select up to 2 friendly WORLD EATERS CORE units within 9" of this WARLORD. This unit and the selected units can each make a Normal Move.
+        id: 82c7-37a8-0df9-89e1
+        name: Road of Eight Bloody Steps
+    id: 41ac-e815-6dc7-601d
+    name: Road of Eight Bloody Steps
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: afba-648d-bd8f-eca5
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: 3f7c-2cb9-a6c8-b08c
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: c798-5187-ae58-d556
+                    field: selections
+                    scope: 3f7c-2cb9-a6c8-b08c
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+entryLinks:
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: f06a-2efb-365d-8d45
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: b7d1-5580-9847-d3e4
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: d82b-6e7d-7200-7b6d
+    name: Bolt pistol
+  - targetId: 8c33-e283-55f6-dbde
+    type: selectionEntry
+    exported: true
+    id: 969f-c322-11bd-9c65
+    name: Juggernaut's bladed horn
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 9f5c-63a8-b284-5e06
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: f223-eb74-cba3-c7e5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 2c3e-d919-82dd-334c
+    name: Frag & Krak grenades
+  - targetId: c798-5187-ae58-d556
+    type: selectionEntry
+    exported: true
+    id: 764e-f35b-abc4-0918
+    name: Warlord
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: b66b-dc72-3364-ec9d
+    name: 'Stratagem: Warlord Trait'
+constraints:
+  - id: a932-8d37-f867-bd44
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 12"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 6
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 6
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 8
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 7
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+	
+    id: b2ab-e4c7-9916-5237
+    name: Lord Invocatus
+infoLinks:
+  - targetId: 41c2-7dbe-72b3-24de
+    type: rule
+    id: 220c-0333-56b3-908f
+    name: The Blood Tithe
+  - targetId: be83-9fb0-70fb-44f4
+    type: profile
+    id: 1d5f-d9ef-3b2d-dd3a
+    name: Sigil of Corruption
+  - targetId: 04e9-0e24-3b6e-8f06
+    type: rule
+    id: 40f2-c411-dfd6-600d
+    name: Warp Strike
+  - targetId: ba46-e3a8-a227-7982
+    type: profile
+    id: ea1b-0eab-7217-2b02
+    name: Leading the Charge (Aura)
+  - targetId: f0b4-dc5f-4885-c15b
+    type: rule
+    id: 2805-69e4-8cea-3afa
+    name: Relentless Rage
+id: 3f7c-2cb9-a6c8-b08c
+name: Lord Invocatus

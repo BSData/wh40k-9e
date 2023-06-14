@@ -1,0 +1,169 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: c609-b2f0-1a43-3aa0
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: While an enemy unit is within 3" of this WARLORD, each time a model in that unit makes a melee attack, subtract 1 from that attack's hit roll.
+        id: efeb-9f3e-f74f-94b2
+        name: Intoxicating Musk (Aura)
+    id: 6f74-2ef3-83d3-399b
+    name: 2. Intoxicating Musk
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 276d-9be1-a88d-8520
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: Each time this WARLORD is selected to fight, you and your opponent secretly choose a number from 1 to 3 on a D6 (we suggest turning a D6 to show the number, but concealing it behind your hand), then reveal your choices simultaneously. If the chosen numbers differ, then until that fight is resolved, add the number you chose to the Attacks characteristic of your WARLORD.
+        id: 7346-3639-1df9-1a74
+        name: Unbound Arrogance
+    id: df58-d9b2-d53b-317a
+    name: 3. Unbound Arrogance
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 449f-1497-45d6-e26a
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: >-
+              - Each time an attack is allocated to this WARLORD, if this WARLORD does not have the VEHICLE keyword, subtract 1 from the Damage characteristic of that attack (to a minimum of 1).
+
+              - Each time this WARLORD would lose a wound as the result of a mortal wound, roll one D6: on a 5+, that wound is not lost.
+        id: 317b-a3e5-108a-229d
+        name: Glutton for Punishment
+    id: 6a63-f5bd-d50d-11b6
+    name: 5. Glutton for Punishment
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 11c2-cbb8-e6ba-1164
+        type: maximum
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: >-
+              - Add 2" to the Movement characteristic of this WARLORD.
+
+              - You can re-roll Advance and charge rolls made for this WARLORD.
+        id: b22b-2976-2833-a096
+        name: Loathsome Grace
+    id: 9446-c083-c837-0c7a
+    name: 6. Loathsome Grace
+entryLinks:
+  - targetId: 9d7b-0550-c6a7-4f4d
+    type: selectionEntry
+    exported: true
+    id: a7b4-5838-e258-3a02
+    name: 1. Stimulated by Pain
+  - targetId: e14c-8417-2d51-93ce
+    type: selectionEntry
+    exported: true
+    id: ff7b-855a-1e0f-d942
+    name: 4. Faultless Duellist
+constraints:
+  - id: 2468-63c4-80be-efe7
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 20f6-0d4f-0ee6-d4bc
+name: Warlord Traits (Emperor's Children)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 51f6-1db1-3e75-3d4b
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: 2eb6-087d-4893-3167
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: greaterThan
+            childId: 88b1-c697-e840-2850
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true

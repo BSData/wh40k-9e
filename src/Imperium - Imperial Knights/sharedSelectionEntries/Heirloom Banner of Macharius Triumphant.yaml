@@ -1,0 +1,58 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 4b18-af84-be1a-c57d
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - The bearer has the Objective Secured ability
+
+          - If every unit from your army has the IMPERIAL KNIGHTS keyword (excluding units with the AGENTS OF THE IMPERIUM or UNALIGNED keywords), then you start the battle with 1 additional Honour points, but if the bearer is destroyed, you lose 1 Honour point.
+    id: 9fc8-8d08-bb6a-f69a
+    name: Banner of Macharius Triumphant
+    publicationId: 82cd-d24f-pubN65537
+    page: 115
+id: c16a-de8f-cc1f-ec59
+name: 'Heirloom: Banner of Macharius Triumphant'
+publicationId: 82cd-d24f-pubN65537
+hidden: true
+modifierGroups:
+  - modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: instanceOf
+                childId: 254d-83b9-c46e-84aa
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: instanceOf
+                childId: 82b5-25ac-1710-de0e
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true

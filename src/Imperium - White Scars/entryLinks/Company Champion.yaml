@@ -1,0 +1,47 @@
+targetId: c4ab-433a-ad56-2172
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: 9c3f-fd28-3c66-c192
+    name: No Force Org Slot
+entryLinks:
+  - targetId: 80ed-10b8-d2d5-a5e0
+    type: selectionEntryGroup
+    exported: true
+    id: a6df-f770-1b98-7632
+    name: Chapter Relics
+  - targetId: 453e-769a-4240-c489
+    type: selectionEntryGroup
+    exported: true
+    id: 18fa-9658-604a-00a6
+    name: Warlord Traits
+constraints:
+  - id: 2e6f-ba3f-fb21-6240
+    type: maximum
+    field: selections
+    scope: parent
+    shared: true
+id: 5887-d3ec-8095-ecdc
+name: Company Champion
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        shared: true
+  - type: increment
+    field: 2e6f-ba3f-fb21-6240
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 94a8-86a3-4b86-4855
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

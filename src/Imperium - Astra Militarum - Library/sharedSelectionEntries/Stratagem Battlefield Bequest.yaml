@@ -1,0 +1,96 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 5403-fc33-a1ca-1622
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: ca5c-50b2-644e-1b8c
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 59ad-e41a-5a3b-cb12
+name: 'Stratagem: Battlefield Bequest'
+hidden: true
+modifiers:
+  - type: increment
+    field: ca5c-50b2-644e-1b8c
+    value: 1.0
+    conditions:
+      - type: atLeast
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: increment
+    field: ca5c-50b2-644e-1b8c
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: 7c48-42cf-40a1-f038
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: 9e19-4e60-2e53-8758
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: 5574-d4e0-cbbe-530d
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: d1fe-eed9-2bde-dde0
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: instanceOf
+            childId: 1f1e-d747-c329-8919
+            field: selections
+            scope: ancestor
+            shared: true
+  - type: increment
+    field: ca5c-50b2-644e-1b8c
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

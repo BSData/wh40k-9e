@@ -1,0 +1,59 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 460e-de19-0e31-1072
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: 45a6-3a4a-cab0-e58f
+    type: minimum
+    field: selections
+    scope: parent
+    shared: true
+  - id: d724-7c55-7ea4-f704
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+infoLinks:
+  - targetId: f313-c1b7-f327-746e
+    type: profile
+    id: 0104-bfe9-bc51-47c9
+    name: Immortal Pride
+  - targetId: 000a-4ecf-52a6-5f1d
+    type: profile
+    id: ff13-efa0-36c2-51b2
+    name: Immortal Pride (Aura)
+id: c9d5-b167-79e1-dd37
+name: 'Warlord Trait (Codex 3): Immortal Pride'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: 45a6-3a4a-cab0-e58f
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: atLeast
+            childId: 8056-ce75-9ad4-f269
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - type: instanceOf
+            childId: de91-4514-2040-fe63
+            field: selections
+            scope: ancestor
+            shared: true

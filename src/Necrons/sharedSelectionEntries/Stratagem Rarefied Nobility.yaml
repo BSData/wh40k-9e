@@ -1,0 +1,71 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+exported: true
+constraints:
+  - id: 2812-929b-21cc-27ad
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: 9ace-26e0-43ff-435c
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: d928-0c8c-e94a-da67
+name: 'Stratagem: Rarefied Nobility'
+publicationId: 61c6-c8c5-pubN65537
+modifiers:
+  - type: set
+    field: 2812-929b-21cc-27ad
+    value: 3.0
+    conditions:
+      - type: atLeast
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: 2812-929b-21cc-27ad
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 8056-ce75-9ad4-f269
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true

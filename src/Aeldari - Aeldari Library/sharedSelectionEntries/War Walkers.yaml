@@ -1,0 +1,171 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: fb5a-2f35-6253-b891
+    id: a8f7-7341-bf2c-eef9
+    name: New CategoryLink
+  - targetId: 05e9-e880-b1fb-ce90
+    id: 3bd0-cac0-ed14-6509
+    name: New CategoryLink
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    primary: true
+    id: 4df8-cf6c-d45c-0d78
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: e003-39b1-c58c-f519
+    name: New CategoryLink
+  - targetId: ef1a-91be-f09a-37c0
+    id: 666f-57ce-0e24-39be
+    name: New CategoryLink
+  - targetId: 20fc-5c6e-4a04-320f
+    id: 0c41-b3dc-f695-679a
+    name: 'Faction: Asuryani'
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 55.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 5.0
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    entryLinks:
+      - targetId: 7d84-2892-c4e1-b2a1
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: ef7a-8a1d-429d-a4a1
+            type: minimum
+            field: selections
+            scope: parent
+            value: 2.0
+          - id: 8b46-dca8-eb5d-42e0
+            type: maximum
+            field: selections
+            scope: parent
+            value: 2.0
+        id: 42af-99f9-c055-1320
+        name: Heavy Weapons
+    constraints:
+      - id: fd19-539c-4033-29c5
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 48b7-6beb-75fe-0f45
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 10"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 3+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 3+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 5
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 6
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 6
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 3
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 8
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 3+
+        id: 947f-f84e-2c04-36d9
+        name: War Walker
+    id: 4690-9288-bbc9-6652
+    name: War Walker
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Models in this unit have a 5+ invulnerable save.
+    id: a78c-8d55-23c2-2358
+    name: Power Field
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 170
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a model in this unit is destroyed, roll one D6 before removing it from play. On a 6 it explodes, and each unit within 3" suffers one mortal wound.
+    id: c240-4f2e-a002-63a8
+    name: Explodes (War Walker)
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 170
+infoLinks:
+  - targetId: 2a41-1cec-bebf-7e4e
+    type: rule
+    id: 777d-b718-f615-754e
+    name: Advanced Positions
+  - targetId: f5cf-ac08-7c58-c76d
+    type: rule
+    id: bf74-bfcb-0ea3-651e
+    name: Strands of Fate
+id: 261a-f362-1a45-03c8
+name: War Walkers
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 580b-4691-eb5b-b044
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+modifierGroups:
+  - modifiers:
+      - type: remove
+        field: category
+        value: fb5a-2f35-6253-b891
+      - type: add
+        field: category
+        value: a548-0096-76e5-3d06
+      - type: add
+        field: category
+        value: ebb3-4f37-6e57-7a8e
+    conditions:
+      - type: equalTo
+        childId: 5af8-e7c8-e3bf-6d52
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

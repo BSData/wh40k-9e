@@ -1,0 +1,125 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 208b-d2cf-222c-f5bc
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: Each time this WARLORD makes a melee attack, an unmodified hit roll of 6 scores 1 additional hit.
+        id: 30b7-0f93-98ba-603b
+        name: 2. Of Wrath and Rage
+    id: dd00-5fb6-3544-6287
+    name: 2. Of Wrath and Rage
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 5860-0b74-c086-d52a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: Each time this WARLORD is selected to fight, make 1 additional attack with one of its melee weapons for every five enemy models within 3" of it (to a maximum of 3 additional attacks).
+        id: fc5c-4ff4-2328-35fd
+        name: 1. Merciless Butcher
+    id: 68fb-4c54-e02e-2ecf
+    name: 1. Merciless Butcher
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 03d5-e998-54d1-3741
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: >-
+              - Each time this WARLORD declares a charge, enemy units that were targeted by that charge cannot fire Overwatch or Set to Defend against that charge.
+
+              - You can re-roll charge rolls made for this Warlord.
+        id: 4b05-a455-ae16-b9f1
+        name: 3. Cretacian Born
+    id: 4334-8c31-b573-fc0a
+    name: 3. Cretacian Born
+constraints:
+  - id: d5a8-2d4d-5308-3241
+    type: minimum
+    field: selections
+    scope: parent
+    value: -1.0
+    shared: true
+id: 659f-ec7d-ded4-65f4
+name: Warlord Traits (Flesh Tearers)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 698b-1cdd-fe35-12e3
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: d5a8-2d4d-5308-3241
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: cbdb-d926-ccb0-8f06
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - type: equalTo
+            childId: 698b-1cdd-fe35-12e3
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true

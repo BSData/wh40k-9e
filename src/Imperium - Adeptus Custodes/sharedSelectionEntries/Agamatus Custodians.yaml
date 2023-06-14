@@ -1,0 +1,161 @@
+type: unit
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 15.0
+exported: true
+categoryLinks:
+  - targetId: 1c6f-0311-3eba-3180
+    id: 0f3a-dc9d-f915-a81c
+    name: Biker
+  - targetId: c8f7-6d2e-f4b8-f7a5
+    id: fa3d-839d-15d6-05e9
+    name: 'Faction: Adeptus Custodes'
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: 2d9c-be4f-6e80-32f2
+    name: Fast Attack
+  - targetId: 3117-16d8-fcef-4f56
+    id: d0de-993f-d529-840e
+    name: Fly
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 075f-7834-221f-dac2
+    name: Imperium
+  - targetId: 08f1-d244-eb44-7e01
+    id: 09ed-b6bb-9453-83c4
+    name: Core
+  - targetId: 98f2-b15c-d922-d1a7
+    id: 4399-2933-c31b-fd1b
+    name: 'Faction: <Shield Host>'
+selectionEntryGroups:
+  - defaultSelectionEntryId: dd0c-9ca4-aac4-7fde
+    exported: true
+    entryLinks:
+      - targetId: 0a69-2e3d-7bc4-08ea
+        type: selectionEntry
+        exported: true
+        id: dd0c-9ca4-aac4-7fde
+        name: Agamatus Custodian /w Lastrum Bolt Cannon
+      - targetId: 4c78-bdc1-c09e-5fd2
+        type: selectionEntry
+        exported: true
+        id: 1efa-01cf-3550-46d8
+        name: Agamatus Custodian /w Adrathic Devastator & Misericordia
+      - targetId: 55d0-42ab-f21c-1be3
+        type: selectionEntry
+        exported: true
+        id: 84f1-f11b-fb9a-73b7
+        name: Agamatus Custodian /w Lastrum Bolt Cannon & Misericordia
+      - targetId: 137d-4e25-ebda-bee7
+        type: selectionEntry
+        exported: true
+        id: 2be9-9661-b62d-8970
+        name: Agamatus Custodian /w Twin Las Pulser
+      - targetId: 6238-6436-20f7-fe2f
+        type: selectionEntry
+        exported: true
+        id: 9544-b6d9-2f80-285e
+        name: Agamatus Custodian /w Twin Las Pulser & Misericordia
+      - targetId: d541-4e2b-faf0-e72c
+        type: selectionEntry
+        exported: true
+        id: ed9a-9d37-7fa3-9f46
+        name: Agamatus Custodian /w Adrathic Devastator
+    constraints:
+      - id: 5c76-a551-fd89-6272
+        type: minimum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: 71b7-8cb1-eac8-b8f5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+        shared: true
+    id: 9856-2f57-ccae-653c
+    name: Squad
+entryLinks:
+  - targetId: 40c0-dbc1-a807-e693
+    type: selectionEntryGroup
+    exported: true
+    id: 08fa-d4f2-961d-a5fc
+    name: Battle Honours
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 14"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 5
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 6
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 4
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 4
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 11
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 46df-d55d-1c24-8d4b
+    name: Agamatus Custodian
+    publicationId: 7573-8d1b-acdf-2de8
+    page: 85
+infoLinks:
+  - targetId: cb13-aede-683e-c3a7
+    type: profile
+    id: 8890-755d-df10-c4a3
+    name: Implacable Vanguard
+  - targetId: 71e6-fef9-c258-08e9
+    type: rule
+    id: 8663-a97a-9442-464b
+    name: Aegis of the Emperor
+  - targetId: bfa6-9e02-c3a2-c27e
+    type: rule
+    id: 444e-fb58-9151-206c
+    name: Martial K'atah
+id: 06f5-387e-836e-7a72
+name: Agamatus Custodians
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: e0a1-2da5-324d-35c7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: e356-c769-5920-6e14
+    value: 30.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 06f5-387e-836e-7a72
+        value: 3.0
+        shared: true

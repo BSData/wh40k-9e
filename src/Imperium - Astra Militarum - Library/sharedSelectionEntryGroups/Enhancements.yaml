@@ -1,0 +1,184 @@
+exported: true
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        selectionEntryGroups:
+          - exported: true
+            selectionEntries:
+              - type: upgrade
+                costs:
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                  - name: pts
+                    typeId: points
+                exported: true
+                id: b543-b577-bf5a-63bc
+                name: Prefectus Orders
+              - type: upgrade
+                costs:
+                  - name: ' PL'
+                    typeId: e356-c769-5920-6e14
+                  - name: CP
+                    typeId: 2d3b-b544-ad49-fb75
+                  - name: pts
+                    typeId: points
+                exported: true
+                id: a44b-364d-f056-1087
+                name: Regimental Orders
+            constraints:
+              - id: 2a02-1318-22eb-a990
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+              - id: 8e78-7c6e-f26b-b5cb
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+            id: e8c9-c36c-c2d2-ff17
+            name: Order Selection
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: When you select this Enhancement, select on type of Orders (Regimental or Prefectus) that the bearer does not know, the bearer knows those Orders in addition to any others it knows.
+            id: a3d1-4aad-a2cd-b7e9
+            name: Superior Tactical Training
+        id: 9df4-6746-bc94-3cca
+        name: Superior Tactical Training
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: Models in the bearer's unit have a 4+ invulnerable save.
+            id: c3e0-621e-6bf1-0fed
+            name: Death Mask of Ollanius
+        id: eb54-3138-ea79-1f1e
+        name: Death Mask of Ollanius
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: The bearer can issue Orders to its own unit, even though you cannot normally select OFFICER units when issuing Orders
+            id: bff0-bd1a-76af-c73b
+            name: Lead by Example
+        id: 40ca-f4d3-93d2-afcf
+        name: Lead by Example
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: MILITARUM TEMPESTUS model only. In your Command Phase, select one friendly MILITARUM TEMPESTUS unit within 9" of the bearer. Each time a model in that unit makes a ranged attack that targets a unit within half range, improve the Armour Penetration characteristic of that attack by 1.
+            id: 3cd0-63f7-9ca8-cb66
+            name: Uncompromising Prosecution
+        id: 2489-cc56-b1e6-e4ef
+        name: Uncompromising Prosecution
+        modifiers:
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: notInstanceOf
+                childId: 3984-854b-4603-be64
+                field: selections
+                scope: parent
+                shared: true
+    constraints:
+      - id: 955d-d12d-0a5d-ccde
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+    id: effa-adc7-b268-469f
+    name: Astra Militarum Enhancements
+entryLinks:
+  - targetId: 4c50-9343-b5fb-872d
+    type: selectionEntryGroup
+    exported: true
+    id: 2961-fc30-5851-ddca
+    name: Boarding Action Enhancements
+constraints:
+  - id: eb0d-23de-17af-908b
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 4772-f04c-cfdc-8c37
+name: Enhancements
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 1f07-a468-bda8-fd3f
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true

@@ -1,0 +1,105 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+exported: true
+categoryLinks:
+  - targetId: c845-c72c-6afe-3fc2
+    primary: true
+    id: b295-fec2-ce98-7f2f
+    name: New CategoryLink
+constraints:
+  - id: 191d-dd2b-f5e4-963b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: a36a-9644-4f13-0b77
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 0b83-3a3f-078a-8a13
+name: Gifts of Chaos
+modifiers:
+  - type: set
+    field: 191d-dd2b-f5e4-963b
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 191d-dd2b-f5e4-963b
+    value: 3.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: a207-a133-6adb-25f3
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 398a-c8da-c8bd-da58
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: a36a-9644-4f13-0b77
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: 4d5d-f871-856d-84cc
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 0.0
+    conditions:
+      - type: atLeast
+        childId: 2aee-51b0-2b2b-218d
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

@@ -1,0 +1,64 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 2e0a-c1bb-3cfc-98e6
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'At the start of your Shooting phase, select one enemy VEHICLE unit within 18" of the bearer. Until the end of the phase, that bearer gains the following ability:'
+    id: bb85-821f-e3fd-2150
+    name: The Eye of Xi-Lexum
+    publicationId: ebe8-544e-pubN65537
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While a friendly AGRIPINAA CORE or AGRIPINAA KATAPHRON SERVITORS unit is within 6" of this model, each time a model in that unit makes an attack that targets the selected VEHICLE unit, you can re-roll the wound roll.
+    id: 9308-a6bf-ea3a-9591
+    name: 'The Eye of Xi-Lexum (Aura):'
+    publicationId: ebe8-544e-pubN65537
+id: 4f83-44e8-24f2-36a0
+name: 'Relic (Agripinaa): The Eye of Xi-Lexum'
+publicationId: ebe8-544e-pubN65537
+page: 53
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: ac50-58f2-fbb8-af14
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: lessThan
+            childId: ce46-2163-0a5e-e2a9
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

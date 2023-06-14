@@ -1,0 +1,781 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+selectionEntries:
+  - type: model
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+        value: 7.0
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    selectionEntryGroups:
+      - defaultSelectionEntryId: cdac-ef22-c0d6-edcc
+        exported: true
+        entryLinks:
+          - targetId: fd87-854b-d284-184a
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 1129-f982-89db-dd9d
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: c8fc-5c44-94ea-327d
+            name: Lasgun
+          - targetId: 5752-d165-5e03-d38c
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 3f08-3ec0-32f4-61aa
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: cdac-ef22-c0d6-edcc
+            name: Autogun
+          - targetId: 19e7-3448-5df2-5ec0
+            type: selectionEntryGroup
+            exported: true
+            constraints:
+              - id: 2677-e9bf-face-2858
+                type: minimum
+                field: selections
+                scope: parent
+                shared: true
+            id: 09cf-8214-6dc2-97c7
+            name: Melee Weapons
+            modifiers:
+              - type: set
+                field: 2677-e9bf-face-2858
+                value: 1.0
+                conditions:
+                  - type: equalTo
+                    childId: eb2c-02f8-88b3-7f35
+                    field: selections
+                    scope: f461-4976-d62a-afd1
+                    value: 1.0
+                    shared: true
+          - targetId: eb2c-02f8-88b3-7f35
+            type: selectionEntryGroup
+            exported: true
+            constraints:
+              - id: 63a7-6f53-87c0-559b
+                type: minimum
+                field: selections
+                scope: parent
+                shared: true
+            id: e868-0119-7306-3253
+            name: Ranged Weapons
+            modifiers:
+              - type: set
+                field: 63a7-6f53-87c0-559b
+                value: 1.0
+                conditions:
+                  - type: equalTo
+                    childId: 19e7-3448-5df2-5ec0
+                    field: selections
+                    scope: f461-4976-d62a-afd1
+                    value: 1.0
+                    shared: true
+        constraints:
+          - id: 77d3-f8ce-8e08-0059
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: fd79-ae06-f057-2d2e
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 5cd5-c41f-fe14-0777
+        name: Weapon Selection
+        modifiers:
+          - type: set
+            field: fd79-ae06-f057-2d2e
+            value: 2.0
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: eb2c-02f8-88b3-7f35
+                    field: selections
+                    scope: f461-4976-d62a-afd1
+                    value: 1.0
+                    shared: true
+                  - type: equalTo
+                    childId: 19e7-3448-5df2-5ec0
+                    field: selections
+                    scope: f461-4976-d62a-afd1
+                    value: 1.0
+                    shared: true
+          - type: set
+            field: 77d3-f8ce-8e08-0059
+            value: 2.0
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 19e7-3448-5df2-5ec0
+                    field: selections
+                    scope: f461-4976-d62a-afd1
+                    value: 1.0
+                    shared: true
+                  - type: equalTo
+                    childId: eb2c-02f8-88b3-7f35
+                    field: selections
+                    scope: f461-4976-d62a-afd1
+                    value: 1.0
+                    shared: true
+    entryLinks:
+      - targetId: 8ab0-97c4-72d7-a0e2
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 08ab-f1d0-f2a1-8caa
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 047b-7c8b-d1a0-cb90
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 1bea-6c2c-9c25-ade7
+        name: Frag grenade
+    constraints:
+      - id: 5d51-b9c4-b5df-6ae5
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c21c-8cbf-a2d6-0739
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 6"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 3+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 3+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 3
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 1
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 2
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 7
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: b062-fdb1-346b-e4da
+        name: Renegade Disciple Champion
+    id: f461-4976-d62a-afd1
+    name: Disciple Champion
+selectionEntryGroups:
+  - defaultSelectionEntryId: 0cdf-b804-12e2-8823
+    exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        selectionEntries:
+          - type: model
+            costs:
+              - name: pts
+                typeId: points
+                value: 7.0
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+            exported: true
+            entryLinks:
+              - targetId: 8ab0-97c4-72d7-a0e2
+                type: selectionEntry
+                exported: true
+                constraints:
+                  - id: ce85-b664-f997-3186
+                    type: minimum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                  - id: 31ef-3bb1-0eee-9975
+                    type: maximum
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                id: 7549-8230-755b-65cd
+                name: Frag grenades
+            constraints:
+              - id: 9366-36b3-d9f4-3024
+                type: minimum
+                field: selections
+                scope: parent
+                value: 2.0
+                shared: true
+              - id: a59c-0293-26fa-6c54
+                type: maximum
+                field: selections
+                scope: parent
+                value: 2.0
+                shared: true
+            id: b6a2-dfd8-00f9-5b19
+            name: Disciple Crew
+        entryLinks:
+          - targetId: 6e60-2ebe-00fd-5120
+            type: selectionEntryGroup
+            exported: true
+            constraints:
+              - id: f522-0fe0-2558-1310
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 63ed-b59d-a8bd-9ff5
+            name: Heavy Weapons
+        constraints:
+          - id: 7597-b521-d0a2-211f
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        profiles:
+          - typeId: 800f-21d0-4387-c943
+            typeName: Unit
+            characteristics:
+              - name: M
+                typeId: 0bdf-a96e-9e38-7779
+                value: 6"
+              - name: WS
+                typeId: e7f0-1278-0250-df0c
+                value: 3+
+              - name: BS
+                typeId: 381b-eb28-74c3-df5f
+                value: 3+
+              - name: S
+                typeId: 2218-aa3c-265f-2939
+                value: 3
+              - name: T
+                typeId: 9c9f-9774-a358-3a39
+                value: 3
+              - name: W
+                typeId: f330-5e6e-4110-0978
+                value: 2
+              - name: A
+                typeId: 13fc-b29b-31f2-ab9f
+                value: 2
+              - name: Ld
+                typeId: 00ca-f8b8-876d-b705
+                value: 6
+              - name: Save
+                typeId: c0df-df94-abd7-e8d3
+                value: 6+
+            id: ac97-52c7-fa9f-8874
+            name: Renegade Disciple Weapon Team
+        id: 1dac-1430-9ffe-9b66
+        name: Disciple Weapon Team (2 models)
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 7.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        entryLinks:
+          - targetId: 8ab0-97c4-72d7-a0e2
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 8369-f0cd-5ba7-46c4
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 5872-ae59-9e04-4b52
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 2c2c-64a3-f5ce-f94e
+            name: Frag grenade
+          - targetId: c90d-f7ed-0405-0281
+            type: selectionEntryGroup
+            exported: true
+            constraints:
+              - id: ddec-1e30-83c6-625d
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: e47b-32d4-6a33-098e
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: f1d2-d981-c2fa-b952
+            name: Special Weapons
+        constraints:
+          - id: ac8d-843b-e1f5-01c2
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 73f3-deda-9911-d645
+        name: Disciple with special weapon
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 7.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntryGroups:
+          - defaultSelectionEntryId: e3e2-4d50-9524-ff53
+            exported: true
+            entryLinks:
+              - targetId: fd87-854b-d284-184a
+                type: selectionEntry
+                exported: true
+                id: 2a6f-ea74-ec78-e413
+                name: Lasgun
+              - targetId: 5752-d165-5e03-d38c
+                type: selectionEntry
+                exported: true
+                id: e3e2-4d50-9524-ff53
+                name: Autogun
+            constraints:
+              - id: d5ed-f021-f052-f0be
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 17ee-ba6b-570f-d2c6
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 36e3-7039-e634-a12d
+            name: Weapon option
+        entryLinks:
+          - targetId: 8ab0-97c4-72d7-a0e2
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: b8b8-965e-a741-e515
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: b692-9b3c-cf12-aed6
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: d1ef-8164-e6ee-e15f
+            name: Frag grenade
+          - targetId: 4b1e-8fd6-b41e-052f
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 2b9e-565b-7a98-b3b5
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 4c7c-373a-a0d7-4476
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: d3a0-4390-a7a6-d6bf
+            name: Chaos Sigil
+        constraints:
+          - id: c3a3-ab62-37c9-0b6a
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 16d8-a326-e4dd-24ed
+        name: Disciple with Chaos Sigil
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 7.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntryGroups:
+          - defaultSelectionEntryId: 6a55-9a56-2eb1-093f
+            exported: true
+            entryLinks:
+              - targetId: fd87-854b-d284-184a
+                type: selectionEntry
+                exported: true
+                id: 8465-70c0-e08b-458d
+                name: Lasgun
+              - targetId: 5752-d165-5e03-d38c
+                type: selectionEntry
+                exported: true
+                id: 6a55-9a56-2eb1-093f
+                name: Autogun
+            constraints:
+              - id: 3e37-3952-54b2-17aa
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 82c1-d7e7-5e4b-4ed5
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: b18f-db43-cb2d-9796
+            name: Weapon option
+        entryLinks:
+          - targetId: 8ab0-97c4-72d7-a0e2
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: c86c-d36b-402b-3eeb
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: d742-2b4c-5083-53e8
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: e411-0ee5-4c94-b457
+            name: Frag grenade
+          - targetId: c45e-4561-c83b-cd4d
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: b767-db72-356a-cc63
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 0d9e-a533-2e10-a8f6
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 4af8-0341-3f42-d4a4
+            name: Vox-caster
+        constraints:
+          - id: 2fae-27ef-522e-a365
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 8155-d03e-28e2-c0b4
+        name: Disciple with Voxcaster
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 7.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntries:
+          - type: upgrade
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: pts
+                typeId: points
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+            collective: true
+            exported: true
+            constraints:
+              - id: 9c3e-51e3-55a8-9579
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: ee9f-6b92-5750-eb3a
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            infoLinks:
+              - targetId: fcde-3e6a-e240-1157
+                type: profile
+                id: fed0-d4e4-5211-162c
+                name: Autogun
+            id: e994-6083-c7a7-2912
+            name: Autogun
+        entryLinks:
+          - targetId: 8ab0-97c4-72d7-a0e2
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: d607-f479-8854-0398
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: e6c1-0dbf-b82f-cb38
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: f4f9-904f-7d20-f25a
+            name: Frag grenade
+        id: 0cdf-b804-12e2-8823
+        name: Disciple with autogun
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 7.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        selectionEntries:
+          - type: upgrade
+            costs:
+              - name: ' PL'
+                typeId: e356-c769-5920-6e14
+              - name: pts
+                typeId: points
+              - name: CP
+                typeId: 2d3b-b544-ad49-fb75
+            collective: true
+            exported: true
+            constraints:
+              - id: 9149-1265-1059-13f3
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 435c-df7c-d294-3929
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            infoLinks:
+              - targetId: d174-eb55-aaa6-d032
+                type: profile
+                id: 79fe-f394-d28f-bf8f
+                name: Lasgun
+            id: 621b-ed4a-4be8-f049
+            name: Lasgun
+        entryLinks:
+          - targetId: 8ab0-97c4-72d7-a0e2
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: e723-12f3-10df-d6da
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: 9fbb-07b2-9c14-cbf8
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 487f-cf46-60f2-149d
+            name: Frag grenade
+        id: 3d05-7590-0783-b10f
+        name: Disciple with Lasgun
+    constraints:
+      - id: d330-d845-7bb7-5a52
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - id: d691-a59c-fa02-920a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 14.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 1ed4-0131-3d2c-9e60
+    name: 4 - 14 Disciples
+    modifiers:
+      - type: decrement
+        field: d330-d845-7bb7-5a52
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 1dac-1430-9ffe-9b66
+            field: selections
+            scope: 478b-40b6-b779-32f7
+            value: 1.0
+            shared: true
+      - type: decrement
+        field: d691-a59c-fa02-920a
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: 1dac-1430-9ffe-9b66
+            field: selections
+            scope: 478b-40b6-b779-32f7
+            value: 1.0
+            shared: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 3
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 3
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 1
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 1
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 6
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 6+
+    id: 1f45-2f6d-cb09-1f79
+    name: Renegade Disciple
+infoLinks:
+  - targetId: 60bc-f557-e4db-bce7
+    type: profile
+    id: 8ea9-6554-e8a0-1891
+    name: Covenant of Chaos
+  - targetId: 7175-44d4-5a43-bf40
+    type: profile
+    id: 5c51-c508-0140-6801
+    name: True Believers
+id: 478b-40b6-b779-32f7
+name: Renegade Disciple Squad
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 478b-40b6-b779-32f7
+        value: 5.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 478b-40b6-b779-32f7
+        value: 10.0
+        shared: true

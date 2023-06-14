@@ -1,0 +1,58 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Add 1 to this WARLORD’s Strength and Attacks characteristics.
+    id: 82be-9e9a-28b9-fba3
+    name: Famed Savagery
+id: 4a38-02a7-bf94-b9aa
+name: Famed Savagery
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: instanceOf
+            childId: 0fa5-c739-c66f-3d88
+            field: selections
+            scope: ancestor
+            shared: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: acee-8ab0-c23e-4c09
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: greaterThan
+                    childId: a648-9f1a-b826-1551
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                  - type: equalTo
+                    childId: fa66-1b74-39b7-2422
+                    field: selections
+                    scope: parent
+                    shared: true
+                    includeChildSelections: true

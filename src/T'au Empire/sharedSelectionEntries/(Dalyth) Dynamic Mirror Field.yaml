@@ -1,0 +1,60 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 7b96-f47b-e86d-a979
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: dd9c-feee-1235-b6b4
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+infoLinks:
+  - targetId: 59f4-c90a-f3fe-a44a
+    type: profile
+    id: 5d54-55bb-7b2f-dbb7
+    name: Dynamic Mirror Field
+id: 9f32-2702-1860-3d6e
+name: "(Dal'yth): Dynamic Mirror Field"
+page: ''
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 06c4-0ff2-d0ee-b83d
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: 6c3b-d0e4-8c16-76e1
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: greaterThan
+            childId: 9be6-affd-447c-c441
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

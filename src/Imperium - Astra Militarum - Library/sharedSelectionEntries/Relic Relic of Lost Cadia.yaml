@@ -1,0 +1,42 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: b7e8-a0ef-e384-7802
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          CADIAN model only. Once per battle, in any Command phase, the bearer can use this Relic. If it does so, until the end of the turn, the bearer gains the following ability:
+
+          RELIC OF LOST CADIA (Aura): While a friendly CADIAN INFANTRY unit is within 6" of this model, improve the Weapon Skill and Ballistic Skill characteristics of models in that unit by 1 and add 1 to the Attacks and Leadership characteristics of models in that unit.
+    id: f48a-94d7-a04d-28e9
+    name: Relic of Lost Cadia
+id: 0cbc-fba4-2e32-1813
+name: 'Relic: Relic of Lost Cadia'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: b332-b046-7171-5059
+        field: selections
+        scope: ancestor
+        shared: true

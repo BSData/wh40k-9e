@@ -1,0 +1,61 @@
+exported: true
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 37b5-5aab-673f-f4cf
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+        typeName: Abilities
+        characteristics:
+          - name: Description
+            typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+            value: While a friendly <CHAPTER> CORE unit is within 6" of this WARLORD, that unit has the Objective Secured ability. If a model in such a unit already has this ability, that model counts as one additional model when determining control of an objective marker
+        id: 5c8a-ec79-0dd3-1355
+        name: Steadfast Example
+    id: d747-b1fd-5341-5479
+    name: Steadfast Example
+id: f8df-0144-6242-fcc9
+name: Warlord Traits (Chapter Ancient)
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: 1b89-4aed-3b44-8d0c
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: equalTo
+            childId: c791-b2fc-df48-1834
+            field: selections
+            scope: parent
+            shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: d043-3847-e963-fb5d
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

@@ -1,0 +1,42 @@
+targetId: 339f-3bb9-0c10-034b
+type: selectionEntry
+exported: true
+categoryLinks:
+  - targetId: ff36a6f3-19bf-4f48-8956-adacfd28fe74
+    primary: true
+    id: b0d0-4287-9a86-bbac
+    name: New CategoryLink
+entryLinks:
+  - targetId: 0f93-1988-1ae0-0720
+    type: selectionEntryGroup
+    exported: true
+    id: 209d-3674-f2ab-ef7d
+    name: Relic Bearers
+constraints:
+  - id: fa0d-ca92-eced-c76d
+    type: maximum
+    field: selections
+    scope: parent
+    shared: true
+id: 5ce3-8466-5eb5-70f4
+name: Company Veterans
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 8352-7f67-7e2b-3b4f
+        field: selections
+        scope: force
+        shared: true
+  - type: increment
+    field: fa0d-ca92-eced-c76d
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: 8352-7f67-7e2b-3b4f
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true

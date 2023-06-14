@@ -1,0 +1,100 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 0c20-9ada-c802-1ceb
+    type: maximum
+    field: selections
+    scope: roster
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+id: 8e3a-a693-06f1-817a
+name: Aspect Shrine Relic
+modifiers:
+  - type: increment
+    field: 0c20-9ada-c802-1ceb
+    value: 2.0
+    repeats:
+      - repeatCount: 1
+        childId: 031e-6482-0018-4ea7
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: increment
+    field: 0c20-9ada-c802-1ceb
+    value: 2.0
+    conditionGroups:
+      - type: and
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 93a5-5452-136c-f12e
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: greaterThan
+                childId: 858e-1bd9-61c9-6dcf
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+  - type: decrement
+    field: 0c20-9ada-c802-1ceb
+    value: 2.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: 8ca6-6aeb-178c-207e
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

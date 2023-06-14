@@ -1,0 +1,54 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: e705-3f75-fd32-7413
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'AURIC MASK (AURA): While an enemy units is within 12" of this bearer, subtract 1 from the Leadership characteristic of models in that units. While an enemy unit is within 6" of the bearer, subtract an additional 1 from the Leadership characteristic of model in that unit (for a total modifier of -2 leadership) and each time a Combat Attrition test is take for that unit, subtract 1 from the Combat Attrition test.'
+    id: 5698-9531-9f77-a6f7
+    name: The Auric Mask
+    publicationId: 82cd-d24f-pubN65537
+    page: 117
+id: 25e6-ad3d-8419-6d07
+name: 'Heirloom (Vulker): The Auric Mask'
+publicationId: 82cd-d24f-pubN65537
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: dfcb-7e82-5b5e-e379
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: notInstanceOf
+            childId: 0beb-b355-6b4a-e072
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

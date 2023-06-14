@@ -1,0 +1,173 @@
+exported: true
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: If this WARLORD attempts to perform a psychic action in your Psychic phase, it can still attempt to manifest one psychic power during that phsae without that psychic action failing.
+            id: c880-cfab-73c5-63b5
+            name: Fractal Mind
+        id: 5472-f208-9125-1482
+        name: Fractal Mind
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: Each time this WARLORD successfully manifests a psychic power from the Pandaemoniac discipline, add 6" to the range of that psychic power. If that psychic power specifies more than one range, only add 6" to the first range specified.
+            id: b28d-0191-3349-bc97
+            name: Lorekeeper of Tzeentch
+        id: fd82-9e1f-d67b-3fca
+        name: Lorekeeper of Tzeentch
+        modifiers:
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: instanceOf
+                childId: eb72-b7a9-1df1-04db
+                field: selections
+                scope: ancestor
+                shared: true
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: pts
+            typeId: points
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: Add 1 to Psychic tests taken for this WARLORD.
+            id: bb7e-fbde-42d9-9e91
+            name: Born of Sorcery
+        id: a0ed-ba49-0341-0d0c
+        name: Born of Sorcery
+    entryLinks:
+      - targetId: 9683-93f4-3d24-1abf
+        type: selectionEntry
+        exported: true
+        id: fe54-08a2-182c-12ea
+        name: Incorporeal Form
+      - targetId: 516a-c127-9381-e147
+        type: selectionEntry
+        exported: true
+        id: 6fc2-c3ef-5bfa-db72
+        name: Tyrant of the Warp
+        modifiers:
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: instanceOf
+                childId: eb72-b7a9-1df1-04db
+                field: selections
+                scope: ancestor
+                shared: true
+      - targetId: e523-4b28-8b72-75a3
+        type: selectionEntry
+        exported: true
+        id: 9efc-1a3b-ab11-69bb
+        name: Warp Tether
+        modifiers:
+          - type: set
+            field: hidden
+            value: true
+            conditions:
+              - type: instanceOf
+                childId: eb72-b7a9-1df1-04db
+                field: selections
+                scope: ancestor
+                shared: true
+    constraints:
+      - id: ec80-50bb-247e-e939
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 3c84-5f0a-8564-3a83
+    name: Warlord Traits (Tzeentch)
+entryLinks:
+  - targetId: d442-1f03-d9da-e77f
+    type: selectionEntryGroup
+    exported: true
+    id: 097e-8888-7d94-5397
+    name: Warlord Traits (BRB)
+constraints:
+  - id: 9314-6645-21cf-4716
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: 9f49-1282-a871-d732
+name: Warlord Traits (Tzeentch)
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 6771-6ab3-1672-6a39
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: c488-0afe-c67e-2606
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: force
+                    shared: true
+                    includeChildSelections: true

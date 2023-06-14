@@ -1,0 +1,50 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time you make an unmodified saving throw of 4+ for this WARLORD against a melee attack, after the attacking model's unit has finished making its attacks, that enemy unit suffers 1 mortal wound. This WARLORD does not benefit from the second part of the Cursed Blades' Only the Strong Will Thrive Obsession.
+    id: 3b98-3246-235b-8f19
+    name: Treacherous Deceiver
+id: 3f1b-0f6f-90be-4bac
+name: Treacherous Deceiver
+hidden: true
+modifiers:
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: c6ce-d06c-31a4-a035
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: greaterThan
+                childId: 8110-3496-8836-ece4
+                field: selections
+                scope: force
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 0b66-4add-9ad9-2ff7
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true

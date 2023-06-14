@@ -1,0 +1,280 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 11.0
+  - name: pts
+    typeId: points
+    value: 160.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: ca5d-ebb5-608a-a80f
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 62c5-6e47-2ce0-5a4f
+    name: New CategoryLink
+  - targetId: 0fcf-9239-bfb9-d89d
+    id: 43d7-be0c-ad70-9fa7
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: c1ac-dd05-b202-2db6
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: d1b1-ddf2-9a99-a7c1
+    name: New CategoryLink
+  - targetId: f03d-1d11-7bda-1ea4
+    id: 55d3-962f-b932-7094
+    name: New CategoryLink
+  - targetId: 80e7-f1d9-9195-7944
+    id: 2400-0293-3452-d1b6
+    name: New CategoryLink
+  - targetId: 82df-13db-9e7b-15a3
+    id: 3801-fa8f-fad5-46d6
+    name: Mk X Gravis
+  - targetId: 53b7-cff3-c3b4-d36a
+    id: d265-8239-4134-6ee3
+    name: Primaris
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: a1f8-3e8a-1416-9d84
+    name: New CategoryLink
+entryLinks:
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: e81a-eb91-3166-879f
+    name: Warlord
+  - targetId: fb99-9671-04d2-7b12
+    type: selectionEntry
+    exported: true
+    id: 42b9-ff81-b20b-34c4
+    name: Gauntlets of Ultramar
+  - targetId: 3131-ea18-29b9-ee8c
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 2296-dcef-dfa5-8095
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: b46a-8f85-daf4-2a47
+    name: Adept of the Codex
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: 2296-dcef-dfa5-8095
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 4812-0d8e-f215-66fe
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+    id: 0af0-e3b7-9663-87ef
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: 4812-0d8e-f215-66fe
+        value: 1.0
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+constraints:
+  - id: 50a0-7b7b-93a0-fa2f
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: If your army is Battle-forged, you receive an additional 2 Command Points if Marneus Calgar is your Warlord.
+    id: 7052-c9f7-eb3e-2f92
+    name: Master Tactician
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Marneus Calgar has a 4+ invulnerable save. In addition, all damage suffered by Marneus Calgar is halved (rounding up).
+    id: 41b3-08f0-a069-ede4
+    name: Armour of Heraclus
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 5
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 8
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 6
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 810d-89a0-5bbc-fb29
+    name: Marneus Calgar
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 33b6-76d2-3c2a-ef3f
+    name: Angels of Death
+  - targetId: fdb4-b1a5-3c97-6400
+    type: profile
+    id: 6ed7-d0c6-6302-3b82
+    name: Chapter Master
+  - targetId: 922c-75db-5ca4-3750
+    type: profile
+    id: be32-bf8e-72b1-94df
+    name: Rites of Battle
+id: a818-c4fe-98e8-a6fb
+name: Marneus Calgar
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 9780-910f-1c95-4bf2
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: 2d3b-b544-ad49-fb75
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: ee33-18fd-7317-1171
+        field: selections
+        scope: a818-c4fe-98e8-a6fb
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

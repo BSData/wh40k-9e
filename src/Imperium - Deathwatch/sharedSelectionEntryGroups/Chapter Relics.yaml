@@ -1,0 +1,159 @@
+exported: true
+entryLinks:
+  - targetId: d324-98f1-ecad-c28a
+    type: selectionEntryGroup
+    exported: true
+    id: d7d8-b3c2-96fd-bfa0
+    name: Chapter Ancient Relics
+  - targetId: 1cc9-1bee-bcfe-60c9
+    type: selectionEntryGroup
+    exported: true
+    id: 16b6-802d-b8b8-9cf8
+    name: Chapter Champion Relics
+  - targetId: 47f9-30b5-6284-8102
+    type: selectionEntryGroup
+    exported: true
+    id: 56e7-9220-c93e-0143
+    name: Chief Apothecary Relics
+  - targetId: ca5d-2c86-709d-1f85
+    type: selectionEntryGroup
+    exported: true
+    id: 2271-8264-a247-cbb3
+    name: Master of the Forge Relics
+  - targetId: d8d4-ab92-f035-3606
+    type: selectionEntryGroup
+    exported: true
+    id: 1e09-832a-fb37-2237
+    name: Master of Sanctity Relics
+  - targetId: 62dd-3f4b-d716-0f1e
+    type: selectionEntryGroup
+    exported: true
+    id: cd4c-d9c0-166b-5cf5
+    name: Chief Librarian Relics
+  - targetId: 6d7d-10f1-04bd-65f4
+    type: selectionEntryGroup
+    exported: true
+    id: 5733-6fa3-9ffe-2eab
+    name: Codex Relics
+  - targetId: 90b1-4e8d-706f-d8fb
+    type: selectionEntryGroup
+    exported: true
+    id: 4af6-8e98-bd81-f76a
+    name: Relics of the Watch Fortresses
+  - targetId: 65f9-e6ba-7666-0267
+    type: selectionEntryGroup
+    exported: true
+    id: 5559-c7c3-2c57-ad8e
+    name: Chapter Master Relics
+constraints:
+  - id: 9035-c9c7-435d-c81a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: c8ff-5b58-6c03-763c
+    type: maximum
+    field: selections
+    scope: roster
+    shared: true
+    includeChildSelections: true
+id: f823-a5a7-2b6e-e168
+name: Chapter Relics
+modifiers:
+  - type: set
+    field: c8ff-5b58-6c03-763c
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: increment
+    field: c8ff-5b58-6c03-763c
+    value: 1.0
+    repeats:
+      - repeatCount: 1
+        childId: cd40-9145-360f-5b41
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+      - repeatCount: 1
+        childId: c69b-a3c8-c573-5703
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: cd40-9145-360f-5b41
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: c470-54ac-0863-8848
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: greaterThan
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+                  - type: greaterThan
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    shared: true
+                    includeChildSelections: true
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: c470-54ac-0863-8848
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: cd40-9145-360f-5b41
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: lessThan
+                childId: ee33-18fd-7317-1171
+                field: selections
+                scope: roster
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

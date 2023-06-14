@@ -1,0 +1,40 @@
+typeId: e31c-30b0-b621-edf7
+typeName: Dynastic Code
+characteristics:
+  - name: Description
+    typeId: b1f8-a131-2cef-6c8b
+    value: Units with this code have the Objective Secured ability.  If a model in such a unit already has this ability, that model counts as one additional model when determining control of an objective marker.  Each time an attack with an Armour Penetration characteristic of -1 is allocated to a model with this code, if that model's unit is wholly within its controller's deployment zone, that attack has an Armour Penetration characteristic of 0 instead.  When the Protocol of the Eternal Guardian becomes active for your army, if every unit in your army (excluding DYNASTIC AGENT and C'TAN SHARD units) has this code, you can select both of that command protocol's directives instead of just one.
+id: db93-0118-48d5-4b4d
+name: Aggressively Territorial
+publicationId: 61c6-c8c5-pubN65537
+page: 52
+modifiers:
+  - type: set
+    field: b1f8-a131-2cef-6c8b
+    value: Each INFANTRY model in this unit counts as one additional model when determining control of an objective marker.
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 551a-4ae2-77ec-3f08
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 7fcd-553a-a403-3e5d
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true

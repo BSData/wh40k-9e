@@ -1,0 +1,359 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 8.0
+  - name: pts
+    typeId: points
+    value: 150.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: ef18-746a-369f-43a4
+    id: 08f7-9316-eac4-f242
+    name: New CategoryLink
+  - targetId: 6fd7-9e10-d37c-5056
+    id: 125b-fc84-8a79-dbbc
+    name: New CategoryLink
+  - targetId: 2c4a-3ec9-a1f6-a1ee
+    id: f0dd-e2dd-05d7-c340
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 7a41-8104-70f0-4de3
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: c8fd-0ebe-46f5-3355
+    name: New CategoryLink
+  - targetId: 3117-16d8-fcef-4f56
+    id: 7309-06bb-5bdb-55ce
+    name: New CategoryLink
+  - targetId: f627-f23e-a3b4-dc2c
+    id: d8e4-ca43-22a5-aa29
+    name: New CategoryLink
+  - targetId: f4f3-390c-6e3b-96e3
+    id: 9508-ba65-fb61-0568
+    name: New CategoryLink
+  - targetId: c7b7-edbc-bc14-6238
+    id: c641-0215-b13a-c969
+    name: 'Faction: Adeptus Astartes'
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    constraints:
+      - id: d11f-fe9f-ddce-e37a
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 1f15-ef16-d0db-e6f2
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +2
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -4
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to the normal damage.
+        id: ff76-895e-4d12-a08d
+        name: Encarmine Broadsword
+    id: 8bb8-abdd-173a-98b0
+    name: Encarmine Broadsword
+entryLinks:
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 77e4-4250-ad00-8d4c
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 0363-3c62-2c52-0a31
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 24c6-8dbf-4ece-4b70
+    name: Frag & Krak grenades
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d6a5-ce7a-396a-65e5
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 0ae9-1d2e-239e-c413
+    name: Warlord
+  - targetId: f01d-0b09-9f26-885d
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: e823-5f8d-1477-9980
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+      - id: 82c1-ad20-c027-3130
+        type: maximum
+        field: selections
+        scope: parent
+        shared: true
+    id: 0e84-3bdc-f1cf-b423
+    name: 4. Heroic Bearing
+    modifiers:
+      - type: set
+        field: 82c1-ad20-c027-3130
+        value: 1
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+      - type: set
+        field: e823-5f8d-1477-9980
+        value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+              - type: equalTo
+                childId: ee33-18fd-7317-1171
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: ee33-18fd-7317-1171
+            field: selections
+            scope: parent
+            shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+            conditionGroups:
+              - type: or
+                conditions:
+                  - type: equalTo
+                    childId: 76d2-6e71-243f-ad3d
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                  - type: equalTo
+                    childId: e77a-cc54-efcf-a09a
+                    field: selections
+                    scope: roster
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: aa42-acbd-b507-b1f2
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: equalTo
+                childId: e77a-cc54-efcf-a09a
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 76d2-6e71-243f-ad3d
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+constraints:
+  - id: 7999-6618-0a36-1ad9
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'While a friendly BLOOD ANGELS CORE or BLOOD ANGELS CHARACTER unit is within 6" of this model, each time that unit fights, until that fight is resolved, add 1 to the Attacks characteristic of models in that unit. This is not cumulative with the additional attack granted by the Shock Assault ability or the Honour Vehement Relic (see Codex: Space Marines).'
+    id: 83e0-32ac-52e6-2714
+    name: Aura of Fervour (Aura)
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: This model is eligible to declare a charge with even if it Fell Back this turn. This model is eligible to perform a Heroic Intervention if it is within 6” horizontally and 5” vertically of any enemy unit, instead of 3” horizontally and 5” vertically. Each time this model makes a Heroic Intervention move, it can move up to 6” instead of 3”. All other rules for Heroic Interventions still apply.
+    id: eefc-78ec-47b0-5112
+    name: Avenging Angel
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 12"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 2+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 5
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 9
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 2+
+    id: 52a7-2cac-7ede-9b86
+    name: The Sanguinor
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Each time a melee attack is made against this model, subtract 1 from that attack’s hit roll.
+    id: cf0e-a7d7-43ac-eeb2
+    name: Angelic Visage
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: At the end of the Heroic Interventions step of your opponent’s Charge phase, if this model has not yet been set up on the battlefield, and if any enemy units finished a charge move within Engagement Range of any friendly BLOOD ANGELS units this phase, you can set up this model within Engagement Range of one of those enemy units. This model counts as having performed a Heroic Intervention in the turn it uses this ability.
+    id: 09f6-c988-2657-935d
+    name: Miraculous Saviour
+infoLinks:
+  - targetId: 242c-3bac-1ff3-48b0
+    type: profile
+    id: ecb3-8b43-da7f-ac1a
+    name: Iron Halo
+  - targetId: 3006-d1b9-c324-c9be
+    type: rule
+    id: fd6f-c437-74f7-dcbd
+    name: Savage Echoes
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: ba92-b087-3e15-34a3
+    name: Angels of Death
+  - targetId: 2deb-254e-c616-78b9
+    type: rule
+    id: f4d1-1ef0-cf70-6171
+    name: The Red Thirst
+  - targetId: 5278-7ae7-6d55-1ee2
+    type: rule
+    id: afd4-46aa-3af7-89d9
+    name: Death from Above
+id: b93b-c150-9a0d-804c
+name: The Sanguinor
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: 67dc-2347-1d81-d320
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 8a3b-5c79-60b9-deaf
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 3fc0-7b45-650a-d384
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

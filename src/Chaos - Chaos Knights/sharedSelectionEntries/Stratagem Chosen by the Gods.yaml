@@ -1,0 +1,162 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: pts
+    typeId: points
+exported: true
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 4a3d-582d-f31c-d71c
+            id: 5d24-95e5-bfae-2db5
+            name: Khorne
+        id: c9a9-e05a-5dac-4897
+        name: Khorne
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: aecd-93b4-d1a1-c67c
+            id: a426-64d1-2fc5-10d0
+            name: Nurgle
+        id: 0dbd-60d6-fd6e-0f9d
+        name: Nurgle
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 2ee7-e16f-17fc-eae3
+            id: 64ba-03a0-ba9f-add5
+            name: Slaanesh
+        id: 481f-e77e-57a8-4db6
+        name: Slaanesh
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 22a8-6612-761d-2903
+            id: a947-8912-6a8a-6fba
+            name: Tzeentch
+        id: 1a50-3263-04c3-77ec
+        name: Tzeentch
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        categoryLinks:
+          - targetId: 5012-4734-1b9d-68e9
+            id: bb51-947b-f864-99ba
+            name: Pantheon Undivided
+        id: 751d-bdfc-8ab7-fe6f
+        name: Pantheon Undivided
+    constraints:
+      - id: 62df-9992-e54f-d58e
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 75ff-66ef-2e19-502e
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: ec10-8d92-f9ed-81ef
+    name: God
+constraints:
+  - id: 76ea-d1a1-bb49-220a
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 9f02-047c-dca0-48de
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 205a-133d-d406-6c30
+name: 'Stratagem: Chosen by the Gods'
+modifiers:
+  - type: increment
+    field: 9f02-047c-dca0-48de
+    value: 1.0
+    conditions:
+      - type: equalTo
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: 9f02-047c-dca0-48de
+    value: 2.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: equalTo
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 2c78-7376-bb1f-6458
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+        includeChildSelections: true

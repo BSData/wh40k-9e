@@ -1,0 +1,124 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 8b6f-af59-8d5b-e285
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 9333-011f-c416-1f39
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 24"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Rapid Fire 1
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 4
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -1
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: 2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: '-'
+    id: 8fad-b2a0-7773-e667
+    name: Maelstrom's Bite - Master-crafted boltgun
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: 18"
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: Assault 1
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: 9
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: -4
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: D6+2
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: '-'
+    id: 0b5a-fa37-2757-9f92
+    name: Maelstrom's Bite - Warp-twisted meltagun
+  - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+    typeName: Weapon
+    characteristics:
+      - name: Range
+        typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+        value: '-'
+      - name: Type
+        typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+        value: '-'
+      - name: S
+        typeId: 59b1-319e-ec13-d466
+        value: '-'
+      - name: AP
+        typeId: 75aa-a838-b675-6484
+        value: '-'
+      - name: D
+        typeId: ae8a-3137-d65b-4ca7
+        value: '-'
+      - name: Abilities
+        typeId: 837d-5e63-aeb7-1410
+        value: Before selecting targets, select one or both of the profiles below to make attacks with. If you select both, then each time an attack is made with this weapon this phase, subtract 1 from that attack's hit roll.
+    id: 9d6a-b151-9178-3f33
+    name: Maelstrom's Bite
+id: 3d64-a9d5-6a87-46e1
+name: Maelstrom's Bite
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: c445-e211-f316-5d83
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: notInstanceOf
+            childId: dba9-7a7f-1310-3028
+            field: selections
+            scope: ancestor
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 0c84-90d4-b11b-d435
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true

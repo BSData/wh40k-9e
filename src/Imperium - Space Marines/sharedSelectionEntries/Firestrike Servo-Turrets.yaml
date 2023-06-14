@@ -1,0 +1,173 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: abf5fd55-9ac7-4263-8bc1-a9fb0a8fa6a6
+    primary: true
+    id: 6cb3-4a3e-28cd-5cbd
+    name: New CategoryLink
+  - targetId: c7b7-edbc-bc14-6238
+    id: a4e0-c123-2bfb-c5a1
+    name: 'Faction: Adeptus Astartes'
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: bc67-0c70-df9d-3832
+    name: 'Faction: Imperium'
+  - targetId: ae37-74e2-8391-d0f8
+    id: c5d4-4be4-4ec1-17e5
+    name: Artillery
+  - targetId: c8fd-783f-3230-493e
+    id: 25b0-5ed5-0602-d687
+    name: Vehicle
+  - targetId: ca6c-58cc-c477-e3dd
+    id: 28be-78f9-20e3-be29
+    name: Firestrike Servo-Turrets
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 80.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+        value: 6.0
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    selectionEntryGroups:
+      - defaultSelectionEntryId: 73c7-5a9c-4a30-7562
+        exported: true
+        entryLinks:
+          - targetId: 0f3a-d07a-5aa7-d6ec
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 3752-77b8-8025-dbd6
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 73c7-5a9c-4a30-7562
+            name: Twin las-talon
+          - targetId: ea77-342c-fa45-15ed
+            type: selectionEntry
+            exported: true
+            constraints:
+              - id: 1c6e-2d74-e3af-ad26
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 189c-fa11-ae55-58a0
+            name: Twin accelerator autocannon
+        constraints:
+          - id: 44da-415b-7034-00ff
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 3bd4-86e0-851a-7a39
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 592a-f235-033d-8e4b
+        name: Weapon Option
+    constraints:
+      - id: ca2f-5a9d-e62e-e5c3
+        type: maximum
+        field: selections
+        scope: parent
+        value: 3.0
+        shared: true
+      - id: a344-6621-db5b-2776
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 3"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 3+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 2+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 4
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 5
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 5
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 2
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 8
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 2+
+        id: 92f8-6391-89c2-d803
+        name: Firestrike Servo-Turret
+    infoLinks:
+      - targetId: 01a4-bec8-b573-fde7
+        type: rule
+        id: 51dc-9bcb-3b98-018f
+        name: Angels of Death
+    id: 4a75-a785-ac0a-5254
+    name: Firestrike Servo-Turret
+id: 55ee-8767-cab4-5551
+name: Firestrike Servo-Turrets
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 76c0-edb1-bea1-cdb7
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: instanceOf
+        childId: a207-a133-6adb-25f3
+        field: selections
+        scope: force
+        shared: true

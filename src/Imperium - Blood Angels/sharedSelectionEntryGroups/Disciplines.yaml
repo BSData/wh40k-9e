@@ -1,0 +1,164 @@
+exported: true
+entryLinks:
+  - targetId: c3ab-8b2c-2039-6f5a
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 019c-1472-51e0-2d46
+        type: maximum
+        field: selections
+        scope: parent
+        value: -1.0
+        shared: true
+    id: 4f5f-35a2-74ba-36ee
+    name: Obscuration Discipline
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: notInstanceOf
+            childId: 5b58-36bd-930c-e8be
+            field: selections
+            scope: parent
+            shared: true
+      - type: set
+        field: 019c-1472-51e0-2d46
+        value: 0.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: atLeast
+                childId: edd9-59c0-8f74-3b36
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: atLeast
+                childId: 4827-f579-85b6-064b
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+  - targetId: 4827-f579-85b6-064b
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: e387-c127-3848-8aab
+        type: maximum
+        field: selections
+        scope: parent
+        value: -1.0
+        shared: true
+    id: 566d-0dd8-a558-bd55
+    name: Sanguinary Discipline
+    modifiers:
+      - type: set
+        field: e387-c127-3848-8aab
+        value: 0.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: atLeast
+                childId: edd9-59c0-8f74-3b36
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: atLeast
+                childId: c3ab-8b2c-2039-6f5a
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+  - targetId: edd9-59c0-8f74-3b36
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: e729-79b9-b28f-0135
+        type: maximum
+        field: selections
+        scope: parent
+        value: -1.0
+        shared: true
+    id: 9165-9ebb-1055-ad77
+    name: Librarius Discipline
+    modifiers:
+      - type: set
+        field: e729-79b9-b28f-0135
+        value: 0.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: atLeast
+                childId: 4827-f579-85b6-064b
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - type: atLeast
+                childId: c3ab-8b2c-2039-6f5a
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+      - type: set
+        field: hidden
+        value: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 4f17-85bd-3950-4210
+                field: selections
+                scope: parent
+                shared: true
+              - type: instanceOf
+                childId: c150-13fe-d2ff-141d
+                field: selections
+                scope: parent
+                shared: true
+              - type: instanceOf
+                childId: effc-3f56-0279-fde8
+                field: selections
+                scope: parent
+                shared: true
+constraints:
+  - id: 2450-5ad3-f547-e67e
+    type: maximum
+    field: selections
+    scope: parent
+    value: 2.0
+    shared: true
+id: 7c9c-3c61-1768-3287
+name: Disciplines
+modifiers:
+  - type: increment
+    field: 2450-5ad3-f547-e67e
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: effc-3f56-0279-fde8
+            field: selections
+            scope: ancestor
+            shared: true
+          - type: equalTo
+            childId: 29c0-3526-09e2-09ea
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: increment
+    field: 2450-5ad3-f547-e67e
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: b1ec-173e-7346-6d6f
+        field: selections
+        scope: parent
+        shared: true
+        includeChildSelections: true

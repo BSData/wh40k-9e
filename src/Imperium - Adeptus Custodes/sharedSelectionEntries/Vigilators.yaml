@@ -1,0 +1,156 @@
+type: unit
+costs:
+  - name: pts
+    typeId: points
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 7f8e-db7f-fcc8-bb04
+    name: 'Faction: Imperium'
+  - targetId: 3d52-fccf-10c0-3fae
+    id: a49b-56ba-2ae5-bf53
+    name: Infantry
+  - targetId: 08f1-d244-eb44-7e01
+    id: 5ae3-94f7-d8b1-da75
+    name: Core
+  - targetId: 639e-373a-1fd6-f7d3
+    id: 9a9b-3d56-2ea2-20e3
+    name: Vigilators
+  - targetId: 5941-05b8-1e58-4eb7
+    id: 60aa-d79d-4f4c-7266
+    name: 'Faction: Anathema Psykana'
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 12.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    entryLinks:
+      - targetId: c519-ed06-1c3c-02a9
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 6435-8d71-3edb-80c2
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+          - id: db84-ab09-83ff-dae8
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: a01b-fe50-2ea7-8ff0
+        name: Executioner Greatblade
+    constraints:
+      - id: 6418-960c-2693-069c
+        type: minimum
+        field: selections
+        scope: parent
+        value: 4.0
+      - id: 751c-4047-a63b-2227
+        type: maximum
+        field: selections
+        scope: parent
+        value: 9.0
+    infoLinks:
+      - targetId: 7a13-96d8-111c-a717
+        type: profile
+        id: 30c4-06e9-85d1-de05
+        name: Vigilator
+    id: 8cb6-d8a7-f681-40c5
+    name: Vigilator
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 12.0
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+    exported: true
+    entryLinks:
+      - targetId: c519-ed06-1c3c-02a9
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 282f-260c-c496-8d81
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: f55e-7dae-f2d8-32bb
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+        id: f074-3e42-9ad7-12da
+        name: Executioner Greatblade
+    constraints:
+      - id: 59b1-575c-7024-00bd
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+      - id: 9488-fcf4-e233-62a3
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    infoLinks:
+      - targetId: a473-6ef5-a7c7-73fe
+        type: profile
+        id: de36-cffd-bdd5-61e3
+        name: Vigilator Sister Superior
+    id: 6aab-d9a0-000f-7a21
+    name: Vigilator Sister Superior
+entryLinks:
+  - targetId: 40c0-dbc1-a807-e693
+    type: selectionEntryGroup
+    exported: true
+    id: a142-bb6a-b388-fc27
+    name: Battle Honours
+infoLinks:
+  - targetId: a190-c46b-30d0-a82f
+    type: rule
+    id: 4ebb-6d01-c640-6d27
+    name: Daughters of the Abyss
+id: 7392-e278-494b-8b66
+name: Vigilators
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 3.0
+    conditions:
+      - type: greaterThan
+        childId: model
+        field: selections
+        scope: 7392-e278-494b-8b66
+        value: 5.0
+        shared: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 0a95-175c-4f37-736a
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

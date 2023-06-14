@@ -1,0 +1,294 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 5.0
+  - name: pts
+    typeId: points
+    value: 95.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: c417-05d9-c135-a796
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: 11ca-f452-d676-ec9f
+    name: New CategoryLink
+  - targetId: 6cc4-1b62-8e8a-05cd
+    id: d923-5c19-6b14-ea45
+    name: New CategoryLink
+  - targetId: 3263-4233-4344-6228
+    id: f552-5f99-cf68-232b
+    name: Astra Militarum
+  - targetId: cace-70cc-a64e-480c
+    id: cfab-23aa-0a6f-6a34
+    name: Storm Chimera
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: 2b03-8d64-3711-f300
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 7887-f0c0-7cfb-ebc2
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 6fe9-6a78-2d47-9f3d
+        name: Storm bolter
+      - targetId: cfa3-5fcd-af10-5520
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 0e14-ad61-ab53-9533
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 24e7-3655-7ba2-e50f
+        name: Heavy stubber
+        modifiers:
+          - type: set
+            field: points
+            value: 0.0
+    constraints:
+      - id: 0b15-2b04-ebd9-e711
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+      - id: 0704-837e-b040-8717
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 148d-8877-88dc-2f3f
+    name: Pintle Mount
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: pts
+            typeId: points
+            value: 5.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+        exported: true
+        constraints:
+          - id: 6e7e-5973-2945-a62f
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+        profiles:
+          - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+            typeName: Abilities
+            characteristics:
+              - name: Description
+                typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+                value: The bearer gains the DOZER BLADE keyword, and can ignore any or all modifiers to its Move characteristic, Advance rolls and charge rolls.
+            id: 083d-c720-39ae-69dc
+            name: Dozer Blade
+        id: 5daa-ba32-9c2f-72a9
+        name: Dozer Blade
+        modifiers:
+          - type: set
+            field: points
+            value: 0.0
+            conditions:
+              - type: instanceOf
+                childId: dccb-7194-05d6-9725
+                field: selections
+                scope: ancestor
+                shared: true
+    constraints:
+      - id: fe16-6ded-34d3-c4ad
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+      - id: 3ef7-a64a-0d4d-ba8a
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: dfd4-db95-13c1-5ef1
+    name: Storm Chimera Equipment List
+entryLinks:
+  - targetId: 32bf-b117-4ecf-5165
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: cd61-0947-4896-7149
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 0634-11dc-3458-ef99
+    name: Hunter-killer missile
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: 5210-8cb2-b5a2-a04f
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0e82-b5e4-8b55-f646
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: db1f-ee5d-4148-0b56
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: d5de-de97-a367-633e
+    name: Autocannon
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: 6bb5-a102-31b0-c380
+    type: selectionEntryGroup
+    exported: true
+    id: eb2a-d36c-7c27-6a17
+    name: Heavy Bolter or Heavy Flamer
+  - targetId: 3219-c04d-a4d0-69ef
+    type: selectionEntryGroup
+    exported: true
+    id: 6ec5-1bdb-731e-2ad1
+    name: Battle Honours (Crusade - BRB)
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 12"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 6+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 4+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 6
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 7
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 10
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 7
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: ba82-f394-110e-73ba
+    name: Storm Chimera [1] (6-10+ wounds remaining)
+    publicationId: b652-8bab-1453-da20
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 8"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 6+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 5+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 6
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 7
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: N/A
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: D3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 7
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 7248-10e7-e361-dfdb
+    name: Storm Chimera [2] (3-6 wounds remaining)
+    publicationId: b652-8bab-1453-da20
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 4"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 6+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 6+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 6
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 7
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: N/A
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 1
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 7
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 4140-5c50-ad1a-16b7
+    name: Storm Chimera [3] (1-2 wounds remaining)
+    publicationId: b652-8bab-1453-da20
+infoLinks:
+  - targetId: c883-3078-1367-cc2c
+    type: profile
+    id: bd03-454b-5e2f-6d5e
+    name: Smoke Launchers
+  - targetId: 9bde-7aa6-8e9a-0792
+    type: profile
+    id: c4b4-15c9-4706-7e99
+    name: Explodes (6+/6"/D3)
+  - targetId: 9f9d-00a0-5084-7079
+    type: profile
+    id: 9dd8-525a-aada-8765
+    name: 'Transport: Chimera'
+id: 75e9-83e5-eb59-41ff
+name: Storm Chimera [Legends]
+publicationId: b652-8bab-1453-da20
+page: ''

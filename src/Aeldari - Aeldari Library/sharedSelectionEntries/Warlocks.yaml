@@ -1,0 +1,585 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 2.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+categoryLinks:
+  - targetId: fb5a-2f35-6253-b891
+    id: c42f-843d-2f7e-66ce
+    name: 'Faction: <Craftworld>'
+  - targetId: 05e9-e880-b1fb-ce90
+    id: 892d-5f38-7b7f-084c
+    name: 'Faction: Aeldari'
+  - targetId: 20fc-5c6e-4a04-320f
+    id: 1599-1a69-a974-3482
+    name: 'Faction: Asuryani'
+  - targetId: e691-aad7-d21c-1023
+    id: 67ac-885e-cc07-82a6
+    name: Psyker
+  - targetId: 3d52-fccf-10c0-3fae
+    id: a3f3-fe2b-c078-e86a
+    name: Infantry
+  - targetId: 3422-62ae-2c7f-ad67
+    id: bbef-c75e-f7ac-af13
+    name: Warlocks
+  - targetId: ef18-746a-369f-43a4
+    id: 9eaa-07d1-28fc-5328
+    name: Character
+  - targetId: 62d3-9871-9675-a63b
+    id: 70ac-3d10-8471-9872
+    name: Elite Character
+selectionEntries:
+  - type: model
+    costs:
+      - name: pts
+        typeId: points
+        value: 45.0
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+    exported: true
+    entryLinks:
+      - targetId: 00b1-e9ab-61a3-292e
+        type: selectionEntry
+        exported: true
+        constraints:
+          - id: 5e42-a678-3184-d579
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+          - id: 39b0-a442-ee47-fe10
+            type: minimum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 5037-495c-ea7b-d6fb
+        name: Shuriken Pistol
+      - targetId: 3b0b-35d5-d59d-d953
+        type: selectionEntryGroup
+        exported: true
+        id: 36cd-5051-e820-55b2
+        name: Witch Weapon Option
+    constraints:
+      - id: 1ca2-bea4-7db7-29ec
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: e2cb-fd50-e4f0-0466
+        type: maximum
+        field: selections
+        scope: parent
+        value: 6.0
+        shared: true
+    profiles:
+      - typeId: 800f-21d0-4387-c943
+        typeName: Unit
+        characteristics:
+          - name: M
+            typeId: 0bdf-a96e-9e38-7779
+            value: 7"
+          - name: WS
+            typeId: e7f0-1278-0250-df0c
+            value: 3+
+          - name: BS
+            typeId: 381b-eb28-74c3-df5f
+            value: 3+
+          - name: S
+            typeId: 2218-aa3c-265f-2939
+            value: 3
+          - name: T
+            typeId: 9c9f-9774-a358-3a39
+            value: 3
+          - name: W
+            typeId: f330-5e6e-4110-0978
+            value: 2
+          - name: A
+            typeId: 13fc-b29b-31f2-ab9f
+            value: 2
+          - name: Ld
+            typeId: 00ca-f8b8-876d-b705
+            value: 8
+          - name: Save
+            typeId: c0df-df94-abd7-e8d3
+            value: 6+
+        id: a94d-6b5d-79ac-a5b2
+        name: Warlock
+    id: dea8-37e5-d5d8-4f31
+    name: Warlock
+    publicationId: 1f62-db93-63f4-4dc7
+    page: 158
+    modifiers:
+      - type: set
+        field: points
+        value: 25.0
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+selectionEntryGroups:
+  - exported: true
+    entryLinks:
+      - targetId: 7f93-a621-fdeb-0426
+        type: selectionEntryGroup
+        exported: true
+        id: 0c9f-91f0-4e45-0108
+        name: Revenant Discipline
+      - targetId: f801-39da-ca0a-33b8
+        type: selectionEntryGroup
+        exported: true
+        id: 5c11-221a-f8de-2443
+        name: Runes of Battle
+      - targetId: 2811-a32c-6768-4a0d
+        type: selectionEntryGroup
+        exported: true
+        constraints:
+          - id: 82e9-0c64-d144-3194
+            type: minimum
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+          - id: bd8d-6328-a20e-9719
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 8f27-80a0-c070-8c1b
+        name: Runes of Fortune
+        hidden: true
+        modifiers:
+          - type: increment
+            field: 82e9-0c64-d144-3194
+            value: 1.0
+            conditions:
+              - type: greaterThan
+                childId: cdcd-8c6a-cc25-6475
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+          - type: set
+            field: hidden
+            value: false
+            conditions:
+              - type: greaterThan
+                childId: cdcd-8c6a-cc25-6475
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+    constraints:
+      - id: 2cf6-10c1-7c68-8ad9
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 7b5b-6d18-af31-65b6
+    name: Psychic Powers (Warlocks)
+    modifiers:
+      - type: set
+        field: 2cf6-10c1-7c68-8ad9
+        value: 2.0
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 3.0
+            shared: true
+            includeChildSelections: true
+      - type: increment
+        field: 2cf6-10c1-7c68-8ad9
+        value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: greaterThan
+                childId: 7c99-0497-3b9d-a1df
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+              - type: greaterThan
+                childId: cdcd-8c6a-cc25-6475
+                field: selections
+                scope: parent
+                shared: true
+                includeChildSelections: true
+entryLinks:
+  - targetId: c99a-b105-9c5a-91fe
+    type: selectionEntryGroup
+    exported: true
+    id: be17-701e-bea2-f7b0
+    name: Treasures of the Aeldari (Asuryani)
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 2ce0-03a1-ec03-76aa
+    type: selectionEntry
+    exported: true
+    id: 0801-bae5-32e6-c691
+    name: Warlord
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 6f77-8d55-c223-535a
+    type: selectionEntryGroup
+    exported: true
+    id: 6fd6-c53c-0dd5-413b
+    name: Warlord Trait (Craftworld)
+  - targetId: d043-3847-e963-fb5d
+    type: selectionEntry
+    exported: true
+    id: 27b7-0743-6f8c-22fc
+    name: 'Stratagem: Field Commander'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: equalTo
+            childId: 3631-6061-c829-154e
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+  - targetId: 2eb0-d455-42dd-235d
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5615-d6b6-bb13-8e76
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 6219-cfad-e0f1-b60b
+    name: Seer Council (Warlocks Unit)
+    hidden: true
+    modifiers:
+      - type: set
+        field: hidden
+        value: false
+        conditionGroups:
+          - type: and
+            conditions:
+              - type: atLeast
+                childId: dea8-37e5-d5d8-4f31
+                field: selections
+                scope: aa25-848e-4b78-7f45
+                value: 2.0
+                shared: true
+              - type: greaterThan
+                childId: a2cd-a908-87f1-5521
+                field: selections
+                scope: roster
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+  - targetId: 03fd-db47-5333-1e1f
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: e88a-348e-a039-b917
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c32a-e3cf-f35f-a592
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: bc62-4a22-a5a2-047c
+    name: Smite
+  - targetId: 7753-561b-04d0-7e40
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: d416-614f-051e-5860
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 28aa-c87e-7ecc-fbf8
+    name: 'Stratagem: Champion of the Aeldari'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: e4be-3093-bd44-af04
+    name: 'Stratagem: Warlord Trait'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: c470-54ac-0863-8848
+    type: selectionEntry
+    exported: true
+    id: 0d02-8bf0-2c9e-0ef7
+    name: 'Stratagem: Relic'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - targetId: b67d-da32-6a5f-0e22
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: f003-f60c-6714-5343
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 7c6a-43da-91c0-21ab
+    name: 'Stratagem: Treasures of the Aeldari'
+    modifiers:
+      - type: set
+        field: hidden
+        value: true
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+profiles:
+  - typeId: bc97-dea9-9e88-bb7d
+    typeName: Psyker
+    characteristics:
+      - name: Cast
+        typeId: 5afb-9914-904b-d3b3
+        value: 1
+      - name: Deny
+        typeId: b5ac-9c20-5d5a-6f9b
+        value: 1
+      - name: Powers Known
+        typeId: 69d7-b45e-00a2-7e46
+        value: 1 from Runes of Battle.
+      - name: Other
+        typeId: c2e2-f115-0003-5d7b
+        value: If this unit has a Starting Strength of 4 or more, it knows one additional psychic power from the Runes of Battle discipline. While this unit contains 4 or more models, it can attempt to manifest one additional psychic power in your Psychic phase.
+    id: b5ff-f1f3-3567-5eb5
+    name: Psychic Powers (Warlocks)
+    modifiers:
+      - type: increment
+        field: 5afb-9914-904b-d3b3
+        value: 1
+        conditions:
+          - type: greaterThan
+            childId: dea8-37e5-d5d8-4f31
+            field: selections
+            scope: aa25-848e-4b78-7f45
+            value: 3.0
+            shared: true
+            includeChildSelections: true
+infoLinks:
+  - targetId: d861-e9f8-5a9c-7595
+    type: rule
+    id: ba5b-8452-355d-ba59
+    name: Battle Focus
+  - targetId: f5cf-ac08-7c58-c76d
+    type: rule
+    id: c113-52e1-eeb6-363f
+    name: Strands of Fate
+  - targetId: 784f-bdec-32e3-7c68
+    type: profile
+    id: 7148-9b2c-0510-45b8
+    name: Rune Armour
+  - targetId: 2d1c-58ec-e7e5-5c69
+    type: profile
+    id: e274-da00-4166-1db1
+    name: Warlock Conclave
+  - targetId: dd9c-96d7-aabd-b7d6
+    type: profile
+    id: cd18-9433-8288-2dbc
+    name: Seer Council
+id: aa25-848e-4b78-7f45
+name: Warlocks
+publicationId: 1f62-db93-63f4-4dc7
+page: 158
+modifiers:
+  - type: add
+    field: category
+    value: 858e-1bd9-61c9-6dcf
+    conditions:
+      - type: greaterThan
+        childId: 2ce0-03a1-ec03-76aa
+        field: selections
+        scope: aa25-848e-4b78-7f45
+        shared: true
+        includeChildSelections: true
+  - type: remove
+    field: category
+    value: ef18-746a-369f-43a4
+    conditions:
+      - type: greaterThan
+        childId: dea8-37e5-d5d8-4f31
+        field: selections
+        scope: aa25-848e-4b78-7f45
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: equalTo
+        childId: dea8-37e5-d5d8-4f31
+        field: selections
+        scope: aa25-848e-4b78-7f45
+        value: 6.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 2.0
+    conditions:
+      - type: greaterThan
+        childId: dea8-37e5-d5d8-4f31
+        field: selections
+        scope: aa25-848e-4b78-7f45
+        value: 3.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: dea8-37e5-d5d8-4f31
+        field: selections
+        scope: aa25-848e-4b78-7f45
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+  - type: add
+    field: category
+    value: 1b3f-af94-5962-53b2
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: c4b9-e21e-8f0f-73a0
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: greaterThan
+            childId: 2ce0-03a1-ec03-76aa
+            field: selections
+            scope: parent
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 580b-4691-eb5b-b044
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+  - type: remove
+    field: category
+    value: 62d3-9871-9675-a63b
+    conditions:
+      - type: greaterThan
+        childId: dea8-37e5-d5d8-4f31
+        field: selections
+        scope: aa25-848e-4b78-7f45
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+modifierGroups:
+  - modifiers:
+      - type: remove
+        field: category
+        value: fb5a-2f35-6253-b891
+      - type: add
+        field: category
+        value: 41c6-5e6c-335e-b18a
+      - type: add
+        field: category
+        value: ebb3-4f37-6e57-7a8e
+    conditions:
+      - type: equalTo
+        childId: 5af8-e7c8-e3bf-6d52
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true

@@ -1,0 +1,52 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+constraints:
+  - id: 49db-7f99-daf6-f682
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: While an enemy unit is within 3" of the bearer, each time an attack made by a model in a friendly METALICA unit targets that enemy unit, you can re-roll the wound roll.
+    id: 3def-8ad9-8083-f189
+    name: Metalican Lung (Aura)
+id: 074f-b08c-87d2-9bad
+name: 'Relic (Metalica): Metalican Lung'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: lessThan
+            childId: ac50-58f2-fbb8-af14
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: lessThan
+            childId: dff1-4398-85d3-5898
+            field: selections
+            scope: force
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true

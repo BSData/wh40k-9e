@@ -1,0 +1,199 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: pts
+    typeId: points
+    value: 120.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: 859b-fcbc-166e-f2a7
+    id: 0c51-39b3-b6b3-1719
+    name: New CategoryLink
+  - targetId: c7b7-edbc-bc14-6238
+    id: e823-42f5-5554-4926
+    name: New CategoryLink
+  - targetId: 7cf8-e38d-9344-6918
+    id: 9aa7-9476-52ca-244f
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 9245-9b3f-cedc-31fc
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: f0bb-6498-d7d5-dd7d
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 4fbc-ba91-1bab-9dd8
+    name: New CategoryLink
+  - targetId: 16cb-31a4-fae3-a5b2
+    id: ae2b-94ac-120d-4fff
+    name: New CategoryLink
+  - targetId: b8f1-f3fa-0273-9bb9
+    id: 8610-0990-92ba-62b5
+    name: Chief Apothecary
+  - targetId: 127d-5d0f-4663-0235
+    id: 89e7-468f-4f58-058a
+    name: Command Squad
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 42ee-5ab6-7583-e685
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6ceb-cd9c-04e2-da69
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: +1
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -3
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: 2
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: '-'
+        id: 015e-852c-70ad-6aa7
+        name: Master-crafted power sword
+    id: 4c6a-921b-ded8-808c
+    name: Master-crafted power sword
+entryLinks:
+  - targetId: bb78-534a-7b77-edbc
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: b5fd-13b3-327c-b527
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c3e8-eaa8-20b5-ecb8
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 4dd7-8c32-6f5f-ba22
+    name: Frag & Krak grenades
+  - targetId: 9b0a-25bb-9380-8135
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 270a-5944-a573-e179
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: f5f8-167f-1619-1c0a
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: e862-7fe3-4ed3-df1b
+    name: Bloodfire
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: f829-197a-f485-1499
+    name: Warlord
+  - targetId: f000-b6a8-62f1-ebcc
+    type: selectionEntryGroup
+    exported: true
+    id: b20b-54ec-82dc-d54d
+    name: Warlord Traits
+constraints:
+  - id: 5bcb-02c9-b2e4-af4d
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'For each <CHAPTER> COMPANY VETERANS units included in a Detachment, one <CHAPTER> COMMAND SQUAD APOTHECARY unit can be included in that detachment without taking up a Battlefield Role slot. '
+    id: bd1b-89c8-263e-6060
+    name: Command Squad
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: f398-7ad5-6f82-b2c9
+    name: Angels of Death
+  - targetId: d997-8407-ce85-bda8
+    type: profile
+    id: fc76-bf8d-cf0b-ec0c
+    name: Harath Shen
+id: 9284-100d-d0f7-a528
+name: Harath Shen [Legends]
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: c47c-a3e1-c91e-436a
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

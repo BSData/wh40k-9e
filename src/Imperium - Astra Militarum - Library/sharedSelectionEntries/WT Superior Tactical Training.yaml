@@ -1,0 +1,115 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+selectionEntryGroups:
+  - exported: true
+    selectionEntries:
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 23c2-2455-5f1c-5440
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: b2e1-a1f4-4c7b-a1c9
+        name: Regimental Orders
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: c8a1-9b26-f19d-e4aa
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 4704-0d1e-1149-27de
+        name: Mechanised Orders
+      - type: upgrade
+        costs:
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: pts
+            typeId: points
+        exported: true
+        constraints:
+          - id: 9120-4b0e-a0a3-1ebf
+            type: maximum
+            field: selections
+            scope: parent
+            value: 1.0
+            shared: true
+        id: 9faf-8bc8-05bf-52a9
+        name: Prefectus Orders
+    constraints:
+      - id: a083-f2cb-722f-f5a4
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 2d5f-a1c0-f5df-5fd7
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: d4f2-f19e-6f73-cf20
+    name: Additional Known Order
+constraints:
+  - id: fc0f-c871-c583-d851
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: e775-b66a-4ee0-75c1
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: When you select this Warlord Trait, select one type of Orders (Regimental, Prefectus or Mechanized) that this WARLORD does not know. This WARLORD knows those Orders in addition to any others that it knows.
+    id: 4dbf-67a4-ddc0-4398
+    name: Superior Tactical Training
+id: 75b8-5f2d-9f0c-fbb5
+name: 'WT: Superior Tactical Training'
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: notInstanceOf
+        childId: dd6e-7055-ca6b-b711
+        field: selections
+        scope: parent
+        shared: true

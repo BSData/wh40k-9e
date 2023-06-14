@@ -1,0 +1,90 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: f68f-ff28-1902-6f2e
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+  - id: 1d7a-e736-5c0c-3daf
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 0f36-b767-fc98-6f57
+name: 'Stratagem: Officer Cadre'
+hidden: true
+modifiers:
+  - type: increment
+    field: f68f-ff28-1902-6f2e
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: increment
+    field: f68f-ff28-1902-6f2e
+    value: 1.0
+    conditions:
+      - type: atLeast
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: false
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: instanceOf
+            childId: ef18-746a-369f-43a4
+            field: selections
+            scope: parent
+            shared: true
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 02fc-c1cf-4cdb-07ed
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 12bf-5b84-a1bc-6989
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: ed38-bff7-6158-362a
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true

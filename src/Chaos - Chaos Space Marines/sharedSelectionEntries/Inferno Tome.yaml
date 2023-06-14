@@ -1,0 +1,54 @@
+type: upgrade
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: 4d21-0ee6-2328-50a8
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+  - id: 9493-8459-6125-9580
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: >-
+          - The bearer knows one additional prayer from the Prayers to the Dark Gods.
+
+          - Each time the bearer chants a prayer, if it is heard, the closest enemy unit within 18" of and visible to the bearer suffers D3 mortal wounds
+    id: 27bc-da65-5820-1e63
+    name: Inferno Tome
+id: 30f8-754b-397f-90cd
+name: Inferno Tome
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: notInstanceOf
+            childId: a459-6417-3709-336c
+            field: selections
+            scope: parent
+            shared: true
+          - type: notInstanceOf
+            childId: c44e-208c-55c4-8b4b
+            field: selections
+            scope: parent
+            shared: true

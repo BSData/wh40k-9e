@@ -1,0 +1,330 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 6.0
+  - name: pts
+    typeId: points
+    value: 120.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+categoryLinks:
+  - targetId: 1c6f-0311-3eba-3180
+    id: fe35-e1c1-428d-cc49
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 514a-481c-706f-da0b
+    name: New CategoryLink
+  - targetId: dbc7-a07e-669d-a235
+    id: b805-4430-23f4-b241
+    name: New CategoryLink
+  - targetId: 1c58-037f-7b58-1223
+    id: 9ffc-184a-e432-fec2
+    name: New CategoryLink
+  - targetId: 0337-1e5e-8071-a198
+    id: 00f7-d6eb-36b7-7852
+    name: New CategoryLink
+  - targetId: deab-99bf-5edc-140a
+    id: a586-0193-b295-dc00
+    name: New CategoryLink
+  - targetId: 848a6ff2-0def-4c72-8433-ff7da70e6bc7
+    primary: true
+    id: 4c5f-429b-595a-af7e
+    name: New CategoryLink
+  - targetId: 258d-e4cb-6f35-fe20
+    id: 3742-28ac-7f0d-7a6c
+    name: Speed Freeks
+selectionEntries:
+  - type: upgrade
+    costs:
+      - name: ' PL'
+        typeId: e356-c769-5920-6e14
+      - name: pts
+        typeId: points
+      - name: CP
+        typeId: 2d3b-b544-ad49-fb75
+      - name: ' Scrap Points'
+        typeId: 932a-ae3d-c6c7-6938
+    exported: true
+    constraints:
+      - id: 2374-e916-c0b5-370c
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 48b3-b727-6e01-bba3
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    profiles:
+      - typeId: d5f97c0b-9fc9-478d-aa34-a7c414d3ea48
+        typeName: Weapon
+        characteristics:
+          - name: Range
+            typeId: 6fa97fa8-ea74-4a27-a0fb-bc4e5f367464
+            value: Melee
+          - name: Type
+            typeId: 077c342f-d7b9-45c6-b8af-88e97cafd3a2
+            value: Melee
+          - name: S
+            typeId: 59b1-319e-ec13-d466
+            value: x2
+          - name: AP
+            typeId: 75aa-a838-b675-6484
+            value: -4
+          - name: D
+            typeId: ae8a-3137-d65b-4ca7
+            value: D3
+          - name: Abilities
+            typeId: 837d-5e63-aeb7-1410
+            value: Each time an attack is made with this weapon against an INFANTRY or MONSTER unit, an unmodified hit roll of 6 inflicts 1 mortal wound on the target in addition to the normal damage.
+        id: 570b-f3d6-88dc-7e59
+        name: Da Pain Klaw
+        publicationId: b652-8bab-1453-da20
+    id: d9aa-9a77-54cc-6ef1
+    name: Da Pain Klaw
+entryLinks:
+  - targetId: d13b-ad69-e6a2-d485
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 8da1-dc80-ec93-3739
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 1651-3fc6-3f99-24fb
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 52a9-f568-094c-72ed
+    name: Slugga
+  - targetId: 6df7-0ee7-7e6d-b182
+    type: selectionEntry
+    exported: true
+    id: e039-c7b1-bb6f-2d68
+    name: Stikkbombs
+  - targetId: 66cb-c463-e3ee-7e1d
+    type: selectionEntry
+    exported: true
+    id: bb4f-6a3c-3da9-acda
+    name: Warlord
+  - targetId: 6008-4737-d8e6-e63b
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 09b3-a0b4-01f7-18c7
+        type: minimum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+      - id: 5876-1049-eafa-8f6b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: 52a4-e028-f07b-91f1
+    name: Big Shoota
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+  - targetId: bad4-7cc1-6b79-0e18
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 403e-3d28-d645-c225
+        type: minimum
+        field: selections
+        scope: parent
+        shared: true
+    id: 34f3-88cb-5195-4729
+    name: Inspiring Leader
+    hidden: true
+    modifierGroups:
+      - modifiers:
+          - type: set
+            field: hidden
+            value: false
+          - type: set
+            field: 403e-3d28-d645-c225
+            value: 1.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: equalTo
+                childId: 8320-3249-8d3a-e584
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+              - type: equalTo
+                childId: 6771-6ab3-1672-6a39
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+                includeChildSelections: true
+                includeChildForces: true
+            conditionGroups:
+              - type: and
+                conditions:
+                  - type: equalTo
+                    childId: 66cb-c463-e3ee-7e1d
+                    field: selections
+                    scope: parent
+                    value: 1.0
+                    shared: true
+                    includeChildSelections: true
+                    includeChildForces: true
+                conditionGroups:
+                  - type: and
+                    conditions:
+                      - type: equalTo
+                        childId: 76d2-6e71-243f-ad3d
+                        field: selections
+                        scope: roster
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+                      - type: equalTo
+                        childId: e77a-cc54-efcf-a09a
+                        field: selections
+                        scope: roster
+                        shared: true
+                        includeChildSelections: true
+                        includeChildForces: true
+  - targetId: 6771-6ab3-1672-6a39
+    type: selectionEntry
+    exported: true
+    id: 718c-9df4-ee86-7951
+    name: 'Stratagem: Warlord Trait'
+  - targetId: 8320-3249-8d3a-e584
+    type: selectionEntry
+    exported: true
+    id: 65a6-258f-3655-e7ff
+    name: 'Stratagem: Big Boss'
+constraints:
+  - id: 4b1d-52bd-cb95-2ba3
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 14"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 2+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 5+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 6
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 6
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 7
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 5
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 4+
+    id: c356-5b69-c817-f3af
+    name: Zhadsnark Da Ripper
+    publicationId: b652-8bab-1453-da20
+    page: ''
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: When this model Advances, do not make an Advance roll. Instead, until the end of the phase, add 6" to the Move characteristic of this model.
+    id: d629-622c-ef9c-171f
+    name: Da Beast
+    publicationId: b652-8bab-1453-da20
+infoLinks:
+  - targetId: de72-9941-3d27-44e9
+    type: rule
+    id: b6f2-9a67-efdb-2dbc
+    name: "'Ere We Go!"
+  - targetId: ad32-a248-a392-3d4a
+    type: rule
+    id: 0a31-651d-441c-8f6e
+    name: Mob Rule
+  - targetId: 44c0-abfd-dea3-474e
+    type: profile
+    id: 3390-56b9-2a45-4ed1
+    name: SPEEDWAAAGH!
+  - targetId: e5b1-5297-5794-d878
+    type: profile
+    id: 9d42-668b-58c7-0927
+    name: Breakin' Heads
+id: 2472-0afa-3962-274a
+name: Zhadsnark Da Ripper [Legends]
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: equalTo
+            childId: 84e7-10dc-db59-a1b2
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+          - type: equalTo
+            childId: 2eb5-ccdb-f8d3-7cb4
+            field: selections
+            scope: force
+            shared: true
+            includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: c47c-a3e1-c91e-436a
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+        includeChildSelections: true

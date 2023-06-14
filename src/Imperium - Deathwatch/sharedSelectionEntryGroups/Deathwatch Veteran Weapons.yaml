@@ -1,0 +1,135 @@
+exported: true
+entryLinks:
+  - targetId: 1657-11b4-c657-c91e
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 85d2-d8c8-cd3b-b33b
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: c271-db2c-e678-f053
+    name: Deathwatch Shotgun
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 327d-4ca1-5b95-ca88
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: instanceOf
+                childId: d1e3-cb9b-c22b-e720
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: instanceOf
+                childId: 169e-fec1-faf2-fffe
+                field: selections
+                scope: ancestor
+                shared: true
+  - targetId: fcfd-2bdb-cb53-7dc8
+    type: selectionEntry
+    costs:
+      - name: pts
+        typeId: points
+    exported: true
+    constraints:
+      - id: 67b1-4373-8165-a9ff
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: af9d-9fe5-063a-59d2
+    name: Stalker-pattern boltgun
+    modifiers:
+      - type: set
+        field: points
+        value: 0.0
+        conditionGroups:
+          - type: or
+            conditions:
+              - type: instanceOf
+                childId: 327d-4ca1-5b95-ca88
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: instanceOf
+                childId: d1e3-cb9b-c22b-e720
+                field: selections
+                scope: ancestor
+                shared: true
+              - type: instanceOf
+                childId: 169e-fec1-faf2-fffe
+                field: selections
+                scope: ancestor
+                shared: true
+  - targetId: 44e0-64a6-bc26-1b19
+    type: selectionEntryGroup
+    exported: true
+    constraints:
+      - id: 1700-f1dd-eca6-f128
+        type: maximum
+        field: selections
+        scope: parent
+        value: 2.0
+        shared: true
+    id: d1bf-3d81-73ed-87c7
+    name: Deathwatch Equipment List
+    modifiers:
+      - type: set
+        field: 1700-f1dd-eca6-f128
+        value: 3.0
+        conditions:
+          - type: greaterThan
+            childId: ae46-8351-6394-d68c
+            field: selections
+            scope: parent
+            shared: true
+constraints:
+  - id: 2492-24a1-da69-b409
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+id: aee4-a070-c730-29a8
+name: Deathwatch Veteran Weapons
+modifiers:
+  - type: increment
+    field: 2492-24a1-da69-b409
+    value: 1.0
+    conditionGroups:
+      - type: and
+        conditions:
+          - type: greaterThan
+            childId: 44e0-64a6-bc26-1b19
+            field: selections
+            scope: parent
+            shared: true
+          - type: equalTo
+            childId: fcfd-2bdb-cb53-7dc8
+            field: selections
+            scope: parent
+            shared: true
+          - type: equalTo
+            childId: 1657-11b4-c657-c91e
+            field: selections
+            scope: parent
+            shared: true
+  - type: increment
+    field: 2492-24a1-da69-b409
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: ae46-8351-6394-d68c
+        field: selections
+        scope: parent
+        shared: true

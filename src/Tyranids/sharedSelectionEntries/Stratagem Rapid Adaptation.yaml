@@ -1,0 +1,96 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: ef91-e64a-c09a-3903
+    type: maximum
+    field: selections
+    scope: roster
+    value: -1.0
+    shared: true
+    includeChildSelections: true
+    includeChildForces: true
+  - id: f790-62b6-21bd-6801
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+profiles:
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: Use this Stratagem before the battle, when you are mustering your army. Select one CRUSHER STAMPEDE TYRANID WARRIORS unit from your army. Models in that unit have a Weapon Skill characteristic of 2+ and a Ballistic Skill characteristic of 3+. You can only use this Stratagem once, unless you are playing a Strike Force battle (in which case, you can use this Stratagem twice) or an Onslaught battle (in which case, you can use this Stratagem three times).
+    id: 4665-d11a-ac89-ad25
+    name: 'Stratagem: Rapid Adaptation'
+    publicationId: 57c5-6839-bb2f-72da
+    page: 101
+id: a0a3-a5e5-fb68-3e4f
+name: 'Stratagem: Rapid Adaptation'
+modifiers:
+  - type: set
+    field: ef91-e64a-c09a-3903
+    value: 1.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: atLeast
+            childId: 5686-7cd9-6664-635b
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: atLeast
+            childId: af70-08c1-1c6f-0770
+            field: selections
+            scope: roster
+            value: 1.0
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: set
+    field: ef91-e64a-c09a-3903
+    value: 2.0
+    conditions:
+      - type: atLeast
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: ef91-e64a-c09a-3903
+    value: 3.0
+    conditions:
+      - type: atLeast
+        childId: fad2-035f-88a7-60c0
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: ed98-6a58-e87d-0c0d
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

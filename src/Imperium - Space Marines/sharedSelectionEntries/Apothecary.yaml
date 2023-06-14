@@ -1,0 +1,184 @@
+type: model
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 4.0
+  - name: pts
+    typeId: points
+    value: 65.0
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+exported: true
+categoryLinks:
+  - targetId: c7b7-edbc-bc14-6238
+    id: dc68-20ff-d93f-679e
+    name: New CategoryLink
+  - targetId: 859b-fcbc-166e-f2a7
+    id: d8ab-7dff-a460-ad6c
+    name: New CategoryLink
+  - targetId: ef18-746a-369f-43a4
+    id: 35b1-dcaf-0384-f7c5
+    name: New CategoryLink
+  - targetId: 84e2-9fa9-ebe6-1d18
+    id: 09cd-88e8-28aa-8039
+    name: New CategoryLink
+  - targetId: 3d52-fccf-10c0-3fae
+    id: 7628-a3df-7323-e83d
+    name: New CategoryLink
+  - targetId: 127d-5d0f-4663-0235
+    id: 9c17-2714-d492-af63
+    name: Command Squad
+  - targetId: 62d3-9871-9675-a63b
+    id: aa95-c6b6-3b77-a5f6
+    name: Elite Character
+entryLinks:
+  - targetId: 0334-f487-8229-0c1a
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 5271-12c2-103f-27d3
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: c107-43a1-6065-cd71
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: b357-67d0-fbb4-96a1
+    name: Bolt pistol
+  - targetId: c5f0-76db-2a6c-403e
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 0417-dc62-798a-95b0
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: d04e-9bc7-89e7-9162
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: 1b90-78ab-5a3a-76bc
+    name: Astartes Chainsword
+  - targetId: cddf-945e-1335-e681
+    type: selectionEntry
+    exported: true
+    constraints:
+      - id: 4f43-4959-c8da-1914
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: 6320-f2f5-c31d-4407
+        type: maximum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+    id: b178-5984-124c-f94f
+    name: Frag & Krak grenades
+  - targetId: ee33-18fd-7317-1171
+    type: selectionEntry
+    exported: true
+    id: a4f3-77c7-b29b-0baa
+    name: Warlord
+  - targetId: 3084-8fed-8fe6-f200
+    type: selectionEntry
+    exported: true
+    id: d82d-2ee9-76e9-47fc
+    name: 'Stratagem: Chief Apothecary'
+  - targetId: dbd7-664a-a559-6781
+    type: selectionEntryGroup
+    exported: true
+    id: 74a0-58fb-7d9a-73c3
+    name: Stratagems
+profiles:
+  - typeId: 800f-21d0-4387-c943
+    typeName: Unit
+    characteristics:
+      - name: M
+        typeId: 0bdf-a96e-9e38-7779
+        value: 6"
+      - name: WS
+        typeId: e7f0-1278-0250-df0c
+        value: 3+
+      - name: BS
+        typeId: 381b-eb28-74c3-df5f
+        value: 3+
+      - name: S
+        typeId: 2218-aa3c-265f-2939
+        value: 4
+      - name: T
+        typeId: 9c9f-9774-a358-3a39
+        value: 4
+      - name: W
+        typeId: f330-5e6e-4110-0978
+        value: 4
+      - name: A
+        typeId: 13fc-b29b-31f2-ab9f
+        value: 3
+      - name: Ld
+        typeId: 00ca-f8b8-876d-b705
+        value: 8
+      - name: Save
+        typeId: c0df-df94-abd7-e8d3
+        value: 3+
+    id: 5625-396d-f94a-0579
+    name: Apothecary
+  - typeId: 72c5eafc-75bf-4ed9-b425-78009f1efe82
+    typeName: Abilities
+    characteristics:
+      - name: Description
+        typeId: 21befb24-fc85-4f52-a745-64b2e48f8228
+        value: 'For each <CHAPTER> COMPANY VETERANS units included in a Detachment, one <CHAPTER> COMMAND SQUAD APOTHECARY unit can be included in that detachment without taking up a Battlefield Role slot. '
+    id: 20a4-2845-85e4-bfbb
+    name: Command Squad
+infoLinks:
+  - targetId: 01a4-bec8-b573-fde7
+    type: rule
+    id: 6330-0347-8bcc-9846
+    name: Angels of Death
+  - targetId: e4ce-f00b-ae14-2cd0
+    type: profile
+    id: c71f-6f08-6f04-4c79
+    name: Narthecium [Aura]
+  - targetId: 96fc-4b71-6b28-ed52
+    type: profile
+    id: ea66-256a-db86-ece4
+    name: Combat Restoratives
+id: 4739-10df-55b8-6330
+name: Apothecary
+modifiers:
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: 1ff7-5b3d-301d-41ce
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: fff5-0cb2-3255-5678
+        field: selections
+        scope: force
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true

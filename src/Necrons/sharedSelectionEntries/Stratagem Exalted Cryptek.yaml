@@ -1,0 +1,69 @@
+type: upgrade
+costs:
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+    value: -1.0
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+  - name: pts
+    typeId: points
+exported: true
+constraints:
+  - id: d9d4-1faf-d2a1-53ff
+    type: maximum
+    field: selections
+    scope: parent
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+  - id: 7ae3-159b-67f9-970b
+    type: maximum
+    field: selections
+    scope: roster
+    value: 1.0
+    shared: true
+    includeChildSelections: true
+id: 0745-b20d-ef11-e51f
+name: 'Stratagem: Exalted Cryptek'
+modifiers:
+  - type: increment
+    field: 7ae3-159b-67f9-970b
+    value: 2.0
+    conditionGroups:
+      - type: or
+        conditions:
+          - type: greaterThan
+            childId: e6c7-87a2-73a3-a475
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+          - type: greaterThan
+            childId: fad2-035f-88a7-60c0
+            field: selections
+            scope: roster
+            shared: true
+            includeChildSelections: true
+            includeChildForces: true
+  - type: increment
+    field: 7ae3-159b-67f9-970b
+    value: 1.0
+    conditions:
+      - type: greaterThan
+        childId: 09f9-b586-8d63-7635
+        field: selections
+        scope: roster
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: equalTo
+        childId: 7fcd-553a-a403-3e5d
+        field: selections
+        scope: force
+        shared: true
+        includeChildSelections: true

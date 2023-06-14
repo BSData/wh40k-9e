@@ -1,0 +1,195 @@
+type: unit
+costs:
+  - name: ' PL'
+    typeId: e356-c769-5920-6e14
+    value: 3.0
+  - name: pts
+    typeId: points
+  - name: CP
+    typeId: 2d3b-b544-ad49-fb75
+  - name: ' Scrap Points'
+    typeId: 932a-ae3d-c6c7-6938
+exported: true
+categoryLinks:
+  - targetId: 2ab6-8d0f-494d-38e2
+    id: 7bd3-a78c-493e-3276
+    name: New CategoryLink
+  - targetId: 1c58-037f-7b58-1223
+    id: 2e76-0931-9812-533c
+    name: New CategoryLink
+  - targetId: c8fd-783f-3230-493e
+    id: df10-7552-41ab-73bd
+    name: New CategoryLink
+  - targetId: c274d0b0-5866-44bc-9810-91c136ae7438
+    primary: true
+    id: 835f-2fe6-c1dc-747b
+    name: New CategoryLink
+  - targetId: 88a5-92ca-69c3-d345
+    id: 7c59-71ed-6d2b-eab6
+    name: New CategoryLink
+  - targetId: 258d-e4cb-6f35-fe20
+    id: e10d-44e2-c904-3cb1
+    name: Speed Freeks
+selectionEntryGroups:
+  - defaultSelectionEntryId: 5b74-eb94-2f07-51d7
+    exported: true
+    selectionEntries:
+      - type: model
+        costs:
+          - name: pts
+            typeId: points
+            value: 33.0
+          - name: ' PL'
+            typeId: e356-c769-5920-6e14
+          - name: CP
+            typeId: 2d3b-b544-ad49-fb75
+          - name: ' Scrap Points'
+            typeId: 932a-ae3d-c6c7-6938
+        exported: true
+        selectionEntryGroups:
+          - defaultSelectionEntryId: e4b1-f1b5-d036-5c9d
+            exported: true
+            entryLinks:
+              - targetId: a4f1-6ccb-1c50-405b
+                type: selectionEntry
+                exported: true
+                id: e4b1-f1b5-d036-5c9d
+                name: Twin Big Shoota
+              - targetId: 17f9-fccd-55db-b80a
+                type: selectionEntry
+                exported: true
+                id: f97d-0019-f5db-ae23
+                name: Rack of Rokkits
+            constraints:
+              - id: 66d0-8565-a94a-bfbd
+                type: minimum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+              - id: ccf9-5775-c9df-fb00
+                type: maximum
+                field: selections
+                scope: parent
+                value: 1.0
+                shared: true
+            id: 3058-3fa4-108c-c1f6
+            name: Gun
+        profiles:
+          - typeId: 800f-21d0-4387-c943
+            typeName: Unit
+            characteristics:
+              - name: M
+                typeId: 0bdf-a96e-9e38-7779
+                value: 14"
+              - name: WS
+                typeId: e7f0-1278-0250-df0c
+                value: 3+
+              - name: BS
+                typeId: 381b-eb28-74c3-df5f
+                value: 5+
+              - name: S
+                typeId: 2218-aa3c-265f-2939
+                value: 4
+              - name: T
+                typeId: 9c9f-9774-a358-3a39
+                value: 5
+              - name: W
+                typeId: f330-5e6e-4110-0978
+                value: 5
+              - name: A
+                typeId: 13fc-b29b-31f2-ab9f
+                value: 4
+              - name: Ld
+                typeId: 00ca-f8b8-876d-b705
+                value: 6
+              - name: Save
+                typeId: c0df-df94-abd7-e8d3
+                value: 4+
+            id: f825-9156-6fdf-8b0c
+            name: Warbuggy
+            publicationId: 28ec-711c-pubN118139
+            page: 33
+        id: 5b74-eb94-2f07-51d7
+        name: Warbuggy
+    constraints:
+      - id: 81c9-f4fd-fc6b-e1af
+        type: minimum
+        field: selections
+        scope: parent
+        value: 1.0
+        shared: true
+      - id: bc6c-11f7-0241-4588
+        type: maximum
+        field: selections
+        scope: parent
+        value: 5.0
+        shared: true
+    id: 31ec-b292-fa23-406d
+    name: Mob
+entryLinks:
+  - targetId: ca9f-6836-9aed-431e
+    type: selectionEntryGroup
+    exported: true
+    id: 3aba-fed8-c163-ef42
+    name: Vehicle Kustom Jobs
+infoLinks:
+  - targetId: ad32-a248-a392-3d4a
+    type: rule
+    id: 7604-18cf-da8f-7a9b
+    name: Mob Rule
+  - targetId: de72-9941-3d27-44e9
+    type: rule
+    id: 29fb-3393-361d-47fa
+    name: "'Ere We Go!"
+  - targetId: ab25-a1f3-5bd8-de8a
+    type: profile
+    id: e220-4391-d708-19da
+    name: Outriders
+id: f7ee-37e2-efd6-a351
+name: Warbuggies [Legends]
+modifiers:
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 5.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: f7ee-37e2-efd6-a351
+        value: 2.0
+        shared: true
+        includeChildSelections: true
+  - type: increment
+    field: e356-c769-5920-6e14
+    value: 5.0
+    conditions:
+      - type: atLeast
+        childId: model
+        field: selections
+        scope: f7ee-37e2-efd6-a351
+        value: 4.0
+        shared: true
+        includeChildSelections: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: atLeast
+        childId: c47c-a3e1-c91e-436a
+        field: selections
+        scope: roster
+        value: 1.0
+        shared: true
+        includeChildSelections: true
+        includeChildForces: true
+  - type: set
+    field: hidden
+    value: true
+    conditions:
+      - type: greaterThan
+        childId: a207-a133-6adb-25f3
+        field: forces
+        scope: roster
+        shared: true
+        includeChildSelections: true
