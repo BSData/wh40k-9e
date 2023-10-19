@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<catalogue id="28e2-d179-3d66-a272" name="Imperium - Adeptus Astartes - Ultramarines" revision="75" battleScribeVersion="2.03" authorName="BSData Developers" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="248" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+<catalogue id="28e2-d179-3d66-a272" name="Imperium - Adeptus Astartes - Ultramarines" revision="76" battleScribeVersion="2.03" authorName="BSData Developers" authorUrl="https://www.bsdata.net/contact" library="false" gameSystemId="28ec-711c-d87f-3aeb" gameSystemRevision="250" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
   <selectionEntries>
     <selectionEntry id="f24f-c59b-5c04-a39a" name="Captain Sicarius" hidden="false" collective="false" import="true" type="model">
       <modifiers>
@@ -3916,6 +3916,25 @@ if a VEHICLE model  being commanded by Sergeant Chornus is destroyed, set this m
                 <cost name="pts" typeId="points" value="0.0"/>
               </costs>
             </selectionEntry>
+            <selectionEntry id="6f58-32a3-f0d9-640f" name="Castellans of the Rift" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="296c-5d05-39be-f09f" type="max"/>
+              </constraints>
+              <rules>
+                <rule id="e91c-af3b-0086-09e1" name="Unyielding Resistance" hidden="false">
+                  <modifiers>
+                    <modifier type="set" field="hidden" value="true">
+                      <conditions>
+                        <condition field="selections" scope="force" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="fff5-0cb2-3255-5678" type="atLeast"/>
+                      </conditions>
+                    </modifier>
+                  </modifiers>
+                  <description>- Each time a model with this tactic makes a melee attack, if that model’s unit made a charge move this turn, add 1 to that attack’s hit roll.
+- Each time an attack is made against a unit with this tactic, an unmodified wound roll of 1 or 2 always fails, irrespective of any abilities that the weapon or the attacker may have.
+</description>
+                </rule>
+              </rules>
+            </selectionEntry>
           </selectionEntries>
           <entryLinks>
             <entryLink id="489f-2d4c-2483-7eb1" name="Forge World Chapters" hidden="false" collective="false" import="true" targetId="3700-470e-f75d-6cba" type="selectionEntryGroup"/>
@@ -4388,6 +4407,106 @@ While a friendly SILVER TEMPLAR PRIMARIS CORE unit is within 6&quot; of the bear
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
+        <selectionEntryGroup id="7b66-c6e6-7be9-70d0" name="Relics of the Castellans" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6f58-32a3-f0d9-640f" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <constraints>
+            <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e7d9-5e25-3bf7-09eb" type="max"/>
+            <constraint field="selections" scope="roster" value="3.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="6c50-3948-28c8-14da" type="max"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry id="4392-4a55-47b3-b431" name="Muruk&apos;s Wrath" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditionGroups>
+                    <conditionGroup type="and">
+                      <conditions>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="fb50-f8b0-cdb0-0d4f" type="equalTo"/>
+                        <condition field="selections" scope="parent" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="08ec-8c66-17d0-7fc4" type="equalTo"/>
+                      </conditions>
+                    </conditionGroup>
+                  </conditionGroups>
+                </modifier>
+              </modifiers>
+              <profiles>
+                <profile id="b078-5dfd-98ae-1ee2" name="Muruk&apos;s Wrath" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">36&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Rapid Fire 2</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">6</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-4</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="e7c2-6885-68b2-e2b7" name="Primarch&apos;s Codex" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="18e9-ca9c-c85d-ac42" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <profiles>
+                <profile id="e486-773a-4f94-e3be" name="Primarch&apos;s Codex" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Each time the bearer rolls to see if a litany is inspiring, you can re-roll the result.
+- Each time the bearer recites a litany, add 3&quot; to the range of that litany (to a maximum of 12&quot;).</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="9e08-0198-31a7-a3c5" name="Gauntlet of the Imperium" hidden="false" collective="false" import="true" type="upgrade">
+              <modifiers>
+                <modifier type="set" field="hidden" value="true">
+                  <conditions>
+                    <condition field="selections" scope="ancestor" value="0.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" childId="5854-3db8-6043-ce0b" type="notInstanceOf"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
+              <profiles>
+                <profile id="2beb-96c2-0b19-2462" name="Gauntlet of the Imperium - shooting" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">12&quot;</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Pistol 3</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">5</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-2</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">1</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                  </characteristics>
+                </profile>
+                <profile id="5750-eeca-3740-dff9" name="Gauntlet of the Imperium - melee" hidden="false" typeId="d5f97c0b-9fc9-478d-aa34-a7c414d3ea48" typeName="Weapon">
+                  <characteristics>
+                    <characteristic name="Range" typeId="6fa97fa8-ea74-4a27-a0fb-bc4e5f367464">Melee</characteristic>
+                    <characteristic name="Type" typeId="077c342f-d7b9-45c6-b8af-88e97cafd3a2">Melee</characteristic>
+                    <characteristic name="S" typeId="59b1-319e-ec13-d466">x2</characteristic>
+                    <characteristic name="AP" typeId="75aa-a838-b675-6484">-3</characteristic>
+                    <characteristic name="D" typeId="ae8a-3137-d65b-4ca7">3</characteristic>
+                    <characteristic name="Abilities" typeId="837d-5e63-aeb7-1410">-</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="b5c0-6a6f-ed1f-13e9" name="Armour of Phourion" hidden="false" collective="false" import="true" type="upgrade">
+              <profiles>
+                <profile id="424b-8b9e-f7e8-d5d7" name="Armour of Phourion" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- At the start of the Fight phase, if the bearer is within Engagement Range of any enemy units, it can fight first that phase.
+- The bearer is eligible to perform a Heroic Intervention if it is within 6&quot; horizontally and 5&quot; vertically of any enemy units, instead of 3&quot; horizontally and 5&quot; vertically. Each time the bearer makes a Heroic Intervention move, it can move up to 6&quot;. All other rules for Heroic Interventions still apply.
+</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
       </selectionEntryGroups>
       <entryLinks>
         <entryLink id="fcab-d4bb-3539-245b" name="Special-Issue Wargear" hidden="false" collective="false" import="true" targetId="81fa-73cf-0cea-37a0" type="selectionEntryGroup"/>
@@ -4857,6 +4976,59 @@ Each time this Warlord makes a melee attack, if it made a charge move, was charg
                 <cost name="CP" typeId="2d3b-b544-ad49-fb75" value="0.0"/>
                 <cost name="pts" typeId="points" value="0.0"/>
               </costs>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+        <selectionEntryGroup id="c54d-1437-dc32-426d" name="Warlord Traits (Castellans)" hidden="false" collective="false" import="true">
+          <modifiers>
+            <modifier type="set" field="hidden" value="true">
+              <conditions>
+                <condition field="selections" scope="force" value="0.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" childId="6f58-32a3-f0d9-640f" type="equalTo"/>
+              </conditions>
+            </modifier>
+          </modifiers>
+          <selectionEntries>
+            <selectionEntry id="af1f-9ebe-c5a3-bcbc" name="Hit-and-Run Master" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="8faf-51b5-140f-5821" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="666f-2845-2486-dd02" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="e6b1-d6e1-6c89-3fae" name="Hit-and-Run Master" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">In your Command phase, select one friendly CASTELLANS OF THE RIFT unit within 9&quot; of this WARLORD. Until the end of the turn, that unit is eligible to shoot in a turn in which it Fell Back.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="fba8-7bff-1591-a48e" name="Exemplar of the Chapter" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="66aa-8fe2-79be-fbe8" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="6cd1-f2d7-4a03-f783" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="9883-e804-fea9-72ae" name="Exemplar of the Chapter" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">- Add 1 to the Attacks characteristic of this WARLORD.
+- Each time an attack is made against this WARLORD, an unmodified wound roll of 1-3 always fails, irrespective of any abilities that the weapon or the attacker may have.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
+            </selectionEntry>
+            <selectionEntry id="1419-73b1-b378-2c50" name="Tip of the Sword" hidden="false" collective="false" import="true" type="upgrade">
+              <constraints>
+                <constraint field="selections" scope="roster" value="1.0" percentValue="false" shared="true" includeChildSelections="true" includeChildForces="true" id="4391-b1f5-5f1d-e0b9" type="max"/>
+                <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f41f-b206-4edd-8283" type="max"/>
+              </constraints>
+              <profiles>
+                <profile id="ecf1-54d1-b7e1-84f8" name="Tip of the Sword" hidden="false" typeId="72c5eafc-75bf-4ed9-b425-78009f1efe82" typeName="Abilities">
+                  <characteristics>
+                    <characteristic name="Description" typeId="21befb24-fc85-4f52-a745-64b2e48f8228">At the end of your Movement phase, select one enemy unit within 12&quot; of and visible to this WARLORD. Until the end of the turn:
+- Each time a friendly CASTELLANS OF THE RIFT CORE unit declares a charge, if that enemy unit is one of the targets of that charge, you can re-roll the charge roll.
+- Each time a friendly CASTELLANS OF THE RIFT CORE model makes a melee attack against that enemy unit, add 1 to the Strength characteristic of that attack.</characteristic>
+                  </characteristics>
+                </profile>
+              </profiles>
             </selectionEntry>
           </selectionEntries>
         </selectionEntryGroup>
